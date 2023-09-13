@@ -1,0 +1,2375 @@
+﻿//////////////////////////////////////////////////////////////////////////
+2018-06-15 09:22:39.385: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 09:22:48.092: Receive Select.req.
+FF FF 00 00 00 01 00 0B 4E BB
+2018-06-15 09:22:48.109: Send Select.rsp.
+FF FF 00 00 00 02 00 0B 4E BB
+2018-06-15 09:22:48.134: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 09:22:48.134: Send S1F13(2105151).
+00 01 81 0D 00 00 00 20 1F 3F   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.016 seconds to log this message.
+2018-06-15 09:22:48.161: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 09:22:48.161: Receive S1F14(2105151).
+00 00 01 0E 00 00 00 20 1F 3F   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 09:22:55.305: Send Data Message.
+00 00 00 2E 00 01 86 0B 00 00
+2018-06-15 09:22:55.305: Send S6F11(2105152).
+00 01 86 0B 00 00 00 20 1F 40   01 03 A9 02 00 01 B1 04 00 00
+00 68 01 01 01 02 B1 04 00 00   1B 5D 01 03 91 04 00 00 00 00
+A5 01 00 21 01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U2[1] 1> /* Name = DATAID */
+  <U4[1] 104> /* Name = CEID, Keyword = EQP_EVENT_5 (104) */
+  <L[1]
+    <L[2]
+      <U4[1] 7005> /* Name = RPTID */
+      <L[3]
+        <F4[1] 0> /* Name = Value, Keyword = DV_8100 (8100) */
+        <U1[1] 0> /* Name = Value, Keyword = DV_8101 (8101) */
+        <B[1] 0x00> /* Name = Value, Keyword = SV_BINARY (2004) */
+      >
+    >
+  >
+>
+.
+Program takes      0.015 seconds to log this message.
+2018-06-15 09:22:55.349: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2018-06-15 09:22:55.349: Receive S6F12(2105152).
+00 00 06 0C 00 00 00 20 1F 40   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 09:23:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E BE
+2018-06-15 09:23:48.130: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E BE
+2018-06-15 09:23:55.113: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 41
+2018-06-15 09:23:55.151: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 41
+2018-06-15 09:24:48.011: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E BF
+2018-06-15 09:24:48.046: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E BF
+2018-06-15 09:24:55.155: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 42
+2018-06-15 09:24:55.214: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 42
+2018-06-15 09:25:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E C0
+2018-06-15 09:25:48.047: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E C0
+2018-06-15 09:25:55.219: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 43
+2018-06-15 09:25:55.247: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 43
+2018-06-15 09:26:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E C1
+2018-06-15 09:26:48.046: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E C1
+2018-06-15 09:26:55.251: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 44
+2018-06-15 09:26:55.300: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 44
+2018-06-15 09:27:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E C2
+2018-06-15 09:27:48.022: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E C2
+2018-06-15 09:27:55.303: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 45
+2018-06-15 09:27:55.437: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 45
+2018-06-15 09:28:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E C3
+2018-06-15 09:28:48.053: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E C3
+2018-06-15 09:28:55.461: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 46
+2018-06-15 09:28:55.493: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 46
+2018-06-15 09:29:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E C4
+2018-06-15 09:29:48.048: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E C4
+2018-06-15 09:29:55.502: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 47
+2018-06-15 09:29:55.529: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 47
+2018-06-15 09:30:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E C5
+2018-06-15 09:30:48.056: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E C5
+2018-06-15 09:30:55.533: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 48
+2018-06-15 09:30:55.579: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 48
+2018-06-15 09:31:48.011: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E C6
+2018-06-15 09:31:48.052: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E C6
+2018-06-15 09:31:55.582: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 49
+2018-06-15 09:31:55.616: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 49
+2018-06-15 09:32:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E C7
+2018-06-15 09:32:48.054: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E C7
+2018-06-15 09:32:55.618: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 4A
+2018-06-15 09:32:55.666: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 4A
+2018-06-15 09:33:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E C8
+2018-06-15 09:33:48.047: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E C8
+2018-06-15 09:33:55.671: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 4B
+2018-06-15 09:33:55.706: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 4B
+2018-06-15 09:34:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E C9
+2018-06-15 09:34:48.028: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E C9
+2018-06-15 09:34:55.709: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 4C
+2018-06-15 09:34:55.761: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 4C
+2018-06-15 09:35:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E CA
+2018-06-15 09:35:48.053: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E CA
+2018-06-15 09:35:55.765: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 4D
+2018-06-15 09:35:55.814: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 4D
+2018-06-15 09:36:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E CB
+2018-06-15 09:36:48.048: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E CB
+2018-06-15 09:36:55.817: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 4E
+2018-06-15 09:36:55.862: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 4E
+2018-06-15 09:37:17.037: Send Data Message.
+00 00 00 2E 00 01 86 0B 00 00
+2018-06-15 09:37:17.037: Send S6F11(2105167).
+00 01 86 0B 00 00 00 20 1F 4F   01 03 A9 02 00 03 B1 04 00 00
+00 68 01 01 01 02 B1 04 00 00   1B 5D 01 03 91 04 00 00 00 00
+A5 01 00 21 01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U2[1] 3> /* Name = DATAID */
+  <U4[1] 104> /* Name = CEID, Keyword = EQP_EVENT_5 (104) */
+  <L[1]
+    <L[2]
+      <U4[1] 7005> /* Name = RPTID */
+      <L[3]
+        <F4[1] 0> /* Name = Value, Keyword = DV_8100 (8100) */
+        <U1[1] 0> /* Name = Value, Keyword = DV_8101 (8101) */
+        <B[1] 0x00> /* Name = Value, Keyword = SV_BINARY (2004) */
+      >
+    >
+  >
+>
+.
+Program takes      0.004 seconds to log this message.
+2018-06-15 09:37:17.085: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2018-06-15 09:37:17.085: Receive S6F12(2105167).
+00 00 06 0C 00 00 00 20 1F 4F   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 09:37:23.645: Send Data Message.
+00 00 00 18 00 01 86 0B 00 00
+2018-06-15 09:37:23.645: Send S6F11(2105168).
+00 01 86 0B 00 00 00 20 1F 50   01 03 A9 02 00 05 B1 04 00 00
+00 16 01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U2[1] 5> /* Name = DATAID */
+  <U4[1] 22> /* Name = CEID */
+  <L[0]
+  >
+>
+.
+Program takes      0.004 seconds to log this message.
+2018-06-15 09:37:23.697: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2018-06-15 09:37:23.697: Receive S6F12(2105168).
+00 00 06 0C 00 00 00 20 1F 50   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 09:37:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E CE
+2018-06-15 09:37:48.042: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E CE
+2018-06-15 09:38:22.885: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 51
+2018-06-15 09:38:22.922: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 51
+2018-06-15 09:38:48.011: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E CF
+2018-06-15 09:38:48.050: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E CF
+2018-06-15 09:39:22.938: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 52
+2018-06-15 09:39:22.977: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 52
+2018-06-15 09:39:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E D0
+2018-06-15 09:39:48.050: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E D0
+2018-06-15 09:40:22.990: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 53
+2018-06-15 09:40:23.033: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 53
+2018-06-15 09:40:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E D1
+2018-06-15 09:40:48.049: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E D1
+2018-06-15 09:41:23.053: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 54
+2018-06-15 09:41:23.091: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 54
+2018-06-15 09:41:48.011: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E D2
+2018-06-15 09:41:48.026: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E D2
+2018-06-15 09:42:23.098: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 55
+2018-06-15 09:42:23.125: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 55
+2018-06-15 09:42:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E D3
+2018-06-15 09:42:48.053: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E D3
+2018-06-15 09:43:23.129: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 56
+2018-06-15 09:43:23.154: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 56
+2018-06-15 09:43:48.011: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E D4
+2018-06-15 09:43:48.050: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E D4
+2018-06-15 09:44:23.157: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 57
+2018-06-15 09:44:23.176: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 57
+2018-06-15 09:44:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E D5
+2018-06-15 09:44:48.050: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E D5
+2018-06-15 09:45:23.178: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 58
+2018-06-15 09:45:23.215: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 58
+2018-06-15 09:45:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E D6
+2018-06-15 09:45:48.055: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E D6
+2018-06-15 09:46:23.225: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 59
+2018-06-15 09:46:23.267: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 59
+2018-06-15 09:46:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E D7
+2018-06-15 09:46:48.049: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E D7
+2018-06-15 09:47:23.280: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 5A
+2018-06-15 09:47:23.366: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 5A
+2018-06-15 09:47:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E D8
+2018-06-15 09:47:48.048: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E D8
+2018-06-15 09:48:23.369: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 5B
+2018-06-15 09:48:23.420: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 5B
+2018-06-15 09:48:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E D9
+2018-06-15 09:48:48.031: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E D9
+2018-06-15 09:49:23.424: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 5C
+2018-06-15 09:49:23.447: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 5C
+2018-06-15 09:49:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E DA
+2018-06-15 09:49:48.050: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E DA
+2018-06-15 09:50:23.452: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 5D
+2018-06-15 09:50:23.467: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 5D
+2018-06-15 09:50:48.011: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E DB
+2018-06-15 09:50:48.052: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E DB
+2018-06-15 09:51:23.472: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 5E
+2018-06-15 09:51:23.494: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 5E
+2018-06-15 09:51:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E DC
+2018-06-15 09:51:48.025: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E DC
+2018-06-15 09:52:23.496: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 5F
+2018-06-15 09:52:23.516: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 5F
+2018-06-15 09:52:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E DD
+2018-06-15 09:52:48.033: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E DD
+2018-06-15 09:53:23.525: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 60
+2018-06-15 09:53:23.573: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 60
+2018-06-15 09:53:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E DE
+2018-06-15 09:53:48.028: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E DE
+2018-06-15 09:54:23.576: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 61
+2018-06-15 09:54:23.628: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 61
+2018-06-15 09:54:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E DF
+2018-06-15 09:54:48.048: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E DF
+2018-06-15 09:55:23.637: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 62
+2018-06-15 09:55:23.692: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 62
+2018-06-15 09:55:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E E0
+2018-06-15 09:55:48.072: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E E0
+2018-06-15 09:56:02.989: Send Data Message.
+00 00 00 50 00 01 86 0B 00 00
+2018-06-15 09:56:02.989: Send S6F11(2105187).
+00 01 86 0B 00 00 00 20 1F 63   01 03 A9 02 00 09 B1 04 00 00
+00 67 01 01 01 02 B1 04 00 00   1B 5C 01 0B 91 04 00 00 00 00
+A5 01 00 A9 02 00 00 B1 04 00   00 00 00 91 04 00 00 00 00 65
+01 00 69 02 00 00 71 04 00 00   00 00 41 00 25 01 00 A5 01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U2[1] 9> /* Name = DATAID */
+  <U4[1] 103> /* Name = CEID, Keyword = EQP_EVENT_4 (103) */
+  <L[1]
+    <L[2]
+      <U4[1] 7004> /* Name = RPTID */
+      <L[11]
+        <F4[1] 0> /* Name = Value, Keyword = DV_8100 (8100) */
+        <U1[1] 0> /* Name = Value, Keyword = DV_8101 (8101) */
+        <U2[1] 0> /* Name = Value, Keyword = DV_8102 (8102) */
+        <U4[1] 0> /* Name = Value, Keyword = DV_8103 (8103) */
+        <F4[1] 0> /* Name = Value, Keyword = DV_8104 (8104) */
+        <I1[1] 0> /* Name = Value, Keyword = DV_8105 (8105) */
+        <I2[1] 0> /* Name = Value, Keyword = DV_8106 (8106) */
+        <I4[1] 0> /* Name = Value, Keyword = DV_8107 (8107) */
+        <A[0]""> /* Name = Value, Keyword = DV_8108 (8108) */
+        <Boolean[1] 0x0> /* Name = Value, Keyword = DV_8109 (8109) */
+        <U1[1] 0> /* Name = Value, Keyword = SV_EQP_STSTUS (100001) */
+      >
+    >
+  >
+>
+.
+Program takes      0.011 seconds to log this message.
+2018-06-15 09:56:03.083: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2018-06-15 09:56:03.083: Receive S6F12(2105187).
+00 00 06 0C 00 00 00 20 1F 63   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 09:56:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E E2
+2018-06-15 09:56:48.033: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E E2
+2018-06-15 09:57:02.703: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 64
+2018-06-15 09:57:02.746: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 64
+2018-06-15 09:57:48.011: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E E3
+2018-06-15 09:57:48.055: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E E3
+2018-06-15 09:58:02.750: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 65
+2018-06-15 09:58:02.795: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 65
+2018-06-15 09:58:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E E4
+2018-06-15 09:58:48.061: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E E4
+2018-06-15 09:59:02.801: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 66
+2018-06-15 09:59:02.846: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 66
+2018-06-15 09:59:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E E5
+2018-06-15 09:59:48.052: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E E5
+2018-06-15 10:00:02.849: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 67
+2018-06-15 10:00:02.903: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 67
+2018-06-15 10:00:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E E6
+2018-06-15 10:00:48.052: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E E6
+2018-06-15 10:01:02.907: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 68
+2018-06-15 10:01:02.932: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 68
+2018-06-15 10:01:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E E7
+2018-06-15 10:01:48.051: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E E7
+2018-06-15 10:02:02.935: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 69
+2018-06-15 10:02:02.977: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 69
+2018-06-15 10:02:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E E8
+2018-06-15 10:02:48.052: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E E8
+2018-06-15 10:03:02.981: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 6A
+2018-06-15 10:03:03.015: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 6A
+2018-06-15 10:03:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E E9
+2018-06-15 10:03:48.058: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E E9
+2018-06-15 10:04:03.019: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 6B
+2018-06-15 10:04:03.055: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 6B
+2018-06-15 10:04:48.011: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E EA
+2018-06-15 10:04:48.069: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E EA
+2018-06-15 10:05:03.058: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 6C
+2018-06-15 10:05:03.105: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 6C
+2018-06-15 10:05:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E EB
+2018-06-15 10:05:48.052: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E EB
+2018-06-15 10:06:03.108: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 6D
+2018-06-15 10:06:03.141: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 6D
+2018-06-15 10:06:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E EC
+2018-06-15 10:06:48.054: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E EC
+2018-06-15 10:07:03.143: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 6E
+2018-06-15 10:07:03.188: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 6E
+2018-06-15 10:07:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E ED
+2018-06-15 10:07:48.051: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E ED
+2018-06-15 10:08:03.192: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 6F
+2018-06-15 10:08:03.235: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 6F
+2018-06-15 10:08:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E EE
+2018-06-15 10:08:48.054: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E EE
+2018-06-15 10:09:03.240: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 70
+2018-06-15 10:09:03.290: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 70
+2018-06-15 10:09:48.027: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E EF
+2018-06-15 10:09:48.055: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E EF
+2018-06-15 10:09:48.075: Send Data Message.
+00 00 00 2E 00 01 86 0B 00 00
+2018-06-15 10:09:48.075: Send S6F11(2105201).
+00 01 86 0B 00 00 00 20 1F 71   01 03 A9 02 00 0A B1 04 00 00
+00 68 01 01 01 02 B1 04 00 00   1B 5D 01 03 91 04 00 00 00 00
+A5 01 00 21 01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U2[1] 10> /* Name = DATAID */
+  <U4[1] 104> /* Name = CEID, Keyword = EQP_EVENT_5 (104) */
+  <L[1]
+    <L[2]
+      <U4[1] 7005> /* Name = RPTID */
+      <L[3]
+        <F4[1] 0> /* Name = Value, Keyword = DV_8100 (8100) */
+        <U1[1] 0> /* Name = Value, Keyword = DV_8101 (8101) */
+        <B[1] 0x00> /* Name = Value, Keyword = SV_BINARY (2004) */
+      >
+    >
+  >
+>
+.
+Program takes      0.003 seconds to log this message.
+2018-06-15 10:09:48.156: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2018-06-15 10:09:48.156: Receive S6F12(2105201).
+00 00 06 0C 00 00 00 20 1F 71   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 10:09:52.091: Send Data Message.
+00 00 00 30 00 01 86 0B 00 00
+2018-06-15 10:09:52.091: Send S6F11(2105202).
+00 01 86 0B 00 00 00 20 1F 72   01 03 A9 02 00 0B B1 04 00 00
+00 69 01 01 01 02 B1 04 00 00   1B 5E 01 05 25 01 00 41 00 A5
+01 00 91 04 00 00 00 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U2[1] 11> /* Name = DATAID */
+  <U4[1] 105> /* Name = CEID, Keyword = EQP_EVENT_6 (105) */
+  <L[1]
+    <L[2]
+      <U4[1] 7006> /* Name = RPTID */
+      <L[5]
+        <Boolean[1] 0x0> /* Name = Value, Keyword = SV_BOOLEAN (2001) */
+        <A[0]""> /* Name = Value, Keyword = SV_CONTROL_JOB_NAME (2002) */
+        <U1[1] 0> /* Name = Value, Keyword = SV_EQP_STSTUS (100001) */
+        <F4[1] 0> /* Name = Value, Keyword = DV_8100 (8100) */
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2018-06-15 10:09:52.174: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2018-06-15 10:09:52.174: Receive S6F12(2105202).
+00 00 06 0C 00 00 00 20 1F 72   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 10:10:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E F2
+2018-06-15 10:10:48.140: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E F2
+2018-06-15 10:10:51.297: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 73
+2018-06-15 10:10:51.344: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 73
+2018-06-15 10:11:48.011: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E F3
+2018-06-15 10:11:48.055: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E F3
+2018-06-15 10:11:51.348: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 74
+2018-06-15 10:11:51.375: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 74
+2018-06-15 10:12:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E F4
+2018-06-15 10:12:48.051: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E F4
+2018-06-15 10:12:51.378: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 75
+2018-06-15 10:12:51.403: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 75
+2018-06-15 10:13:48.015: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E F5
+2018-06-15 10:13:48.082: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E F5
+2018-06-15 10:13:51.406: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 76
+2018-06-15 10:13:51.447: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 76
+2018-06-15 10:14:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E F6
+2018-06-15 10:14:48.052: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E F6
+2018-06-15 10:14:51.453: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 77
+2018-06-15 10:14:51.500: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 77
+2018-06-15 10:15:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E F7
+2018-06-15 10:15:48.053: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E F7
+2018-06-15 10:15:51.505: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 78
+2018-06-15 10:15:51.537: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 78
+2018-06-15 10:16:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E F8
+2018-06-15 10:16:48.053: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E F8
+2018-06-15 10:16:51.538: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 79
+2018-06-15 10:16:51.569: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 79
+2018-06-15 10:17:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E F9
+2018-06-15 10:17:48.053: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E F9
+2018-06-15 10:17:51.573: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 7A
+2018-06-15 10:17:51.620: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 7A
+2018-06-15 10:18:48.011: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E FA
+2018-06-15 10:18:48.033: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E FA
+2018-06-15 10:18:51.632: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 7B
+2018-06-15 10:18:51.687: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 7B
+2018-06-15 10:19:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E FB
+2018-06-15 10:19:48.038: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E FB
+2018-06-15 10:19:51.690: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 7C
+2018-06-15 10:19:51.743: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 7C
+2018-06-15 10:20:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E FC
+2018-06-15 10:20:48.037: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E FC
+2018-06-15 10:20:51.747: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 7D
+2018-06-15 10:20:51.778: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 7D
+2018-06-15 10:21:48.010: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 4E FD
+2018-06-15 10:21:48.050: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 4E FD
+2018-06-15 10:21:51.781: Send Linktest.req.
+FF FF 00 00 00 05 00 20 1F 7E
+2018-06-15 10:21:51.832: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 1F 7E
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 10:32:14.678: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 10:33:33.849: Receive Select.req.
+FF FF 00 00 00 01 00 4C 17 D5
+2018-06-15 10:33:33.893: Send Select.rsp.
+FF FF 00 00 00 02 00 4C 17 D5
+2018-06-15 10:33:33.953: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 10:33:33.953: Send S1F13(2619361).
+00 01 81 0D 00 00 00 27 F7 E1   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.015 seconds to log this message.
+2018-06-15 10:33:34.016: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 10:33:34.016: Receive S1F14(2619361).
+00 00 01 0E 00 00 00 27 F7 E1   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 10:34:33.800: Receive Linktest.req.
+FF FF 00 00 00 05 00 4C 17 D7
+2018-06-15 10:34:33.819: Send Linktest.rsp.
+FF FF 00 00 00 06 00 4C 17 D7
+2018-06-15 10:34:33.900: Send Linktest.req.
+FF FF 00 00 00 05 00 27 F7 E2
+2018-06-15 10:34:33.920: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 27 F7 E2
+2018-06-15 10:35:33.800: Receive Linktest.req.
+FF FF 00 00 00 05 00 4C 17 D8
+2018-06-15 10:35:33.824: Send Linktest.rsp.
+FF FF 00 00 00 06 00 4C 17 D8
+2018-06-15 10:35:33.922: Send Linktest.req.
+FF FF 00 00 00 05 00 27 F7 E3
+2018-06-15 10:35:33.963: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 27 F7 E3
+2018-06-15 10:36:33.800: Receive Linktest.req.
+FF FF 00 00 00 05 00 4C 17 D9
+2018-06-15 10:36:33.822: Send Linktest.rsp.
+FF FF 00 00 00 06 00 4C 17 D9
+2018-06-15 10:36:33.971: Send Linktest.req.
+FF FF 00 00 00 05 00 27 F7 E4
+2018-06-15 10:36:34.013: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 27 F7 E4
+2018-06-15 10:37:33.800: Receive Linktest.req.
+FF FF 00 00 00 05 00 4C 17 DA
+2018-06-15 10:37:33.843: Send Linktest.rsp.
+FF FF 00 00 00 06 00 4C 17 DA
+2018-06-15 10:37:34.022: Send Linktest.req.
+FF FF 00 00 00 05 00 27 F7 E5
+2018-06-15 10:37:34.043: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 27 F7 E5
+2018-06-15 10:38:33.540: Send Data Message.
+00 00 00 3D 00 01 85 01 00 00
+2018-06-15 10:38:33.540: Send S5F1(2619366).
+00 01 85 01 00 00 00 27 F7 E6   01 03 21 01 80 B1 04 00 00 23
+2A 41 26 45 46 45 4D 3F 3F 3F   3F 3F 7D 3F 3F 3F 3F 3F 55 45
+6D 65 72 67 65 6E 63 79 20 53   74 6F 70 20 70 72 65 73 73 65
+64
+S5F1 W /* Alarm Report Send */
+<L[3]
+  <B[1] 0x80> /* Name = ALCD, Keyword = Alarm code type. 0x00:disable | 0x80:enable */
+  <U4[1] 9002> /* Name = ALID, Keyword = ALARM_EM (9002) */
+  <A[38]"EFEM?????}?????UEmergency Stop pressed"> /* Name = ALTX */
+>
+.
+Program takes      0.012 seconds to log this message.
+2018-06-15 10:38:33.611: Receive Data Message.
+00 00 00 0D 00 00 05 02 00 00
+2018-06-15 10:38:33.611: Receive S5F2(2619366).
+00 00 05 02 00 00 00 27 F7 E6   21 01 00
+S5F2  /* Alarm Report Ack */
+<B[1] 0x00> /* Name = ACKC5 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 10:38:33.799: Receive Linktest.req.
+FF FF 00 00 00 05 00 4C 17 DC
+2018-06-15 10:38:33.839: Send Linktest.rsp.
+FF FF 00 00 00 06 00 4C 17 DC
+2018-06-15 10:38:59.134: Send Data Message.
+00 00 00 3D 00 01 85 01 00 00
+2018-06-15 10:38:59.134: Send S5F1(2619367).
+00 01 85 01 00 00 00 27 F7 E7   01 03 21 01 00 B1 04 00 00 23
+2A 41 26 45 46 45 4D 3F 3F 3F   3F 3F 7D 3F 3F 3F 3F 3F 55 45
+6D 65 72 67 65 6E 63 79 20 53   74 6F 70 20 70 72 65 73 73 65
+64
+S5F1 W /* Alarm Report Send */
+<L[3]
+  <B[1] 0x00> /* Name = ALCD, Keyword = Alarm code type. 0x00:disable | 0x80:enable */
+  <U4[1] 9002> /* Name = ALID, Keyword = ALARM_EM (9002) */
+  <A[38]"EFEM?????}?????UEmergency Stop pressed"> /* Name = ALTX */
+>
+.
+Program takes      0.013 seconds to log this message.
+2018-06-15 10:38:59.193: Receive Data Message.
+00 00 00 0D 00 00 05 02 00 00
+2018-06-15 10:38:59.193: Receive S5F2(2619367).
+00 00 05 02 00 00 00 27 F7 E7   21 01 00
+S5F2  /* Alarm Report Ack */
+<B[1] 0x00> /* Name = ACKC5 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 10:39:12.468: Receive Data Message.
+00 00 00 1F 00 00 85 01 00 00
+2018-06-15 10:39:12.468: Receive S5F1(4986846).
+00 00 85 01 00 00 00 4C 17 DE   01 03 21 01 00 A9 02 00 01 41
+0A 50 6F 77 65 72 20 66 61 69   6C
+S5F1 W /* Alarm Report Send */
+<L[3]
+  <B[1] 0x00> /* Name = ALCD, Keyword = Alarm code type. 0x00:disable | 0x80:enable */
+  <U2[1] 1> /* Name = ALID, Keyword = _LICENSE_CODE_SVID_ (1) */
+  <A[10]"Power fail"> /* Name = ALTX */
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 10:39:12.500: Send Data Message.
+00 00 00 16 00 01 09 07 00 00
+2018-06-15 10:39:12.500: Send S9F7(2619368).
+00 01 09 07 00 00 00 27 F7 E8   21 0A 00 00 85 01 00 00 00 4C
+17 DE
+S9F7  /* Illegal Data */
+<B[10] 0x00 0x00 0x85 0x01 0x00 0x00 0x00 0x4C 0x17 0xDE>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 10:39:33.800: Receive Linktest.req.
+FF FF 00 00 00 05 00 4C 17 DF
+2018-06-15 10:39:33.851: Send Linktest.rsp.
+FF FF 00 00 00 06 00 4C 17 DF
+2018-06-15 10:40:12.072: Send Linktest.req.
+FF FF 00 00 00 05 00 27 F7 E9
+2018-06-15 10:40:12.101: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 27 F7 E9
+2018-06-15 10:40:33.799: Receive Linktest.req.
+FF FF 00 00 00 05 00 4C 17 E0
+2018-06-15 10:40:33.848: Send Linktest.rsp.
+FF FF 00 00 00 06 00 4C 17 E0
+2018-06-15 10:41:12.105: Send Linktest.req.
+FF FF 00 00 00 05 00 27 F7 EA
+2018-06-15 10:41:12.135: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 27 F7 EA
+2018-06-15 10:41:33.803: Receive Linktest.req.
+FF FF 00 00 00 05 00 4C 17 E1
+2018-06-15 10:41:33.837: Send Linktest.rsp.
+FF FF 00 00 00 06 00 4C 17 E1
+2018-06-15 10:42:06.483: Send Data Message.
+00 00 00 31 00 01 85 01 00 00
+2018-06-15 10:42:06.483: Send S5F1(2619371).
+00 01 85 01 00 00 00 27 F7 EB   01 03 21 01 80 B1 04 00 00 23
+29 41 1A 3F 3F 3F 4F 3F 3F 3F   60 20 50 75 6D 70 20 50 72 65
+73 73 20 46 72 65 73 73 6C
+S5F1 W /* Alarm Report Send */
+<L[3]
+  <B[1] 0x80> /* Name = ALCD, Keyword = Alarm code type. 0x00:disable | 0x80:enable */
+  <U4[1] 9001> /* Name = ALID, Keyword = ALARM_PUMP_PRESS (9001) */
+  <A[26]"???O???` Pump Press Fressl"> /* Name = ALTX */
+>
+.
+Program takes      0.033 seconds to log this message.
+2018-06-15 10:42:06.537: Receive Data Message.
+00 00 00 0D 00 00 05 02 00 00
+2018-06-15 10:42:06.537: Receive S5F2(2619371).
+00 00 05 02 00 00 00 27 F7 EB   21 01 00
+S5F2  /* Alarm Report Ack */
+<B[1] 0x00> /* Name = ACKC5 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 10:42:08.786: Send Data Message.
+00 00 00 31 00 01 85 01 00 00
+2018-06-15 10:42:08.786: Send S5F1(2619372).
+00 01 85 01 00 00 00 27 F7 EC   01 03 21 01 00 B1 04 00 00 23
+29 41 1A 3F 3F 3F 4F 3F 3F 3F   60 20 50 75 6D 70 20 50 72 65
+73 73 20 46 72 65 73 73 6C
+S5F1 W /* Alarm Report Send */
+<L[3]
+  <B[1] 0x00> /* Name = ALCD, Keyword = Alarm code type. 0x00:disable | 0x80:enable */
+  <U4[1] 9001> /* Name = ALID, Keyword = ALARM_PUMP_PRESS (9001) */
+  <A[26]"???O???` Pump Press Fressl"> /* Name = ALTX */
+>
+.
+Program takes      0.015 seconds to log this message.
+2018-06-15 10:42:08.858: Receive Data Message.
+00 00 00 0D 00 00 05 02 00 00
+2018-06-15 10:42:08.858: Receive S5F2(2619372).
+00 00 05 02 00 00 00 27 F7 EC   21 01 00
+S5F2  /* Alarm Report Ack */
+<B[1] 0x00> /* Name = ACKC5 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 10:42:33.800: Receive Linktest.req.
+FF FF 00 00 00 05 00 4C 17 E4
+2018-06-15 10:42:33.837: Send Linktest.rsp.
+FF FF 00 00 00 06 00 4C 17 E4
+2018-06-15 10:43:08.148: Send Linktest.req.
+FF FF 00 00 00 05 00 27 F7 ED
+2018-06-15 10:43:08.187: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 27 F7 ED
+2018-06-15 10:43:33.800: Receive Linktest.req.
+FF FF 00 00 00 05 00 4C 17 E5
+2018-06-15 10:43:33.844: Send Linktest.rsp.
+FF FF 00 00 00 06 00 4C 17 E5
+2018-06-15 10:44:08.191: Send Linktest.req.
+FF FF 00 00 00 05 00 27 F7 EE
+2018-06-15 10:44:08.211: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 27 F7 EE
+2018-06-15 10:44:33.800: Receive Linktest.req.
+FF FF 00 00 00 05 00 4C 17 E6
+2018-06-15 10:44:33.846: Send Linktest.rsp.
+FF FF 00 00 00 06 00 4C 17 E6
+2018-06-15 10:45:08.217: Send Linktest.req.
+FF FF 00 00 00 05 00 27 F7 EF
+2018-06-15 10:45:08.275: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 27 F7 EF
+2018-06-15 10:45:33.799: Receive Linktest.req.
+FF FF 00 00 00 05 00 4C 17 E7
+2018-06-15 10:45:33.854: Send Linktest.rsp.
+FF FF 00 00 00 06 00 4C 17 E7
+2018-06-15 10:46:01.079: Send Separate.req.
+FF FF 00 00 00 09 00 27 F7 F0
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 14:42:45.916: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 14:42:50.988: Receive Select.req.
+FF FF 00 00 00 01 01 30 51 CD
+2018-06-15 14:42:51.044: Send Select.rsp.
+FF FF 00 00 00 02 01 30 51 CD
+2018-06-15 14:42:51.081: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 14:42:51.081: Send S1F13(1079018).
+00 01 81 0D 00 00 00 10 76 EA   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.02 seconds to log this message.
+2018-06-15 14:42:51.150: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 14:42:51.150: Receive S1F14(1079018).
+00 00 01 0E 00 00 00 10 76 EA   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 14:43:24.476: Send Separate.req.
+FF FF 00 00 00 09 00 10 76 EB
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 14:45:50.064: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 14:45:55.638: Receive Select.req.
+FF FF 00 00 00 01 01 33 23 4E
+2018-06-15 14:45:55.668: Send Select.rsp.
+FF FF 00 00 00 02 01 33 23 4E
+2018-06-15 14:45:55.703: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 14:45:55.703: Send S1F13(4115257).
+00 01 81 0D 00 00 00 3E CB 39   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.018 seconds to log this message.
+2018-06-15 14:45:55.788: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 14:45:55.788: Receive S1F14(4115257).
+00 00 01 0E 00 00 00 3E CB 39   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 14:46:33.862: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 14:46:36.702: Receive Select.req.
+FF FF 00 00 00 01 01 33 C3 D1
+2018-06-15 14:46:36.750: Send Select.rsp.
+FF FF 00 00 00 02 01 33 C3 D1
+2018-06-15 14:46:36.788: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 14:46:36.788: Send S1F13(2175473).
+00 01 81 0D 00 00 00 21 31 F1   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.019 seconds to log this message.
+2018-06-15 14:46:36.862: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 14:46:36.862: Receive S1F14(2175473).
+00 00 01 0E 00 00 00 21 31 F1   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 14:46:54.977: Send Separate.req.
+FF FF 00 00 00 09 00 21 31 F2
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 15:00:07.326: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 15:00:10.838: Receive Select.req.
+FF FF 00 00 00 01 01 40 30 1A
+2018-06-15 15:00:10.874: Send Select.rsp.
+FF FF 00 00 00 02 01 40 30 1A
+2018-06-15 15:00:10.918: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 15:00:10.918: Send S1F13(2770711).
+00 01 81 0D 00 00 00 2A 47 17   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.016 seconds to log this message.
+2018-06-15 15:00:11.066: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 15:00:11.066: Receive S1F14(2770711).
+00 00 01 0E 00 00 00 2A 47 17   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 15:00:39.048: Send Separate.req.
+FF FF 00 00 00 09 00 2A 47 18
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 15:01:13.566: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 15:01:18.567: Receive Select.req.
+FF FF 00 00 00 01 01 41 38 A2
+2018-06-15 15:01:18.603: Send Select.rsp.
+FF FF 00 00 00 02 01 41 38 A2
+2018-06-15 15:01:18.640: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 15:01:18.640: Send S1F13(296670).
+00 01 81 0D 00 00 00 04 86 DE   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.017 seconds to log this message.
+2018-06-15 15:01:18.705: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 15:01:18.705: Receive S1F14(296670).
+00 00 01 0E 00 00 00 04 86 DE   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 15:01:49.534: Send Separate.req.
+FF FF 00 00 00 09 00 04 86 DF
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 15:04:30.683: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 15:06:06.744: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 15:08:54.517: Receive Select.req.
+FF FF 00 00 00 01 01 48 2D BA
+2018-06-15 15:08:54.547: Send Select.rsp.
+FF FF 00 00 00 02 01 48 2D BA
+2018-06-15 15:08:54.583: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 15:08:54.583: Send S1F13(8245151).
+00 01 81 0D 00 00 00 7D CF 9F   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.02 seconds to log this message.
+2018-06-15 15:08:54.654: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 15:08:54.654: Receive S1F14(8245151).
+00 00 01 0E 00 00 00 7D CF 9F   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2018-06-15 15:09:16.629: Send Separate.req.
+FF FF 00 00 00 09 00 7D CF A0
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 15:09:33.129: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 15:09:38.625: Receive Select.req.
+FF FF 00 00 00 01 01 48 D9 F0
+2018-06-15 15:09:38.654: Send Select.rsp.
+FF FF 00 00 00 02 01 48 D9 F0
+2018-06-15 15:09:38.684: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 15:09:38.684: Send S1F13(4641985).
+00 01 81 0D 00 00 00 46 D4 C1   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.016 seconds to log this message.
+2018-06-15 15:09:38.749: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 15:09:38.749: Receive S1F14(4641985).
+00 00 01 0E 00 00 00 46 D4 C1   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 15:10:38.566: Receive Linktest.req.
+FF FF 00 00 00 05 01 48 D9 F2
+2018-06-15 15:10:38.587: Send Linktest.rsp.
+FF FF 00 00 00 06 01 48 D9 F2
+2018-06-15 15:10:38.665: Send Linktest.req.
+FF FF 00 00 00 05 00 46 D4 C2
+2018-06-15 15:10:38.684: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 46 D4 C2
+2018-06-15 15:11:23.776: Receive Data Message.
+00 00 00 10 00 00 86 13 00 00
+2018-06-15 15:11:23.776: Receive S6F19(21551603).
+00 00 86 13 00 00 01 48 D9 F3   B1 04 00 00 1B 59
+S6F19 W /* Individual Report Request */
+<U4[1] 7001> /* Name = RPTID */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 15:11:23.804: Send Data Message.
+00 00 00 75 00 01 06 14 00 00
+2018-06-15 15:11:23.804: Send S6F20(21551603).
+00 01 06 14 00 00 01 48 D9 F3   01 03 A5 01 05 41 64 54 65 73
+74 4A 4F 42 30 30 30 5F 31 32   33 34 35 36 37 38 39 5F 31 32
+33 34 35 36 37 38 39 5F 31 32   33 34 35 36 37 38 39 5F 31 32
+33 34 35 36 37 38 39 5F 31 32   33 34 35 36 37 38 39 5F 31 32
+33 34 35 36 37 38 39 5F 31 32   33 34 35 36 37 38 39 5F 31 32
+33 34 35 36 37 38 39 5F 31 32   33 34 35 36 37 38 39
+S6F20  /* Individual Report Data */
+<L[3]
+  <U1[1] 5> /* Name = V, Keyword = Value */
+  <A[100]"TestJOB000_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789"> /* Name = V, Keyword = Value */
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 15:11:27.460: Receive Data Message.
+00 00 00 10 00 00 86 0F 00 00
+2018-06-15 15:11:27.460: Receive S6F15(21551604).
+00 00 86 0F 00 00 01 48 D9 F4   B1 04 00 00 00 65
+S6F15 W /* Event Report Request */
+<U4[1] 101> /* Name = CEID */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 15:11:30.430: Receive Data Message.
+00 00 00 10 00 00 86 0F 00 00
+2018-06-15 15:11:30.430: Receive S6F15(21551605).
+00 00 86 0F 00 00 01 48 D9 F5   B1 04 00 00 00 66
+S6F15 W /* Event Report Request */
+<U4[1] 102> /* Name = CEID */
+.
+Program takes      0.001 seconds to log this message.
+2018-06-15 15:11:32.462: Receive Data Message.
+00 00 00 10 00 00 86 0F 00 00
+2018-06-15 15:11:32.462: Receive S6F15(21551606).
+00 00 86 0F 00 00 01 48 D9 F6   B1 04 00 00 00 67
+S6F15 W /* Event Report Request */
+<U4[1] 103> /* Name = CEID */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 15:11:38.566: Receive Linktest.req.
+FF FF 00 00 00 05 01 48 D9 F7
+2018-06-15 15:11:38.590: Send Linktest.rsp.
+FF FF 00 00 00 06 01 48 D9 F7
+2018-06-15 15:11:41.316: Receive Data Message.
+00 00 00 10 00 00 86 13 00 00
+2018-06-15 15:11:41.316: Receive S6F19(21551608).
+00 00 86 13 00 00 01 48 D9 F8   B1 04 00 00 1B 59
+S6F19 W /* Individual Report Request */
+<U4[1] 7001> /* Name = RPTID */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 15:11:41.343: Send Data Message.
+00 00 00 75 00 01 06 14 00 00
+2018-06-15 15:11:41.343: Send S6F20(21551608).
+00 01 06 14 00 00 01 48 D9 F8   01 03 A5 01 05 41 64 54 65 73
+74 4A 4F 42 30 30 30 5F 31 32   33 34 35 36 37 38 39 5F 31 32
+33 34 35 36 37 38 39 5F 31 32   33 34 35 36 37 38 39 5F 31 32
+33 34 35 36 37 38 39 5F 31 32   33 34 35 36 37 38 39 5F 31 32
+33 34 35 36 37 38 39 5F 31 32   33 34 35 36 37 38 39 5F 31 32
+33 34 35 36 37 38 39 5F 31 32   33 34 35 36 37 38 39
+S6F20  /* Individual Report Data */
+<L[3]
+  <U1[1] 5> /* Name = DATAID */
+  <A[100]"TestJOB000_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789"> /* Name = CEID */
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 15:11:43.316: Receive Data Message.
+00 00 00 10 00 00 86 13 00 00
+2018-06-15 15:11:43.316: Receive S6F19(21551609).
+00 00 86 13 00 00 01 48 D9 F9   B1 04 00 00 1B 5A
+S6F19 W /* Individual Report Request */
+<U4[1] 7002> /* Name = RPTID */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 15:11:43.345: Send Data Message.
+00 00 00 78 00 01 06 14 00 00
+2018-06-15 15:11:43.345: Send S6F20(21551609).
+00 01 06 14 00 00 01 48 D9 F9   01 03 41 64 54 65 73 74 4A 4F
+42 30 30 30 5F 31 32 33 34 35   36 37 38 39 5F 31 32 33 34 35
+36 37 38 39 5F 31 32 33 34 35   36 37 38 39 5F 31 32 33 34 35
+36 37 38 39 5F 31 32 33 34 35   36 37 38 39 5F 31 32 33 34 35
+36 37 38 39 5F 31 32 33 34 35   36 37 38 39 5F 31 32 33 34 35
+36 37 38 39 5F 31 32 33 34 35   36 37 38 39 91 04 40 3F 34 D7
+S6F20  /* Individual Report Data */
+<L[3]
+  <A[100]"TestJOB000_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789"> /* Name = V, Keyword = Value */
+  <F4[1] 2.9876> /* Name = V, Keyword = Value */
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 15:11:51.562 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+2018-06-15 15:11:51.692: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+[DebugLog] 15:11:54.740 Send_Disconnect() exception:無法存取已處置的物件。
+物件名稱: 'System.Net.Sockets.NetworkStream'。
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 15:14:18.996: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 15:14:25.575: Receive Select.req.
+FF FF 00 00 00 01 01 4D 3A E4
+2018-06-15 15:14:25.633: Send Select.rsp.
+FF FF 00 00 00 02 01 4D 3A E4
+2018-06-15 15:14:25.671: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 15:14:25.671: Send S1F13(8781133).
+00 01 81 0D 00 00 00 85 FD 4D   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.016 seconds to log this message.
+2018-06-15 15:14:25.714: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 15:14:25.714: Receive S1F14(8781133).
+00 00 01 0E 00 00 00 85 FD 4D   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 15:15:25.524: Receive Linktest.req.
+FF FF 00 00 00 05 01 4D 3A E6
+2018-06-15 15:15:25.571: Send Linktest.rsp.
+FF FF 00 00 00 06 01 4D 3A E6
+2018-06-15 15:15:25.649: Send Linktest.req.
+FF FF 00 00 00 05 00 85 FD 4E
+2018-06-15 15:15:25.677: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 85 FD 4E
+2018-06-15 15:16:25.525: Receive Linktest.req.
+FF FF 00 00 00 05 01 4D 3A E7
+2018-06-15 15:16:25.562: Send Linktest.rsp.
+FF FF 00 00 00 06 01 4D 3A E7
+2018-06-15 15:16:25.683: Send Linktest.req.
+FF FF 00 00 00 05 00 85 FD 4F
+2018-06-15 15:16:25.716: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 85 FD 4F
+2018-06-15 15:16:51.040: Send Separate.req.
+FF FF 00 00 00 09 00 85 FD 50
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 15:17:18.067: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 15:17:21.771: Receive Select.req.
+FF FF 00 00 00 01 01 4F EB 2F
+2018-06-15 15:17:21.805: Send Select.rsp.
+FF FF 00 00 00 02 01 4F EB 2F
+2018-06-15 15:17:21.841: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 15:17:21.841: Send S1F13(9719907).
+00 01 81 0D 00 00 00 94 50 63   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.019 seconds to log this message.
+2018-06-15 15:17:21.900: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 15:17:21.900: Receive S1F14(9719907).
+00 00 01 0E 00 00 00 94 50 63   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 15:17:46.195: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 15:18:41.631: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 15:18:43.753: Receive Select.req.
+FF FF 00 00 00 01 01 51 2B 5A
+2018-06-15 15:18:43.799: Send Select.rsp.
+FF FF 00 00 00 02 01 51 2B 5A
+2018-06-15 15:18:43.839: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 15:18:43.839: Send S1F13(4491690).
+00 01 81 0D 00 00 00 44 89 AA   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.017 seconds to log this message.
+2018-06-15 15:18:43.886: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 15:18:43.886: Receive S1F14(4491690).
+00 00 01 0E 00 00 00 44 89 AA   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 15:20:03.333: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 15:20:06.542: Receive Select.req.
+FF FF 00 00 00 01 01 52 6E C0
+2018-06-15 15:20:06.580: Send Select.rsp.
+FF FF 00 00 00 02 01 52 6E C0
+2018-06-15 15:20:06.620: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 15:20:06.620: Send S1F13(1936826).
+00 01 81 0D 00 00 00 1D 8D BA   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.016 seconds to log this message.
+2018-06-15 15:20:06.667: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 15:20:06.667: Receive S1F14(1936826).
+00 00 01 0E 00 00 00 1D 8D BA   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 15:21:36.888: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 15:21:45.711: Receive Select.req.
+FF FF 00 00 00 01 01 53 F2 31
+2018-06-15 15:21:45.748: Send Select.rsp.
+FF FF 00 00 00 02 01 53 F2 31
+2018-06-15 15:21:45.786: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 15:21:45.786: Send S1F13(569427).
+00 01 81 0D 00 00 00 08 B0 53   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.016 seconds to log this message.
+2018-06-15 15:21:45.830: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 15:21:45.830: Receive S1F14(569427).
+00 00 01 0E 00 00 00 08 B0 53   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 15:22:36.850: Send Separate.req.
+FF FF 00 00 00 09 00 08 B0 54
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 15:23:05.844: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 15:23:57.005: Receive Select.req.
+FF FF 00 00 00 01 01 55 F3 0C
+2018-06-15 15:23:57.041: Send Select.rsp.
+FF FF 00 00 00 02 01 55 F3 0C
+2018-06-15 15:23:57.080: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 15:23:57.080: Send S1F13(3351415).
+00 01 81 0D 00 00 00 33 23 77   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.014 seconds to log this message.
+2018-06-15 15:23:57.122: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 15:23:57.122: Receive S1F14(3351415).
+00 00 01 0E 00 00 00 33 23 77   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 15:24:37.919: Send Separate.req.
+FF FF 00 00 00 09 00 33 23 78
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 15:24:57.863: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 16:20:01.735: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 16:20:05.732: Receive Select.req.
+FF FF 00 00 00 01 01 89 5A 28
+2018-06-15 16:20:05.814: Send Select.rsp.
+FF FF 00 00 00 02 01 89 5A 28
+2018-06-15 16:20:05.853: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 16:20:05.853: Send S1F13(231327).
+00 01 81 0D 00 00 00 03 87 9F   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.017 seconds to log this message.
+2018-06-15 16:20:05.899: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 16:20:05.899: Receive S1F14(231327).
+00 00 01 0E 00 00 00 03 87 9F   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 16:21:05.692: Receive Linktest.req.
+FF FF 00 00 00 05 01 89 5A 2A
+2018-06-15 16:21:05.730: Send Linktest.rsp.
+FF FF 00 00 00 06 01 89 5A 2A
+2018-06-15 16:21:05.819: Send Linktest.req.
+FF FF 00 00 00 05 00 03 87 A0
+2018-06-15 16:21:05.846: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 03 87 A0
+2018-06-15 16:22:05.693: Receive Linktest.req.
+FF FF 00 00 00 05 01 89 5A 2B
+2018-06-15 16:22:05.730: Send Linktest.rsp.
+FF FF 00 00 00 06 01 89 5A 2B
+2018-06-15 16:22:05.849: Send Linktest.req.
+FF FF 00 00 00 05 00 03 87 A1
+2018-06-15 16:22:05.892: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 03 87 A1
+2018-06-15 16:23:05.692: Receive Linktest.req.
+FF FF 00 00 00 05 01 89 5A 2C
+2018-06-15 16:23:05.726: Send Linktest.rsp.
+FF FF 00 00 00 06 01 89 5A 2C
+2018-06-15 16:23:05.895: Send Linktest.req.
+FF FF 00 00 00 05 00 03 87 A2
+2018-06-15 16:23:05.927: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 03 87 A2
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 16:25:35.502: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 16:25:42.203: Receive Select.req.
+FF FF 00 00 00 01 01 8E 7C 67
+2018-06-15 16:25:42.239: Send Select.rsp.
+FF FF 00 00 00 02 01 8E 7C 67
+2018-06-15 16:25:42.284: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 16:25:42.284: Send S1F13(2840468).
+00 01 81 0D 00 00 00 2B 57 94   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.014 seconds to log this message.
+2018-06-15 16:25:42.328: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 16:25:42.328: Receive S1F14(2840468).
+00 00 01 0E 00 00 00 2B 57 94   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 16:26:42.139: Receive Linktest.req.
+FF FF 00 00 00 05 01 8E 7C 69
+2018-06-15 16:26:42.192: Send Linktest.rsp.
+FF FF 00 00 00 06 01 8E 7C 69
+2018-06-15 16:26:42.243: Send Linktest.req.
+FF FF 00 00 00 05 00 2B 57 95
+2018-06-15 16:26:42.271: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 2B 57 95
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 16:27:43.892: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 16:27:48.919: Receive Select.req.
+FF FF 00 00 00 01 01 90 6B 76
+2018-06-15 16:27:48.967: Send Select.rsp.
+FF FF 00 00 00 02 01 90 6B 76
+2018-06-15 16:27:49.008: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 16:27:49.008: Send S1F13(2966093).
+00 01 81 0D 00 00 00 2D 42 4D   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.015 seconds to log this message.
+2018-06-15 16:27:49.068: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 16:27:49.068: Receive S1F14(2966093).
+00 00 01 0E 00 00 00 2D 42 4D   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 16:28:24.154: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 16:28:49.762: Receive Select.req.
+FF FF 00 00 00 01 01 91 59 00
+2018-06-15 16:28:49.797: Send Select.rsp.
+FF FF 00 00 00 02 01 91 59 00
+2018-06-15 16:28:49.835: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 16:28:49.835: Send S1F13(2742322).
+00 01 81 0D 00 00 00 29 D8 32   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.016 seconds to log this message.
+2018-06-15 16:28:49.911: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 16:28:49.911: Receive S1F14(2742322).
+00 00 01 0E 00 00 00 29 D8 32   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 16:33:02.209: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 16:33:05.569: Receive Select.req.
+FF FF 00 00 00 01 01 95 40 52
+2018-06-15 16:33:05.603: Send Select.rsp.
+FF FF 00 00 00 02 01 95 40 52
+2018-06-15 16:33:05.642: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 16:33:05.642: Send S1F13(1195954).
+00 01 81 0D 00 00 00 12 3F B2   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.019 seconds to log this message.
+2018-06-15 16:33:05.721: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 16:33:05.721: Receive S1F14(1195954).
+00 00 01 0E 00 00 00 12 3F B2   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 16:34:05.509: Receive Linktest.req.
+FF FF 00 00 00 05 01 95 40 54
+2018-06-15 16:34:05.554: Send Linktest.rsp.
+FF FF 00 00 00 06 01 95 40 54
+2018-06-15 16:35:05.511: Receive Linktest.req.
+FF FF 00 00 00 05 01 95 40 55
+2018-06-15 16:35:05.548: Send Linktest.rsp.
+FF FF 00 00 00 06 01 95 40 55
+2018-06-15 16:35:16.988: Send Linktest.req.
+FF FF 00 00 00 05 00 12 3F B3
+2018-06-15 16:35:17.042: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 12 3F B3
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 16:37:08.068: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 16:37:11.812: Receive Select.req.
+FF FF 00 00 00 01 01 99 02 2A
+2018-06-15 16:37:11.847: Send Select.rsp.
+FF FF 00 00 00 02 01 99 02 2A
+2018-06-15 16:37:11.885: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 16:37:11.885: Send S1F13(8133168).
+00 01 81 0D 00 00 00 7C 1A 30   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.016 seconds to log this message.
+2018-06-15 16:37:11.962: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 16:37:11.962: Receive S1F14(8133168).
+00 00 01 0E 00 00 00 7C 1A 30   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 16:38:17.922: Receive Linktest.req.
+FF FF 00 00 00 05 01 99 02 2C
+2018-06-15 16:38:17.962: Send Linktest.rsp.
+FF FF 00 00 00 06 01 99 02 2C
+[DebugLog] 16:38:18.165 ListenLoop() exception = 無法從傳輸連接讀取資料: 連線已被您主機上的軟體中止。。
+2018-06-15 16:38:18.948: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 16:38:24.106: Receive Select.req.
+FF FF 00 00 00 01 01 9A 1C 9C
+2018-06-15 16:38:24.134: Send Select.rsp.
+FF FF 00 00 00 02 01 9A 1C 9C
+2018-06-15 16:38:24.162: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 16:38:24.162: Send S1F13(8133169).
+00 01 81 0D 00 00 00 7C 1A 31   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.001 seconds to log this message.
+2018-06-15 16:38:24.221: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 16:38:24.221: Receive S1F14(8133169).
+00 00 01 0E 00 00 00 7C 1A 31   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 16:38:54.915: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 16:38:59.209: Receive Select.req.
+FF FF 00 00 00 01 01 9A A5 D8
+2018-06-15 16:38:59.240: Send Select.rsp.
+FF FF 00 00 00 02 01 9A A5 D8
+2018-06-15 16:38:59.276: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 16:38:59.276: Send S1F13(9806024).
+00 01 81 0D 00 00 00 95 A0 C8   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.017 seconds to log this message.
+2018-06-15 16:38:59.350: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 16:38:59.350: Receive S1F14(9806024).
+00 00 01 0E 00 00 00 95 A0 C8   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 16:39:31.009: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 16:39:38.596: Receive Select.req.
+FF FF 00 00 00 01 01 9B 3F 97
+2018-06-15 16:39:38.634: Send Select.rsp.
+FF FF 00 00 00 02 01 9B 3F 97
+2018-06-15 16:39:38.671: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 16:39:38.671: Send S1F13(3708243).
+00 01 81 0D 00 00 00 38 95 53   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.018 seconds to log this message.
+2018-06-15 16:39:38.743: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 16:39:38.743: Receive S1F14(3708243).
+00 00 01 0E 00 00 00 38 95 53   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 16:40:38.544: Receive Linktest.req.
+FF FF 00 00 00 05 01 9B 3F 99
+2018-06-15 16:40:38.578: Send Linktest.rsp.
+FF FF 00 00 00 06 01 9B 3F 99
+2018-06-15 16:40:38.710: Send Linktest.req.
+FF FF 00 00 00 05 00 38 95 54
+2018-06-15 16:40:38.760: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 38 95 54
+2018-06-15 16:41:38.544: Receive Linktest.req.
+FF FF 00 00 00 05 01 9B 3F 9A
+2018-06-15 16:41:38.589: Send Linktest.rsp.
+FF FF 00 00 00 06 01 9B 3F 9A
+2018-06-15 16:41:38.778: Send Linktest.req.
+FF FF 00 00 00 05 00 38 95 55
+2018-06-15 16:41:38.826: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 38 95 55
+2018-06-15 16:42:38.543: Receive Linktest.req.
+FF FF 00 00 00 05 01 9B 3F 9B
+2018-06-15 16:42:38.577: Send Linktest.rsp.
+FF FF 00 00 00 06 01 9B 3F 9B
+2018-06-15 16:42:38.859: Send Linktest.req.
+FF FF 00 00 00 05 00 38 95 56
+2018-06-15 16:42:38.907: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 38 95 56
+2018-06-15 16:43:22.274: Send Separate.req.
+FF FF 00 00 00 09 00 38 95 57
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 17:26:13.631: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 17:26:18.313: Receive Select.req.
+FF FF 00 00 00 01 01 C5 F7 CF
+2018-06-15 17:26:18.346: Send Select.rsp.
+FF FF 00 00 00 02 01 C5 F7 CF
+2018-06-15 17:26:18.402: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 17:26:18.402: Send S1F13(8653331).
+00 01 81 0D 00 00 00 84 0A 13   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.019 seconds to log this message.
+2018-06-15 17:26:18.473: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 17:26:18.473: Receive S1F14(8653331).
+00 00 01 0E 00 00 00 84 0A 13   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 17:26:27.242: Send Data Message.
+00 00 00 27 00 01 86 0B 00 00
+2018-06-15 17:26:27.242: Send S6F11(8653332).
+00 01 86 0B 00 00 00 84 0A 14   01 03 A9 02 00 01 B1 04 00 00
+00 65 01 01 01 02 B1 04 00 00   1B 59 01 03 A5 01 00 41 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U2[1] 1> /* Name = DATAID */
+  <U4[1] 101> /* Name = CEID, Keyword = EQP_EVENT_2 (101) */
+  <L[1]
+    <L[2]
+      <U4[1] 7001> /* Name = RPTID */
+      <L[3]
+        <U1[1] 0> /* Name = Value, Keyword = SV_EQP_STSTUS (100001) */
+        <A[0]""> /* Name = Value, Keyword = SV_CONTROL_JOB_NAME (2002) */
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2018-06-15 17:26:27.358: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2018-06-15 17:26:27.358: Receive S6F12(8653332).
+00 00 06 0C 00 00 00 84 0A 14   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 17:26:35.259: Send Data Message.
+00 00 00 8B 00 01 86 0B 00 00
+2018-06-15 17:26:35.259: Send S6F11(8653333).
+00 01 86 0B 00 00 00 84 0A 15   01 03 A9 02 00 02 B1 04 00 00
+00 65 01 01 01 02 B1 04 00 00   1B 59 01 03 A5 01 05 41 64 54
+65 73 74 4A 4F 42 30 30 30 5F   31 32 33 34 35 36 37 38 39 5F
+31 32 33 34 35 36 37 38 39 5F   31 32 33 34 35 36 37 38 39 5F
+31 32 33 34 35 36 37 38 39 5F   31 32 33 34 35 36 37 38 39 5F
+31 32 33 34 35 36 37 38 39 5F   31 32 33 34 35 36 37 38 39 5F
+31 32 33 34 35 36 37 38 39 5F   31 32 33 34 35 36 37 38 39
+S6F11 W /* Event Report Send */
+<L[3]
+  <U2[1] 2> /* Name = DATAID */
+  <U4[1] 101> /* Name = CEID, Keyword = EQP_EVENT_2 (101) */
+  <L[1]
+    <L[2]
+      <U4[1] 7001> /* Name = RPTID */
+      <L[3]
+        <U1[1] 5> /* Name = Value, Keyword = SV_EQP_STSTUS (100001) */
+        <A[100]"TestJOB000_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789"> /* Name = Value, Keyword = SV_CONTROL_JOB_NAME (2002) */
+      >
+    >
+  >
+>
+.
+Program takes      0.003 seconds to log this message.
+2018-06-15 17:26:35.352: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2018-06-15 17:26:35.352: Receive S6F12(8653333).
+00 00 06 0C 00 00 00 84 0A 15   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 17:27:18.212: Receive Linktest.req.
+FF FF 00 00 00 05 01 C5 F7 D3
+2018-06-15 17:27:18.250: Send Linktest.rsp.
+FF FF 00 00 00 06 01 C5 F7 D3
+2018-06-15 17:27:27.305: Send Data Message.
+00 00 00 2D 00 01 86 0B 00 00
+2018-06-15 17:27:27.305: Send S6F11(8653334).
+00 01 86 0B 00 00 00 84 0A 16   01 03 A9 02 00 03 B1 04 00 00
+00 65 01 01 01 02 B1 04 00 00   1B 59 01 03 A5 01 05 41 06 48
+4F 48 4F 48 4F
+S6F11 W /* Event Report Send */
+<L[3]
+  <U2[1] 3> /* Name = DATAID */
+  <U4[1] 101> /* Name = CEID, Keyword = EQP_EVENT_2 (101) */
+  <L[1]
+    <L[2]
+      <U4[1] 7001> /* Name = RPTID */
+      <L[3]
+        <U1[1] 5> /* Name = Value, Keyword = SV_EQP_STSTUS (100001) */
+        <A[6]"HOHOHO"> /* Name = Value, Keyword = SV_CONTROL_JOB_NAME (2002) */
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 17:27:27.388: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2018-06-15 17:27:27.388: Receive S6F12(8653334).
+00 00 06 0C 00 00 00 84 0A 16   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 17:27:50.487: Send Data Message.
+00 00 00 2D 00 01 86 0B 00 00
+2018-06-15 17:27:50.487: Send S6F11(8653335).
+00 01 86 0B 00 00 00 84 0A 17   01 03 A9 02 00 04 B1 04 00 00
+00 65 01 01 01 02 B1 04 00 00   1B 59 01 03 A5 01 93 41 06 48
+4F 48 4F 48 4F
+S6F11 W /* Event Report Send */
+<L[3]
+  <U2[1] 4> /* Name = DATAID */
+  <U4[1] 101> /* Name = CEID, Keyword = EQP_EVENT_2 (101) */
+  <L[1]
+    <L[2]
+      <U4[1] 7001> /* Name = RPTID */
+      <L[3]
+        <U1[1] 147> /* Name = Value, Keyword = SV_EQP_STSTUS (100001) */
+        <A[6]"HOHOHO"> /* Name = Value, Keyword = SV_CONTROL_JOB_NAME (2002) */
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 17:27:50.575: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2018-06-15 17:27:50.575: Receive S6F12(8653335).
+00 00 06 0C 00 00 00 84 0A 17   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 17:28:18.212: Receive Linktest.req.
+FF FF 00 00 00 05 01 C5 F7 D6
+2018-06-15 17:28:18.259: Send Linktest.rsp.
+FF FF 00 00 00 06 01 C5 F7 D6
+2018-06-15 17:28:50.390: Send Linktest.req.
+FF FF 00 00 00 05 00 84 0A 18
+2018-06-15 17:28:50.430: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 84 0A 18
+2018-06-15 17:29:18.212: Receive Linktest.req.
+FF FF 00 00 00 05 01 C5 F7 D7
+2018-06-15 17:29:18.267: Send Linktest.rsp.
+FF FF 00 00 00 06 01 C5 F7 D7
+2018-06-15 17:29:50.435: Send Linktest.req.
+FF FF 00 00 00 05 00 84 0A 19
+2018-06-15 17:29:50.480: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 84 0A 19
+2018-06-15 17:30:05.016: Receive Data Message.
+00 00 00 10 00 00 86 13 00 00
+2018-06-15 17:30:05.016: Receive S6F19(29751256).
+00 00 86 13 00 00 01 C5 F7 D8   B1 04 00 00 1B 59
+S6F19 W /* Individual Report Request */
+<U4[1] 7001> /* Name = RPTID */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 17:30:05.049: Send Data Message.
+00 00 00 17 00 01 06 14 00 00
+2018-06-15 17:30:05.049: Send S6F20(29751256).
+00 01 06 14 00 00 01 C5 F7 D8   01 03 A5 01 93 41 06 48 4F 48
+4F 48 4F
+S6F20  /* Individual Report Data */
+<L[3]
+  <U1[1] 147> /* Name = V, Keyword = Value */
+  <A[6]"HOHOHO"> /* Name = V, Keyword = Value */
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 17:30:13.078 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+2018-06-15 17:30:13.484: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+[DebugLog] 17:30:15.439 Send_Disconnect() exception:無法存取已處置的物件。
+物件名稱: 'System.Net.Sockets.NetworkStream'。
+//////////////////////////////////////////////////////////////////////////
+2018-06-15 17:34:22.315: CTLT_SECS (HSMS Mode) Ver.2.2.3 Start...Driver: NO_LICENCE
+2018-06-15 17:34:26.162: Receive Select.req.
+FF FF 00 00 00 01 01 CD 69 A4
+2018-06-15 17:34:26.191: Send Select.rsp.
+FF FF 00 00 00 02 01 CD 69 A4
+2018-06-15 17:34:26.242: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+2018-06-15 17:34:26.242: Send S1F13(7044276).
+00 01 81 0D 00 00 00 6B 7C B4   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[6]"EqMDLN"> /* Name = MDLN, Keyword = GEM_MDLN (24) */
+  <A[6]"SofRev"> /* Name = SoftRev, Keyword = GEM_SOFTREV (25) */
+>
+.
+Program takes      0.016 seconds to log this message.
+2018-06-15 17:34:26.282: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2018-06-15 17:34:26.282: Receive S1F14(7044276).
+00 00 01 0E 00 00 00 6B 7C B4   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 17:34:32.278: Send Data Message.
+00 00 00 27 00 01 86 0B 00 00
+2018-06-15 17:34:32.278: Send S6F11(7044277).
+00 01 86 0B 00 00 00 6B 7C B5   01 03 A9 02 00 01 B1 04 00 00
+00 65 01 01 01 02 B1 04 00 00   1B 59 01 03 A5 01 00 41 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U2[1] 1> /* Name = DATAID */
+  <U4[1] 101> /* Name = CEID, Keyword = EQP_EVENT_2 (101) */
+  <L[1]
+    <L[2]
+      <U4[1] 7001> /* Name = RPTID */
+      <L[3]
+        <U1[1] 0> /* Name = Value, Keyword = SV_EQP_STSTUS (100001) */
+        <A[0]""> /* Name = Value, Keyword = SV_CONTROL_JOB_NAME (2002) */
+      >
+    >
+  >
+>
+.
+Program takes      0.008 seconds to log this message.
+2018-06-15 17:34:32.334: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2018-06-15 17:34:32.334: Receive S6F12(7044277).
+00 00 06 0C 00 00 00 6B 7C B5   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 17:34:44.350: Send Data Message.
+00 00 00 8B 00 01 86 0B 00 00
+2018-06-15 17:34:44.350: Send S6F11(7044278).
+00 01 86 0B 00 00 00 6B 7C B6   01 03 A9 02 00 02 B1 04 00 00
+00 65 01 01 01 02 B1 04 00 00   1B 59 01 03 A5 01 05 41 64 54
+65 73 74 4A 4F 42 30 30 30 5F   31 32 33 34 35 36 37 38 39 5F
+31 32 33 34 35 36 37 38 39 5F   31 32 33 34 35 36 37 38 39 5F
+31 32 33 34 35 36 37 38 39 5F   31 32 33 34 35 36 37 38 39 5F
+31 32 33 34 35 36 37 38 39 5F   31 32 33 34 35 36 37 38 39 5F
+31 32 33 34 35 36 37 38 39 5F   31 32 33 34 35 36 37 38 39
+S6F11 W /* Event Report Send */
+<L[3]
+  <U2[1] 2> /* Name = DATAID */
+  <U4[1] 101> /* Name = CEID, Keyword = EQP_EVENT_2 (101) */
+  <L[1]
+    <L[2]
+      <U4[1] 7001> /* Name = RPTID */
+      <L[3]
+        <U1[1] 5> /* Name = Value, Keyword = SV_EQP_STSTUS (100001) */
+        <A[100]"TestJOB000_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789"> /* Name = Value, Keyword = SV_CONTROL_JOB_NAME (2002) */
+      >
+    >
+  >
+>
+.
+Program takes      0.009 seconds to log this message.
+2018-06-15 17:34:44.407: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2018-06-15 17:34:44.407: Receive S6F12(7044278).
+00 00 06 0C 00 00 00 6B 7C B6   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 17:34:55.887: Receive Data Message.
+00 00 00 10 00 00 86 0F 00 00
+2018-06-15 17:34:55.887: Receive S6F15(30239144).
+00 00 86 0F 00 00 01 CD 69 A8   B1 04 00 00 00 65
+S6F15 W /* Event Report Request */
+<U4[1] 101> /* Name = CEID, Keyword = EQP_EVENT_2 (101) */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 17:34:55.924: Send Data Message.
+00 00 00 8B 00 01 06 10 00 00
+2018-06-15 17:34:55.924: Send S6F16(30239144).
+00 01 06 10 00 00 01 CD 69 A8   01 03 A9 02 00 02 B1 04 00 00
+00 65 01 01 01 02 B1 04 00 00   1B 59 01 03 A5 01 05 41 64 54
+65 73 74 4A 4F 42 30 30 30 5F   31 32 33 34 35 36 37 38 39 5F
+31 32 33 34 35 36 37 38 39 5F   31 32 33 34 35 36 37 38 39 5F
+31 32 33 34 35 36 37 38 39 5F   31 32 33 34 35 36 37 38 39 5F
+31 32 33 34 35 36 37 38 39 5F   31 32 33 34 35 36 37 38 39 5F
+31 32 33 34 35 36 37 38 39 5F   31 32 33 34 35 36 37 38 39
+S6F16  /* Event Report Data */
+<L[3]
+  <U2[1] 2> /* Name = DATAID */
+  <U4[1] 101> /* Name = CEID, Keyword = EQP_EVENT_2 (101) */
+  <L[1]
+    <L[2]
+      <U4[1] 7001> /* Name = RPTID */
+      <L[3]
+        <U1[1] 5> /* Name = Value */
+        <A[100]"TestJOB000_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789"> /* Name = Value */
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 17:35:05.100: Receive Data Message.
+00 00 00 10 00 00 86 0F 00 00
+2018-06-15 17:35:05.100: Receive S6F15(30239145).
+00 00 86 0F 00 00 01 CD 69 A9   B1 04 00 00 00 67
+S6F15 W /* Event Report Request */
+<U4[1] 103> /* Name = CEID, Keyword = EQP_EVENT_4 (103) */
+.
+Program takes      0 seconds to log this message.
+2018-06-15 17:35:05.126: Send Data Message.
+00 00 00 A0 00 01 06 10 00 00
+2018-06-15 17:35:05.126: Send S6F16(30239145).
+00 01 06 10 00 00 01 CD 69 A9   01 03 A9 02 00 02 B1 04 00 00
+00 67 01 01 01 02 B1 04 00 00   1B 5C 01 0B 91 04 45 FD 20 FD
+A5 01 65 A9 02 1F A6 B1 04 04   D4 6B 70 91 04 45 FD 40 FD 65
+01 97 69 02 E0 56 71 04 FB 2A   F8 50 41 50 5F 31 32 33 34 35
+36 37 38 39 5F 31 32 33 34 35   36 37 38 39 5F 31 32 33 34 35
+36 37 38 39 5F 31 32 33 34 35   36 37 38 39 5F 31 32 33 34 35
+36 37 38 39 5F 31 32 33 34 35   36 37 38 39 5F 31 32 33 34 35
+36 37 38 39 5F 31 32 33 34 35   36 37 38 39 25 01 01 A5 01 05
+S6F16  /* Event Report Data */
+<L[3]
+  <U2[1] 2> /* Name = DATAID */
+  <U4[1] 103> /* Name = CEID, Keyword = EQP_EVENT_4 (103) */
+  <L[1]
+    <L[2]
+      <U4[1] 7004> /* Name = RPTID */
+      <L[11]
+        <F4[1] 8100.124> /* Name = Value */
+        <U1[1] 101> /* Name = Value */
+        <U2[1] 8102> /* Name = Value */
+        <U4[1] 81030000> /* Name = Value */
+        <F4[1] 8104.124> /* Name = Value */
+        <I1[1] -105> /* Name = Value */
+        <I2[1] -8106> /* Name = Value */
+        <I4[1] -81070000> /* Name = Value */
+        <A[80]"_123456789_123456789_123456789_123456789_123456789_123456789_123456789_123456789"> /* Name = Value */
+        <Boolean[1] 0x1> /* Name = Value */
+        <U1[1] 5> /* Name = Value */
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2018-06-15 17:35:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 AA
+2018-06-15 17:35:26.132: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 AA
+2018-06-15 17:36:04.202: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C B7
+2018-06-15 17:36:04.228: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C B7
+2018-06-15 17:36:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 AB
+2018-06-15 17:36:26.135: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 AB
+2018-06-15 17:37:04.231: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C B8
+2018-06-15 17:37:04.283: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C B8
+2018-06-15 17:37:26.107: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 AC
+2018-06-15 17:37:26.149: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 AC
+2018-06-15 17:38:04.290: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C B9
+2018-06-15 17:38:04.315: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C B9
+2018-06-15 17:38:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 AD
+2018-06-15 17:38:26.143: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 AD
+2018-06-15 17:39:04.318: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C BA
+2018-06-15 17:39:04.351: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C BA
+2018-06-15 17:39:26.107: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 AE
+2018-06-15 17:39:26.166: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 AE
+2018-06-15 17:40:04.365: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C BB
+2018-06-15 17:40:04.394: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C BB
+2018-06-15 17:40:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 AF
+2018-06-15 17:40:26.137: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 AF
+2018-06-15 17:41:04.409: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C BC
+2018-06-15 17:41:04.443: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C BC
+2018-06-15 17:41:26.107: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 B0
+2018-06-15 17:41:26.130: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 B0
+2018-06-15 17:42:04.447: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C BD
+2018-06-15 17:42:04.515: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C BD
+2018-06-15 17:42:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 B1
+2018-06-15 17:42:26.137: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 B1
+2018-06-15 17:43:04.514: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C BE
+2018-06-15 17:43:04.553: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C BE
+2018-06-15 17:43:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 B2
+2018-06-15 17:43:26.134: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 B2
+2018-06-15 17:44:04.557: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C BF
+2018-06-15 17:44:04.694: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C BF
+2018-06-15 17:44:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 B3
+2018-06-15 17:44:26.138: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 B3
+2018-06-15 17:45:04.702: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C C0
+2018-06-15 17:45:04.747: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C C0
+2018-06-15 17:45:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 B4
+2018-06-15 17:45:26.137: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 B4
+2018-06-15 17:46:04.753: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C C1
+2018-06-15 17:46:04.794: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C C1
+2018-06-15 17:46:26.107: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 B5
+2018-06-15 17:46:26.206: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 B5
+2018-06-15 17:47:04.803: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C C2
+2018-06-15 17:47:04.849: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C C2
+2018-06-15 17:47:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 B6
+2018-06-15 17:47:26.156: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 B6
+2018-06-15 17:48:04.846: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C C3
+2018-06-15 17:48:04.878: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C C3
+2018-06-15 17:48:26.107: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 B7
+2018-06-15 17:48:26.161: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 B7
+2018-06-15 17:49:04.884: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C C4
+2018-06-15 17:49:04.931: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C C4
+2018-06-15 17:49:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 B8
+2018-06-15 17:49:26.131: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 B8
+2018-06-15 17:50:04.937: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C C5
+2018-06-15 17:50:04.976: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C C5
+2018-06-15 17:50:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 B9
+2018-06-15 17:50:26.159: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 B9
+2018-06-15 17:51:05.001: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C C6
+2018-06-15 17:51:05.060: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C C6
+2018-06-15 17:51:26.109: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 BA
+2018-06-15 17:51:26.150: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 BA
+2018-06-15 17:52:05.082: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C C7
+2018-06-15 17:52:05.119: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C C7
+2018-06-15 17:52:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 BB
+2018-06-15 17:52:26.130: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 BB
+2018-06-15 17:53:05.126: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C C8
+2018-06-15 17:53:05.160: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C C8
+2018-06-15 17:53:26.107: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 BC
+2018-06-15 17:53:26.129: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 BC
+2018-06-15 17:54:05.164: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C C9
+2018-06-15 17:54:05.197: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C C9
+2018-06-15 17:54:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 BD
+2018-06-15 17:54:26.131: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 BD
+2018-06-15 17:55:05.203: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C CA
+2018-06-15 17:55:05.254: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C CA
+2018-06-15 17:55:26.107: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 BE
+2018-06-15 17:55:26.130: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 BE
+2018-06-15 17:56:05.258: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C CB
+2018-06-15 17:56:05.313: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C CB
+2018-06-15 17:56:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 BF
+2018-06-15 17:56:26.150: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 BF
+2018-06-15 17:57:05.318: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C CC
+2018-06-15 17:57:05.366: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C CC
+2018-06-15 17:57:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 C0
+2018-06-15 17:57:26.157: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 C0
+2018-06-15 17:58:05.369: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C CD
+2018-06-15 17:58:05.407: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C CD
+2018-06-15 17:58:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 C1
+2018-06-15 17:58:26.157: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 C1
+2018-06-15 17:59:05.414: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C CE
+2018-06-15 17:59:05.467: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C CE
+2018-06-15 17:59:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 C2
+2018-06-15 17:59:26.144: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 C2
+2018-06-15 18:00:05.475: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C CF
+2018-06-15 18:00:05.528: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C CF
+2018-06-15 18:00:26.107: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 C3
+2018-06-15 18:00:26.130: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 C3
+2018-06-15 18:01:05.534: Send Linktest.req.
+FF FF 00 00 00 05 00 6B 7C D0
+2018-06-15 18:01:05.585: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6B 7C D0
+2018-06-15 18:01:26.108: Receive Linktest.req.
+FF FF 00 00 00 05 01 CD 69 C4
+2018-06-15 18:01:26.156: Send Linktest.rsp.
+FF FF 00 00 00 06 01 CD 69 C4
+2018-06-15 18:01:45.226: Send Separate.req.
+FF FF 00 00 00 09 00 6B 7C D1

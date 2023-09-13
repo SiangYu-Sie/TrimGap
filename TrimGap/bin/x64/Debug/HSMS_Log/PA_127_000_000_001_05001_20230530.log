@@ -1,0 +1,374 @@
+//////////////////////////////////////////////////////////////////////////
+2023-05-30 09:34:38.380: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+//////////////////////////////////////////////////////////////////////////
+2023-05-30 14:02:15.076: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-30 14:02:15.461: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-30 14:02:15.559: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-30 14:02:22.928: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-30 14:02:22.928: Send S1F13(8552947).
+00 00 81 0D 00 00 00 82 81 F3   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.527 seconds to log this message.
+2023-05-30 14:02:23.458: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-05-30 14:02:23.458: Receive S1F14(8552947).
+00 00 01 0E 00 00 00 82 81 F3   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-05-30 14:03:28.378: Send Linktest.req.
+FF FF 00 00 00 05 00 82 81 F4
+2023-05-30 14:03:28.380: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 82 81 F4
+2023-05-30 14:03:35.606: Send Data Message.
+00 00 00 8D 00 00 86 0B 00 00
+2023-05-30 14:03:35.606: Send S6F11(8552949).
+00 00 86 0B 00 00 00 82 81 F5   01 03 B1 04 00 00 00 01 B1 04
+00 00 17 70 01 01 01 02 B1 04   00 00 00 63 01 34 A5 01 00 41
+00 41 00 41 00 41 00 41 00 41   00 41 00 41 00 41 00 41 00 41
+00 41 00 41 00 41 00 41 00 41   00 41 00 41 00 41 00 41 00 41
+00 41 00 41 00 41 00 41 00 41   00 41 00 41 00 41 00 41 00 41
+00 41 00 41 00 41 00 41 00 41   00 41 00 41 00 41 00 41 00 41
+00 41 00 41 00 41 00 41 00 41   00 41 00 41 00 41 00 41 00 41
+00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 1> /* Name = DATAID */
+  <U4[1] 6000> /* Name = CEID, Keyword = MeasureResultSend (6000) */
+  <L[1]
+    <L[2]
+      <U4[1] 99> /* Name = RPTID */
+      <L[52]
+        <U1[1] 0> /* Name = Value, Keyword = PortID (2001) */
+        <A[0]""> /* Name = Value, Keyword = CarrierID (2000) */
+        <A[0]""> /* Name = Value, Keyword = Slot1_Info (4001) */
+        <A[0]""> /* Name = Value, Keyword = Slot2_Info (4002) */
+        <A[0]""> /* Name = Value, Keyword = Slot3_Info (4003) */
+        <A[0]""> /* Name = Value, Keyword = Slot4_Info (4004) */
+        <A[0]""> /* Name = Value, Keyword = Slot5_Info (4005) */
+        <A[0]""> /* Name = Value, Keyword = Slot6_Info (4006) */
+        <A[0]""> /* Name = Value, Keyword = Slot7_Info (4007) */
+        <A[0]""> /* Name = Value, Keyword = Slot8_Info (4008) */
+        <A[0]""> /* Name = Value, Keyword = Slot9_Info (4009) */
+        <A[0]""> /* Name = Value, Keyword = Slot10_Info (4010) */
+        <A[0]""> /* Name = Value, Keyword = Slot11_Info (4011) */
+        <A[0]""> /* Name = Value, Keyword = Slot12_Info (4012) */
+        <A[0]""> /* Name = Value, Keyword = Slot13_Info (4013) */
+        <A[0]""> /* Name = Value, Keyword = Slot14_Info (4014) */
+        <A[0]""> /* Name = Value, Keyword = Slot15_Info (4015) */
+        <A[0]""> /* Name = Value, Keyword = Slot16_Info (4016) */
+        <A[0]""> /* Name = Value, Keyword = Slot17_Info (4017) */
+        <A[0]""> /* Name = Value, Keyword = Slot18_Info (4018) */
+        <A[0]""> /* Name = Value, Keyword = Slot19_Info (4019) */
+        <A[0]""> /* Name = Value, Keyword = Slot20_Info (4020) */
+        <A[0]""> /* Name = Value, Keyword = Slot21_Info (4021) */
+        <A[0]""> /* Name = Value, Keyword = Slot22_Info (4022) */
+        <A[0]""> /* Name = Value, Keyword = Slot23_Info (4023) */
+        <A[0]""> /* Name = Value, Keyword = Slot24_Info (4024) */
+        <A[0]""> /* Name = Value, Keyword = Slot25_Info (4025) */
+        <A[0]""> /* Name = Value, Keyword = Slot1_Max (4026) */
+        <A[0]""> /* Name = Value, Keyword = Slot2_Max (4027) */
+        <A[0]""> /* Name = Value, Keyword = Slot3_Max (4028) */
+        <A[0]""> /* Name = Value, Keyword = Slot4_Max (4029) */
+        <A[0]""> /* Name = Value, Keyword = Slot5_Max (4030) */
+        <A[0]""> /* Name = Value, Keyword = Slot6_Max (4031) */
+        <A[0]""> /* Name = Value, Keyword = Slot7_Max (4032) */
+        <A[0]""> /* Name = Value, Keyword = Slot8_Max (4033) */
+        <A[0]""> /* Name = Value, Keyword = Slot9_Max (4034) */
+        <A[0]""> /* Name = Value, Keyword = Slot10_Max (4035) */
+        <A[0]""> /* Name = Value, Keyword = Slot11_Max (4036) */
+        <A[0]""> /* Name = Value, Keyword = Slot12_Max (4037) */
+        <A[0]""> /* Name = Value, Keyword = Slot13_Max (4038) */
+        <A[0]""> /* Name = Value, Keyword = Slot14_Max (4039) */
+        <A[0]""> /* Name = Value, Keyword = Slot15_Max (4040) */
+        <A[0]""> /* Name = Value, Keyword = Slot16_Max (4041) */
+        <A[0]""> /* Name = Value, Keyword = Slot17_Max (4042) */
+        <A[0]""> /* Name = Value, Keyword = Slot18_Max (4043) */
+        <A[0]""> /* Name = Value, Keyword = Slot19_Max (4044) */
+        <A[0]""> /* Name = Value, Keyword = Slot20_Max (4045) */
+        <A[0]""> /* Name = Value, Keyword = Slot21_Max (4046) */
+        <A[0]""> /* Name = Value, Keyword = Slot22_Max (4047) */
+        <A[0]""> /* Name = Value, Keyword = Slot23_Max (4048) */
+        <A[0]""> /* Name = Value, Keyword = Slot24_Max (4049) */
+        <A[0]""> /* Name = Value, Keyword = Slot25_Max (4050) */
+      >
+    >
+  >
+>
+.
+Program takes      0.152 seconds to log this message.
+2023-05-30 14:03:35.762: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-05-30 14:03:35.762: Receive S6F12(8552949).
+00 00 06 0C 00 00 00 82 81 F5   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-05-30 14:08:22.095: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-30 14:08:22.236: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-30 14:08:22.348: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-30 14:08:29.377: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-30 14:08:29.377: Send S1F13(6391358).
+00 00 81 0D 00 00 00 61 86 3E   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.182 seconds to log this message.
+2023-05-30 14:08:29.561: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-05-30 14:08:29.561: Receive S1F14(6391358).
+00 00 01 0E 00 00 00 61 86 3E   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-05-30 14:09:34.814: Send Linktest.req.
+FF FF 00 00 00 05 00 61 86 3F
+2023-05-30 14:09:34.817: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 61 86 3F
+2023-05-30 14:10:40.611: Send Linktest.req.
+FF FF 00 00 00 05 00 61 86 40
+2023-05-30 14:10:40.614: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 61 86 40
+2023-05-30 14:11:46.390: Send Linktest.req.
+FF FF 00 00 00 05 00 61 86 41
+2023-05-30 14:11:46.393: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 61 86 41
+2023-05-30 14:12:51.925: Send Linktest.req.
+FF FF 00 00 00 05 00 61 86 42
+2023-05-30 14:12:51.928: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 61 86 42
+2023-05-30 14:13:26.015: Send Data Message.
+00 00 00 8D 00 00 86 0B 00 00
+2023-05-30 14:13:26.015: Send S6F11(6391363).
+00 00 86 0B 00 00 00 61 86 43   01 03 B1 04 00 00 00 01 B1 04
+00 00 17 70 01 01 01 02 B1 04   00 00 00 63 01 34 A5 01 00 41
+00 41 00 41 00 41 00 41 00 41   00 41 00 41 00 41 00 41 00 41
+00 41 00 41 00 41 00 41 00 41   00 41 00 41 00 41 00 41 00 41
+00 41 00 41 00 41 00 41 00 41   00 41 00 41 00 41 00 41 00 41
+00 41 00 41 00 41 00 41 00 41   00 41 00 41 00 41 00 41 00 41
+00 41 00 41 00 41 00 41 00 41   00 41 00 41 00 41 00 41 00 41
+00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 1> /* Name = DATAID */
+  <U4[1] 6000> /* Name = CEID, Keyword = MeasureResultSend (6000) */
+  <L[1]
+    <L[2]
+      <U4[1] 99> /* Name = RPTID */
+      <L[52]
+        <U1[1] 0> /* Name = Value, Keyword = PortID (2001) */
+        <A[0]""> /* Name = Value, Keyword = CarrierID (2000) */
+        <A[0]""> /* Name = Value, Keyword = Slot1_Info (4001) */
+        <A[0]""> /* Name = Value, Keyword = Slot2_Info (4002) */
+        <A[0]""> /* Name = Value, Keyword = Slot3_Info (4003) */
+        <A[0]""> /* Name = Value, Keyword = Slot4_Info (4004) */
+        <A[0]""> /* Name = Value, Keyword = Slot5_Info (4005) */
+        <A[0]""> /* Name = Value, Keyword = Slot6_Info (4006) */
+        <A[0]""> /* Name = Value, Keyword = Slot7_Info (4007) */
+        <A[0]""> /* Name = Value, Keyword = Slot8_Info (4008) */
+        <A[0]""> /* Name = Value, Keyword = Slot9_Info (4009) */
+        <A[0]""> /* Name = Value, Keyword = Slot10_Info (4010) */
+        <A[0]""> /* Name = Value, Keyword = Slot11_Info (4011) */
+        <A[0]""> /* Name = Value, Keyword = Slot12_Info (4012) */
+        <A[0]""> /* Name = Value, Keyword = Slot13_Info (4013) */
+        <A[0]""> /* Name = Value, Keyword = Slot14_Info (4014) */
+        <A[0]""> /* Name = Value, Keyword = Slot15_Info (4015) */
+        <A[0]""> /* Name = Value, Keyword = Slot16_Info (4016) */
+        <A[0]""> /* Name = Value, Keyword = Slot17_Info (4017) */
+        <A[0]""> /* Name = Value, Keyword = Slot18_Info (4018) */
+        <A[0]""> /* Name = Value, Keyword = Slot19_Info (4019) */
+        <A[0]""> /* Name = Value, Keyword = Slot20_Info (4020) */
+        <A[0]""> /* Name = Value, Keyword = Slot21_Info (4021) */
+        <A[0]""> /* Name = Value, Keyword = Slot22_Info (4022) */
+        <A[0]""> /* Name = Value, Keyword = Slot23_Info (4023) */
+        <A[0]""> /* Name = Value, Keyword = Slot24_Info (4024) */
+        <A[0]""> /* Name = Value, Keyword = Slot25_Info (4025) */
+        <A[0]""> /* Name = Value, Keyword = Slot1_Max (4026) */
+        <A[0]""> /* Name = Value, Keyword = Slot2_Max (4027) */
+        <A[0]""> /* Name = Value, Keyword = Slot3_Max (4028) */
+        <A[0]""> /* Name = Value, Keyword = Slot4_Max (4029) */
+        <A[0]""> /* Name = Value, Keyword = Slot5_Max (4030) */
+        <A[0]""> /* Name = Value, Keyword = Slot6_Max (4031) */
+        <A[0]""> /* Name = Value, Keyword = Slot7_Max (4032) */
+        <A[0]""> /* Name = Value, Keyword = Slot8_Max (4033) */
+        <A[0]""> /* Name = Value, Keyword = Slot9_Max (4034) */
+        <A[0]""> /* Name = Value, Keyword = Slot10_Max (4035) */
+        <A[0]""> /* Name = Value, Keyword = Slot11_Max (4036) */
+        <A[0]""> /* Name = Value, Keyword = Slot12_Max (4037) */
+        <A[0]""> /* Name = Value, Keyword = Slot13_Max (4038) */
+        <A[0]""> /* Name = Value, Keyword = Slot14_Max (4039) */
+        <A[0]""> /* Name = Value, Keyword = Slot15_Max (4040) */
+        <A[0]""> /* Name = Value, Keyword = Slot16_Max (4041) */
+        <A[0]""> /* Name = Value, Keyword = Slot17_Max (4042) */
+        <A[0]""> /* Name = Value, Keyword = Slot18_Max (4043) */
+        <A[0]""> /* Name = Value, Keyword = Slot19_Max (4044) */
+        <A[0]""> /* Name = Value, Keyword = Slot20_Max (4045) */
+        <A[0]""> /* Name = Value, Keyword = Slot21_Max (4046) */
+        <A[0]""> /* Name = Value, Keyword = Slot22_Max (4047) */
+        <A[0]""> /* Name = Value, Keyword = Slot23_Max (4048) */
+        <A[0]""> /* Name = Value, Keyword = Slot24_Max (4049) */
+        <A[0]""> /* Name = Value, Keyword = Slot25_Max (4050) */
+      >
+    >
+  >
+>
+.
+Program takes      0.278 seconds to log this message.
+2023-05-30 14:13:26.295: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-05-30 14:13:26.295: Receive S6F12(6391363).
+00 00 06 0C 00 00 00 61 86 43   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2023-05-30 14:14:31.825: Send Linktest.req.
+FF FF 00 00 00 05 00 61 86 44
+2023-05-30 14:14:31.828: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 61 86 44
+2023-05-30 14:15:37.518: Send Linktest.req.
+FF FF 00 00 00 05 00 61 86 45
+2023-05-30 14:15:37.521: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 61 86 45
+2023-05-30 14:16:43.212: Send Linktest.req.
+FF FF 00 00 00 05 00 61 86 46
+2023-05-30 14:16:43.216: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 61 86 46
+2023-05-30 14:17:49.785: Send Linktest.req.
+FF FF 00 00 00 05 00 61 86 47
+2023-05-30 14:17:49.788: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 61 86 47
+2023-05-30 14:18:55.857: Send Linktest.req.
+FF FF 00 00 00 05 00 61 86 48
+2023-05-30 14:18:55.860: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 61 86 48
+2023-05-30 14:20:01.872: Send Linktest.req.
+FF FF 00 00 00 05 00 61 86 49
+2023-05-30 14:20:01.875: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 61 86 49
+2023-05-30 14:21:07.670: Send Linktest.req.
+FF FF 00 00 00 05 00 61 86 4A
+2023-05-30 14:21:07.673: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 61 86 4A
+2023-05-30 14:22:13.508: Send Linktest.req.
+FF FF 00 00 00 05 00 61 86 4B
+2023-05-30 14:22:13.511: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 61 86 4B
+2023-05-30 14:23:19.193: Send Linktest.req.
+FF FF 00 00 00 05 00 61 86 4C
+2023-05-30 14:23:19.197: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 61 86 4C
+2023-05-30 14:24:24.972: Send Linktest.req.
+FF FF 00 00 00 05 00 61 86 4D
+2023-05-30 14:24:24.975: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 61 86 4D
+//////////////////////////////////////////////////////////////////////////
+2023-05-30 15:53:14.088: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-30 15:54:32.005: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-30 15:54:32.174: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-30 15:54:32.230: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-30 15:54:32.230: Send S1F13(4510180).
+00 00 81 0D 00 00 00 44 D1 E4   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.15 seconds to log this message.
+2023-05-30 15:54:32.382: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-05-30 15:54:32.382: Receive S1F14(4510180).
+00 00 01 0E 00 00 00 44 D1 E4   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-05-30 15:54:33.161:  Receive Separate.req.
+FF FF 00 00 00 09 00 07 C1 E5
+2023-05-30 15:54:33.161: Remote Client Disconnected!
+2023-05-30 15:54:33.357: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-30 15:54:39.309: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-30 15:54:39.315: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-30 15:54:39.465: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-30 15:54:39.465: Send S1F13(4510181).
+00 00 81 0D 00 00 00 44 D1 E5   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-05-30 15:54:39.494: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-05-30 15:54:39.494: Receive S1F14(4510181).
+00 00 01 0E 00 00 00 44 D1 E5   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-05-30 15:55:45.193: Send Linktest.req.
+FF FF 00 00 00 05 00 44 D1 E6
+2023-05-30 15:55:45.197: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 44 D1 E6
+2023-05-30 15:56:51.010: Send Linktest.req.
+FF FF 00 00 00 05 00 44 D1 E7
+2023-05-30 15:56:51.015: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 44 D1 E7
+2023-05-30 15:57:56.702: Send Linktest.req.
+FF FF 00 00 00 05 00 44 D1 E8
+2023-05-30 15:57:56.709: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 44 D1 E8
+2023-05-30 15:59:02.460: Send Linktest.req.
+FF FF 00 00 00 05 00 44 D1 E9
+2023-05-30 15:59:02.464: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 44 D1 E9
+2023-05-30 16:00:08.230: Send Linktest.req.
+FF FF 00 00 00 05 00 44 D1 EA
+2023-05-30 16:00:08.233: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 44 D1 EA

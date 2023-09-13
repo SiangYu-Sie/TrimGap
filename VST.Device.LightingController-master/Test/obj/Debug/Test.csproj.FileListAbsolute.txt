@@ -1,0 +1,28 @@
+C:\Users\windows user\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.csproj.SuggestedBindingRedirects.cache
+C:\Users\windows user\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.Form1.resources
+C:\Users\windows user\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\windows user\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\VST.Device.LightingController-master - test - 複製\Test\bin\Debug\Test.exe.config
+C:\Users\windows user\Desktop\VST.Device.LightingController-master - test - 複製\Test\bin\Debug\Test.exe
+C:\Users\windows user\Desktop\VST.Device.LightingController-master - test - 複製\Test\bin\Debug\Test.pdb
+C:\Users\windows user\Desktop\VST.Device.LightingController-master - test - 複製\Test\bin\Debug\LightController.exe
+C:\Users\windows user\Desktop\VST.Device.LightingController-master - test - 複製\Test\bin\Debug\LightController.pdb
+C:\Users\windows user\Desktop\VST.Device.LightingController-master - test - 複製\Test\bin\Debug\LightController.exe.config
+C:\Users\windows user\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\windows user\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.exe
+C:\Users\windows user\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.pdb
+C:\Users\MyUser\Desktop\VST.Device.LightingController-master - test - 複製\Test\bin\Debug\Test.exe.config
+C:\Users\MyUser\Desktop\VST.Device.LightingController-master - test - 複製\Test\bin\Debug\Test.exe
+C:\Users\MyUser\Desktop\VST.Device.LightingController-master - test - 複製\Test\bin\Debug\Test.pdb
+C:\Users\MyUser\Desktop\VST.Device.LightingController-master - test - 複製\Test\bin\Debug\LightController.exe
+C:\Users\MyUser\Desktop\VST.Device.LightingController-master - test - 複製\Test\bin\Debug\LightController.pdb
+C:\Users\MyUser\Desktop\VST.Device.LightingController-master - test - 複製\Test\bin\Debug\LightController.exe.config
+C:\Users\MyUser\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\MyUser\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.Form1.resources
+C:\Users\MyUser\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\MyUser\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.csproj.GenerateResource.cache
+C:\Users\MyUser\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\MyUser\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.exe
+C:\Users\MyUser\Desktop\VST.Device.LightingController-master - test - 複製\Test\obj\Debug\Test.pdb

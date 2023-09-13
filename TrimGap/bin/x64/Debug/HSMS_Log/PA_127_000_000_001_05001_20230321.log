@@ -1,0 +1,125 @@
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 08:44:27.746: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-21 08:44:48.444: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-21 08:44:48.471: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-21 08:44:48.548: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-21 08:44:48.548: Send S1F13(9800354).
+00 00 81 0D 00 00 00 95 8A A2   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.015 seconds to log this message.
+2023-03-21 08:44:48.563: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-21 08:44:48.563: Receive S1F14(9800354).
+00 00 01 0E 00 00 00 95 8A A2   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-21 08:45:04.862: Send Data Message.
+00 00 00 1A 00 00 86 0B 00 00
+2023-03-21 08:45:04.862: Send S6F11(9800355).
+00 00 86 0B 00 00 00 95 8A A3   01 03 B1 04 00 00 00 02 B1 04
+00 00 00 16 01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 2>
+  <U4[1] 22>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-21 08:45:04.926: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-21 08:45:04.926: Receive S6F12(9800355).
+00 00 06 0C 00 00 00 95 8A A3   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-21 08:45:09.206: Send Data Message.
+00 00 00 0A 00 00 81 01 00 00
+2023-03-21 08:45:09.206: Send S1F1(9800356).
+00 00 81 01 00 00 00 95 8A A4
+S1F1 W /* Are You Online? */
+Program takes      0 seconds to log this message.
+2023-03-21 08:45:09.207: Receive Data Message.
+00 00 00 0C 00 00 01 02 00 00
+2023-03-21 08:45:09.207: Receive S1F2(9800356).
+00 00 01 02 00 00 00 95 8A A4   01 00
+S1F2  /* On Line Data */
+<L[0]
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-21 08:46:09.532: Send Linktest.req.
+FF FF 00 00 00 05 00 95 8A A5
+2023-03-21 08:46:09.532: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 95 8A A5
+2023-03-21 08:47:10.878: Send Linktest.req.
+FF FF 00 00 00 05 00 95 8A A6
+2023-03-21 08:47:10.878: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 95 8A A6
+2023-03-21 08:48:11.841: Send Linktest.req.
+FF FF 00 00 00 05 00 95 8A A7
+2023-03-21 08:48:11.841: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 95 8A A7
+2023-03-21 08:49:12.396: Send Linktest.req.
+FF FF 00 00 00 05 00 95 8A A8
+2023-03-21 08:49:12.396: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 95 8A A8
+2023-03-21 08:50:12.914: Send Linktest.req.
+FF FF 00 00 00 05 00 95 8A A9
+2023-03-21 08:50:12.914: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 95 8A A9
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 09:04:01.966: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 10:38:33.355: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 10:39:26.626: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 10:41:09.886: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 13:10:13.204: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 14:46:50.860: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 15:03:17.916: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 15:21:47.523: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 15:26:17.584: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 16:22:47.111: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 18:05:18.966: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 18:09:17.226: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 18:10:35.757: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 18:11:41.361: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 18:14:40.041: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 18:20:34.423: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 18:24:21.401: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 18:26:04.532: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-21 18:30:42.189: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL

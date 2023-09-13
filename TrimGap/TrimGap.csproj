@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D5535D1-9E27-477E-A719-74AAB58F42D3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TrimGap</RootNamespace>
+    <AssemblyName>TrimGap</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>D:\FTGM1\WorkDirectory\Run\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>myimage\大量logo紅ico.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Camera">
+      <HintPath>..\Camera\bin\Debug\Camera.dll</HintPath>
+    </Reference>
+    <Reference Include="CSharpSingleChannelScanning">
+      <HintPath>..\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.dll</HintPath>
+    </Reference>
+    <Reference Include="CTLT.GEM, Version=2.9.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SECSGEM\bin\Debug\CTLT.GEM.dll</HintPath>
+    </Reference>
+    <Reference Include="CTLT.SECS, Version=2.3.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SECSGEM\bin\Debug\CTLT.SECS.dll</HintPath>
+    </Reference>
+    <Reference Include="HirataEFEM, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\HirataEFEM.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ActUtlType64Lib">
+      <HintPath>..\MELSEC\Interop.ActUtlType64Lib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.ActUtlTypeLib">
+      <HintPath>..\MELSEC\Interop.ActUtlTypeLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="IO4, Version=2.0.0.1, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\IO4.dll</HintPath>
+    </Reference>
+    <Reference Include="KEYENCE_LJ, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\KEYENCE_LJ.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Motion_PB, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\Motion_PB.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmFx.Bindings.WinForms, Version=3.0.1.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmFx-Bindings-WinForms.3.0.1\lib\net461\MvvmFx.Bindings.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="MWArray, Version=2.22.0.0, Culture=neutral, PublicKeyToken=e1d84a0da19db86f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\MWArray.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Context, Version=5.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Context.5.1.2\lib\net461\Nito.AsyncEx.Context.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Coordination, Version=5.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Coordination.5.1.2\lib\net461\Nito.AsyncEx.Coordination.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Interop.WaitHandles, Version=5.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Interop.WaitHandles.5.1.2\lib\net461\Nito.AsyncEx.Interop.WaitHandles.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Oop, Version=5.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Oop.5.1.2\lib\net461\Nito.AsyncEx.Oop.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Tasks, Version=5.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Tasks.5.1.2\lib\net461\Nito.AsyncEx.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Cancellation, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Cancellation.1.1.2\lib\net461\Nito.Cancellation.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Collections.Deque, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Collections.Deque.1.1.1\lib\net461\Nito.Collections.Deque.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Disposables, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Disposables.2.2.1\lib\net461\Nito.Disposables.dll</HintPath>
+    </Reference>
+    <Reference Include="PMLcmpDll, Version=1.22.906.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\PMLcmpDll.dll</HintPath>
+    </Reference>
+    <Reference Include="SECSGEM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SECSGEM\bin\Debug\SECSGEM.dll</HintPath>
+    </Reference>
+    <Reference Include="SocketClient2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\SocketClient2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x64\Debug\SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive, Version=5.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.5.0.0\lib\net472\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsBase.WinForms, Version=3.0.1.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmFx-Bindings-WinForms.3.0.1\lib\net461\WindowsBase.WinForms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoRunStage.cs" />
+    <Compile Include="AutoRunEFEM.cs" />
+    <Compile Include="CCDTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CCDTest.Designer.cs">
+      <DependentUpon>CCDTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EFEMControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EFEMControl.Designer.cs">
+      <DependentUpon>EFEMControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ETEL.cs" />
+    <Compile Include="findHomePanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="findHomePanel.Designer.cs">
+      <DependentUpon>findHomePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HirataEFEM.cs" />
+    <Compile Include="IO.cs" />
+    <Compile Include="MatlabAnalysis.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertLog.cs" />
+    <Compile Include="MotionControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MotionControl.Designer.cs">
+      <DependentUpon>MotionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ParaForm.designer.cs">
+      <DependentUpon>ParaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parameter.cs" />
+    <Compile Include="ParamFile.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecipeManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecipeManagement.Designer.cs">
+      <DependentUpon>RecipeManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SECSListening.cs" />
+    <Compile Include="SignalAnalysisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignalAnalysisForm.Designer.cs">
+      <DependentUpon>SignalAnalysisForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mo.cs" />
+    <Compile Include="TTVScanPattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TTVScanPattern.Designer.cs">
+      <DependentUpon>TTVScanPattern.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserPermission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPermission.Designer.cs">
+      <DependentUpon>UserPermission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WrINI.cs" />
+    <EmbeddedResource Include="CCDTest.resx">
+      <DependentUpon>CCDTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EFEMControl.resx">
+      <DependentUpon>EFEMControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="findHomePanel.resx">
+      <DependentUpon>findHomePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MotionControl.resx">
+      <DependentUpon>MotionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParaForm.resx">
+      <DependentUpon>ParaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RecipeManagement.resx">
+      <DependentUpon>RecipeManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignalAnalysisForm.resx">
+      <DependentUpon>SignalAnalysisForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTVScanPattern.resx">
+      <DependentUpon>TTVScanPattern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPermission.resx">
+      <DependentUpon>UserPermission.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\TrimGap.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\TrimGap.Properties.Settings.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\WaferNotch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\adjustment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\大量logo紅.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\手動.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\停止.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\啟動.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\設置.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\歷史.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\關機.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\1305276520.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\10889794891556277121-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\Actions-network-connect-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\arrow_left_15601.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\arrow_right_15600.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\Button-Close-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\Circle_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\Circle_Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\Circle_Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\ErrorICO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\Files-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\FilmThickness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\gear_488px_1190275_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\google_IO_icon-icons.com_61476.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\languages.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\light_off_48px_1088470_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\light_on_48px_1088469_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\logo文字.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\master_card_Pos_Machine_512px_510344_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\Network-Connection-Failed-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\Network-Connection-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\open-file-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\Parameter_Review_128px_534170_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\permission_180px_1186886_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\radio-waves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\Rectangle_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\rectangle-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\reset_32px_28025_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\Save-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\Setup_128px_534175_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\start_512px_568810_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\Users-Exit-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\大量logo_橘色-去背.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\用戶.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\首頁.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\電腦.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\電腦藍色.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\green.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\logoico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\red.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\大量logo紅ico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myimage\FoupWaferIn.png" />
+    <None Include="myimage\FoupWaferOut.png" />
+    <None Include="myimage\SF3Point.png" />
+    <Content Include="大量logo紅ico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modules\Modules\Modules.csproj">
+      <Project>{f64c4253-7583-451d-a76c-e1562b7f75e7}</Project>
+      <Name>Modules</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SF3\SF3\SF3.csproj">
+      <Project>{0f0869a9-ea82-4df3-81c7-bf89d486edf3}</Project>
+      <Name>SF3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VST.Device.LightingController-master\LightController\LightController.csproj">
+      <Project>{b8d7feba-a2f8-48a9-8d91-cbe51d0c4501}</Project>
+      <Name>LightController</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

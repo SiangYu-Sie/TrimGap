@@ -1,0 +1,936 @@
+//////////////////////////////////////////////////////////////////////////
+15:26:57.102: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+15:27:04.280: Receive Select.req.
+FF FF 00 00 00 01 01 23 31 61
+15:27:04.289: Send Select.rsp.
+FF FF 00 00 00 02 01 23 31 61
+15:27:04.306: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+15:27:04.306: Send S1F13(5502779).
+00 01 81 0D 00 00 00 53 F7 3B   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W
+<L[2]
+  <A[6] "EqMDLN">
+  <A[6] "SofRev">
+>
+.
+Program takes      0 seconds to log this message.
+15:27:04.381: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+15:27:04.381: Receive S1F14(5502779).
+00 00 01 0E 00 00 00 53 F7 3B   01 02 21 01 00 01 00
+S1F14 
+<L[2]
+  <B[1] 0x0>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+15:28:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 63
+15:28:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 63
+15:28:04.292: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 3C
+15:28:04.295: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 3C
+15:28:57.683: Send Data Message.
+00 00 00 38 00 01 86 0B 00 00
+15:28:57.683: Send S6F11(5502781).
+00 01 86 0B 00 00 00 53 F7 3D   01 03 A9 02 00 01 B1 04 00 00
+00 14 01 01 01 02 B1 04 00 00   1B 5B 01 03 B1 04 00 00 03 EB
+41 06 31 2E 38 38 38 38 41 06   31 2E 39 39 38 38
+S6F11 W
+<L[3]
+  <U2[1] 1>
+  <U4[1] 20>
+  <L[1]
+    <L[2]
+      <U4[1] 7003>
+      <L[3]
+        <U4[1] 1003>
+        <A[6] "1.8888">
+        <A[6] "1.9988">
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+15:28:57.783: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+15:28:57.783: Receive S6F12(5502781).
+00 00 06 0C 00 00 00 53 F7 3D   21 01 00
+S6F12 
+<B[1] 0x0>
+.
+Program takes      0 seconds to log this message.
+15:29:04.238: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 65
+15:29:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 65
+15:29:57.299: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 3E
+15:29:57.304: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 3E
+15:30:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 66
+15:30:04.239: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 66
+15:30:35.045: Send Data Message.
+00 00 00 38 00 01 86 0B 00 00
+15:30:35.045: Send S6F11(5502783).
+00 01 86 0B 00 00 00 53 F7 3F   01 03 A9 02 00 02 B1 04 00 00
+00 14 01 01 01 02 B1 04 00 00   1B 5B 01 03 B1 04 00 00 03 EB
+41 06 31 2E 39 39 38 38 41 06   31 2E 38 38 38 38
+S6F11 W
+<L[3]
+  <U2[1] 2>
+  <U4[1] 20>
+  <L[1]
+    <L[2]
+      <U4[1] 7003>
+      <L[3]
+        <U4[1] 1003>
+        <A[6] "1.9988">
+        <A[6] "1.8888">
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+15:30:35.145: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+15:30:35.145: Receive S6F12(5502783).
+00 00 06 0C 00 00 00 53 F7 3F   21 01 00
+S6F12 
+<B[1] 0x0>
+.
+Program takes      0 seconds to log this message.
+15:30:46.776: Send Data Message.
+00 00 00 2E 00 01 86 0B 00 00
+15:30:46.776: Send S6F11(5502784).
+00 01 86 0B 00 00 00 53 F7 40   01 03 A9 02 00 03 B1 04 00 00
+00 14 01 01 01 02 B1 04 00 00   1B 5B 01 03 B1 04 00 00 03 E9
+41 01 30 41 01 31
+S6F11 W
+<L[3]
+  <U2[1] 3>
+  <U4[1] 20>
+  <L[1]
+    <L[2]
+      <U4[1] 7003>
+      <L[3]
+        <U4[1] 1001>
+        <A[1] "0">
+        <A[1] "1">
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+15:30:46.835: Send Data Message.
+00 00 00 33 00 01 86 0B 00 00
+15:30:46.835: Send S6F11(5502785).
+00 01 86 0B 00 00 00 53 F7 41   01 03 A9 02 00 04 B1 04 00 00
+00 14 01 01 01 02 B1 04 00 00   1B 5B 01 03 B1 04 00 00 03 EF
+41 04 2D 37 37 37 41 03 38 38   38
+S6F11 W
+<L[3]
+  <U2[1] 4>
+  <U4[1] 20>
+  <L[1]
+    <L[2]
+      <U4[1] 7003>
+      <L[3]
+        <U4[1] 1007>
+        <A[4] "-777">
+        <A[3] "888">
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+15:30:46.850: Send Data Message.
+00 00 00 39 00 01 86 0B 00 00
+15:30:46.850: Send S6F11(5502786).
+00 01 86 0B 00 00 00 53 F7 42   01 03 A9 02 00 05 B1 04 00 00
+00 14 01 01 01 02 B1 04 00 00   1B 5B 01 03 B1 04 00 00 03 F0
+41 07 2D 35 35 30 30 30 30 41   06 35 35 30 30 30 30
+S6F11 W
+<L[3]
+  <U2[1] 5>
+  <U4[1] 20>
+  <L[1]
+    <L[2]
+      <U4[1] 7003>
+      <L[3]
+        <U4[1] 1008>
+        <A[7] "-550000">
+        <A[6] "550000">
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+15:30:46.863: Send Data Message.
+00 00 00 38 00 01 86 0B 00 00
+15:30:46.863: Send S6F11(5502787).
+00 01 86 0B 00 00 00 53 F7 43   01 03 A9 02 00 06 B1 04 00 00
+00 14 01 01 01 02 B1 04 00 00   1B 5B 01 03 B1 04 00 00 03 EB
+41 06 35 2E 34 33 32 31 41 06   31 2E 39 39 38 38
+S6F11 W
+<L[3]
+  <U2[1] 6>
+  <U4[1] 20>
+  <L[1]
+    <L[2]
+      <U4[1] 7003>
+      <L[3]
+        <U4[1] 1003>
+        <A[6] "5.4321">
+        <A[6] "1.9988">
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+15:30:46.889: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+15:30:46.889: Receive S6F12(5502784).
+00 00 06 0C 00 00 00 53 F7 40   21 01 00
+S6F12 
+<B[1] 0x0>
+.
+Program takes      0 seconds to log this message.
+15:30:47.005: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+15:30:47.005: Receive S6F12(5502785).
+00 00 06 0C 00 00 00 53 F7 41   21 01 00
+S6F12 
+<B[1] 0x0>
+.
+Program takes      0 seconds to log this message.
+15:30:47.089: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+15:30:47.089: Receive S6F12(5502786).
+00 00 06 0C 00 00 00 53 F7 42   21 01 00
+S6F12 
+<B[1] 0x0>
+.
+Program takes      0 seconds to log this message.
+15:30:47.174: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+15:30:47.174: Receive S6F12(5502787).
+00 00 06 0C 00 00 00 53 F7 43   21 01 00
+S6F12 
+<B[1] 0x0>
+.
+Program takes      0 seconds to log this message.
+15:31:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 6C
+15:31:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 6C
+15:31:46.306: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 44
+15:31:46.313: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 44
+15:32:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 6D
+15:32:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 6D
+15:32:46.309: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 45
+15:32:46.312: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 45
+15:33:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 6E
+15:33:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 6E
+15:33:46.313: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 46
+15:33:46.326: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 46
+15:33:56.083: Send Data Message.
+00 00 00 2E 00 01 86 0B 00 00
+15:33:56.083: Send S6F11(5502791).
+00 01 86 0B 00 00 00 53 F7 47   01 03 A9 02 00 07 B1 04 00 00
+00 14 01 01 01 02 B1 04 00 00   1B 5B 01 03 B1 04 00 00 03 E9
+41 01 31 41 01 30
+S6F11 W
+<L[3]
+  <U2[1] 7>
+  <U4[1] 20>
+  <L[1]
+    <L[2]
+      <U4[1] 7003>
+      <L[3]
+        <U4[1] 1001>
+        <A[1] "1">
+        <A[1] "0">
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+15:33:56.095: Send Data Message.
+00 00 00 33 00 01 86 0B 00 00
+15:33:56.095: Send S6F11(5502792).
+00 01 86 0B 00 00 00 53 F7 48   01 03 A9 02 00 08 B1 04 00 00
+00 14 01 01 01 02 B1 04 00 00   1B 5B 01 03 B1 04 00 00 03 EF
+41 03 38 38 38 41 04 2D 37 37   37
+S6F11 W
+<L[3]
+  <U2[1] 8>
+  <U4[1] 20>
+  <L[1]
+    <L[2]
+      <U4[1] 7003>
+      <L[3]
+        <U4[1] 1007>
+        <A[3] "888">
+        <A[4] "-777">
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+15:33:56.115: Send Data Message.
+00 00 00 39 00 01 86 0B 00 00
+15:33:56.115: Send S6F11(5502793).
+00 01 86 0B 00 00 00 53 F7 49   01 03 A9 02 00 09 B1 04 00 00
+00 14 01 01 01 02 B1 04 00 00   1B 5B 01 03 B1 04 00 00 03 F0
+41 06 35 35 30 30 30 30 41 07   2D 35 35 30 30 30 30
+S6F11 W
+<L[3]
+  <U2[1] 9>
+  <U4[1] 20>
+  <L[1]
+    <L[2]
+      <U4[1] 7003>
+      <L[3]
+        <U4[1] 1008>
+        <A[6] "550000">
+        <A[7] "-550000">
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+15:33:56.131: Send Data Message.
+00 00 00 38 00 01 86 0B 00 00
+15:33:56.131: Send S6F11(5502794).
+00 01 86 0B 00 00 00 53 F7 4A   01 03 A9 02 00 0A B1 04 00 00
+00 14 01 01 01 02 B1 04 00 00   1B 5B 01 03 B1 04 00 00 03 EB
+41 06 31 2E 39 39 38 38 41 06   35 2E 34 33 32 31
+S6F11 W
+<L[3]
+  <U2[1] 10>
+  <U4[1] 20>
+  <L[1]
+    <L[2]
+      <U4[1] 7003>
+      <L[3]
+        <U4[1] 1003>
+        <A[6] "1.9988">
+        <A[6] "5.4321">
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+15:33:56.219: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+15:33:56.219: Receive S6F12(5502791).
+00 00 06 0C 00 00 00 53 F7 47   21 01 00
+S6F12 
+<B[1] 0x0>
+.
+Program takes      0 seconds to log this message.
+15:33:56.310: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+15:33:56.310: Receive S6F12(5502792).
+00 00 06 0C 00 00 00 53 F7 48   21 01 00
+S6F12 
+<B[1] 0x0>
+.
+Program takes      0 seconds to log this message.
+15:33:56.392: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+15:33:56.392: Receive S6F12(5502793).
+00 00 06 0C 00 00 00 53 F7 49   21 01 00
+S6F12 
+<B[1] 0x0>
+.
+Program takes      0 seconds to log this message.
+15:33:56.479: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+15:33:56.479: Receive S6F12(5502794).
+00 00 06 0C 00 00 00 53 F7 4A   21 01 00
+S6F12 
+<B[1] 0x0>
+.
+Program takes      0 seconds to log this message.
+15:33:59.220: Send Data Message.
+00 00 00 2E 00 01 86 0B 00 00
+15:33:59.220: Send S6F11(5502795).
+00 01 86 0B 00 00 00 53 F7 4B   01 03 A9 02 00 0B B1 04 00 00
+00 14 01 01 01 02 B1 04 00 00   1B 5B 01 03 B1 04 00 00 03 E9
+41 01 30 41 01 31
+S6F11 W
+<L[3]
+  <U2[1] 11>
+  <U4[1] 20>
+  <L[1]
+    <L[2]
+      <U4[1] 7003>
+      <L[3]
+        <U4[1] 1001>
+        <A[1] "0">
+        <A[1] "1">
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+15:33:59.234: Send Data Message.
+00 00 00 33 00 01 86 0B 00 00
+15:33:59.234: Send S6F11(5502796).
+00 01 86 0B 00 00 00 53 F7 4C   01 03 A9 02 00 0C B1 04 00 00
+00 14 01 01 01 02 B1 04 00 00   1B 5B 01 03 B1 04 00 00 03 EF
+41 04 2D 37 37 37 41 03 38 38   38
+S6F11 W
+<L[3]
+  <U2[1] 12>
+  <U4[1] 20>
+  <L[1]
+    <L[2]
+      <U4[1] 7003>
+      <L[3]
+        <U4[1] 1007>
+        <A[4] "-777">
+        <A[3] "888">
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+15:33:59.253: Send Data Message.
+00 00 00 39 00 01 86 0B 00 00
+15:33:59.253: Send S6F11(5502797).
+00 01 86 0B 00 00 00 53 F7 4D   01 03 A9 02 00 0D B1 04 00 00
+00 14 01 01 01 02 B1 04 00 00   1B 5B 01 03 B1 04 00 00 03 F0
+41 07 2D 35 35 30 30 30 30 41   06 35 35 30 30 30 30
+S6F11 W
+<L[3]
+  <U2[1] 13>
+  <U4[1] 20>
+  <L[1]
+    <L[2]
+      <U4[1] 7003>
+      <L[3]
+        <U4[1] 1008>
+        <A[7] "-550000">
+        <A[6] "550000">
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+15:33:59.270: Send Data Message.
+00 00 00 38 00 01 86 0B 00 00
+15:33:59.270: Send S6F11(5502798).
+00 01 86 0B 00 00 00 53 F7 4E   01 03 A9 02 00 0E B1 04 00 00
+00 14 01 01 01 02 B1 04 00 00   1B 5B 01 03 B1 04 00 00 03 EB
+41 06 35 2E 34 33 32 31 41 06   31 2E 39 39 38 38
+S6F11 W
+<L[3]
+  <U2[1] 14>
+  <U4[1] 20>
+  <L[1]
+    <L[2]
+      <U4[1] 7003>
+      <L[3]
+        <U4[1] 1003>
+        <A[6] "5.4321">
+        <A[6] "1.9988">
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+15:33:59.336: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+15:33:59.336: Receive S6F12(5502795).
+00 00 06 0C 00 00 00 53 F7 4B   21 01 00
+S6F12 
+<B[1] 0x0>
+.
+Program takes      0 seconds to log this message.
+15:33:59.446: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+15:33:59.446: Receive S6F12(5502796).
+00 00 06 0C 00 00 00 53 F7 4C   21 01 00
+S6F12 
+<B[1] 0x0>
+.
+Program takes      0 seconds to log this message.
+15:33:59.534: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+15:33:59.534: Receive S6F12(5502797).
+00 00 06 0C 00 00 00 53 F7 4D   21 01 00
+S6F12 
+<B[1] 0x0>
+.
+Program takes      0 seconds to log this message.
+15:33:59.618: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+15:33:59.618: Receive S6F12(5502798).
+00 00 06 0C 00 00 00 53 F7 4E   21 01 00
+S6F12 
+<B[1] 0x0>
+.
+Program takes      0 seconds to log this message.
+15:34:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 77
+15:34:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 77
+15:34:59.317: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 4F
+15:34:59.320: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 4F
+15:35:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 78
+15:35:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 78
+15:35:59.320: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 50
+15:35:59.323: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 50
+15:36:04.238: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 79
+15:36:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 79
+15:36:59.325: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 51
+15:36:59.328: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 51
+15:37:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 7A
+15:37:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 7A
+15:37:59.328: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 52
+15:37:59.332: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 52
+15:38:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 7B
+15:38:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 7B
+15:38:59.332: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 53
+15:38:59.336: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 53
+15:39:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 7C
+15:39:04.239: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 7C
+15:39:59.335: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 54
+15:39:59.340: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 54
+15:40:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 7D
+15:40:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 7D
+15:40:59.339: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 55
+15:40:59.342: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 55
+15:41:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 7E
+15:41:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 7E
+15:41:59.343: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 56
+15:41:59.347: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 56
+15:42:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 7F
+15:42:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 7F
+15:42:59.346: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 57
+15:42:59.349: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 57
+15:43:04.238: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 80
+15:43:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 80
+15:43:59.350: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 58
+15:43:59.357: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 58
+15:44:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 81
+15:44:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 81
+15:44:59.355: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 59
+15:44:59.359: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 59
+15:45:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 82
+15:45:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 82
+15:45:59.360: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 5A
+15:45:59.363: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 5A
+15:46:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 83
+15:46:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 83
+15:46:59.363: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 5B
+15:46:59.366: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 5B
+15:47:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 84
+15:47:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 84
+15:47:59.371: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 5C
+15:47:59.374: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 5C
+15:48:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 85
+15:48:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 85
+15:48:59.375: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 5D
+15:48:59.379: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 5D
+15:49:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 86
+15:49:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 86
+15:49:59.380: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 5E
+15:49:59.383: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 5E
+15:50:04.238: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 87
+15:50:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 87
+15:50:59.384: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 5F
+15:50:59.387: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 5F
+15:51:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 88
+15:51:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 88
+15:51:59.387: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 60
+15:51:59.392: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 60
+15:52:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 89
+15:52:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 89
+15:52:59.396: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 61
+15:52:59.401: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 61
+15:53:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 8A
+15:53:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 8A
+15:53:59.400: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 62
+15:53:59.404: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 62
+15:54:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 8B
+15:54:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 8B
+15:54:59.406: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 63
+15:54:59.408: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 63
+15:55:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 8C
+15:55:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 8C
+15:55:59.411: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 64
+15:55:59.414: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 64
+15:56:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 8D
+15:56:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 8D
+15:56:59.415: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 65
+15:56:59.418: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 65
+15:57:04.238: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 8E
+15:57:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 8E
+15:57:59.419: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 66
+15:57:59.422: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 66
+15:58:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 8F
+15:58:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 8F
+15:58:59.424: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 67
+15:58:59.426: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 67
+15:59:04.238: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 90
+15:59:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 90
+15:59:59.428: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 68
+15:59:59.432: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 68
+16:00:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 91
+16:00:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 91
+16:00:59.431: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 69
+16:00:59.436: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 69
+16:01:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 92
+16:01:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 92
+16:01:59.436: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 6A
+16:01:59.439: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 6A
+16:02:04.238: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 93
+16:02:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 93
+16:02:59.440: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 6B
+16:02:59.443: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 6B
+16:03:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 94
+16:03:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 94
+16:03:59.444: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 6C
+16:03:59.446: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 6C
+16:04:04.240: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 95
+16:04:04.241: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 95
+16:04:59.448: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 6D
+16:04:59.450: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 6D
+16:05:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 96
+16:05:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 96
+16:05:59.452: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 6E
+16:05:59.456: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 6E
+16:06:04.238: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 97
+16:06:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 97
+16:06:59.456: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 6F
+16:06:59.460: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 6F
+16:07:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 98
+16:07:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 98
+16:07:59.460: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 70
+16:07:59.463: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 70
+16:08:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 99
+16:08:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 99
+16:08:59.465: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 71
+16:08:59.468: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 71
+16:09:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 9A
+16:09:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 9A
+16:09:59.468: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 72
+16:09:59.470: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 72
+16:10:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 9B
+16:10:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 9B
+16:10:59.472: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 73
+16:10:59.475: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 73
+16:11:04.238: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 9C
+16:11:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 9C
+16:11:59.476: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 74
+16:11:59.480: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 74
+16:12:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 9D
+16:12:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 9D
+16:12:59.479: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 75
+16:12:59.481: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 75
+16:13:04.238: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 9E
+16:13:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 9E
+16:13:59.483: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 76
+16:13:59.485: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 76
+16:14:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 9F
+16:14:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 9F
+16:14:59.486: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 77
+16:14:59.488: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 77
+16:15:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 A0
+16:15:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 A0
+16:15:59.491: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 78
+16:15:59.499: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 78
+16:16:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 A1
+16:16:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 A1
+16:16:59.496: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 79
+16:16:59.505: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 79
+16:17:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 A2
+16:17:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 A2
+16:17:59.500: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 7A
+16:17:59.501: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 7A
+16:18:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 A3
+16:18:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 A3
+16:18:59.504: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 7B
+16:18:59.505: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 7B
+16:19:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 A4
+16:19:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 A4
+16:19:59.507: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 7C
+16:19:59.509: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 7C
+16:20:04.238: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 A5
+16:20:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 A5
+16:20:59.511: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 7D
+16:20:59.512: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 7D
+16:21:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 A6
+16:21:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 A6
+16:21:59.514: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 7E
+16:21:59.515: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 7E
+16:22:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 A7
+16:22:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 A7
+16:22:59.518: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 7F
+16:22:59.522: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 7F
+16:23:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 A8
+16:23:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 A8
+16:23:59.521: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 80
+16:23:59.523: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 80
+16:24:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 A9
+16:24:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 A9
+16:24:59.524: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 81
+16:24:59.527: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 81
+16:25:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 AA
+16:25:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 AA
+16:25:59.529: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 82
+16:25:59.530: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 82
+16:26:04.237: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 AB
+16:26:04.237: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 AB
+16:26:59.534: Send Linktest.req.
+FF FF 00 00 00 05 00 53 F7 83
+16:26:59.535: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 53 F7 83
+16:27:04.238: Receive Linktest.req.
+FF FF 00 00 00 05 01 23 31 AC
+16:27:04.238: Send Linktest.rsp.
+FF FF 00 00 00 06 01 23 31 AC

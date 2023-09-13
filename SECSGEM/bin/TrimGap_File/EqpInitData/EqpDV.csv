@@ -1,0 +1,67 @@
+EqpDV,,,,,
+Name,ID,Type,Length,Unit,Definition
+EquipmentStatus,1998,UINT_1,1000,N/A,Identifier for the equipment status
+RecipeID,1999,ASCII,1000,N/A,Identifier for the recipe id
+CarrierID,2000,ASCII,1000,N/A,Identifier for the carrier
+PortID,2001,UINT_1,1000,N/A,Identifier for the load port
+AccessMode,2002,UINT_1,1000,N/A,The access mode of the load port
+SlotMapStatus,2003,UINT_1,1000,N/A,Slotmap status of the carrier
+PortTransferState,2005,UINT_1,1000,N/A,The current transfer state of the load port
+Loadport1_AccessMode,2006,UINT_1,1000,N/A,The access mode of the load port 1
+Loadport2_AccessMode,2007,UINT_1,1000,N/A,The access mode of the load port 2
+Loadport1_PortTransferState,2008,UINT_1,1000,N/A,The current transfer state of the load port 1
+Loadport2_PortTransferState,2009,UINT_1,1000,N/A,The current transfer state of the load port 2
+SlotMap_List,2010,LIST,1000,N/A,The slotmap of a carrier
+Reason,2013,UINT_1,1000,N/A,Reason for asking the host to proceed with a carrier (slotmap verification)
+Loadport1_Recipe,2014,ASCII,1000,N/A,The recipe of the load port 1
+Loadport2_Recipe,2015,ASCII,1000,N/A,The recipe of the load port 2
+SlotMap_1,3001,UINT_1,1000,N/A,SlotMap_1
+SlotMap_2,3002,UINT_1,1000,N/A,SlotMap_2
+SlotMap_3,3003,UINT_1,1000,N/A,SlotMap_3
+SlotMap_4,3004,UINT_1,1000,N/A,SlotMap_4
+SlotMap_5,3005,UINT_1,1000,N/A,SlotMap_5
+SlotMap_6,3006,UINT_1,1000,N/A,SlotMap_6
+SlotMap_7,3007,UINT_1,1000,N/A,SlotMap_7
+SlotMap_8,3008,UINT_1,1000,N/A,SlotMap_8
+SlotMap_9,3009,UINT_1,1000,N/A,SlotMap_9
+SlotMap_10,3010,UINT_1,1000,N/A,SlotMap_10
+SlotMap_11,3011,UINT_1,1000,N/A,SlotMap_11
+SlotMap_12,3012,UINT_1,1000,N/A,SlotMap_12
+SlotMap_13,3013,UINT_1,1000,N/A,SlotMap_13
+SlotMap_14,3014,UINT_1,1000,N/A,SlotMap_14
+SlotMap_15,3015,UINT_1,1000,N/A,SlotMap_15
+SlotMap_16,3016,UINT_1,1000,N/A,SlotMap_16
+SlotMap_17,3017,UINT_1,1000,N/A,SlotMap_17
+SlotMap_18,3018,UINT_1,1000,N/A,SlotMap_18
+SlotMap_19,3019,UINT_1,1000,N/A,SlotMap_19
+SlotMap_20,3020,UINT_1,1000,N/A,SlotMap_20
+SlotMap_21,3021,UINT_1,1000,N/A,SlotMap_21
+SlotMap_22,3022,UINT_1,1000,N/A,SlotMap_22
+SlotMap_23,3023,UINT_1,1000,N/A,SlotMap_23
+SlotMap_24,3024,UINT_1,1000,N/A,SlotMap_24
+SlotMap_25,3025,UINT_1,1000,N/A,SlotMap_25
+Slot1_Info,4001,ASCII,1000,N/A,Slot1_Info
+Slot2_Info,4002,ASCII,1000,N/A,Slot2_Info
+Slot3_Info,4003,ASCII,1000,N/A,Slot3_Info
+Slot4_Info,4004,ASCII,1000,N/A,Slot4_Info
+Slot5_Info,4005,ASCII,1000,N/A,Slot5_Info
+Slot6_Info,4006,ASCII,1000,N/A,Slot6_Info
+Slot7_Info,4007,ASCII,1000,N/A,Slot7_Info
+Slot8_Info,4008,ASCII,1000,N/A,Slot8_Info
+Slot9_Info,4009,ASCII,1000,N/A,Slot9_Info
+Slot10_Info,4010,ASCII,1000,N/A,Slot10_Info
+Slot11_Info,4011,ASCII,1000,N/A,Slot11_Info
+Slot12_Info,4012,ASCII,1000,N/A,Slot12_Info
+Slot13_Info,4013,ASCII,1000,N/A,Slot13_Info
+Slot14_Info,4014,ASCII,1000,N/A,Slot14_Info
+Slot15_Info,4015,ASCII,1000,N/A,Slot15_Info
+Slot16_Info,4016,ASCII,1000,N/A,Slot16_Info
+Slot17_Info,4017,ASCII,1000,N/A,Slot17_Info
+Slot18_Info,4018,ASCII,1000,N/A,Slot18_Info
+Slot19_Info,4019,ASCII,1000,N/A,Slot19_Info
+Slot20_Info,4020,ASCII,1000,N/A,Slot20_Info
+Slot21_Info,4021,ASCII,1000,N/A,Slot21_Info
+Slot22_Info,4022,ASCII,1000,N/A,Slot22_Info
+Slot23_Info,4023,ASCII,1000,N/A,Slot23_Info
+Slot24_Info,4024,ASCII,1000,N/A,Slot24_Info
+Slot25_Info,4025,ASCII,1000,N/A,Slot25_Info

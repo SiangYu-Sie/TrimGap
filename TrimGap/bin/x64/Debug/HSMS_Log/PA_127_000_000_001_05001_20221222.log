@@ -1,0 +1,179 @@
+//////////////////////////////////////////////////////////////////////////
+2022-12-22 11:34:39.183: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2022-12-22 11:34:45.129: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2022-12-22 11:34:45.446: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2022-12-22 11:34:45.659: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2022-12-22 11:34:45.659: Send S1F13(4946286).
+00 00 81 0D 00 00 00 4B 79 6E   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.063 seconds to log this message.
+2022-12-22 11:34:45.722: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2022-12-22 11:34:45.722: Receive S1F14(4946286).
+00 00 01 0E 00 00 00 4B 79 6E   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2022-12-22 11:34:54.293: Receive Data Message.
+00 00 00 15 00 00 02 29 00 00
+2022-12-22 11:34:54.293: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 05 53 54 41 52 54 01
+00
+S2F41  /* Host Command Send */
+<L[2]
+  <A[5]"START"> /* Name = RCMD */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2022-12-22 11:34:54.312: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2022-12-22 11:34:54.312: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2022-12-22 11:35:00.278: Receive Data Message.
+00 00 00 14 00 00 02 29 00 00
+2022-12-22 11:35:00.278: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 04 53 54 4F 50 01 00
+S2F41  /* Host Command Send */
+<L[2]
+  <A[4]"STOP"> /* Name = RCMD */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2022-12-22 11:35:00.279: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2022-12-22 11:35:00.279: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2022-12-22 11:36:05.939: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 6F
+2022-12-22 11:36:05.939: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 6F
+2022-12-22 11:37:11.777: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 70
+2022-12-22 11:37:11.777: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 70
+2022-12-22 11:38:17.361: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 71
+2022-12-22 11:38:17.361: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 71
+2022-12-22 11:39:22.938: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 72
+2022-12-22 11:39:22.938: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 72
+2022-12-22 11:40:28.728: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 73
+2022-12-22 11:40:28.728: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 73
+2022-12-22 11:41:34.380: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 74
+2022-12-22 11:41:34.381: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 74
+2022-12-22 11:42:39.688: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 75
+2022-12-22 11:42:39.688: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 75
+2022-12-22 11:43:45.038: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 76
+2022-12-22 11:43:45.038: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 76
+2022-12-22 11:44:50.416: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 77
+2022-12-22 11:44:50.417: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 77
+2022-12-22 11:45:55.737: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 78
+2022-12-22 11:45:55.738: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 78
+2022-12-22 11:47:01.434: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 79
+2022-12-22 11:47:01.435: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 79
+2022-12-22 11:48:07.464: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 7A
+2022-12-22 11:48:07.464: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 7A
+2022-12-22 11:49:13.646: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 7B
+2022-12-22 11:49:13.646: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 7B
+2022-12-22 11:50:19.834: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 7C
+2022-12-22 11:50:19.835: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 7C
+2022-12-22 11:51:25.882: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 7D
+2022-12-22 11:51:25.882: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 7D
+2022-12-22 11:52:31.911: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 7E
+2022-12-22 11:52:31.912: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 7E
+2022-12-22 11:53:37.964: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 7F
+2022-12-22 11:53:37.964: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 7F
+2022-12-22 11:54:44.032: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 80
+2022-12-22 11:54:44.032: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 80
+2022-12-22 11:55:50.029: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 81
+2022-12-22 11:55:50.030: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 81
+2022-12-22 11:56:55.907: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 82
+2022-12-22 11:56:55.907: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 82
+2022-12-22 11:58:01.834: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 83
+2022-12-22 11:58:01.834: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 83
+2022-12-22 11:59:07.942: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 84
+2022-12-22 11:59:07.944: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 84
+2022-12-22 12:00:13.817: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 85
+2022-12-22 12:00:13.817: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 85
+2022-12-22 12:01:19.801: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 86
+2022-12-22 12:01:19.801: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 86
+2022-12-22 13:02:04.214: Send Linktest.req.
+FF FF 00 00 00 05 00 4B 79 87
+2022-12-22 13:02:04.215: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 4B 79 87

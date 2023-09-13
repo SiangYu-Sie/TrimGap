@@ -1,0 +1,369 @@
+[101]
+Name = Light_Scene_CurNo
+Enable = TRUE
+Unit = Vol
+Format = ASCII
+Vaule = 0
+Min = NULL
+Max = NULL
+
+[102]
+Name = EnableBoatAlignment
+Enable = TRUE
+Unit = set
+Format = ASCII
+Vaule = 1
+Min = NULL
+Max = NULL
+
+[103]
+Name = UnitColNum
+Enable = TRUE
+Unit = pcs
+Format = ASCII
+Vaule = 6
+Min = NULL
+Max = NULL
+
+[104]
+Name = UnitRowNum
+Enable = TRUE
+Unit = pcs
+Format = ASCII
+Vaule = 3
+Min = NULL
+Max = NULL
+
+[105]
+Name = BlockColNum
+Enable = TRUE
+Unit = pcs
+Format = ASCII
+Vaule = 1
+Min = NULL
+Max = NULL
+
+[106]
+Name = BlockRowNum
+Enable = TRUE
+Unit = pcs
+Format = ASCII
+Vaule = 1
+Min = NULL
+Max = NULL
+
+[107]
+Name = SubstrateColNum
+Enable = False
+Unit = pcs
+Format = ASCII
+Vaule = 1
+Min = NULL
+Max = NULL
+
+[108]
+Name = SubstrateRowNum
+Enable = False
+Unit = pcs
+Format = ASCII
+Vaule = 1
+Min = NULL
+Max = NULL
+
+[109]
+Name = Boat_BottomOffset
+Enable = TRUE
+Unit = pixel
+Format = ASCII
+Vaule = 6800
+Min = NULL
+Max = NULL
+
+[110]
+Name = Boat_RightOffset
+Enable = TRUE
+Unit = pixel
+Format = ASCII
+Vaule = 6850
+Min = NULL
+Max = NULL
+
+[111]
+Name = Boat_TopOffset
+Enable = TRUE
+Unit = pixel
+Format = ASCII
+Vaule = 1475
+Min = NULL
+Max = NULL
+
+[112]
+Name = Boat_LeftOffset
+Enable = TRUE
+Unit = pixel
+Format = ASCII
+Vaule = 3233
+Min = NULL
+Max = NULL
+
+[113]
+Name = Intensity_Scene0_Ch1
+Enable = TRUE
+Unit = set
+Format = ASCII
+Vaule = 1
+Min = NULL
+Max = NULL
+
+[114]
+Name = StrobeTime_Scene0_Ch1
+Enable = TRUE
+Unit = second
+Format = ASCII
+Vaule = 1000
+Min = NULL
+Max = NULL
+
+[115]
+Name = DelayTime_Scene0_Ch1
+Enable = TRUE
+Unit = second
+Format = ASCII
+Vaule = 10
+Min = NULL
+Max = NULL
+
+[116]
+Name = Voltage_Scene0_Ch1
+Enable = TRUE
+Unit = vol
+Format = ASCII
+Vaule = 35
+Min = NULL
+Max = NULL
+
+[117]
+Name = Intensity_Scene0_Ch2
+Enable = TRUE
+Unit = set
+Format = ASCII
+Vaule = 1
+Min = NULL
+Max = NULL
+
+[118]
+Name = StrobeTime_Scene0_Ch2
+Enable = TRUE
+Unit = set
+Format = ASCII
+Vaule = 1000
+Min = NULL
+Max = NULL
+
+[119]
+Name = DelayTime_Scene0_Ch2
+Enable = TRUE
+Unit = second
+Format = ASCII
+Vaule = 10
+Min = NULL
+Max = NULL
+
+[120]
+Name = Voltage_Scene0_Ch2
+Enable = TRUE
+Unit = voltage
+Format = ASCII
+Vaule = 350
+Min = NULL
+Max = NULL
+
+[121]
+Name = Scene0_Set
+Enable = TRUE
+Unit = set
+Format = ASCII
+Vaule = 1
+Min = NULL
+Max = NULL
+
+[122]
+Name = Intensity_Scene9_Ch1
+Enable = TRUE
+Unit = set
+Format = ASCII
+Vaule = 1
+Min = NULL
+Max = NULL
+
+[123]
+Name = StrobeTime_Scene9_Ch1
+Enable = TRUE
+Unit = set
+Format = ASCII
+Vaule = 10
+Min = NULL
+Max = NULL
+
+[124]
+Name = DelayTime_Scene9_Ch1
+Enable = TRUE
+Unit = second
+Format = ASCII
+Vaule = 511
+Min = NULL
+Max = NULL
+
+[125]
+Name = Voltage_Scene9_Ch1
+Enable = TRUE
+Unit = Voltage
+Format = ASCII
+Vaule = 0
+Min = NULL
+Max = NULL
+
+[126]
+Name = Intensity_Scene9_Ch2
+Enable = TRUE
+Unit = set
+Format = ASCII
+Vaule = 1
+Min = NULL
+Max = NULL
+
+[127]
+Name = StrobeTime_Scene9_Ch2
+Enable = TRUE
+Unit = second
+Format = ASCII
+Vaule = 10
+Min = NULL
+Max = NULL
+
+[128]
+Name = DelayTime_Scene9_Ch2
+Enable = TRUE
+Unit = second
+Format = ASCII
+Vaule = 511
+Min = NULL
+Max = NULL
+
+[129]
+Name = Pitch_X
+Enable = TRUE
+Unit = pixel
+Format = ASCII
+Vaule = 22.3232
+Min = NULL
+Max = NULL
+
+[130]
+Name = Pitch_Y
+Enable = TRUE
+Unit = pixel
+Format = ASCII
+Vaule = 16.35
+Min = NULL
+Max = NULL
+
+[131]
+Name = Mark1_Design_X
+Enable = TRUE
+Unit = pixel
+Format = ASCII
+Vaule = -6460
+Min = NULL
+Max = NULL
+
+[132]
+Name = Mark1_Design_Y
+Enable = TRUE
+Unit = pixel
+Format = ASCII
+Vaule = 7420
+Min = NULL
+Max = NULL
+
+[133]
+Name = Mark2_Design_X
+Enable = TRUE
+Unit = pixel
+Format = ASCII
+Vaule = 8020
+Min = NULL
+Max = NULL
+
+[134]
+Name = Mark2_Design_Y
+Enable = TRUE
+Unit = pixel
+Format = ASCII
+Vaule = -8350
+Min = NULL
+Max = NULL
+
+[135]
+Name = PassageWay_PosU
+Enable = TRUE
+Unit = set
+Format = ASCII
+Vaule = 0
+Min = NULL
+Max = NULL
+
+[136]
+Name = Voltage_Scene9_Ch2
+Enable = TRUE
+Unit = Voltage
+Format = ASCII
+Vaule = 0
+Min = NULL
+Max = NULL
+
+[137]
+Name = InSpect_PosZ
+Enable = TRUE
+Unit = set
+Format = ASCII
+Vaule = 6
+Min = NULL
+Max = NULL
+
+[138]
+Name = SavePicture
+Enable = TRUE
+Unit = bool
+Format = ASCII
+Vaule = 0
+Min = NULL
+Max = NULL
+
+[139]
+Name = SMT_Offset
+Enable = TRUE
+Unit = pixel
+Format = ASCII
+Vaule = 300
+Min = NULL
+Max = NULL
+
+[140]
+Name = Boat_UnitWidth
+Enable = TRUE
+Unit = pixel
+Format = ASCII
+Vaule = 9225
+Min = NULL
+Max = NULL
+
+[141]
+Name = Boat_UnitHeight
+Enable = TRUE
+Unit = pixel
+Format = ASCII
+Vaule = 8571
+Min = NULL
+Max = NULL
+

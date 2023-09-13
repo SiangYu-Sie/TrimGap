@@ -1,0 +1,536 @@
+//////////////////////////////////////////////////////////////////////////
+2023-05-17 14:11:16.204: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:11:16.718: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-17 14:11:16.730: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-17 14:11:23.776: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-17 14:11:23.776: Send S1F13(2527556).
+00 00 81 0D 00 00 00 26 91 44   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.026 seconds to log this message.
+2023-05-17 14:11:23.805: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-05-17 14:11:23.805: Receive S1F14(2527556).
+00 00 01 0E 00 00 00 26 91 44   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 14:11:31.760 TcpClient Released!
+2023-05-17 14:11:31.764: Send Separate.req.
+FF FF 00 00 00 09 00 26 91 45
+2023-05-17 14:11:31.932: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:11:33.546: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:11:36.225: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-17 14:11:36.256: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:11:36.505: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-17 14:11:36.511: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-17 14:11:36.511: Send S1F13(2527558).
+00 00 81 0D 00 00 00 26 91 46   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-05-17 14:11:36.535: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-05-17 14:11:36.535: Receive S1F14(2527558).
+00 00 01 0E 00 00 00 26 91 46   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-05-17 14:11:48.070: Send Data Message.
+00 00 00 1A 00 00 86 0B 00 00
+2023-05-17 14:11:48.070: Send S6F11(2527559).
+00 00 86 0B 00 00 00 26 91 47   01 03 B1 04 00 00 00 01 B1 04
+00 00 00 16 01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 1> /* Name = DATAID */
+  <U4[1] 22> /* Name = CEID, Keyword = _GEM_WBIT_S6_ (22) */
+  <L[0]
+  >
+>
+.
+Program takes      0.09 seconds to log this message.
+2023-05-17 14:11:48.162: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-05-17 14:11:48.162: Receive S6F12(2527559).
+00 00 06 0C 00 00 00 26 91 47   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2023-05-17 14:11:50.530: Send Data Message.
+00 00 00 0A 00 00 81 01 00 00
+2023-05-17 14:11:50.530: Send S1F1(2527560).
+00 00 81 01 00 00 00 26 91 48
+S1F1 W /* Are You Online? */
+Program takes      0.001 seconds to log this message.
+2023-05-17 14:11:50.564: Receive Data Message.
+00 00 00 0C 00 00 01 02 00 00
+2023-05-17 14:11:50.564: Receive S1F2(2527560).
+00 00 01 02 00 00 00 26 91 48   01 00
+S1F2  /* On Line Data */
+<L[0]
+>
+.
+Program takes      0 seconds to log this message.
+2023-05-17 14:11:52.075: Send Data Message.
+00 00 00 30 00 00 86 0B 00 00
+2023-05-17 14:11:52.075: Send S6F11(2527561).
+00 00 86 0B 00 00 00 26 91 49   01 03 B1 04 00 00 00 03 B1 04
+00 00 00 14 01 01 01 02 B1 04   00 00 1B 5B 01 03 B1 04 00 00
+00 07 41 01 30 41 01 31
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 3> /* Name = DATAID */
+  <U4[1] 20> /* Name = CEID */
+  <L[1]
+    <L[2]
+      <U4[1] 7003> /* Name = RPTID */
+      <L[3]
+        <U4[1] 7> /* Name = Value, Keyword = _GEM_ECID_CHANGED_ (46) */
+        <A[1]"0"> /* Name = Value, Keyword = _GEM_EC_VALUE_CHANGED_ (47) */
+        <A[1]"1"> /* Name = Value, Keyword = _GEM_PREVIOUS_EC_VALUE_ (48) */
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-05-17 14:11:52.177: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-05-17 14:11:52.177: Receive S6F12(2527561).
+00 00 06 0C 00 00 00 26 91 49   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2023-05-17 14:11:54.040: Send Data Message.
+00 00 00 30 00 00 86 0B 00 00
+2023-05-17 14:11:54.040: Send S6F11(2527562).
+00 00 86 0B 00 00 00 26 91 4A   01 03 B1 04 00 00 00 04 B1 04
+00 00 00 14 01 01 01 02 B1 04   00 00 1B 5B 01 03 B1 04 00 00
+00 07 41 01 31 41 01 30
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 4> /* Name = DATAID */
+  <U4[1] 20> /* Name = CEID */
+  <L[1]
+    <L[2]
+      <U4[1] 7003> /* Name = RPTID */
+      <L[3]
+        <U4[1] 7> /* Name = Value, Keyword = _GEM_ECID_CHANGED_ (46) */
+        <A[1]"1"> /* Name = Value, Keyword = _GEM_EC_VALUE_CHANGED_ (47) */
+        <A[1]"0"> /* Name = Value, Keyword = _GEM_PREVIOUS_EC_VALUE_ (48) */
+      >
+    >
+  >
+>
+.
+Program takes      0.002 seconds to log this message.
+2023-05-17 14:11:54.204: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-05-17 14:11:54.204: Receive S6F12(2527562).
+00 00 06 0C 00 00 00 26 91 4A   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 14:11:54.870 TcpClient Released!
+2023-05-17 14:11:54.875: Send Separate.req.
+FF FF 00 00 00 09 00 26 91 4B
+2023-05-17 14:11:55.397: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:12:05.061: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:12:05.997: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-17 14:12:06.062: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-17 14:12:06.067: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-17 14:12:06.067: Send S1F13(2527564).
+00 00 81 0D 00 00 00 26 91 4C   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.001 seconds to log this message.
+[DebugLog] 14:12:09.613 Useless client rejected
+[DebugLog] 14:12:10.548 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+2023-05-17 14:12:10.779: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:12:14.464: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-17 14:12:14.469: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-17 14:12:14.500: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-17 14:12:14.500: Send S1F13(2527565).
+00 00 81 0D 00 00 00 26 91 4D   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-05-17 14:12:14.564: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-05-17 14:12:14.564: Receive S1F14(2527565).
+00 00 01 0E 00 00 00 26 91 4D   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 14:12:35.003 TcpClient Released!
+2023-05-17 14:12:35.006: Send Separate.req.
+FF FF 00 00 00 09 00 26 91 4E
+2023-05-17 14:12:35.709: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:12:37.791: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:12:38.133: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-17 14:12:38.291: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-17 14:12:38.354: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-17 14:12:38.354: Send S1F13(2527567).
+00 00 81 0D 00 00 00 26 91 4F   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-05-17 14:12:38.382: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-05-17 14:12:38.382: Receive S1F14(2527567).
+00 00 01 0E 00 00 00 26 91 4F   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 14:12:44.026 TcpClient Released!
+2023-05-17 14:12:44.028: Send Separate.req.
+FF FF 00 00 00 09 00 26 91 50
+2023-05-17 14:12:44.770: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:12:45.378: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:12:48.258: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:12:48.682: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-17 14:12:48.713: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-17 14:12:48.935: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-17 14:12:48.935: Send S1F13(2527569).
+00 00 81 0D 00 00 00 26 91 51   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.001 seconds to log this message.
+[DebugLog] 14:12:52.316 Useless client rejected
+[DebugLog] 14:12:52.323 Useless client rejected
+[DebugLog] 14:12:52.444 Useless client rejected
+[DebugLog] 14:12:52.973 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+[DebugLog] 14:12:52.976 Useless client rejected
+2023-05-17 14:12:53.358: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:12:57.677: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-17 14:12:57.680: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-17 14:12:57.804: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-17 14:12:57.804: Send S1F13(2527570).
+00 00 81 0D 00 00 00 26 91 52   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.001 seconds to log this message.
+[DebugLog] 14:13:02.620 Useless client rejected
+[DebugLog] 14:13:03.500 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+2023-05-17 14:13:03.700: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:13:07.798: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-17 14:13:07.803: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-17 14:13:07.927: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-17 14:13:07.927: Send S1F13(2527571).
+00 00 81 0D 00 00 00 26 91 53   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.001 seconds to log this message.
+[DebugLog] 14:13:07.946 Useless client rejected
+[DebugLog] 14:13:08.050 Useless client rejected
+[DebugLog] 14:13:08.082 Useless client rejected
+[DebugLog] 14:13:08.144 Useless client rejected
+[DebugLog] 14:13:08.361 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+[DebugLog] 14:13:08.365 Useless client rejected
+2023-05-17 14:13:08.528: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:13:12.646: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-17 14:13:12.651: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-17 14:13:12.711: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-17 14:13:12.711: Send S1F13(2527572).
+00 00 81 0D 00 00 00 26 91 54   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.001 seconds to log this message.
+[DebugLog] 14:13:17.621 Useless client rejected
+[DebugLog] 14:13:17.979 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+2023-05-17 14:13:18.492: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:13:22.774: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-17 14:13:22.778: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-17 14:13:22.841: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-17 14:13:22.841: Send S1F13(2527573).
+00 00 81 0D 00 00 00 26 91 55   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.001 seconds to log this message.
+[DebugLog] 14:13:23.266 Useless client rejected
+[DebugLog] 14:13:23.425 Useless client rejected
+[DebugLog] 14:13:23.489 Useless client rejected
+[DebugLog] 14:13:23.519 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+[DebugLog] 14:13:23.523 Useless client rejected
+2023-05-17 14:13:23.645: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:13:23.652: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-17 14:13:23.657: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-17 14:13:23.684: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-17 14:13:23.684: Send S1F13(2527574).
+00 00 81 0D 00 00 00 26 91 56   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-05-17 14:13:23.713: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-05-17 14:13:23.713: Receive S1F14(2527574).
+00 00 01 0E 00 00 00 26 91 56   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 14:13:38.506 TcpClient Released!
+2023-05-17 14:13:39.652: Send Separate.req.
+FF FF 00 00 00 09 00 26 91 57
+[DebugLog] 14:13:39.662 ListenLoop() exception = 無法從傳輸連接讀取資料: 中止操作被 WSACancelBlockingCall 呼叫打斷。。
+2023-05-17 14:13:39.671: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:13:41.773: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:13:42.812: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-17 14:13:42.940: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-17 14:13:43.102: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-17 14:13:43.102: Send S1F13(2527576).
+00 00 81 0D 00 00 00 26 91 58   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.001 seconds to log this message.
+[DebugLog] 14:13:47.618 Useless client rejected
+[DebugLog] 14:13:48.248 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+2023-05-17 14:13:49.364: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:13:52.777: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-17 14:13:52.782: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-17 14:13:52.876: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-17 14:13:52.876: Send S1F13(2527577).
+00 00 81 0D 00 00 00 26 91 59   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.001 seconds to log this message.
+[DebugLog] 14:13:53.125 Useless client rejected
+[DebugLog] 14:13:53.281 Useless client rejected
+[DebugLog] 14:13:53.814 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+[DebugLog] 14:13:53.817 Useless client rejected
+2023-05-17 14:13:54.013: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:13:58.650: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-17 14:13:58.654: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-17 14:13:58.659: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-17 14:13:58.659: Send S1F13(2527578).
+00 00 81 0D 00 00 00 26 91 5A   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.001 seconds to log this message.
+[DebugLog] 14:14:03.618 Useless client rejected
+[DebugLog] 14:14:04.559 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+2023-05-17 14:14:04.885: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-17 14:14:05.199: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-17 14:14:05.203: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-17 14:14:05.233: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-17 14:14:05.233: Send S1F13(2527579).
+00 00 81 0D 00 00 00 26 91 5B   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-05-17 14:14:05.418: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-05-17 14:14:05.418: Receive S1F14(2527579).
+00 00 01 0E 00 00 00 26 91 5B   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 14:14:35.039 Timeout = T3_reply
+2023-05-17 14:14:35.111: Send Data Message.
+00 00 00 16 00 00 09 09 00 00
+2023-05-17 14:14:35.111: Send S9F9(2527580).
+00 00 09 09 00 00 00 26 91 5C   21 0A 00 00 09 09 00 00 00 26
+91 58
+S9F9  /* Transaction Timeout */
+<B[10] 0x00 0x00 0x09 0x09 0x00 0x00 0x00 0x26 0x91 0x58>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 14:14:43.576 Timeout = T3_reply
+2023-05-17 14:14:43.803: Send Data Message.
+00 00 00 16 00 00 09 09 00 00
+2023-05-17 14:14:43.803: Send S9F9(2527581).
+00 00 09 09 00 00 00 26 91 5D   21 0A 00 00 09 09 00 00 00 26
+91 59
+S9F9  /* Transaction Timeout */
+<B[10] 0x00 0x00 0x09 0x09 0x00 0x00 0x00 0x26 0x91 0x59>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 14:14:48.929 Timeout = T3_reply
+2023-05-17 14:14:48.943: Send Data Message.
+00 00 00 16 00 00 09 09 00 00
+2023-05-17 14:14:48.943: Send S9F9(2527582).
+00 00 09 09 00 00 00 26 91 5E   21 0A 00 00 09 09 00 00 00 26
+91 5A
+S9F9  /* Transaction Timeout */
+<B[10] 0x00 0x00 0x09 0x09 0x00 0x00 0x00 0x26 0x91 0x5A>
+.
+Program takes      0 seconds to log this message.
+2023-05-17 14:15:11.119: Send Linktest.req.
+FF FF 00 00 00 05 00 26 91 5F
+2023-05-17 14:15:11.123: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 91 5F
+2023-05-17 14:16:16.741: Send Linktest.req.
+FF FF 00 00 00 05 00 26 91 60
+2023-05-17 14:16:16.745: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 91 60
+2023-05-17 14:17:22.243: Send Linktest.req.
+FF FF 00 00 00 05 00 26 91 61
+2023-05-17 14:17:22.247: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 91 61
+2023-05-17 14:18:28.089: Send Linktest.req.
+FF FF 00 00 00 05 00 26 91 62
+2023-05-17 14:18:28.093: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 91 62
+2023-05-17 14:19:33.766: Send Linktest.req.
+FF FF 00 00 00 05 00 26 91 63
+2023-05-17 14:19:33.769: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 91 63
+2023-05-17 14:20:39.451: Send Linktest.req.
+FF FF 00 00 00 05 00 26 91 64
+2023-05-17 14:20:39.454: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 91 64
+//////////////////////////////////////////////////////////////////////////
+2023-05-17 14:50:10.124: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE

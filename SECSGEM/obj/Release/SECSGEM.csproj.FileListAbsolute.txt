@@ -1,0 +1,773 @@
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\SECSGEM.dll.config
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\CsvHelper.dll
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\CTLT.GEM.dll
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\CTLT.SECS.dll
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\System.Buffers.dll
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\System.Memory.dll
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\CsvHelper.xml
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\System.Buffers.xml
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\System.Memory.xml
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\obj\Release\SECSGEM.Config.resources
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\obj\Release\SECSGEM.SecsGemForm.resources
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\obj\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\開發模組 - 複製\SECSGEM\obj\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\SECSGEM.dll.config
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\CsvHelper.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\CTLT.GEM.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\CTLT.SECS.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\System.Buffers.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\System.Memory.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\CsvHelper.xml
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\System.Buffers.xml
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\System.Memory.xml
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\windows user\Desktop\開發模組\SECSGEM\obj\Release\SECSGEM.Config.resources
+C:\Users\windows user\Desktop\開發模組\SECSGEM\obj\Release\SECSGEM.SecsGemForm.resources
+C:\Users\windows user\Desktop\開發模組\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\開發模組\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\開發模組\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+C:\Users\windows user\Desktop\開發模組\SECSGEM\obj\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\obj\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\MediaBrowser.Common.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\MediaBrowser.Model.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\System.IO.Pipelines.dll
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+C:\Users\windows user\Desktop\開發模組\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+C:\Users\windows user\Desktop\開發模組\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\SECSGEM.dll.config
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\CircularProgressBar.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\CsvHelper.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\CTLT.GEM.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\CTLT.SECS.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\MediaBrowser.Common.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\MediaBrowser.Model.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\System.Buffers.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\System.Memory.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\WinFormAnimation.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\System.IO.Pipelines.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\CircularProgressBar.xml
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\CsvHelper.xml
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\System.Buffers.xml
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\System.Memory.xml
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\windows user\Desktop\TLModule\SECSGEM\obj\Release\SECSGEM.Config.resources
+C:\Users\windows user\Desktop\TLModule\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+C:\Users\windows user\Desktop\TLModule\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\TLModule\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TLModule\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+C:\Users\windows user\Desktop\TLModule\SECSGEM\obj\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\obj\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+C:\Users\windows user\Desktop\TLModule\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+C:\Users\windows user\Desktop\TLModule\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\SECSGEM.dll.config
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\CircularProgressBar.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\CsvHelper.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\CTLT.GEM.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\CTLT.SECS.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\MediaBrowser.Common.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\MediaBrowser.Model.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\System.Buffers.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\System.Memory.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\WinFormAnimation.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\System.IO.Pipelines.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\CircularProgressBar.xml
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\CsvHelper.xml
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\System.Buffers.xml
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\System.Memory.xml
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\obj\Release\SECSGEM.Config.resources
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\obj\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\obj\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\SECS_SMT\TLModule\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\SECSGEM.dll.config
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\CircularProgressBar.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\CsvHelper.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\CTLT.GEM.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\CTLT.SECS.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\MediaBrowser.Common.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\MediaBrowser.Model.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\System.Buffers.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\System.Memory.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\WinFormAnimation.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\System.IO.Pipelines.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\CircularProgressBar.xml
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\CsvHelper.xml
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\System.Buffers.xml
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\System.Memory.xml
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\obj\Release\SECSGEM.Config.resources
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\obj\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\TL_Module - 複製\TLModule\SECSGEM\obj\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\SECSGEM.dll.config
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\CsvHelper.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\CTLT.GEM.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\CTLT.SECS.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\MediaBrowser.Common.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\MediaBrowser.Model.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\System.Buffers.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\System.Memory.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\WinFormAnimation.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\System.IO.Pipelines.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\CsvHelper.xml
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\System.Buffers.xml
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\System.Memory.xml
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\obj\Release\SECSGEM.Config.resources
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\obj\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\TL_Module\TLModule\SECSGEM\obj\Release\SECSGEM.pdb
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\SECSGEM.exe.config
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\SECSGEM.exe
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\SECSGEM.pdb
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\CsvHelper.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\CTLT.GEM.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\CTLT.SECS.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\MediaBrowser.Common.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\MediaBrowser.Model.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\System.Buffers.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\System.Memory.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\WinFormAnimation.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\System.IO.Pipelines.dll
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\CsvHelper.xml
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\System.Buffers.xml
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\System.Memory.xml
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+D:\Git\SECSGEM - 複製\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+D:\Git\SECSGEM - 複製\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+D:\Git\SECSGEM - 複製\SECSGEM\obj\Release\SECSGEM.Config.resources
+D:\Git\SECSGEM - 複製\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+D:\Git\SECSGEM - 複製\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+D:\Git\SECSGEM - 複製\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+D:\Git\SECSGEM - 複製\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+D:\Git\SECSGEM - 複製\SECSGEM\obj\Release\SECSGEM.exe
+D:\Git\SECSGEM - 複製\SECSGEM\obj\Release\SECSGEM.pdb
+D:\Git\SECSGEM\SECSGEM\bin\Release\SECSGEM.dll.config
+D:\Git\SECSGEM\SECSGEM\bin\Release\SECSGEM.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\SECSGEM.pdb
+D:\Git\SECSGEM\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\CsvHelper.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\CTLT.GEM.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\CTLT.SECS.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Common.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Model.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\System.Buffers.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\System.Memory.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\WinFormAnimation.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\System.IO.Pipelines.dll
+D:\Git\SECSGEM\SECSGEM\bin\Release\CsvHelper.xml
+D:\Git\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+D:\Git\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+D:\Git\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Git\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+D:\Git\SECSGEM\SECSGEM\bin\Release\System.Buffers.xml
+D:\Git\SECSGEM\SECSGEM\bin\Release\System.Memory.xml
+D:\Git\SECSGEM\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+D:\Git\SECSGEM\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+D:\Git\SECSGEM\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+D:\Git\SECSGEM\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+D:\Git\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+D:\Git\SECSGEM\SECSGEM\obj\Release\SECSGEM.Config.resources
+D:\Git\SECSGEM\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+D:\Git\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+D:\Git\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+D:\Git\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+D:\Git\SECSGEM\SECSGEM\obj\Release\SECSGEM.dll
+D:\Git\SECSGEM\SECSGEM\obj\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\SECSGEM.dll.config
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\CsvHelper.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\CTLT.GEM.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\CTLT.SECS.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Common.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Model.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\System.Buffers.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\System.Memory.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\WinFormAnimation.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\System.IO.Pipelines.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\CsvHelper.xml
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\System.Buffers.xml
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\System.Memory.xml
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\obj\Release\SECSGEM.Config.resources
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\obj\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\obj\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\SECSGEM測試\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+D:\Module\SECSGEM\SECSGEM\bin\Release\SECSGEM.dll.config
+D:\Module\SECSGEM\SECSGEM\bin\Release\SECSGEM.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\SECSGEM.pdb
+D:\Module\SECSGEM\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\CsvHelper.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\CTLT.GEM.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\CTLT.SECS.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Common.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Model.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\System.Buffers.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\System.Memory.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\WinFormAnimation.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\System.IO.Pipelines.dll
+D:\Module\SECSGEM\SECSGEM\bin\Release\CsvHelper.xml
+D:\Module\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+D:\Module\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+D:\Module\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Module\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+D:\Module\SECSGEM\SECSGEM\bin\Release\System.Buffers.xml
+D:\Module\SECSGEM\SECSGEM\bin\Release\System.Memory.xml
+D:\Module\SECSGEM\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+D:\Module\SECSGEM\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+D:\Module\SECSGEM\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+D:\Module\SECSGEM\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+D:\Module\SECSGEM\SECSGEM\obj\Release\SECSGEM.Config.resources
+D:\Module\SECSGEM\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+D:\Module\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+D:\Module\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+D:\Module\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+D:\Module\SECSGEM\SECSGEM\obj\Release\SECSGEM.dll
+D:\Module\SECSGEM\SECSGEM\obj\Release\SECSGEM.pdb
+D:\Module\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+D:\SECSGEM\SECSGEM\bin\Release\SECSGEM.dll.config
+D:\SECSGEM\SECSGEM\bin\Release\SECSGEM.dll
+D:\SECSGEM\SECSGEM\bin\Release\SECSGEM.pdb
+D:\SECSGEM\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+D:\SECSGEM\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+D:\SECSGEM\SECSGEM\bin\Release\CsvHelper.dll
+D:\SECSGEM\SECSGEM\bin\Release\CTLT.GEM.dll
+D:\SECSGEM\SECSGEM\bin\Release\CTLT.SECS.dll
+D:\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Common.dll
+D:\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Model.dll
+D:\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+D:\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+D:\SECSGEM\SECSGEM\bin\Release\System.Buffers.dll
+D:\SECSGEM\SECSGEM\bin\Release\System.Memory.dll
+D:\SECSGEM\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+D:\SECSGEM\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\SECSGEM\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+D:\SECSGEM\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+D:\SECSGEM\SECSGEM\bin\Release\WinFormAnimation.dll
+D:\SECSGEM\SECSGEM\bin\Release\System.IO.Pipelines.dll
+D:\SECSGEM\SECSGEM\bin\Release\CsvHelper.xml
+D:\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+D:\SECSGEM\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+D:\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+D:\SECSGEM\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+D:\SECSGEM\SECSGEM\bin\Release\System.Buffers.xml
+D:\SECSGEM\SECSGEM\bin\Release\System.Memory.xml
+D:\SECSGEM\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+D:\SECSGEM\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+D:\SECSGEM\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+D:\SECSGEM\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+D:\SECSGEM\SECSGEM\obj\Release\SECSGEM.Config.resources
+D:\SECSGEM\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+D:\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+D:\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+D:\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+D:\SECSGEM\SECSGEM\obj\Release\SECSGEM.dll
+D:\SECSGEM\SECSGEM\obj\Release\SECSGEM.pdb
+D:\SECSGEM_25片\SECSGEM\bin\Release\SECSGEM.dll.config
+D:\SECSGEM_25片\SECSGEM\bin\Release\SECSGEM.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\SECSGEM.pdb
+D:\SECSGEM_25片\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\CsvHelper.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\CTLT.GEM.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\CTLT.SECS.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\MediaBrowser.Common.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\MediaBrowser.Model.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\System.Buffers.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\System.Memory.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\WinFormAnimation.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\System.IO.Pipelines.dll
+D:\SECSGEM_25片\SECSGEM\bin\Release\CsvHelper.xml
+D:\SECSGEM_25片\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+D:\SECSGEM_25片\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+D:\SECSGEM_25片\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+D:\SECSGEM_25片\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+D:\SECSGEM_25片\SECSGEM\bin\Release\System.Buffers.xml
+D:\SECSGEM_25片\SECSGEM\bin\Release\System.Memory.xml
+D:\SECSGEM_25片\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+D:\SECSGEM_25片\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+D:\SECSGEM_25片\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+D:\SECSGEM_25片\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+D:\SECSGEM_25片\SECSGEM\obj\Release\SECSGEM.Config.resources
+D:\SECSGEM_25片\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+D:\SECSGEM_25片\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+D:\SECSGEM_25片\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+D:\SECSGEM_25片\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+D:\SECSGEM_25片\SECSGEM\obj\Release\SECSGEM.dll
+D:\SECSGEM_25片\SECSGEM\obj\Release\SECSGEM.pdb
+D:\SECSGEM\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\SECSGEM.dll.config
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\SECSGEM.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\SECSGEM.pdb
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\CsvHelper.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\CTLT.GEM.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\CTLT.SECS.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\MediaBrowser.Common.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\MediaBrowser.Model.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\System.Buffers.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\System.Memory.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\WinFormAnimation.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\System.IO.Pipelines.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\CsvHelper.xml
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\System.Buffers.xml
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\System.Memory.xml
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\obj\Release\SECSGEM.Config.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\obj\Release\SECSGEM.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\SECSGEM\obj\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\SECSGEM.dll.config
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\CsvHelper.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\CTLT.GEM.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\CTLT.SECS.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\MediaBrowser.Common.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\MediaBrowser.Model.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\System.Buffers.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\System.Memory.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\WinFormAnimation.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\System.IO.Pipelines.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\CsvHelper.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\System.Buffers.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\System.Memory.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.Config.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\SECSGEM.dll.config
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\CsvHelper.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\CTLT.GEM.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\CTLT.SECS.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\MediaBrowser.Common.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\MediaBrowser.Model.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\System.Buffers.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\System.Memory.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\WinFormAnimation.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\System.IO.Pipelines.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\CsvHelper.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\System.Buffers.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\System.Memory.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.Config.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SECSGEM\obj\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\SECSGEM.dll.config
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\SECSGEM.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\CsvHelper.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\CTLT.GEM.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\CTLT.SECS.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\MediaBrowser.Common.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\MediaBrowser.Model.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\System.Buffers.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\System.Memory.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\WinFormAnimation.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\System.IO.Pipelines.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\CsvHelper.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\System.Buffers.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\System.Memory.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\obj\Release\SECSGEM.Config.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\obj\Release\SECSGEM.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SECSGEM\obj\Release\SECSGEM.pdb
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\SECSGEM.dll.config
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\SECSGEM.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\SECSGEM.pdb
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\CsvHelper.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\CTLT.GEM.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\CTLT.SECS.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\MediaBrowser.Common.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\MediaBrowser.Model.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\System.Buffers.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\System.Memory.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\WinFormAnimation.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\System.IO.Pipelines.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\CsvHelper.xml
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\System.Buffers.xml
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\System.Memory.xml
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\obj\Release\SECSGEM.csprojAssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\obj\Release\SECSGEM.Config.resources
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\obj\Release\SECSGEM.dll
+E:\專案\TrimGap\TrimGap - 20230718\SECSGEM\obj\Release\SECSGEM.pdb
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\SECSGEM.dll.config
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\SECSGEM.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\SECSGEM.pdb
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\CsvHelper.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\CTLT.GEM.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\CTLT.SECS.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\MediaBrowser.Common.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\MediaBrowser.Model.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\System.Buffers.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\System.Memory.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\WinFormAnimation.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\CsvHelper.xml
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\System.Buffers.xml
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\System.Memory.xml
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\obj\Release\SECSGEM.Config.resources
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\obj\Release\SECSGEM.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\obj\Release\SECSGEM.pdb
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\bin\Release\System.IO.Pipelines.dll
+E:\專案\TrimGap\TrimGap - 20230808\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\SECSGEM.dll.config
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\SECSGEM.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\SECSGEM.pdb
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\CsvHelper.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\CTLT.GEM.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\CTLT.SECS.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\MediaBrowser.Common.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\MediaBrowser.Model.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\System.Buffers.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\System.Memory.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\WinFormAnimation.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\System.IO.Pipelines.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\CsvHelper.xml
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\System.Buffers.xml
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\System.Memory.xml
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\obj\Release\SECSGEM.Config.resources
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\obj\Release\SECSGEM.dll
+E:\專案\TrimGap\TrimGap - 20230830\SECSGEM\obj\Release\SECSGEM.pdb
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\SECSGEM.dll.config
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\SECSGEM.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\SECSGEM.pdb
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\CsvHelper.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\CTLT.GEM.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\CTLT.SECS.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\MediaBrowser.Common.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\MediaBrowser.Model.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\System.Buffers.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\System.Memory.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\WinFormAnimation.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\System.IO.Pipelines.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\CsvHelper.xml
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\System.Buffers.xml
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\System.Memory.xml
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\obj\Release\SECSGEM.Config.resources
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\obj\Release\SECSGEM.dll
+E:\專案\TrimGap\TrimGap - 20230907\SECSGEM\obj\Release\SECSGEM.pdb

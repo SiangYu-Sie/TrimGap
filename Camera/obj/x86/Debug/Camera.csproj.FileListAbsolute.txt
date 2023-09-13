@@ -1,0 +1,14 @@
+D:\專案\新控制專案\bin\Camera.dll
+D:\專案\新控制專案\bin\Camera.pdb
+D:\專案\新控制專案\WindowsFormsApp1\Camera\obj\x86\Debug\Camera.csprojAssemblyReference.cache
+D:\專案\新控制專案\WindowsFormsApp1\Camera\obj\x86\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\專案\新控制專案\WindowsFormsApp1\Camera\obj\x86\Debug\Camera.csproj.CopyComplete
+D:\專案\新控制專案\WindowsFormsApp1\Camera\obj\x86\Debug\Camera.dll
+D:\專案\新控制專案\WindowsFormsApp1\Camera\obj\x86\Debug\Camera.pdb
+E:\專案\TrimGap\bin\Camera.dll
+E:\專案\TrimGap\bin\Camera.pdb
+E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x86\Debug\Camera.csprojAssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x86\Debug\Camera.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x86\Debug\Camera.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x86\Debug\Camera.dll
+E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x86\Debug\Camera.pdb

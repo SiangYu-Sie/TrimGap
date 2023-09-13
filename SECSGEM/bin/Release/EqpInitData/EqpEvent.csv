@@ -1,0 +1,12 @@
+//  System Event Definition,,
+// Name,ID,Definition
+EQP_EVENT_1,100,Eqp 1 Event
+EQP_EVENT_2,101,Eqp 2 Event
+EQP_EVENT_3,102,Eqp 3 Event
+EQP_EVENT_4,103,Eqp 4 Event
+EQP_EVENT_5,104,Eqp 5 Event
+EQP_EVENT_6,105,Eqp 6 Event
+Door_Open,201,Door Open
+Door_Close,202,Door Close
+Process_Start,203,Process Start
+Process_Stop,204,Process Stop

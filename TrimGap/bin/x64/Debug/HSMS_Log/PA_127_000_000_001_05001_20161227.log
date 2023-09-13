@@ -1,0 +1,89 @@
+//////////////////////////////////////////////////////////////////////////
+12:30:20.773: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+12:30:33.150: Receive Select.req.
+FF FF 00 00 00 01 00 91 7E 94
+12:30:33.161: Send Select.rsp.
+FF FF 00 00 00 02 00 91 7E 94
+12:30:33.186: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+12:30:33.186: Send S1F13(8792539).
+00 01 81 0D 00 00 00 86 29 DB   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W
+<L[2]
+  <A[6] "EqMDLN">
+  <A[6] "SofRev">
+>
+.
+Program takes      0 seconds to log this message.
+12:30:33.218: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+12:30:33.218: Receive S1F14(8792539).
+00 00 01 0E 00 00 00 86 29 DB   01 02 21 01 00 01 00
+S1F14 
+<L[2]
+  <B[1] 0x0>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+12:30:38.872: Receive Data Message.
+00 00 00 0A 00 00 81 01 00 00
+12:30:38.872: Receive S1F1(9535126).
+00 00 81 01 00 00 00 91 7E 96
+S1F1 W
+Program takes      0 seconds to log this message.
+12:30:38.875: Send Data Message.
+00 00 00 1C 00 01 01 02 00 00
+12:30:38.875: Send S1F2(9535126).
+00 01 01 02 00 00 00 91 7E 96   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F2 
+<L[2]
+  <A[6] "EqMDLN">
+  <A[6] "SofRev">
+>
+.
+Program takes      0 seconds to log this message.
+12:31:25.857: Receive Data Message.
+00 00 00 33 00 00 82 29 00 00
+12:31:25.857: Receive S2F41(9535127).
+00 00 82 29 00 00 00 91 7E 97   01 02 41 09 53 45 4C 45 43 54
+5F 50 50 01 02 01 02 41 04 50   50 49 44 41 03 50 50 31 01 02
+41 06 50 6F 72 74 49 44 21 01   01
+S2F41 W
+<L[2]
+  <A[9] "SELECT_PP">
+  <L[2]
+    <L[2]
+      <A[4] "PPID">
+      <A[3] "PP1">
+    >
+    <L[2]
+      <A[6] "PortID">
+      <B[1] 0x1>
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+12:31:37.657: Receive Linktest.req.
+FF FF 00 00 00 05 00 91 7E 98
+12:31:37.660: Send Linktest.rsp.
+FF FF 00 00 00 06 00 91 7E 98
+12:32:44.442: Send Data Message.
+00 00 00 11 00 01 02 2A 00 00
+12:32:44.442: Send S2F42(9535127).
+00 01 02 2A 00 00 00 91 7E 97   01 02 21 01 00 01 00
+S2F42 
+<L[2]
+  <B[1] 0x0>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+12:32:44.450: Receive Linktest.req.
+FF FF 00 00 00 05 00 91 7E 99
+12:32:45.470: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE

@@ -1,0 +1,139 @@
+//////////////////////////////////////////////////////////////////////////
+2023-05-03 08:23:17.771: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-03 08:23:18.148: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-03 08:23:18.374: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-03 08:23:23.868: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-03 08:23:23.868: Send S1F13(8244714).
+00 00 81 0D 00 00 00 7D CD EA   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.096 seconds to log this message.
+2023-05-03 08:23:23.973: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-05-03 08:23:23.973: Receive S1F14(8244714).
+00 00 01 0E 00 00 00 7D CD EA   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-05-03 08:24:29.356: Send Linktest.req.
+FF FF 00 00 00 05 00 7D CD EB
+2023-05-03 08:24:29.368: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7D CD EB
+//////////////////////////////////////////////////////////////////////////
+2023-05-03 08:29:18.543: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+//////////////////////////////////////////////////////////////////////////
+2023-05-03 08:32:33.997: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-05-03 08:33:19.724: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-05-03 08:33:19.774: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-05-03 08:33:19.826: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-05-03 08:33:19.826: Send S1F13(8116800).
+00 00 81 0D 00 00 00 7B DA 40   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.041 seconds to log this message.
+2023-05-03 08:33:19.878: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-05-03 08:33:19.878: Receive S1F14(8116800).
+00 00 01 0E 00 00 00 7B DA 40   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-05-03 08:33:33.619: Receive Data Message.
+00 00 00 0C 00 00 82 0D 00 00
+2023-05-03 08:33:33.619: Receive S2F13(8112745).
+00 00 82 0D 00 00 00 7B CA 69   01 00
+S2F13 W /* Equipment Constant Request */
+<L[0]
+>
+.
+Program takes      0 seconds to log this message.
+2023-05-03 08:33:33.641: Send Data Message.
+00 00 00 52 00 00 02 0E 00 00
+2023-05-03 08:33:33.641: Send S2F14(8112745).
+00 00 02 0E 00 00 00 7B CA 69   01 14 A5 01 01 A5 01 02 A5 01
+01 A5 01 01 A5 01 01 A9 02 00   05 A5 01 03 A5 01 03 A5 01 05
+B1 04 00 00 27 10 A5 01 01 25   01 01 A5 01 01 A5 01 05 A5 01
+05 B1 04 00 00 27 10 91 04 3F   6E 56 04 A5 01 32 A5 01 01 A5
+01 64
+S2F14  /* Equipment Constant Data */
+<L[20]
+  <U1[1] 1> /* Name = ECID, Keyword = _GEM_INIT_COMM_STATE_ (7) */
+  <U1[1] 2> /* Name = ECID, Keyword = _GEM_INIT_CONTROL_STATE_ (8) */
+  <U1[1] 1> /* Name = ECID, Keyword = _GEM_WBIT_S5_ (21) */
+  <U1[1] 1> /* Name = ECID, Keyword = _GEM_WBIT_S6_ (22) */
+  <U1[1] 1> /* Name = ECID, Keyword = _GEM_WBIT_S10_ (23) */
+  <U2[1] 5> /* Name = ECID, Keyword = _GEM_ESTAB_COMM_DELAY_ (44) */
+  <U1[1] 3> /* Name = ECID, Keyword = _GEM_OFF_LINE_SUBSTATE_ (49) */
+  <U1[1] 3> /* Name = ECID, Keyword = _GEM_ON_LINE_FAILED_ (50) */
+  <U1[1] 5> /* Name = ECID, Keyword = _GEM_ON_LINE_SUBSTATE_ (51) */
+  <U4[1] 10000> /* Name = ECID, Keyword = _GEM_MAX_SPOOL_TRANSMIT_ (52) */
+  <U1[1] 1> /* Name = ECID, Keyword = _GEM_CONFIG_SPOOL_ (66) */
+  <Boolean[1] 0x1> /* Name = ECID, Keyword = _GEM_OVER_WRITE_SPOOL_ (67) */
+  <U1[1] 1> /* Name = ECID, Keyword = _GEM_TIME_FORMAT_ (68) */
+  <U1[1] 5> /* Name = ECID, Keyword = _GEM_DATAID_FORMAT_ (71) */
+  <U1[1] 5> /* Name = ECID, Keyword = _GEM_SAMPLN_FORMAT_ (75) */
+  <U4[1] 10000> /* Name = ECID, Keyword = ChunkRotateDistance (7001) */
+  <F4[1] 0.931> /* Name = ECID, Keyword = Cofficient (7002) */
+  <U1[1] 50> /* Name = ECID, Keyword = RobotSpeed (7003) */
+  <U1[1] 1> /* Name = ECID, Keyword = MotionRotate (7004) */
+  <U1[1] 100> /* Name = ECID, Keyword = SoftWareVersion (7005) */
+>
+.
+Program takes      0.003 seconds to log this message.
+2023-05-03 08:34:22.230: Receive Data Message.
+00 00 00 1E 00 00 82 0D 00 00
+2023-05-03 08:34:22.230: Receive S2F13(8112746).
+00 00 82 0D 00 00 00 7B CA 6A   01 03 B1 04 00 00 1B 59 B1 04
+00 00 1B 5A B1 04 00 00 1B 5D
+S2F13 W /* Equipment Constant Request */
+<L[3]
+  <U4[1] 7001> /* Name = ECID, Keyword = ChunkRotateDistance (7001) */
+  <U4[1] 7002> /* Name = ECID, Keyword = Cofficient (7002) */
+  <U4[1] 7005> /* Name = ECID, Keyword = SoftWareVersion (7005) */
+>
+.
+Program takes      0 seconds to log this message.
+2023-05-03 08:34:22.243: Send Data Message.
+00 00 00 1B 00 00 02 0E 00 00
+2023-05-03 08:34:22.243: Send S2F14(8112746).
+00 00 02 0E 00 00 00 7B CA 6A   01 03 B1 04 00 00 27 10 91 04
+3F 6E 56 04 A5 01 64
+S2F14  /* Equipment Constant Data */
+<L[3]
+  <U4[1] 10000> /* Name = ECID, Keyword = ChunkRotateDistance (7001) */
+  <F4[1] 0.931> /* Name = ECID, Keyword = Cofficient (7002) */
+  <U1[1] 100> /* Name = ECID, Keyword = SoftWareVersion (7005) */
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-05-03 08:34:36.594:  Receive Separate.req.
+FF FF 00 00 00 09 00 7B CA 6B
+2023-05-03 08:34:36.594: Remote Client Disconnected!
+2023-05-03 08:34:36.933: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+[DebugLog] 08:34:37.763 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。

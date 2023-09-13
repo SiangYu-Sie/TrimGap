@@ -1,0 +1,21 @@
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\VST.Device.LightingController-master\LightController\bin\Release\LightController.exe.config
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\VST.Device.LightingController-master\LightController\bin\Release\LightController.exe
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\VST.Device.LightingController-master\LightController\bin\Release\LightController.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\VST.Device.LightingController-master\LightController\obj\Release\LightController.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\VST.Device.LightingController-master\LightController\obj\Release\LightController.csproj.SuggestedBindingRedirects.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\VST.Device.LightingController-master\LightController\obj\Release\LightController.Form1.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\VST.Device.LightingController-master\LightController\obj\Release\LightController.Properties.Resources.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\VST.Device.LightingController-master\LightController\obj\Release\LightController.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\VST.Device.LightingController-master\LightController\obj\Release\LightController.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\VST.Device.LightingController-master\LightController\obj\Release\LightController.exe
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\VST.Device.LightingController-master\LightController\obj\Release\LightController.pdb
+E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\bin\Release\LightController.exe.config
+E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\bin\Release\LightController.exe
+E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\bin\Release\LightController.pdb
+E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\obj\Release\LightController.Form1.resources
+E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\obj\Release\LightController.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\obj\Release\LightController.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\obj\Release\LightController.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\obj\Release\LightController.exe
+E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\obj\Release\LightController.pdb
+E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\obj\Release\LightController.csproj.AssemblyReference.cache

@@ -1,0 +1,56 @@
+09:22:39 CTLT.GEM Init->Start Ver.:2.3.6
+09:22:39 CTLT.GEM Init->Success.
+10:32:14 CTLT.GEM Init->Start Ver.:2.3.6
+10:32:14 CTLT.GEM Init->Success.
+14:42:44 CTLT.GEM Init->Start Ver.:2.3.6
+14:42:45 CTLT.GEM Init->Success.
+14:45:49 CTLT.GEM Init->Start Ver.:2.3.6
+14:45:50 CTLT.GEM Init->Success.
+14:46:33 CTLT.GEM Init->Start Ver.:2.3.6
+14:46:33 CTLT.GEM Init->Success.
+15:00:06 CTLT.GEM Init->Start Ver.:2.3.6
+15:00:07 CTLT.GEM Init->Success.
+15:01:13 CTLT.GEM Init->Start Ver.:2.3.6
+15:01:13 CTLT.GEM Init->Success.
+15:04:30 CTLT.GEM Init->Start Ver.:2.3.6
+15:04:30 CTLT.GEM Init->Success.
+15:06:06 CTLT.GEM Init->Start Ver.:2.3.6
+15:06:06 CTLT.GEM Init->Success.
+15:09:32 CTLT.GEM Init->Start Ver.:2.3.6
+15:09:33 CTLT.GEM Init->Success.
+15:14:18 CTLT.GEM Init->Start Ver.:2.3.6
+15:14:18 CTLT.GEM Init->Success.
+15:17:17 CTLT.GEM Init->Start Ver.:2.3.6
+15:17:18 CTLT.GEM Init->Success.
+15:17:45 CTLT.GEM Init->Start Ver.:2.3.6
+15:17:46 CTLT.GEM Init->Success.
+15:18:41 CTLT.GEM Init->Start Ver.:2.3.6
+15:18:41 CTLT.GEM Init->Success.
+15:20:02 CTLT.GEM Init->Start Ver.:2.3.6
+15:20:03 CTLT.GEM Init->Success.
+15:21:36 CTLT.GEM Init->Start Ver.:2.3.6
+15:21:36 CTLT.GEM Init->Success.
+15:23:05 CTLT.GEM Init->Start Ver.:2.3.6
+15:23:05 CTLT.GEM Init->Success.
+15:24:57 CTLT.GEM Init->Start Ver.:2.3.6
+15:24:57 CTLT.GEM Init->Success.
+16:20:01 CTLT.GEM Init->Start Ver.:2.3.6
+16:20:01 CTLT.GEM Init->Success.
+16:25:35 CTLT.GEM Init->Start Ver.:2.3.6
+16:25:35 CTLT.GEM Init->Success.
+16:27:43 CTLT.GEM Init->Start Ver.:2.3.6
+16:27:43 CTLT.GEM Init->Success.
+16:28:23 CTLT.GEM Init->Start Ver.:2.3.6
+16:28:24 CTLT.GEM Init->Success.
+16:33:01 CTLT.GEM Init->Start Ver.:2.3.6
+16:33:02 CTLT.GEM Init->Success.
+16:37:07 CTLT.GEM Init->Start Ver.:2.3.6
+16:37:08 CTLT.GEM Init->Success.
+16:38:54 CTLT.GEM Init->Start Ver.:2.3.6
+16:38:54 CTLT.GEM Init->Success.
+16:39:30 CTLT.GEM Init->Start Ver.:2.3.6
+16:39:30 CTLT.GEM Init->Success.
+17:26:13 CTLT.GEM Init->Start Ver.:2.3.6
+17:26:13 CTLT.GEM Init->Success.
+17:34:22 CTLT.GEM Init->Start Ver.:2.3.6
+17:34:22 CTLT.GEM Init->Success.

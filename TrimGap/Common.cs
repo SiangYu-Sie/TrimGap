@@ -1,0 +1,1049 @@
+﻿//using Microsoft.Analytics.Interfaces;
+//using Microsoft.Analytics.Types.Sql;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Drawing;
+using System.Text.RegularExpressions;
+using System.Threading;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Windows.Forms;
+using System.ComponentModel;
+
+namespace TrimGap
+{
+    internal class Common
+    {
+        public static SECSGEM.SecsgemForm SecsgemForm;
+        public static CTLT.ctlt_GEM CGWrapper;
+        public static Io io;
+
+        //public static LJ LJ8020;
+        private static KEYENCE_LJ.FTP LJ8020_FTP;
+
+        private static KEYENCE_LJ.Client2 LJ8020_Client;
+        public static SQLite.DataBase dataBase;
+        public static Mo motion;
+        public static MatlabAnalysis TrimGapAnalysis;
+        public static EFEM EFEM;
+        public static findHomePanel findHomePanel = new findHomePanel();
+        public static AutoRunStage autoRun;
+        public static Otsuka.SF3 SF3;
+        public static Camera.CameraBasic camera;
+        public static LightController.Rs232LightingController Rs232LightingController;
+        public static LightController.EthernetLightingController EthernetLightingController;
+        public static LightController.Form1 LightCtrlForm;
+        //public static ActUtlType64Lib.ActUtlType64Class actUtlType = new ActUtlType64Lib.ActUtlType64Class();
+        public static PT.SingleChannel PTForm;
+
+        static public void InitAll()
+        {
+            ParamFile.initparam(); //讀ini參數檔
+            ParamFile.ReadRcpini(fram.Recipe.Path + "\\" + fram.Recipe.Filename + ".ini", "Recipe");
+            InsertLog.Init(sram.ErrorCodeCsvPath);
+            if (fram.m_MachineType == 0) //AP6
+            {
+                fram.m_MotionType = 0;   // 0:SSC, 1:ETEL
+                fram.m_Hardware_LJ = 1;  // 0:None 1:all type
+                fram.m_Hardware_PT = 1;  // 0:None 1:all type
+                fram.m_Hardware_SF3 = 0; // 0:None 1:all type
+                fram.m_WaferStageType = 0; // 0:平坦台面+氣缸頂升  1:凹槽台面+牙叉抬升
+                fram.m_Hardware_CCD = 1; // 0:None 1:藍膜Z向拍照
+            }
+            else if (fram.m_MachineType == 1) // N2
+            {
+                fram.m_MotionType = 1;   // 0:SSC, 1:ETEL
+                fram.m_Hardware_LJ = 1;  // 0:None 1:all type
+                fram.m_Hardware_PT = 0;  // 0:None 1:all type
+                fram.m_Hardware_SF3 = 1; // 0:None 1:all type
+                fram.m_WaferStageType = 1; // 0:平坦台面+氣缸頂升  1:凹槽台面+牙叉抬升
+                fram.m_Hardware_CCD = 0; // 0:None 1:藍膜Z向拍照
+            }
+            else
+            {
+                fram.m_MotionType = 0;   // 0:SSC, 1:ETEL
+                fram.m_Hardware_LJ = 1;  // 0:None 1:all type
+                fram.m_Hardware_PT = 0;  // 0:None 1:all type
+                fram.m_Hardware_SF3 = 0; // 0:None 1:all type
+                fram.m_WaferStageType = 1; // 0:平坦台面+氣缸頂升  1:凹槽台面+牙叉抬升
+                fram.m_Hardware_CCD = 0; // 0:None 1:藍膜Z向拍照
+            }
+            InitDataBase();
+            InitKeyence();
+            InitIO();
+            InitMotion(fram.m_MotionType);
+            InitMatlab();
+            InitEFEM(fram.m_MachineType);
+            InitSecs();
+            SECSListening.InitSECSListening();
+            InitAutoRun(fram.m_MachineType);
+            InitSF3(fram.m_Hardware_SF3);
+            InitCCD(fram.m_Hardware_CCD);
+            InitPT(fram.m_Hardware_PT);
+        }
+
+        static public void Close()
+        {
+            Flag.FormOpenFlag = false;
+            if (motion != null && motion.bInitial)
+            {
+                motion.Close();
+            }
+            if (camera != null)
+            {
+                camera.Close();
+            }
+            if (Rs232LightingController != null)
+            {
+                Rs232LightingController.Close();
+            }
+            if (EthernetLightingController != null)
+            {
+                EthernetLightingController.Close();
+            }
+        }
+
+        public static void Init_chart(Chart chart)
+        {
+            // 每次使用此function前先清除圖表
+            //chartSensor.Series.Clear();
+            chart.Series[0].Points.Clear();//清除圖表
+            chart.Series[1].Points.Clear();//清除圖表
+            chart.Series[2].Points.Clear();//清除圖表
+            chart.Series[3].Points.Clear();//清除圖表
+            chart.Series[4].Points.Clear();//清除圖表
+            chart.Series[5].Points.Clear();//清除圖表
+            chart.Series[6].Points.Clear();//清除圖表
+            chart.Series[7].Points.Clear();//清除圖表
+            chart.ChartAreas[0].AxisX.Title = "um";
+            chart.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font(chart.ChartAreas[0].AxisX.Name, 14);
+            chart.ChartAreas[0].AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;    //設定title位置
+
+            chart.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray; //背景網格顏色
+            chart.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray; //背景網格顏色
+
+            //chartSensor.ChartAreas[0].CursorX.IsUserEnabled = true;
+            //chartSensor.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
+            //chartSensor.ChartAreas[0].CursorX.Interval = 0;
+            //chartSensor.ChartAreas[0].CursorX.IntervalOffset = 0;
+            //chartSensor.ChartAreas[0].AxisX.ScaleView.Zoomable = true;           //啟用縮放視圖
+            //chartSensor.ChartAreas[0].AxisX.ScrollBar.BackColor = Color.RosyBrown;
+            //chartSensor.ChartAreas[0].AxisX.ScrollBar.Enabled = true;
+            //chartSensor.ChartAreas[0].AxisX.ScrollBar.ButtonColor = Color.White;
+            //chartSensor.ChartAreas[0].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.All;//啟用X軸滾動條按鈕
+
+            chart.ChartAreas[0].AxisY.Title = "um";
+            chart.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font(chart.ChartAreas[0].AxisY.Name, 14);
+            chart.ChartAreas[0].AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;    //設定title位置
+            chart.ChartAreas[0].AxisY.TextOrientation = TextOrientation.Rotated270; //設定title文字方向
+            chart.ChartAreas[0].AxisY.LabelStyle.ForeColor = System.Drawing.Color.Blue;       //設定軸顏色
+
+            chart.ChartAreas[0].CursorX.IsUserEnabled = true;
+            chart.ChartAreas[0].CursorX.AutoScroll = true;
+            chart.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
+            chart.ChartAreas[0].CursorX.SelectionColor = System.Drawing.SystemColors.Highlight;
+            chart.ChartAreas[0].CursorY.IsUserEnabled = true;
+            chart.ChartAreas[0].CursorY.AutoScroll = true;
+            chart.ChartAreas[0].CursorY.IsUserSelectionEnabled = true;
+            chart.ChartAreas[0].CursorY.SelectionColor = System.Drawing.SystemColors.Highlight;
+            //chartSensor.ChartAreas[0].AxisY.ScrollBar.IsPositionedInside = true;
+            //chartSensor.ChartAreas[0].AxisY.ScrollBar.Enabled = true;
+            //chartSensor.ChartAreas[0].AxisY.ScaleView.Zoomable = true;
+            //chartSensor.ChartAreas[0].AxisY.ScrollBar.ButtonStyle = ScrollBarButtonStyles.All;
+            //chartSensor.ChartAreas[0].CursorY.IsUserEnabled = true;
+            //chartSensor.ChartAreas[0].CursorY.IsUserSelectionEnabled = true;
+            //chartSensor.ChartAreas[0].CursorY.Interval = 0;
+            //chartSensor.ChartAreas[0].CursorY.IntervalOffset = 0;
+
+            // distance
+            // ---------------------
+            chart.Series[0].ToolTip = "#VALX,#VALY";            //鼠標停留在數據上，顯示XY值
+            chart.Series[0].ChartType = SeriesChartType.FastLine;   //設定線條種類 折線圖
+            chart.Series[0].YAxisType = AxisType.Primary;           //主坐標軸
+            chart.Series[0].Color = System.Drawing.Color.Blue;                 //設定線條顏色
+            chart.Series[1].ToolTip = "#VALX,#VALY";            //鼠標停留在數據上，顯示XY值
+            chart.Series[1].ChartType = SeriesChartType.FastLine;   //設定線條種類 折線圖
+            chart.Series[1].YAxisType = AxisType.Primary;           //主坐標軸
+            chart.Series[1].Color = System.Drawing.Color.Red;                 //設定線條顏色
+            chart.ChartAreas[0].AxisX.Maximum = fram.S_ShowDataNum;  //設定X軸最大值 預設為30000
+            chart.ChartAreas[0].AxisX.Minimum = 0;            //設定X軸最小值
+            chart.ChartAreas[0].AxisX.Interval = 1000;// chart.ChartAreas[0].AxisX.Maximum / 10; //設定X軸間隔 最大值/10
+
+            chart.ChartAreas[0].AxisY.Maximum = 10;  //設定Y軸最大值
+            chart.ChartAreas[0].AxisY.Minimum = -100; //設定Y軸最小值
+            chart.ChartAreas[0].AxisY.Interval = 10;
+            //(chart.ChartAreas[0].AxisY.Maximum - chart.ChartAreas[0].AxisY.Minimum) / 10; //設定Y軸間隔 最大值
+
+            chart.ChartAreas[0].AxisY.ScrollBar.IsPositionedInside = true;
+            chart.ChartAreas[0].AxisY.ScrollBar.Enabled = true;
+
+            chart.Series[0].Points.AddXY(0, 0);
+            chart.Series[1].Points.AddXY(0, 0);
+            //this.chartSensor.Series.Add(series1);//將線畫在圖上
+        }
+
+        public static void Init_chart2(Chart chart)
+        {
+            // 每次使用此function前先清除圖表
+            //chartSensor.Series.Clear();
+            chart.Series[0].Points.Clear();//清除圖表
+            chart.Series[1].Points.Clear();//清除圖表
+            chart.Series[2].Points.Clear();//清除圖表
+            chart.Series[3].Points.Clear();//清除圖表
+            chart.Series[4].Points.Clear();//清除圖表
+            chart.Series[5].Points.Clear();//清除圖表
+            chart.Series[6].Points.Clear();//清除圖表
+            chart.Series[7].Points.Clear();//清除圖表
+            chart.Series[8].Points.Clear();//清除圖表
+
+            chart.ChartAreas[0].AxisX.Title = "um";
+            chart.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font(chart.ChartAreas[0].AxisX.Name, 14);
+            chart.ChartAreas[0].AxisX.TitleAlignment = System.Drawing.StringAlignment.Far;    //設定title位置
+
+            chart.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.LightGray; //背景網格顏色
+            chart.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray; //背景網格顏色
+
+            //chartSensor.ChartAreas[0].CursorX.IsUserEnabled = true;
+            //chartSensor.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
+            //chartSensor.ChartAreas[0].CursorX.Interval = 0;
+            //chartSensor.ChartAreas[0].CursorX.IntervalOffset = 0;
+            //chartSensor.ChartAreas[0].AxisX.ScaleView.Zoomable = true;           //啟用縮放視圖
+            //chartSensor.ChartAreas[0].AxisX.ScrollBar.BackColor = Color.RosyBrown;
+            //chartSensor.ChartAreas[0].AxisX.ScrollBar.Enabled = true;
+            //chartSensor.ChartAreas[0].AxisX.ScrollBar.ButtonColor = Color.White;
+            //chartSensor.ChartAreas[0].AxisX.ScrollBar.ButtonStyle = ScrollBarButtonStyles.All;//啟用X軸滾動條按鈕
+
+            chart.ChartAreas[0].AxisY.Title = "um";
+            chart.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font(chart.ChartAreas[0].AxisY.Name, 14);
+            chart.ChartAreas[0].AxisY.TitleAlignment = System.Drawing.StringAlignment.Far;    //設定title位置
+            chart.ChartAreas[0].AxisY.TextOrientation = TextOrientation.Rotated270; //設定title文字方向
+            chart.ChartAreas[0].AxisY.LabelStyle.ForeColor = System.Drawing.Color.Blue;       //設定軸顏色
+
+            chart.ChartAreas[0].CursorX.IsUserEnabled = true;
+            chart.ChartAreas[0].CursorX.AutoScroll = true;
+            chart.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
+            chart.ChartAreas[0].CursorX.SelectionColor = System.Drawing.SystemColors.Highlight;
+            chart.ChartAreas[0].CursorY.IsUserEnabled = true;
+            chart.ChartAreas[0].CursorY.AutoScroll = true;
+            chart.ChartAreas[0].CursorY.IsUserSelectionEnabled = true;
+            chart.ChartAreas[0].CursorY.SelectionColor = System.Drawing.SystemColors.Highlight;
+            //chartSensor.ChartAreas[0].AxisY.ScrollBar.IsPositionedInside = true;
+            //chartSensor.ChartAreas[0].AxisY.ScrollBar.Enabled = true;
+            //chartSensor.ChartAreas[0].AxisY.ScaleView.Zoomable = true;
+            //chartSensor.ChartAreas[0].AxisY.ScrollBar.ButtonStyle = ScrollBarButtonStyles.All;
+            //chartSensor.ChartAreas[0].CursorY.IsUserEnabled = true;
+            //chartSensor.ChartAreas[0].CursorY.IsUserSelectionEnabled = true;
+            //chartSensor.ChartAreas[0].CursorY.Interval = 0;
+            //chartSensor.ChartAreas[0].CursorY.IntervalOffset = 0;
+
+            // distance
+            // ---------------------
+            chart.Series[0].ToolTip = "#VALX,#VALY";            //鼠標停留在數據上，顯示XY值
+            chart.Series[0].ChartType = SeriesChartType.FastLine;   //設定線條種類 折線圖
+            chart.Series[0].YAxisType = AxisType.Primary;           //主坐標軸
+            chart.Series[0].Color = System.Drawing.Color.Blue;                 //設定線條顏色
+            chart.Series[1].ToolTip = "#VALX,#VALY";            //鼠標停留在數據上，顯示XY值
+            chart.Series[1].ChartType = SeriesChartType.FastLine;   //設定線條種類 折線圖
+            chart.Series[1].YAxisType = AxisType.Primary;           //主坐標軸
+            chart.Series[1].Color = System.Drawing.Color.Red;                 //設定線條顏色
+            chart.ChartAreas[0].AxisX.Maximum = fram.S_ShowDataNum;  //設定X軸最大值 預設為30000
+            chart.ChartAreas[0].AxisX.Minimum = 0;            //設定X軸最小值
+            chart.ChartAreas[0].AxisX.Interval = 1000;// chart.ChartAreas[0].AxisX.Maximum / 10; //設定X軸間隔 最大值/10
+
+            chart.ChartAreas[0].AxisY.Maximum = 10;  //設定Y軸最大值
+            chart.ChartAreas[0].AxisY.Minimum = -100; //設定Y軸最小值
+            chart.ChartAreas[0].AxisY.Interval = 10;
+            //(chart.ChartAreas[0].AxisY.Maximum - chart.ChartAreas[0].AxisY.Minimum) / 10; //設定Y軸間隔 最大值
+
+            chart.ChartAreas[0].AxisY.ScrollBar.IsPositionedInside = true;
+            chart.ChartAreas[0].AxisY.ScrollBar.Enabled = true;
+
+            chart.Series[0].Points.AddXY(0, 0);
+            chart.Series[1].Points.AddXY(0, 0);
+            //this.chartSensor.Series.Add(series1);//將線畫在圖上
+        }
+
+        static private void InitSecs()
+        {
+            SecsgemForm = new SECSGEM.SecsgemForm();
+            CGWrapper = SECSGEM.SecsgemForm.CGWrapper;
+            CGWrapper.UpdateSV(GemSystemID.GEM_SOFTREV, sram.SofewareVersion); // 先更新版本號，把SECS裡自動更新版本號的地方刪除
+            SecsgemForm.Show();
+            SpinWait.SpinUntil(() => CGWrapper.GetCurrentCommState().GetHashCode() == 7, 5000);
+            SecsgemForm.Hide();
+
+            // init secs後 先update EC 更新機台參數
+
+            CGWrapper.UpdateEC(TrimGap_EqpID.ChunkRotateDistance, fram.m_posV[0]);
+            CGWrapper.UpdateEC(TrimGap_EqpID.Cofficient, fram.Analysis.Coefficient);
+            CGWrapper.UpdateEC(TrimGap_EqpID.RobotSpeed, 50);
+            CGWrapper.UpdateEC(TrimGap_EqpID.SoftWareVersion, 110);  // 版本號 目前是1.1.0.0503 ，更新前面三碼就好，這個之後再改成直接抓版本號
+            if (fram.S_MotionRotate == "True")
+            {
+                CGWrapper.UpdateEC(TrimGap_EqpID.MotionRotate, 1);
+            }
+            else
+            {
+                CGWrapper.UpdateEC(TrimGap_EqpID.MotionRotate, 0);
+            }
+            Common.CGWrapper.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, fram.SECSPara.Loadport1_AccessMode);              // 開啟程式後先更新 Access Mode & PortTranmsferState
+            Common.CGWrapper.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, fram.SECSPara.Loadport2_AccessMode);
+            Common.CGWrapper.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, fram.SECSPara.Loadport1_PortTransferState);
+            Common.CGWrapper.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, fram.SECSPara.Loadport2_PortTransferState);
+        }
+
+        public static bool isRemote()
+        {
+            try
+            {
+                if (Common.SecsgemForm != null && Common.SecsgemForm.Comm_State == 7 && Common.SecsgemForm.Control_State == 5)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        static private void InitMatlab()
+        {
+            TrimGapAnalysis = new MatlabAnalysis();
+        }
+
+        static private void InitAutoRun(int MachineType)
+        {
+            autoRun = new AutoRunStage(MachineType);
+        }
+
+        static private void InitKeyence()
+        {
+            LJ8020_FTP = new KEYENCE_LJ.FTP(fram.LJ_ipaddress_FTP, fram.LJ_User_FTP, fram.LJ_Password_FTP);
+            if (!LJ.LJtestMode)
+            {
+                LJ8020_Client = new KEYENCE_LJ.Client2(fram.LJ_ipaddress_Controller, fram.LJ_portNo_Controller, 1000);
+            }
+        }
+
+        static private void InitSF3(int type)
+        {
+            if (type > 0)
+            {
+                SF3 = new Otsuka.SF3();
+                SF3.blnAscii = true;
+                bool rtn;
+                rtn = SF3.Open("192.168.1.20", 65432, false);
+            }
+        }
+
+        static private void InitCCD(int type)
+        {
+            if (type > 0)
+            {
+                camera = new Camera.CameraBasic();
+                LightCtrlForm = new LightController.Form1();
+
+                try
+                {
+                    camera.init(2, "CCD1", false, false);
+                    Rs232LightingController = new LightController.Rs232LightingController("GLC-DPI2-170", 1);
+                    EthernetLightingController = new LightController.EthernetLightingController("VLP-2460-4eN", 2);
+                    Rs232LightingController.Open("COM2"); // 要看機台是COM幾
+                    EthernetLightingController.Open();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("CCD Init Fail");
+                }
+            }
+        }
+
+        static private void InitPT(int type)
+        {
+            if (type > 0)
+            {
+                PTForm = new PT.SingleChannel();
+                PTForm.Show();
+                PTForm.Hide();
+                try
+                {
+                    Common.PTForm.OpenConnection();
+                }
+                catch (Exception ee)
+                {
+                    MessageBox.Show("PT Sensor Init Fail:" + ee);
+                }
+            }
+            /*
+           if (false)
+           {
+               //Common.actProgType = new AxActProgTypeLib.AxActProgType();
+               try
+               {                  
+                   int iRet;
+                   //Common.actProgType.ActCpuType = Convert.ToInt16("0x0210", 16);
+                   //Common.actUtlType.ActUnitType = Convert.ToInt16("0x2001", 16);
+                   //Common.actUtlType.ActProtocolType = 5;
+                   Common.actUtlType.ActLogicalStationNumber = 1;
+                   //Common.actProgType.ActIONumber = fram.PLC.ActIONumber;
+                   //Common.actProgType.ActTimeOut = 2000;
+                   //Common.actUtlType.ActHostAddress = "192.168.170.33";
+                   //Common.actUtlType.ActDestinationPortNumber = 1;
+                   iRet = Common.actUtlType.Open();
+                   if(iRet != 0)
+                   {
+                       //Common.actUtlType.ActCpuType = Convert.ToInt16("0x0210", 16);
+                       //Common.actUtlType.ActUnitType = Convert.ToInt16("0x2001", 16);
+                       iRet = Common.actUtlType.Open();
+                       if (iRet != 0)
+                       {
+                           MessageBox.Show("PT Sensor Init Fail.");
+                       }
+                   }
+
+               }
+               catch (Exception ee)
+               {
+                   MessageBox.Show("PT Sensor Init Fail:" + ee);
+               }
+           }*/
+        }
+
+        static private void InitIO()
+        {
+            if(fram.m_simulateRun == 0)
+                io = new Io(fram.m_MachineType, fram.S_IOCardName);
+            else
+                io = new Io(fram.m_MachineType, fram.S_IOCardName, -1);
+
+            if (io.initial(System.Windows.Forms.Application.StartupPath))
+            {
+                if (io.bDebug())
+                {
+                    InsertLog.SavetoDB(57); //IO 虛擬模式
+                }
+            }
+            else
+            {
+                if (io.bDebug())
+                {
+                    InsertLog.SavetoDB(57); //IO 虛擬模式
+                }
+                else
+                    InsertLog.SavetoDB(31); //IO init
+            }
+        }
+
+        static public void InitDataBase()
+        {
+            dataBase = new SQLite.DataBase(sram.DataBasePath, Language.TC);
+        }
+
+        static private void InitMotion(int motiontype)
+        {
+            motion = new Mo(motiontype);
+            //motion.InitMotion("C:\\Users\\TL\\Documents\\Position Board\\FTGM1\\testData0830.prm2", false);
+            motion.InitMotion(fram.m_MotionParamPath, fram.m_simulateRun != 0);
+        }
+
+        public static void SaveEFEMSts()
+        {
+            if (!EFEM.IsInit)
+            {
+                return;
+            }
+            if (Common.EFEM.LoadPort1.Busy)
+            {
+                //fram.EFEMSts.LoadPortRun = Common.EFEM.LoadPort_Run.pn.ToString();
+                fram.EFEMSts.StepBack1 = sram.EFEMStep_Back1.ToString();
+                fram.EFEMSts.LoadPort1_FoupID = Common.EFEM.LoadPort1.FoupID;
+
+                if (Common.EFEM.Robot.Slot_pn != null)
+                {
+                    fram.EFEMSts.Robot_Upper_Slotpn = Common.EFEM.Robot.Slot_pn.pn.ToString();
+                    fram.EFEMSts.Robot_Lower_Slotpn = Common.EFEM.Robot.Slot_pn.pn.ToString();
+                    fram.EFEMSts.Robot_Upper_Slot = Common.EFEM.Robot.Slot_Arm_upper;
+                    fram.EFEMSts.Robot_Lower_Slot = Common.EFEM.Robot.Slot_Arm_lower;
+                }
+                fram.EFEMSts.Aligner_Slotpn = Common.EFEM.LoadPort1.pn.ToString();
+                fram.EFEMSts.Stage_Slotpn = Common.EFEM.LoadPort1.pn.ToString();
+                for (int i = 0; i < Common.EFEM.LoadPort1.Slot.Length; i++)
+                {
+                    fram.EFEMSts.Slot_Sts1[i] = Common.EFEM.LoadPort1.slot_Status[i].ToString();
+                }
+                fram.EFEMSts.Aligner_Slot = Common.EFEM.Aligner.Slot;
+                fram.EFEMSts.Stage_Slot = Common.EFEM.Stage1.Slot;
+            }
+            else if (Common.EFEM.LoadPort2.Busy)
+            {
+                //fram.EFEMSts.LoadPortRun = Common.EFEM.LoadPort_Run.pn.ToString();
+
+                fram.EFEMSts.StepBack2 = sram.EFEMStep_Back2.ToString();
+
+                fram.EFEMSts.LoadPort2_FoupID = Common.EFEM.LoadPort2.FoupID;
+                if (Common.EFEM.Robot.Slot_pn != null)
+                {
+                    fram.EFEMSts.Robot_Upper_Slotpn = Common.EFEM.Robot.Slot_pn.pn.ToString();
+                    fram.EFEMSts.Robot_Lower_Slotpn = Common.EFEM.Robot.Slot_pn.pn.ToString();
+                    fram.EFEMSts.Robot_Upper_Slot = Common.EFEM.Robot.Slot_Arm_upper;
+                    fram.EFEMSts.Robot_Lower_Slot = Common.EFEM.Robot.Slot_Arm_lower;
+                }
+                fram.EFEMSts.Aligner_Slotpn = Common.EFEM.LoadPort2.pn.ToString();
+                fram.EFEMSts.Stage_Slotpn = Common.EFEM.LoadPort2.pn.ToString();
+                for (int i = 0; i < Common.EFEM.LoadPort2.Slot.Length; i++)
+                {
+                    fram.EFEMSts.Slot_Sts2[i] = Common.EFEM.LoadPort2.slot_Status[i].ToString();
+                }
+                fram.EFEMSts.Aligner_Slot = Common.EFEM.Aligner.Slot;
+                fram.EFEMSts.Stage_Slot = Common.EFEM.Stage1.Slot;
+            }
+            else
+            {
+                fram.EFEMSts.LoadPortRun = "";
+                fram.EFEMSts.StepBack1 = sram.EFEMStep_Back1.ToString();
+                fram.EFEMSts.StepBack2 = sram.EFEMStep_Back2.ToString();
+                fram.EFEMSts.LoadPort1_FoupID = "";
+                fram.EFEMSts.LoadPort2_FoupID = "";
+                fram.EFEMSts.Robot_Upper_Slotpn = "";
+                fram.EFEMSts.Robot_Lower_Slotpn = "";
+                fram.EFEMSts.Aligner_Slotpn = "";
+                fram.EFEMSts.Stage_Slotpn = "";
+                for (int i = 0; i < fram.EFEMSts.Slot_Sts1.Length; i++)
+                {
+                    fram.EFEMSts.Slot_Sts1[i] = EFEM.slot_status.Empty.ToString();
+                    fram.EFEMSts.Slot_Sts2[i] = EFEM.slot_status.Empty.ToString();
+                }
+                fram.EFEMSts.Robot_Upper_Slot = 0;
+                fram.EFEMSts.Robot_Lower_Slot = 0;
+                fram.EFEMSts.Aligner_Slot = 0;
+                fram.EFEMSts.Stage_Slot = 0;
+            }
+        }
+
+        public static void Init_EFEMSts()
+        {
+            foreach (var i in Enum.GetValues(typeof(EFEMStep)))
+            {
+                if (fram.EFEMSts.StepBack1 == i.ToString())
+                {
+                    sram.EFEMStep1 = ((EFEMStep)i);
+                }
+                if (fram.EFEMSts.StepBack2 == i.ToString())
+                {
+                    sram.EFEMStep2 = ((EFEMStep)i);
+                }
+            }
+            if (Common.EFEM.LoadPort_Run != null)
+            {
+                Common.EFEM.Aligner.Slot_pn = Common.EFEM.LoadPort_Run;
+                Common.EFEM.Stage1.Slot_pn = Common.EFEM.LoadPort_Run;
+                Common.EFEM.Robot.Slot_pn = Common.EFEM.LoadPort_Run;
+            }
+
+            if (Common.io.In(IOName.In.StageWafer在席))
+            {
+                Common.EFEM.Stage1.Slot = fram.EFEMSts.Stage_Slot;
+            }
+            else
+            {
+                Common.EFEM.Stage1.Slot = 0;
+            }
+
+            if (fram.EFEMSts.Stage_Slotpn == "P1")
+            {
+                Common.EFEM.Stage1.Slot_pn = Common.EFEM.LoadPort1;
+            }
+            else if (fram.EFEMSts.Stage_Slotpn == "P2")
+            {
+                Common.EFEM.Stage1.Slot_pn = Common.EFEM.LoadPort2;
+            }
+            else
+            {
+            }
+
+            for (int i = 0; i < Common.EFEM.LoadPort1.Slot.Length; i++)
+            {
+                switch (fram.EFEMSts.Slot_Sts1[i])
+                {
+                    case nameof(EFEM.slot_status.Empty):
+                        Common.EFEM.LoadPort1.slot_Status[i] = EFEM.slot_status.Empty;
+                        break;
+
+                    case nameof(EFEM.slot_status.Ready):
+                        Common.EFEM.LoadPort1.slot_Status[i] = EFEM.slot_status.Ready;
+                        break;
+
+                    case nameof(EFEM.slot_status.Error):
+                        Common.EFEM.LoadPort1.slot_Status[i] = EFEM.slot_status.Error;
+                        break;
+
+                    case nameof(EFEM.slot_status.Thickness):
+                        Common.EFEM.LoadPort1.slot_Status[i] = EFEM.slot_status.Thickness;
+                        break;
+
+                    case nameof(EFEM.slot_status.Thin):
+                        Common.EFEM.LoadPort1.slot_Status[i] = EFEM.slot_status.Thin;
+                        break;
+
+                    case nameof(EFEM.slot_status.ProcessingAligner1):
+                        Common.EFEM.LoadPort1.slot_Status[i] = EFEM.slot_status.ProcessingAligner1;
+                        break;
+
+                    case nameof(EFEM.slot_status.ProcessingStage1):
+                        Common.EFEM.LoadPort1.slot_Status[i] = EFEM.slot_status.ProcessingStage1;
+                        break;
+
+                    case nameof(EFEM.slot_status.ProcessEnd):
+                        Common.EFEM.LoadPort1.slot_Status[i] = EFEM.slot_status.ProcessEnd;
+                        break;
+
+                    case nameof(EFEM.slot_status.Unknow):
+                        Common.EFEM.LoadPort1.slot_Status[i] = EFEM.slot_status.Unknow;
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+            for (int i = 0; i < Common.EFEM.LoadPort2.Slot.Length; i++)
+            {
+                switch (fram.EFEMSts.Slot_Sts2[i])
+                {
+                    case nameof(EFEM.slot_status.Empty):
+                        Common.EFEM.LoadPort2.slot_Status[i] = EFEM.slot_status.Empty;
+                        break;
+
+                    case nameof(EFEM.slot_status.Ready):
+                        Common.EFEM.LoadPort2.slot_Status[i] = EFEM.slot_status.Ready;
+                        break;
+
+                    case nameof(EFEM.slot_status.Error):
+                        Common.EFEM.LoadPort2.slot_Status[i] = EFEM.slot_status.Error;
+                        break;
+
+                    case nameof(EFEM.slot_status.Thickness):
+                        Common.EFEM.LoadPort2.slot_Status[i] = EFEM.slot_status.Thickness;
+                        break;
+
+                    case nameof(EFEM.slot_status.Thin):
+                        Common.EFEM.LoadPort2.slot_Status[i] = EFEM.slot_status.Thin;
+                        break;
+
+                    case nameof(EFEM.slot_status.ProcessingAligner1):
+                        Common.EFEM.LoadPort2.slot_Status[i] = EFEM.slot_status.ProcessingAligner1;
+                        break;
+
+                    case nameof(EFEM.slot_status.ProcessingStage1):
+                        Common.EFEM.LoadPort2.slot_Status[i] = EFEM.slot_status.ProcessingStage1;
+                        break;
+
+                    case nameof(EFEM.slot_status.ProcessEnd):
+                        Common.EFEM.LoadPort2.slot_Status[i] = EFEM.slot_status.ProcessEnd;
+                        break;
+
+                    case nameof(EFEM.slot_status.Unknow):
+                        Common.EFEM.LoadPort2.slot_Status[i] = EFEM.slot_status.Unknow;
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+            Common.EFEM.Robot.GetStatus();
+            if (Common.EFEM.Robot.WaferPresence_Upper)
+            {
+                Common.EFEM.Robot.Slot_Arm_upper = fram.EFEMSts.Robot_Upper_Slot;
+                if (fram.EFEMSts.Robot_Upper_Slot == 0)
+                {
+                    Common.EFEM.Robot.Update_slot_Status(Robot.ArmID.UpperArm, EFEM.slot_status.Unknow);
+                }
+                else
+                {
+                    Common.EFEM.Robot.Update_slot_Status(Robot.ArmID.UpperArm, Common.EFEM.LoadPort_Run.slot_Status[Common.EFEM.Robot.Slot_Arm_upper - 1]);
+                }
+            }
+            else
+            {
+                Common.EFEM.Robot.Slot_Arm_upper = 0;
+                fram.EFEMSts.Robot_Upper_Slot = 0;
+            }
+            if (Common.EFEM.Robot.WaferPresence_Lower)
+            {
+                Common.EFEM.Robot.Slot_Arm_lower = fram.EFEMSts.Robot_Lower_Slot;
+                if (fram.EFEMSts.Robot_Lower_Slot == 0)
+                {
+                    Common.EFEM.Robot.Update_slot_Status(Robot.ArmID.LowerArm, EFEM.slot_status.Unknow);
+                }
+                else
+                {
+                    Common.EFEM.Robot.Update_slot_Status(Robot.ArmID.LowerArm, Common.EFEM.LoadPort_Run.slot_Status[Common.EFEM.Robot.Slot_Arm_lower - 1]);
+                }
+            }
+            else
+            {
+                Common.EFEM.Robot.Slot_Arm_lower = 0;
+                fram.EFEMSts.Robot_Lower_Slot = 0;
+            }
+
+            Common.EFEM.Aligner.GetStatus();
+            if (Common.EFEM.Aligner.WaferPresence)
+            {
+                Common.EFEM.Aligner.Slot = fram.EFEMSts.Aligner_Slot;
+
+                if (fram.EFEMSts.Aligner_Slotpn == "P1")
+                {
+                    Common.EFEM.Aligner.Slot_pn = Common.EFEM.LoadPort1;
+                }
+                else if (fram.EFEMSts.Aligner_Slotpn == "P2")
+                {
+                    Common.EFEM.Aligner.Slot_pn = Common.EFEM.LoadPort2;
+                }
+                else
+                {
+                }
+            }
+            else
+            {
+                Common.EFEM.Aligner.Slot = 0;
+                //Common.EFEM.Aligner.Update_Sts();
+                fram.EFEMSts.Aligner_Slot = 0;
+            }
+        }
+
+        public static void ChangeRecipe(string RecipeName)
+        {
+            ParamFile.ReadRcpini(fram.Recipe.Path + "\\" + RecipeName + ".ini", "Recipe");
+            /*
+             * cb_Offset.Items.Add("None");            // 0
+            cb_Offset.Items.Add("Offline 1Step");   // 1
+            cb_Offset.Items.Add("Offline 2Step");   // 2
+            cb_Offset.Items.Add("Inline 1Step");    // 3
+            cb_Offset.Items.Add("Inline 2Step");    // 4
+            cb_Offset.Items.Add("QC 1 Step");       // 5
+             * */
+
+            sram.Recipe.Filename = RecipeName;
+            for (int i = 0; i < 25; i++)
+            {
+                sram.Recipe.Slot[i] = fram.Recipe.Slot[i];
+            }
+            for (int i = 0; i < 8; i++)
+            {
+                sram.Recipe.Angle[i] = fram.Recipe.Angle[i];
+            }
+            sram.Recipe.RepeatTimes = fram.Recipe.RepeatTimes;
+            sram.Recipe.RepeatTimes_now = fram.Recipe.RepeatTimes;
+            sram.Recipe.Rotate_Count = fram.Recipe.Rotate_Count;
+            sram.Recipe.Type = fram.Recipe.Type;
+            sram.Recipe.OffsetType = fram.Recipe.OffsetType;
+            if (fram.m_Hardware_SF3 > 0)
+            {
+                //sram.Recipe.TTVrotatePosition = frmTTVScan
+            }
+        }
+
+        static public void InitEFEM(int machineType)
+        {
+            EFEM = new EFEM("192.168.0.1", 48879, 2000, 2);
+            bool rtn_b;
+            if (!EFEM.IsInit)
+            {
+                MessageBox.Show("請檢查 EFEM 軟體是否開啟");
+                AutoRunEFEM.InitEFEMAutoRun(machineType);
+                return;
+            }
+            // 先下一個remotecontrol
+            rtn_b = EFEM.API.Remote();
+            Common.EFEM.GetStatus();
+            if (!Common.EFEM.Power_Sts)
+            {
+                MessageBox.Show("請檢查機台電源，上電後軟體重新開啟");
+                return;
+            }
+            if (Common.EFEM.EMO_Sts)
+            {
+                MessageBox.Show("請檢查機台EMO，處理完成後軟體重新開啟");
+                return;
+            }
+
+            Common.EFEM.Robot.ResetError();
+            Common.EFEM.LoadPort1.ResetError();
+            Common.EFEM.LoadPort2.ResetError();
+            Common.EFEM.Aligner.ResetError();
+            AutoRunEFEM.InitEFEMAutoRun(machineType);
+            Common.EFEM.LoadPort1.GetLEDStatus();
+            Common.EFEM.LoadPort2.GetLEDStatus();
+            if (Common.EFEM.LoadPort1.LED_Placement && Common.EFEM.LoadPort1.LED_Persence)
+            {
+                Common.EFEM.LoadPort1.Placement = true;
+            }
+            else
+            {
+                Common.EFEM.LoadPort1.Placement = false;
+            }
+            if (Common.EFEM.LoadPort2.LED_Placement && Common.EFEM.LoadPort2.LED_Persence)
+            {
+                Common.EFEM.LoadPort2.Placement = true;
+            }
+            else
+            {
+                Common.EFEM.LoadPort2.Placement = false;
+            }
+            Init_EFEMSts();
+        }
+
+        public static string Get_Description(Enum value)
+        {
+            System.Reflection.FieldInfo fi = value.GetType().GetField(value.ToString());
+            DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            return attributes.Length > 0 ? attributes[0].Description : value.ToString();
+        }
+
+        public class LJ
+        {
+            public enum LJMode
+            {
+                Setting_Mode,
+                Running_Mode,
+            }
+
+            public static bool LJtestMode = false; // 要測試時打開(True)，bypass所有通訊
+            public static LJMode LJ_Mode;
+            public static string filelistName;
+            public static string csvfilelistPath;
+            public static string FolderPath;
+            public static string[] Csvlist;
+            public static long FileSize;
+            public static int CurrentListCount;
+            public static string DownloadName = "";
+            public static bool GetDataFlag = false;
+
+            public bool TestMode
+            {
+                get { return LJtestMode; }
+                set { LJtestMode = value; }
+            }
+
+            public static bool Measure()
+            {
+                if (LJtestMode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return LJ8020_Client.Measure();
+                }
+            }
+
+            public static bool Set_SettingMode()
+            {
+                if (LJtestMode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return LJ8020_Client.Set_SettingMode();
+                }
+            }
+
+            public static bool Set_RunningMode()
+            {
+                if (LJtestMode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return LJ8020_Client.Set_RunningMode();
+                }
+            }
+
+            public static bool Reset()
+            {
+                if (LJtestMode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return LJ8020_Client.Reset();
+                }
+            }
+
+            public bool ClearError()
+            {
+                if (LJtestMode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return LJ8020_Client.ClrarError();
+                }
+            }
+
+            public static bool VersionInfo()
+            {
+                if (LJtestMode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return LJ8020_Client.VersionInfo();
+                }
+            }
+
+            public static void ModeInfo()
+            {
+                if (LJtestMode)
+                {
+                    LJ_Mode = LJMode.Running_Mode;
+                }
+                else
+                {
+                    string Cmdrtn = LJ8020_Client.LJCommand_Send(KEYENCE_LJ.Client2.Command.RM, "");
+                    string[] Str = Regex.Split(Cmdrtn, "\r", RegexOptions.Singleline);
+                    string[] Str2 = Regex.Split(Str[0], ",", RegexOptions.Singleline);
+                    if (Str2[1] == "0")
+                    {
+                        LJ_Mode = LJMode.Setting_Mode;
+                    }
+                    else
+                    {
+                        LJ_Mode = LJMode.Running_Mode;
+                    }
+                }
+            }
+
+            public static bool SetRecipe(int RecipeNum)
+            {
+                if (LJtestMode)
+                {
+                    return true;
+                }
+                else
+                {
+                    string PWcmd = "1," + RecipeNum;
+                    string Cmdrtn = LJ8020_Client.LJCommand_Send(KEYENCE_LJ.Client2.Command.PW, PWcmd);
+
+                    string[] Str = Regex.Split(Cmdrtn, "\r", RegexOptions.Singleline);
+                    string[] Str2 = Regex.Split(Str[0], ",", RegexOptions.Singleline);
+                    if (Str2[0] == "PW")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            public static string GetFolderPath(string Path)
+            {
+                string[] filelist;
+                filelist = LJ8020_FTP.GetFileList(Path);
+                if (filelist == null)
+                {
+                    return "";
+                }
+                else if (filelist.Length <= 1)
+                {
+                    return "";
+                }
+                filelistName = filelist[filelist.Length - 2];
+                FolderPath = Path + filelistName;
+                return filelistName;
+            }
+
+            public static string GetlastfilePath(string Path)
+            {
+                string[] filelist;
+                Path += @"/HEAD_A/";
+                filelist = LJ8020_FTP.GetFileList(Path);
+                if (filelist == null)
+                {
+                    return "";
+                }
+                else if (filelist.Length <= 1)
+                {
+                    return "";
+                }
+                filelistName = filelist[filelist.Length - 2];
+
+                return filelistName;
+            }
+
+            public static int GetCurrentCsvListCount(string Path)
+            {
+                string[] filelist;
+                Path += @"/HEAD_A/";
+                csvfilelistPath = Path;
+                filelist = LJ8020_FTP.GetFileList(Path);
+                if (filelist != null)
+                {
+                    Csvlist = filelist;
+
+                    return Csvlist.Length;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+
+            public static string[] GetCsvlist(string Path)
+            {
+                string[] filelist;
+                Path += @"/HEAD_A/";
+                csvfilelistPath = Path;
+                filelist = LJ8020_FTP.GetFileList(Path);
+
+                Csvlist = filelist;
+
+                return Csvlist;
+            }
+
+            public static double[] Downloaddata(string CsvName)
+            {
+                double[] data;
+
+                string Path = FolderPath + @"/HEAD_A/";
+                LJ8020_FTP.GetFileData(Path, CsvName, out data);
+                return data;
+            }
+
+            public static void Deletefile(string Path)
+            {
+                if (LJtestMode)
+                {
+                }
+                else
+                {
+                    string[] filelist = LJ8020_FTP.GetFileList(Path);
+                    Path += filelist[0];
+                    LJ8020_FTP.delDir(Path);
+                }
+            }
+
+            public static long GetFileSize(string CsvName)
+            {
+                long data;
+                string Path = FolderPath + @"/HEAD_A/";
+                data = LJ8020_FTP.GetFileSize(Path, CsvName);
+                FileSize = data;
+                return data;
+            }
+        }
+    }
+}

@@ -1,0 +1,868 @@
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 10:37:12.095: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 10:38:05.710: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 10:58:28.568: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-25 10:59:31.958: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-25 10:59:32.254: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-25 10:59:32.442: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-25 10:59:32.442: Send S1F13(468367).
+00 00 81 0D 00 00 00 07 25 8F   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.375 seconds to log this message.
+2023-03-25 10:59:32.817: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-25 10:59:32.817: Receive S1F14(468367).
+00 00 01 0E 00 00 00 07 25 8F   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 10:59:56.389: Receive Data Message.
+00 00 00 45 00 00 02 29 00 00
+2023-03-25 10:59:56.389: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 11 41 43 43 45 53 53
+4D 4F 44 45 2D 43 48 41 4E 47   45 01 02 01 02 41 0B 4C 4F 41
+44 50 4F 52 54 2D 49 44 41 01   31 01 02 41 0B 41 43 43 45 53
+53 2D 4D 4F 44 45 41 01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[17]"ACCESSMODE-CHANGE">
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+    <L[2]
+      <A[11]"ACCESS-MODE">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 10:59:56.405: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-25 10:59:56.405: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 13:42:01.139: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-25 13:51:44.008: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-25 13:51:44.851: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-25 13:51:44.867: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-25 13:51:44.867: Send S1F13(3168657).
+00 00 81 0D 00 00 00 30 59 91   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.015 seconds to log this message.
+2023-03-25 13:51:44.883: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-25 13:51:44.883: Receive S1F14(3168657).
+00 00 01 0E 00 00 00 30 59 91   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:04.534: Receive Data Message.
+00 00 00 45 00 00 02 29 00 00
+2023-03-25 13:52:04.534: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 11 41 43 43 45 53 53
+4D 4F 44 45 2D 43 48 41 4E 47   45 01 02 01 02 41 0B 4C 4F 41
+44 50 4F 52 54 2D 49 44 41 01   31 01 02 41 0B 41 43 43 45 53
+53 2D 4D 4F 44 45 41 01 30
+S2F41  /* Host Command Send */
+<L[2]
+  <A[17]"ACCESSMODE-CHANGE">
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+    <L[2]
+      <A[11]"ACCESS-MODE">
+      <A[1]"0">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:04.550: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-25 13:52:04.550: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:12.595: Receive Data Message.
+00 00 00 45 00 00 02 29 00 00
+2023-03-25 13:52:12.595: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 11 41 43 43 45 53 53
+4D 4F 44 45 2D 43 48 41 4E 47   45 01 02 01 02 41 0B 4C 4F 41
+44 50 4F 52 54 2D 49 44 41 01   32 01 02 41 0B 41 43 43 45 53
+53 2D 4D 4F 44 45 41 01 30
+S2F41  /* Host Command Send */
+<L[2]
+  <A[17]"ACCESSMODE-CHANGE">
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"2">
+    >
+    <L[2]
+      <A[11]"ACCESS-MODE">
+      <A[1]"0">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:12.595: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-25 13:52:12.595: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:22.561: Receive Data Message.
+00 00 00 45 00 00 02 29 00 00
+2023-03-25 13:52:22.561: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 11 41 43 43 45 53 53
+4D 4F 44 45 2D 43 48 41 4E 47   45 01 02 01 02 41 0B 4C 4F 41
+44 50 4F 52 54 2D 49 44 41 01   32 01 02 41 0B 41 43 43 45 53
+53 2D 4D 4F 44 45 41 01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[17]"ACCESSMODE-CHANGE">
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"2">
+    >
+    <L[2]
+      <A[11]"ACCESS-MODE">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:22.561: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-25 13:52:22.561: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:28.903: Receive Data Message.
+00 00 00 45 00 00 02 29 00 00
+2023-03-25 13:52:28.903: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 11 41 43 43 45 53 53
+4D 4F 44 45 2D 43 48 41 4E 47   45 01 02 01 02 41 0B 4C 4F 41
+44 50 4F 52 54 2D 49 44 41 01   31 01 02 41 0B 41 43 43 45 53
+53 2D 4D 4F 44 45 41 01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[17]"ACCESSMODE-CHANGE">
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+    <L[2]
+      <A[11]"ACCESS-MODE">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:28.903: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-25 13:52:28.903: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:35.542: Receive Data Message.
+00 00 00 30 00 00 02 29 00 00
+2023-03-25 13:52:35.542: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 0E 41 43 43 45 53 53
+4D 4F 44 45 2D 41 53 4B 01 01   01 02 41 0B 4C 4F 41 44 50 4F
+52 54 2D 49 44 41 01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[14]"ACCESSMODE-ASK">
+  <L[1]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:35.542: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-25 13:52:35.542: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:35.839: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-25 13:52:35.839: Send S6F11(3168658).
+00 00 86 0B 00 00 00 30 59 92   01 03 B1 04 00 00 00 01 B1 04
+00 00 03 F0 01 01 01 02 B1 04   00 00 00 21 01 02 A5 01 01 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 1>
+  <U4[1] 1008>
+  <L[1]
+    <L[2]
+      <U4[1] 33>
+      <L[2]
+        <U1[1] 1>
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:35.995: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-25 13:52:35.995: Receive S6F12(3168658).
+00 00 06 0C 00 00 00 30 59 92   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:43.931: Receive Data Message.
+00 00 00 30 00 00 02 29 00 00
+2023-03-25 13:52:43.931: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 0E 41 43 43 45 53 53
+4D 4F 44 45 2D 41 53 4B 01 01   01 02 41 0B 4C 4F 41 44 50 4F
+52 54 2D 49 44 41 01 32
+S2F41  /* Host Command Send */
+<L[2]
+  <A[14]"ACCESSMODE-ASK">
+  <L[1]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"2">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:43.931: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-25 13:52:43.931: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:43.994: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-25 13:52:43.994: Send S6F11(3168659).
+00 00 86 0B 00 00 00 30 59 93   01 03 B1 04 00 00 00 02 B1 04
+00 00 03 F0 01 01 01 02 B1 04   00 00 00 21 01 02 A5 01 02 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 2>
+  <U4[1] 1008>
+  <L[1]
+    <L[2]
+      <U4[1] 33>
+      <L[2]
+        <U1[1] 2>
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:52:44.275: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-25 13:52:44.275: Receive S6F12(3168659).
+00 00 06 0C 00 00 00 30 59 93   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:53:18.236: Receive Data Message.
+00 00 00 18 00 00 02 29 00 00
+2023-03-25 13:53:18.236: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 08 47 4F 2D 4C 4F 43
+41 4C 01 00
+S2F41  /* Host Command Send */
+<L[2]
+  <A[8]"GO-LOCAL">
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:53:18.236: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-25 13:53:18.236: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:53:25.437: Receive Data Message.
+00 00 00 19 00 00 02 29 00 00
+2023-03-25 13:53:25.437: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 09 47 4F 2D 52 45 4D
+4F 54 45 01 00
+S2F41  /* Host Command Send */
+<L[2]
+  <A[9]"GO-REMOTE">
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:53:25.437: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-25 13:53:25.437: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:53:49.619: Receive Data Message.
+00 00 00 15 00 00 02 29 00 00
+2023-03-25 13:53:49.619: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 05 53 54 41 52 54 01
+00
+S2F41  /* Host Command Send */
+<L[2]
+  <A[5]"START">
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:53:49.619: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-25 13:53:49.619: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:53:52.868: Receive Data Message.
+00 00 00 14 00 00 02 29 00 00
+2023-03-25 13:53:52.868: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 04 53 54 4F 50 01 00
+S2F41  /* Host Command Send */
+<L[2]
+  <A[4]"STOP">
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 13:53:52.868: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-25 13:53:52.868: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 14:23:57.064: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-25 14:23:58.376: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-25 14:23:58.595: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-25 14:24:09.405: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-25 14:24:09.405: Send S1F13(6200226).
+00 00 81 0D 00 00 00 5E 9B A2   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.385 seconds to log this message.
+2023-03-25 14:24:09.780: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-25 14:24:09.780: Receive S1F14(6200226).
+00 00 01 0E 00 00 00 5E 9B A2   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 14:25:15.827: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B A3
+2023-03-25 14:25:15.827: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B A3
+2023-03-25 14:26:21.483: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B A4
+2023-03-25 14:26:21.483: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B A4
+2023-03-25 14:27:27.093: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B A5
+2023-03-25 14:27:27.093: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B A5
+2023-03-25 14:28:33.312: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B A6
+2023-03-25 14:28:33.312: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B A6
+2023-03-25 14:29:38.953: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B A7
+2023-03-25 14:29:38.953: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B A7
+2023-03-25 14:30:44.562: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B A8
+2023-03-25 14:30:44.562: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B A8
+2023-03-25 14:31:50.203: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B A9
+2023-03-25 14:31:50.203: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B A9
+2023-03-25 14:32:55.812: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B AA
+2023-03-25 14:32:55.812: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B AA
+2023-03-25 14:34:01.500: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B AB
+2023-03-25 14:34:01.500: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B AB
+2023-03-25 14:35:07.156: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B AC
+2023-03-25 14:35:07.156: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B AC
+2023-03-25 14:36:12.922: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B AD
+2023-03-25 14:36:12.922: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B AD
+2023-03-25 14:37:18.532: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B AE
+2023-03-25 14:37:18.532: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B AE
+2023-03-25 14:38:24.219: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B AF
+2023-03-25 14:38:24.219: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B AF
+2023-03-25 14:39:29.985: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B B0
+2023-03-25 14:39:29.985: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B B0
+2023-03-25 14:40:35.626: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B B1
+2023-03-25 14:40:35.626: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B B1
+2023-03-25 14:41:41.314: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B B2
+2023-03-25 14:41:41.314: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B B2
+2023-03-25 14:42:47.142: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B B3
+2023-03-25 14:42:47.142: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B B3
+2023-03-25 14:43:52.798: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B B4
+2023-03-25 14:43:52.798: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B B4
+2023-03-25 14:44:58.533: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B B5
+2023-03-25 14:44:58.533: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B B5
+2023-03-25 14:46:04.142: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B B6
+2023-03-25 14:46:04.142: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B B6
+2023-03-25 14:47:09.783: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B B7
+2023-03-25 14:47:09.783: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B B7
+2023-03-25 14:48:15.471: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B B8
+2023-03-25 14:48:15.471: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B B8
+2023-03-25 14:49:21.080: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B B9
+2023-03-25 14:49:21.080: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B B9
+2023-03-25 14:50:26.784: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B BA
+2023-03-25 14:50:26.784: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B BA
+2023-03-25 14:51:32.393: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B BB
+2023-03-25 14:51:32.393: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B BB
+2023-03-25 14:52:38.003: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B BC
+2023-03-25 14:52:38.003: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B BC
+2023-03-25 14:53:43.659: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B BD
+2023-03-25 14:53:43.659: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B BD
+2023-03-25 14:54:49.425: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B BE
+2023-03-25 14:54:49.425: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B BE
+2023-03-25 14:55:55.034: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B BF
+2023-03-25 14:55:55.034: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B BF
+2023-03-25 14:57:00.691: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B C0
+2023-03-25 14:57:00.691: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B C0
+2023-03-25 14:58:06.300: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B C1
+2023-03-25 14:58:06.300: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B C1
+2023-03-25 14:59:11.957: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B C2
+2023-03-25 14:59:11.957: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B C2
+2023-03-25 15:00:17.582: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B C3
+2023-03-25 15:00:17.582: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B C3
+2023-03-25 15:01:23.394: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B C4
+2023-03-25 15:01:23.394: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B C4
+2023-03-25 15:02:29.316: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B C5
+2023-03-25 15:02:29.316: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B C5
+2023-03-25 15:03:34.926: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B C6
+2023-03-25 15:03:34.926: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B C6
+2023-03-25 15:04:40.536: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B C7
+2023-03-25 15:04:40.536: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B C7
+2023-03-25 15:05:46.317: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B C8
+2023-03-25 15:05:46.317: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B C8
+2023-03-25 15:06:52.223: Send Linktest.req.
+FF FF 00 00 00 05 00 5E 9B C9
+2023-03-25 15:06:52.223: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5E 9B C9
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 15:22:49.922: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-25 15:22:52.498: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-25 15:22:52.529: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-25 15:23:01.831: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-25 15:23:01.831: Send S1F13(7948722).
+00 00 81 0D 00 00 00 79 49 B2   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.139 seconds to log this message.
+2023-03-25 15:23:01.972: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-25 15:23:01.972: Receive S1F14(7948722).
+00 00 01 0E 00 00 00 79 49 B2   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 15:23:41.528: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-25 15:23:42.980: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-25 15:23:43.074: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-25 15:23:54.650: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-25 15:23:54.650: Send S1F13(2143743).
+00 00 81 0D 00 00 00 20 B5 FF   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.349 seconds to log this message.
+2023-03-25 15:23:54.993: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-25 15:23:54.993: Receive S1F14(2143743).
+00 00 01 0E 00 00 00 20 B5 FF   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 15:25:04.263: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-25 15:25:04.606: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-25 15:25:04.731: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-25 15:25:18.291: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-25 15:25:18.291: Send S1F13(1076102).
+00 00 81 0D 00 00 00 10 6B 86   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.128 seconds to log this message.
+2023-03-25 15:25:18.416: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-25 15:25:18.416: Receive S1F14(1076102).
+00 00 01 0E 00 00 00 10 6B 86   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 15:26:23.260: Send Linktest.req.
+FF FF 00 00 00 05 00 10 6B 87
+2023-03-25 15:26:23.260: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 10 6B 87
+2023-03-25 15:27:28.963: Send Linktest.req.
+FF FF 00 00 00 05 00 10 6B 88
+2023-03-25 15:27:28.963: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 10 6B 88
+2023-03-25 15:28:34.698: Send Linktest.req.
+FF FF 00 00 00 05 00 10 6B 89
+2023-03-25 15:28:34.698: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 10 6B 89
+2023-03-25 15:29:40.307: Send Linktest.req.
+FF FF 00 00 00 05 00 10 6B 8A
+2023-03-25 15:29:40.307: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 10 6B 8A
+2023-03-25 15:30:46.088: Send Linktest.req.
+FF FF 00 00 00 05 00 10 6B 8B
+2023-03-25 15:30:46.088: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 10 6B 8B
+2023-03-25 15:31:51.792: Send Linktest.req.
+FF FF 00 00 00 05 00 10 6B 8C
+2023-03-25 15:31:51.792: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 10 6B 8C
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 16:52:42.740: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-25 16:52:43.318: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-25 16:52:43.380: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-25 16:52:56.502: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-25 16:52:56.502: Send S1F13(3714483).
+00 00 81 0D 00 00 00 38 AD B3   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.044 seconds to log this message.
+2023-03-25 16:52:56.549: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-25 16:52:56.549: Receive S1F14(3714483).
+00 00 01 0E 00 00 00 38 AD B3   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 16:55:50.655: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-25 16:55:53.763: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-25 16:55:53.763: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-25 16:56:03.839: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-25 16:56:03.839: Send S1F13(240496).
+00 00 81 0D 00 00 00 03 AB 70   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.159 seconds to log this message.
+2023-03-25 16:56:03.995: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-25 16:56:03.995: Receive S1F14(240496).
+00 00 01 0E 00 00 00 03 AB 70   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 16:58:20.738: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-25 16:58:23.362: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-25 16:58:23.362: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-25 16:58:34.422: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-25 16:58:34.422: Send S1F13(1832850).
+00 00 81 0D 00 00 00 1B F7 92   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.036 seconds to log this message.
+2023-03-25 16:58:34.454: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-25 16:58:34.454: Receive S1F14(1832850).
+00 00 01 0E 00 00 00 1B F7 92   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-25 16:59:41.297: Send Linktest.req.
+FF FF 00 00 00 05 00 1B F7 93
+2023-03-25 16:59:41.297: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 1B F7 93
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 17:00:35.649: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-25 17:00:35.946: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-25 17:00:35.977: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 17:01:27.736: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 17:04:06.908: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 17:08:29.996: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 17:15:38.012: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-25 17:17:01.892: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL

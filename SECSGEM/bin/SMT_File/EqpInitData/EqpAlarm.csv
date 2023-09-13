@@ -1,0 +1,162 @@
+// Alarm Init,,,,
+//,3,,,
+// Name,ID,CD,Enabled,Text
+Loader - Rail door inspection abnormal,10001,,1,Loader - 門檢異常
+Loader - The emergency stop was pressed.,10002,,1,Loader - 緊急停止被按下。
+Loader - Air Pressure Low(X02),10003,,1,Loader - 氣壓不足(X02)。
+Loader - Jaws cylinder abnormal (X03),10004,,1,Loader - 夾爪氣缸動檢(X03)-異常。
+Loader - Jaws cylinder abnormal (X04),10005,,1,Loader - 夾爪氣缸原點檢(X04)-異常。
+Loader - Jaws Right side abnormal (X05),10006,,1,Loader - 料匣感知-R(X05)-異常。
+Loader - Jaws Left side abnormal (X06),10007,,1,Loader - 料匣感知-L(X06)-異常。
+Loader - Inlet area Z position wrong(X07),10008,,1,Loader - 入料區-夾匣位置檢(X07)-異常。
+Loader - Outlet area Z position wrong(X08),10009,,1,Loader - 出料區-夾匣位置檢(X08)-異常。
+Loader - Boat stuck(X09),10010,,1,Loader - Boat盤推移防撞檢(X09)-異常。
+Loader - Inlet area arrive sensor error(X10),10011,,1,Loader - 入料區-料匣到位檢(X10)-異常。
+Loader - Inlet CV motor error(X11),10012,,1,Loader - 入料區-料匣皮帶馬達(X11)-異常。
+Loader - Outlet area arrive sensor error(X12),10013,,1,Loader - 出料區-料匣到位檢(X12)-異常。
+Loader - Outlet CV motor error(X13),10014,,1,Loader - 出料區-料匣皮帶馬達(X13)-異常。
+Loader - Boat fall down(X14),10015,,1,Loader - Boat盤入料檢(X14)-異常。
+Loader - Boat fall down(X18),10016,,1,Loader - Boat盤出料檢(X18)-異常。
+Loader - Track side CV motor error(X19),10017,,1,Loader - Boat盤皮帶馬達(X19)-異常。
+Loader - Inlet area need Magazine(X21),10018,,1,Loader - 入料區-料匣缺料檢知(X21)-異常。
+Loader - Outlet area Full(X22),10019,,1,Loader - 出料區-料匣滿料檢知(X22)-異常。
+Loader - X position wrong can not move Z(X23),10020,,1,Loader - Boat盤X軸安全位置檢(X23)-異常。
+Loader - Obstacles above the track(X24),10021,,1,Loader - Boat盤晶片平整檢1(X24)-異常。
+Loader - Obstacles above the track(X25),10022,,1,Loader - Boat盤晶片平整檢2(X25)-異常。
+Loader - Magazine Barcode Error,10023,,1,Loader - 料匣-BarCode-異常。
+Loader - Boat Barcode Error,10024,,1,Loader - Boat-BarCode-異常。
+Loader - Sensor X15 is on. (please remove obstacle),10025,,1,Loader - Boat盤位置檢1(X15)-異常。（上方不該有東西）
+Loader - Sensor X16 is on. (please remove obstacle),10026,,1,Loader - Boat盤位置檢2(X16)-異常。（上方不該有東西）
+Loader - Sensor X17 is on. (please remove obstacle),10027,,1,Loader - Boat盤位置檢3(X17)-異常。（上方不該有東西）
+Loader - Boat Enter Error,10028,,1,Loader - Boat入料異常。（Boat盤沒推進來）
+Loader - Boat error not manually removed,10029,,1,Loader - Boat盤異常未手動移出。
+Sorter - Rail door inspection abnormal,10201,,1,Sorter - 門檢異常。
+Sorter - The emergency stop was pressed.,10202,,1,Sorter - 緊急停止被按下。
+Sorter - Air Pressure Low(X02),10203,,1,Sorter - 氣壓不足(X02)。
+Sorter - Vacuum Low(X03),10204,,1,Sorter - 真空不足(X03)。
+Sorter - Turrets  does not at upper(X04),10205,,1,Sorter - 吸筆不在上位(X04)
+Sorter - Unit missing(X05),10206,,1,Sorter - 材料檢異常(X05)。
+Sorter - Vacuum Low(X06),10207,,1,Sorter - 真空檢異常(X06)。
+Sorter - Door stop cylinder abnormal (X07),10208,,1,Sorter - ST區Boat盤門擋汽缸動檢(X07)-異常。
+Sorter - Door stop cylinder abnormal (X08),10209,,1,Sorter - ST區Boat盤門擋汽缸原點檢(X08)-異常。
+Sorter - Aside cylinder abnormal (X09),10210,,1,Sorter - ST區Boat盤靠邊汽缸動檢(X09)-異常。
+Sorter - Aside cylinder abnormal (X10),10211,,1,Sorter - ST區Boat盤靠邊汽缸原點檢(X10)-異常。
+Sorter - Door stop cylinder abnormal (X11),10212,,1,Sorter - OK區Boat盤門擋汽缸動檢(X11)-異常。
+Sorter - Door stop cylinder abnormal (X12),10213,,1,Sorter - OK區Boat盤門擋汽缸原點檢(X12)-異常。
+Sorter - Aside cylinder abnormal (X13),10214,,1,Sorter - OK區Boat盤靠邊汽缸動檢(X13)-異常。
+Sorter - Aside cylinder abnormal (X14),10215,,1,Sorter - OK區Boat盤靠邊汽缸原點檢(X14)-異常。
+Sorter - Door stop cylinder abnormal (X15),10216,,1,Sorter - NG區Boat盤門擋汽缸動檢(X15)-異常。
+Sorter - Door stop cylinder abnormal (X16),10217,,1,Sorter - NG區Boat盤門擋汽缸原點檢(X16)-異常。
+Sorter - Aside cylinder abnormal (X17),10218,,1,Sorter - NG區Boat盤靠邊汽缸動檢(X17)-異常。
+Sorter - Aside cylinder abnormal (X18),10219,,1,Sorter - NG區Boat盤靠邊汽缸原點檢(X18)-異常。
+Sorter - Boat fall down(X19),10220,,1,Sorter -  ST區Boat盤入料檢(X19)-異常。
+Sorter - Obstacles above the track(X21),10221,,1,Sorter - ST區Boat盤晶片平整檢1(X21)-異常。
+Sorter - Obstacles above the track(X24),10222,,1,Sorter - ST區Boat盤晶片平整檢2(X24)-異常。
+Sorter - Boat fall down(X26),10223,,1,Sorter -  ST區Boat盤出料檢(X26)-異常。
+Sorter - Boat fall down(X27),10224,,1,Sorter - OK區Boat盤入料檢(X27)-異常。
+Sorter - Obstacles above the track(X29),10225,,1,Sorter - OK區Boat盤晶片平整檢1(X29)-異常。
+Sorter - Obstacles above the track(X32),10226,,1,Sorter - OK區Boat盤晶片平整檢2(X32)-異常。
+Sorter - Boat fall down(X34),10227,,1,Sorter - OK區Boat盤出料檢(X34)-異常。
+Sorter - Boat fall down(X35),10228,,1,Sorter - NG區Boat盤入料檢(X35)-異常。
+Sorter - Obstacles above the track(X37),10229,,1,Sorter - NG區Boat盤晶片平整檢1(X37)-異常。
+Sorter - Obstacles above the track(X40),10230,,1,Sorter - NG區Boat盤晶片平整檢2(X40)-異常。
+Sorter - Boat fall down(X42),10231,,1,Sorter - NG區Boat盤出料檢(X42)-異常。
+Sorter - Outlet CV motor error(X43),10232,,1,Sorter - ST區-Boat盤皮帶馬達(X43)-異常。
+Sorter - Outlet CV motor error(X44),10233,,1,Sorter - OK區-Boat盤皮帶馬達(X44)-異常。
+Sorter - Outlet CV motor error(X45),10234,,1,Sorter - NG區-Boat盤皮帶馬達(X45)-異常。
+Sorter - Illegal IP,10235,,1,Sorter - 非法IP
+Sorter - IP conflict,10236,,1,Sorter - IP衝突
+Sorter - Port error,10237,,1,Sorter - Port 錯誤
+Sorter - Servere establishment failed,10238,,1,Sorter - Servere建立失敗
+Sorter - Client connection failed,10239,,1,Sorter - Client連線失敗
+Sorter - Pen Side Moter X Error ,10240,,1,Sorter - 吸筆X軸馬達異常
+Sorter - Pen Side Moter Y Error ,10241,,1,Sorter - 吸筆Y軸馬達異常
+Sorter - Pen Side Moter Z Error ,10242,,1,Sorter - 吸筆Z軸馬達異常
+Sorter - Under side Moter T Error ,10243,,1,Sorter - 底盤Y向馬達異常
+Sorter - Inbound and outbound detection detected objects,10244,,1,Sorter - 入出站檢偵測到物體
+Sorter - Abnormal height of pen,10245,,1,Sorter - 吸筆高度異常
+Sorter - Servo motor not Servo On,10246,,1,Sorter - CV馬達異常
+Sorter - Servere establishment failed,10247,,1,Sorter - 伺服馬達未Servo On
+Sorter - Call Unloader go to swap area fail,10248,,1,Sorter - 呼叫 Unloader 去交換區 失敗
+Sorter - Execute UnloadBoat fail,10249,,1,Sorter - 執行 UnLoadBoat 失敗
+Sorter - Find warping in OK area,10250,,1,Sorter - OK區發現翹料
+Sorter - Find warping in NG area,10251,,1,Sorter - NG區發現翹料
+Sorter - Find warping in ST area,10252,,1,Sorter - ST區發現翹料
+Unloader - Rail door inspection abnormal,10401,,1,Unloader - 門檢異常
+Unloader - The emergency stop was pressed.,10402,,1,Unloader - 緊急停止被按下。
+Unloader - Air Pressure Low(X02),10403,,1,Unloader - 氣壓不足(X02)。
+Unloader - Jaws cylinder abnormal (X03),10404,,1,Unloader - 夾爪氣缸動檢(X03)-異常。
+Unloader - Jaws cylinder abnormal (X04),10405,,1,Unloader - 夾爪氣缸原點檢(X04)-異常。
+Unloader - Jaws cylinder X side abnormal (X05),10406,,1,Unloader - 夾爪X軸氣缸動檢(X05)-異常。
+Unloader - Jaws cylinder X side abnormal (X06),10407,,1,Unloader - 夾爪X軸氣缸原點檢(X06)-異常。
+Unloader - Jaws cylinder Z side abnormal (X07),10408,,1,Unloader - 夾爪Z軸氣缸動檢(X07)-異常。
+Unloader - Jaws cylinder Z side abnormal (X08),10409,,1,Unloader - 夾爪Z軸氣缸原點檢(X08)-異常。
+Unloader - Move stage cylinder abnormal (X09),10410,,1,Unloader - 移載汽缸動檢(X09)-異常。
+Unloader - Move stage cylinder abnormal (X10),10411,,1,Unloader - 移載汽缸原點檢(X10)-異常。
+Unloader - Boat fall down(X11),10412,,1,Unloader - Boat盤入料檢(X11)-異常。
+Unloader - Boat fall down(X15),10413,,1,Unloader - Boat盤出料檢(X15)-異常。
+Unloader - Track side CV motor error(X16),10414,,1,Unloader - Boat盤皮帶馬達(X16)-異常。
+Unloader - Missing Magazine 1,10415,,1,Unloader - 料匣1到位檢(X17)-異常。
+Unloader - Missing Magazine 2,10416,,1,Unloader - 料匣2到位檢(X18)-異常。
+Unloader - Missing Magazine 3,10417,,1,Unloader - 料匣3到位檢(X19)-異常。
+Unloader - Missing Magazine 4,10418,,1,Unloader - 料匣4到位檢(X20)-異常。
+Unloader - Obstacles above the track(X22),10419,,1,Unloader - Boat盤晶片平整檢1(X22)-異常。
+Unloader - Obstacles above the track(X23),10420,,1,Unloader - Boat盤晶片平整檢2(X23)-異常。
+Unloader - Magazine 1 Missing Boat,10421,,1,Unloader - 料匣1-Boat盤在籍檢(X27)-異常。
+Unloader - Magazine 2 Missing Boat,10422,,1,Unloader - 料匣2-Boat盤在籍檢((X28)-異常。
+Unloader - Magazine 3 Missing Boat,10423,,1,Unloader - 料匣3-Boat盤在籍檢((X29)-異常。
+Unloader - Magazine 4 Missing Boat,10424,,1,Unloader - 料匣4-Boat盤在籍檢((X30)-異常。
+Unloader - Magazine Barcode Error,10425,,1,Unloader - 料匣-BarCode-異常。
+Unloader - Boat Barcode Error,10426,,1,Unloader - Boat-BarCode-異常。
+Unloader - Sensor X12 is on. (please remove obstacle),10427,,1,Unloader - Boat盤位置檢1(X12)-異常。（上方不該有東西）
+Unloader - Sensor X13 is on. (please remove obstacle),10428,,1,Unloader - Boat盤位置檢2(X13)-異常。（上方不該有東西）
+Unloader - Sensor X14 is on. (please remove obstacle),10429,,1,Unloader - Boat盤位置檢3(X14)-異常。（上方不該有東西）
+Unloader - Boat Enter Error,10430,,1,Unloader - Boat入料異常。（Boat盤沒推進來）
+Unloader - Illegal IP,10431,,1,Unloader - 非法IP
+Unloader - IP conflict,10432,,1,Unloader - IP衝突
+Unloader - Port error,10433,,1,Unloader - Port 錯誤
+Unloader - Servere establishment failed,10434,,1,Unloader - Servere建立失敗
+Unloader - Client connection failed,10435,,1,Unloader - Client連線失敗
+Unloader - Pen Side Moter X Error ,10436,,1,Unloader - Y軸馬達異常
+Unloader - Pen Side Moter Z Error ,10437,,1,Unloader - 乘載板Z軸馬達異常
+Unloader - The in-out material inspection detects an object or the cylinder is not in place,10438,,1,Unloader - 入出料檢偵測到物體 或 汽缸未到位
+Unloader - Unable to set motor parameters,10439,,1,Unloader - 無法設定馬達參數
+Unloader - The number of MAG layers set abnormally,10440,,1,Unloader - MAG層數設定異常
+Unloader - Find warping,10441,,1,Unloader - 發現翹料
+AOI - Rail door inspection abnormal,10601,,1,AOI - 門檢異常
+AOI - The emergency stop was pressed,10602,,1,AOI - 緊急停止被按下
+AOI - Air Pressure Low(X02),10603,,1,AOI - 氣壓不足(X02)
+AOI - Clip cylinder abnormal (X05),10604,,1,AOI - 夾板氣缸(A)動檢(X05)-異常
+AOI - Clip cylinder abnormal (X06),10605,,1,AOI - 夾板氣缸(A)原點檢(X06)-異常
+AOI - Clip cylinder abnormal (X07),10606,,1,AOI - 夾板氣缸(B)動檢(X07)-異常
+AOI - Clip cylinder abnormal (X08),10607,,1,AOI - 夾板氣缸(B)原點檢(X08)-異常
+AOI - Aside cylinder abnormal (X13),10608,,1,AOI - 靠邊氣缸動檢(X13)-異常
+AOI - Aside cylinder abnormal (X14),10609,,1,AOI - 靠邊氣缸原點檢(X14)-異常
+AOI - Boat fall down(X15),10610,,1,AOI - Boat盤入口下垂檢(X15)-異常
+AOI - Boat fall down(X16),10611,,1,AOI - Boat盤出口下垂檢(X16)-異常
+AOI - Obstacles above the track(X17),10612,,1,AOI - Boat盤晶片平整檢1(X17)-異常
+AOI - Obstacles above the track(X18),10613,,1,AOI - Boat盤晶片平整檢2(X18)-異常
+AOI - Track side CV motor error(X22),10614,,1,AOI - Boat盤皮帶馬達(X22)-異常
+AOI - Door stop cylinder abnormal (X23),10615,,1,AOI - 門檔氣缸動檢-異常(X23)
+AOI - Door stop cylinder abnormal (X24),10616,,1,AOI - 門檔氣缸原點檢-異常(x24)
+AOI - NG counter arrive setting,10617,,1,AOI - NG數量達設定值
+"AOI - Clamp A,B Initial retrack TimeOut",10701,,1,AOI - Clmap A 或 Clamp B 回原點逾時
+AOI - Z Axis Move TimeOut,10702,,1,AOI - Z軸歸零時移動逾時
+AOI - Z Axis Homing TimeOut,10703,,1,AOI - Z軸歸零逾時
+AOI - Initial Stopper Rising TimeOut,10704,,1,AOI - 初始化Stopper頂昇逾時
+AOI - X Axis Move 10mm TimeOut,10705,,1,AOI - X軸移動10mm逾時
+AOI - Y Axis Move 10mm TimeOut,10706,,1,AOI - Y軸移動10mm逾時
+AOI - X Axis Homing TimeOut,10707,,1,AOI - X軸歸零逾時
+AOI - Y Axis Homing TimeOut,10708,,1,AOI - Y軸歸零逾時
+AOI - Stopper Rising TimeOut,10801,,1,AOI - Stopper升起逾時
+AOI - Load Product TimeOut,10802,,1,AOI - 產品在流道上入料逾時
+AOI - Load Product Arrial Stopper TimeOut,10803,,1,AOI - 產品到位逾時
+AOI - SidePusth stretch out TimeOut,10804,,1,AOI - 側推伸出失敗
+AOI - Clamp A or Clamp B stretch out TimeOut,10805,,1,AOI - 入料時 Clmap A 或 Clamp B 頂升逾時
+AOI - SidePush retract out TimeOut,10806,,1,AOI - 側推縮回逾時
+AOI - Clamp A or Clamp B retrack out TimeOut,10807,,1,AOI - 入料時 Clmap A 或 Clamp B 下降逾時
+AOI - Stopper retrack TimeOut,10808,,1,AOI - Stopper縮回逾時
+AOI - Unload Product TimeOut,10809,,1,AOI - 出料逾時(產品未離開流道Sensor)
+AOI - Stopper Rising TimeOut After Unload Product,10810,,1,AOI - 產品出料後 Stopper頂昇逾時
+AOI - AOI Move to Start Pos. of the row TimeOut,10901,,1,AOI - AOI 移動至單列起跑點逾時
+AOI - AOI Move to Row End Pos. of the row TimeOut,10902,,1,AOI - AOI 移動至單列結束點逾時

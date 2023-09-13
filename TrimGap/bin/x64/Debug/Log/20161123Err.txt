@@ -1,0 +1,8 @@
+ECID = 1002 out of range at UpdateEC
+ECID = 1005 out of range at UpdateEC
+ECID = 1002 out of range at UpdateEC
+ECID = 1005 out of range at UpdateEC
+ECID = 1002 out of range at UpdateEC
+ECID = 1005 out of range at UpdateEC
+ECID = 1002 out of range at UpdateEC
+ECID = 1005 out of range at UpdateEC

@@ -1,0 +1,50 @@
+//////////////////////////////////////////////////////////////////////////
+16:57:16.067: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+16:57:21.071: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+16:57:26.067: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+16:57:31.077: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+16:57:36.067: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+16:57:41.069: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+16:57:46.068: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+16:57:51.069: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+16:57:51.069: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+16:57:51.073: Send Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+16:57:51.107: Receive Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+16:57:51.130: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+16:57:51.130: Send S1F13(9584681).
+00 01 81 0D 00 00 00 92 40 29   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W
+<L[2]
+  <A[6] "EqMDLN">
+  <A[6] "SofRev">
+>
+.
+Program takes      0 seconds to log this message.
+16:57:51.145: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+16:57:51.145: Receive S1F14(9584681).
+00 00 01 0E 00 00 00 92 40 29   01 02 21 01 00 01 00
+S1F14 
+<L[2]
+  <B[1] 0x0>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+16:58:50.207: Receive Linktest.req.
+FF FF 00 00 00 05 0B D1 35 30
+16:58:50.217: Send Linktest.rsp.
+FF FF 00 00 00 06 0B D1 35 30
+16:58:51.377: Send Linktest.req.
+FF FF 00 00 00 05 00 92 40 2A
+16:58:51.387: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 92 40 2A
+16:59:06.434: Receive Separate.req.
+FF FF 00 00 00 09 0B D1 35 31
+16:59:06.434: Remote Client Disconnected!
+16:59:06.477: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE

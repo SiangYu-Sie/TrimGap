@@ -1,0 +1,290 @@
+﻿<UserControl x:Class="Modules.AxisSetting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Modules"
+             xmlns:materia="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:be="http://schemas.microsoft.com/xaml/behaviors"
+             mc:Ignorable="d"
+             BorderBrush="AliceBlue"
+             BorderThickness="1"
+             d:DesignHeight="80"
+             d:DesignWidth="1400"
+             Loaded="UserControl_Loaded"
+             Unloaded="UserControl_Unloaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.PopupBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Green.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Shadows.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="Control"
+          Loaded="GridLoaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.8*"></ColumnDefinition>
+            <ColumnDefinition Width="0.4*"></ColumnDefinition>
+            <ColumnDefinition Width="5.4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="{Binding AxisName}"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"></TextBlock>
+        <Viewbox Width="70"
+                 Grid.Column="1"
+                 HorizontalAlignment="Left">
+            <ToggleButton x:Name="EnalbleAxiTB"
+                          Grid.Column="0"
+                          HorizontalAlignment="Left"
+                          Click="EnalbleAxiCommad"
+                          FontSize="10"
+                          Style="{StaticResource MaterialDesignSwitchToggleButton}">
+                <TextBlock Text="解磁"
+                           Foreground="Red"></TextBlock>
+                <materia:ToggleButtonAssist.OnContent>
+                    <TextBlock Text="激磁"
+                               Foreground="White"
+                               FontSize="10"></TextBlock>
+                </materia:ToggleButtonAssist.OnContent>
+            </ToggleButton>
+        </Viewbox>
+        <Grid Grid.Column="2"
+              IsEnabled="{Binding ElementName=EnalbleAxiTB,Path=IsChecked}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.6*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="0.15*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button PreviewMouseDown="BackwardMove"
+                        PreviewMouseUp="AxiStop"
+                        Style="{StaticResource MaterialDesignIconButton}"
+                        Background="{DynamicResource MaterialDesignTextFieldBoxBackground}">
+                    <materia:PackIcon Kind="Play"
+                                      Width="50"
+                                      Height="50"
+                                      RenderTransformOrigin=".5,.5">
+                        <materia:PackIcon.RenderTransform>
+                            <RotateTransform Angle="180" />
+                        </materia:PackIcon.RenderTransform>
+                    </materia:PackIcon>
+
+                </Button>
+                <Grid Grid.Column="1"
+                      Grid.Row="1">
+                    <ComboBox Text="{Binding InchingDistant,UpdateSourceTrigger=PropertyChanged}"
+                              Margin="5,15"
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                              materia:HintAssist.Hint="吋動距離"
+                              materia:TextFieldAssist.HasClearButton="True"
+                              FontSize="10"
+                              IsEditable="True"
+                              SelectedIndex="0"
+                              HorizontalContentAlignment="Left">
+                        <ComboBoxItem>0.5</ComboBoxItem>
+                        <ComboBoxItem>50</ComboBoxItem>
+                        <ComboBoxItem>100</ComboBoxItem>
+                        <ComboBoxItem>1000</ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+                <Button PreviewMouseDown="ForWardMove"
+                        PreviewMouseUp="AxiStop"
+                        Grid.Column="2"
+                        Style="{StaticResource MaterialDesignIconButton}"
+                        Background="{DynamicResource MaterialDesignTextFieldBoxBackground}">
+                    <materia:PackIcon Kind="Play"
+                                      Width="50"
+                                      Height="50"></materia:PackIcon>
+                </Button>
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBox Text="{Binding JoyStickVelocity,UpdateSourceTrigger=PropertyChanged}"
+                         Margin="5"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         VerticalAlignment="Center"
+                         materia:TextFieldAssist.SuffixText="um/s">
+                    <materia:HintAssist.Hint>
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="-2 0 0 0">
+                            <materia:PackIcon Kind="Text" />
+                            <TextBlock>速度</TextBlock>
+                        </StackPanel>
+                    </materia:HintAssist.Hint>
+                </TextBox>
+            </Grid>
+            <Grid Grid.Column="2"
+                  Width="100">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBox FontSize="12"
+                         Text="{Binding AccTime}"
+                         Margin="0,2"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         VerticalAlignment="Center"
+                         materia:TextFieldAssist.SuffixText="s">
+                    <materia:HintAssist.Hint>
+                        <TextBlock>加速度</TextBlock>
+                    </materia:HintAssist.Hint>
+                </TextBox>
+
+                <TextBox FontSize="12"
+                         Grid.Row="1"
+                         Text="{Binding DecTime}"
+                         Margin="0,2"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         VerticalAlignment="Center"
+                         materia:TextFieldAssist.SuffixText="s">
+                    <materia:HintAssist.Hint>
+                        <TextBlock>減速度</TextBlock>
+                    </materia:HintAssist.Hint>
+                </TextBox>
+            </Grid>
+
+            <Grid Grid.Column="3">
+                <Label HorizontalContentAlignment="Right"
+                       VerticalContentAlignment="Center">
+                    <Label.Content>
+                        <materia:PackIcon Kind="Circle"
+                                          Foreground="{Binding AxisSensorBackground}"
+                                          Width="30"
+                                          Height="30" />
+                    </Label.Content>
+                </Label>
+            </Grid>
+            <Grid Grid.Column="4">
+                <TextBox Margin="5"
+                         IsReadOnly="True"
+                         Text="{Binding AxisPosition,StringFormat=F2,UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                         VerticalAlignment="Center"
+                         materia:TextFieldAssist.SuffixText="um">
+                    <materia:HintAssist.Hint>
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="-2 0 0 0">
+                            <materia:PackIcon Kind="Location" />
+                            <TextBlock>位置</TextBlock>
+                        </StackPanel>
+                    </materia:HintAssist.Hint>
+                </TextBox>
+            </Grid>
+            <Grid Grid.Column="5"
+                  Grid.ColumnSpan="3">
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="HomeButton"
+                            Grid.Column="3"
+                            Click="HomeCommand"
+                            Style="{StaticResource MaterialDesignIconButton}"
+                            Background="{DynamicResource MaterialDesignTextFieldBoxBackground}">
+                        <materia:PackIcon  Kind="Home"
+                                           Width="30"
+                                           Height="30"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Background="#FFC2D8ED"></materia:PackIcon>
+                    </Button>
+                    <Viewbox Width="45">
+                        <ToggleButton IsChecked="False"
+                                      x:Name="Tbtn"
+                                      Grid.Column="0"
+                                      Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                                      Click="LockLimitCommand"
+                                      BorderThickness="0"
+                                      Background="{x:Null}">
+                            <materia:PackIcon x:Name="Lockicon"
+                                              Kind="Lock"
+                                              Width="25"
+                                              Height="25"></materia:PackIcon>
+                            <be:Interaction.Triggers>
+                                <be:DataTrigger Binding="{Binding ElementName=Tbtn,Path=IsChecked}"
+                                                Value="true">
+                                    <be:ChangePropertyAction TargetName="Lockicon"
+                                                             PropertyName="Kind"
+                                                             Value="LockOpen"></be:ChangePropertyAction>
+                                </be:DataTrigger>
+                                <be:DataTrigger Binding="{Binding ElementName=Tbtn,Path=IsChecked}"
+                                                Value="false">
+                                    <be:ChangePropertyAction TargetName="Lockicon"
+                                                             PropertyName="Kind"
+                                                             Value="Lock"></be:ChangePropertyAction>
+                                </be:DataTrigger>
+                            </be:Interaction.Triggers>
+                        </ToggleButton>
+                    </Viewbox>
+                    <Grid Width="238">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.8*"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBox FontSize="12"
+                                 Text="{Binding AxisNEL}"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                 VerticalAlignment="Center"
+                                 IsEnabled="{Binding ElementName=Tbtn,Path=IsChecked}"
+                                 materia:TextFieldAssist.SuffixText="um">
+                            <materia:HintAssist.Hint>
+                                <TextBlock>負極限</TextBlock>
+                            </materia:HintAssist.Hint>
+                        </TextBox>
+
+                        <TextBox FontSize="12"
+                                 Grid.Row="1"
+                                 Text="{Binding AxisPEL}"
+                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                 VerticalAlignment="Center"
+                                 IsEnabled="{Binding ElementName=Tbtn,Path=IsChecked}"
+                                 materia:TextFieldAssist.SuffixText="um">
+                            <materia:HintAssist.Hint>
+                                <TextBlock>正極限</TextBlock>
+                            </materia:HintAssist.Hint>
+                        </TextBox>
+
+                        <Button Click="SetNELCommand"
+                                Grid.Column="1"
+                                Margin="5"
+                                Style="{StaticResource MaterialDesignOutlinedButton}"
+                                Height="AUTO"
+                                BorderBrush="#FF2196F3"
+                                IsEnabled="{Binding ElementName=Tbtn,Path=IsChecked}">
+                            <materia:PackIcon Kind="ClipboardArrowLeft"></materia:PackIcon>
+                        </Button>
+
+                        <Button Click="SetPELPosition"
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                Margin="5"
+                                Style="{StaticResource MaterialDesignOutlinedButton}"
+                                Height="AUTO"
+                                BorderBrush="#FF2196F3"
+                                IsEnabled="{Binding ElementName=Tbtn,Path=IsChecked}">
+                            <materia:PackIcon Kind="ClipboardArrowLeft"></materia:PackIcon>
+                        </Button>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

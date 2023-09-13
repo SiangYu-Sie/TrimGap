@@ -1,0 +1,24 @@
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\Camera\obj\x64\Release\Camera.csproj.AssemblyReference.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\Camera\obj\x64\Release\Camera.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230419\TrimGap - 20230419\Camera\obj\x64\Release\Camera.csprojAssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230419\TrimGap - 20230419\Camera\obj\x64\Release\Camera.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\Camera\bin\x64\Release\Camera.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\Camera\bin\x64\Release\Camera.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\Camera\bin\x64\Release\Basler.Pylon.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\Camera\bin\x64\Release\SpinnakerNET_v140.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\Camera\bin\x64\Release\Basler.Pylon.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\Camera\obj\x64\Release\Camera.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\Camera\obj\x64\Release\Camera.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\Camera\obj\x64\Release\Camera.csproj.CopyComplete
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\Camera\obj\x64\Release\Camera.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\Camera\obj\x64\Release\Camera.pdb
+E:\專案\TrimGap\TrimGap - 20230808\Camera\bin\x64\Release\Camera.dll
+E:\專案\TrimGap\TrimGap - 20230808\Camera\bin\x64\Release\Camera.pdb
+E:\專案\TrimGap\TrimGap - 20230808\Camera\bin\x64\Release\Basler.Pylon.dll
+E:\專案\TrimGap\TrimGap - 20230808\Camera\bin\x64\Release\SpinnakerNET_v140.dll
+E:\專案\TrimGap\TrimGap - 20230808\Camera\bin\x64\Release\Basler.Pylon.xml
+E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Release\Camera.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Release\Camera.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Release\Camera.dll
+E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Release\Camera.pdb
+E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Release\Camera.csproj.AssemblyReference.cache

@@ -1,0 +1,62 @@
+// Define Formated Process Program
+// CCODE: [command code name], command Code(CCODE), process parameter number , Comment
+//  PParmName, Type, Min.Value, Max.Value, Comment
+
+CCODE: [AxisAll], 1, 26 , AxisAll
+ Axis1Pos0, ASCII, N/A, N/A, Axis1Pos0
+ Axis1Pos0Speed, ASCII, N/A, N/A, Axis1Pos0Speed
+ Axis1Pos1, ASCII, N/A, N/A, Axis1Pos1
+ Axis1Pos1Speed, ASCII, N/A, N/A, Axis1Pos1Speed
+ Axis2Pos0, ASCII, N/A, N/A, Axis2Pos0
+ Axis2Pos0Speed, ASCII, N/A, N/A, Axis2Pos0Speed
+ Axis2Pos1, ASCII, N/A, N/A, Axis2Pos1
+ Axis2Pos1Speed, ASCII, N/A, N/A, Axis2Pos1Speed
+ Axis2Pos1SpeedBin, ASCII, N/A, N/A, Axis2Pos1SpeedBin
+ Axis3Pos0, ASCII, N/A, N/A, Axis3Pos0
+ Axis3Pos0Speed, ASCII, N/A, N/A, Axis3Pos0Speed
+ Axis3Pos1, ASCII, N/A, N/A, Axis3Pos1
+ Axis3Pos1Speed, ASCII, N/A, N/A, Axis3Pos1Speed
+ Axis4Pos0, ASCII, N/A, N/A, Axis4Pos0
+ Axis4Pos0Speed, ASCII, N/A, N/A, Axis4Pos0Speed
+ Axis4Pos1, ASCII, N/A, N/A, Axis4Pos1
+ Axis4Pos1Speed, ASCII, N/A, N/A, Axis4Pos1Speed
+ Axis1JogSpeed, ASCII, N/A, N/A, Axis1JogSpeed
+ Axis2JogSpeed, ASCII, N/A, N/A, Axis2JogSpeed
+ Axis3JogSpeed, ASCII, N/A, N/A, Axis3JogSpeed
+ Axis4JogSpeed, ASCII, N/A, N/A, Axis4JogSpeed
+ Axis1DataSet, ASCII, N/A, N/A, Axis1DataSet
+ Axis2DataSet, ASCII, N/A, N/A, Axis2DataSet
+ Axis2DataSet28800, ASCII, N/A, N/A, Axis2DataSet28800
+ Axis3DataSet, ASCII, N/A, N/A, Axis3DataSet
+ Axis4DataSet, ASCII, N/A, N/A, Axis4DataSet
+
+CCODE: [OtherPar], 2, 27 , OtherPar
+ Stand1NpTime, ASCII, N/A, N/A, Stand1NpTime
+ IndexBSet, ASCII, N/A, N/A, IndexBSet
+ NgNpTime, ASCII, N/A, N/A, NgNpTime
+ NozzleErrorSet, ASCII, N/A, N/A, NozzleErrorSet
+ YieldErrorSet, ASCII, N/A, N/A, YieldErrorSet
+ CcdTrgTime, ASCII, N/A, N/A, CcdTrgTime
+ Ccd6SpaceSet, ASCII, N/A, N/A, Ccd6SpaceSet
+ LoadHot1Time, ASCII, N/A, N/A, LoadHot1Time
+ LoadHot2TimeDown, ASCII, N/A, N/A, LoadHot2TimeDown
+ LoadHot2TimeUp, ASCII, N/A, N/A, LoadHot2TimeUp
+ LoadReelStopTime, ASCII, N/A, N/A, LoadReelStopTime
+ LoadCaseStopTime, ASCII, N/A, N/A, LoadCaseStopTime
+ LoadCCD6DelayTime, ASCII, N/A, N/A, LoadCCD6DelayTime
+ LoadHotDelayTime, ASCII, N/A, N/A, LoadHotDelayTime
+ LoadOutTime, ASCII, N/A, N/A, LoadOutTime
+ Axis1AccDec, ASCII, N/A, N/A, Axis1AccDec
+ Axis2AccDec, ASCII, N/A, N/A, Axis2AccDec
+ Axis3AccDec, ASCII, N/A, N/A, Axis3AccDec
+ IndexCSet, ASCII, N/A, N/A, IndexCSet
+ Light1, ASCII, N/A, N/A, Light1
+ Light2, ASCII, N/A, N/A, Light2
+ Light3, ASCII, N/A, N/A, Light3
+ Light4, ASCII, N/A, N/A, Light4
+ Light5, ASCII, N/A, N/A, Light5
+ Light6, ASCII, N/A, N/A, Light6
+ Light7, ASCII, N/A, N/A, Light7
+ Light8, ASCII, N/A, N/A, Light8
+
+

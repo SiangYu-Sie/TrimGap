@@ -1,0 +1,8 @@
+// Alarm Init,,,,
+//,3,,,
+// Name,ID,CD,Enabled,Text
+ALARM_PUMP_PRESS,9001,,1,壓力異常 Pump Press Fressl
+ALARM_EM,9002,,1,EFEM緊急停止開關按下Emergency Stop pressed
+ALARM_HEATER_FAIL,9003, ,1,加熱器失效 Heater Fail
+ALARM_OVEN_Error,9004,,1,OVEN Error
+ALARM_HEATER_FAIL2,1000001, ,1,加

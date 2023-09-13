@@ -1,0 +1,26 @@
+// Name,ID,Definition
+MaterialReceived,100,"Foup Placed, Report Load Complete."
+MaterialRemove,101,"Foup Removed, Report Unload Complete."
+CarrierIDRead,1000,Carrier ID has been read
+CarrierIDReadFail,1001,Carrier ID reading has failed
+AccessModeAuto,1002,Load port access mode has changed from MANUAL to AUTO
+AccessModeManu,1003,Load port access mode has changed from AUTO to MANUAL
+ReadyToLoad,1004,Load port transfer state has changed to READY TO LOAD
+ReadyToUnload,1005,Load port transfer state has changed to READY TO UNLOAD
+CarrierClamped,1006,Carrier has been clamped at a load port
+CarrierUnclamped,1007,Carrier has been unclamped at a load port
+AccessModeAsk,1008,AccessMode Reply
+CarrierDoorOpened,1009,Carrier has been opened
+CarrierDoorClosed,1010,Carrier has been closed
+LP1_CarrierMapStarted,1011,Carrier mapping has been started at Load Port 1.
+LP1_CarrierMapped,1012,Carrier map completed at Load Port 1.
+SlotMap,1013,Carrier slotmap status has changed to Completed
+MachineRunning,1014,Machine running
+MachineStop,1015,Machine Stop
+PortTransferStatusAsk,1016,Port transfer status reply
+LP2_CarrierMapStarted,2011,Carrier mapping has been started at Load Port 2.
+LP2_CarrierMapped,2012,Carrier map completed at Load Port 2.
+CarrierDock,5115,Carrier completed docking.
+CarrierUnDock,5116,Carrier completed undocking.
+ProcessStart,5999,Process Start event
+MeasureResultSend,6000,Measure Result Send

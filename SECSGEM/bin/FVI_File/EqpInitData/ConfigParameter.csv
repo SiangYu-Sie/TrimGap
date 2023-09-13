@@ -1,0 +1,2 @@
+ComboMachineType,ComboHSMSRole,T3,T5,T6,T7,T8,LocalIP,LocalPort,RemoteIP,RemotePort,DeviceID,LinkTestPeriod
+FVI,Passive,45,10,5,10,5,127.0.0.1,5001,127.0.0.1,5001,0,60

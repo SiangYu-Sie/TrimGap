@@ -1,0 +1,104 @@
+//////////////////////////////////////////////////////////////////////////
+12:26:42.145: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+12:26:47.171: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+12:26:52.170: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+12:26:52.170: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+12:26:52.170: Send Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+12:26:52.210: Receive Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+12:26:52.220: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+12:26:52.220: Send S1F13(8139737).
+00 01 81 0D 00 00 00 7C 33 D9   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W
+<L[2]
+  <A[6] "EqMDLN">
+  <A[6] "SofRev">
+>
+.
+Program takes      0 seconds to log this message.
+12:26:52.250: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+12:26:52.250: Receive S1F14(8139737).
+00 00 01 0E 00 00 00 7C 33 D9   01 02 21 01 00 01 00
+S1F14 
+<L[2]
+  <B[1] 0x0>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+12:27:52.160: Receive Linktest.req.
+FF FF 00 00 00 05 1F 72 91 41
+12:27:52.170: Send Linktest.rsp.
+FF FF 00 00 00 06 1F 72 91 41
+12:27:52.487: Send Linktest.req.
+FF FF 00 00 00 05 00 7C 33 DA
+12:27:52.487: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7C 33 DA
+12:28:16.879: Receive Data Message.
+00 00 00 17 00 00 86 0B 00 00
+12:28:16.879: Receive S6F11(527601986).
+00 00 86 0B 00 00 1F 72 91 42   01 03 A5 01 00 B1 04 00 00 27
+10 01 00
+S6F11 W
+<L[3]
+  <U1[1] 0>
+  <U4[1] 10000>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+12:28:16.879: Send Data Message.
+00 00 00 16 00 01 09 07 00 00
+12:28:16.879: Send S9F7(8139739).
+00 01 09 07 00 00 00 7C 33 DB   21 0A 00 00 86 0B 00 00 1F 72
+91 42
+S9F7 
+<B[10] 0x0 0x0 0x86 0xB 0x0 0x0 0x1F 0x72 0x91 0x42>
+.
+Program takes      0 seconds to log this message.
+12:28:52.168: Receive Linktest.req.
+FF FF 00 00 00 05 1F 72 91 43
+12:28:52.168: Send Linktest.rsp.
+FF FF 00 00 00 06 1F 72 91 43
+12:29:01.907: Receive Data Message.
+00 00 00 16 00 00 09 09 00 00
+12:29:01.907: Receive S9F9(527601988).
+00 00 09 09 00 00 1F 72 91 44   21 0A 00 00 86 0B 00 00 1F 72
+91 42
+S9F9 
+<B[10] 0x0 0x0 0x86 0xB 0x0 0x0 0x1F 0x72 0x91 0x42>
+.
+Program takes      0 seconds to log this message.
+12:29:01.907: Send Data Message.
+00 00 00 16 00 01 09 07 00 00
+12:29:01.907: Send S9F7(8139740).
+00 01 09 07 00 00 00 7C 33 DC   21 0A 00 00 09 09 00 00 1F 72
+91 44
+S9F7 
+<B[10] 0x0 0x0 0x9 0x9 0x0 0x0 0x1F 0x72 0x91 0x44>
+.
+Program takes      0 seconds to log this message.
+12:29:52.160: Receive Linktest.req.
+FF FF 00 00 00 05 1F 72 91 45
+12:29:52.160: Send Linktest.rsp.
+FF FF 00 00 00 06 1F 72 91 45
+12:30:01.910: Send Linktest.req.
+FF FF 00 00 00 05 00 7C 33 DD
+12:30:01.910: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7C 33 DD
+12:30:52.161: Receive Linktest.req.
+FF FF 00 00 00 05 1F 72 91 46
+12:30:52.167: Send Linktest.rsp.
+FF FF 00 00 00 06 1F 72 91 46
+12:31:02.185: Send Linktest.req.
+FF FF 00 00 00 05 00 7C 33 DE
+12:31:02.185: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7C 33 DE
+12:31:29.498: Send Separate.req.
+FF FF 00 00 00 09 00 7C 33 DF

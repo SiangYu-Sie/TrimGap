@@ -1,0 +1,63 @@
+14:46:29 EqpEC.csvread error.
+14:46:29 Exception:索引在陣列的界限之外。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 3.
+14:46:35 ECID = 7001 not found at UpdateEC
+14:46:35 ECID = 7002 not found at UpdateEC
+14:46:35 ECID = 7003 not found at UpdateEC
+14:46:35 ECID = 7004 not found at UpdateEC
+14:50:58 Exception:輸入字串格式不正確。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 4.
+14:51:04 ECID = 7002 not found at UpdateEC
+14:51:04 ECID = 7003 not found at UpdateEC
+14:51:04 ECID = 7004 not found at UpdateEC
+14:52:27 Exception:輸入字串格式不正確。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 4.
+14:52:32 ECID = 7002 not found at UpdateEC
+14:52:32 ECID = 7003 not found at UpdateEC
+14:52:32 ECID = 7004 not found at UpdateEC
+14:54:13 Exception:輸入字串格式不正確。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 4.
+14:54:18 ECID = 7002 not found at UpdateEC
+14:54:18 ECID = 7003 not found at UpdateEC
+14:54:18 ECID = 7004 not found at UpdateEC
+14:56:24 Exception:輸入字串格式不正確。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 4.
+14:56:29 ECID = 7002 not found at UpdateEC
+14:56:29 ECID = 7003 not found at UpdateEC
+14:56:29 ECID = 7004 not found at UpdateEC
+14:59:13 Exception:輸入字串格式不正確。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 4.
+14:59:28 ECID = 7002 not found at UpdateEC
+14:59:31 ECID = 7003 not found at UpdateEC
+15:03:27 Exception:輸入字串格式不正確。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 4.
+15:03:32 ECID = 7002 not found at UpdateEC
+15:03:32 ECID = 7003 not found at UpdateEC
+15:03:32 ECID = 7004 not found at UpdateEC
+15:06:08 Exception:輸入字串格式不正確。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 4.
+15:06:13 ECID = 7002 not found at UpdateEC
+15:06:13 ECID = 7003 not found at UpdateEC
+15:06:13 ECID = 7004 not found at UpdateEC
+15:07:56 Exception:找不到要求的值 'FT_1_TYPE'。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 4.
+15:08:01 ECID = 7002 not found at UpdateEC
+15:08:01 ECID = 7003 not found at UpdateEC
+15:08:01 ECID = 7004 not found at UpdateEC
+15:09:38 Exception:由於另一個處理序正在使用檔案 'C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv'，所以無法存取該檔案。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv].
+15:09:43 ECID = 7001 not found at UpdateEC
+15:09:43 ECID = 7002 not found at UpdateEC
+15:09:43 ECID = 7003 not found at UpdateEC
+15:09:43 ECID = 7004 not found at UpdateEC
+15:11:08 Exception:找不到要求的值 'FT_1_TYPE'。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 4.
+15:11:13 ECID = 7002 not found at UpdateEC
+15:11:13 ECID = 7003 not found at UpdateEC
+15:11:13 ECID = 7004 not found at UpdateEC
+15:11:48 Exception:找不到要求的值 'FT_1_TYPE'。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 4.
+15:11:54 ECID = 7002 not found at UpdateEC
+15:11:54 ECID = 7003 not found at UpdateEC
+15:11:54 ECID = 7004 not found at UpdateEC
+15:16:45 Exception:找不到要求的值 'FT_1_TYPE'。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 4.
+15:16:50 ECID = 7002 not found at UpdateEC
+15:16:50 ECID = 7003 not found at UpdateEC
+15:16:50 ECID = 7004 not found at UpdateEC
+15:19:22 Exception:找不到要求的值 'FT_1_TYPE'。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 4.
+15:19:28 ECID = 7003 not found at UpdateEC
+15:19:28 ECID = 7004 not found at UpdateEC
+15:19:28 ECID = 7002 not found at UpdateEC
+15:22:42 Exception:找不到要求的值 'FT_1_TYPE'。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 4.
+15:22:47 ECID = 7003 not found at UpdateEC
+15:22:47 ECID = 7004 not found at UpdateEC
+15:22:47 ECID = 7002 not found at UpdateEC
+15:26:42 Exception:輸入字串格式不正確。 while reading file [C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\bin\x64\Debug\EConstData\0000007002.txt] line 6.

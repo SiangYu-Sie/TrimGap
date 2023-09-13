@@ -1,0 +1,581 @@
+// Define Formated Process Program
+// CCODE: [command code name], command Code(CCODE), process parameter number , Comment
+//  PParmName, Type, Min.Value, Max.Value, Comment
+
+CCODE: [101], 101, 7 , Light_Scene_CurNo
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [102], 102, 7 , EnableBoatAlignment
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [103], 103, 7 , UnitColNum
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [104], 104, 7 , UnitRowNum
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [105], 105, 7 , BlockColNum
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [106], 106, 7 , BlockRowNum
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [107], 107, 7 , SubstrateColNum
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [108], 108, 7 , SubstrateRowNum
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [109], 109, 7 , Boat_BottomOffset
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [110], 110, 7 , Boat_RightOffset
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [111], 111, 7 , Boat_TopOffset
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [112], 112, 7 , Boat_LeftOffset
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [113], 113, 7 , Intensity_Scene0_Ch1
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [114], 114, 7 , StrobeTime_Scene0_Ch1
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [115], 115, 7 , DelayTime_Scene0_Ch1
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [116], 116, 7 , Voltage_Scene0_Ch1
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [117], 117, 7 , Intensity_Scene0_Ch2
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [118], 118, 7 , StrobeTime_Scene0_Ch2
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [119], 119, 7 , DelayTime_Scene0_Ch2
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [120], 120, 7 , Voltage_Scene0_Ch2
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [121], 121, 7 , Scene0_Set
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [122], 122, 7 , Intensity_Scene9_Ch1
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [123], 123, 7 , StrobeTime_Scene9_Ch1
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [124], 124, 7 , DelayTime_Scene9_Ch1
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [125], 125, 7 , Voltage_Scene9_Ch1
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [126], 126, 7 , Intensity_Scene9_Ch2
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [127], 127, 7 , StrobeTime_Scene9_Ch2
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [128], 128, 7 , DelayTime_Scene9_Ch2
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [129], 129, 7 , Pitch_X
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [130], 130, 7 , Pitch_Y
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [131], 131, 7 , Mark1_Design_X
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [132], 132, 7 , Mark1_Design_Y
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [133], 133, 7 , Mark2_Design_X
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [134], 134, 7 , Mark2_Design_Y
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [135], 135, 7 , PassageWay_PosU
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [136], 136, 7 , Voltage_Scene9_Ch2
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [137], 137, 7 , InSpect_PosZ
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [138], 138, 7 , SavePicture
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [139], 139, 7 , SMT_Offset
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [140], 140, 7 , Boat_UnitWidth
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [141], 141, 7 , Boat_UnitHeight
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [201], 201, 7 , Recipe_Name
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [202], 202, 7 , Recipe_ProductName
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [203], 203, 7 , Recipe_X_Num
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [204], 204, 7 , Recipe_Y_Num
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [205], 205, 7 , Recipe_Board1_P1_X
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [206], 206, 7 , Recipe_Board1_P1_Y
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [207], 207, 7 , Recipe_Board1_P1_Z
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [208], 208, 7 , Recipe_Board1_P4_X
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [209], 209, 7 , Recipe_Board1_P4_Y
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [210], 210, 7 , Recipe_Board1_P4_Z
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [211], 211, 7 , Recipe_Board2_P1_X
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [212], 212, 7 , Recipe_Board2_P1_Y
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [213], 213, 7 , Recipe_Board2_P1_Z
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [214], 214, 7 , Recipe_Board2_P4_X
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [215], 215, 7 , Recipe_Board2_P4_Y
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [216], 216, 7 , Recipe_Board2_P4_Z
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [217], 217, 7 , Recipe_Board3_P1_X
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [218], 218, 7 , Recipe_Board3_P1_Y
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [219], 219, 7 , Recipe_Board3_P1_Z
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [220], 220, 7 , Recipe_Board3_P4_X
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [221], 221, 7 , Recipe_Board3_P4_Y
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [222], 222, 7 , Recipe_Board3_P4_Z
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+CCODE: [223], 223, 7 , Recipe_Zdown_Position
+ Enable, ASCII, N/A, N/A, Enable
+ Name, ASCII, N/A, N/A, Name
+ Unit, ASCII, N/A, N/A, Unit
+ Format, ASCII, N/A, N/A, Format
+ Vaule, ASCII, N/A, N/A, Vaule
+ Min, ASCII, N/A, N/A, Min
+ Max, ASCII, N/A, N/A, Max
+
+

@@ -1,0 +1,3813 @@
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 08:49:39.787: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 10:01:02.025: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 10:02:17.097: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 10:13:02.809: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 10:17:13.726: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 10:17:13.882: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 10:17:13.992: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 10:17:13.992: Send S1F13(6353938).
+00 00 81 0D 00 00 00 60 F4 12   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.073 seconds to log this message.
+2023-03-28 10:17:14.054: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-28 10:17:14.054: Receive S1F14(6353938).
+00 00 01 0E 00 00 00 60 F4 12   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:18:20.527: Send Linktest.req.
+FF FF 00 00 00 05 00 60 F4 13
+2023-03-28 10:18:20.527: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 60 F4 13
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 10:36:56.401: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 10:36:59.072: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 10:36:59.072: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 10:37:11.163: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 10:37:11.163: Send S1F13(2153044).
+00 00 81 0D 00 00 00 20 DA 54   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.234 seconds to log this message.
+2023-03-28 10:37:11.397: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-28 10:37:11.397: Receive S1F14(2153044).
+00 00 01 0E 00 00 00 20 DA 54   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:38:17.710: Send Linktest.req.
+FF FF 00 00 00 05 00 20 DA 55
+2023-03-28 10:38:17.710: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 20 DA 55
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 10:40:23.179: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 10:40:23.757: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 10:40:23.851: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 10:40:36.707: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 10:40:36.707: Send S1F13(6871814).
+00 00 81 0D 00 00 00 68 DB 06   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.264 seconds to log this message.
+2023-03-28 10:40:36.957: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-28 10:40:36.957: Receive S1F14(6871814).
+00 00 01 0E 00 00 00 68 DB 06   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:41:43.144: Send Linktest.req.
+FF FF 00 00 00 05 00 68 DB 07
+2023-03-28 10:41:43.144: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 68 DB 07
+2023-03-28 10:42:03.366: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 10:42:03.366: Send S6F11(6871816).
+00 00 86 0B 00 00 00 68 DB 08   01 03 B1 04 00 00 00 01 B1 04
+00 00 03 EC 01 01 01 02 B1 04   00 00 00 2C 01 02 A5 01 00 A5
+01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 1>
+  <U4[1] 1004>
+  <L[1]
+    <L[2]
+      <U4[1] 44>
+      <L[2]
+        <U1[1] 0>
+        <U1[1] 0>
+      >
+    >
+  >
+>
+.
+Program takes      0.056 seconds to log this message.
+2023-03-28 10:42:03.428: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 10:42:03.428: Receive S6F12(6871816).
+00 00 06 0C 00 00 00 68 DB 08   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:43:48.174: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 10:43:48.174: Send S6F11(6871817).
+00 00 86 0B 00 00 00 68 DB 09   01 03 B1 04 00 00 00 02 B1 04
+00 00 00 64 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+01 72
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 2>
+  <U4[1] 100>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[1]"r">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 10:43:48.362: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 10:43:48.362: Receive S6F12(6871817).
+00 00 06 0C 00 00 00 68 DB 09   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:45:16.272: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 10:45:16.272: Send S6F11(6871818).
+00 00 86 0B 00 00 00 68 DB 0A   01 03 B1 04 00 00 00 03 B1 04
+00 00 03 EE 01 01 01 02 B1 04   00 00 00 37 01 02 41 01 72 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 3>
+  <U4[1] 1006>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 10:45:16.928: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 10:45:16.928: Receive S6F12(6871818).
+00 00 06 0C 00 00 00 68 DB 0A   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:45:25.746: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 10:45:25.746: Send S6F11(6871819).
+00 00 86 0B 00 00 00 68 DB 0B   01 03 B1 04 00 00 00 04 B1 04
+00 00 03 E8 01 01 01 02 B1 04   00 00 00 0B 01 02 41 01 72 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 4>
+  <U4[1] 1000>
+  <L[1]
+    <L[2]
+      <U4[1] 11>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 10:45:26.120: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 10:45:26.120: Receive S6F12(6871819).
+00 00 06 0C 00 00 00 68 DB 0B   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:53:56.584: Send Linktest.req.
+FF FF 00 00 00 05 00 68 DB 0C
+2023-03-28 10:53:56.584: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 68 DB 0C
+2023-03-28 10:54:54.505: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 10:54:54.505: Send S6F11(6871821).
+00 00 86 0B 00 00 00 68 DB 0D   01 03 B1 04 00 00 00 05 B1 04
+00 00 03 EC 01 01 01 02 B1 04   00 00 00 2C 01 02 A5 01 02 A5
+01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 5>
+  <U4[1] 1004>
+  <L[1]
+    <L[2]
+      <U4[1] 44>
+      <L[2]
+        <U1[1] 2>
+        <U1[1] 0>
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:54:54.505: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 10:54:54.505: Receive S6F12(6871821).
+00 00 06 0C 00 00 00 68 DB 0D   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:55:06.690: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 10:55:06.690: Send S6F11(6871822).
+00 00 86 0B 00 00 00 68 DB 0E   01 03 B1 04 00 00 00 06 B1 04
+00 00 00 64 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 02 41
+01 72
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 6>
+  <U4[1] 100>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 2>
+        <A[1]"r">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 10:55:06.721: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 10:55:06.721: Receive S6F12(6871822).
+00 00 06 0C 00 00 00 68 DB 0E   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:55:12.985: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 10:55:12.985: Send S6F11(6871823).
+00 00 86 0B 00 00 00 68 DB 0F   01 03 B1 04 00 00 00 07 B1 04
+00 00 03 EE 01 01 01 02 B1 04   00 00 00 37 01 02 41 01 72 A5
+01 02
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 7>
+  <U4[1] 1006>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 2>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 10:55:13.235: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 10:55:13.235: Receive S6F12(6871823).
+00 00 06 0C 00 00 00 68 DB 0F   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:55:14.735: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 10:55:14.735: Send S6F11(6871824).
+00 00 86 0B 00 00 00 68 DB 10   01 03 B1 04 00 00 00 08 B1 04
+00 00 03 E8 01 01 01 02 B1 04   00 00 00 0B 01 02 41 01 72 A5
+01 02
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 8>
+  <U4[1] 1000>
+  <L[1]
+    <L[2]
+      <U4[1] 11>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 2>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 10:55:14.766: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 10:55:14.766: Receive S6F12(6871824).
+00 00 06 0C 00 00 00 68 DB 10   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:56:20.218: Send Linktest.req.
+FF FF 00 00 00 05 00 68 DB 11
+2023-03-28 10:56:20.218: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 68 DB 11
+2023-03-28 10:57:26.316: Send Linktest.req.
+FF FF 00 00 00 05 00 68 DB 12
+2023-03-28 10:57:26.316: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 68 DB 12
+2023-03-28 10:57:55.622: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 10:57:55.622: Send S6F11(6871827).
+00 00 86 0B 00 00 00 68 DB 13   01 03 B1 04 00 00 00 09 B1 04
+00 00 00 65 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 9>
+  <U4[1] 101>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[0]"">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 10:57:55.653: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 10:57:55.653: Receive S6F12(6871827).
+00 00 06 0C 00 00 00 68 DB 13   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:58:04.879: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 10:58:04.879: Send S6F11(6871828).
+00 00 86 0B 00 00 00 68 DB 14   01 03 B1 04 00 00 00 0A B1 04
+00 00 00 65 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 10>
+  <U4[1] 101>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[0]"">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 10:58:04.879: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 10:58:04.879: Receive S6F12(6871828).
+00 00 06 0C 00 00 00 68 DB 14   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:58:13.037: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 10:58:13.037: Send S6F11(6871829).
+00 00 86 0B 00 00 00 68 DB 15   01 03 B1 04 00 00 00 0B B1 04
+00 00 00 65 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 11>
+  <U4[1] 101>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[0]"">
+      >
+    >
+  >
+>
+.
+Program takes      0.002 seconds to log this message.
+2023-03-28 10:58:13.537: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 10:58:13.537: Receive S6F12(6871829).
+00 00 06 0C 00 00 00 68 DB 15   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:58:31.019: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 10:58:31.019: Send S6F11(6871830).
+00 00 86 0B 00 00 00 68 DB 16   01 03 B1 04 00 00 00 0C B1 04
+00 00 00 64 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+01 72
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 12>
+  <U4[1] 100>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[1]"r">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 10:58:31.019: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 10:58:31.019: Receive S6F12(6871830).
+00 00 06 0C 00 00 00 68 DB 16   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:58:37.271: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 10:58:37.271: Send S6F11(6871831).
+00 00 86 0B 00 00 00 68 DB 17   01 03 B1 04 00 00 00 0D B1 04
+00 00 03 EE 01 01 01 02 B1 04   00 00 00 37 01 02 41 01 72 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 13>
+  <U4[1] 1006>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 10:58:37.584: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 10:58:37.584: Receive S6F12(6871831).
+00 00 06 0C 00 00 00 68 DB 17   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:58:39.089: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 10:58:39.089: Send S6F11(6871832).
+00 00 86 0B 00 00 00 68 DB 18   01 03 B1 04 00 00 00 0E B1 04
+00 00 03 E8 01 01 01 02 B1 04   00 00 00 0B 01 02 41 01 72 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 14>
+  <U4[1] 1000>
+  <L[1]
+    <L[2]
+      <U4[1] 11>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 10:58:39.230: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 10:58:39.230: Receive S6F12(6871832).
+00 00 06 0C 00 00 00 68 DB 18   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 10:59:53.606: Send Linktest.req.
+FF FF 00 00 00 05 00 68 DB 19
+2023-03-28 10:59:53.606: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 68 DB 19
+2023-03-28 11:00:59.856: Send Linktest.req.
+FF FF 00 00 00 05 00 68 DB 1A
+2023-03-28 11:00:59.856: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 68 DB 1A
+2023-03-28 11:02:05.481: Send Linktest.req.
+FF FF 00 00 00 05 00 68 DB 1B
+2023-03-28 11:02:05.481: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 68 DB 1B
+2023-03-28 11:03:11.172: Send Linktest.req.
+FF FF 00 00 00 05 00 68 DB 1C
+2023-03-28 11:03:11.172: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 68 DB 1C
+2023-03-28 11:04:16.900: Send Linktest.req.
+FF FF 00 00 00 05 00 68 DB 1D
+2023-03-28 11:04:16.900: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 68 DB 1D
+2023-03-28 11:05:22.702: Send Linktest.req.
+FF FF 00 00 00 05 00 68 DB 1E
+2023-03-28 11:05:22.702: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 68 DB 1E
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 13:28:32.191: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 13:29:17.576: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 13:29:17.763: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 13:29:17.779: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 13:29:17.779: Send S1F13(9503334).
+00 00 81 0D 00 00 00 91 02 66   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.016 seconds to log this message.
+2023-03-28 13:29:17.795: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-28 13:29:17.795: Receive S1F14(9503334).
+00 00 01 0E 00 00 00 91 02 66   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:30:36.942: Send Linktest.req.
+FF FF 00 00 00 05 00 91 02 67
+2023-03-28 13:30:36.942: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 91 02 67
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 13:32:15.055: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 13:32:15.852: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 13:32:16.196: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 13:32:27.615: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 13:32:27.615: Send S1F13(5270998).
+00 00 81 0D 00 00 00 50 6D D6   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.262 seconds to log this message.
+2023-03-28 13:32:27.865: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-28 13:32:27.865: Receive S1F14(5270998).
+00 00 01 0E 00 00 00 50 6D D6   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:32:54.093: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 13:32:54.093: Send S6F11(5270999).
+00 00 86 0B 00 00 00 50 6D D7   01 03 B1 04 00 00 00 01 B1 04
+00 00 03 EC 01 01 01 02 B1 04   00 00 00 2C 01 02 A5 01 01 A5
+01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 1>
+  <U4[1] 1004>
+  <L[1]
+    <L[2]
+      <U4[1] 44>
+      <L[2]
+        <U1[1] 1>
+        <U1[1] 0>
+      >
+    >
+  >
+>
+.
+Program takes      0.287 seconds to log this message.
+2023-03-28 13:32:54.380: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:32:54.380: Receive S6F12(5270999).
+00 00 06 0C 00 00 00 50 6D D7   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:33:25.079: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 13:33:25.079: Send S6F11(5271000).
+00 00 86 0B 00 00 00 50 6D D8   01 03 B1 04 00 00 00 02 B1 04
+00 00 00 64 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+01 72
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 2>
+  <U4[1] 100>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[1]"r">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:33:25.141: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:33:25.141: Receive S6F12(5271000).
+00 00 06 0C 00 00 00 50 6D D8   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:33:31.374: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 13:33:31.374: Send S6F11(5271001).
+00 00 86 0B 00 00 00 50 6D D9   01 03 B1 04 00 00 00 03 B1 04
+00 00 03 EE 01 01 01 02 B1 04   00 00 00 37 01 02 41 01 72 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 3>
+  <U4[1] 1006>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:33:32.030: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:33:32.030: Receive S6F12(5271001).
+00 00 06 0C 00 00 00 50 6D D9   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:33:33.936: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 13:33:33.936: Send S6F11(5271002).
+00 00 86 0B 00 00 00 50 6D DA   01 03 B1 04 00 00 00 04 B1 04
+00 00 03 E8 01 01 01 02 B1 04   00 00 00 0B 01 02 41 01 72 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 4>
+  <U4[1] 1000>
+  <L[1]
+    <L[2]
+      <U4[1] 11>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:33:33.936: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:33:33.936: Receive S6F12(5271002).
+00 00 06 0C 00 00 00 50 6D DA   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:34:38.769: Send Linktest.req.
+FF FF 00 00 00 05 00 50 6D DB
+2023-03-28 13:34:38.769: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 50 6D DB
+2023-03-28 13:35:44.073: Send Linktest.req.
+FF FF 00 00 00 05 00 50 6D DC
+2023-03-28 13:35:44.073: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 50 6D DC
+2023-03-28 13:36:48.967: Send Linktest.req.
+FF FF 00 00 00 05 00 50 6D DD
+2023-03-28 13:36:48.967: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 50 6D DD
+2023-03-28 13:37:53.719: Send Linktest.req.
+FF FF 00 00 00 05 00 50 6D DE
+2023-03-28 13:37:53.719: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 50 6D DE
+2023-03-28 13:38:59.706: Send Linktest.req.
+FF FF 00 00 00 05 00 50 6D DF
+2023-03-28 13:38:59.706: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 50 6D DF
+2023-03-28 13:39:02.628: Receive Data Message.
+00 00 00 2A 00 00 02 29 00 00
+2023-03-28 13:39:02.628: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 08 43 41 4E 43 45 4C
+2D 4C 01 01 01 02 41 0B 4C 4F   41 44 50 4F 52 54 2D 49 44 41
+01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[8]"CANCEL-L">
+  <L[1]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:39:02.643: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 13:39:02.643: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 13:42:43.523: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 13:42:45.101: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 13:42:45.132: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 13:42:55.427: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 13:42:55.427: Send S1F13(6593553).
+00 00 81 0D 00 00 00 64 9C 11   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.512 seconds to log this message.
+2023-03-28 13:42:55.927: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-28 13:42:55.927: Receive S1F14(6593553).
+00 00 01 0E 00 00 00 64 9C 11   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:43:22.873: Receive Data Message.
+00 00 00 45 00 00 02 29 00 00
+2023-03-28 13:43:22.873: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 11 41 43 43 45 53 53
+4D 4F 44 45 2D 43 48 41 4E 47   45 01 02 01 02 41 0B 4C 4F 41
+44 50 4F 52 54 2D 49 44 41 01   31 01 02 41 0B 41 43 43 45 53
+53 2D 4D 4F 44 45 41 01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[17]"ACCESSMODE-CHANGE">
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+    <L[2]
+      <A[11]"ACCESS-MODE">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:43:22.905: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 13:43:22.905: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:43:30.965: Receive Data Message.
+00 00 00 2A 00 00 02 29 00 00
+2023-03-28 13:43:30.965: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 08 43 41 4E 43 45 4C
+2D 4C 01 01 01 02 41 0B 4C 4F   41 44 50 4F 52 54 2D 49 44 41
+01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[8]"CANCEL-L">
+  <L[1]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:43:30.965: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 13:43:30.965: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:44:04.002: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 13:44:04.002: Send S6F11(6593554).
+00 00 86 0B 00 00 00 64 9C 12   01 03 B1 04 00 00 00 01 B1 04
+00 00 03 EC 01 01 01 02 B1 04   00 00 00 2C 01 02 A5 01 02 A5
+01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 1>
+  <U4[1] 1004>
+  <L[1]
+    <L[2]
+      <U4[1] 44>
+      <L[2]
+        <U1[1] 2>
+        <U1[1] 0>
+      >
+    >
+  >
+>
+.
+Program takes      0.213 seconds to log this message.
+2023-03-28 13:44:04.221: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:44:04.221: Receive S6F12(6593554).
+00 00 06 0C 00 00 00 64 9C 12   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:44:23.924: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 13:44:23.924: Send S6F11(6593555).
+00 00 86 0B 00 00 00 64 9C 13   01 03 B1 04 00 00 00 02 B1 04
+00 00 03 F2 01 01 01 02 B1 04   00 00 00 37 01 02 41 00 A5 01
+01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 2>
+  <U4[1] 1010>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[0]"">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:44:24.017: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:44:24.017: Receive S6F12(6593555).
+00 00 06 0C 00 00 00 64 9C 13   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:44:24.017: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 13:44:24.017: Send S6F11(6593556).
+00 00 86 0B 00 00 00 64 9C 14   01 03 B1 04 00 00 00 03 B1 04
+00 00 13 FC 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 3>
+  <U4[1] 5116>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[0]"">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:44:24.080: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:44:24.080: Receive S6F12(6593556).
+00 00 06 0C 00 00 00 64 9C 14   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:44:24.080: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 13:44:24.080: Send S6F11(6593557).
+00 00 86 0B 00 00 00 64 9C 15   01 03 B1 04 00 00 00 04 B1 04
+00 00 03 EF 01 01 01 02 B1 04   00 00 00 37 01 02 41 00 A5 01
+01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 4>
+  <U4[1] 1007>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[0]"">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:44:25.204: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:44:25.204: Receive S6F12(6593557).
+00 00 06 0C 00 00 00 64 9C 15   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:44:25.204: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 13:44:25.204: Send S6F11(6593558).
+00 00 86 0B 00 00 00 64 9C 16   01 03 B1 04 00 00 00 05 B1 04
+00 00 03 ED 01 01 01 02 B1 04   00 00 00 2C 01 02 A5 01 01 A5
+01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 5>
+  <U4[1] 1005>
+  <L[1]
+    <L[2]
+      <U4[1] 44>
+      <L[2]
+        <U1[1] 1>
+        <U1[1] 0>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:44:25.329: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:44:25.329: Receive S6F12(6593558).
+00 00 06 0C 00 00 00 64 9C 16   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:46:11.686: Send Linktest.req.
+FF FF 00 00 00 05 00 64 9C 17
+2023-03-28 13:46:11.686: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 64 9C 17
+2023-03-28 13:46:56.934: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 13:46:56.934: Send S6F11(6593560).
+00 00 86 0B 00 00 00 64 9C 18   01 03 B1 04 00 00 00 06 B1 04
+00 00 00 65 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+01 72
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 6>
+  <U4[1] 101>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[1]"r">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:46:56.934: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:46:56.934: Receive S6F12(6593560).
+00 00 06 0C 00 00 00 64 9C 18   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:47:55.869: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 13:47:55.869: Send S6F11(6593561).
+00 00 86 0B 00 00 00 64 9C 19   01 03 B1 04 00 00 00 07 B1 04
+00 00 00 64 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+01 72
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 7>
+  <U4[1] 100>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[1]"r">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:47:55.869: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:47:55.869: Receive S6F12(6593561).
+00 00 06 0C 00 00 00 64 9C 19   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:48:02.133: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 13:48:02.133: Send S6F11(6593562).
+00 00 86 0B 00 00 00 64 9C 1A   01 03 B1 04 00 00 00 08 B1 04
+00 00 03 EE 01 01 01 02 B1 04   00 00 00 37 01 02 41 01 72 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 8>
+  <U4[1] 1006>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:48:02.133: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:48:02.133: Receive S6F12(6593562).
+00 00 06 0C 00 00 00 64 9C 1A   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:48:03.664: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 13:48:03.664: Send S6F11(6593563).
+00 00 86 0B 00 00 00 64 9C 1B   01 03 B1 04 00 00 00 09 B1 04
+00 00 03 E8 01 01 01 02 B1 04   00 00 00 0B 01 02 41 01 72 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 9>
+  <U4[1] 1000>
+  <L[1]
+    <L[2]
+      <U4[1] 11>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:48:04.133: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:48:04.133: Receive S6F12(6593563).
+00 00 06 0C 00 00 00 64 9C 1B   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:48:19.051: Receive Data Message.
+00 00 00 2A 00 00 02 29 00 00
+2023-03-28 13:48:19.051: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 08 43 41 4E 43 45 4C
+2D 4C 01 01 01 02 41 0B 4C 4F   41 44 50 4F 52 54 2D 49 44 41
+01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[8]"CANCEL-L">
+  <L[1]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:48:19.051: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 13:48:19.051: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:49:01.561: Receive Data Message.
+00 00 00 2A 00 00 02 29 00 00
+2023-03-28 13:49:01.561: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 08 43 41 4E 43 45 4C
+2D 4C 01 01 01 02 41 0B 4C 4F   41 44 50 4F 52 54 2D 49 44 41
+01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[8]"CANCEL-L">
+  <L[1]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:49:01.561: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 13:49:01.561: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:49:51.201: Receive Data Message.
+00 00 00 2A 00 00 02 29 00 00
+2023-03-28 13:49:51.201: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 08 43 41 4E 43 45 4C
+2D 4C 01 01 01 02 41 0B 4C 4F   41 44 50 4F 52 54 2D 49 44 41
+01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[8]"CANCEL-L">
+  <L[1]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:49:51.201: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 13:49:51.201: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:49:56.359: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 13:49:56.359: Send S6F11(6593564).
+00 00 86 0B 00 00 00 64 9C 1C   01 03 B1 04 00 00 00 0A B1 04
+00 00 03 F2 01 01 01 02 B1 04   00 00 00 37 01 02 41 00 A5 01
+01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 10>
+  <U4[1] 1010>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[0]"">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:49:56.444: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:49:56.444: Receive S6F12(6593564).
+00 00 06 0C 00 00 00 64 9C 1C   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:49:56.901: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 13:49:56.901: Send S6F11(6593565).
+00 00 86 0B 00 00 00 64 9C 1D   01 03 B1 04 00 00 00 0B B1 04
+00 00 13 FC 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 11>
+  <U4[1] 5116>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[0]"">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:49:56.903: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:49:56.903: Receive S6F12(6593565).
+00 00 06 0C 00 00 00 64 9C 1D   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:49:56.967: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 13:49:56.967: Send S6F11(6593566).
+00 00 86 0B 00 00 00 64 9C 1E   01 03 B1 04 00 00 00 0C B1 04
+00 00 03 EF 01 01 01 02 B1 04   00 00 00 37 01 02 41 00 A5 01
+01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 12>
+  <U4[1] 1007>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[0]"">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:49:56.970: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:49:56.970: Receive S6F12(6593566).
+00 00 06 0C 00 00 00 64 9C 1E   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:49:57.000: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 13:49:57.000: Send S6F11(6593567).
+00 00 86 0B 00 00 00 64 9C 1F   01 03 B1 04 00 00 00 0D B1 04
+00 00 03 ED 01 01 01 02 B1 04   00 00 00 2C 01 02 A5 01 01 A5
+01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 13>
+  <U4[1] 1005>
+  <L[1]
+    <L[2]
+      <U4[1] 44>
+      <L[2]
+        <U1[1] 1>
+        <U1[1] 0>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:49:57.187: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:49:57.187: Receive S6F12(6593567).
+00 00 06 0C 00 00 00 64 9C 1F   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:51:03.599: Send Linktest.req.
+FF FF 00 00 00 05 00 64 9C 20
+2023-03-28 13:51:03.599: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 64 9C 20
+2023-03-28 13:52:09.046: Send Linktest.req.
+FF FF 00 00 00 05 00 64 9C 21
+2023-03-28 13:52:09.046: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 64 9C 21
+2023-03-28 13:52:42.443: Receive Data Message.
+00 00 00 2A 00 00 02 29 00 00
+2023-03-28 13:52:42.443: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 08 43 41 4E 43 45 4C
+2D 4C 01 01 01 02 41 0B 4C 4F   41 44 50 4F 52 54 2D 49 44 41
+01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[8]"CANCEL-L">
+  <L[1]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:52:42.443: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 13:52:42.443: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:52:44.381: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 13:52:44.381: Send S6F11(6593570).
+00 00 86 0B 00 00 00 64 9C 22   01 03 B1 04 00 00 00 0E B1 04
+00 00 03 F2 01 01 01 02 B1 04   00 00 00 37 01 02 41 00 A5 01
+01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 14>
+  <U4[1] 1010>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[0]"">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:52:44.568: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:52:44.568: Receive S6F12(6593570).
+00 00 06 0C 00 00 00 64 9C 22   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:52:44.599: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 13:52:44.599: Send S6F11(6593571).
+00 00 86 0B 00 00 00 64 9C 23   01 03 B1 04 00 00 00 0F B1 04
+00 00 13 FC 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 15>
+  <U4[1] 5116>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[0]"">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:52:44.599: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:52:44.599: Receive S6F12(6593571).
+00 00 06 0C 00 00 00 64 9C 23   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:52:44.677: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 13:52:44.677: Send S6F11(6593572).
+00 00 86 0B 00 00 00 64 9C 24   01 03 B1 04 00 00 00 10 B1 04
+00 00 03 EF 01 01 01 02 B1 04   00 00 00 37 01 02 41 00 A5 01
+01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 16>
+  <U4[1] 1007>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[0]"">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:52:44.677: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:52:44.677: Receive S6F12(6593572).
+00 00 06 0C 00 00 00 64 9C 24   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:52:44.724: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 13:52:44.724: Send S6F11(6593573).
+00 00 86 0B 00 00 00 64 9C 25   01 03 B1 04 00 00 00 11 B1 04
+00 00 03 ED 01 01 01 02 B1 04   00 00 00 2C 01 02 A5 01 01 A5
+01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 17>
+  <U4[1] 1005>
+  <L[1]
+    <L[2]
+      <U4[1] 44>
+      <L[2]
+        <U1[1] 1>
+        <U1[1] 0>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:52:44.787: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:52:44.787: Receive S6F12(6593573).
+00 00 06 0C 00 00 00 64 9C 25   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:53:49.533: Send Linktest.req.
+FF FF 00 00 00 05 00 64 9C 26
+2023-03-28 13:53:49.533: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 64 9C 26
+2023-03-28 13:53:53.077: Receive Data Message.
+00 00 00 2B 00 00 02 29 00 00
+2023-03-28 13:53:53.077: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 09 53 4C 4F 54 4D 41
+50 2D 4C 01 01 01 02 41 0B 4C   4F 41 44 50 4F 52 54 2D 49 44
+41 01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[9]"SLOTMAP-L">
+  <L[1]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:53:53.077: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 13:53:53.077: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:55:57.006: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 13:55:57.006: Send S6F11(6593575).
+00 00 86 0B 00 00 00 64 9C 27   01 03 B1 04 00 00 00 12 B1 04
+00 00 13 FB 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 18>
+  <U4[1] 5115>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[0]"">
+      >
+    >
+  >
+>
+.
+Program takes      0.006 seconds to log this message.
+2023-03-28 13:55:57.022: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:55:57.022: Receive S6F12(6593575).
+00 00 06 0C 00 00 00 64 9C 27   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:55:57.115: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 13:55:57.115: Send S6F11(6593576).
+00 00 86 0B 00 00 00 64 9C 28   01 03 B1 04 00 00 00 13 B1 04
+00 00 03 F1 01 01 01 02 B1 04   00 00 00 37 01 02 41 00 A5 01
+01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 19>
+  <U4[1] 1009>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[0]"">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:55:57.115: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:55:57.115: Receive S6F12(6593576).
+00 00 06 0C 00 00 00 64 9C 28   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:56:06.220: Send Data Message.
+00 00 00 1A 00 00 86 0B 00 00
+2023-03-28 13:56:06.220: Send S6F11(6593577).
+00 00 86 0B 00 00 00 64 9C 29   01 03 B1 04 00 00 00 14 B1 04
+00 00 03 F3 01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 20>
+  <U4[1] 1011>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:56:06.403: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:56:06.403: Receive S6F12(6593577).
+00 00 06 0C 00 00 00 64 9C 29   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:56:15.246: Send Data Message.
+00 00 00 1A 00 00 86 0B 00 00
+2023-03-28 13:56:15.246: Send S6F11(6593578).
+00 00 86 0B 00 00 00 64 9C 2A   01 03 B1 04 00 00 00 15 B1 04
+00 00 03 F4 01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 21>
+  <U4[1] 1012>
+  <L[0]
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:56:15.246: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:56:15.246: Receive S6F12(6593578).
+00 00 06 0C 00 00 00 64 9C 2A   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:56:15.246: Send Data Message.
+00 00 00 7C 00 00 86 0B 00 00
+2023-03-28 13:56:15.246: Send S6F11(6593579).
+00 00 86 0B 00 00 00 64 9C 2B   01 03 B1 04 00 00 00 16 B1 04
+00 00 03 F5 01 01 01 02 B1 04   00 00 00 42 01 05 41 00 A5 01
+01 A5 01 00 A5 01 02 01 19 A5   01 01 A5 01 00 A5 01 00 A5 01
+00 A5 01 00 A5 01 00 A5 01 00   A5 01 00 A5 01 00 A5 01 00 A5
+01 00 A5 01 00 A5 01 00 A5 01   00 A5 01 00 A5 01 00 A5 01 00
+A5 01 00 A5 01 00 A5 01 00 A5   01 00 A5 01 00 A5 01 00 A5 01
+00 A5 01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 22>
+  <U4[1] 1013>
+  <L[1]
+    <L[2]
+      <U4[1] 66>
+      <L[5]
+        <A[0]"">
+        <U1[1] 1>
+        <U1[1] 0>
+        <U1[1] 2>
+        <L[25]
+          <U1[1] 1>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 1>
+        >
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 13:56:15.496: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 13:56:15.496: Receive S6F12(6593579).
+00 00 06 0C 00 00 00 64 9C 2B   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 13:57:20.722: Send Linktest.req.
+FF FF 00 00 00 05 00 64 9C 2C
+2023-03-28 13:57:20.722: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 64 9C 2C
+2023-03-28 13:58:26.488: Send Linktest.req.
+FF FF 00 00 00 05 00 64 9C 2D
+2023-03-28 13:58:26.488: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 64 9C 2D
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 14:02:43.477: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 14:02:44.321: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 14:02:44.446: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 14:08:00.863: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 14:08:01.160: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 14:08:01.191: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 14:10:27.864: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 14:10:28.004: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 14:10:28.098: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 14:11:06.888: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 14:11:06.888: Send S1F13(9328538).
+00 00 81 0D 00 00 00 8E 57 9A   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.016 seconds to log this message.
+2023-03-28 14:11:06.903: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-28 14:11:06.903: Receive S1F14(9328538).
+00 00 01 0E 00 00 00 8E 57 9A   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 14:27:50.062: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 14:27:52.952: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 14:27:52.983: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 14:28:02.778: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 14:28:02.778: Send S1F13(6293622).
+00 00 81 0D 00 00 00 60 08 76   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.075 seconds to log this message.
+2023-03-28 14:28:02.840: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-28 14:28:02.840: Receive S1F14(6293622).
+00 00 01 0E 00 00 00 60 08 76   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:28:19.649: Receive Data Message.
+00 00 00 19 00 00 02 29 00 00
+2023-03-28 14:28:19.649: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 09 47 4F 2D 52 45 4D
+4F 54 45 01 00
+S2F41  /* Host Command Send */
+<L[2]
+  <A[9]"GO-REMOTE">
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:28:19.664: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 14:28:19.664: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:28:31.739: Receive Data Message.
+00 00 00 18 00 00 02 29 00 00
+2023-03-28 14:28:31.739: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 08 47 4F 2D 4C 4F 43
+41 4C 01 00
+S2F41  /* Host Command Send */
+<L[2]
+  <A[8]"GO-LOCAL">
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:28:31.739: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 14:28:31.739: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:28:37.613: Receive Data Message.
+00 00 00 19 00 00 02 29 00 00
+2023-03-28 14:28:37.613: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 09 47 4F 2D 52 45 4D
+4F 54 45 01 00
+S2F41  /* Host Command Send */
+<L[2]
+  <A[9]"GO-REMOTE">
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:28:37.629: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 14:28:37.629: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:29:42.473: Send Linktest.req.
+FF FF 00 00 00 05 00 60 08 77
+2023-03-28 14:29:42.473: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 60 08 77
+2023-03-28 14:30:48.285: Send Linktest.req.
+FF FF 00 00 00 05 00 60 08 78
+2023-03-28 14:30:48.285: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 60 08 78
+2023-03-28 14:31:21.543: Receive Data Message.
+00 00 00 15 00 00 02 29 00 00
+2023-03-28 14:31:21.543: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 05 53 54 41 52 54 01
+00
+S2F41  /* Host Command Send */
+<L[2]
+  <A[5]"START">
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:31:21.543: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 14:31:21.543: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:31:24.152: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 14:31:24.152: Send S6F11(6293625).
+00 00 86 0B 00 00 00 60 08 79   01 03 B1 04 00 00 00 03 B1 04
+00 00 03 EC 01 01 01 02 B1 04   00 00 00 2C 01 02 A5 01 02 A5
+01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 3>
+  <U4[1] 1004>
+  <L[1]
+    <L[2]
+      <U4[1] 44>
+      <L[2]
+        <U1[1] 2>
+        <U1[1] 0>
+      >
+    >
+  >
+>
+.
+Program takes      0.002 seconds to log this message.
+2023-03-28 14:31:24.152: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:31:24.152: Receive S6F12(6293625).
+00 00 06 0C 00 00 00 60 08 79   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:31:28.620: Receive Data Message.
+00 00 00 2A 00 00 02 29 00 00
+2023-03-28 14:31:28.620: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 08 43 41 4E 43 45 4C
+2D 4C 01 01 01 02 41 0B 4C 4F   41 44 50 4F 52 54 2D 49 44 41
+01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[8]"CANCEL-L">
+  <L[1]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:31:28.635: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 14:31:28.635: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:32:08.215: Receive Data Message.
+00 00 00 2A 00 00 02 29 00 00
+2023-03-28 14:32:08.215: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 08 43 41 4E 43 45 4C
+2D 4C 01 01 01 02 41 0B 4C 4F   41 44 50 4F 52 54 2D 49 44 41
+01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[8]"CANCEL-L">
+  <L[1]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:32:08.215: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 14:32:08.215: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:32:34.342: Receive Data Message.
+00 00 00 45 00 00 02 29 00 00
+2023-03-28 14:32:34.342: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 11 41 43 43 45 53 53
+4D 4F 44 45 2D 43 48 41 4E 47   45 01 02 01 02 41 0B 4C 4F 41
+44 50 4F 52 54 2D 49 44 41 01   31 01 02 41 0B 41 43 43 45 53
+53 2D 4D 4F 44 45 41 01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[17]"ACCESSMODE-CHANGE">
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+    <L[2]
+      <A[11]"ACCESS-MODE">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:32:34.342: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 14:32:34.342: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:32:40.997: Receive Data Message.
+00 00 00 2A 00 00 02 29 00 00
+2023-03-28 14:32:40.997: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 08 43 41 4E 43 45 4C
+2D 4C 01 01 01 02 41 0B 4C 4F   41 44 50 4F 52 54 2D 49 44 41
+01 31
+S2F41  /* Host Command Send */
+<L[2]
+  <A[8]"CANCEL-L">
+  <L[1]
+    <L[2]
+      <A[11]"LOADPORT-ID">
+      <A[1]"1">
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:32:40.997: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 14:32:40.997: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:32:55.292: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 14:32:55.292: Send S6F11(6293626).
+00 00 86 0B 00 00 00 60 08 7A   01 03 B1 04 00 00 00 04 B1 04
+00 00 03 F2 01 01 01 02 B1 04   00 00 00 37 01 02 41 00 A5 01
+01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 4>
+  <U4[1] 1010>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[0]"">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:32:55.354: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:32:55.354: Receive S6F12(6293626).
+00 00 06 0C 00 00 00 60 08 7A   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:32:55.354: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 14:32:55.354: Send S6F11(6293627).
+00 00 86 0B 00 00 00 60 08 7B   01 03 B1 04 00 00 00 05 B1 04
+00 00 13 FC 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 5>
+  <U4[1] 5116>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[0]"">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:32:55.604: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:32:55.604: Receive S6F12(6293627).
+00 00 06 0C 00 00 00 60 08 7B   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:32:55.620: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 14:32:55.620: Send S6F11(6293628).
+00 00 86 0B 00 00 00 60 08 7C   01 03 B1 04 00 00 00 06 B1 04
+00 00 03 EF 01 01 01 02 B1 04   00 00 00 37 01 02 41 00 A5 01
+01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 6>
+  <U4[1] 1007>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[0]"">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:32:55.651: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:32:55.651: Receive S6F12(6293628).
+00 00 06 0C 00 00 00 60 08 7C   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:32:55.667: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 14:32:55.667: Send S6F11(6293629).
+00 00 86 0B 00 00 00 60 08 7D   01 03 B1 04 00 00 00 07 B1 04
+00 00 03 ED 01 01 01 02 B1 04   00 00 00 2C 01 02 A5 01 01 A5
+01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 7>
+  <U4[1] 1005>
+  <L[1]
+    <L[2]
+      <U4[1] 44>
+      <L[2]
+        <U1[1] 1>
+        <U1[1] 0>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:32:55.979: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:32:55.979: Receive S6F12(6293629).
+00 00 06 0C 00 00 00 60 08 7D   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:32:59.010: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 14:32:59.010: Send S6F11(6293630).
+00 00 86 0B 00 00 00 60 08 7E   01 03 B1 04 00 00 00 08 B1 04
+00 00 00 65 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+01 72
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 8>
+  <U4[1] 101>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[1]"r">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:32:59.135: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:32:59.135: Receive S6F12(6293630).
+00 00 06 0C 00 00 00 60 08 7E   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:33:06.789: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 14:33:06.789: Send S6F11(6293631).
+00 00 86 0B 00 00 00 60 08 7F   01 03 B1 04 00 00 00 09 B1 04
+00 00 00 64 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+01 72
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 9>
+  <U4[1] 100>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[1]"r">
+      >
+    >
+  >
+>
+.
+Program takes      0.407 seconds to log this message.
+2023-03-28 14:33:06.789: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:33:06.789: Receive S6F12(6293631).
+00 00 06 0C 00 00 00 60 08 7F   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:33:13.022: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 14:33:13.022: Send S6F11(6293632).
+00 00 86 0B 00 00 00 60 08 80   01 03 B1 04 00 00 00 0A B1 04
+00 00 03 EE 01 01 01 02 B1 04   00 00 00 37 01 02 41 01 72 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 10>
+  <U4[1] 1006>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:33:13.085: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:33:13.085: Receive S6F12(6293632).
+00 00 06 0C 00 00 00 60 08 80   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:33:14.631: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 14:33:14.631: Send S6F11(6293633).
+00 00 86 0B 00 00 00 60 08 81   01 03 B1 04 00 00 00 0B B1 04
+00 00 03 E8 01 01 01 02 B1 04   00 00 00 0B 01 02 41 01 72 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 11>
+  <U4[1] 1000>
+  <L[1]
+    <L[2]
+      <U4[1] 11>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:33:14.990: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:33:14.990: Receive S6F12(6293633).
+00 00 06 0C 00 00 00 60 08 81   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:33:18.739: Receive Data Message.
+00 00 00 18 00 00 02 29 00 00
+2023-03-28 14:33:18.739: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 08 47 4F 2D 4C 4F 43
+41 4C 01 00
+S2F41  /* Host Command Send */
+<L[2]
+  <A[8]"GO-LOCAL">
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:33:18.739: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 14:33:18.739: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:33:21.286: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 14:33:21.286: Send S6F11(6293634).
+00 00 86 0B 00 00 00 60 08 82   01 03 B1 04 00 00 00 0D B1 04
+00 00 03 EE 01 01 01 02 B1 04   00 00 00 37 01 02 41 00 A5 01
+01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 13>
+  <U4[1] 1006>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[0]"">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.126 seconds to log this message.
+2023-03-28 14:33:21.286: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:33:21.286: Receive S6F12(6293634).
+00 00 06 0C 00 00 00 60 08 82   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:33:22.770: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 14:33:22.770: Send S6F11(6293635).
+00 00 86 0B 00 00 00 60 08 83   01 03 B1 04 00 00 00 0E B1 04
+00 00 03 E8 01 01 01 02 B1 04   00 00 00 0B 01 02 41 00 A5 01
+01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 14>
+  <U4[1] 1000>
+  <L[1]
+    <L[2]
+      <U4[1] 11>
+      <L[2]
+        <A[0]"">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:33:22.832: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:33:22.832: Receive S6F12(6293635).
+00 00 06 0C 00 00 00 60 08 83   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:33:34.798: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 14:33:34.798: Send S6F11(6293636).
+00 00 86 0B 00 00 00 60 08 84   01 03 B1 04 00 00 00 0F B1 04
+00 00 13 FB 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 15>
+  <U4[1] 5115>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[0]"">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:33:34.923: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:33:34.923: Receive S6F12(6293636).
+00 00 06 0C 00 00 00 60 08 84   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:33:34.939: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 14:33:34.939: Send S6F11(6293637).
+00 00 86 0B 00 00 00 60 08 85   01 03 B1 04 00 00 00 10 B1 04
+00 00 03 F1 01 01 01 02 B1 04   00 00 00 37 01 02 41 00 A5 01
+01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 16>
+  <U4[1] 1009>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[0]"">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:33:35.064: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:33:35.064: Receive S6F12(6293637).
+00 00 06 0C 00 00 00 60 08 85   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:33:35.501: Send Data Message.
+00 00 00 1A 00 00 86 0B 00 00
+2023-03-28 14:33:35.501: Send S6F11(6293638).
+00 00 86 0B 00 00 00 60 08 86   01 03 B1 04 00 00 00 11 B1 04
+00 00 03 F3 01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 17>
+  <U4[1] 1011>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:33:35.595: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:33:35.595: Receive S6F12(6293638).
+00 00 06 0C 00 00 00 60 08 86   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:33:44.405: Send Data Message.
+00 00 00 1A 00 00 86 0B 00 00
+2023-03-28 14:33:44.405: Send S6F11(6293639).
+00 00 86 0B 00 00 00 60 08 87   01 03 B1 04 00 00 00 12 B1 04
+00 00 03 F4 01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 18>
+  <U4[1] 1012>
+  <L[0]
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:33:44.858: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:33:44.858: Receive S6F12(6293639).
+00 00 06 0C 00 00 00 60 08 87   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:33:44.921: Send Data Message.
+00 00 00 7C 00 00 86 0B 00 00
+2023-03-28 14:33:44.921: Send S6F11(6293640).
+00 00 86 0B 00 00 00 60 08 88   01 03 B1 04 00 00 00 13 B1 04
+00 00 03 F5 01 01 01 02 B1 04   00 00 00 42 01 05 41 00 A5 01
+01 A5 01 00 A5 01 02 01 19 A5   01 01 A5 01 00 A5 01 00 A5 01
+00 A5 01 00 A5 01 00 A5 01 00   A5 01 00 A5 01 00 A5 01 00 A5
+01 00 A5 01 00 A5 01 00 A5 01   00 A5 01 00 A5 01 00 A5 01 00
+A5 01 00 A5 01 00 A5 01 00 A5   01 00 A5 01 00 A5 01 00 A5 01
+00 A5 01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 19>
+  <U4[1] 1013>
+  <L[1]
+    <L[2]
+      <U4[1] 66>
+      <L[5]
+        <A[0]"">
+        <U1[1] 1>
+        <U1[1] 0>
+        <U1[1] 2>
+        <L[25]
+          <U1[1] 1>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 1>
+        >
+      >
+    >
+  >
+>
+.
+Program takes      0.148 seconds to log this message.
+2023-03-28 14:33:45.077: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:33:45.077: Receive S6F12(6293640).
+00 00 06 0C 00 00 00 60 08 88   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 14:36:52.585: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 14:36:54.616: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 14:36:54.741: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 14:37:06.988: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 14:37:06.988: Send S1F13(68067).
+00 00 81 0D 00 00 00 01 09 E3   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.015 seconds to log this message.
+2023-03-28 14:37:07.004: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-28 14:37:07.004: Receive S1F14(68067).
+00 00 01 0E 00 00 00 01 09 E3   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:38:43.943: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 14:38:43.943: Send S6F11(68068).
+00 00 86 0B 00 00 00 01 09 E4   01 03 B1 04 00 00 00 02 B1 04
+00 00 03 EC 01 01 01 02 B1 04   00 00 00 2C 01 02 A5 01 02 A5
+01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 2>
+  <U4[1] 1004>
+  <L[1]
+    <L[2]
+      <U4[1] 44>
+      <L[2]
+        <U1[1] 2>
+        <U1[1] 0>
+      >
+    >
+  >
+>
+.
+Program takes      0.509 seconds to log this message.
+2023-03-28 14:38:45.015: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:38:45.015: Receive S6F12(68068).
+00 00 06 0C 00 00 00 01 09 E4   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:39:52.383: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 14:39:52.383: Send S6F11(68069).
+00 00 86 0B 00 00 00 01 09 E5   01 03 B1 04 00 00 00 03 B1 04
+00 00 03 EE 01 01 01 02 B1 04   00 00 00 37 01 02 41 00 A5 01
+02
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 3>
+  <U4[1] 1006>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[0]"">
+        <U1[1] 2>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:39:52.727: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:39:52.727: Receive S6F12(68069).
+00 00 06 0C 00 00 00 01 09 E5   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:41:54.103: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 14:41:54.103: Send S6F11(68070).
+00 00 86 0B 00 00 00 01 09 E6   01 03 B1 04 00 00 00 04 B1 04
+00 00 03 E8 01 01 01 02 B1 04   00 00 00 0B 01 02 41 01 72 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 4>
+  <U4[1] 1000>
+  <L[1]
+    <L[2]
+      <U4[1] 11>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:41:54.494: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:41:54.494: Receive S6F12(68070).
+00 00 06 0C 00 00 00 01 09 E6   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:42:34.375: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 14:42:34.375: Send S6F11(68071).
+00 00 86 0B 00 00 00 01 09 E7   01 03 B1 04 00 00 00 05 B1 04
+00 00 13 FB 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+01 72
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 5>
+  <U4[1] 5115>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[1]"r">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:42:34.500: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:42:34.500: Receive S6F12(68071).
+00 00 06 0C 00 00 00 01 09 E7   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:42:34.500: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 14:42:34.500: Send S6F11(68072).
+00 00 86 0B 00 00 00 01 09 E8   01 03 B1 04 00 00 00 06 B1 04
+00 00 03 F1 01 01 01 02 B1 04   00 00 00 37 01 02 41 01 72 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 6>
+  <U4[1] 1009>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:42:34.594: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:42:34.594: Receive S6F12(68072).
+00 00 06 0C 00 00 00 01 09 E8   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:42:40.963: Send Data Message.
+00 00 00 1A 00 00 86 0B 00 00
+2023-03-28 14:42:40.963: Send S6F11(68073).
+00 00 86 0B 00 00 00 01 09 E9   01 03 B1 04 00 00 00 07 B1 04
+00 00 03 F3 01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 7>
+  <U4[1] 1011>
+  <L[0]
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:42:41.025: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:42:41.025: Receive S6F12(68073).
+00 00 06 0C 00 00 00 01 09 E9   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:42:49.773: Send Data Message.
+00 00 00 1A 00 00 86 0B 00 00
+2023-03-28 14:42:49.773: Send S6F11(68074).
+00 00 86 0B 00 00 00 01 09 EA   01 03 B1 04 00 00 00 08 B1 04
+00 00 03 F4 01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 8>
+  <U4[1] 1012>
+  <L[0]
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 14:42:50.242: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:42:50.242: Receive S6F12(68074).
+00 00 06 0C 00 00 00 01 09 EA   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 14:42:50.242: Send Data Message.
+00 00 00 7D 00 00 86 0B 00 00
+2023-03-28 14:42:50.242: Send S6F11(68075).
+00 00 86 0B 00 00 00 01 09 EB   01 03 B1 04 00 00 00 09 B1 04
+00 00 03 F5 01 01 01 02 B1 04   00 00 00 42 01 05 41 01 72 A5
+01 01 A5 01 00 A5 01 02 01 19   A5 01 01 A5 01 00 A5 01 00 A5
+01 00 A5 01 00 A5 01 00 A5 01   00 A5 01 00 A5 01 00 A5 01 00
+A5 01 00 A5 01 00 A5 01 00 A5   01 00 A5 01 00 A5 01 00 A5 01
+00 A5 01 00 A5 01 00 A5 01 00   A5 01 00 A5 01 00 A5 01 00 A5
+01 00 A5 01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 9>
+  <U4[1] 1013>
+  <L[1]
+    <L[2]
+      <U4[1] 66>
+      <L[5]
+        <A[1]"r">
+        <U1[1] 1>
+        <U1[1] 0>
+        <U1[1] 2>
+        <L[25]
+          <U1[1] 1>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 1>
+        >
+      >
+    >
+  >
+>
+.
+Program takes      0.024 seconds to log this message.
+2023-03-28 14:42:50.273: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 14:42:50.273: Receive S6F12(68075).
+00 00 06 0C 00 00 00 01 09 EB   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 14:43:40.984: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 14:43:43.468: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 14:43:43.530: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 14:43:53.731: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 14:43:53.731: Send S1F13(6396735).
+00 00 81 0D 00 00 00 61 9B 3F   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.016 seconds to log this message.
+2023-03-28 14:43:53.747: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-28 14:43:53.747: Receive S1F14(6396735).
+00 00 01 0E 00 00 00 61 9B 3F   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 15:10:20.781: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 15:10:23.408: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 15:10:23.433: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 15:10:34.034: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 15:10:34.034: Send S1F13(2503556).
+00 00 81 0D 00 00 00 26 33 84   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.517 seconds to log this message.
+2023-03-28 15:10:34.584: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-28 15:10:34.584: Receive S1F14(2503556).
+00 00 01 0E 00 00 00 26 33 84   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 15:10:36.960: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 15:10:36.960: Send S6F11(2503557).
+00 00 86 0B 00 00 00 26 33 85   01 03 B1 04 00 00 00 01 B1 04
+00 00 03 EC 01 01 01 02 B1 04   00 00 00 2C 01 02 A5 01 02 A5
+01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 1>
+  <U4[1] 1004>
+  <L[1]
+    <L[2]
+      <U4[1] 44>
+      <L[2]
+        <U1[1] 2>
+        <U1[1] 0>
+      >
+    >
+  >
+>
+.
+Program takes      0.181 seconds to log this message.
+2023-03-28 15:10:37.145: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 15:10:37.145: Receive S6F12(2503557).
+00 00 06 0C 00 00 00 26 33 85   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 15:11:37.499: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 86
+2023-03-28 15:11:37.499: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 86
+2023-03-28 15:12:38.050: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 87
+2023-03-28 15:12:38.050: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 87
+2023-03-28 15:13:38.488: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 88
+2023-03-28 15:13:38.488: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 88
+2023-03-28 15:14:38.960: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 89
+2023-03-28 15:14:38.960: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 89
+2023-03-28 15:15:39.400: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 8A
+2023-03-28 15:15:39.400: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 8A
+2023-03-28 15:16:40.047: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 8B
+2023-03-28 15:16:40.047: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 8B
+2023-03-28 15:17:40.610: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 8C
+2023-03-28 15:17:40.610: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 8C
+2023-03-28 15:18:41.138: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 8D
+2023-03-28 15:18:41.138: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 8D
+2023-03-28 15:19:41.707: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 8E
+2023-03-28 15:19:41.707: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 8E
+2023-03-28 15:20:42.148: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 8F
+2023-03-28 15:20:42.148: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 8F
+2023-03-28 15:21:42.587: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 90
+2023-03-28 15:21:42.587: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 90
+2023-03-28 15:22:43.078: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 91
+2023-03-28 15:22:43.078: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 91
+2023-03-28 15:23:43.539: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 92
+2023-03-28 15:23:43.539: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 92
+2023-03-28 15:24:43.999: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 93
+2023-03-28 15:24:43.999: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 93
+2023-03-28 15:25:44.551: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 94
+2023-03-28 15:25:44.551: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 94
+2023-03-28 15:26:45.082: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 95
+2023-03-28 15:26:45.082: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 95
+2023-03-28 15:27:45.552: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 96
+2023-03-28 15:27:45.552: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 96
+2023-03-28 15:28:45.991: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 97
+2023-03-28 15:28:45.991: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 97
+2023-03-28 15:29:46.431: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 98
+2023-03-28 15:29:46.431: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 98
+2023-03-28 15:30:46.896: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 99
+2023-03-28 15:30:46.896: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 99
+2023-03-28 15:31:47.334: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 9A
+2023-03-28 15:31:47.334: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 9A
+2023-03-28 15:32:47.773: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 9B
+2023-03-28 15:32:47.773: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 9B
+2023-03-28 15:33:48.214: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 9C
+2023-03-28 15:33:48.214: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 9C
+2023-03-28 15:34:48.670: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 9D
+2023-03-28 15:34:48.670: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 9D
+2023-03-28 15:35:49.261: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 9E
+2023-03-28 15:35:49.261: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 9E
+2023-03-28 15:36:49.992: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 9F
+2023-03-28 15:36:49.992: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 9F
+2023-03-28 15:37:50.596: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 A0
+2023-03-28 15:37:50.596: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 A0
+2023-03-28 15:38:51.169: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 A1
+2023-03-28 15:38:51.169: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 A1
+2023-03-28 15:39:51.877: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 A2
+2023-03-28 15:39:51.877: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 A2
+2023-03-28 15:40:52.316: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 A3
+2023-03-28 15:40:52.316: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 A3
+2023-03-28 15:41:52.974: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 A4
+2023-03-28 15:41:52.974: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 A4
+2023-03-28 15:42:53.513: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 A5
+2023-03-28 15:42:53.513: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 A5
+2023-03-28 15:43:54.060: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 A6
+2023-03-28 15:43:54.060: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 A6
+2023-03-28 15:44:54.530: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 A7
+2023-03-28 15:44:54.530: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 A7
+2023-03-28 15:45:55.106: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 A8
+2023-03-28 15:45:55.106: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 A8
+2023-03-28 15:46:55.601: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 A9
+2023-03-28 15:46:55.601: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 A9
+2023-03-28 15:47:56.074: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 AA
+2023-03-28 15:47:56.074: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 AA
+2023-03-28 15:48:56.586: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 AB
+2023-03-28 15:48:56.586: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 AB
+2023-03-28 15:49:57.109: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 AC
+2023-03-28 15:49:57.109: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 AC
+2023-03-28 15:50:57.548: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 AD
+2023-03-28 15:50:57.548: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 AD
+2023-03-28 15:51:58.154: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 AE
+2023-03-28 15:51:58.154: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 AE
+2023-03-28 15:52:58.629: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 AF
+2023-03-28 15:52:58.629: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 AF
+2023-03-28 15:53:59.203: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 B0
+2023-03-28 15:53:59.203: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 B0
+2023-03-28 15:54:59.702: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 B1
+2023-03-28 15:54:59.702: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 B1
+2023-03-28 15:56:00.178: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 B2
+2023-03-28 15:56:00.178: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 B2
+2023-03-28 15:57:00.618: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 B3
+2023-03-28 15:57:00.618: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 B3
+2023-03-28 15:58:01.089: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 B4
+2023-03-28 15:58:01.089: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 B4
+2023-03-28 15:59:01.553: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 B5
+2023-03-28 15:59:01.553: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 B5
+2023-03-28 16:00:02.021: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 B6
+2023-03-28 16:00:02.021: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 B6
+2023-03-28 16:01:02.461: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 B7
+2023-03-28 16:01:02.461: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 B7
+2023-03-28 16:02:02.899: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 B8
+2023-03-28 16:02:02.899: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 B8
+2023-03-28 16:03:03.406: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 B9
+2023-03-28 16:03:03.406: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 B9
+2023-03-28 16:04:03.923: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 BA
+2023-03-28 16:04:03.923: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 BA
+2023-03-28 16:05:04.363: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 BB
+2023-03-28 16:05:04.363: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 BB
+2023-03-28 16:06:04.822: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 BC
+2023-03-28 16:06:04.822: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 BC
+2023-03-28 16:07:05.315: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 BD
+2023-03-28 16:07:05.315: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 BD
+2023-03-28 16:08:05.826: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 BE
+2023-03-28 16:08:05.826: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 BE
+2023-03-28 16:09:06.265: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 BF
+2023-03-28 16:09:06.265: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 BF
+2023-03-28 16:10:06.877: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 C0
+2023-03-28 16:10:06.877: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 C0
+2023-03-28 16:11:07.376: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 C1
+2023-03-28 16:11:07.376: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 C1
+2023-03-28 16:12:07.847: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 C2
+2023-03-28 16:12:07.847: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 C2
+2023-03-28 16:13:08.287: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 C3
+2023-03-28 16:13:08.287: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 C3
+2023-03-28 16:14:09.052: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 C4
+2023-03-28 16:14:09.052: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 C4
+2023-03-28 16:15:09.587: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 C5
+2023-03-28 16:15:09.587: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 C5
+2023-03-28 16:16:10.035: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 C6
+2023-03-28 16:16:10.035: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 C6
+2023-03-28 16:17:10.498: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 C7
+2023-03-28 16:17:10.498: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 C7
+2023-03-28 16:18:10.937: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 C8
+2023-03-28 16:18:10.937: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 C8
+2023-03-28 16:19:11.549: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 C9
+2023-03-28 16:19:11.549: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 C9
+2023-03-28 16:20:12.094: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 CA
+2023-03-28 16:20:12.094: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 CA
+2023-03-28 16:21:12.678: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 CB
+2023-03-28 16:21:12.678: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 CB
+2023-03-28 16:22:13.404: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 CC
+2023-03-28 16:22:13.404: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 CC
+2023-03-28 16:23:13.880: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 CD
+2023-03-28 16:23:13.880: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 CD
+2023-03-28 16:24:14.425: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 CE
+2023-03-28 16:24:14.425: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 CE
+2023-03-28 16:25:14.908: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 CF
+2023-03-28 16:25:14.908: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 CF
+2023-03-28 16:26:15.373: Send Linktest.req.
+FF FF 00 00 00 05 00 26 33 D0
+2023-03-28 16:26:15.373: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 26 33 D0
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 17:29:58.565: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 17:30:01.877: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 17:30:02.096: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 17:30:11.343: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 17:30:11.343: Send S1F13(691496).
+00 00 81 0D 00 00 00 0A 8D 28   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.016 seconds to log this message.
+2023-03-28 17:30:11.359: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-28 17:30:11.359: Receive S1F14(691496).
+00 00 01 0E 00 00 00 0A 8D 28   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 17:31:18.140: Send Linktest.req.
+FF FF 00 00 00 05 00 0A 8D 29
+2023-03-28 17:31:18.546: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 0A 8D 29
+//////////////////////////////////////////////////////////////////////////
+2023-03-28 17:32:02.367: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 17:32:07.216: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 17:32:07.247: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+[DebugLog] 17:32:11.771 Useless client rejected
+[DebugLog] 17:32:13.192 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+2023-03-28 17:32:17.014: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 17:32:17.014: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 17:32:21.825: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 17:32:21.825: Send S1F13(9509550).
+00 00 81 0D 00 00 00 91 1A AE   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.266 seconds to log this message.
+[DebugLog] 17:32:22.091 Useless client rejected
+2023-03-28 17:32:22.091: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 17:32:22.091: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 17:32:22.091: Send S1F13(9509551).
+00 00 81 0D 00 00 00 91 1A AF   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 17:32:22.263 Useless client rejected
+[DebugLog] 17:32:22.294 Useless client rejected
+[DebugLog] 17:32:22.341 Useless client rejected
+[DebugLog] 17:32:22.372 Useless client rejected
+[DebugLog] 17:32:22.403 Useless client rejected
+[DebugLog] 17:32:22.435 Useless client rejected
+[DebugLog] 17:32:22.466 Useless client rejected
+[DebugLog] 17:32:22.497 Useless client rejected
+[DebugLog] 17:32:22.528 Useless client rejected
+[DebugLog] 17:32:22.560 Useless client rejected
+[DebugLog] 17:32:22.591 Useless client rejected
+[DebugLog] 17:32:22.622 Useless client rejected
+[DebugLog] 17:32:22.653 Useless client rejected
+[DebugLog] 17:32:22.685 Useless client rejected
+[DebugLog] 17:32:22.716 Useless client rejected
+[DebugLog] 17:32:22.747 Useless client rejected
+[DebugLog] 17:32:22.778 Useless client rejected
+[DebugLog] 17:32:22.841 Useless client rejected
+[DebugLog] 17:32:22.856 Useless client rejected
+[DebugLog] 17:32:22.888 Useless client rejected
+[DebugLog] 17:32:22.919 Useless client rejected
+[DebugLog] 17:32:22.950 Useless client rejected
+[DebugLog] 17:32:22.981 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+2023-03-28 17:32:23.200: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 17:32:27.152: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 17:32:27.152: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 17:32:27.152: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 17:32:27.152: Send S1F13(9509552).
+00 00 81 0D 00 00 00 91 1A B0   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 17:32:31.979 Useless client rejected
+[DebugLog] 17:32:32.979 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+2023-03-28 17:32:33.292: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 17:32:37.072: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 17:32:37.072: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 17:32:37.072: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 17:32:37.072: Send S1F13(9509553).
+00 00 81 0D 00 00 00 91 1A B1   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 17:32:42.133 Useless client rejected
+[DebugLog] 17:32:43.102 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+2023-03-28 17:32:43.523: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 17:32:47.585: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 17:32:47.585: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+[DebugLog] 17:32:47.663 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+2023-03-28 17:32:47.991: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 17:32:52.052: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 17:32:52.053: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 17:32:52.084: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 17:32:52.084: Send S1F13(9509554).
+00 00 81 0D 00 00 00 91 1A B2   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 17:33:02.882 Useless client rejected
+[DebugLog] 17:33:02.882 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+[DebugLog] 17:33:02.882 Useless client rejected
+2023-03-28 17:33:03.194: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 17:33:09.076: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 17:33:09.076: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 17:33:09.076: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 17:33:09.076: Send S1F13(9509555).
+00 00 81 0D 00 00 00 91 1A B3   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 17:33:12.294 Useless client rejected
+[DebugLog] 17:33:13.294 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+2023-03-28 17:33:13.403: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 17:33:17.730: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 17:33:17.730: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 17:33:17.730: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 17:33:17.730: Send S1F13(9509556).
+00 00 81 0D 00 00 00 91 1A B4   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 17:33:18.230 ListenLoop() exception = 無法從傳輸連接讀取資料: 遠端主機已強制關閉一個現存的連線。。
+2023-03-28 17:33:18.558: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-28 17:33:22.448: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 17:33:22.448: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 17:33:22.479: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 17:33:22.479: Send S1F13(9509557).
+00 00 81 0D 00 00 00 91 1A B5   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 17:33:26.353 Timeout = T3_reply
+2023-03-28 17:33:26.603:  Receive Separate.req.
+FF FF 00 00 00 09 00 10 51 83
+2023-03-28 17:33:26.603: Remote Client Disconnected!
+[DebugLog] 17:33:26.603 Timeout = T3_reply
+2023-03-28 17:33:27.681: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+[DebugLog] 17:33:32.070 Timeout = T3_reply
+[DebugLog] 17:33:41.459 Timeout = T3_reply
+2023-03-28 17:33:45.552: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-28 17:33:45.552: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-28 17:33:45.552: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 17:33:45.552: Send S1F13(9509558).
+00 00 81 0D 00 00 00 91 1A B6   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 17:33:45.739: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-28 17:33:45.739: Receive S1F14(9509558).
+00 00 01 0E 00 00 00 91 1A B6   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 17:33:46.505: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-28 17:33:46.505: Send S1F13(9509559).
+00 00 81 0D 00 00 00 91 1A B7   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 17:33:46.505: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-28 17:33:46.505: Receive S1F14(9509559).
+00 00 01 0E 00 00 00 91 1A B7   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 17:33:55.206 Timeout = T3_reply
+2023-03-28 17:33:55.643: Send Data Message.
+00 00 00 16 00 00 09 09 00 00
+2023-03-28 17:33:55.643: Send S9F9(9509560).
+00 00 09 09 00 00 00 91 1A B8   21 0A 00 00 09 09 00 00 00 91
+1A B2
+S9F9  /* Transaction Timeout */
+<B[10] 0x00 0x00 0x09 0x09 0x00 0x00 0x00 0x91 0x1A 0xB2>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 17:34:00.564 Timeout = T3_reply
+2023-03-28 17:34:00.626: Send Data Message.
+00 00 00 16 00 00 09 09 00 00
+2023-03-28 17:34:00.626: Send S9F9(9509561).
+00 00 09 09 00 00 00 91 1A B9   21 0A 00 00 09 09 00 00 00 91
+1A B3
+S9F9  /* Transaction Timeout */
+<B[10] 0x00 0x00 0x09 0x09 0x00 0x00 0x00 0x91 0x1A 0xB3>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 17:34:06.531: Receive Data Message.
+00 00 00 18 00 00 02 29 00 00
+2023-03-28 17:34:06.531: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 08 47 4F 2D 4C 4F 43
+41 4C 01 00
+S2F41  /* Host Command Send */
+<L[2]
+  <A[8]"GO-LOCAL">
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 17:34:06.547: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-03-28 17:34:06.547: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 17:34:09.062 Timeout = T3_reply
+2023-03-28 17:34:09.218: Send Data Message.
+00 00 00 16 00 00 09 09 00 00
+2023-03-28 17:34:09.218: Send S9F9(9509562).
+00 00 09 09 00 00 00 91 1A BA   21 0A 00 00 09 09 00 00 00 91
+1A B4
+S9F9  /* Transaction Timeout */
+<B[10] 0x00 0x00 0x09 0x09 0x00 0x00 0x00 0x91 0x1A 0xB4>
+.
+Program takes      0 seconds to log this message.
+[DebugLog] 17:34:13.264 Timeout = T3_reply
+2023-03-28 17:34:13.264: Send Data Message.
+00 00 00 16 00 00 09 09 00 00
+2023-03-28 17:34:13.264: Send S9F9(9509563).
+00 00 09 09 00 00 00 91 1A BB   21 0A 00 00 09 09 00 00 00 91
+1A B5
+S9F9  /* Transaction Timeout */
+<B[10] 0x00 0x00 0x09 0x09 0x00 0x00 0x00 0x91 0x1A 0xB5>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 17:35:03.592: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-03-28 17:35:03.592: Send S6F11(9509564).
+00 00 86 0B 00 00 00 91 1A BC   01 03 B1 04 00 00 00 02 B1 04
+00 00 03 EE 01 01 01 02 B1 04   00 00 00 37 01 02 41 00 A5 01
+00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 2>
+  <U4[1] 1006>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[0]"">
+        <U1[1] 0>
+      >
+    >
+  >
+>
+.
+Program takes      0.313 seconds to log this message.
+2023-03-28 17:35:03.904: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 17:35:03.904: Receive S6F12(9509564).
+00 00 06 0C 00 00 00 91 1A BC   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 17:35:05.367: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 17:35:05.367: Send S6F11(9509565).
+00 00 86 0B 00 00 00 91 1A BD   01 03 B1 04 00 00 00 03 B1 04
+00 00 03 E8 01 01 01 02 B1 04   00 00 00 0B 01 02 41 01 72 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 3>
+  <U4[1] 1000>
+  <L[1]
+    <L[2]
+      <U4[1] 11>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 17:35:05.367: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 17:35:05.367: Receive S6F12(9509565).
+00 00 06 0C 00 00 00 91 1A BD   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 17:35:23.628: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 17:35:23.628: Send S6F11(9509566).
+00 00 86 0B 00 00 00 91 1A BE   01 03 B1 04 00 00 00 04 B1 04
+00 00 13 FB 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+01 72
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 4>
+  <U4[1] 5115>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 1>
+        <A[1]"r">
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 17:35:23.628: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 17:35:23.628: Receive S6F12(9509566).
+00 00 06 0C 00 00 00 91 1A BE   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 17:35:23.628: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-03-28 17:35:23.628: Send S6F11(9509567).
+00 00 86 0B 00 00 00 91 1A BF   01 03 B1 04 00 00 00 05 B1 04
+00 00 03 F1 01 01 01 02 B1 04   00 00 00 37 01 02 41 01 72 A5
+01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 5>
+  <U4[1] 1009>
+  <L[1]
+    <L[2]
+      <U4[1] 55>
+      <L[2]
+        <A[1]"r">
+        <U1[1] 1>
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 17:35:23.878: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 17:35:23.878: Receive S6F12(9509567).
+00 00 06 0C 00 00 00 91 1A BF   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 17:35:24.315: Send Data Message.
+00 00 00 1A 00 00 86 0B 00 00
+2023-03-28 17:35:24.315: Send S6F11(9509568).
+00 00 86 0B 00 00 00 91 1A C0   01 03 B1 04 00 00 00 06 B1 04
+00 00 03 F3 01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 6>
+  <U4[1] 1011>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 17:35:24.534: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 17:35:24.534: Receive S6F12(9509568).
+00 00 06 0C 00 00 00 91 1A C0   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 17:35:33.329: Send Data Message.
+00 00 00 1A 00 00 86 0B 00 00
+2023-03-28 17:35:33.329: Send S6F11(9509569).
+00 00 86 0B 00 00 00 91 1A C1   01 03 B1 04 00 00 00 07 B1 04
+00 00 03 F4 01 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 7>
+  <U4[1] 1012>
+  <L[0]
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 17:35:33.391: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 17:35:33.391: Receive S6F12(9509569).
+00 00 06 0C 00 00 00 91 1A C1   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-28 17:35:33.485: Send Data Message.
+00 00 00 7D 00 00 86 0B 00 00
+2023-03-28 17:35:33.485: Send S6F11(9509570).
+00 00 86 0B 00 00 00 91 1A C2   01 03 B1 04 00 00 00 08 B1 04
+00 00 03 F5 01 01 01 02 B1 04   00 00 00 42 01 05 41 01 72 A5
+01 01 A5 01 00 A5 01 02 01 19   A5 01 01 A5 01 00 A5 01 00 A5
+01 00 A5 01 00 A5 01 00 A5 01   00 A5 01 00 A5 01 00 A5 01 00
+A5 01 00 A5 01 00 A5 01 00 A5   01 00 A5 01 00 A5 01 00 A5 01
+00 A5 01 00 A5 01 00 A5 01 00   A5 01 00 A5 01 00 A5 01 00 A5
+01 00 A5 01 01
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 8>
+  <U4[1] 1013>
+  <L[1]
+    <L[2]
+      <U4[1] 66>
+      <L[5]
+        <A[1]"r">
+        <U1[1] 1>
+        <U1[1] 0>
+        <U1[1] 2>
+        <L[25]
+          <U1[1] 1>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 0>
+          <U1[1] 1>
+        >
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-03-28 17:35:33.891: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-28 17:35:33.891: Receive S6F12(9509570).
+00 00 06 0C 00 00 00 91 1A C2   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.

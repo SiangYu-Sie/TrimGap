@@ -1,0 +1,6 @@
+//EC,,,,,,,
+// Name,ID,Type,Min.Value,Max.Value,Default.Value,Unit,Definition
+ChunkRotateDistance,7001,UINT_2,1,50000,10000,pulse,Chunk rotate distance
+Cofficient,7002,FT_4,0,1,0.931,,Sensor data tilting cofficient
+RobotSpeed,7003,UINT_1,1,100,50,,EFEM robot speed
+MotionRotate,7004,UINT_1,0,1,1,,"Chunk rotate, 1:Rotate, 0:No Rotate"

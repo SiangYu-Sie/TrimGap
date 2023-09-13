@@ -1,0 +1,71 @@
+//////////////////////////////////////////////////////////////////////////
+2023-03-17 08:16:46.142: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+//////////////////////////////////////////////////////////////////////////
+2023-03-17 08:17:28.259: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+[DebugLog] 08:19:24.068 Disconnect already!
+[DebugLog] 08:19:24.068 AcceptThread() exception:中止操作被 WSACancelBlockingCall 呼叫打斷。
+2023-03-17 08:19:25.505: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+[DebugLog] 08:19:34.940 Disconnect already!
+[DebugLog] 08:19:34.940 AcceptThread() exception:中止操作被 WSACancelBlockingCall 呼叫打斷。
+2023-03-17 08:20:32.725: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2023-03-17 08:20:34.522: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-03-17 08:20:34.615: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-03-17 08:20:34.615: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-03-17 08:20:34.615: Send S1F13(125025).
+00 00 81 0D 00 00 00 01 E8 61   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.192 seconds to log this message.
+2023-03-17 08:20:34.803: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-03-17 08:20:34.803: Receive S1F14(125025).
+00 00 01 0E 00 00 00 01 E8 61   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-03-17 08:20:45.347: Send Data Message.
+00 00 00 2C 00 00 86 0B 00 00
+2023-03-17 08:20:45.347: Send S6F11(125026).
+00 00 86 0B 00 00 00 01 E8 62   01 03 B1 04 00 00 00 02 B1 04
+00 00 00 65 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 00 41
+03 31 32 33
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 2>
+  <U4[1] 101>
+  <L[1]
+    <L[2]
+      <U4[1] 88>
+      <L[2]
+        <U1[1] 0>
+        <A[3]"123">
+      >
+    >
+  >
+>
+.
+Program takes      0.002 seconds to log this message.
+2023-03-17 08:20:45.347: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-03-17 08:20:45.347: Receive S6F12(125026).
+00 00 06 0C 00 00 00 01 E8 62   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2023-03-17 08:21:08.670:  Receive Separate.req.
+FF FF 00 00 00 09 00 6D 21 AD
+2023-03-17 08:21:08.670: Remote Client Disconnected!

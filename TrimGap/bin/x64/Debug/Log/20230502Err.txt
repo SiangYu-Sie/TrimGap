@@ -1,0 +1,22 @@
+17:08:39 ECID = 7001, Default Value is out of range
+17:08:39 Exception:找不到要求的值 'FT_1_TYPE'。 while reading file [C:\Users\TL-108008\Desktop\TrimGap - 20230427\TrimGap - 20230427\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 3.
+17:08:45 ECID = 7001 not found at UpdateEC
+17:08:45 ECID = 7002 not found at UpdateEC
+17:08:45 ECID = 7003 not found at UpdateEC
+17:08:45 ECID = 7005 not found at UpdateEC
+17:08:45 ECID = 7004 not found at UpdateEC
+17:09:41 ECID = 7001, Default Value is out of range
+17:09:41 Exception:找不到要求的值 'FT_1_TYPE'。 while reading file [C:\Users\TL-108008\Desktop\TrimGap - 20230427\TrimGap - 20230427\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 3.
+17:09:46 ECID = 7001 not found at UpdateEC
+17:09:46 ECID = 7002 not found at UpdateEC
+17:09:46 ECID = 7003 not found at UpdateEC
+17:09:46 ECID = 7005 not found at UpdateEC
+17:09:46 ECID = 7004 not found at UpdateEC
+17:11:43 ECID = 7001, Default Value is out of range
+17:11:43 Exception:找不到要求的值 'FT_1_TYPE'。 while reading file [C:\Users\TL-108008\Desktop\TrimGap - 20230427\TrimGap - 20230427\TrimGap\bin\x64\Debug\EqpInitData\EqpEC.csv] line 3.
+17:11:49 ECID = 7001 not found at UpdateEC
+17:11:49 ECID = 7002 not found at UpdateEC
+17:11:49 ECID = 7003 not found at UpdateEC
+17:11:49 ECID = 7005 not found at UpdateEC
+17:11:49 ECID = 7004 not found at UpdateEC
+17:12:24 ECID = 7001 not found at UpdateEC

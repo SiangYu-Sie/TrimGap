@@ -1,0 +1,8 @@
+10:26:10 CTLT.GEM Init->Start Ver.:2.3.6
+10:26:11 CTLT.GEM Init->Success.
+11:27:57 CTLT.GEM Init->Start Ver.:2.3.6
+11:27:57 CTLT.GEM Init->Success.
+12:32:52 CTLT.GEM Init->Start Ver.:2.3.6
+12:32:52 CTLT.GEM Init->Success.
+12:33:49 CTLT.GEM Init->Start Ver.:2.3.6
+12:33:49 CTLT.GEM Init->Success.

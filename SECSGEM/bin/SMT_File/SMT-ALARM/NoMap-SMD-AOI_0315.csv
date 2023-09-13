@@ -1,0 +1,201 @@
+﻿Id,No,Class,Message,Troubleshooting,Note,MessageE,TroubleshootingE,MessageGB,TroubleshootingGB
+1,1,0,AOI - 門檢異常,請檢查是否有遮蔽物，senser是否正常作動。,0,AOI - Rail door inspection abnormal,Undefined,AOI - 门检异常,请检查是否有遮蔽物，senser是否正常作动。
+2,2,0,AOI - 緊急停止被按下。,緊急停止被按下。,0,AOI - The emergency stop was pressed.,Undefined,AOI - 紧急停止被按下。,紧急停止被按下。
+3,3,0,AOI - 氣壓不足(X02)。,檢查氣壓源。,0,AOI - Air Pressure Low(X02),Undefined,AOI - 气压不足(X02)。,检查气压源。
+4,4,0,AOI - 夾板氣缸(A)動檢(X05)-異常。,氣缸動作與檢知訊號不符，請檢查氣缸壓力是否足夠，或是檢知異常。,0,AOI - Clip cylinder abnormal (X05),Undefined,AOI - 夹板气缸(A)动检(X05)-异常。,气缸动作与检知讯号不符，请检查气缸压力是否足够，或是检知异常。
+5,5,0,AOI - 夾板氣缸(A)原點檢(X06)-異常。,氣缸動作與檢知訊號不符，請檢查氣缸壓力是否足夠，或是檢知異常。,0,AOI - Clip cylinder abnormal (X06),Undefined,AOI - 夹板气缸(A)原点检(X06)-异常。,气缸动作与检知讯号不符，请检查气缸压力是否足够，或是检知异常。
+6,6,0,AOI - 夾板氣缸(B)動檢(X07)-異常。,氣缸動作與檢知訊號不符，請檢查氣缸壓力是否足夠，或是檢知異常。,0,AOI - Clip cylinder abnormal (X07),Undefined,AOI - 夹板气缸(B)动检(X07)-异常。,气缸动作与检知讯号不符，请检查气缸压力是否足够，或是检知异常。
+7,7,0,AOI - 夾板氣缸(B)原點檢(X08)-異常。,氣缸動作與檢知訊號不符，請檢查氣缸壓力是否足夠，或是檢知異常。,0,AOI - Clip cylinder abnormal (X08),Undefined,AOI - 夹板气缸(B)原点检(X08)-异常。,气缸动作与检知讯号不符，请检查气缸压力是否足够，或是检知异常。
+8,8,0,AOI - 靠邊氣缸動檢(X13)-異常。,氣缸動作與檢知訊號不符，請檢查氣缸壓力是否足夠，或是檢知異常。,0,AOI - Aside cylinder abnormal (X13),Undefined,AOI - 靠边气缸动检(X13)-异常。,气缸动作与检知讯号不符，请检查气缸压力是否足够，或是检知异常。
+9,9,0,AOI - 靠邊氣缸原點檢(X14)-異常。,氣缸動作與檢知訊號不符，請檢查氣缸壓力是否足夠，或是檢知異常。,0,AOI - Aside cylinder abnormal (X14),Undefined,AOI - 靠边气缸原点检(X14)-异常。,气缸动作与检知讯号不符，请检查气缸压力是否足够，或是检知异常。
+10,10,0,AOI - Boat盤入料檢(X15)-異常。,軌道入口端有Boat盤或料墜落，請查找料或確認sensor門檻值。,0,AOI - Boat fall down(X15),Undefined,AOI - Boat盘入料检(X15)-异常。,轨道入口端有Boat盘或料坠落，请查找料或确认sensor门槛值。
+11,11,0,AOI - Boat盤出料檢(X16)-異常。,軌道尾端有Boat盤或料墜落，請查找料或確認sensor門檻值。,0,AOI - Boat fall down(X16),Undefined,AOI - Boat盘出料检(X16)-异常。,轨道尾端有Boat盘或料坠落，请查找料或确认sensor门槛值。
+12,12,0,AOI - Boat盤晶片平整檢1(X17)-異常。,軌道上方有遮蔽物，請移除遮蔽物。,0,AOI - Obstacles above the track(X17),Undefined,AOI - Boat盘晶片平整检1(X17)-异常。,轨道上方有遮蔽物，请移除遮蔽物。
+13,13,0,AOI - Boat盤晶片平整檢2(X18)-異常。,軌道上方有遮蔽物，請移除遮蔽物。,0,AOI - Obstacles above the track(X18),Undefined,AOI - Boat盘晶片平整检2(X18)-异常。,轨道上方有遮蔽物，请移除遮蔽物。
+14,14,0,AOI - Boat盤皮帶馬達(X22)-異常。,馬達狀態異常，請將馬達斷電重開。,0,AOI - Track side CV motor error(X22),Undefined,AOI - Boat盘皮带马达(X22)-异常。,马达状态异常，请将马达断电重开。
+15,15,0,AOI - 門檔氣缸動檢-異常(X23)。,氣缸動作與檢知訊號不符，請檢查氣缸壓力是否足夠，或是檢知異常。,0,AOI - Door stop cylinder abnormal (X23),Undefined,AOI - 门档气缸动检-异常(X23)。,气缸动作与检知讯号不符，请检查气缸压力是否足够，或是检知异常。
+16,16,0,AOI - 門檔氣缸原點檢-異常(x24)。,氣缸動作與檢知訊號不符，請檢查氣缸壓力是否足夠，或是檢知異常。,0,AOI - Door stop cylinder abnormal (X24),Undefined,AOI - 门档气缸原点检-异常(x24)。,气缸动作与检知讯号不符，请检查气缸压力是否足够，或是检知异常。
+17,17,0,AOI - NG數量達設定值,請檢察視覺是否設定有誤,0,AOI - NG counter arrive seating,Undefined,AOI - NG数量达设定值,请检察视觉是否设定有误
+18,18,0,AOI - 非法IP,請輸入正確IP,0,AOI - Illegal IP,Undefined,AOI - 非法IP,请输入正确IP
+19,19,0,AOI - IP衝突,請檢查網域中的IP是否重複,0,AOI - IP conflict,Undefined,AOI - IP冲突,请检查网域中的IP是否重复
+20,20,0,AOI - Port 錯誤,請輸入正確Port,0,AOI - Port error,Undefined,AOI - Port 错误,请输入正确Port
+21,21,0,AOI - Servere建立失敗,請確認IP及Port後，再重試,0,AOI - Servere establishment failed,Undefined,AOI - Servere建立失败,请确认IP及Port后，再重试
+22,22,0,AOI - Client連線失敗,請確認IP及Port後，再重試,0,AOI - Client connection failed,Undefined,AOI - Client连线失败,请确认IP及Port后，再重试
+23,23,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+24,24,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+25,25,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+26,26,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+27,27,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+28,28,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+29,29,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+30,30,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+31,31,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+32,32,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+33,33,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+34,34,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+35,35,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+36,36,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+37,37,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+38,38,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+39,39,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+40,40,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+41,41,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+42,42,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+43,43,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+44,44,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+45,45,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+46,46,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+47,47,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+48,48,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+49,49,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+50,50,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+51,51,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+52,52,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+53,53,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+54,54,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+55,55,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+56,56,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+57,57,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+58,58,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+59,59,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+60,60,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+61,61,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+62,62,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+63,63,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+64,64,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+65,65,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+66,66,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+67,67,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+68,68,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+69,69,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+70,70,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+71,71,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+72,72,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+73,73,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+74,74,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+75,75,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+76,76,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+77,77,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+78,78,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+79,79,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+80,80,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+81,81,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+82,82,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+83,83,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+84,84,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+85,85,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+86,86,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+87,87,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+88,88,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+89,89,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+90,90,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+91,91,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+92,92,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+93,93,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+94,94,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+95,95,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+96,96,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+97,97,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+98,98,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+99,99,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+100,100,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+101,101,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+102,102,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+103,103,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+104,104,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+105,105,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+106,106,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+107,107,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+108,108,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+109,109,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+110,110,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+111,111,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+112,112,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+113,113,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+114,114,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+115,115,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+116,116,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+117,117,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+118,118,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+119,119,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+120,120,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+121,121,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+122,122,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+123,123,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+124,124,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+125,125,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+126,126,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+127,127,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+128,128,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+129,129,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+130,130,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+131,131,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+132,132,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+133,133,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+134,134,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+135,135,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+136,136,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+137,137,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+138,138,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+139,139,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+140,140,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+141,141,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+142,142,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+143,143,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+144,144,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+145,145,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+146,146,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+147,147,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+148,148,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+149,149,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+150,150,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+151,151,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+152,152,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+153,153,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+154,154,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+155,155,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+156,156,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+157,157,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+158,158,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+159,159,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+160,160,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+161,161,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+162,162,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+163,163,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+164,164,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+165,165,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+166,166,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+167,167,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+168,168,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+169,169,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+170,170,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+171,171,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+172,172,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+173,173,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+174,174,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+175,175,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+176,176,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+177,177,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+178,178,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+179,179,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+180,180,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+181,181,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+182,182,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+183,183,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+184,184,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+185,185,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+186,186,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+187,187,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+188,188,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+189,189,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+190,190,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+191,191,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+192,192,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+193,193,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+194,194,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+195,195,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+196,196,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+197,197,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+198,198,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+199,199,0,未使用,未定義,0,Unused,Undefined,未使用,未定义
+200,200,0,未使用,未定義,0,Unused,Undefined,未使用,未定义

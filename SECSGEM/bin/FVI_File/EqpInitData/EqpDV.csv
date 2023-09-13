@@ -1,0 +1,8 @@
+Name,ID,Type,Length,Unit,Definition
+ReelID,4001,ASCII,1000,N/A,ReelID
+APN,4002,ASCII,1000,N/A,APN
+DateCode,4003,ASCII,1000,N/A,DateCode
+LotID,4004,ASCII,1000,N/A,LotID
+CurrentRecipeName,4005,ASCII,1000,N/A,CurrentRecipeName
+Expected_DieCount,4006,ASCII,1000,N/A,Expected_DieCount
+Actual_DieCount,4007,ASCII,1000,N/A,Actual_DieCount

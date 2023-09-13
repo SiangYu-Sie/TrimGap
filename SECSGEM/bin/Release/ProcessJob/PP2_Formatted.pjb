@@ -1,0 +1,18 @@
+[RecipeCommon]
+RecipeNo	=	1
+Comment		=	Test1
+
+[CCodeID2]
+WindSet	=	1
+WaterSet=	2
+
+[CCodeID3]
+PParmName1 	= 	5
+PParmName2 	= 	500
+PParmName3 	= 	1000000000
+PParmName4 	= 	-99
+PParmName5 	= 	-999
+PParmName6 	= 	-1000000
+PParmName7 	= 	10.12345
+PParmName8 	= 	true
+PParmName9 	= 	This_is_a_Test

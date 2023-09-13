@@ -1,0 +1,87 @@
+D:\專案\新控制專案\bin\Camera.dll
+D:\專案\新控制專案\bin\Camera.pdb
+D:\專案\新控制專案\WindowsFormsApp1\Camera\obj\x64\Debug\Camera.csprojAssemblyReference.cache
+D:\專案\新控制專案\WindowsFormsApp1\Camera\obj\x64\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\專案\新控制專案\WindowsFormsApp1\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
+D:\專案\新控制專案\WindowsFormsApp1\Camera\obj\x64\Debug\Camera.dll
+D:\專案\新控制專案\WindowsFormsApp1\Camera\obj\x64\Debug\Camera.pdb
+C:\Users\admin\Desktop\新控制專案\bin\TL_Camera.dll
+C:\Users\admin\Desktop\新控制專案\bin\TL_Camera.pdb
+C:\Users\admin\Desktop\新控制專案\WindowsFormsApp1\Camera\obj\x64\Debug\Camera.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\新控制專案\WindowsFormsApp1\Camera\obj\x64\Debug\Camera.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\新控制專案\WindowsFormsApp1\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
+C:\Users\admin\Desktop\新控制專案\WindowsFormsApp1\Camera\obj\x64\Debug\TL_Camera.dll
+C:\Users\admin\Desktop\新控制專案\WindowsFormsApp1\Camera\obj\x64\Debug\TL_Camera.pdb
+D:\專案\新控制專案_20201215\bin\TL_Camera.dll
+D:\專案\新控制專案_20201215\bin\TL_Camera.pdb
+D:\專案\新控制專案_20201215\WindowsFormsApp1\Camera\obj\x64\Debug\Camera.csprojAssemblyReference.cache
+D:\專案\新控制專案_20201215\WindowsFormsApp1\Camera\obj\x64\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\專案\新控制專案_20201215\WindowsFormsApp1\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
+D:\專案\新控制專案_20201215\WindowsFormsApp1\Camera\obj\x64\Debug\TL_Camera.dll
+D:\專案\新控制專案_20201215\WindowsFormsApp1\Camera\obj\x64\Debug\TL_Camera.pdb
+D:\專案\Incomming\bin\TL_Camera.dll
+D:\專案\Incomming\bin\TL_Camera.pdb
+D:\專案\Incomming\WindowsFormsApp1\Camera\obj\x64\Debug\Camera.csprojAssemblyReference.cache
+D:\專案\Incomming\WindowsFormsApp1\Camera\obj\x64\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\專案\Incomming\WindowsFormsApp1\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
+D:\專案\Incomming\WindowsFormsApp1\Camera\obj\x64\Debug\TL_Camera.dll
+D:\專案\Incomming\WindowsFormsApp1\Camera\obj\x64\Debug\TL_Camera.pdb
+D:\專案\FVI_Incomming\BCA1-100\bin\Debug\Camera.dll
+D:\專案\FVI_Incomming\BCA1-100\bin\Debug\Camera.pdb
+D:\專案\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\專案\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
+D:\專案\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.dll
+D:\專案\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.pdb
+D:\專案\FVI_Incomming\BCA1-100\bin\Lib\Camera.dll
+D:\專案\FVI_Incomming\BCA1-100\bin\Lib\Camera.pdb
+D:\專案\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.csprojAssemblyReference.cache
+D:\FVI_Incomming\BCA1-100\bin\Lib\Camera.dll
+D:\FVI_Incomming\BCA1-100\bin\Lib\Camera.pdb
+D:\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.csprojAssemblyReference.cache
+D:\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
+D:\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.dll
+D:\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.pdb
+D:\專案\InComming\20210319\FVI_Incomming\BCA1-100\bin\Lib\Camera.dll
+D:\專案\InComming\20210319\FVI_Incomming\BCA1-100\bin\Lib\Camera.pdb
+D:\專案\InComming\20210319\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.csprojAssemblyReference.cache
+D:\專案\InComming\20210319\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\專案\InComming\20210319\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
+D:\專案\InComming\20210319\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.dll
+D:\專案\InComming\20210319\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.pdb
+D:\專案\InComming\FVI_Incomming\BCA1-100\bin\Lib\Camera.dll
+D:\專案\InComming\FVI_Incomming\BCA1-100\bin\Lib\Camera.pdb
+D:\專案\InComming\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.csprojAssemblyReference.cache
+D:\專案\InComming\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\專案\InComming\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
+D:\專案\InComming\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.dll
+D:\專案\InComming\FVI_Incomming\BCA1-100\Camera\obj\x64\Debug\Camera.pdb
+C:\Users\MyUser\Desktop\TrimGap - 20230417\TrimGap - 20230417\Camera\bin\Debug\Camera.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230417\TrimGap - 20230417\Camera\bin\Debug\Camera.pdb
+C:\Users\MyUser\Desktop\TrimGap - 20230417\TrimGap - 20230417\Camera\bin\Debug\Basler.Pylon.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230417\TrimGap - 20230417\Camera\bin\Debug\SpinnakerNET_v140.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230417\TrimGap - 20230417\Camera\obj\x64\Debug\Camera.csproj.AssemblyReference.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230417\TrimGap - 20230417\Camera\obj\x64\Debug\Camera.csproj.CoreCompileInputs.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230417\TrimGap - 20230417\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
+C:\Users\MyUser\Desktop\TrimGap - 20230417\TrimGap - 20230417\Camera\obj\x64\Debug\Camera.dll
+C:\Users\MyUser\Desktop\TrimGap - 20230417\TrimGap - 20230417\Camera\obj\x64\Debug\Camera.pdb
+C:\Users\TL-108008\Desktop\TrimGap - 20230420_Trim演算法更新\TrimGap - 20230420\Camera\bin\Debug\Camera.dll
+C:\Users\TL-108008\Desktop\TrimGap - 20230420_Trim演算法更新\TrimGap - 20230420\Camera\bin\Debug\Camera.pdb
+C:\Users\TL-108008\Desktop\TrimGap - 20230420_Trim演算法更新\TrimGap - 20230420\Camera\bin\Debug\Basler.Pylon.dll
+C:\Users\TL-108008\Desktop\TrimGap - 20230420_Trim演算法更新\TrimGap - 20230420\Camera\bin\Debug\SpinnakerNET_v140.dll
+C:\Users\TL-108008\Desktop\TrimGap - 20230420_Trim演算法更新\TrimGap - 20230420\Camera\bin\Debug\Basler.Pylon.xml
+C:\Users\TL-108008\Desktop\TrimGap - 20230420_Trim演算法更新\TrimGap - 20230420\Camera\obj\x64\Debug\Camera.csprojAssemblyReference.cache
+C:\Users\TL-108008\Desktop\TrimGap - 20230420_Trim演算法更新\TrimGap - 20230420\Camera\obj\x64\Debug\Camera.csproj.CoreCompileInputs.cache
+C:\Users\TL-108008\Desktop\TrimGap - 20230420_Trim演算法更新\TrimGap - 20230420\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
+C:\Users\TL-108008\Desktop\TrimGap - 20230420_Trim演算法更新\TrimGap - 20230420\Camera\obj\x64\Debug\Camera.dll
+C:\Users\TL-108008\Desktop\TrimGap - 20230420_Trim演算法更新\TrimGap - 20230420\Camera\obj\x64\Debug\Camera.pdb
+E:\專案\TrimGap\TrimGap - 20230808\Camera\bin\Debug\Camera.dll
+E:\專案\TrimGap\TrimGap - 20230808\Camera\bin\Debug\Camera.pdb
+E:\專案\TrimGap\TrimGap - 20230808\Camera\bin\Debug\Basler.Pylon.dll
+E:\專案\TrimGap\TrimGap - 20230808\Camera\bin\Debug\SpinnakerNET_v140.dll
+E:\專案\TrimGap\TrimGap - 20230808\Camera\bin\Debug\Basler.Pylon.xml
+E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Debug\Camera.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Debug\Camera.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Debug\Camera.dll
+E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Debug\Camera.pdb

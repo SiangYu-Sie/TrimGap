@@ -1,0 +1,16 @@
+Name,ID,Type,Length,Unit,Definition
+LotID,4001,ASCII,1000,N/A,LotID
+MagazineID,4002,ASCII,1000,N/A,MagazineID
+Pass1MagazineID,4003,ASCII,1000,N/A,Pass1MagazineID
+Pass2MagazineID,4004,ASCII,1000,N/A,Pass2MagazineID
+NGMagazineID,4005,ASCII,1000,N/A,NGMagazineID
+EmptyMagazineID,4006,ASCII,1000,N/A,EmptyMagazineID
+BoatBarcode,8001,ASCII,1000,N/A,BoatBarcode
+PassBoatBarcode,8002,ASCII,1000,N/A,PassBoatBarcode
+NGBoatBarcode,8003,ASCII,1000,N/A,NGBoatBarcode
+EmptyBoatBarcode,8004,ASCII,1000,N/A,EmptyBoatBarcode
+BoatAssingNGBoatBarcode,8005,ASCII,1000,N/A,BoatAssingNGBoatBarcode
+RecipeName,8006,ASCII,1000,N/A,RecipeName
+Pass1MagazineUnitCount,8007,ASCII,1000,N/A,Pass1MagazineUnitCount
+Pass2MagazineUnitCount,8008,ASCII,1000,N/A,Pass2MagazineUnitCount
+NGMagazineUnitCount,8009,ASCII,1000,N/A,NGMagazineUnitCount

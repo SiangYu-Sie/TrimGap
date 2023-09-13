@@ -1,0 +1,212 @@
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\TrimGap.exe.config
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\TrimGap.exe
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\TrimGap.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Camera.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\CTLT.GEM.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\CTLT.SECS.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\HirataEFEM.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\IO4.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\KEYENCE_LJ.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\LightController.exe
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Modules.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Motion_PB.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\MvvmFx.Bindings.WinForms.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\MWArray.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.AsyncEx.Context.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.AsyncEx.Coordination.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.AsyncEx.Interop.WaitHandles.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.AsyncEx.Oop.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.AsyncEx.Tasks.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.Cancellation.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.Collections.Deque.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.Disposables.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\PMLcmpDll.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\SECSGEM.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\SF3.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\SocketClient2.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\SQLite.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Buffers.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Collections.Immutable.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Memory.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Reactive.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\WindowsBase.WinForms.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Newtonsoft.Json.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\dsa40net.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\AdvMotAPI.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\CsvHelper.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Basler.Pylon.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Spire.XLS.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Data.SQLite.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\SunnyUI.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\CircularProgressBar.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Text.Encoding.CodePages.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\WinFormAnimation.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\MaterialDesignColors.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\dmd40net.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Spire.License.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Spire.Pdf.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\SunnyUI.Common.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Microsoft.mshtml.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Modules.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Modules.dll.config
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\SF3.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\SF3.dll.config
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\LightController.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\LightController.exe.config
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Camera.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\MvvmFx.Bindings.WinForms.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.AsyncEx.Context.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.AsyncEx.Coordination.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.AsyncEx.Interop.WaitHandles.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.AsyncEx.Oop.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.AsyncEx.Tasks.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.Cancellation.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.Collections.Deque.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Nito.Disposables.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\SECSGEM.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\SECSGEM.dll.config
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Buffers.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Collections.Immutable.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Memory.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Reactive.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Newtonsoft.Json.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\CsvHelper.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Basler.Pylon.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\MaterialDesignColors.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.csproj.SuggestedBindingRedirects.cache
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.CCDTest.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.EFEMControl.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.findHomePanel.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.Form1.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.MotionControl.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.ParaForm.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.Properties.Resources.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.RecipeManagement.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.SignalAnalysisForm.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.TTVScanPattern.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.UserPermission.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.csproj.CopyComplete
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.exe
+C:\Users\windows user\Desktop\TrimGap - 20230629\TrimGap\obj\Debug\TrimGap.pdb
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\TrimGap.exe.config
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\TrimGap.exe
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\TrimGap.pdb
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Camera.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\CTLT.GEM.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\CTLT.SECS.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\HirataEFEM.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\IO4.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\KEYENCE_LJ.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\LightController.exe
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Modules.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Motion_PB.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\MvvmFx.Bindings.WinForms.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\MWArray.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.AsyncEx.Context.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.AsyncEx.Coordination.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.AsyncEx.Interop.WaitHandles.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.AsyncEx.Oop.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.AsyncEx.Tasks.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.Cancellation.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.Collections.Deque.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.Disposables.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\PMLcmpDll.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\SECSGEM.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\SF3.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\SocketClient2.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\SQLite.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Buffers.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Collections.Immutable.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Memory.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Numerics.Vectors.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Reactive.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\WindowsBase.WinForms.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Newtonsoft.Json.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\dsa40net.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\AdvMotAPI.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\CsvHelper.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Basler.Pylon.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Spire.XLS.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Data.SQLite.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\SunnyUI.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\CircularProgressBar.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Text.Encoding.CodePages.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\WinFormAnimation.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\MaterialDesignColors.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\dmd40net.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Microsoft.Bcl.HashCode.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Spire.License.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Spire.Pdf.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\SunnyUI.Common.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Microsoft.mshtml.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Modules.pdb
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Modules.dll.config
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\SF3.pdb
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\SF3.dll.config
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\LightController.pdb
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\LightController.exe.config
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Camera.pdb
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\MvvmFx.Bindings.WinForms.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.AsyncEx.Context.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.AsyncEx.Coordination.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.AsyncEx.Interop.WaitHandles.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.AsyncEx.Oop.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.AsyncEx.Tasks.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.Cancellation.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.Collections.Deque.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Nito.Disposables.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\SECSGEM.pdb
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\SECSGEM.dll.config
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Buffers.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Collections.Immutable.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Memory.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Numerics.Vectors.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Reactive.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Newtonsoft.Json.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\CsvHelper.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Basler.Pylon.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\MaterialDesignColors.pdb
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\bin\Debug\Microsoft.Bcl.HashCode.xml
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.csprojAssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.CCDTest.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.EFEMControl.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.findHomePanel.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.Form1.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.MotionControl.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.ParaForm.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.RecipeManagement.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.SignalAnalysisForm.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.TTVScanPattern.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.UserPermission.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.exe
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.pdb
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\Interop.ActUtlTypeLib.dll
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\Debug\TrimGap.csproj.ResolveComReference.cache

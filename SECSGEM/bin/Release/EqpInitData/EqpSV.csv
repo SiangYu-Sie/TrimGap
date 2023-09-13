@@ -1,0 +1,16 @@
+//SV,,,,,
+//SV_NUMBERS,3,,,,
+Name,ID,Type,Length,Unit,Definition
+SV_BOOLEAN,2001,BOOLEAN,,UnitA,Boolean Type Status
+SV_CONTROL_JOB_NAME,2002,ASCII,100,,Control Job Name
+SV_INMP1_NOW_TEMP,2003,FT_4,,Degree,INMP1NowTemp
+SV_BINARY,2004,BINARY,,UnitB,Binary Type Status
+LIST_SV1,3001,LIST,,Set,Wafer Mapping List
+LIST_SV2,3002,LIST,,Set,Wafer Status List
+OVEN_Temp,3003,UINT_1,,TC,OVEN Temp
+OVEN_Ampere,3004,UINT_1,,A,OVEN Ampere
+CST_ID,3005,UINT_1,,number,CST ID
+Door_Open,3006,BOOLEAN,,,
+Process_Start,3007,BOOLEAN,,,
+SV_EQP_STSTUS,100001,UINT_1,,UnitC,Equipment Status
+SV_UINT_4,100002,UINT_4,,UnitD,UINT_4 type Status

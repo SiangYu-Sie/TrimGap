@@ -1,0 +1,69 @@
+D:\專案\新控制專案\bin\Camera.dll
+D:\專案\新控制專案\bin\Camera.pdb
+D:\專案\新控制專案\WindowsFormsApp1\Camera\obj\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\專案\新控制專案\WindowsFormsApp1\Camera\obj\Debug\Camera.csproj.CopyComplete
+D:\專案\新控制專案\WindowsFormsApp1\Camera\obj\Debug\Camera.dll
+D:\專案\新控制專案\WindowsFormsApp1\Camera\obj\Debug\Camera.pdb
+D:\專案\FVI_Incomming\BCA1-100\Camera\obj\Debug\Camera.csprojAssemblyReference.cache
+D:\專案\FVI_Incomming\BCA1-100\Camera\obj\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\專案\FVI_Incomming\BCA1-100\Camera\obj\Debug\Camera.dll
+D:\專案\FVI_Incomming\BCA1-100\Camera\obj\Debug\Camera.pdb
+D:\專案\FVI_Incomming\BCA1-100\bin\Debug\Camera.dll
+D:\專案\FVI_Incomming\BCA1-100\bin\Debug\Camera.pdb
+D:\專案\FVI_Incomming\BCA1-100\Camera\obj\Debug\Camera.csproj.CopyComplete
+D:\專案\美強AOI vision\BHU05_2022\Library\Camera\obj\Debug\Camera.csprojAssemblyReference.cache
+D:\專案\美強AOI vision\BHU05_2022\Library\Camera\obj\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\專案\美強AOI vision\BHU05_2022\Library\Camera\obj\Debug\Camera.dll
+D:\專案\美強AOI vision\BHU05_2022\Library\Camera\obj\Debug\Camera.pdb
+D:\專案\美強AOI vision\BHU05_2022\Library\bin\Lib\Camera.dll
+D:\專案\美強AOI vision\BHU05_2022\Library\bin\Lib\Camera.pdb
+D:\專案\美強AOI vision\BHU05_2022\Library\Camera\obj\Debug\Camera.csproj.CopyComplete
+D:\BHU05_2022\Library\bin\Lib\Camera.dll
+D:\BHU05_2022\Library\bin\Lib\Camera.pdb
+D:\BHU05_2022\Library\Camera\obj\Debug\Camera.csproj.AssemblyReference.cache
+D:\BHU05_2022\Library\Camera\obj\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\BHU05_2022\Library\Camera\obj\Debug\Camera.csproj.CopyComplete
+D:\BHU05_2022\Library\Camera\obj\Debug\Camera.dll
+D:\BHU05_2022\Library\Camera\obj\Debug\Camera.pdb
+D:\專案\美強AOI vision\BHU05_20220504\Library\bin\Lib\Camera.dll
+D:\專案\美強AOI vision\BHU05_20220504\Library\bin\Lib\Camera.pdb
+D:\專案\美強AOI vision\BHU05_20220504\Library\Camera\obj\Debug\Camera.csprojAssemblyReference.cache
+D:\專案\美強AOI vision\BHU05_20220504\Library\Camera\obj\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\專案\美強AOI vision\BHU05_20220504\Library\Camera\obj\Debug\Camera.csproj.CopyComplete
+D:\專案\美強AOI vision\BHU05_20220504\Library\Camera\obj\Debug\Camera.dll
+D:\專案\美強AOI vision\BHU05_20220504\Library\Camera\obj\Debug\Camera.pdb
+D:\專案\美強aoi vision\BHU05_V\Library\bin\Lib\Camera.dll
+D:\專案\美強aoi vision\BHU05_V\Library\bin\Lib\Camera.pdb
+D:\專案\美強aoi vision\BHU05_V\Library\Camera\obj\Debug\Camera.csprojAssemblyReference.cache
+D:\專案\美強aoi vision\BHU05_V\Library\Camera\obj\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\專案\美強aoi vision\BHU05_V\Library\Camera\obj\Debug\Camera.csproj.CopyComplete
+D:\專案\美強aoi vision\BHU05_V\Library\Camera\obj\Debug\Camera.dll
+D:\專案\美強aoi vision\BHU05_V\Library\Camera\obj\Debug\Camera.pdb
+E:\專案\TrimGap\TrimGap - 20230328AP6\TrimGap - 20230328\Camera\obj\Debug\Camera.csprojAssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230328AP6\TrimGap - 20230328\Camera\obj\Debug\Camera.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230328AP6\TrimGap - 20230328\Camera\obj\Debug\Camera.dll
+E:\專案\TrimGap\TrimGap - 20230328AP6\TrimGap - 20230328\Camera\obj\Debug\Camera.pdb
+E:\專案\TrimGap\TrimGap - 20230328AP6\TrimGap - 20230328\bin\Lib\Camera.dll
+E:\專案\TrimGap\TrimGap - 20230328AP6\TrimGap - 20230328\bin\Lib\Camera.pdb
+E:\專案\TrimGap\TrimGap - 20230328AP6\TrimGap - 20230328\Camera\obj\Debug\Camera.csproj.CopyComplete
+E:\專案\CCDTest\bin\Lib\Camera.dll
+E:\專案\CCDTest\bin\Lib\Camera.pdb
+E:\專案\CCDTest\Camera\obj\Debug\Camera.csprojAssemblyReference.cache
+E:\專案\CCDTest\Camera\obj\Debug\Camera.csproj.CoreCompileInputs.cache
+E:\專案\CCDTest\Camera\obj\Debug\Camera.csproj.CopyComplete
+E:\專案\CCDTest\Camera\obj\Debug\Camera.dll
+E:\專案\CCDTest\Camera\obj\Debug\Camera.pdb
+C:\Users\User\Desktop\CCDTest\bin\Lib\Camera.dll
+C:\Users\User\Desktop\CCDTest\bin\Lib\Camera.pdb
+C:\Users\User\Desktop\CCDTest\Camera\obj\Debug\Camera.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\CCDTest\Camera\obj\Debug\Camera.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\CCDTest\Camera\obj\Debug\Camera.csproj.CopyComplete
+C:\Users\User\Desktop\CCDTest\Camera\obj\Debug\Camera.dll
+C:\Users\User\Desktop\CCDTest\Camera\obj\Debug\Camera.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\bin\Lib\Camera.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\bin\Lib\Camera.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\Camera\obj\Debug\Camera.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\TrimGap - 20230629\Camera\obj\Debug\Camera.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TrimGap - 20230629\Camera\obj\Debug\Camera.csproj.CopyComplete
+C:\Users\windows user\Desktop\TrimGap - 20230629\Camera\obj\Debug\Camera.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\Camera\obj\Debug\Camera.pdb

@@ -1,0 +1,14 @@
+Name,ID,Type,Length,Unit,Definition
+MagazineIDCheck,1001,ASCII,1000,N/A,MagazineIDCheck
+BoatBarcodeCheck,1002,ASCII,1000,N/A,BoatBarcodeCheck
+Pass1MagazineIDCheck,1003,ASCII,1000,N/A,Pass1MagazineIDCheck
+Pass2MagazineIDCheck,1004,ASCII,1000,N/A,Pass2MagazineIDCheck
+NGMagazineIDCheck,1005,ASCII,1000,N/A,NGMagazineIDCheck
+EmptyMagazineIDCheck,1006,ASCII,1000,N/A,EmptyMagazineIDCheck
+BoatAssingNGBoatBarcodeCheck,1007,ASCII,1000,N/A,BoatAssingNGBoatBarcodeCheck
+UILockCommand,1008,ASCII,1000,N/A,UILockCommand
+EquipmentOperationalCommand,1009,ASCII,1000,N/A,EquipmentOperationalCommand
+EquipmentEndLotCommand,1010,ASCII,1000,N/A,EquipmentEndLotCommand
+RemoteActionResult,1011,ASCII,1000,N/A,RemoteActionResult
+EmptyBoatReleaseCheck,1012,ASCII,1000,N/A,EmptyBoatReleaseCheck
+EquipmentStartRunCheck,1013,ASCII,1000,N/A,EquipmentStartRunCheck

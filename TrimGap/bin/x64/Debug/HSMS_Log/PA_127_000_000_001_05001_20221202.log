@@ -1,0 +1,312 @@
+//////////////////////////////////////////////////////////////////////////
+2022-12-02 14:45:29.672: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2022-12-02 14:45:29.998: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2022-12-02 14:45:30.106: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2022-12-02 14:45:30.206: Send Data Message.
+00 00 00 20 00 00 81 0D 00 00
+2022-12-02 14:45:30.206: Send S1F13(6100697).
+00 00 81 0D 00 00 00 5D 16 D9   01 02 41 09 45 71 75 69 70 6D
+65 6E 74 41 07 31 2E 30 2E 30   2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[9]"Equipment">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.099 seconds to log this message.
+2022-12-02 14:45:30.305: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2022-12-02 14:45:30.305: Receive S1F14(6100697).
+00 00 01 0E 00 00 00 5D 16 D9   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2022-12-02 14:46:32.048: Send Linktest.req.
+FF FF 00 00 00 05 00 5D 16 DA
+2022-12-02 14:46:32.048: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5D 16 DA
+2022-12-02 14:47:33.722: Send Linktest.req.
+FF FF 00 00 00 05 00 5D 16 DB
+2022-12-02 14:47:33.722: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 5D 16 DB
+//////////////////////////////////////////////////////////////////////////
+2022-12-02 14:50:26.872: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2022-12-02 14:50:30.629: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2022-12-02 14:50:30.719: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2022-12-02 14:50:30.782: Send Data Message.
+00 00 00 20 00 00 81 0D 00 00
+2022-12-02 14:50:30.782: Send S1F13(1366019).
+00 00 81 0D 00 00 00 14 D8 03   01 02 41 09 45 71 75 69 70 6D
+65 6E 74 41 07 31 2E 30 2E 30   2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[9]"Equipment">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.434 seconds to log this message.
+2022-12-02 14:50:31.214: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2022-12-02 14:50:31.214: Receive S1F14(1366019).
+00 00 01 0E 00 00 00 14 D8 03   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2022-12-02 14:51:32.340: Send Linktest.req.
+FF FF 00 00 00 05 00 14 D8 04
+2022-12-02 14:51:32.340: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 14 D8 04
+2022-12-02 14:52:33.675: Send Linktest.req.
+FF FF 00 00 00 05 00 14 D8 05
+2022-12-02 14:52:33.675: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 14 D8 05
+2022-12-02 14:53:34.345: Send Linktest.req.
+FF FF 00 00 00 05 00 14 D8 06
+2022-12-02 14:53:34.345: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 14 D8 06
+2022-12-02 14:54:34.818: Send Linktest.req.
+FF FF 00 00 00 05 00 14 D8 07
+2022-12-02 14:54:34.818: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 14 D8 07
+2022-12-02 14:55:35.357: Send Linktest.req.
+FF FF 00 00 00 05 00 14 D8 08
+2022-12-02 14:55:35.357: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 14 D8 08
+//////////////////////////////////////////////////////////////////////////
+2022-12-02 15:01:12.357: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2022-12-02 15:01:12.744: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2022-12-02 15:01:12.855: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2022-12-02 15:01:12.872: Send Data Message.
+00 00 00 20 00 00 81 0D 00 00
+2022-12-02 15:01:12.872: Send S1F13(7186111).
+00 00 81 0D 00 00 00 6D A6 BF   01 02 41 09 45 71 75 69 70 6D
+65 6E 74 41 07 31 2E 30 2E 30   2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[9]"Equipment">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.142 seconds to log this message.
+2022-12-02 15:01:13.012: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2022-12-02 15:01:13.012: Receive S1F14(7186111).
+00 00 01 0E 00 00 00 6D A6 BF   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2022-12-02 15:02:14.455: Send Linktest.req.
+FF FF 00 00 00 05 00 6D A6 C0
+2022-12-02 15:02:14.455: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6D A6 C0
+2022-12-02 15:03:15.895: Send Linktest.req.
+FF FF 00 00 00 05 00 6D A6 C1
+2022-12-02 15:03:15.895: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6D A6 C1
+2022-12-02 15:04:16.512: Send Linktest.req.
+FF FF 00 00 00 05 00 6D A6 C2
+2022-12-02 15:04:16.512: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 6D A6 C2
+//////////////////////////////////////////////////////////////////////////
+2022-12-02 15:11:11.690: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2022-12-02 15:11:12.705: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2022-12-02 15:11:12.730: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2022-12-02 15:11:12.749: Send Data Message.
+00 00 00 1A 00 00 81 0D 00 00
+2022-12-02 15:11:12.749: Send S1F13(6658187).
+00 00 81 0D 00 00 00 65 98 8B   01 02 41 03 46 56 49 41 07 31
+2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[3]"FVI">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.016 seconds to log this message.
+2022-12-02 15:11:12.765: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2022-12-02 15:11:12.765: Receive S1F14(6658187).
+00 00 01 0E 00 00 00 65 98 8B   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2022-12-02 15:12:14.043: Send Linktest.req.
+FF FF 00 00 00 05 00 65 98 8C
+2022-12-02 15:12:14.043: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 65 98 8C
+2022-12-02 15:12:27.652: Send Data Message.
+00 00 00 17 00 00 85 01 00 00
+2022-12-02 15:12:27.652: Send S5F1(6658189).
+00 00 85 01 00 00 00 65 98 8D   01 03 21 01 80 B1 04 00 00 27
+15 41 00
+S5F1 W /* Alarm Report Send */
+<L[3]
+  <B[1] 0x80>
+  <U4[1] 10005>
+  <A[0]"">
+>
+.
+Program takes      0.001 seconds to log this message.
+2022-12-02 15:12:28.344: Receive Data Message.
+00 00 00 0D 00 00 05 02 00 00
+2022-12-02 15:12:28.344: Receive S5F2(6658189).
+00 00 05 02 00 00 00 65 98 8D   21 01 00
+S5F2  /* Alarm Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2022-12-02 15:13:33.048: Send Linktest.req.
+FF FF 00 00 00 05 00 65 98 8E
+2022-12-02 15:13:33.048: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 65 98 8E
+//////////////////////////////////////////////////////////////////////////
+2022-12-02 15:18:37.992: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2022-12-02 15:18:38.722: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2022-12-02 15:18:39.019: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2022-12-02 15:18:39.058: Send Data Message.
+00 00 00 1A 00 00 81 0D 00 00
+2022-12-02 15:18:39.058: Send S1F13(136709).
+00 00 81 0D 00 00 00 02 16 05   01 02 41 03 46 56 49 41 07 31
+2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[3]"FVI">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.141 seconds to log this message.
+2022-12-02 15:18:39.198: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2022-12-02 15:18:39.198: Receive S1F14(136709).
+00 00 01 0E 00 00 00 02 16 05   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2022-12-02 15:19:40.001: Send Linktest.req.
+FF FF 00 00 00 05 00 02 16 06
+2022-12-02 15:19:40.001: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 02 16 06
+2022-12-02 15:19:44.238: Send Data Message.
+00 00 00 2A 00 00 85 01 00 00
+2022-12-02 15:19:44.238: Send S5F1(136711).
+00 00 85 01 00 00 00 02 16 07   01 03 21 01 80 B1 04 00 00 27
+15 41 13 45 51 50 2D 43 79 6C   69 6E 64 65 72 55 70 45 72 72
+6F 72
+S5F1 W /* Alarm Report Send */
+<L[3]
+  <B[1] 0x80>
+  <U4[1] 10005>
+  <A[19]"EQP-CylinderUpError">
+>
+.
+Program takes      0 seconds to log this message.
+2022-12-02 15:19:44.241: Receive Data Message.
+00 00 00 0D 00 00 05 02 00 00
+2022-12-02 15:19:44.241: Receive S5F2(136711).
+00 00 05 02 00 00 00 02 16 07   21 01 00
+S5F2  /* Alarm Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2022-12-02 16:20:42.804: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2022-12-02 16:21:07.092: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2022-12-02 16:21:07.204: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2022-12-02 16:21:07.242: Send Data Message.
+00 00 00 1A 00 00 81 0D 00 00
+2022-12-02 16:21:07.242: Send S1F13(2280078).
+00 00 81 0D 00 00 00 22 CA 8E   01 02 41 03 46 56 49 41 07 31
+2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[3]"FVI">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.121 seconds to log this message.
+2022-12-02 16:21:07.362: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2022-12-02 16:21:07.362: Receive S1F14(2280078).
+00 00 01 0E 00 00 00 22 CA 8E   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2022-12-02 16:21:14.824: Send Data Message.
+00 00 00 1E 00 00 85 01 00 00
+2022-12-02 16:21:14.824: Send S5F1(2280079).
+00 00 85 01 00 00 00 22 CA 8F   01 03 21 01 80 B1 04 00 00 27
+13 41 07 45 51 50 2D 45 4D 4F
+S5F1 W /* Alarm Report Send */
+<L[3]
+  <B[1] 0x80>
+  <U4[1] 10003>
+  <A[7]"EQP-EMO">
+>
+.
+Program takes      0.001 seconds to log this message.
+2022-12-02 16:21:14.826: Receive Data Message.
+00 00 00 0D 00 00 05 02 00 00
+2022-12-02 16:21:14.826: Receive S5F2(2280079).
+00 00 05 02 00 00 00 22 CA 8F   21 01 00
+S5F2  /* Alarm Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2022-12-02 16:22:15.493: Send Linktest.req.
+FF FF 00 00 00 05 00 22 CA 90
+2022-12-02 16:22:15.493: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 22 CA 90
+2022-12-02 16:23:16.459: Send Linktest.req.
+FF FF 00 00 00 05 00 22 CA 91
+2022-12-02 16:23:16.459: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 22 CA 91
+2022-12-02 16:24:16.900: Send Linktest.req.
+FF FF 00 00 00 05 00 22 CA 92
+2022-12-02 16:24:16.900: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 22 CA 92
+2022-12-02 16:24:36.061:  Receive Separate.req.
+FF FF 00 00 00 09 00 1D 43 2F
+2022-12-02 16:24:36.061: Remote Client Disconnected!
+2022-12-02 16:24:36.635: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL

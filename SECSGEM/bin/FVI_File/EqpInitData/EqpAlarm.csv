@@ -1,0 +1,89 @@
+﻿Column1,Column2,Column3,Column4,Column5
+// Alarm Init,,,,
+//,3,,,
+// Name,ID,CD,Enabled,Text
+軸卡初始化失敗,10013,,1,Axis card initialization failed
+IO卡初始化失敗,10014,,1,IO card initialization failed
+Z軸已回原點，但動檢未滅,10023,,1,"The Z axis has returned to the origin, but the motion detection has not been extinguished"
+X軸歸零逾時,10024,,1,Timeout for X-axis reset
+Y軸歸零逾時,10025,,1,Timeout for Y-axis reset 
+T1軸歸零逾時,10026,,1,Timeout for T1 axis return to zero
+T2軸歸零逾時,10027,,1,Timeout for T2 axis return to zero
+Z軸歸零逾時,10028,,1,Timeout for Z-axis reset 
+主氣源檢知壓力不足,10031,,1,Insufficient pressure of main air source
+門檢-前門,10032,,1,Door Inspection - Front Door Open
+門檢-後門1,10033,,1,Door Check - Back Door 1 Open
+門檢-後門2,10034,,1,Door Check - Back Door 2 Open
+門檢-側門,10035,,1,Door Inspection - Side Door Open
+上罩開啟,10036,,1,Upper Cover Open 
+包裝前負壓檢側異常,10071,,1,Abnormal negative pressure before packaging
+Axis1軸移動Time Out (載台),10100,,1,Axis1 axis movement Time Out (stage)
+Axis2軸移動Time Out (A盤),10101,,1,Axis2 axis movement Time Out (A disk)
+Axis3軸移動Time Out (B盤),10102,,1,Axis3 axis movement Time Out (B disk)
+Axis4軸移動Time Out (旋轉),10103,,1,Axis4 axis movement Time Out (rotation)
+Z軸移動Time Out,10104,,1,Z axis movement Time Out
+清機已完成,10110,,1,Cleanup is complete
+出料盤已滿,10111,,1,Discharge tray is full
+取料負壓TimeOut (A盤),10120,,1,Negative pressure TimeOut for taking material (disk A)
+溢料站異常 (B盤),10121,,1,Overflow Station Abnormal  (disk B)
+直震前端缺料異常 (B盤),10122,,1,Abnormal shortage of material at the front end of the direct shock (disk B)
+靜電消除器異常,10130,,1,Static Eliminator Abnormal
+下料吹氣異常,10131,,1,Abnormal blowing of material
+PASS計數到達,10132,,1,PASS count arrives
+連續進料異常 (A盤),10133,,1,Abnormal continuous feeding (pan A)
+吸嘴1真空異常 (A盤),10134,,1,Nozzle 1 vacuum abnormal (A plate)
+吸嘴2真空異常 (A盤),10135,,1,Nozzle 2 vacuum abnormal (A plate)
+吸嘴3真空異常 (A盤),10136,,1,Nozzle 3 Vacuum Abnormal (A Plate)
+吸嘴4真空異常 (A盤),10137,,1,Nozzle 4 vacuum abnormal (A plate)
+吸嘴5真空異常 (A盤),10138,,1,Nozzle 5 vacuum abnormal (A plate)
+吸嘴6真空異常 (A盤),10139,,1,Nozzle 6 Vacuum Abnormal (A Plate)
+吸嘴7真空異常 (A盤),10140,,1,Nozzle 7 vacuum abnormal (A plate)
+吸嘴8真空異常 (A盤),10141,,1,Nozzle 8 vacuum abnormal (A plate)
+溫度異常1,10142,,1,Abnormal temperature 1
+溫度異常2,10143,,1,Abnormal temperature 2
+上帶檢知異常,10145,,1,Topband detection exception
+旋轉站時序異常 (A盤),10146,,1,Rotary station timing abnormal (A disk)
+CCD3連線異常 (A盤),10147,,1,Abnormal CCD3 connection (disk A)
+CCD3 EOM逾時 (A盤),10148,,1,CCD3 EOM timeout (A drive)
+CCD3時序異常 (A盤),10149,,1,Abnormal timing of CCD3 (disk A)
+排料1材料未排出 (A盤),10150,,1,Discharge 1 material is not discharged (pan A)
+CCD4連線異常 (A盤),10151,,1,Abnormal connection of CCD4 (disk A)
+CCD4 EOM逾時 (A盤),10152,,1,CCD4 EOM timeout (A drive)
+CCD4時序異常 (A盤),10153,,1,Abnormal timing of CCD4 (disk A)
+排料2材料未排出 (A盤),10154,,1,Discharge 2 material is not discharged (plate A)
+CCD5連線異常 (A盤),10155,,1,Abnormal connection of CCD5 (disk A)
+CCD5 EOM逾時 (A盤),10156,,1,CCD5 EOM timeout (A drive)
+CCD5時序異常 (A盤),10157,,1,Abnormal timing of CCD5 (disk A)
+排料3材料未排出 (A盤),10158,,1,Discharge 3 material is not discharged (plate A)
+下料站時序設定異常 (A盤),10159,,1,The sequence setting of the unloading station is abnormal (disk A)
+CCD1連線異常 (B盤),10160,,1,Abnormal connection of CCD1 (disk B)
+CCD1 EOM逾時 (B盤),10161,,1,CCD1 EOM timeout (disk B)
+CCD1時序異常 (B盤),10162,,1,Abnormal timing of CCD1 (disk B)
+CCD2連線異常 (B盤),10163,,1,Abnormal connection of CCD2 (disk B)
+CCD2 EOM逾時 (B盤),10164,,1,CCD2 EOM timeout (disk B)
+CCD2時序異常 (B盤),10165,,1,Abnormal timing of CCD2 (disk B)
+多格計數到達,10166,,1,Multicell count arrives
+CCD6連線異常 (載帶),10167,,1,Abnormal CCD6 connection (carrier tape)
+CCD6 EOM逾時 (載帶),10168,,1,CCD6 EOM Timeout (Carrier Tape)
+CCD6檢測異常 (載帶),10169,,1,CCD6 Detection Abnormal (Carrier Tape)
+包裝數量到達,10170,,1,Packing quantity arrives
+包裝前負壓檢側異常,10171,,1,Abnormal negative pressure before packaging
+放帶馬達異常,10172,,1,Unwinding motor abnormal
+良率異常,10173,,1,Yield Abnormal
+軸未回原點,10174,,1,Axis not homed
+總合不良率超過上限值,10200,,1,Yield rate exceeds the upper limit
+檢測數量到達,10210,,1,The number of inspection has been reached
+A站檢測連線異常,10211,,1,Station A abnormal connection when inspecting
+B站檢測連線異常,10212,,1,Station B abnormal connection when inspecting
+C站檢測連線異常,10213,,1,Station C abnormal connection when inspecting
+A站檢測NG,10214,,1,Station A inspect NG
+B站檢測NG,10215,,1,Station B inspect NG
+C站檢測NG,10216,,1,Station C inspect NG
+左邊料帶偵測缺料,10217,,1,Left material belt to detect material shortage
+右邊料帶偵測缺料,10218,,1,Right material belt detects the lack of material
+棘輪上下汽缸未到上定位,10219,,1,The cylinders of the ratchet have not reached the upper position
+軌道料帶偵測異常,10220,,1,Track detect material belt abnormal
+軌道蓋板偵測異常,10221,,1,The cover of track detect abnormal
+燈源前後汽缸未到前定位,10222,,1,The cylinders of the light source table have not reached the front position
+左壓制輪未到下定位,10223,,1,The left pressing wheel is not positioned down
+右壓制輪未到下定位,10224,,1,The right pressing wheel is not positioned down

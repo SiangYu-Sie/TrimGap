@@ -1,0 +1,288 @@
+//////////////////////////////////////////////////////////////////////////
+2022-11-04 15:02:33.004: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+//////////////////////////////////////////////////////////////////////////
+2022-11-04 16:02:55.687: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+[DebugLog] 16:03:01.674 Disconnect already!
+[DebugLog] 16:03:01.674 AcceptThread() exception:中止操作被 WSACancelBlockingCall 呼叫打斷。
+2022-11-04 16:03:11.908: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: CTLT_GEM_SMALL
+2022-11-04 16:03:17.735: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2022-11-04 16:03:17.735: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2022-11-04 16:03:17.755: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2022-11-04 16:03:17.755: Send S1F13(8359218).
+00 00 81 0D 00 00 00 7F 8D 32   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap">
+  <A[7]"1.0.0.0">
+>
+.
+Program takes      0.014 seconds to log this message.
+2022-11-04 16:03:17.795: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2022-11-04 16:03:17.795: Receive S1F14(8359218).
+00 00 01 0E 00 00 00 7F 8D 32   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2022-11-04 16:03:30.878: Send Data Message.
+00 00 00 24 00 00 85 01 00 00
+2022-11-04 16:03:30.878: Send S5F1(8359219).
+00 00 85 01 00 00 00 7F 8D 33   01 03 21 01 80 B1 04 00 00 27
+11 41 0D 41 6C 6C 5F 48 6F 6D   65 45 72 72 6F 72
+S5F1 W /* Alarm Report Send */
+<L[3]
+  <B[1] 0x80>
+  <U4[1] 10001>
+  <A[13]"All_HomeError">
+>
+.
+Program takes      0 seconds to log this message.
+2022-11-04 16:03:30.878: Receive Data Message.
+00 00 00 0D 00 00 05 02 00 00
+2022-11-04 16:03:30.878: Receive S5F2(8359219).
+00 00 05 02 00 00 00 7F 8D 33   21 01 00
+S5F2  /* Alarm Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2022-11-04 16:03:44.721: Send Data Message.
+00 00 00 34 00 00 86 0B 00 00
+2022-11-04 16:03:44.721: Send S6F11(8359220).
+00 00 86 0B 00 00 00 7F 8D 34   01 03 B1 04 00 00 00 01 B1 04
+00 00 00 65 01 01 01 02 B1 04   00 00 00 65 01 08 41 00 41 00
+41 00 41 00 41 00 41 00 41 00   41 00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 1>
+  <U4[1] 101>
+  <L[1]
+    <L[2]
+      <U4[1] 101>
+      <L[8]
+        <A[0]"">
+        <A[0]"">
+        <A[0]"">
+        <A[0]"">
+        <A[0]"">
+        <A[0]"">
+        <A[0]"">
+        <A[0]"">
+      >
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2022-11-04 16:03:44.731: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2022-11-04 16:03:44.731: Receive S6F12(8359220).
+00 00 06 0C 00 00 00 7F 8D 34   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00>
+.
+Program takes      0 seconds to log this message.
+2022-11-04 16:04:50.366: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 35
+2022-11-04 16:04:50.366: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 35
+2022-11-04 16:05:56.371: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 36
+2022-11-04 16:05:56.371: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 36
+2022-11-04 16:07:02.665: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 37
+2022-11-04 16:07:02.665: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 37
+2022-11-04 16:08:08.810: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 38
+2022-11-04 16:08:08.810: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 38
+2022-11-04 16:09:14.795: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 39
+2022-11-04 16:09:14.795: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 39
+2022-11-04 16:10:21.050: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 3A
+2022-11-04 16:10:21.050: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 3A
+2022-11-04 16:11:27.264: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 3B
+2022-11-04 16:11:27.264: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 3B
+2022-11-04 16:12:33.439: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 3C
+2022-11-04 16:12:33.439: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 3C
+2022-11-04 16:13:39.534: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 3D
+2022-11-04 16:13:39.534: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 3D
+2022-11-04 16:14:45.679: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 3E
+2022-11-04 16:14:45.679: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 3E
+2022-11-04 16:15:52.033: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 3F
+2022-11-04 16:15:52.033: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 3F
+2022-11-04 16:16:58.438: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 40
+2022-11-04 16:16:58.438: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 40
+2022-11-04 16:18:05.112: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 41
+2022-11-04 16:18:05.112: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 41
+2022-11-04 16:19:11.247: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 42
+2022-11-04 16:19:11.247: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 42
+2022-11-04 16:20:17.582: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 43
+2022-11-04 16:20:17.582: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 43
+2022-11-04 16:21:23.547: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 44
+2022-11-04 16:21:23.547: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 44
+2022-11-04 16:22:29.701: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 45
+2022-11-04 16:22:29.701: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 45
+2022-11-04 16:23:36.146: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 46
+2022-11-04 16:23:36.146: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 46
+2022-11-04 16:24:43.440: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 47
+2022-11-04 16:24:43.440: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 47
+2022-11-04 16:25:49.665: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 48
+2022-11-04 16:25:49.665: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 48
+2022-11-04 16:26:55.990: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 49
+2022-11-04 16:26:55.990: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 49
+2022-11-04 16:28:02.354: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 4A
+2022-11-04 16:28:02.354: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 4A
+2022-11-04 16:29:08.439: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 4B
+2022-11-04 16:29:08.439: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 4B
+2022-11-04 16:30:14.464: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 4C
+2022-11-04 16:30:14.464: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 4C
+2022-11-04 16:31:20.659: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 4D
+2022-11-04 16:31:20.659: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 4D
+2022-11-04 16:32:26.733: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 4E
+2022-11-04 16:32:26.733: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 4E
+2022-11-04 16:33:32.858: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 4F
+2022-11-04 16:33:32.858: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 4F
+2022-11-04 16:34:39.283: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 50
+2022-11-04 16:34:39.283: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 50
+2022-11-04 16:35:45.508: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 51
+2022-11-04 16:35:45.508: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 51
+2022-11-04 16:36:51.662: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 52
+2022-11-04 16:36:51.662: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 52
+2022-11-04 16:37:57.947: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 53
+2022-11-04 16:37:57.947: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 53
+2022-11-04 16:39:04.232: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 54
+2022-11-04 16:39:04.232: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 54
+2022-11-04 16:40:10.736: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 55
+2022-11-04 16:40:10.736: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 55
+2022-11-04 16:41:17.071: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 56
+2022-11-04 16:41:17.071: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 56
+2022-11-04 16:42:23.386: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 57
+2022-11-04 16:42:23.386: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 57
+2022-11-04 16:43:29.740: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 58
+2022-11-04 16:43:29.740: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 58
+2022-11-04 16:44:36.045: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 59
+2022-11-04 16:44:36.045: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 59
+2022-11-04 16:45:42.030: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 5A
+2022-11-04 16:45:42.030: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 5A
+2022-11-04 16:46:48.045: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 5B
+2022-11-04 16:46:48.045: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 5B
+2022-11-04 16:47:54.149: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 5C
+2022-11-04 16:47:54.149: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 5C
+2022-11-04 16:49:00.134: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 5D
+2022-11-04 16:49:00.134: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 5D
+2022-11-04 16:50:06.229: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 5E
+2022-11-04 16:50:06.229: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 5E
+2022-11-04 16:51:12.414: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 5F
+2022-11-04 16:51:12.414: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 5F
+2022-11-04 16:52:18.678: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 60
+2022-11-04 16:52:18.678: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 60
+2022-11-04 16:53:24.743: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 61
+2022-11-04 16:53:24.743: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 61
+2022-11-04 16:54:31.048: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 62
+2022-11-04 16:54:31.048: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 62
+2022-11-04 16:55:37.063: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 63
+2022-11-04 16:55:37.063: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 63
+2022-11-04 16:56:44.137: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 64
+2022-11-04 16:56:44.137: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 64
+2022-11-04 16:57:52.522: Send Linktest.req.
+FF FF 00 00 00 05 00 7F 8D 65
+2022-11-04 16:57:52.522: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 7F 8D 65

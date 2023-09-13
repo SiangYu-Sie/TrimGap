@@ -1,0 +1,7 @@
+Name,ID,Type,Length,Unit,Definition
+Equipment_RemoteControlStatus,1001,ASCII,1000,N/A,Equipment_RemoteControlStatus
+Equipment_RemoteControlResult,1002,ASCII,1000,N/A,Equipment_RemoteControlResult
+Equipment_LocalControlStatus,1003,ASCII,1000,N/A,Equipment_LocalControlStatus
+Equipment_LocalControlResult,1004,ASCII,1000,N/A,Equipment_LocalControlResult
+Reel_Status,1005,ASCII,1000,N/A,Reel_Status
+DieCount_CompareResult,1006,ASCII,1000,N/A,DieCount_CompareResult

@@ -1,0 +1,7 @@
+// Name,ID,Definition
+ReelID_Send,101,ReelID_Send
+Recipe_Change,102,Recipe_Change
+Equipment_RemoteControl,103,Equipment_RemoteControl
+Equipment_LocalControl,104,Equipment_LocalControl
+EndLot,105,EndLot
+Reel_CurrentStatus,106,Reel_CurrentStatus

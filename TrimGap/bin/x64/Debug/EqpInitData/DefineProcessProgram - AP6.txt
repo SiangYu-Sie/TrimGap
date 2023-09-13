@@ -1,0 +1,45 @@
+// Define Formated Process Program
+// CCODE: [command code name], command Code(CCODE), process parameter number , Comment
+//  PParmName, Type, Min.Value, Max.Value, Comment
+
+CCODE: [Recipe],     2,   40,      Comment 1
+fram.Recipe.Rotate_Count,      UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Type,              UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.RepeatTimes,       UINT_1,       0,         1000, PPARM 1 def
+fram.Recipe.RepeatTimes_now,   UINT_1,       0,         1000, PPARM 1 def
+fram.Recipe.Slot1,             UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot2,             UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot3,             UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot4,             UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot5,             UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot6,             UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot7,             UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot8,             UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot9,             UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot10,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot11,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot12,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot13,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot14,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot15,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot16,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot17,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot18,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot19,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot20,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot21,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot22,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot23,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot24,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Slot25,            UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.Angle1,            UINT_2,       1,      360, PPARM 2 def
+fram.Recipe.Angle2,            UINT_2,       1,      360, PPARM 2 def
+fram.Recipe.Angle3,            UINT_2,       1,      360, PPARM 2 def
+fram.Recipe.Angle4,            UINT_2,       1,      360, PPARM 2 def
+fram.Recipe.Angle5,            UINT_2,       1,      360, PPARM 2 def
+fram.Recipe.Angle6,            UINT_2,       1,      360, PPARM 2 def
+fram.Recipe.Angle7,            UINT_2,       1,      360, PPARM 2 def
+fram.Recipe.Angle8,            UINT_2,       1,      360, PPARM 2 def
+fram.Recipe.CreateTime,        ASCII,      N/A,        N/A, Recipe CreateTime
+fram.Recipe.ReviseTime,        ASCII,      N/A,        N/A, Recipe ReviseTime
+fram.Recipe.OffsetType,        UINT_1,       0,         20, PPARM 1 def

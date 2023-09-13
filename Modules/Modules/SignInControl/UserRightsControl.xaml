@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Modules.UserRightsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:material ="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:Modules"
+             mc:Ignorable="d" 
+             x:Name="UserRightsUC">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <local:EnumToBoolConverter x:Key="EnumToBool"></local:EnumToBoolConverter>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid DataContext="{Binding ElementName=UserRightsUC}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Background="{x:Null}" BorderBrush="Black" BorderThickness="2" Width="35" Height="35" Padding="0" ToolTip="登入/登出" Command="{Binding LogoutCommand}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >
+            <material:PackIcon Kind="ExitRun" Foreground="#FF313131" Width="25" Height="25"/>
+        </Button>
+
+        <Label Grid.Column="1" Grid.ColumnSpan="2" Content="{Binding UserName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+        
+        <Button Grid.Column="3" Background="{x:Null}" BorderBrush="Black" BorderThickness="2" Width="35" Height="35" Padding="0" ToolTip="使用者管理" Command="{Binding UserManagerCommand}" IsEnabled="{Binding Account.CurrentAccount.Right, ConverterParameter='Administrator', Converter={StaticResource EnumToBool}}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >
+            <material:PackIcon Kind="AccountGroup" Foreground="#FF313131" Width="25" Height="25"/>
+        </Button>
+    </Grid>
+</UserControl>

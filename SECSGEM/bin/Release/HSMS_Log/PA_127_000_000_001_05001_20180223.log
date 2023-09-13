@@ -1,0 +1,127 @@
+//////////////////////////////////////////////////////////////////////////
+12:59:43.370: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+13:00:01.531: Receive Select.req.
+FF FF 00 00 00 01 00 0B 57 42
+13:00:01.541: Send Select.rsp.
+FF FF 00 00 00 02 00 0B 57 42
+13:00:01.551: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+13:00:01.551: Send S1F13(3919440).
+00 01 81 0D 00 00 00 3B CE 50   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W
+<L[2]
+  <A[6] "EqMDLN">
+  <A[6] "SofRev">
+>
+.
+Program takes      0 seconds to log this message.
+13:00:01.581: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+13:00:01.581: Receive S1F14(3919440).
+00 00 01 0E 00 00 00 3B CE 50   01 02 21 01 00 01 00
+S1F14 
+<L[2]
+  <B[1] 0x0>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+13:00:05.191: Send Data Message.
+00 00 00 0A 00 01 81 01 00 00
+13:00:05.191: Send S1F1(3919441).
+00 01 81 01 00 00 00 3B CE 51
+S1F1 W
+Program takes      0 seconds to log this message.
+13:00:49.586: Send Data Message.
+00 00 00 16 00 01 09 09 00 00
+13:00:49.586: Send S9F9(3919443).
+00 01 09 09 00 00 00 3B CE 53   21 0A 00 00 09 09 00 00 00 3B
+CE 52
+S9F9 
+<B[10] 0x0 0x0 0x9 0x9 0x0 0x0 0x0 0x3B 0xCE 0x52>
+.
+Program takes      0 seconds to log this message.
+13:01:01.498: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 57 44
+13:01:01.498: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 57 44
+13:01:02.048: Send Linktest.req.
+FF FF 00 00 00 05 00 3B CE 54
+13:01:02.057: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 3B CE 54
+13:02:01.499: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 57 45
+13:02:01.499: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 57 45
+13:02:02.629: Send Linktest.req.
+FF FF 00 00 00 05 00 3B CE 55
+13:02:02.639: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 3B CE 55
+13:03:01.500: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 57 46
+13:03:01.500: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 57 46
+13:03:03.152: Send Linktest.req.
+FF FF 00 00 00 05 00 3B CE 56
+13:03:03.162: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 3B CE 56
+13:04:01.494: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 57 47
+13:04:01.500: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 57 47
+13:04:03.293: Send Linktest.req.
+FF FF 00 00 00 05 00 3B CE 57
+13:04:03.303: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 3B CE 57
+13:05:01.498: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 57 48
+13:05:01.498: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 57 48
+13:05:03.539: Send Linktest.req.
+FF FF 00 00 00 05 00 3B CE 58
+13:05:03.548: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 3B CE 58
+13:06:01.500: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 57 49
+13:06:01.500: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 57 49
+13:06:04.017: Send Linktest.req.
+FF FF 00 00 00 05 00 3B CE 59
+13:06:04.027: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 3B CE 59
+13:07:01.492: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 57 4A
+13:07:01.497: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 57 4A
+13:07:04.386: Send Linktest.req.
+FF FF 00 00 00 05 00 3B CE 5A
+13:07:04.399: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 3B CE 5A
+13:08:01.496: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 57 4B
+13:08:01.496: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 57 4B
+13:08:04.595: Send Linktest.req.
+FF FF 00 00 00 05 00 3B CE 5B
+13:08:04.595: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 3B CE 5B
+13:09:01.495: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 57 4C
+13:09:01.495: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 57 4C
+13:09:05.125: Send Linktest.req.
+FF FF 00 00 00 05 00 3B CE 5C
+13:09:05.125: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 3B CE 5C
+13:10:01.496: Receive Linktest.req.
+FF FF 00 00 00 05 00 0B 57 4D
+13:10:01.496: Send Linktest.rsp.
+FF FF 00 00 00 06 00 0B 57 4D
+13:10:05.646: Send Linktest.req.
+FF FF 00 00 00 05 00 3B CE 5D
+13:10:05.656: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 3B CE 5D
+13:10:09.906: Send Separate.req.
+FF FF 00 00 00 09 00 3B CE 5E

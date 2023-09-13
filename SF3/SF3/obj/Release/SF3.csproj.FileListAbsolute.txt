@@ -1,0 +1,155 @@
+C:\Users\windows user\Desktop\SF3\SF3\bin\Release\SF3.dll
+C:\Users\windows user\Desktop\SF3\SF3\bin\Release\SF3.pdb
+C:\Users\windows user\Desktop\SF3\SF3\obj\Release\SF3.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\SF3\SF3\obj\Release\SF3.dll
+C:\Users\windows user\Desktop\SF3\SF3\obj\Release\SF3.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\SF3.dll.config
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\SF3.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\SF3.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\CsvHelper.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\Microsoft.Bcl.HashCode.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\System.Buffers.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\System.Memory.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\System.Numerics.Vectors.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\CsvHelper.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\Microsoft.Bcl.HashCode.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\System.Buffers.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\System.Memory.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\System.Numerics.Vectors.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\obj\Release\SF3.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\obj\Release\Otsuka.DeleteRecipes.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\obj\Release\SF3_Form.Main.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\obj\Release\Otsuka.NewRecipesInformation.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\obj\Release\SF3.Properties.Resources.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\obj\Release\SF3_Form.Recipes.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\obj\Release\SF3.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\obj\Release\SF3.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\obj\Release\SF3.csproj.CopyComplete
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\obj\Release\SF3.dll
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\SF3\SF3\obj\Release\SF3.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\SF3.dll.config
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\SF3.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\SF3.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\CsvHelper.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\Microsoft.Bcl.HashCode.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\System.Buffers.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\System.Memory.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\System.Numerics.Vectors.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\CsvHelper.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\Microsoft.Bcl.HashCode.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\System.Buffers.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\System.Memory.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\System.Numerics.Vectors.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\obj\Release\SF3.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\obj\Release\Otsuka.DeleteRecipes.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\obj\Release\SF3_Form.Main.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\obj\Release\Otsuka.NewRecipesInformation.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\obj\Release\SF3.Properties.Resources.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\obj\Release\SF3_Form.Recipes.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\obj\Release\SF3.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\obj\Release\SF3.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\obj\Release\SF3.csproj.CopyComplete
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\obj\Release\SF3.dll
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\SF3\SF3\obj\Release\SF3.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\SF3.dll.config
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\SF3.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\SF3.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\CsvHelper.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\Microsoft.Bcl.HashCode.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\System.Buffers.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\System.Memory.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\System.Numerics.Vectors.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\CsvHelper.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\Microsoft.Bcl.HashCode.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\System.Buffers.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\System.Memory.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\System.Numerics.Vectors.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\obj\Release\SF3.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\obj\Release\Otsuka.DeleteRecipes.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\obj\Release\SF3_Form.Main.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\obj\Release\Otsuka.NewRecipesInformation.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\obj\Release\SF3.Properties.Resources.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\obj\Release\SF3_Form.Recipes.resources
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\obj\Release\SF3.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\obj\Release\SF3.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\obj\Release\SF3.csproj.CopyComplete
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\obj\Release\SF3.dll
+C:\Users\windows user\Desktop\TrimGap - 20230629\SF3\SF3\obj\Release\SF3.pdb
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\SF3.dll.config
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\SF3.dll
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\SF3.pdb
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\CsvHelper.dll
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\Microsoft.Bcl.HashCode.dll
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\System.Buffers.dll
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\System.Memory.dll
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\System.Numerics.Vectors.dll
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\System.Threading.Tasks.Extensions.dll
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\CsvHelper.xml
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\Microsoft.Bcl.HashCode.xml
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\System.Buffers.xml
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\System.Memory.xml
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\System.Numerics.Vectors.xml
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\bin\Release\System.Threading.Tasks.Extensions.xml
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\obj\Release\SF3.csprojAssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\obj\Release\Otsuka.DeleteRecipes.resources
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\obj\Release\SF3_Form.Main.resources
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\obj\Release\Otsuka.NewRecipesInformation.resources
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\obj\Release\SF3.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\obj\Release\SF3_Form.Recipes.resources
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\obj\Release\SF3.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\obj\Release\SF3.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\obj\Release\SF3.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\obj\Release\SF3.dll
+E:\專案\TrimGap\TrimGap - 20230703\SF3\SF3\obj\Release\SF3.pdb
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\SF3.dll.config
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\SF3.dll
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\SF3.pdb
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\CsvHelper.dll
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\Microsoft.Bcl.HashCode.dll
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\System.Buffers.dll
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\System.Memory.dll
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\System.Numerics.Vectors.dll
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\System.Threading.Tasks.Extensions.dll
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\CsvHelper.xml
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\Microsoft.Bcl.HashCode.xml
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\System.Buffers.xml
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\System.Memory.xml
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\System.Numerics.Vectors.xml
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\bin\Release\System.Threading.Tasks.Extensions.xml
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\obj\Release\Otsuka.DeleteRecipes.resources
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\obj\Release\SF3_Form.Main.resources
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\obj\Release\Otsuka.NewRecipesInformation.resources
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\obj\Release\SF3.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\obj\Release\SF3_Form.Recipes.resources
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\obj\Release\SF3.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\obj\Release\SF3.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\obj\Release\SF3.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\obj\Release\SF3.dll
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\obj\Release\SF3.pdb
+E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\obj\Release\SF3.csproj.AssemblyReference.cache

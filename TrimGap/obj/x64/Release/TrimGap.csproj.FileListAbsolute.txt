@@ -1,0 +1,359 @@
+D:\FTGM1\WorkDirectory\Run\TrimGap.exe.config
+D:\FTGM1\WorkDirectory\Run\TrimGap.exe
+D:\FTGM1\WorkDirectory\Run\TrimGap.pdb
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.csprojAssemblyReference.cache
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.exe.config
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.exe
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.pdb
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+C:\Users\MyUser\Desktop\TrimGap\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+C:\Users\MyUser\Desktop\TrimGap\TrimGap\obj\x64\Release\TrimGap.exe.config
+C:\Users\MyUser\Desktop\TrimGap\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+C:\Users\MyUser\Desktop\TrimGap\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+C:\Users\MyUser\Desktop\TrimGap\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+C:\Users\MyUser\Desktop\TrimGap\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+C:\Users\MyUser\Desktop\TrimGap\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+C:\Users\MyUser\Desktop\TrimGap\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+C:\Users\MyUser\Desktop\TrimGap\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+C:\Users\MyUser\Desktop\TrimGap\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+C:\Users\MyUser\Desktop\TrimGap\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+C:\Users\MyUser\Desktop\TrimGap\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+C:\Users\MyUser\Desktop\TrimGap\TrimGap\obj\x64\Release\TrimGap.exe
+C:\Users\MyUser\Desktop\TrimGap\TrimGap\obj\x64\Release\TrimGap.pdb
+C:\Users\MyUser\Desktop\TrimGap\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+D:\TrimGap\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+D:\TrimGap\TrimGap\obj\x64\Release\TrimGap.exe.config
+D:\TrimGap\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+D:\TrimGap\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+D:\TrimGap\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+D:\TrimGap\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+D:\TrimGap\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+D:\TrimGap\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+D:\TrimGap\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+D:\TrimGap\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+D:\TrimGap\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+D:\TrimGap\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+D:\TrimGap\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+D:\TrimGap\TrimGap\obj\x64\Release\TrimGap.exe
+D:\TrimGap\TrimGap\obj\x64\Release\TrimGap.pdb
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.csprojAssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.exe.config
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.exe
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.pdb
+E:\專案\TrimGap\TrimGap - 改架構\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.exe.config
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.exe
+C:\Users\MyUser\Desktop\TrimGap - 20230310\TrimGap\obj\x64\Release\TrimGap.pdb
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.exe.config
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.exe
+C:\Users\MyUser\Desktop\TrimGap - 20230412\TrimGap - 20230412\TrimGap\obj\x64\Release\TrimGap.pdb
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.exe.config
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.exe
+C:\Users\MyUser\Desktop\TrimGap - 20230418\TrimGap - 20230417\TrimGap\obj\x64\Release\TrimGap.pdb
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.exe.config
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.exe
+C:\Users\MyUser\Desktop\TrimGap - 20230419\TrimGap - 20230419\TrimGap\obj\x64\Release\TrimGap.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.csproj.SuggestedBindingRedirects.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.exe.config
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.exe
+C:\Users\windows user\Desktop\TrimGap - 20230606\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.pdb
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.csproj.SuggestedBindingRedirects.cache
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.exe.config
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.exe
+C:\Users\windows user\Desktop\TrimGap - 20230613\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.pdb
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.csprojAssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.exe.config
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.exe
+E:\專案\TrimGap\TrimGap - 20230628\TrimGap - 20230530\TrimGap\obj\x64\Release\TrimGap.pdb
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.csprojAssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.exe
+E:\專案\TrimGap\TrimGap - 20230703\TrimGap\obj\x64\Release\TrimGap.pdb
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.csprojAssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.exe
+E:\專案\TrimGap\TrimGap - 20230710\TrimGap\obj\x64\Release\TrimGap.pdb
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.csprojAssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.exe
+E:\專案\TrimGap\TrimGap - 20230711\TrimGap\obj\x64\Release\TrimGap.pdb
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.csprojAssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.exe
+E:\專案\TrimGap\TrimGap - 20230718\TrimGap\obj\x64\Release\TrimGap.pdb
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.exe
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.pdb
+E:\專案\TrimGap\TrimGap - 20230808\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.exe
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.pdb
+E:\專案\TrimGap\TrimGap - 20230815\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.exe
+E:\專案\TrimGap\TrimGap - 20230817\TrimGap\obj\x64\Release\TrimGap.pdb
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.exe
+D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\TrimGap\obj\x64\Release\TrimGap.pdb
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.exe
+E:\專案\TrimGap\TrimGap - 20230831\TrimGap\obj\x64\Release\TrimGap.pdb
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.exe
+E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.pdb

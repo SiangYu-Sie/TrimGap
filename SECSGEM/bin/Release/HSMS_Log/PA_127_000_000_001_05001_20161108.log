@@ -1,0 +1,49 @@
+//////////////////////////////////////////////////////////////////////////
+13:58:36.548: CTLT_SECS (HSMS Mode) Ver.2.0.4 Start...Driver: NO_LICENCE
+14:00:41.719: Receive Select.req.
+FF FF 00 00 00 01 00 E9 97 92
+14:00:41.721: Send Select.rsp.
+FF FF 00 00 00 02 00 E9 97 92
+14:00:41.735: Send Data Message.
+00 00 00 1C 00 01 81 0D 00 00
+14:00:41.735: Send S1F13(4342346).
+00 01 81 0D 00 00 00 42 42 4A   01 02 41 06 45 71 4D 44 4C 4E
+41 06 53 6F 66 52 65 76
+S1F13 W
+<L[2]
+  <A[6] "EqMDLN">
+  <A[6] "SofRev">
+>
+.
+Program takes      0 seconds to log this message.
+14:00:41.746: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+14:00:41.746: Receive S1F14(4342346).
+00 00 01 0E 00 00 00 42 42 4A   01 02 21 01 00 01 00
+S1F14 
+<L[2]
+  <B[1] 0x0>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+14:00:50.979: Receive Data Message.
+00 00 00 18 00 00 82 1F 00 00
+14:00:50.979: Receive S2F31(15308692).
+00 00 82 1F 00 00 00 E9 97 94   41 0C 31 36 31 31 30 38 31 36
+30 30 30 30
+S2F31 W
+<A[12] "161108160000">
+.
+Program takes      0 seconds to log this message.
+00:00:00.001: Send Data Message.
+00 00 00 0D 00 01 02 20 00 00
+00:00:00.001: Send S2F32(15308692).
+00 01 02 20 00 00 00 E9 97 94   21 01 00
+S2F32 
+<B[1] 0x0>
+.
+Program takes      0 seconds to log this message.
+00:00:16.711: Send Separate.req.
+FF FF 00 00 00 09 00 42 42 4B

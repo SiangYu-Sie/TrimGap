@@ -1,0 +1,798 @@
+//////////////////////////////////////////////////////////////////////////
+2023-09-07 11:39:51.600: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-09-07 11:39:53.473: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-09-07 11:39:53.514: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-09-07 11:39:59.469: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-09-07 11:39:59.469: Send S1F13(648428).
+00 00 81 0D 00 00 00 09 E4 EC   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.14 seconds to log this message.
+2023-09-07 11:39:59.607: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-09-07 11:39:59.607: Receive S1F14(648428).
+00 00 01 0E 00 00 00 09 E4 EC   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 11:41:05.562: Send Linktest.req.
+FF FF 00 00 00 05 00 09 E4 ED
+2023-09-07 11:41:05.562: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 09 E4 ED
+2023-09-07 11:41:35.187: Receive Data Message.
+00 00 00 49 00 00 02 29 00 00
+2023-09-07 11:41:35.187: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 0B 53 4C 4F 54 4D 41
+50 2D 4C 26 43 01 02 01 02 41   0B 4C 4F 41 44 50 4F 52 54 2D
+49 44 41 01 31 01 02 41 0A 43   41 52 52 49 45 52 2D 49 44 41
+0C 43 41 52 52 49 45 52 2D 54   45 53 54
+S2F41  /* Host Command Send */
+<L[2]
+  <A[11]"SLOTMAP-L&C"> /* Name = RCMD */
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID"> /* Name = CPNAME */
+      <A[1]"1"> /* Name = CPVAL */
+    >
+    <L[2]
+      <A[10]"CARRIER-ID"> /* Name = CPNAME */
+      <A[12]"CARRIER-TEST"> /* Name = CPVAL */
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 11:41:35.295: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-09-07 11:41:35.295: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 11:41:35.470: Receive Data Message.
+00 00 00 49 00 00 02 29 00 00
+2023-09-07 11:41:35.470: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 0B 52 45 4C 45 41 53
+45 2D 4C 26 43 01 02 01 02 41   0B 4C 4F 41 44 50 4F 52 54 2D
+49 44 41 01 31 01 02 41 0A 43   41 52 52 49 45 52 2D 49 44 41
+0C 43 41 52 52 49 45 52 2D 54   45 53 54
+S2F41  /* Host Command Send */
+<L[2]
+  <A[11]"RELEASE-L&C"> /* Name = RCMD */
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID"> /* Name = CPNAME */
+      <A[1]"1"> /* Name = CPVAL */
+    >
+    <L[2]
+      <A[10]"CARRIER-ID"> /* Name = CPNAME */
+      <A[12]"CARRIER-TEST"> /* Name = CPVAL */
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 11:41:35.475: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-09-07 11:41:35.475: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-09-07 11:43:53.238: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-09-07 11:43:53.716: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-09-07 11:43:53.849: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-09-07 11:44:00.622: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-09-07 11:44:00.622: Send S1F13(497410).
+00 00 81 0D 00 00 00 07 97 02   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.138 seconds to log this message.
+2023-09-07 11:44:00.759: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-09-07 11:44:00.759: Receive S1F14(497410).
+00 00 01 0E 00 00 00 07 97 02   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 11:45:06.364: Send Linktest.req.
+FF FF 00 00 00 05 00 07 97 03
+2023-09-07 11:45:06.364: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 07 97 03
+2023-09-07 11:45:15.332: Receive Data Message.
+00 00 00 49 00 00 02 29 00 00
+2023-09-07 11:45:15.332: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 0B 53 4C 4F 54 4D 41
+50 2D 4C 26 43 01 02 01 02 41   0B 4C 4F 41 44 50 4F 52 54 2D
+49 44 41 01 31 01 02 41 0A 43   41 52 52 49 45 52 2D 49 44 41
+0C 43 41 52 52 49 45 52 2D 54   45 53 54
+S2F41  /* Host Command Send */
+<L[2]
+  <A[11]"SLOTMAP-L&C"> /* Name = RCMD */
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID"> /* Name = CPNAME */
+      <A[1]"1"> /* Name = CPVAL */
+    >
+    <L[2]
+      <A[10]"CARRIER-ID"> /* Name = CPNAME */
+      <A[12]"CARRIER-TEST"> /* Name = CPVAL */
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 11:45:15.356: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-09-07 11:45:15.356: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 11:45:15.550: Receive Data Message.
+00 00 00 49 00 00 02 29 00 00
+2023-09-07 11:45:15.550: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 0B 52 45 4C 45 41 53
+45 2D 4C 26 43 01 02 01 02 41   0B 4C 4F 41 44 50 4F 52 54 2D
+49 44 41 01 31 01 02 41 0A 43   41 52 52 49 45 52 2D 49 44 41
+0C 43 41 52 52 49 45 52 2D 54   45 53 54
+S2F41  /* Host Command Send */
+<L[2]
+  <A[11]"RELEASE-L&C"> /* Name = RCMD */
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID"> /* Name = CPNAME */
+      <A[1]"1"> /* Name = CPVAL */
+    >
+    <L[2]
+      <A[10]"CARRIER-ID"> /* Name = CPNAME */
+      <A[12]"CARRIER-TEST"> /* Name = CPVAL */
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 11:45:15.554: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-09-07 11:45:15.554: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-09-07 11:48:32.303: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-09-07 11:48:32.706: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-09-07 11:48:32.719: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-09-07 11:48:40.017: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-09-07 11:48:40.017: Send S1F13(8393762).
+00 00 81 0D 00 00 00 80 14 22   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.058 seconds to log this message.
+2023-09-07 11:48:40.073: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-09-07 11:48:40.073: Receive S1F14(8393762).
+00 00 01 0E 00 00 00 80 14 22   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 11:50:15.721: Receive Data Message.
+00 00 00 49 00 00 02 29 00 00
+2023-09-07 11:50:15.721: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 0B 53 4C 4F 54 4D 41
+50 2D 4C 26 43 01 02 01 02 41   0B 4C 4F 41 44 50 4F 52 54 2D
+49 44 41 01 31 01 02 41 0A 43   41 52 52 49 45 52 2D 49 44 41
+0C 43 41 52 52 49 45 52 2D 54   45 53 54
+S2F41  /* Host Command Send */
+<L[2]
+  <A[11]"SLOTMAP-L&C"> /* Name = RCMD */
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID"> /* Name = CPNAME */
+      <A[1]"1"> /* Name = CPVAL */
+    >
+    <L[2]
+      <A[10]"CARRIER-ID"> /* Name = CPNAME */
+      <A[12]"CARRIER-TEST"> /* Name = CPVAL */
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 11:50:15.760: Receive Data Message.
+00 00 00 49 00 00 02 29 00 00
+2023-09-07 11:50:15.760: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 0B 52 45 4C 45 41 53
+45 2D 4C 26 43 01 02 01 02 41   0B 4C 4F 41 44 50 4F 52 54 2D
+49 44 41 01 31 01 02 41 0A 43   41 52 52 49 45 52 2D 49 44 41
+0C 43 41 52 52 49 45 52 2D 54   45 53 54
+S2F41  /* Host Command Send */
+<L[2]
+  <A[11]"RELEASE-L&C"> /* Name = RCMD */
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID"> /* Name = CPNAME */
+      <A[1]"1"> /* Name = CPVAL */
+    >
+    <L[2]
+      <A[10]"CARRIER-ID"> /* Name = CPNAME */
+      <A[12]"CARRIER-TEST"> /* Name = CPVAL */
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 11:50:15.760: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-09-07 11:50:15.760: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 11:50:15.766: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-09-07 11:50:15.766: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-09-07 11:54:41.145: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-09-07 11:54:42.685: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-09-07 11:54:42.832: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-09-07 11:54:48.607: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-09-07 11:54:48.607: Send S1F13(8875960).
+00 00 81 0D 00 00 00 87 6F B8   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.551 seconds to log this message.
+2023-09-07 11:54:49.158: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-09-07 11:54:49.158: Receive S1F14(8875960).
+00 00 01 0E 00 00 00 87 6F B8   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 11:55:55.210: Send Linktest.req.
+FF FF 00 00 00 05 00 87 6F B9
+2023-09-07 11:55:55.211: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 87 6F B9
+2023-09-07 11:57:01.938: Send Linktest.req.
+FF FF 00 00 00 05 00 87 6F BA
+2023-09-07 11:57:01.938: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 87 6F BA
+2023-09-07 11:57:22.550: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-09-07 11:57:22.550: Send S6F11(8875963).
+00 00 86 0B 00 00 00 87 6F BB   01 03 B1 04 00 00 00 01 B1 04
+00 00 00 65 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 1> /* Name = DATAID */
+  <U4[1] 101> /* Name = CEID, Keyword = MaterialRemove (101) */
+  <L[1]
+    <L[2]
+      <U4[1] 88> /* Name = RPTID */
+      <L[2]
+        <U1[1] 1> /* Name = Value, Keyword = PortID (2001) */
+        <A[0]""> /* Name = Value, Keyword = CarrierID (2000) */
+      >
+    >
+  >
+>
+.
+Program takes      0.026 seconds to log this message.
+2023-09-07 11:57:22.577: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-09-07 11:57:22.577: Receive S6F12(8875963).
+00 00 06 0C 00 00 00 87 6F BB   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2023-09-07 11:57:22.585: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-09-07 11:57:22.585: Send S6F11(8875964).
+00 00 86 0B 00 00 00 87 6F BC   01 03 B1 04 00 00 00 02 B1 04
+00 00 03 EC 01 01 01 02 B1 04   00 00 00 2C 01 02 A5 01 01 A5
+01 02
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 2> /* Name = DATAID */
+  <U4[1] 1004> /* Name = CEID, Keyword = ReadyToLoad (1004) */
+  <L[1]
+    <L[2]
+      <U4[1] 44> /* Name = RPTID */
+      <L[2]
+        <U1[1] 1> /* Name = Value, Keyword = PortID (2001) */
+        <U1[1] 2> /* Name = Value, Keyword = PortTransferState (2005) */
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-09-07 11:57:22.687: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-09-07 11:57:22.687: Receive S6F12(8875964).
+00 00 06 0C 00 00 00 87 6F BC   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2023-09-07 11:58:28.001: Send Linktest.req.
+FF FF 00 00 00 05 00 87 6F BD
+2023-09-07 11:58:28.001: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 87 6F BD
+2023-09-07 11:59:34.467: Send Linktest.req.
+FF FF 00 00 00 05 00 87 6F BE
+2023-09-07 11:59:34.467: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 87 6F BE
+//////////////////////////////////////////////////////////////////////////
+2023-09-07 13:17:11.853: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-09-07 13:18:54.177: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-09-07 13:18:54.421: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-09-07 13:18:54.452: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-09-07 13:18:54.452: Send S1F13(1232329).
+00 00 81 0D 00 00 00 12 CD C9   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.111 seconds to log this message.
+2023-09-07 13:18:54.562: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-09-07 13:18:54.562: Receive S1F14(1232329).
+00 00 01 0E 00 00 00 12 CD C9   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 13:19:25.782: Receive Data Message.
+00 00 00 49 00 00 02 29 00 00
+2023-09-07 13:19:25.782: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 0B 53 4C 4F 54 4D 41
+50 2D 4C 26 43 01 02 01 02 41   0B 4C 4F 41 44 50 4F 52 54 2D
+49 44 41 01 31 01 02 41 0A 43   41 52 52 49 45 52 2D 49 44 41
+0C 43 41 52 52 49 45 52 2D 54   45 53 54
+S2F41  /* Host Command Send */
+<L[2]
+  <A[11]"SLOTMAP-L&C"> /* Name = RCMD */
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID"> /* Name = CPNAME */
+      <A[1]"1"> /* Name = CPVAL */
+    >
+    <L[2]
+      <A[10]"CARRIER-ID"> /* Name = CPNAME */
+      <A[12]"CARRIER-TEST"> /* Name = CPVAL */
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 13:19:26.040: Receive Data Message.
+00 00 00 4A 00 00 02 29 00 00
+2023-09-07 13:19:26.040: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 0B 52 45 4C 45 41 53
+45 2D 4C 26 43 01 02 01 02 41   0B 4C 4F 41 44 50 4F 52 54 2D
+49 44 41 01 32 01 02 41 0A 43   41 52 52 49 45 52 2D 49 44 41
+0D 43 41 52 52 49 45 52 2D 54   45 53 54 32
+S2F41  /* Host Command Send */
+<L[2]
+  <A[11]"RELEASE-L&C"> /* Name = RCMD */
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID"> /* Name = CPNAME */
+      <A[1]"2"> /* Name = CPVAL */
+    >
+    <L[2]
+      <A[10]"CARRIER-ID"> /* Name = CPNAME */
+      <A[13]"CARRIER-TEST2"> /* Name = CPVAL */
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 13:19:26.048: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-09-07 13:19:26.048: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 13:19:26.063: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-09-07 13:19:26.063: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 13:20:26.473: Send Data Message.
+00 00 00 29 00 00 86 0B 00 00
+2023-09-07 13:20:26.473: Send S6F11(1232330).
+00 00 86 0B 00 00 00 12 CD CA   01 03 B1 04 00 00 00 01 B1 04
+00 00 00 65 01 01 01 02 B1 04   00 00 00 58 01 02 A5 01 01 41
+00
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 1> /* Name = DATAID */
+  <U4[1] 101> /* Name = CEID, Keyword = MaterialRemove (101) */
+  <L[1]
+    <L[2]
+      <U4[1] 88> /* Name = RPTID */
+      <L[2]
+        <U1[1] 1> /* Name = Value, Keyword = PortID (2001) */
+        <A[0]""> /* Name = Value, Keyword = CarrierID (2000) */
+      >
+    >
+  >
+>
+.
+Program takes      0.005 seconds to log this message.
+2023-09-07 13:20:26.478: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-09-07 13:20:26.478: Receive S6F12(1232330).
+00 00 06 0C 00 00 00 12 CD CA   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2023-09-07 13:20:26.494: Send Data Message.
+00 00 00 2A 00 00 86 0B 00 00
+2023-09-07 13:20:26.494: Send S6F11(1232331).
+00 00 86 0B 00 00 00 12 CD CB   01 03 B1 04 00 00 00 02 B1 04
+00 00 03 EC 01 01 01 02 B1 04   00 00 00 2C 01 02 A5 01 01 A5
+01 02
+S6F11 W /* Event Report Send */
+<L[3]
+  <U4[1] 2> /* Name = DATAID */
+  <U4[1] 1004> /* Name = CEID, Keyword = ReadyToLoad (1004) */
+  <L[1]
+    <L[2]
+      <U4[1] 44> /* Name = RPTID */
+      <L[2]
+        <U1[1] 1> /* Name = Value, Keyword = PortID (2001) */
+        <U1[1] 2> /* Name = Value, Keyword = PortTransferState (2005) */
+      >
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-09-07 13:20:26.519: Receive Data Message.
+00 00 00 0D 00 00 06 0C 00 00
+2023-09-07 13:20:26.519: Receive S6F12(1232331).
+00 00 06 0C 00 00 00 12 CD CB   21 01 00
+S6F12  /* Event Report Ack */
+<B[1] 0x00> /* Name = ACKC6 */
+.
+Program takes      0 seconds to log this message.
+2023-09-07 13:21:32.183: Send Linktest.req.
+FF FF 00 00 00 05 00 12 CD CC
+2023-09-07 13:21:32.183: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 12 CD CC
+//////////////////////////////////////////////////////////////////////////
+2023-09-07 13:24:30.032: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-09-07 13:24:31.345: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-09-07 13:24:31.540: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-09-07 13:24:37.257: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-09-07 13:24:37.257: Send S1F13(9331947).
+00 00 81 0D 00 00 00 8E 64 EB   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.053 seconds to log this message.
+2023-09-07 13:24:37.309: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-09-07 13:24:37.309: Receive S1F14(9331947).
+00 00 01 0E 00 00 00 8E 64 EB   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 13:25:43.954: Send Linktest.req.
+FF FF 00 00 00 05 00 8E 64 EC
+2023-09-07 13:25:43.954: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 8E 64 EC
+2023-09-07 13:26:33.108: Receive Data Message.
+00 00 00 49 00 00 02 29 00 00
+2023-09-07 13:26:33.108: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 0B 53 4C 4F 54 4D 41
+50 2D 4C 26 43 01 02 01 02 41   0B 4C 4F 41 44 50 4F 52 54 2D
+49 44 41 01 31 01 02 41 0A 43   41 52 52 49 45 52 2D 49 44 41
+0C 43 41 52 52 49 45 52 2D 54   45 53 54
+S2F41  /* Host Command Send */
+<L[2]
+  <A[11]"SLOTMAP-L&C"> /* Name = RCMD */
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID"> /* Name = CPNAME */
+      <A[1]"1"> /* Name = CPVAL */
+    >
+    <L[2]
+      <A[10]"CARRIER-ID"> /* Name = CPNAME */
+      <A[12]"CARRIER-TEST"> /* Name = CPVAL */
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 13:26:33.161: Receive Data Message.
+00 00 00 4A 00 00 02 29 00 00
+2023-09-07 13:26:33.161: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 0B 52 45 4C 45 41 53
+45 2D 4C 26 43 01 02 01 02 41   0B 4C 4F 41 44 50 4F 52 54 2D
+49 44 41 01 32 01 02 41 0A 43   41 52 52 49 45 52 2D 49 44 41
+0D 43 41 52 52 49 45 52 2D 54   45 53 54 32
+S2F41  /* Host Command Send */
+<L[2]
+  <A[11]"RELEASE-L&C"> /* Name = RCMD */
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID"> /* Name = CPNAME */
+      <A[1]"2"> /* Name = CPVAL */
+    >
+    <L[2]
+      <A[10]"CARRIER-ID"> /* Name = CPNAME */
+      <A[13]"CARRIER-TEST2"> /* Name = CPVAL */
+    >
+  >
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-09-07 13:26:33.172: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-09-07 13:26:33.172: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 13:26:33.180: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-09-07 13:26:33.180: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 13:27:41.804: Send Linktest.req.
+FF FF 00 00 00 05 00 8E 64 ED
+2023-09-07 13:27:41.804: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 8E 64 ED
+2023-09-07 13:28:47.521: Send Linktest.req.
+FF FF 00 00 00 05 00 8E 64 EE
+2023-09-07 13:28:47.521: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 8E 64 EE
+2023-09-07 13:29:53.322: Send Linktest.req.
+FF FF 00 00 00 05 00 8E 64 EF
+2023-09-07 13:29:53.322: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 8E 64 EF
+//////////////////////////////////////////////////////////////////////////
+2023-09-07 13:31:37.675: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-09-07 13:31:37.903: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-09-07 13:31:38.005: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-09-07 13:31:44.940: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-09-07 13:31:44.940: Send S1F13(5598259).
+00 00 81 0D 00 00 00 55 6C 33   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.046 seconds to log this message.
+2023-09-07 13:31:44.985: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-09-07 13:31:44.985: Receive S1F14(5598259).
+00 00 01 0E 00 00 00 55 6C 33   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 13:32:50.580: Send Linktest.req.
+FF FF 00 00 00 05 00 55 6C 34
+2023-09-07 13:32:50.580: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 55 6C 34
+2023-09-07 13:33:12.924: Receive Data Message.
+00 00 00 49 00 00 02 29 00 00
+2023-09-07 13:33:12.924: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 0B 53 4C 4F 54 4D 41
+50 2D 4C 26 43 01 02 01 02 41   0B 4C 4F 41 44 50 4F 52 54 2D
+49 44 41 01 31 01 02 41 0A 43   41 52 52 49 45 52 2D 49 44 41
+0C 43 41 52 52 49 45 52 2D 54   45 53 54
+S2F41  /* Host Command Send */
+<L[2]
+  <A[11]"SLOTMAP-L&C"> /* Name = RCMD */
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID"> /* Name = CPNAME */
+      <A[1]"1"> /* Name = CPVAL */
+    >
+    <L[2]
+      <A[10]"CARRIER-ID"> /* Name = CPNAME */
+      <A[12]"CARRIER-TEST"> /* Name = CPVAL */
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 13:33:12.952: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-09-07 13:33:12.952: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 13:33:13.144: Receive Data Message.
+00 00 00 4A 00 00 02 29 00 00
+2023-09-07 13:33:13.144: Receive S2F41(0).
+00 00 02 29 00 00 00 00 00 00   01 02 41 0B 52 45 4C 45 41 53
+45 2D 4C 26 43 01 02 01 02 41   0B 4C 4F 41 44 50 4F 52 54 2D
+49 44 41 01 32 01 02 41 0A 43   41 52 52 49 45 52 2D 49 44 41
+0D 43 41 52 52 49 45 52 2D 54   45 53 54 32
+S2F41  /* Host Command Send */
+<L[2]
+  <A[11]"RELEASE-L&C"> /* Name = RCMD */
+  <L[2]
+    <L[2]
+      <A[11]"LOADPORT-ID"> /* Name = CPNAME */
+      <A[1]"2"> /* Name = CPVAL */
+    >
+    <L[2]
+      <A[10]"CARRIER-ID"> /* Name = CPNAME */
+      <A[13]"CARRIER-TEST2"> /* Name = CPVAL */
+    >
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-09-07 13:33:13.144: Send Data Message.
+00 00 00 11 00 00 02 2A 00 00
+2023-09-07 13:33:13.144: Send S2F42(0).
+00 00 02 2A 00 00 00 00 00 00   01 02 21 01 00 01 00
+S2F42  /* Host Command Acknowledge */
+<L[2]
+  <B[1] 0x00>
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.

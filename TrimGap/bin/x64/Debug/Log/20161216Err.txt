@@ -1,0 +1,40 @@
+Exception:由於另一個處理序正在使用檔案 'D:\ctlt_robbie\Company\Project\20160905 CTLT_API Develop\API\CSharp Sample\bin\Debug\EqpInitData\EqpSV.csv'，所以無法存取該檔案。 at Load_VID
+Load LIST_SV error => ID = 2002 not found
+SVID:100001 not found during Define Report
+SVID:2002 not found during Define Report
+SVID:2002 not found during Define Report
+SVID:2003 not found during Define Report
+SVID:3001 not found during Define Report
+SVID:100001 not found during Define Report
+Exception:由於另一個處理序正在使用檔案 'D:\ctlt_robbie\Company\Project\20160905 CTLT_API Develop\API\CSharp Sample\bin\Debug\EqpInitData\EqpSV.csv'，所以無法存取該檔案。 at Load_VID
+Load LIST_SV error => ID = 2002 not found
+SVID:100001 not found during Define Report
+SVID:2002 not found during Define Report
+SVID:2002 not found during Define Report
+SVID:2003 not found during Define Report
+SVID:3001 not found during Define Report
+SVID:100001 not found during Define Report
+Exception:由於另一個處理序正在使用檔案 'D:\ctlt_robbie\Company\Project\20160905 CTLT_API Develop\API\CSharp Sample\bin\Debug\EqpInitData\EqpSV.csv'，所以無法存取該檔案。 at Load_VID
+Load LIST_SV error => ID = 2002 not found
+SVID:100001 not found during Define Report
+SVID:2002 not found during Define Report
+SVID:2002 not found during Define Report
+SVID:2003 not found during Define Report
+SVID:3001 not found during Define Report
+SVID:100001 not found during Define Report
+Exception:由於另一個處理序正在使用檔案 'D:\ctlt_robbie\Company\Project\20160905 CTLT_API Develop\API\CSharp Sample\bin\Debug\EqpInitData\EqpSV.csv'，所以無法存取該檔案。 at Load_VID
+Load LIST_SV error => ID = 2002 not found
+SVID:100001 not found during Define Report
+SVID:2002 not found during Define Report
+SVID:2002 not found during Define Report
+SVID:2003 not found during Define Report
+SVID:3001 not found during Define Report
+SVID:100001 not found during Define Report
+Exception:由於另一個處理序正在使用檔案 'D:\ctlt_robbie\Company\Project\20160905 CTLT_API Develop\API\CSharp Sample\bin\Debug\EqpInitData\EqpSV.csv'，所以無法存取該檔案。 at Load_VID
+Load LIST_SV error => ID = 2002 not found
+SVID:100001 not found during Define Report
+SVID:2002 not found during Define Report
+SVID:2002 not found during Define Report
+SVID:2003 not found during Define Report
+SVID:3001 not found during Define Report
+SVID:100001 not found during Define Report
