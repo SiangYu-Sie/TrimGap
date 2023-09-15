@@ -248,12 +248,12 @@ namespace TrimGap
             chart.Series[1].ChartType = SeriesChartType.FastLine;   //設定線條種類 折線圖
             chart.Series[1].YAxisType = AxisType.Primary;           //主坐標軸
             chart.Series[1].Color = System.Drawing.Color.Red;                 //設定線條顏色
-            chart.ChartAreas[0].AxisX.Maximum = fram.S_ShowDataNum;  //設定X軸最大值 預設為30000
-            chart.ChartAreas[0].AxisX.Minimum = 0;            //設定X軸最小值
-            chart.ChartAreas[0].AxisX.Interval = 1000;// chart.ChartAreas[0].AxisX.Maximum / 10; //設定X軸間隔 最大值/10
+            //chart.ChartAreas[0].AxisX.Maximum = fram.S_ShowDataNum;  //設定X軸最大值 預設為30000
+            //chart.ChartAreas[0].AxisX.Minimum = 0;            //設定X軸最小值
+            //chart.ChartAreas[0].AxisX.Interval = 1000;// chart.ChartAreas[0].AxisX.Maximum / 10; //設定X軸間隔 最大值/10
 
-            chart.ChartAreas[0].AxisY.Maximum = 10;  //設定Y軸最大值
-            chart.ChartAreas[0].AxisY.Minimum = -100; //設定Y軸最小值
+            chart.ChartAreas[0].AxisY.Maximum = 100;  //設定Y軸最大值
+            chart.ChartAreas[0].AxisY.Minimum = 0; //設定Y軸最小值
             chart.ChartAreas[0].AxisY.Interval = 10;
             //(chart.ChartAreas[0].AxisY.Maximum - chart.ChartAreas[0].AxisY.Minimum) / 10; //設定Y軸間隔 最大值
 
