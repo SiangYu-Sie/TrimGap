@@ -281,6 +281,9 @@ namespace TrimGap
             public static int ActDestinationPortNumber;
         }
 
+        public static int PT_PLC_AutoRunStage_RetryCount;
+        public static int PT_PLC_AutoRunEFEM_RetryCount;
+
         // 量測開始延遲時間
         //   192//1//10//16 用// 拆字串
         // [Analysis]

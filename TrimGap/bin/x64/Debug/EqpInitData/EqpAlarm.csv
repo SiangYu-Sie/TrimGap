@@ -10,6 +10,7 @@ EQP-CylinderDownError,10006,,1,EQP-CylinderDownError
 EQP-DoorOpen,10007,,1,EQP-DoorOpen
 EQP-AxleCardError,10008,,1,EQP-AxleCardError
 EQP-IOCardError,10009,,1,EQP-IOCardError
+EQP-DataAnalysisError,10010,,1,EQP-DataAnalysisError
 EFEM-GetVersionError,20001,,1,EFEM-GetVersionError
 EFEM-RemoteControlError,20002,,1,EFEM-RemoteControlError
 EFEM-LocalControlError,20003,,1,EFEM-LocalControlError

@@ -230,6 +230,11 @@ public static class TrimGap_EqpID
     public const int EQP_AxleCardError = 10008;
     public const int EQP_IOCardError = 10009;
     public const int EQP_DataAnalysisError = 10010;
+    public const int EQP_PT_PLC_ReturnHomeBlockError = 10011;
+    public const int EQP_PT_PLC_ReturnHomeError = 10012;
+    public const int EQP_PT_PLC_MoveToSafePointError = 10013;
+    public const int EQP_PT_PLC_MoveTimeoutError = 10014;
+
     public const int EFEM_GetVersionError = 20001;
     public const int EFEM_RemoteControlError = 20002;
     public const int EFEM_LocalControlError = 20003;

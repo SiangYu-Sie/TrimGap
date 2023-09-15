@@ -310,7 +310,7 @@ namespace TrimGap
                             {
                                 Flag.Autoidle_LocalFlag = false; //
                             }
-                            if(fram.m_simulateRun == 0) //模擬模式不跑不然會卡住20230908
+                            if (fram.m_simulateRun == 0) //模擬模式不跑不然會卡住20230908
                             {
                                 WatchMaterialRecive();
                                 WatchMaterialRemove();
@@ -1133,7 +1133,7 @@ namespace TrimGap
                         //eFEMStep = EFEMStep.ErrorCheckSts;
                     }
                     loadPort.AutoGetSlot();
-
+                    fram.PT_PLC_AutoRunEFEM_RetryCount = 0; //PTPLC的retry次數做重置
                     #region Stage 沒有
 
                     if (!Common.EFEM.Stage1.WaferPresence)
@@ -1715,14 +1715,25 @@ namespace TrimGap
                         {
                             if (Common.PTForm.GetPointMoveFinish(9))
                             {
+                                fram.PT_PLC_AutoRunEFEM_RetryCount = 0;
                                 Common.io.WriteOut(IOName.Out.Wafer汽缸_降下, false);
                                 Common.io.WriteOut(IOName.Out.Wafer汽缸_抬起, true);
                                 SpinWait.SpinUntil(() => Common.io.In(IOName.In.Wafer汽缸_抬起檢), 5000);
                             }
+                            else if(fram.PT_PLC_AutoRunEFEM_RetryCount < 1)
+                            {
+                                fram.PT_PLC_AutoRunEFEM_RetryCount++;
+                                Common.PTForm.PointMove(9);
+                                SpinWait.SpinUntil(() => Common.PTForm.GetPointMoveFinish(9), 3000);
+                                break;
+                            }
                             else
                             {
-                                Common.PTForm.PointMove(9);
-                                SpinWait.SpinUntil(() => Common.PTForm.GetPointMoveFinish(9), 2000);
+                                InsertLog.SavetoDB(TrimGap_EqpID.EQP_PT_PLC_MoveToSafePointError, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Robot.Slot_Arm_upper + ", PT PLC 無法退回安全位置");
+                                Common.CGWrapper.AlarmReportSend(TrimGap_EqpID.EQP_PT_PLC_MoveToSafePointError, 128);
+                                Flag.AlarmFlag = true;
+                                fram.PT_PLC_AutoRunEFEM_RetryCount = 0;
+                                MessageBox.Show("PT PLC 無法退回安全位置");
                                 break;
                             }
                         }
@@ -2000,6 +2011,55 @@ namespace TrimGap
         public static bool EFEMHomeAll()
         {
             bool rtn;
+            #region PT PLC
+            if(fram.m_Hardware_PT == 1 && machineType == MachineType.AP6)
+            {
+                if (Common.PTForm.GetDriverAlarm())
+                {
+                    Common.PTForm.ResetDriverAlarm();
+                    SpinWait.SpinUntil(() => false, 50);
+                }
+
+                if(!Common.PTForm.FindHomeFinish())
+                {
+                    //PLC歸零前要先降汽缸才不會干涉
+                    if (Common.io.In(IOName.In.Wafer汽缸_抬起檢) || !Common.io.In(IOName.In.Wafer汽缸_降下檢))
+                    {
+                        Common.io.WriteOut(IOName.Out.Wafer汽缸_降下, true);
+                        Common.io.WriteOut(IOName.Out.Wafer汽缸_抬起, false);
+                    }
+                    SpinWait.SpinUntil(() => (!Common.io.In(IOName.In.Wafer汽缸_抬起檢) && Common.io.In(IOName.In.Wafer汽缸_降下檢)), 5000);
+                    if (Common.io.In(IOName.In.Wafer汽缸_抬起檢) || !Common.io.In(IOName.In.Wafer汽缸_降下檢))
+                    {
+                        Flag.AllHome_busyFlag = false;
+                        Common.CGWrapper.AlarmReportSend(TrimGap_EqpID.EQP_PT_PLC_ReturnHomeBlockError, 128);
+                        HomeAllFailStr = "PT PLC 無法回原點，Wafer汽缸未降下";
+                        MessageBox.Show(HomeAllFailStr);
+                        return false;
+                    }
+                    Common.PTForm.FindHome();
+                    SpinWait.SpinUntil(() => Common.PTForm.FindHomeFinish(), 10000);
+                    if(!Common.PTForm.FindHomeFinish())
+                    {
+                        Flag.AllHome_busyFlag = false;
+                        Common.CGWrapper.AlarmReportSend(TrimGap_EqpID.EQP_PT_PLC_ReturnHomeError, 128);
+                        HomeAllFailStr = "PT PLC 回原點失敗";
+                        MessageBox.Show(HomeAllFailStr);
+                        return false;
+                    }
+                }
+                Common.PTForm.PointMove(9);
+                SpinWait.SpinUntil(() => Common.PTForm.GetPointMoveFinish(9), 5000);
+                if (!Common.PTForm.GetPointMoveFinish(9))
+                {
+                    Flag.AllHome_busyFlag = false;
+                    Common.CGWrapper.AlarmReportSend(TrimGap_EqpID.EQP_PT_PLC_MoveToSafePointError, 128);
+                    HomeAllFailStr = "PT PLC 無法退回安全位置";
+                    MessageBox.Show(HomeAllFailStr);
+                    return false;
+                }
+            }
+            #endregion PT PLC
 
             #region Robot Home
 
@@ -2186,6 +2246,13 @@ namespace TrimGap
                         Flag.AllHome_busyFlag = false;
 
                         HomeAllFailStr = "Stage Wafer Home Fail, Stage Vacuum Is On";
+                        return false;
+                    }
+                    else if ((fram.m_Hardware_PT == 1 && !Common.PTForm.GetPointMoveFinish(9)))
+                    {
+                        Flag.AllHome_busyFlag = false;
+
+                        HomeAllFailStr = "Stage Wafer Home Fail, PT PLC Is at Unsafe Position";
                         return false;
                     }
                     Common.EFEM.Stage1.Ready = true;

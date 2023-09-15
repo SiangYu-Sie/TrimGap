@@ -868,6 +868,7 @@ namespace TrimGap
                         }
                         AutoTrim2ndStep = Trim2ndStep.Measurement;
                         sram.PTRetry = 0;
+                        fram.PT_PLC_AutoRunStage_RetryCount = 0;
                     }
                     break;
 
@@ -888,7 +889,18 @@ namespace TrimGap
                         //AnalysisData.rtn = Common.LJ.Measure();
 
                         AutoTrim2ndStep = Trim2ndStep.Download;
-                        Console.WriteLine(DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString() + " Measure End");
+                    }
+                    else if(fram.PT_PLC_AutoRunStage_RetryCount<100)
+                    {
+                        SpinWait.SpinUntil(() => false, 50);
+                        fram.PT_PLC_AutoRunStage_RetryCount++;
+                    }
+                    else
+                    {
+                        fram.PT_PLC_AutoRunStage_RetryCount = 0;
+                        Common.CGWrapper.AlarmReportSend(TrimGap_EqpID.EQP_PT_PLC_MoveTimeoutError, 128);
+                        InsertLog.SavetoDB(TrimGap_EqpID.EQP_PT_PLC_MoveTimeoutError,"PT PLC Move To Point 1 Timeout");
+                        //MessageBox.Show("PT PLC Move To Point 1 Timeout");
                     }
 
                     break;
