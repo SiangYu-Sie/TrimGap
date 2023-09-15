@@ -23,7 +23,7 @@ namespace TrimGap
 
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent(); 
             timer_EFEM_Event.Enabled = true;
         }
 

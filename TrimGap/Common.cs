@@ -17,7 +17,7 @@ namespace TrimGap
     internal class Common
     {
         public static SECSGEM.SecsgemForm SecsgemForm;
-        public static CTLT.ctlt_GEM CGWrapper;
+        public static CTLT.ctlt_GEM CGWrapper; 
         public static Io io;
 
         //public static LJ LJ8020;
