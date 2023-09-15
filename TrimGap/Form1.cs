@@ -924,18 +924,22 @@ namespace TrimGap
                             int Wafertype_tmp = 2;
                             int Interval_X_tmp = 1;
 
-                            Common.TrimGapAnalysis.removeZero3(tmp1, tmp2, tmp3, out AnalysisData.removezeroData, out AnalysisData.removezeroData2, out AnalysisData.removezeroData3);
+                            //Common.TrimGapAnalysis.removeZero3(tmp1, tmp2, tmp3, out AnalysisData.removezeroData, out AnalysisData.removezeroData2, out AnalysisData.removezeroData3);
+                            Common.TrimGapAnalysis.removeZero3(tmp1, tmp2, tmp3, out AnalysisData2.removezeroData, out AnalysisData2.removezeroData2, out AnalysisData2.removezeroData3);
                             Console.WriteLine("Analysis start:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
-                            Common.TrimGapAnalysis.tilting3(false, AnalysisData.removezeroData, AnalysisData.removezeroData2, AnalysisData.removezeroData3, Interval_X_tmp, out AnalysisData.tiltingdata_x, out AnalysisData.tiltingdata_x2, out AnalysisData.tiltingdata_x3, out AnalysisData.tiltingdata_y, out AnalysisData.tiltingdata_y2, out AnalysisData.tiltingdata_y3);
-                            ParamFile.SaveRawdata_Csv3(AnalysisData.tiltingdata_y, AnalysisData.tiltingdata_y2, AnalysisData.tiltingdata_y3, "tilting", DateTime.Now);
+                            //Common.TrimGapAnalysis.tilting3(false, AnalysisData.removezeroData, AnalysisData.removezeroData2, AnalysisData.removezeroData3, Interval_X_tmp, out AnalysisData.tiltingdata_x, out AnalysisData.tiltingdata_x2, out AnalysisData.tiltingdata_x3, out AnalysisData.tiltingdata_y, out AnalysisData.tiltingdata_y2, out AnalysisData.tiltingdata_y3);
+                            Common.TrimGapAnalysis.tilting3(false, AnalysisData2.removezeroData, AnalysisData2.removezeroData2, AnalysisData2.removezeroData3, Interval_X_tmp, out AnalysisData2.tiltingdata_x, out AnalysisData2.tiltingdata_x2, out AnalysisData2.tiltingdata_x3, out AnalysisData2.tiltingdata_y, out AnalysisData2.tiltingdata_y2, out AnalysisData2.tiltingdata_y3);
+                            //ParamFile.SaveRawdata_Csv3(AnalysisData.tiltingdata_y, AnalysisData.tiltingdata_y2, AnalysisData.tiltingdata_y3, "tilting", DateTime.Now);
+                            ParamFile.SaveRawdata_Csv3(AnalysisData2.tiltingdata_y, AnalysisData2.tiltingdata_y2, AnalysisData2.tiltingdata_y3, "tilting", DateTime.Now);
                             //ParamFile.SaveRawdata_Csv(AnalysisData.tiltingdata_y2, "tilting2", DateTime.Now);
                             //ParamFile.SaveRawdata_Csv(AnalysisData.tiltingdata_y3, "tilting3", DateTime.Now);
-                            Common.TrimGapAnalysis.CalculateGap3(false, Wafertype_tmp, AnalysisData.tiltingdata_x, AnalysisData.tiltingdata_x2, AnalysisData.tiltingdata_x3, AnalysisData.tiltingdata_y, AnalysisData.tiltingdata_y2, AnalysisData.tiltingdata_y3, Interval_X_tmp, fram.Analysis.Step2_Range_step1x0, fram.Analysis.Step2_Range_step1x1, fram.Analysis.Step2_Range_step2x0, Range2_Percent_tmp, fram.Analysis.Range1_Percent, fram.Analysis.Range2_Percent, out AnalysisData.resultdata[AnalysisData.rotateCount_current]);
+                            //Common.TrimGapAnalysis.CalculateGap3(false, Wafertype_tmp, AnalysisData.tiltingdata_x, AnalysisData.tiltingdata_x2, AnalysisData.tiltingdata_x3, AnalysisData.tiltingdata_y, AnalysisData.tiltingdata_y2, AnalysisData.tiltingdata_y3, Interval_X_tmp, fram.Analysis.Step2_Range_step1x0, fram.Analysis.Step2_Range_step1x1, fram.Analysis.Step2_Range_step2x0, Range2_Percent_tmp, fram.Analysis.Range1_Percent, fram.Analysis.Range2_Percent, out AnalysisData.resultdata[AnalysisData.rotateCount_current]);
+                            Common.TrimGapAnalysis.CalculateGap3(false, Wafertype_tmp, AnalysisData2.tiltingdata_x, AnalysisData2.tiltingdata_x2, AnalysisData2.tiltingdata_x3, AnalysisData2.tiltingdata_y, AnalysisData2.tiltingdata_y2, AnalysisData2.tiltingdata_y3, Interval_X_tmp, fram.Analysis.Step2_Range_step1x0, fram.Analysis.Step2_Range_step1x1, fram.Analysis.Step2_Range_step2x0, Range2_Percent_tmp, fram.Analysis.Range1_Percent, fram.Analysis.Range2_Percent, out AnalysisData2.resultdata[AnalysisData2.rotateCount_current]);
 
-                            for (int i = 0; i < AnalysisData.resultdata[AnalysisData.rotateCount_current].Count(); i++)
+                            for (int i = 0; i < AnalysisData2.resultdata[AnalysisData2.rotateCount_current].Count(); i++)
                             {
-                                if (Double.NaN.Equals(AnalysisData.resultdata[AnalysisData.rotateCount_current][i]))
-                                    AnalysisData.resultdata[AnalysisData.rotateCount_current][i] = 0.0;
+                                if (Double.NaN.Equals(AnalysisData2.resultdata[AnalysisData2.rotateCount_current][i]))
+                                    AnalysisData2.resultdata[AnalysisData2.rotateCount_current][i] = 0.0;
                             }
                             Console.WriteLine("Analysis Finish:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
                         }
@@ -1037,10 +1041,15 @@ namespace TrimGap
                         }
                         else if (sram.Recipe.Type == 3 && Flag.isPT)
                         {
-                            ReportData.H1 = AnalysisData.resultdata[AnalysisData.rotateCount_current][0] + fram.Analysis.Offset_PT_2StepH1;
-                            ReportData.W1 = AnalysisData.resultdata[AnalysisData.rotateCount_current][1] + AnalysisData.resultdata[AnalysisData.rotateCount_current][3] + fram.Analysis.Offset_PT_2StepW1;
-                            ReportData.H2 = AnalysisData.resultdata[AnalysisData.rotateCount_current][2] + AnalysisData.resultdata[AnalysisData.rotateCount_current][0] + fram.Analysis.Offset_PT_2StepH2;
-                            ReportData.W2 = AnalysisData.resultdata[AnalysisData.rotateCount_current][3] + fram.Analysis.Offset_PT_2StepW2;
+                            //ReportData.H1 = AnalysisData.resultdata[AnalysisData.rotateCount_current][0] + fram.Analysis.Offset_PT_2StepH1;
+                            //ReportData.W1 = AnalysisData.resultdata[AnalysisData.rotateCount_current][1] + AnalysisData.resultdata[AnalysisData.rotateCount_current][3] + fram.Analysis.Offset_PT_2StepW1;
+                            //ReportData.H2 = AnalysisData.resultdata[AnalysisData.rotateCount_current][2] + AnalysisData.resultdata[AnalysisData.rotateCount_current][0] + fram.Analysis.Offset_PT_2StepH2;
+                            //ReportData.W2 = AnalysisData.resultdata[AnalysisData.rotateCount_current][3] + fram.Analysis.Offset_PT_2StepW2;
+
+                            ReportData.H1 = AnalysisData2.resultdata[AnalysisData2.rotateCount_current][0] + fram.Analysis.Offset_PT_2StepH1;
+                            ReportData.W1 = AnalysisData2.resultdata[AnalysisData2.rotateCount_current][1] + AnalysisData2.resultdata[AnalysisData2.rotateCount_current][3] + fram.Analysis.Offset_PT_2StepW1;
+                            ReportData.H2 = AnalysisData2.resultdata[AnalysisData2.rotateCount_current][2] + AnalysisData2.resultdata[AnalysisData2.rotateCount_current][0] + fram.Analysis.Offset_PT_2StepH2;
+                            ReportData.W2 = AnalysisData2.resultdata[AnalysisData2.rotateCount_current][3] + fram.Analysis.Offset_PT_2StepW2;
                         }
 
                         if (sram.Recipe.Type == 3 && Flag.isPT) //僅更新H1 H2
@@ -1375,37 +1384,37 @@ namespace TrimGap
                             chartSensorPt.Series[1].Color = Color.Red;
                             chartSensorPt.Series[2].ChartType = SeriesChartType.Point;
                             chartSensorPt.Series[2].Color = Color.Green;
-                            for (int i = 0; i < AnalysisData.tiltingdata_y.Length; i++)
+                            for (int i = 0; i < AnalysisData2.tiltingdata_y.Length; i++)
                             {
-                                chartSensorPt.Series[0].Points.AddXY(AnalysisData.tiltingdata_x[i], AnalysisData.tiltingdata_y[i]);
+                                chartSensorPt.Series[0].Points.AddXY(AnalysisData2.tiltingdata_x[i], AnalysisData2.tiltingdata_y[i]);
                             }
 
-                            for (int i = 0; i < AnalysisData.tiltingdata_y2.Length; i++)
+                            for (int i = 0; i < AnalysisData2.tiltingdata_y2.Length; i++)
                             {
-                                chartSensorPt.Series[1].Points.AddXY(AnalysisData.tiltingdata_x2[i], AnalysisData.tiltingdata_y2[i]);
+                                chartSensorPt.Series[1].Points.AddXY(AnalysisData2.tiltingdata_x2[i], AnalysisData2.tiltingdata_y2[i]);
                             }
 
-                            for (int i = 0; i < AnalysisData.tiltingdata_y3.Length; i++)
+                            for (int i = 0; i < AnalysisData2.tiltingdata_y3.Length; i++)
                             {
-                                chartSensorPt.Series[2].Points.AddXY(AnalysisData.tiltingdata_x3[i], AnalysisData.tiltingdata_y3[i]);
+                                chartSensorPt.Series[2].Points.AddXY(AnalysisData2.tiltingdata_x3[i], AnalysisData2.tiltingdata_y3[i]);
                             }
 
-                            chartSensorPt.Series[3].Points.AddXY(0, AnalysisData.resultdata[AnalysisData.rotateCount_current][6]);
-                            chartSensorPt.Series[3].Points.AddXY(AnalysisData.tiltingdata_x[AnalysisData.tiltingdata_x.Length - 1], AnalysisData.resultdata[AnalysisData.rotateCount_current][6]);
-                            chartSensorPt.Series[4].Points.AddXY(0, AnalysisData.resultdata[AnalysisData.rotateCount_current][7]);
-                            chartSensorPt.Series[4].Points.AddXY(AnalysisData.tiltingdata_x[AnalysisData.tiltingdata_x.Length - 1], AnalysisData.resultdata[AnalysisData.rotateCount_current][7]);
-                            chartSensorPt.Series[5].Points.AddXY(0, AnalysisData.resultdata[AnalysisData.rotateCount_current][8]);
-                            chartSensorPt.Series[5].Points.AddXY(AnalysisData.tiltingdata_x[AnalysisData.tiltingdata_x.Length - 1], AnalysisData.resultdata[AnalysisData.rotateCount_current][8]);
-                            chartSensorPt.Series[6].Points.AddXY(AnalysisData.resultdata[AnalysisData.rotateCount_current][9], 0);
-                            chartSensorPt.Series[6].Points.AddXY(AnalysisData.resultdata[AnalysisData.rotateCount_current][9], AnalysisData.tiltingdata_y.Min());
-                            chartSensorPt.Series[7].Points.AddXY(AnalysisData.resultdata[AnalysisData.rotateCount_current][10], 0);
-                            chartSensorPt.Series[7].Points.AddXY(AnalysisData.resultdata[AnalysisData.rotateCount_current][10], AnalysisData.tiltingdata_y.Min());
-                            chartSensorPt.Series[8].Points.AddXY(AnalysisData.resultdata[AnalysisData.rotateCount_current][11], 0);
-                            chartSensorPt.Series[8].Points.AddXY(AnalysisData.resultdata[AnalysisData.rotateCount_current][11], AnalysisData.tiltingdata_y.Min());
-                            _h1 = AnalysisData.resultdata[AnalysisData.rotateCount_current][0] + fram.Analysis.Offset2StepH1;
-                            _w1 = AnalysisData.resultdata[AnalysisData.rotateCount_current][1] + AnalysisData.resultdata[AnalysisData.rotateCount_current][3] + fram.Analysis.Offset2StepW1;
-                            _h2 = AnalysisData.resultdata[AnalysisData.rotateCount_current][2] + AnalysisData.resultdata[AnalysisData.rotateCount_current][0] + fram.Analysis.Offset2StepH2;
-                            _w2 = AnalysisData.resultdata[AnalysisData.rotateCount_current][3] + fram.Analysis.Offset2StepW2;
+                            chartSensorPt.Series[3].Points.AddXY(0, AnalysisData2.resultdata[AnalysisData2.rotateCount_current][6]);
+                            chartSensorPt.Series[3].Points.AddXY(AnalysisData2.tiltingdata_x[AnalysisData2.tiltingdata_x.Length - 1], AnalysisData2.resultdata[AnalysisData2.rotateCount_current][6]);
+                            chartSensorPt.Series[4].Points.AddXY(0, AnalysisData2.resultdata[AnalysisData2.rotateCount_current][7]);
+                            chartSensorPt.Series[4].Points.AddXY(AnalysisData2.tiltingdata_x[AnalysisData2.tiltingdata_x.Length - 1], AnalysisData2.resultdata[AnalysisData2.rotateCount_current][7]);
+                            chartSensorPt.Series[5].Points.AddXY(0, AnalysisData2.resultdata[AnalysisData2.rotateCount_current][8]);
+                            chartSensorPt.Series[5].Points.AddXY(AnalysisData2.tiltingdata_x[AnalysisData2.tiltingdata_x.Length - 1], AnalysisData2.resultdata[AnalysisData2.rotateCount_current][8]);
+                            chartSensorPt.Series[6].Points.AddXY(AnalysisData2.resultdata[AnalysisData2.rotateCount_current][9], 0);
+                            chartSensorPt.Series[6].Points.AddXY(AnalysisData2.resultdata[AnalysisData2.rotateCount_current][9], AnalysisData2.tiltingdata_y.Min());
+                            chartSensorPt.Series[7].Points.AddXY(AnalysisData2.resultdata[AnalysisData2.rotateCount_current][10], 0);
+                            chartSensorPt.Series[7].Points.AddXY(AnalysisData2.resultdata[AnalysisData2.rotateCount_current][10], AnalysisData2.tiltingdata_y.Min());
+                            chartSensorPt.Series[8].Points.AddXY(AnalysisData2.resultdata[AnalysisData2.rotateCount_current][11], 0);
+                            chartSensorPt.Series[8].Points.AddXY(AnalysisData2.resultdata[AnalysisData2.rotateCount_current][11], AnalysisData2.tiltingdata_y.Min());
+                            _h1 = AnalysisData2.resultdata[AnalysisData2.rotateCount_current][0] + fram.Analysis.Offset2StepH1;
+                            _w1 = AnalysisData2.resultdata[AnalysisData2.rotateCount_current][1] + AnalysisData2.resultdata[AnalysisData2.rotateCount_current][3] + fram.Analysis.Offset2StepW1;
+                            _h2 = AnalysisData2.resultdata[AnalysisData2.rotateCount_current][2] + AnalysisData2.resultdata[AnalysisData2.rotateCount_current][0] + fram.Analysis.Offset2StepH2;
+                            _w2 = AnalysisData2.resultdata[AnalysisData2.rotateCount_current][3] + fram.Analysis.Offset2StepW2;
 
                             ParamFile.SaveRawdata_png(chartSensorPt, Common.EFEM.LoadPort_Run.FoupID + "_" + Common.EFEM.Stage1.Slot + "_" + sram.PitchAngleTotal, DateTime.Now, dif_H.ToString(), dif_W.ToString(), _w1, _w2, _h1, _h2);
                         }
