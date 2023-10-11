@@ -67,3 +67,10 @@ C:\Users\windows user\Desktop\TrimGap - 20230629\Camera\obj\Debug\Camera.csproj.
 C:\Users\windows user\Desktop\TrimGap - 20230629\Camera\obj\Debug\Camera.csproj.CopyComplete
 C:\Users\windows user\Desktop\TrimGap - 20230629\Camera\obj\Debug\Camera.dll
 C:\Users\windows user\Desktop\TrimGap - 20230629\Camera\obj\Debug\Camera.pdb
+E:\專案\TrimGap\TrimGap - 20230918\bin\Lib\Camera.dll
+E:\專案\TrimGap\TrimGap - 20230918\bin\Lib\Camera.pdb
+E:\專案\TrimGap\TrimGap - 20230918\Camera\obj\Debug\Camera.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230918\Camera\obj\Debug\Camera.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230918\Camera\obj\Debug\Camera.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230918\Camera\obj\Debug\Camera.dll
+E:\專案\TrimGap\TrimGap - 20230918\Camera\obj\Debug\Camera.pdb

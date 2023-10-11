@@ -46,6 +46,9 @@
             this.tb_ShowDataNum_copy = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tb_Analysis_LJ_StandardPlane = new System.Windows.Forms.TextBox();
+            this.tb_Analysis_LJ_StandardPlane_copy = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.tb_Range2_Percent = new System.Windows.Forms.TextBox();
             this.tb_Range2_Percent_copy = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -80,6 +83,30 @@
             this.btnParamSave = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tb_EDGE_2StepW1_copy = new System.Windows.Forms.TextBox();
+            this.tb_EDGE_2StepW1 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.tb_EDGE_1StepW_copy = new System.Windows.Forms.TextBox();
+            this.tb_EDGE_1StepW = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.tb_PT_2StepW2_copy = new System.Windows.Forms.TextBox();
+            this.tb_PT_2StepH2_copy = new System.Windows.Forms.TextBox();
+            this.tb_PT_2StepW2 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.tb_PT_2StepH2 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.tb_PT_2StepW1_copy = new System.Windows.Forms.TextBox();
+            this.tb_PT_2StepH1_copy = new System.Windows.Forms.TextBox();
+            this.tb_PT_1StepW_copy = new System.Windows.Forms.TextBox();
+            this.tb_PT_2StepW1 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.tb_PT_2StepH1 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.tb_PT_1StepW = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.tb_PT_1StepH = new System.Windows.Forms.TextBox();
+            this.tb_PT_1StepH_copy = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.tb_BlueTapeW_copy = new System.Windows.Forms.TextBox();
             this.tb_BlueTapeW = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -102,24 +129,6 @@
             this.tb_1StepH = new System.Windows.Forms.TextBox();
             this.tb_1StepH_copy = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.tb_PT_2StepW2_copy = new System.Windows.Forms.TextBox();
-            this.tb_PT_2StepH2_copy = new System.Windows.Forms.TextBox();
-            this.tb_PT_2StepW2 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.tb_PT_2StepH2 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.tb_PT_2StepW1_copy = new System.Windows.Forms.TextBox();
-            this.tb_PT_2StepH1_copy = new System.Windows.Forms.TextBox();
-            this.tb_PT_1StepW_copy = new System.Windows.Forms.TextBox();
-            this.tb_PT_2StepW1 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.tb_PT_2StepH1 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.tb_PT_1StepW = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.tb_PT_1StepH = new System.Windows.Forms.TextBox();
-            this.tb_PT_1StepH_copy = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -293,6 +302,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tb_Analysis_LJ_StandardPlane);
+            this.groupBox2.Controls.Add(this.tb_Analysis_LJ_StandardPlane_copy);
+            this.groupBox2.Controls.Add(this.label31);
             this.groupBox2.Controls.Add(this.tb_Range2_Percent);
             this.groupBox2.Controls.Add(this.tb_Range2_Percent_copy);
             this.groupBox2.Controls.Add(this.label14);
@@ -326,10 +338,38 @@
             this.groupBox2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox2.Location = new System.Drawing.Point(452, 296);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(473, 423);
+            this.groupBox2.Size = new System.Drawing.Size(473, 461);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Analysis";
+            this.groupBox2.Text = "Analysis (Default)";
+            // 
+            // tb_Analysis_LJ_StandardPlane
+            // 
+            this.tb_Analysis_LJ_StandardPlane.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_LJ_StandardPlane.Location = new System.Drawing.Point(236, 419);
+            this.tb_Analysis_LJ_StandardPlane.Name = "tb_Analysis_LJ_StandardPlane";
+            this.tb_Analysis_LJ_StandardPlane.ReadOnly = true;
+            this.tb_Analysis_LJ_StandardPlane.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_LJ_StandardPlane.TabIndex = 68;
+            // 
+            // tb_Analysis_LJ_StandardPlane_copy
+            // 
+            this.tb_Analysis_LJ_StandardPlane_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Analysis_LJ_StandardPlane_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_LJ_StandardPlane_copy.Location = new System.Drawing.Point(344, 419);
+            this.tb_Analysis_LJ_StandardPlane_copy.Name = "tb_Analysis_LJ_StandardPlane_copy";
+            this.tb_Analysis_LJ_StandardPlane_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_LJ_StandardPlane_copy.TabIndex = 67;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label31.Location = new System.Drawing.Point(17, 424);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(167, 24);
+            this.label31.TabIndex = 66;
+            this.label31.Text = "LJ Standard Plane";
             // 
             // tb_Range2_Percent
             // 
@@ -632,6 +672,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.tb_EDGE_2StepW1_copy);
+            this.groupBox3.Controls.Add(this.tb_EDGE_2StepW1);
+            this.groupBox3.Controls.Add(this.label30);
+            this.groupBox3.Controls.Add(this.tb_EDGE_1StepW_copy);
+            this.groupBox3.Controls.Add(this.tb_EDGE_1StepW);
+            this.groupBox3.Controls.Add(this.label29);
             this.groupBox3.Controls.Add(this.tb_PT_2StepW2_copy);
             this.groupBox3.Controls.Add(this.tb_PT_2StepH2_copy);
             this.groupBox3.Controls.Add(this.tb_PT_2StepW2);
@@ -675,10 +721,226 @@
             this.groupBox3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox3.Location = new System.Drawing.Point(12, 65);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(426, 571);
+            this.groupBox3.Size = new System.Drawing.Size(426, 654);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Result offset";
+            // 
+            // tb_EDGE_2StepW1_copy
+            // 
+            this.tb_EDGE_2StepW1_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_EDGE_2StepW1_copy.Location = new System.Drawing.Point(320, 602);
+            this.tb_EDGE_2StepW1_copy.Name = "tb_EDGE_2StepW1_copy";
+            this.tb_EDGE_2StepW1_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_EDGE_2StepW1_copy.TabIndex = 79;
+            // 
+            // tb_EDGE_2StepW1
+            // 
+            this.tb_EDGE_2StepW1.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_EDGE_2StepW1.Location = new System.Drawing.Point(212, 602);
+            this.tb_EDGE_2StepW1.Name = "tb_EDGE_2StepW1";
+            this.tb_EDGE_2StepW1.ReadOnly = true;
+            this.tb_EDGE_2StepW1.Size = new System.Drawing.Size(100, 33);
+            this.tb_EDGE_2StepW1.TabIndex = 78;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label30.Location = new System.Drawing.Point(17, 607);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(152, 24);
+            this.label30.TabIndex = 77;
+            this.label30.Text = "Edge 2 Step W1";
+            // 
+            // tb_EDGE_1StepW_copy
+            // 
+            this.tb_EDGE_1StepW_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_EDGE_1StepW_copy.Location = new System.Drawing.Point(320, 563);
+            this.tb_EDGE_1StepW_copy.Name = "tb_EDGE_1StepW_copy";
+            this.tb_EDGE_1StepW_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_EDGE_1StepW_copy.TabIndex = 76;
+            // 
+            // tb_EDGE_1StepW
+            // 
+            this.tb_EDGE_1StepW.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_EDGE_1StepW.Location = new System.Drawing.Point(212, 563);
+            this.tb_EDGE_1StepW.Name = "tb_EDGE_1StepW";
+            this.tb_EDGE_1StepW.ReadOnly = true;
+            this.tb_EDGE_1StepW.Size = new System.Drawing.Size(100, 33);
+            this.tb_EDGE_1StepW.TabIndex = 75;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label29.Location = new System.Drawing.Point(17, 568);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(141, 24);
+            this.label29.TabIndex = 74;
+            this.label29.Text = "Edge 1 Step W";
+            // 
+            // tb_PT_2StepW2_copy
+            // 
+            this.tb_PT_2StepW2_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_2StepW2_copy.Location = new System.Drawing.Point(320, 524);
+            this.tb_PT_2StepW2_copy.Name = "tb_PT_2StepW2_copy";
+            this.tb_PT_2StepW2_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_2StepW2_copy.TabIndex = 73;
+            // 
+            // tb_PT_2StepH2_copy
+            // 
+            this.tb_PT_2StepH2_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_2StepH2_copy.Location = new System.Drawing.Point(320, 486);
+            this.tb_PT_2StepH2_copy.Name = "tb_PT_2StepH2_copy";
+            this.tb_PT_2StepH2_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_2StepH2_copy.TabIndex = 72;
+            // 
+            // tb_PT_2StepW2
+            // 
+            this.tb_PT_2StepW2.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_2StepW2.Location = new System.Drawing.Point(212, 524);
+            this.tb_PT_2StepW2.Name = "tb_PT_2StepW2";
+            this.tb_PT_2StepW2.ReadOnly = true;
+            this.tb_PT_2StepW2.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_2StepW2.TabIndex = 71;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label23.Location = new System.Drawing.Point(17, 528);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(129, 24);
+            this.label23.TabIndex = 70;
+            this.label23.Text = "PT 2 Step W2";
+            // 
+            // tb_PT_2StepH2
+            // 
+            this.tb_PT_2StepH2.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_2StepH2.Location = new System.Drawing.Point(212, 486);
+            this.tb_PT_2StepH2.Name = "tb_PT_2StepH2";
+            this.tb_PT_2StepH2.ReadOnly = true;
+            this.tb_PT_2StepH2.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_2StepH2.TabIndex = 69;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label24.Location = new System.Drawing.Point(17, 490);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(124, 24);
+            this.label24.TabIndex = 68;
+            this.label24.Text = "PT 2 Step H2";
+            // 
+            // tb_PT_2StepW1_copy
+            // 
+            this.tb_PT_2StepW1_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_2StepW1_copy.Location = new System.Drawing.Point(320, 447);
+            this.tb_PT_2StepW1_copy.Name = "tb_PT_2StepW1_copy";
+            this.tb_PT_2StepW1_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_2StepW1_copy.TabIndex = 67;
+            // 
+            // tb_PT_2StepH1_copy
+            // 
+            this.tb_PT_2StepH1_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_2StepH1_copy.Location = new System.Drawing.Point(320, 409);
+            this.tb_PT_2StepH1_copy.Name = "tb_PT_2StepH1_copy";
+            this.tb_PT_2StepH1_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_2StepH1_copy.TabIndex = 66;
+            // 
+            // tb_PT_1StepW_copy
+            // 
+            this.tb_PT_1StepW_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_1StepW_copy.Location = new System.Drawing.Point(320, 371);
+            this.tb_PT_1StepW_copy.Name = "tb_PT_1StepW_copy";
+            this.tb_PT_1StepW_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_1StepW_copy.TabIndex = 65;
+            // 
+            // tb_PT_2StepW1
+            // 
+            this.tb_PT_2StepW1.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_2StepW1.Location = new System.Drawing.Point(212, 447);
+            this.tb_PT_2StepW1.Name = "tb_PT_2StepW1";
+            this.tb_PT_2StepW1.ReadOnly = true;
+            this.tb_PT_2StepW1.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_2StepW1.TabIndex = 64;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label25.Location = new System.Drawing.Point(17, 451);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(129, 24);
+            this.label25.TabIndex = 63;
+            this.label25.Text = "PT 2 Step W1";
+            // 
+            // tb_PT_2StepH1
+            // 
+            this.tb_PT_2StepH1.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_2StepH1.Location = new System.Drawing.Point(212, 409);
+            this.tb_PT_2StepH1.Name = "tb_PT_2StepH1";
+            this.tb_PT_2StepH1.ReadOnly = true;
+            this.tb_PT_2StepH1.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_2StepH1.TabIndex = 62;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label26.Location = new System.Drawing.Point(17, 413);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(124, 24);
+            this.label26.TabIndex = 61;
+            this.label26.Text = "PT 2 Step H1";
+            // 
+            // tb_PT_1StepW
+            // 
+            this.tb_PT_1StepW.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_1StepW.Location = new System.Drawing.Point(212, 371);
+            this.tb_PT_1StepW.Name = "tb_PT_1StepW";
+            this.tb_PT_1StepW.ReadOnly = true;
+            this.tb_PT_1StepW.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_1StepW.TabIndex = 60;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label27.Location = new System.Drawing.Point(17, 376);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(118, 24);
+            this.label27.TabIndex = 59;
+            this.label27.Text = "PT 1 Step W";
+            // 
+            // tb_PT_1StepH
+            // 
+            this.tb_PT_1StepH.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_1StepH.Location = new System.Drawing.Point(212, 332);
+            this.tb_PT_1StepH.Name = "tb_PT_1StepH";
+            this.tb_PT_1StepH.ReadOnly = true;
+            this.tb_PT_1StepH.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_1StepH.TabIndex = 58;
+            // 
+            // tb_PT_1StepH_copy
+            // 
+            this.tb_PT_1StepH_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_1StepH_copy.Location = new System.Drawing.Point(320, 332);
+            this.tb_PT_1StepH_copy.Name = "tb_PT_1StepH_copy";
+            this.tb_PT_1StepH_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_1StepH_copy.TabIndex = 57;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label28.Location = new System.Drawing.Point(17, 337);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(113, 24);
+            this.label28.TabIndex = 56;
+            this.label28.Text = "PT 1 Step H";
             // 
             // tb_BlueTapeW_copy
             // 
@@ -879,173 +1141,11 @@
             this.label20.TabIndex = 7;
             this.label20.Text = "1 Step H";
             // 
-            // tb_PT_2StepW2_copy
-            // 
-            this.tb_PT_2StepW2_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_PT_2StepW2_copy.Location = new System.Drawing.Point(320, 524);
-            this.tb_PT_2StepW2_copy.Name = "tb_PT_2StepW2_copy";
-            this.tb_PT_2StepW2_copy.Size = new System.Drawing.Size(100, 33);
-            this.tb_PT_2StepW2_copy.TabIndex = 73;
-            // 
-            // tb_PT_2StepH2_copy
-            // 
-            this.tb_PT_2StepH2_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_PT_2StepH2_copy.Location = new System.Drawing.Point(320, 486);
-            this.tb_PT_2StepH2_copy.Name = "tb_PT_2StepH2_copy";
-            this.tb_PT_2StepH2_copy.Size = new System.Drawing.Size(100, 33);
-            this.tb_PT_2StepH2_copy.TabIndex = 72;
-            // 
-            // tb_PT_2StepW2
-            // 
-            this.tb_PT_2StepW2.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_PT_2StepW2.Location = new System.Drawing.Point(212, 524);
-            this.tb_PT_2StepW2.Name = "tb_PT_2StepW2";
-            this.tb_PT_2StepW2.ReadOnly = true;
-            this.tb_PT_2StepW2.Size = new System.Drawing.Size(100, 33);
-            this.tb_PT_2StepW2.TabIndex = 71;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label23.Location = new System.Drawing.Point(17, 528);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(129, 24);
-            this.label23.TabIndex = 70;
-            this.label23.Text = "PT 2 Step W2";
-            // 
-            // tb_PT_2StepH2
-            // 
-            this.tb_PT_2StepH2.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_PT_2StepH2.Location = new System.Drawing.Point(212, 486);
-            this.tb_PT_2StepH2.Name = "tb_PT_2StepH2";
-            this.tb_PT_2StepH2.ReadOnly = true;
-            this.tb_PT_2StepH2.Size = new System.Drawing.Size(100, 33);
-            this.tb_PT_2StepH2.TabIndex = 69;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label24.Location = new System.Drawing.Point(17, 490);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(124, 24);
-            this.label24.TabIndex = 68;
-            this.label24.Text = "PT 2 Step H2";
-            // 
-            // tb_PT_2StepW1_copy
-            // 
-            this.tb_PT_2StepW1_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_PT_2StepW1_copy.Location = new System.Drawing.Point(320, 447);
-            this.tb_PT_2StepW1_copy.Name = "tb_PT_2StepW1_copy";
-            this.tb_PT_2StepW1_copy.Size = new System.Drawing.Size(100, 33);
-            this.tb_PT_2StepW1_copy.TabIndex = 67;
-            // 
-            // tb_PT_2StepH1_copy
-            // 
-            this.tb_PT_2StepH1_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_PT_2StepH1_copy.Location = new System.Drawing.Point(320, 409);
-            this.tb_PT_2StepH1_copy.Name = "tb_PT_2StepH1_copy";
-            this.tb_PT_2StepH1_copy.Size = new System.Drawing.Size(100, 33);
-            this.tb_PT_2StepH1_copy.TabIndex = 66;
-            // 
-            // tb_PT_1StepW_copy
-            // 
-            this.tb_PT_1StepW_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_PT_1StepW_copy.Location = new System.Drawing.Point(320, 371);
-            this.tb_PT_1StepW_copy.Name = "tb_PT_1StepW_copy";
-            this.tb_PT_1StepW_copy.Size = new System.Drawing.Size(100, 33);
-            this.tb_PT_1StepW_copy.TabIndex = 65;
-            // 
-            // tb_PT_2StepW1
-            // 
-            this.tb_PT_2StepW1.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_PT_2StepW1.Location = new System.Drawing.Point(212, 447);
-            this.tb_PT_2StepW1.Name = "tb_PT_2StepW1";
-            this.tb_PT_2StepW1.ReadOnly = true;
-            this.tb_PT_2StepW1.Size = new System.Drawing.Size(100, 33);
-            this.tb_PT_2StepW1.TabIndex = 64;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label25.Location = new System.Drawing.Point(17, 451);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(129, 24);
-            this.label25.TabIndex = 63;
-            this.label25.Text = "PT 2 Step W1";
-            // 
-            // tb_PT_2StepH1
-            // 
-            this.tb_PT_2StepH1.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_PT_2StepH1.Location = new System.Drawing.Point(212, 409);
-            this.tb_PT_2StepH1.Name = "tb_PT_2StepH1";
-            this.tb_PT_2StepH1.ReadOnly = true;
-            this.tb_PT_2StepH1.Size = new System.Drawing.Size(100, 33);
-            this.tb_PT_2StepH1.TabIndex = 62;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label26.Location = new System.Drawing.Point(17, 413);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(124, 24);
-            this.label26.TabIndex = 61;
-            this.label26.Text = "PT 2 Step H1";
-            // 
-            // tb_PT_1StepW
-            // 
-            this.tb_PT_1StepW.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_PT_1StepW.Location = new System.Drawing.Point(212, 371);
-            this.tb_PT_1StepW.Name = "tb_PT_1StepW";
-            this.tb_PT_1StepW.ReadOnly = true;
-            this.tb_PT_1StepW.Size = new System.Drawing.Size(100, 33);
-            this.tb_PT_1StepW.TabIndex = 60;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label27.Location = new System.Drawing.Point(17, 376);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(118, 24);
-            this.label27.TabIndex = 59;
-            this.label27.Text = "PT 1 Step W";
-            // 
-            // tb_PT_1StepH
-            // 
-            this.tb_PT_1StepH.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_PT_1StepH.Location = new System.Drawing.Point(212, 332);
-            this.tb_PT_1StepH.Name = "tb_PT_1StepH";
-            this.tb_PT_1StepH.ReadOnly = true;
-            this.tb_PT_1StepH.Size = new System.Drawing.Size(100, 33);
-            this.tb_PT_1StepH.TabIndex = 58;
-            // 
-            // tb_PT_1StepH_copy
-            // 
-            this.tb_PT_1StepH_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_PT_1StepH_copy.Location = new System.Drawing.Point(320, 332);
-            this.tb_PT_1StepH_copy.Name = "tb_PT_1StepH_copy";
-            this.tb_PT_1StepH_copy.Size = new System.Drawing.Size(100, 33);
-            this.tb_PT_1StepH_copy.TabIndex = 57;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label28.Location = new System.Drawing.Point(17, 337);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(113, 24);
-            this.label28.TabIndex = 56;
-            this.label28.Text = "PT 1 Step H";
-            // 
             // ParaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 729);
+            this.ClientSize = new System.Drawing.Size(946, 769);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnParamClear);
             this.Controls.Add(this.btnParamSave);
@@ -1157,5 +1257,14 @@
         private System.Windows.Forms.TextBox tb_PT_1StepH;
         private System.Windows.Forms.TextBox tb_PT_1StepH_copy;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox tb_EDGE_2StepW1_copy;
+        private System.Windows.Forms.TextBox tb_EDGE_2StepW1;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox tb_EDGE_1StepW_copy;
+        private System.Windows.Forms.TextBox tb_EDGE_1StepW;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox tb_Analysis_LJ_StandardPlane;
+        private System.Windows.Forms.TextBox tb_Analysis_LJ_StandardPlane_copy;
+        private System.Windows.Forms.Label label31;
     }
 }

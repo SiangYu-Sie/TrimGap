@@ -43,3 +43,13 @@ fram.Recipe.Angle8,            UINT_2,       1,      360, PPARM 2 def
 fram.Recipe.CreateTime,        ASCII,      N/A,        N/A, Recipe CreateTime
 fram.Recipe.ReviseTime,        ASCII,      N/A,        N/A, Recipe ReviseTime
 fram.Recipe.OffsetType,        UINT_1,       0,         20, PPARM 1 def
+fram.Recipe.WaferEdgeEvaluate,        UINT_1,       0,         10, PPARM 1 def
+fram.Recipe.BlueTapeThreshold,            UINT_2,       0,      255, PPARM 2 def
+fram.Recipe.Step1_Range_step1x0,            UINT_2,       1,      20000, PPARM 2 def
+fram.Recipe.Step1_Range_step1x1,            UINT_2,       1,      20000, PPARM 2 def
+fram.Recipe.Step2_Range_step1x0,            UINT_2,       1,      20000, PPARM 2 def
+fram.Recipe.Step2_Range_step1x1,            UINT_2,       1,      20000, PPARM 2 def
+fram.Recipe.Step2_Range_step2x0,            UINT_2,       1,      20000, PPARM 2 def
+fram.Recipe.Step2_Range_step2x1,            UINT_2,       1,      20000, PPARM 2 def
+fram.Recipe.Range1_Percent,            UINT_1,       1,      100, PPARM 2 def
+fram.Recipe.Range2_Percent,            UINT_1,       1,      100, PPARM 2 def

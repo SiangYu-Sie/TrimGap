@@ -1410,6 +1410,22 @@ namespace TrimGap
             return OutputData;
         }
 
+        public double[] removeZero2_threshold(double[] data, double threshold) //把數據低於threshold的直接拿掉 資料出來會比進去少
+        {
+            MWArray result;
+
+            double[] InputData = data;
+            MWNumericArray array1 = (MWNumericArray)InputData;
+            result = pml.removeZero2_threshold(array1, threshold);
+            double[,] MatlabToCsharp = (double[,])result.ToArray(); // 格式轉換
+            double[] OutputData = new double[MatlabToCsharp.Length];
+            for (int i = 0; i < MatlabToCsharp.Length; i++)
+            {
+                OutputData[i] = MatlabToCsharp[0, i];
+            }
+            return OutputData;
+        }
+
         public void removeZero3(double[] data, double[] data2, double[] data3, out double[] newdata1, out double[] newdata2, out double[] newdata3) //把數據為0的直接拿掉 資料出來會比進去少
         {
             MWArray[] result;

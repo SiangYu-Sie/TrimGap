@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbRecipe = new System.Windows.Forms.GroupBox();
+            this.cb_TrimWaferEdgeEvaluate = new System.Windows.Forms.CheckBox();
             this.cb_Offset = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.gB_TTV = new System.Windows.Forms.GroupBox();
@@ -42,6 +43,7 @@
             this.tb_CreateTime = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbtn_Trim2step2nd = new System.Windows.Forms.RadioButton();
             this.rbtn_Trim2step = new System.Windows.Forms.RadioButton();
             this.rbtn_Trim1step = new System.Windows.Forms.RadioButton();
             this.rbtn_BlueTape = new System.Windows.Forms.RadioButton();
@@ -114,7 +116,26 @@
             this.btn_ChangeRecipe2 = new System.Windows.Forms.Button();
             this.btn_ClearRecipeLP1 = new System.Windows.Forms.Button();
             this.btn_ClearRecipeLP2 = new System.Windows.Forms.Button();
-            this.rbtn_Trim2step2nd = new System.Windows.Forms.RadioButton();
+            this.tb_BlueTape_Threshold = new System.Windows.Forms.TextBox();
+            this.lb_BlueTape_Threshold = new System.Windows.Forms.Label();
+            this.gb_BlueTape = new System.Windows.Forms.GroupBox();
+            this.gb_Trim = new System.Windows.Forms.GroupBox();
+            this.tb_Step1_Range_step1x0 = new System.Windows.Forms.TextBox();
+            this.lb_Step1_Range_Step1x0 = new System.Windows.Forms.Label();
+            this.tb_Step1_Range_step1x1 = new System.Windows.Forms.TextBox();
+            this.lb_Step1_Range_Step1x1 = new System.Windows.Forms.Label();
+            this.tb_Step2_Range_step1x1 = new System.Windows.Forms.TextBox();
+            this.lb_Step2_Range_step1x1 = new System.Windows.Forms.Label();
+            this.tb_Step2_Range_step1x0 = new System.Windows.Forms.TextBox();
+            this.lb_Step2_Range_step1x0 = new System.Windows.Forms.Label();
+            this.tb_Step2_Range_step2x1 = new System.Windows.Forms.TextBox();
+            this.lb_Step2_Range_step2x1 = new System.Windows.Forms.Label();
+            this.tb_Step2_Range_step2x0 = new System.Windows.Forms.TextBox();
+            this.lb_Step2_Range_step2x0 = new System.Windows.Forms.Label();
+            this.tb_Range2_Percent = new System.Windows.Forms.TextBox();
+            this.lb_Range2_Percent = new System.Windows.Forms.Label();
+            this.tb_Range1_Percent = new System.Windows.Forms.TextBox();
+            this.lb_Range1_Percent = new System.Windows.Forms.Label();
             this.gbRecipe.SuspendLayout();
             this.gB_TTV.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -128,10 +149,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Angle2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Angle1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.gb_BlueTape.SuspendLayout();
+            this.gb_Trim.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbRecipe
             // 
+            this.gbRecipe.Controls.Add(this.gb_Trim);
+            this.gbRecipe.Controls.Add(this.gb_BlueTape);
+            this.gbRecipe.Controls.Add(this.cb_TrimWaferEdgeEvaluate);
             this.gbRecipe.Controls.Add(this.cb_Offset);
             this.gbRecipe.Controls.Add(this.label20);
             this.gbRecipe.Controls.Add(this.gB_TTV);
@@ -176,10 +202,19 @@
             this.gbRecipe.Controls.Add(this.checkBox1);
             this.gbRecipe.Location = new System.Drawing.Point(501, 72);
             this.gbRecipe.Name = "gbRecipe";
-            this.gbRecipe.Size = new System.Drawing.Size(401, 451);
+            this.gbRecipe.Size = new System.Drawing.Size(401, 677);
             this.gbRecipe.TabIndex = 0;
             this.gbRecipe.TabStop = false;
             this.gbRecipe.Text = "Recipe";
+            // 
+            // cb_TrimWaferEdgeEvaluate
+            // 
+            this.cb_TrimWaferEdgeEvaluate.Location = new System.Drawing.Point(139, 254);
+            this.cb_TrimWaferEdgeEvaluate.Name = "cb_TrimWaferEdgeEvaluate";
+            this.cb_TrimWaferEdgeEvaluate.Size = new System.Drawing.Size(93, 35);
+            this.cb_TrimWaferEdgeEvaluate.TabIndex = 49;
+            this.cb_TrimWaferEdgeEvaluate.Text = "Trim Wafer Edge Evaluate";
+            this.cb_TrimWaferEdgeEvaluate.UseVisualStyleBackColor = true;
             // 
             // cb_Offset
             // 
@@ -206,9 +241,9 @@
             this.gB_TTV.Controls.Add(this.label18);
             this.gB_TTV.Controls.Add(this.btn_TTVScanPattern);
             this.gB_TTV.Controls.Add(this.cb_SF3RecipeName);
-            this.gB_TTV.Location = new System.Drawing.Point(133, 316);
+            this.gB_TTV.Location = new System.Drawing.Point(124, 370);
             this.gB_TTV.Name = "gB_TTV";
-            this.gB_TTV.Size = new System.Drawing.Size(248, 71);
+            this.gB_TTV.Size = new System.Drawing.Size(268, 71);
             this.gB_TTV.TabIndex = 46;
             this.gB_TTV.TabStop = false;
             this.gB_TTV.Text = "TTV";
@@ -260,7 +295,7 @@
             // 
             // tb_ReviseTime
             // 
-            this.tb_ReviseTime.Location = new System.Drawing.Point(233, 421);
+            this.tb_ReviseTime.Location = new System.Drawing.Point(224, 642);
             this.tb_ReviseTime.Name = "tb_ReviseTime";
             this.tb_ReviseTime.ReadOnly = true;
             this.tb_ReviseTime.Size = new System.Drawing.Size(168, 22);
@@ -269,7 +304,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(137, 425);
+            this.label16.Location = new System.Drawing.Point(128, 646);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(63, 12);
             this.label16.TabIndex = 42;
@@ -277,7 +312,7 @@
             // 
             // tb_CreateTime
             // 
-            this.tb_CreateTime.Location = new System.Drawing.Point(233, 393);
+            this.tb_CreateTime.Location = new System.Drawing.Point(224, 614);
             this.tb_CreateTime.Name = "tb_CreateTime";
             this.tb_CreateTime.ReadOnly = true;
             this.tb_CreateTime.Size = new System.Drawing.Size(168, 22);
@@ -286,7 +321,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(137, 397);
+            this.label15.Location = new System.Drawing.Point(128, 618);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(62, 12);
             this.label15.TabIndex = 40;
@@ -304,6 +339,18 @@
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Type";
+            // 
+            // rbtn_Trim2step2nd
+            // 
+            this.rbtn_Trim2step2nd.AutoSize = true;
+            this.rbtn_Trim2step2nd.Location = new System.Drawing.Point(6, 69);
+            this.rbtn_Trim2step2nd.Name = "rbtn_Trim2step2nd";
+            this.rbtn_Trim2step2nd.Size = new System.Drawing.Size(103, 16);
+            this.rbtn_Trim2step2nd.TabIndex = 31;
+            this.rbtn_Trim2step2nd.TabStop = true;
+            this.rbtn_Trim2step2nd.Text = "Trim 2 Step + PT";
+            this.rbtn_Trim2step2nd.UseVisualStyleBackColor = true;
+            this.rbtn_Trim2step2nd.CheckedChanged += new System.EventHandler(this.rbtn_Trim2step_CheckedChanged);
             // 
             // rbtn_Trim2step
             // 
@@ -1024,7 +1071,7 @@
             this.treeView_Recipe.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.treeView_Recipe.Location = new System.Drawing.Point(12, 165);
             this.treeView_Recipe.Name = "treeView_Recipe";
-            this.treeView_Recipe.Size = new System.Drawing.Size(483, 357);
+            this.treeView_Recipe.Size = new System.Drawing.Size(483, 584);
             this.treeView_Recipe.TabIndex = 3;
             this.treeView_Recipe.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_Recipe_AfterSelect);
             // 
@@ -1146,23 +1193,209 @@
             this.btn_ClearRecipeLP2.UseVisualStyleBackColor = true;
             this.btn_ClearRecipeLP2.Click += new System.EventHandler(this.btn_ClearRecipeLP2_Click);
             // 
-            // rbtn_Trim2step2nd
+            // tb_BlueTape_Threshold
             // 
-            this.rbtn_Trim2step2nd.AutoSize = true;
-            this.rbtn_Trim2step2nd.Location = new System.Drawing.Point(6, 69);
-            this.rbtn_Trim2step2nd.Name = "rbtn_Trim2step2nd";
-            this.rbtn_Trim2step2nd.Size = new System.Drawing.Size(103, 16);
-            this.rbtn_Trim2step2nd.TabIndex = 31;
-            this.rbtn_Trim2step2nd.TabStop = true;
-            this.rbtn_Trim2step2nd.Text = "Trim 2 Step + PT";
-            this.rbtn_Trim2step2nd.UseVisualStyleBackColor = true;
-            this.rbtn_Trim2step2nd.CheckedChanged += new System.EventHandler(this.rbtn_Trim2step_CheckedChanged);
+            this.tb_BlueTape_Threshold.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_BlueTape_Threshold.Location = new System.Drawing.Point(128, 15);
+            this.tb_BlueTape_Threshold.Name = "tb_BlueTape_Threshold";
+            this.tb_BlueTape_Threshold.ReadOnly = true;
+            this.tb_BlueTape_Threshold.Size = new System.Drawing.Size(97, 22);
+            this.tb_BlueTape_Threshold.TabIndex = 50;
+            // 
+            // lb_BlueTape_Threshold
+            // 
+            this.lb_BlueTape_Threshold.AutoSize = true;
+            this.lb_BlueTape_Threshold.Location = new System.Drawing.Point(9, 19);
+            this.lb_BlueTape_Threshold.Name = "lb_BlueTape_Threshold";
+            this.lb_BlueTape_Threshold.Size = new System.Drawing.Size(101, 12);
+            this.lb_BlueTape_Threshold.TabIndex = 51;
+            this.lb_BlueTape_Threshold.Text = "BlueTapeThreshold(";
+            // 
+            // gb_BlueTape
+            // 
+            this.gb_BlueTape.Controls.Add(this.tb_BlueTape_Threshold);
+            this.gb_BlueTape.Controls.Add(this.lb_BlueTape_Threshold);
+            this.gb_BlueTape.Location = new System.Drawing.Point(124, 318);
+            this.gb_BlueTape.Name = "gb_BlueTape";
+            this.gb_BlueTape.Size = new System.Drawing.Size(268, 46);
+            this.gb_BlueTape.TabIndex = 52;
+            this.gb_BlueTape.TabStop = false;
+            this.gb_BlueTape.Text = "BlueTape";
+            // 
+            // gb_Trim
+            // 
+            this.gb_Trim.Controls.Add(this.tb_Range2_Percent);
+            this.gb_Trim.Controls.Add(this.lb_Range2_Percent);
+            this.gb_Trim.Controls.Add(this.tb_Range1_Percent);
+            this.gb_Trim.Controls.Add(this.lb_Range1_Percent);
+            this.gb_Trim.Controls.Add(this.tb_Step2_Range_step2x1);
+            this.gb_Trim.Controls.Add(this.lb_Step2_Range_step2x1);
+            this.gb_Trim.Controls.Add(this.tb_Step2_Range_step2x0);
+            this.gb_Trim.Controls.Add(this.lb_Step2_Range_step2x0);
+            this.gb_Trim.Controls.Add(this.tb_Step2_Range_step1x1);
+            this.gb_Trim.Controls.Add(this.lb_Step2_Range_step1x1);
+            this.gb_Trim.Controls.Add(this.tb_Step2_Range_step1x0);
+            this.gb_Trim.Controls.Add(this.lb_Step2_Range_step1x0);
+            this.gb_Trim.Controls.Add(this.tb_Step1_Range_step1x1);
+            this.gb_Trim.Controls.Add(this.lb_Step1_Range_Step1x1);
+            this.gb_Trim.Controls.Add(this.tb_Step1_Range_step1x0);
+            this.gb_Trim.Controls.Add(this.lb_Step1_Range_Step1x0);
+            this.gb_Trim.Location = new System.Drawing.Point(13, 451);
+            this.gb_Trim.Name = "gb_Trim";
+            this.gb_Trim.Size = new System.Drawing.Size(379, 134);
+            this.gb_Trim.TabIndex = 53;
+            this.gb_Trim.TabStop = false;
+            this.gb_Trim.Text = "Trim";
+            // 
+            // tb_Step1_Range_step1x0
+            // 
+            this.tb_Step1_Range_step1x0.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Step1_Range_step1x0.Location = new System.Drawing.Point(128, 17);
+            this.tb_Step1_Range_step1x0.Name = "tb_Step1_Range_step1x0";
+            this.tb_Step1_Range_step1x0.ReadOnly = true;
+            this.tb_Step1_Range_step1x0.Size = new System.Drawing.Size(60, 22);
+            this.tb_Step1_Range_step1x0.TabIndex = 54;
+            // 
+            // lb_Step1_Range_Step1x0
+            // 
+            this.lb_Step1_Range_Step1x0.AutoSize = true;
+            this.lb_Step1_Range_Step1x0.Location = new System.Drawing.Point(13, 20);
+            this.lb_Step1_Range_Step1x0.Name = "lb_Step1_Range_Step1x0";
+            this.lb_Step1_Range_Step1x0.Size = new System.Drawing.Size(109, 12);
+            this.lb_Step1_Range_Step1x0.TabIndex = 55;
+            this.lb_Step1_Range_Step1x0.Text = "Step1_Range_step1x0";
+            // 
+            // tb_Step1_Range_step1x1
+            // 
+            this.tb_Step1_Range_step1x1.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Step1_Range_step1x1.Location = new System.Drawing.Point(312, 17);
+            this.tb_Step1_Range_step1x1.Name = "tb_Step1_Range_step1x1";
+            this.tb_Step1_Range_step1x1.ReadOnly = true;
+            this.tb_Step1_Range_step1x1.Size = new System.Drawing.Size(60, 22);
+            this.tb_Step1_Range_step1x1.TabIndex = 56;
+            // 
+            // lb_Step1_Range_Step1x1
+            // 
+            this.lb_Step1_Range_Step1x1.AutoSize = true;
+            this.lb_Step1_Range_Step1x1.Location = new System.Drawing.Point(194, 20);
+            this.lb_Step1_Range_Step1x1.Name = "lb_Step1_Range_Step1x1";
+            this.lb_Step1_Range_Step1x1.Size = new System.Drawing.Size(109, 12);
+            this.lb_Step1_Range_Step1x1.TabIndex = 57;
+            this.lb_Step1_Range_Step1x1.Text = "Step1_Range_step1x1";
+            // 
+            // tb_Step2_Range_step1x1
+            // 
+            this.tb_Step2_Range_step1x1.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Step2_Range_step1x1.Location = new System.Drawing.Point(312, 73);
+            this.tb_Step2_Range_step1x1.Name = "tb_Step2_Range_step1x1";
+            this.tb_Step2_Range_step1x1.ReadOnly = true;
+            this.tb_Step2_Range_step1x1.Size = new System.Drawing.Size(60, 22);
+            this.tb_Step2_Range_step1x1.TabIndex = 60;
+            // 
+            // lb_Step2_Range_step1x1
+            // 
+            this.lb_Step2_Range_step1x1.AutoSize = true;
+            this.lb_Step2_Range_step1x1.Location = new System.Drawing.Point(194, 76);
+            this.lb_Step2_Range_step1x1.Name = "lb_Step2_Range_step1x1";
+            this.lb_Step2_Range_step1x1.Size = new System.Drawing.Size(109, 12);
+            this.lb_Step2_Range_step1x1.TabIndex = 61;
+            this.lb_Step2_Range_step1x1.Text = "Step2_Range_step1x1";
+            // 
+            // tb_Step2_Range_step1x0
+            // 
+            this.tb_Step2_Range_step1x0.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Step2_Range_step1x0.Location = new System.Drawing.Point(128, 73);
+            this.tb_Step2_Range_step1x0.Name = "tb_Step2_Range_step1x0";
+            this.tb_Step2_Range_step1x0.ReadOnly = true;
+            this.tb_Step2_Range_step1x0.Size = new System.Drawing.Size(60, 22);
+            this.tb_Step2_Range_step1x0.TabIndex = 58;
+            // 
+            // lb_Step2_Range_step1x0
+            // 
+            this.lb_Step2_Range_step1x0.AutoSize = true;
+            this.lb_Step2_Range_step1x0.Location = new System.Drawing.Point(13, 76);
+            this.lb_Step2_Range_step1x0.Name = "lb_Step2_Range_step1x0";
+            this.lb_Step2_Range_step1x0.Size = new System.Drawing.Size(109, 12);
+            this.lb_Step2_Range_step1x0.TabIndex = 59;
+            this.lb_Step2_Range_step1x0.Text = "Step2_Range_step1x0";
+            // 
+            // tb_Step2_Range_step2x1
+            // 
+            this.tb_Step2_Range_step2x1.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Step2_Range_step2x1.Location = new System.Drawing.Point(312, 45);
+            this.tb_Step2_Range_step2x1.Name = "tb_Step2_Range_step2x1";
+            this.tb_Step2_Range_step2x1.ReadOnly = true;
+            this.tb_Step2_Range_step2x1.Size = new System.Drawing.Size(60, 22);
+            this.tb_Step2_Range_step2x1.TabIndex = 64;
+            // 
+            // lb_Step2_Range_step2x1
+            // 
+            this.lb_Step2_Range_step2x1.AutoSize = true;
+            this.lb_Step2_Range_step2x1.Location = new System.Drawing.Point(194, 48);
+            this.lb_Step2_Range_step2x1.Name = "lb_Step2_Range_step2x1";
+            this.lb_Step2_Range_step2x1.Size = new System.Drawing.Size(109, 12);
+            this.lb_Step2_Range_step2x1.TabIndex = 65;
+            this.lb_Step2_Range_step2x1.Text = "Step2_Range_step2x1";
+            // 
+            // tb_Step2_Range_step2x0
+            // 
+            this.tb_Step2_Range_step2x0.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Step2_Range_step2x0.Location = new System.Drawing.Point(128, 45);
+            this.tb_Step2_Range_step2x0.Name = "tb_Step2_Range_step2x0";
+            this.tb_Step2_Range_step2x0.ReadOnly = true;
+            this.tb_Step2_Range_step2x0.Size = new System.Drawing.Size(60, 22);
+            this.tb_Step2_Range_step2x0.TabIndex = 62;
+            // 
+            // lb_Step2_Range_step2x0
+            // 
+            this.lb_Step2_Range_step2x0.AutoSize = true;
+            this.lb_Step2_Range_step2x0.Location = new System.Drawing.Point(13, 48);
+            this.lb_Step2_Range_step2x0.Name = "lb_Step2_Range_step2x0";
+            this.lb_Step2_Range_step2x0.Size = new System.Drawing.Size(109, 12);
+            this.lb_Step2_Range_step2x0.TabIndex = 63;
+            this.lb_Step2_Range_step2x0.Text = "Step2_Range_step2x0";
+            // 
+            // tb_Range2_Percent
+            // 
+            this.tb_Range2_Percent.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Range2_Percent.Location = new System.Drawing.Point(312, 101);
+            this.tb_Range2_Percent.Name = "tb_Range2_Percent";
+            this.tb_Range2_Percent.ReadOnly = true;
+            this.tb_Range2_Percent.Size = new System.Drawing.Size(60, 22);
+            this.tb_Range2_Percent.TabIndex = 68;
+            // 
+            // lb_Range2_Percent
+            // 
+            this.lb_Range2_Percent.AutoSize = true;
+            this.lb_Range2_Percent.Location = new System.Drawing.Point(194, 104);
+            this.lb_Range2_Percent.Name = "lb_Range2_Percent";
+            this.lb_Range2_Percent.Size = new System.Drawing.Size(98, 12);
+            this.lb_Range2_Percent.TabIndex = 69;
+            this.lb_Range2_Percent.Text = "Range2_Percent(%)";
+            // 
+            // tb_Range1_Percent
+            // 
+            this.tb_Range1_Percent.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Range1_Percent.Location = new System.Drawing.Point(128, 101);
+            this.tb_Range1_Percent.Name = "tb_Range1_Percent";
+            this.tb_Range1_Percent.ReadOnly = true;
+            this.tb_Range1_Percent.Size = new System.Drawing.Size(60, 22);
+            this.tb_Range1_Percent.TabIndex = 66;
+            // 
+            // lb_Range1_Percent
+            // 
+            this.lb_Range1_Percent.AutoSize = true;
+            this.lb_Range1_Percent.Location = new System.Drawing.Point(13, 104);
+            this.lb_Range1_Percent.Name = "lb_Range1_Percent";
+            this.lb_Range1_Percent.Size = new System.Drawing.Size(98, 12);
+            this.lb_Range1_Percent.TabIndex = 67;
+            this.lb_Range1_Percent.Text = "Range1_Percent(%)";
             // 
             // RecipeManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 534);
+            this.ClientSize = new System.Drawing.Size(910, 761);
             this.Controls.Add(this.btn_ClearRecipeLP2);
             this.Controls.Add(this.btn_ClearRecipeLP1);
             this.Controls.Add(this.btn_ChangeRecipe2);
@@ -1200,6 +1433,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Angle2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Angle1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.gb_BlueTape.ResumeLayout(false);
+            this.gb_BlueTape.PerformLayout();
+            this.gb_Trim.ResumeLayout(false);
+            this.gb_Trim.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1294,5 +1531,26 @@
         private System.Windows.Forms.ComboBox cb_Offset;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.RadioButton rbtn_Trim2step2nd;
+        private System.Windows.Forms.CheckBox cb_TrimWaferEdgeEvaluate;
+        private System.Windows.Forms.GroupBox gb_BlueTape;
+        private System.Windows.Forms.TextBox tb_BlueTape_Threshold;
+        private System.Windows.Forms.Label lb_BlueTape_Threshold;
+        private System.Windows.Forms.GroupBox gb_Trim;
+        private System.Windows.Forms.TextBox tb_Range2_Percent;
+        private System.Windows.Forms.Label lb_Range2_Percent;
+        private System.Windows.Forms.TextBox tb_Range1_Percent;
+        private System.Windows.Forms.Label lb_Range1_Percent;
+        private System.Windows.Forms.TextBox tb_Step2_Range_step2x1;
+        private System.Windows.Forms.Label lb_Step2_Range_step2x1;
+        private System.Windows.Forms.TextBox tb_Step2_Range_step2x0;
+        private System.Windows.Forms.Label lb_Step2_Range_step2x0;
+        private System.Windows.Forms.TextBox tb_Step2_Range_step1x1;
+        private System.Windows.Forms.Label lb_Step2_Range_step1x1;
+        private System.Windows.Forms.TextBox tb_Step2_Range_step1x0;
+        private System.Windows.Forms.Label lb_Step2_Range_step1x0;
+        private System.Windows.Forms.TextBox tb_Step1_Range_step1x1;
+        private System.Windows.Forms.Label lb_Step1_Range_Step1x1;
+        private System.Windows.Forms.TextBox tb_Step1_Range_step1x0;
+        private System.Windows.Forms.Label lb_Step1_Range_Step1x0;
     }
 }

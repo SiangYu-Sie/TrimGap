@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.ComponentModel;
 using System.Threading;
 using System.Windows.Forms;
@@ -889,8 +890,9 @@ namespace TrimGap
                         //AnalysisData.rtn = Common.LJ.Measure();
 
                         AutoTrim2ndStep = Trim2ndStep.Download;
+                        Console.WriteLine(DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString() + " Measure End");
                     }
-                    else if(fram.PT_PLC_AutoRunStage_RetryCount<100)
+                    else if (fram.PT_PLC_AutoRunStage_RetryCount < 100)
                     {
                         SpinWait.SpinUntil(() => false, 50);
                         fram.PT_PLC_AutoRunStage_RetryCount++;
@@ -899,7 +901,7 @@ namespace TrimGap
                     {
                         fram.PT_PLC_AutoRunStage_RetryCount = 0;
                         Common.CGWrapper.AlarmReportSend(TrimGap_EqpID.EQP_PT_PLC_MoveTimeoutError, 128);
-                        InsertLog.SavetoDB(TrimGap_EqpID.EQP_PT_PLC_MoveTimeoutError,"PT PLC Move To Point 1 Timeout");
+                        InsertLog.SavetoDB(TrimGap_EqpID.EQP_PT_PLC_MoveTimeoutError, "PT PLC Move To Point 1 Timeout");
                         //MessageBox.Show("PT PLC Move To Point 1 Timeout");
                     }
 
@@ -908,30 +910,55 @@ namespace TrimGap
                 case Trim2ndStep.Download:
                     if(Common.PTForm.GetPointMoveFinish(2))
                     {
-                        SpinWait.SpinUntil(() => false, 1500);
-                        bool rtn = Common.PTForm.isFinish();
-
-                        if(rtn || sram.PTRetry >=3)
+                        if(fram.m_simulateRun == 0)
                         {
-                            sram.saveDataTime = DateTime.Now;
-                            //Common.PTForm.getData3(out AnalysisData.rawData, out AnalysisData.rawData2, out AnalysisData.rawData3);
-                            Common.PTForm.getData(out AnalysisData.rawData);
-                            Common.PTForm.getData2(out AnalysisData.rawData2);
-                            Common.PTForm.getData3(out AnalysisData.rawData3);
-                            ParamFile.SaveRawdata_Csv(AnalysisData.rawData, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal + "_PT_" + rtn.ToString(), sram.saveDataTime);
-                            ParamFile.SaveRawdata_Csv(AnalysisData.rawData2, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal + "_PT_2" + rtn.ToString(), sram.saveDataTime);
-                            ParamFile.SaveRawdata_Csv(AnalysisData.rawData3, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal + "_PT_3" + rtn.ToString(), sram.saveDataTime);
+                            SpinWait.SpinUntil(() => false, 1500);
+                            bool rtn = Common.PTForm.isFinish();
 
-                            Console.WriteLine("PT Download End " + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
-                            InsertLog.SavetoDB(70, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal + "_PT");
-                            AutoTrim2ndStep = Trim2ndStep.Analysis;
-                            sram.PTRetry = 0;
+                            if (rtn || sram.PTRetry >= 3)
+                            {
+                                sram.saveDataTime = DateTime.Now;
+                                //Common.PTForm.getData3(out AnalysisData.rawData, out AnalysisData.rawData2, out AnalysisData.rawData3);
+                                Common.PTForm.getData(out AnalysisData.rawData);
+                                Common.PTForm.getData2(out AnalysisData.rawData2);
+                                Common.PTForm.getData3(out AnalysisData.rawData3);
+                                ParamFile.SaveRawdata_Csv3(AnalysisData.rawData, AnalysisData.rawData2, AnalysisData.rawData3, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal + "_PT_" + rtn.ToString(), sram.saveDataTime);
+
+                                Console.WriteLine("PT Download End " + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
+                                InsertLog.SavetoDB(70, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal + "_PT");
+                                AutoTrim2ndStep = Trim2ndStep.Analysis;
+                                sram.PTRetry = 0;
+                            }
+                            else
+                            {
+                                Common.PTForm.PointMove(1);//PLC走到起點
+                                sram.PTRetry++;
+                                AutoTrim2ndStep = Trim2ndStep.Measurement;
+                            }
                         }
-                        else
+                        else    
                         {
-                            Common.PTForm.PointMove(1);//PLC走到起點
-                            sram.PTRetry++;
-                            AutoTrim2ndStep = Trim2ndStep.Measurement;
+                            StreamReader read = new StreamReader("PT.csv");
+
+                            string ReadAll;
+                            string[] ReadArray1;//, ReadArray2;
+                            ReadAll = read.ReadToEnd(); // 一次讀全部
+                            ReadArray1 = Regex.Split(ReadAll, "\r\n", RegexOptions.IgnoreCase);
+                            double[] array2 = new double[ReadArray1.Length - 1];
+                            double[] array3 = new double[ReadArray1.Length - 1];
+                            double[] array4 = new double[ReadArray1.Length - 1];
+                            for (int i = 0; i < ReadArray1.Length - 1; i++)
+                            {
+                                string[] tmpArray = Regex.Split(ReadArray1[i], ",", RegexOptions.IgnoreCase);
+                                array2[i] = Convert.ToSingle(tmpArray[0]);
+                                array3[i] = Convert.ToSingle(tmpArray[1]);
+                                array4[i] = Convert.ToSingle(tmpArray[2]);
+                                Console.WriteLine(i.ToString());
+                            }
+                            AnalysisData.rawData = array2;
+                            AnalysisData.rawData2 = array3;
+                            AnalysisData.rawData3 = array4;
+                            read.Close();
                         }
 
                     }
@@ -1978,6 +2005,7 @@ namespace TrimGap
                     {
                         if (MachineType == 0)
                         {
+                            //|| fram.m_simulateRun != 0
                             if (Common.io.In(IOName.In.Wafer汽缸_抬起檢))
                             {
                                 //if (Common.io.In(IOName.In.StageWafer在席) && !Common.EFEM.Robot.WaferPresence_Upper)

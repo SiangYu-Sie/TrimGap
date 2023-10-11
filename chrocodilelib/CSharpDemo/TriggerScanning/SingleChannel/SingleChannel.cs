@@ -1,15 +1,4 @@
-﻿/*
-This demo demonstrates how to collect scanning data under trigger each mode with single channel device.
-The simulated scan is like normal rectangular scan, which is defined by number of lines to be scanned and number of points in each line.
-User can select between sync-in signal trigger and encoder trigger. 
-The trigger settings are sent to the device synchronously.
-After all the trigger configuration has been properly set, this demo uses the recording mode of the connection to collect data.
-The collected data is show as a heatmap is the dialog.
-This demo aims to show how to set up device for run with trigger each mode, particularly for encoder trigger.
-*/
-
-
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
@@ -40,31 +29,35 @@ namespace PT
         private int DrawLineIdx, DrawSampleIdx;
         private double SigMin, SigMax;
         public static ActUtlType64Lib.ActUtlType64Class actUtlType;
-
-        public SingleChannel()
+        private bool bSim;
+        public SingleChannel(int simulate)
         {
             InitializeComponent();
             bm = new Bitmap(PPaint.Width, PPaint.Height);
             CleanDataBitmap();
             actUtlType = new ActUtlType64Lib.ActUtlType64Class();
-            try
+            bSim = simulate != 0 ? true : false;
+            if(!bSim)
             {
-                int iRet;
-                actUtlType.ActLogicalStationNumber = 1;
-                iRet = actUtlType.Open();
-                if (iRet != 0)
+                try
                 {
-                    MessageBox.Show("PT PLC Init Fail.");
+                    int iRet;
+                    actUtlType.ActLogicalStationNumber = 1;
+                    iRet = actUtlType.Open();
+                    if (iRet != 0)
+                    {
+                        MessageBox.Show("PT PLC Init Fail.");
+                    }
                 }
+                catch (Exception ee)
+                {
+                    MessageBox.Show("PT PLC Init Fail:" + ee);
+                }
+                cbSelectPoint.SelectedIndex = 1;
+                updatePosSpd(1);
+                timer1.Interval = 200;
+                timer1.Enabled = true;
             }
-            catch (Exception ee)
-            {
-                MessageBox.Show("PT PLC Init Fail:" + ee);
-            }
-            cbSelectPoint.SelectedIndex = 1;
-            updatePosSpd(1);
-            timer1.Interval = 200;
-            timer1.Enabled = true;
         }
 
         public int GetDevice(string name)
@@ -75,7 +68,6 @@ namespace PT
             string tmp2 = name.Substring(1);
             int num = Convert.ToInt32(tmp2);
             actUtlType.GetDevice(tmp1 + (num+1).ToString(), out rtn2);
-
             return rtn1 + rtn2*65536;
         }
         public short GetDevice2(string name)
@@ -115,6 +107,10 @@ namespace PT
         }
         public bool GetDriverAlarm()
         {
+            if (bSim)
+            {
+                return false;
+            }
             return GetDevice2("X0005")==1?false:true;
         }
         public bool GetJogMoving(int dir)
@@ -125,6 +121,11 @@ namespace PT
         }
         public bool GetPointMoveFinish(int point)
         {
+            if (bSim)
+            {
+                return true;
+            }
+
             string cmd;
             cmd = "M17" + point.ToString("0");
             return GetDevice2(cmd) == 1 ? true : false;
@@ -147,6 +148,10 @@ namespace PT
         }
         public bool FindHomeFinish()
         {
+            if (bSim)
+            {
+                return true;
+            }
             return GetDevice2("M70") == 1 ? true : false;
         }
         public bool FindHomeing()
@@ -169,12 +174,20 @@ namespace PT
         }
         public void ResetDriverAlarm()
         {
+            if (bSim)
+            {
+                return;
+            }
             SetDevice2("M39", 1);
             SpinWait.SpinUntil(() => false, 20);
             SetDevice2("M39", 0);
         }
         public void FindHome()
         {
+            if (bSim)
+            {
+                return;
+            }
             SetDevice2("L150", 1);
             SpinWait.SpinUntil(() => false, 20);
             SetDevice2("L150", 0);
@@ -216,6 +229,10 @@ namespace PT
         }
         public void PointMove(int point)
         {
+            if (bSim)
+            {
+                return;
+            }
             string cmd;
             cmd = "L11" + point.ToString();
             SetDevice2(cmd, 1);

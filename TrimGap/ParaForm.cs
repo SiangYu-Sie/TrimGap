@@ -79,6 +79,7 @@ namespace TrimGap
             tb_Step2_Range_step2x1.Text = fram.Analysis.Step2_Range_step2x1.ToString();
             tb_Range1_Percent.Text = fram.Analysis.Range1_Percent.ToString();
             tb_Range2_Percent.Text = fram.Analysis.Range2_Percent.ToString();
+            tb_Analysis_LJ_StandardPlane.Text = fram.Analysis.LJ_StandardPlane.ToString();
             tb_1StepH.Text = fram.Analysis.Offset1StepH.ToString();
             tb_1StepW.Text = fram.Analysis.Offset1StepW.ToString();
             tb_2StepH1.Text = fram.Analysis.Offset2StepH1.ToString();
@@ -92,6 +93,8 @@ namespace TrimGap
             tb_PT_2StepH2.Text = fram.Analysis.Offset_PT_2StepH2.ToString();
             tb_PT_2StepW2.Text = fram.Analysis.Offset_PT_2StepW2.ToString();
             tb_BlueTapeW.Text = fram.Analysis.OffsetBlueTapeW.ToString();
+            tb_EDGE_1StepW.Text = fram.Analysis.Offset_EDGE_1StepW.ToString();
+            tb_EDGE_2StepW1.Text = fram.Analysis.Offset_EDGE_2StepW1.ToString();
         }
 
         private void btnParamSave_Click(object sender, EventArgs e)
@@ -104,7 +107,6 @@ namespace TrimGap
             {
                 string pattern = "";
                 pattern = "^[+]?([0-9]+\\.?)?[0-9]+$";
-
                 #region [System] groupbox1
 
                 if (tb_ShowDataNum_copy.Text != "")
@@ -303,6 +305,22 @@ namespace TrimGap
                         fram.Analysis.Range2_Percent = Convert.ToInt32(tb_Range2_Percent_copy.Text);
                     }
                 }
+                pattern = "^[+-]?([0-9]+\\.?)?[0-9]+$";
+                if (tb_Analysis_LJ_StandardPlane_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_Analysis_LJ_StandardPlane_copy.Text, pattern))
+                    {
+                        MessageBox.Show("LJ_StandardPlane" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "LJ_StandardPlane " + fram.Analysis.LJ_StandardPlane + "->" + tb_Analysis_LJ_StandardPlane_copy.Text);
+                        tb_Analysis_LJ_StandardPlane.Text = tb_Analysis_LJ_StandardPlane_copy.Text;
+                        fram.Analysis.LJ_StandardPlane = Convert.ToDouble(tb_Analysis_LJ_StandardPlane_copy.Text);
+                    }
+                }
+
 
                 #endregion [Analysis] groupbox2
 
@@ -721,6 +739,70 @@ namespace TrimGap
 
                             default:
                                 fram.Analysis.Offset.QC_BlueTapeW[cb_Offset.SelectedIndex - 3] = fram.Analysis.OffsetBlueTapeW;
+                                break;
+                        }
+                    }
+                }
+                if (tb_EDGE_1StepW_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_EDGE_1StepW_copy.Text, pattern))
+                    {
+                        MessageBox.Show("Offset EDGE 1 Step W" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, cb_Offset.SelectedText + " PT W " + fram.Analysis.Offset_EDGE_1StepW + "->" + tb_EDGE_1StepW_copy.Text);
+                        tb_EDGE_1StepW.Text = tb_EDGE_1StepW_copy.Text;
+                        fram.Analysis.Offset_EDGE_1StepW = Convert.ToDouble(tb_EDGE_1StepW_copy.Text);
+                        switch (cb_Offset.SelectedIndex)
+                        {
+                            case 0:
+
+                                break;
+
+                            case 1:
+                                fram.Analysis.Offset.Offline_EDGE_1StepW = fram.Analysis.Offset_EDGE_1StepW;
+                                break;
+
+                            case 2:
+                                fram.Analysis.Offset.Inline_EDGE_1StepW = fram.Analysis.Offset_EDGE_1StepW;
+                                break;
+
+                            default:
+                                fram.Analysis.Offset.QC_EDGE_1StepW[cb_Offset.SelectedIndex - 3] = fram.Analysis.Offset_EDGE_1StepW;
+                                break;
+                        }
+                    }
+                }
+                if (tb_EDGE_2StepW1_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_EDGE_2StepW1_copy.Text, pattern))
+                    {
+                        MessageBox.Show("Offset EDGE 2 Step W1" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, cb_Offset.SelectedText + " PT W1 " + fram.Analysis.Offset_EDGE_2StepW1 + "->" + tb_EDGE_2StepW1_copy.Text);
+                        tb_EDGE_2StepW1.Text = tb_EDGE_2StepW1_copy.Text;
+                        fram.Analysis.Offset_EDGE_2StepW1 = Convert.ToDouble(tb_EDGE_2StepW1_copy.Text);
+                        switch (cb_Offset.SelectedIndex)
+                        {
+                            case 0:
+
+                                break;
+
+                            case 1:
+                                fram.Analysis.Offset.Offline_EDGE_2StepW1 = fram.Analysis.Offset_EDGE_2StepW1;
+                                break;
+
+                            case 2:
+                                fram.Analysis.Offset.Inline_EDGE_2StepW1 = fram.Analysis.Offset_EDGE_2StepW1;
+                                break;
+
+                            default:
+                                fram.Analysis.Offset.QC_EDGE_2StepW1[cb_Offset.SelectedIndex - 3] = fram.Analysis.Offset_EDGE_2StepW1;
                                 break;
                         }
                     }

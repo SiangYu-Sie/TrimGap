@@ -43,3 +43,4 @@ fram.Recipe.Angle8,            UINT_2,       1,      360, PPARM 2 def
 fram.Recipe.CreateTime,        ASCII,      N/A,        N/A, Recipe CreateTime
 fram.Recipe.ReviseTime,        ASCII,      N/A,        N/A, Recipe ReviseTime
 fram.Recipe.OffsetType,        UINT_1,       0,         20, PPARM 1 def
+fram.Recipe.WaferEdgeEvaluate,        UINT_1,       0,         10, PPARM 1 def

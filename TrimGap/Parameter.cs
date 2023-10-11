@@ -301,6 +301,7 @@ namespace TrimGap
             public static int Step1_Range_step1x1;
             public static int Range1_Percent; // 基準範圍 5%
             public static int Range2_Percent; // 基準範圍 15%
+            public static double LJ_StandardPlane; // LJ基準面
             public static double Offset1StepH; // 1階產品 offset H
             public static double Offset1StepW; // 1階產品 offset W
             public static double Offset2StepH1; // 2階產品 offset H1
@@ -314,6 +315,8 @@ namespace TrimGap
             public static double Offset_PT_2StepH2; // 2階產品 PT offset H2
             public static double Offset_PT_2StepW2; // 2階產品 PT offset W2
             public static double OffsetBlueTapeW; // 藍膜 offset W
+            public static double Offset_EDGE_1StepW; // 1階產品 EDGE offset W
+            public static double Offset_EDGE_2StepW1; // 2階產品 EDGE offset W1
 
             public struct Offset
             {
@@ -330,6 +333,8 @@ namespace TrimGap
                 public static double Inline_PT_2StepH2;  // Inline PT 2階產品 offset H2
                 public static double Inline_PT_2StepW2;  // Inline PT 2階產品 offset W2
                 public static double Inline_BlueTapeW; // Inline 藍膜 offset W
+                public static double Inline_EDGE_1StepW;  // Inline EDGE 1階產品 offset W
+                public static double Inline_EDGE_2StepW1;  // Inline EDGE 2階產品 offset W1
                 public static double Offline_1StepH; // Offline 1階產品 offset H
                 public static double Offline_1StepW; // Offline 1階產品 offset W
                 public static double Offline_2StepH1; // Offline 2階產品 offset H1
@@ -343,19 +348,23 @@ namespace TrimGap
                 public static double Offline_PT_2StepH2; // Offline PT 2階產品 offset H2
                 public static double Offline_PT_2StepW2; // Offline PT 2階產品 offset W2
                 public static double Offline_BlueTapeW; // Offline 藍膜 offset W
+                public static double Offline_EDGE_1StepW;  // Offline EDGE 1階產品 offset W
+                public static double Offline_EDGE_2StepW1;  // Offline EDGE 2階產品 offset W1
                 public static double[] QC_1StepH = new double[8];  // QC 1階產品 offset H
                 public static double[] QC_1StepW = new double[8];  // QC 1階產品 offset W
-                public static double[] QC_2StepH1 = new double[8];  // QC 2階產品 offset H
-                public static double[] QC_2StepW1 = new double[8];  // QC 2階產品 offset W
-                public static double[] QC_2StepH2 = new double[8];  // QC 2階產品 offset H
-                public static double[] QC_2StepW2 = new double[8];  // QC 2階產品 offset W
+                public static double[] QC_2StepH1 = new double[8];  // QC 2階產品 offset H1
+                public static double[] QC_2StepW1 = new double[8];  // QC 2階產品 offset W1
+                public static double[] QC_2StepH2 = new double[8];  // QC 2階產品 offset H2
+                public static double[] QC_2StepW2 = new double[8];  // QC 2階產品 offset W2
                 public static double[] QC_PT_1StepH = new double[8];  // QC PT 1階產品 offset H
                 public static double[] QC_PT_1StepW = new double[8];  // QC PT 1階產品 offset W
-                public static double[] QC_PT_2StepH1 = new double[8];  // QC PT 2階產品 offset H
-                public static double[] QC_PT_2StepW1 = new double[8];  // QC PT 2階產品 offset W
-                public static double[] QC_PT_2StepH2 = new double[8];  // QC PT 2階產品 offset H
-                public static double[] QC_PT_2StepW2 = new double[8];  // QC PT 2階產品 offset W
+                public static double[] QC_PT_2StepH1 = new double[8];  // QC PT 2階產品 offset H1
+                public static double[] QC_PT_2StepW1 = new double[8];  // QC PT 2階產品 offset W1
+                public static double[] QC_PT_2StepH2 = new double[8];  // QC PT 2階產品 offset H2
+                public static double[] QC_PT_2StepW2 = new double[8];  // QC PT 2階產品 offset W2
                 public static double[] QC_BlueTapeW = new double[8]; // QC 藍膜 offset W
+                public static double[] QC_EDGE_1StepW = new double[8];  // QC EDGE 1階產品 offset W
+                public static double[] QC_EDGE_2StepW1 = new double[8];  // QC EDGE 2階產品 offset W1
             }
         }
 
@@ -392,31 +401,7 @@ namespace TrimGap
             public static double[,] W2 = new double[25, 8];
         }
 
-        // [Recipe]
-        public struct Recipe
-        {
-            public static string Path = "";
-            public static string FilenameSelect = "";
-            public static string Filename_LP1 = "";
-            public static string Filename_LP2 = "";
-
-            //----------------ini-------------------拿來刷recipe management
-            public static string Filename = "";
-
-            public static int[] Slot = new int[25];
-            public static int[] Angle = new int[8];
-            public static int Rotate_Count;
-            public static int Type;
-            public static int OffsetType;
-            public static int RepeatTimes;
-            public static int RepeatTimes_now;
-            public static string CreateTime;
-            public static string ReviseTime;
-            public static string MotionPatternName = "";
-            public static string MotionPatternPath = "";
-            public static string SF3_ID = "";
-            public static string SF3_Name = "";
-        }
+        public static RecipeFormat Recipe = new RecipeFormat();
     }
 
     public struct ReportData
@@ -602,8 +587,9 @@ namespace TrimGap
         public static int PTRetry;
 
         //
+        public static RecipeFormat Recipe = new RecipeFormat();
         // [Recipe]
-        public struct Recipe
+        /*public struct Recipe
         {
             // 刷完Recipe後要進來這裡更新
             public static string Filename = "";
@@ -617,7 +603,47 @@ namespace TrimGap
             public static int RepeatTimes_now;
             public static List<int> TTVrotatePosition;
             public static List<Point> TTVshiftPosition;
-        }
+            public static int WaferEdgeEvaluate;
+        }*/
+    }
+
+    // [Recipe]
+    public class RecipeFormat
+    {
+        public string Path = "";
+        public string FilenameSelect = "";
+        public string Filename_LP1 = "";
+        public string Filename_LP2 = "";
+
+        //----------------ini-------------------拿來刷recipe management
+        public string Filename = "";
+
+        public int[] Slot = new int[25];
+        public int[] Angle = new int[8];
+        public int Rotate_Count;
+        public int Type;
+        public int OffsetType;
+        public int RepeatTimes;
+        public int RepeatTimes_now;
+        public string CreateTime;
+        public string ReviseTime;
+        public string MotionPatternName = "";
+        public string MotionPatternPath = "";
+        public string SF3_ID = "";
+        public string SF3_Name = "";
+        public List<int> TTVrotatePosition;
+        public List<Point> TTVshiftPosition;
+        public int WaferEdgeEvaluate;
+
+        public int BlueTapeThreshold;
+        public int Step2_Range_step1x0; // 2階產品第一刀
+        public int Step2_Range_step1x1;
+        public int Step2_Range_step2x0; // 2階產品第二刀
+        public int Step2_Range_step2x1;
+        public int Step1_Range_step1x0; // 1階產品第一刀
+        public int Step1_Range_step1x1;
+        public int Range1_Percent; // 基準範圍 5%
+        public int Range2_Percent; // 基準範圍 15%
     }
 
     public struct UI

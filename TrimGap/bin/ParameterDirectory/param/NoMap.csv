@@ -1,74 +1,69 @@
 CODE,CLASS,CONTENT,HANDLE,NOTE
-1,動作-系統,程式啟動,,0
-2,動作-系統,程式結束,,0
-3,動作-系統,開啟新檔案,,0
-4,動作-系統,開啟舊檔,,0
-5,動作-系統,儲存檔案,,0
-6,動作-系統,另存檔案,,0
-7,動作-系統,修改系統參數,,0
-8,動作-系統,修改運動參數,,0
-9,動作-系統,修改工作參數,,0
-11,動作-系統,變更使用者,,0
-12,動作-系統,啟動自動模式,,0
-13,動作-系統,啟動手動模式,,0
-14,動作-系統,按下啟動鈕,,0
-15,動作-系統,按下停止鈕,,0
-16,動作-系統,按下Clear鈕,,0
-17,動作-系統,按下所有軸歸零紐,,0
-18,警報-自動,按下EMO紐,,0
+1,動作-系統,程式啟動,未定義,0
+2,動作-系統,程式結束,未定義,0
+3,動作-系統,開啟新檔案,未定義,0
+4,動作-系統,開啟舊檔,未定義,0
+5,動作-系統,儲存檔案,未定義,0
+6,動作-系統,另存檔案,未定義,0
+7,動作-系統,修改系統參數,未定義,0
+8,動作-系統,修改運動參數,未定義,0
+9,動作-系統,修改工作參數,未定義,0
+11,動作-系統,變更使用者,未定義,0
+12,動作-系統,啟動自動模式,未定義,0
+13,動作-系統,啟動手動模式,未定義,0
+14,動作-系統,按下啟動鈕,未定義,0
+15,動作-系統,按下停止鈕,未定義,0
+16,動作-系統,按下Clear鈕,未定義,0
+17,動作-系統,按下所有軸歸零紐,未定義,0
+18,警報-自動,按下EMO紐,未定義,0
 30,警報-系統,軸卡初始化失敗,請檢查軸卡連線等可能性，使用PBTEST程式先確認。,0
 31,警報-系統,IO卡初始化失敗,請檢查IO卡可能問題。,0
 32,警報-連線,Sensor初始化失敗,請檢查Sensor連線等可能性。,0
 33,警報-連線,遠端資料夾連線失敗,請檢查遠端資料夾路徑或帳號密碼是否正確,0
 34,警報-連線,Sensor斷線,請檢查Sensor連線等可能性。,0
-41,動作-連線,Sensor重新連線,,0
-50,訊息-系統,切換至自動模式,,0
-51,訊息-系統,切換至手動模式,,0
-52,訊息-系統,開啟Parameter頁面,,0
-53,訊息-系統,開啟User頁面,,0
-54,訊息-系統,開啟IO頁面,,0
-55,訊息-系統,開啟Log頁面,,0
-56,訊息-系統,開啟SECS/GEM頁面,,0
-57,訊息-系統,IO使用虛擬模式,,0
+41,動作-連線,Sensor重新連線,未定義,0
+50,訊息-系統,切換至自動模式,未定義,0
+51,訊息-系統,切換至手動模式,未定義,0
+52,訊息-系統,開啟Parameter頁面,未定義,0
+53,訊息-系統,開啟User頁面,未定義,0
+54,訊息-系統,開啟IO頁面,未定義,0
+55,訊息-系統,開啟Log頁面,未定義,0
+56,訊息-系統,開啟SECS/GEM頁面,未定義,0
+57,訊息-系統,IO使用虛擬模式,未定義,0
 58,警報-自動,數據分析錯誤,請確認待測物是否在量測範圍內,0
-60,訊息-系統,Get Wafer From LoadPort,,0
-61,訊息-系統,Put Wafer To LoadPort,,0
-62,訊息-系統,All Home Finish,,0
-63,訊息-系統,Get Wafer From Aligner,,0
-64,訊息-系統,Put Wafer To Aligner,,0
-65,訊息-系統,Get Wafer From Stage,,0
-66,訊息-系統,Put Wafer To Stage,,0
-67,訊息-系統,DD Rotate,,0
-68,訊息-系統,XY Move,,0
-69,訊息-系統,Measure (Motion done),,0
-70,訊息-系統,Download Data,,0
-71,訊息-系統,Analysis Start,,0
-72,訊息-系統,Analysis End,,0
-73,訊息-系統,Measure End,,0
-101,警報-自動,Get Wafer From LoadPort Fail,,0
-102,警報-自動,Get Wafer From Aligner Fail,,0
-103,警報-自動,Get Wafer From Stage Fail,,0
-104,警報-自動,Put Wafer To LoadPort Fail,,0
-105,警報-自動,Put Wafer To Aligner Fail,,0
-106,警報-自動,Put Wafer To Stage Fail,,0
-107,警報-自動,Aligner Home Fail,,0
-108,警報-自動,LoadPort Home Fail,,0
-109,警報-自動,LoadPort Load Fail,,0
-110,警報-自動,LoadPort Unload Fail,,0
-111,警報-自動,Robot Home Fail,,0
-112,警報-自動,All Home Fail,,0
-120,警報-自動,EFEM EMO Error,,0
-121,警報-自動,EFEM Vacuum Error,,0
-122,警報-自動,EFEM Power Error,,0
-130,警報-自動,Robot Put Error,,0
-131,警報-自動,Robot Get Error,,0
-132,警報-自動,Robot Vacuum Error,,0
-133,警報-自動,LoadPort Map Fail,,0
-150,警報-自動,Wafer汽缸降下檢 Time out,,0
-151,警報-自動,Wafer汽缸抬起檢 Time out,,0
-152,警報-自動,真空平台負壓檢 Time out, ,0
-10010,警報-自動,數據分析發生計算異常,,0
-10011,警報-自動,PT_PLC_ReturnHomeBlockError,,0
-10012,警報-自動,PT_PLC_ReturnHomeError,,0
-10013,警報-自動,PT_PLC_MoveToSafePointError,,0
-10014,警報-自動,PT_PLC_MoveTimeoutError,,0
+60,訊息-系統,Get Wafer From LoadPort,未定義,0
+61,訊息-系統,Put Wafer To LoadPort,未定義,0
+62,訊息-系統,All Home Finish,未定義,0
+63,訊息-系統,Get Wafer From Aligner,未定義,0
+64,訊息-系統,Put Wafer To Aligner,未定義,0
+65,訊息-系統,Get Wafer From Stage,未定義,0
+66,訊息-系統,Put Wafer To Stage,未定義,0
+67,訊息-系統,DD Rotate,未定義,0
+68,訊息-系統,XY Move,未定義,0
+69,訊息-系統,Measure (Motion done),未定義,0
+70,訊息-系統,Download Data,未定義,0
+71,訊息-系統,Analysis Start,未定義,0
+72,訊息-系統,Analysis End,未定義,0
+73,訊息-系統,Measure End,未定義,0
+101,警報-自動,Get Wafer From LoadPort Fail,未定義,0
+102,警報-自動,Get Wafer From Aligner Fail,未定義,0
+103,警報-自動,Get Wafer From Stage Fail,未定義,0
+104,警報-自動,Put Wafer To LoadPort Fail,未定義,0
+105,警報-自動,Put Wafer To Aligner Fail,未定義,0
+106,警報-自動,Put Wafer To Stage Fail,未定義,0
+107,警報-自動,Aligner Home Fail,未定義,0
+108,警報-自動,LoadPort Home Fail,未定義,0
+109,警報-自動,LoadPort Load Fail,未定義,0
+110,警報-自動,LoadPort Unload Fail,未定義,0
+111,警報-自動,Robot Home Fail,未定義,0
+112,警報-自動,All Home Fail,未定義,0
+120,警報-自動,EFEM EMO Error,未定義,0
+121,警報-自動,EFEM Vacuum Error,未定義,0
+122,警報-自動,EFEM Power Error,未定義,0
+130,警報-自動,Robot Put Error,未定義,0
+131,警報-自動,Robot Get Error,未定義,0
+132,警報-自動,Robot Vacuum Error,未定義,0
+133,警報-自動,LoadPort Map Fail,未定義,0
+150,警報-自動,Wafer汽缸降下檢 Time out,未定義,0
+151,警報-自動,Wafer汽缸抬起檢 Time out,未定義,0
+152,警報-自動,真空平台負壓檢 Time out,未定義,0

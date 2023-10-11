@@ -11,10 +11,6 @@ EQP-DoorOpen,10007,,1,EQP-DoorOpen
 EQP-AxleCardError,10008,,1,EQP-AxleCardError
 EQP-IOCardError,10009,,1,EQP-IOCardError
 EQP-DataAnalysisError,10010,,1,EQP-DataAnalysisError
-EQP-PT_PLC_ReturnHomeBlockError,10011,,1,PT_PLC_ReturnHomeBlockError
-EQP-PT_PLC_ReturnHomeError,10012,,1,PT_PLC_ReturnHomeError
-EQP-PT_PLC_MoveToSafePointError,10013,,1,PT_PLC_MoveToSafePointError
-EQP-PT_PLC_MoveTimeoutError,10014,,1,PT_PLC_MoveTimeoutError
 EFEM-GetVersionError,20001,,1,EFEM-GetVersionError
 EFEM-RemoteControlError,20002,,1,EFEM-RemoteControlError
 EFEM-LocalControlError,20003,,1,EFEM-LocalControlError

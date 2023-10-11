@@ -17,7 +17,7 @@ namespace TrimGap
     internal class Common
     {
         public static SECSGEM.SecsgemForm SecsgemForm;
-        public static CTLT.ctlt_GEM CGWrapper; 
+        public static CTLT.ctlt_GEM CGWrapper;
         public static Io io;
 
         //public static LJ LJ8020;
@@ -248,12 +248,12 @@ namespace TrimGap
             chart.Series[1].ChartType = SeriesChartType.FastLine;   //設定線條種類 折線圖
             chart.Series[1].YAxisType = AxisType.Primary;           //主坐標軸
             chart.Series[1].Color = System.Drawing.Color.Red;                 //設定線條顏色
-            //chart.ChartAreas[0].AxisX.Maximum = fram.S_ShowDataNum;  //設定X軸最大值 預設為30000
-            //chart.ChartAreas[0].AxisX.Minimum = 0;            //設定X軸最小值
-            //chart.ChartAreas[0].AxisX.Interval = 1000;// chart.ChartAreas[0].AxisX.Maximum / 10; //設定X軸間隔 最大值/10
+            chart.ChartAreas[0].AxisX.Maximum = fram.S_ShowDataNum;  //設定X軸最大值 預設為30000
+            chart.ChartAreas[0].AxisX.Minimum = 0;            //設定X軸最小值
+            chart.ChartAreas[0].AxisX.Interval = 1000;// chart.ChartAreas[0].AxisX.Maximum / 10; //設定X軸間隔 最大值/10
 
-            chart.ChartAreas[0].AxisY.Maximum = 100;  //設定Y軸最大值
-            chart.ChartAreas[0].AxisY.Minimum = 0; //設定Y軸最小值
+            chart.ChartAreas[0].AxisY.Maximum = 10;  //設定Y軸最大值
+            chart.ChartAreas[0].AxisY.Minimum = -100; //設定Y軸最小值
             chart.ChartAreas[0].AxisY.Interval = 10;
             //(chart.ChartAreas[0].AxisY.Maximum - chart.ChartAreas[0].AxisY.Minimum) / 10; //設定Y軸間隔 最大值
 
@@ -350,18 +350,22 @@ namespace TrimGap
                 camera = new Camera.CameraBasic();
                 LightCtrlForm = new LightController.Form1();
 
-                try
+                if(fram.m_simulateRun == 0)
                 {
-                    camera.init(2, "CCD1", false, false);
-                    Rs232LightingController = new LightController.Rs232LightingController("GLC-DPI2-170", 1);
-                    EthernetLightingController = new LightController.EthernetLightingController("VLP-2460-4eN", 2);
-                    Rs232LightingController.Open("COM2"); // 要看機台是COM幾
-                    EthernetLightingController.Open();
+                    try
+                    {
+                        camera.init(2, "CCD1", false, false);
+                        Rs232LightingController = new LightController.Rs232LightingController("GLC-DPI2-170", 1);
+                        EthernetLightingController = new LightController.EthernetLightingController("VLP-2460-4eN", 2);
+                        Rs232LightingController.Open("COM2"); // 要看機台是COM幾
+                        EthernetLightingController.Open();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("CCD Init Fail");
+                    }
                 }
-                catch (Exception)
-                {
-                    MessageBox.Show("CCD Init Fail");
-                }
+
             }
         }
 
@@ -369,16 +373,19 @@ namespace TrimGap
         {
             if (type > 0)
             {
-                PTForm = new PT.SingleChannel();
+                PTForm = new PT.SingleChannel(fram.m_simulateRun);
                 PTForm.Show();
                 PTForm.Hide();
-                try
+                if(fram.m_simulateRun == 0)
                 {
-                    Common.PTForm.OpenConnection();
-                }
-                catch (Exception ee)
-                {
-                    MessageBox.Show("PT Sensor Init Fail:" + ee);
+                    try
+                    {
+                        Common.PTForm.OpenConnection();
+                    }
+                    catch (Exception ee)
+                    {
+                        MessageBox.Show("PT Sensor Init Fail:" + ee);
+                    }
                 }
             }
             /*
@@ -747,15 +754,27 @@ namespace TrimGap
             {
                 //sram.Recipe.TTVrotatePosition = frmTTVScan
             }
+            sram.Recipe.WaferEdgeEvaluate = fram.Recipe.WaferEdgeEvaluate;
+            sram.Recipe.BlueTapeThreshold = fram.Recipe.BlueTapeThreshold;
+            sram.Recipe.Step1_Range_step1x0 = fram.Recipe.Step1_Range_step1x0;
+            sram.Recipe.Step1_Range_step1x1 = fram.Recipe.Step1_Range_step1x1;
+            sram.Recipe.Step2_Range_step2x0 = fram.Recipe.Step2_Range_step2x0;
+            sram.Recipe.Step2_Range_step2x1 = fram.Recipe.Step2_Range_step2x1;
+            sram.Recipe.Step2_Range_step1x0 = fram.Recipe.Step2_Range_step1x0;
+            sram.Recipe.Step2_Range_step1x1 = fram.Recipe.Step2_Range_step1x1;
+            sram.Recipe.Range1_Percent = fram.Recipe.Range1_Percent;
+            sram.Recipe.Range2_Percent = fram.Recipe.Range2_Percent;
         }
 
         static public void InitEFEM(int machineType)
         {
+            //if(fram.m_simulateRun == 0)
             EFEM = new EFEM("192.168.0.1", 48879, 2000, 2);
             bool rtn_b;
             if (!EFEM.IsInit)
-            {
-                MessageBox.Show("請檢查 EFEM 軟體是否開啟");
+            {          
+                if(fram.m_simulateRun == 0)
+                    MessageBox.Show("請檢查 EFEM 軟體是否開啟");
                 AutoRunEFEM.InitEFEMAutoRun(machineType);
                 return;
             }

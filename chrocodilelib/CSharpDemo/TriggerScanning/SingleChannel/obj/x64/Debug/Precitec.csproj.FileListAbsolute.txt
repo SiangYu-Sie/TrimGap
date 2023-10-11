@@ -40,3 +40,16 @@ D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\chrocodilelib\
 D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CopyComplete
 D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.dll
 D:\謝翔宇\TrimGap\軒哥\TrimGap - 20230825\TrimGap - 20230825\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.pdb
+E:\專案\TrimGap\TrimGap - 20230918\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+E:\專案\TrimGap\TrimGap - 20230918\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.dll
+E:\專案\TrimGap\TrimGap - 20230918\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+E:\專案\TrimGap\TrimGap - 20230918\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+E:\專案\TrimGap\TrimGap - 20230918\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+E:\專案\TrimGap\TrimGap - 20230918\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGap - 20230918\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\TCHRLibSingleChannelScanning.Properties.Resources.resources
+E:\專案\TrimGap\TrimGap - 20230918\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\PT.SingleChannel.resources
+E:\專案\TrimGap\TrimGap - 20230918\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGap - 20230918\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGap - 20230918\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CopyComplete
+E:\專案\TrimGap\TrimGap - 20230918\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.dll
+E:\專案\TrimGap\TrimGap - 20230918\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.pdb

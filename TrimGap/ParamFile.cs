@@ -235,6 +235,7 @@ namespace TrimGap
                 iniVal(m, p, s, ref fram.Analysis.Step2_Range_step2x1, "fram.Analysis.Step2_Range_step2x1", 2000);
                 iniVal(m, p, s, ref fram.Analysis.Range1_Percent, "fram.Analysis.Range1_Percent", 5);
                 iniVal(m, p, s, ref fram.Analysis.Range2_Percent, "fram.Analysis.Range2_Percent", 15);
+                iniVal(m, p, s, ref fram.Analysis.LJ_StandardPlane, "fram.Analysis.LJ_StandardPlane", -99999.9999);
                 iniVal(m, p, s, ref fram.Analysis.Offset1StepH, "fram.Analysis.Offset1StepH", 0);
                 iniVal(m, p, s, ref fram.Analysis.Offset1StepW, "fram.Analysis.Offset1StepW", 0);
                 iniVal(m, p, s, ref fram.Analysis.Offset2StepH1, "fram.Analysis.Offset2StepH1", 0);
@@ -248,6 +249,8 @@ namespace TrimGap
                 iniVal(m, p, s, ref fram.Analysis.Offset_PT_2StepH2, "fram.Analysis.Offset_PT_2StepH2", 0);
                 iniVal(m, p, s, ref fram.Analysis.Offset_PT_2StepW2, "fram.Analysis.Offset_PT_2StepW2", 0);
                 iniVal(m, p, s, ref fram.Analysis.OffsetBlueTapeW, "fram.Analysis.OffsetBlueTapeW", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset_EDGE_1StepW, "fram.Analysis.Offset_EDGE_1StepW", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset_EDGE_2StepW1, "fram.Analysis.Offset_EDGE_2StepW1", 0);
                 iniVal(m, p, s, ref fram.Analysis.Offset.Inline_1StepH, "fram.Analysis.Offset.Inline_1StepH", 0);
                 iniVal(m, p, s, ref fram.Analysis.Offset.Inline_1StepW, "fram.Analysis.Offset.Inline_1StepW", 0);
                 iniVal(m, p, s, ref fram.Analysis.Offset.Inline_2StepH1, "fram.Analysis.Offset.Inline_2StepH1", 0);
@@ -261,6 +264,8 @@ namespace TrimGap
                 iniVal(m, p, s, ref fram.Analysis.Offset.Inline_PT_2StepH2, "fram.Analysis.Offset.PT_Inline_2StepH2", 0);
                 iniVal(m, p, s, ref fram.Analysis.Offset.Inline_PT_2StepW2, "fram.Analysis.Offset.PT_Inline_2StepW2", 0);
                 iniVal(m, p, s, ref fram.Analysis.Offset.Inline_BlueTapeW, "fram.Analysis.Offset.Inline_BlueTapeW", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Inline_EDGE_1StepW, "fram.Analysis.Offset.Inline_EDGE_1StepW", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Inline_EDGE_2StepW1, "fram.Analysis.Offset.Inline_EDGE_2StepW1", 0);
                 iniVal(m, p, s, ref fram.Analysis.Offset.Offline_1StepH, "fram.Analysis.Offset.Offline_1StepH", 0);
                 iniVal(m, p, s, ref fram.Analysis.Offset.Offline_1StepW, "fram.Analysis.Offset.Offline_1StepW", 0);
                 iniVal(m, p, s, ref fram.Analysis.Offset.Offline_2StepH1, "fram.Analysis.Offset.Offline_2StepH1", 0);
@@ -274,6 +279,8 @@ namespace TrimGap
                 iniVal(m, p, s, ref fram.Analysis.Offset.Offline_PT_2StepH2, "fram.Analysis.Offset.PT_Offline_2StepH2", 0);
                 iniVal(m, p, s, ref fram.Analysis.Offset.Offline_PT_2StepW2, "fram.Analysis.Offset.PT_Offline_2StepW2", 0);
                 iniVal(m, p, s, ref fram.Analysis.Offset.Offline_BlueTapeW, "fram.Analysis.Offset.Offline_BlueTapeW", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Offline_EDGE_1StepW, "fram.Analysis.Offset.Offline_EDGE_1StepW", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Offline_EDGE_2StepW1, "fram.Analysis.Offset.Offline_EDGE_2StepW1", 0);
                 for (int i = 0; i < 8; i++)
                 {
                     iniVal(m, p, s, ref fram.Analysis.Offset.QC_1StepH[i], "fram.Analysis.Offset.QC_1StepH" + i, 0);
@@ -289,6 +296,8 @@ namespace TrimGap
                     iniVal(m, p, s, ref fram.Analysis.Offset.QC_PT_2StepH2[i], "fram.Analysis.Offset.PT_QC_2StepH2" + i, 0);
                     iniVal(m, p, s, ref fram.Analysis.Offset.QC_PT_2StepW2[i], "fram.Analysis.Offset.PT_QC_2StepW2" + i, 0);
                     iniVal(m, p, s, ref fram.Analysis.Offset.QC_BlueTapeW[i], "fram.Analysis.Offset.QC_BlueTapeW" + i, 0);
+                    iniVal(m, p, s, ref fram.Analysis.Offset.QC_EDGE_1StepW[i], "fram.Analysis.Offset.EDGE_QC_1StepW" + i, 0);
+                    iniVal(m, p, s, ref fram.Analysis.Offset.QC_EDGE_2StepW1[i], "fram.Analysis.Offset.EDGE_QC_2StepW1" + i, 0);
                 }
             }
 
@@ -400,7 +409,16 @@ namespace TrimGap
             iniRCPVal("r", Path, KeyName);
         }
 
+        public static void ReadRcpini(string Path, string KeyName, RecipeFormat recipe)
+        {
+            iniRCPVal("r", Path, KeyName, recipe);
+        }
+
         private static void iniRCPVal(string m, string p, string KeyName)
+        {
+            iniRCPVal(m, p, KeyName, fram.Recipe);
+        }
+        private static void iniRCPVal(string m, string p, string KeyName, RecipeFormat recipe)
         {
             string s;
             //
@@ -408,32 +426,41 @@ namespace TrimGap
             {
                 s = "Recipe";
 
-                iniVal(m, p, s, ref fram.Recipe.Rotate_Count, "fram.Recipe.Rotate_Count", 8);
-                iniVal(m, p, s, ref fram.Recipe.Type, "fram.Recipe.Type", 0);
-                iniVal(m, p, s, ref fram.Recipe.OffsetType, "fram.Recipe.OffsetType", 0);
-                iniVal(m, p, s, ref fram.Recipe.RepeatTimes, "fram.Recipe.RepeatTimes", 1);
-                iniVal(m, p, s, ref fram.Recipe.RepeatTimes_now, "fram.Recipe.RepeatTimes_now", 0);
+                iniVal(m, p, s, ref recipe.Rotate_Count, "fram.Recipe.Rotate_Count", 8);
+                iniVal(m, p, s, ref recipe.Type, "fram.Recipe.Type", 0);
+                iniVal(m, p, s, ref recipe.OffsetType, "fram.Recipe.OffsetType", 0);
+                iniVal(m, p, s, ref recipe.RepeatTimes, "fram.Recipe.RepeatTimes", 1);
+                iniVal(m, p, s, ref recipe.RepeatTimes_now, "fram.Recipe.RepeatTimes_now", 0);
                 for (int i = 0; i < 25; i++)
                 {
-                    iniVal(m, p, s, ref fram.Recipe.Slot[i], "fram.Recipe.Slot" + (i + 1), 1);
+                    iniVal(m, p, s, ref recipe.Slot[i], "fram.Recipe.Slot" + (i + 1), 1);
                 }
-                iniVal(m, p, s, ref fram.Recipe.Angle[0], "fram.Recipe.Angle" + 1, 1);
-                iniVal(m, p, s, ref fram.Recipe.Angle[1], "fram.Recipe.Angle" + 2, 45);
-                iniVal(m, p, s, ref fram.Recipe.Angle[2], "fram.Recipe.Angle" + 3, 90);
-                iniVal(m, p, s, ref fram.Recipe.Angle[3], "fram.Recipe.Angle" + 4, 135);
-                iniVal(m, p, s, ref fram.Recipe.Angle[4], "fram.Recipe.Angle" + 5, 180);
-                iniVal(m, p, s, ref fram.Recipe.Angle[5], "fram.Recipe.Angle" + 6, 225);
-                iniVal(m, p, s, ref fram.Recipe.Angle[6], "fram.Recipe.Angle" + 7, 270);
-                iniVal(m, p, s, ref fram.Recipe.Angle[7], "fram.Recipe.Angle" + 8, 315);
-                iniVal(m, p, s, ref fram.Recipe.CreateTime, "fram.Recipe.CreateTime", DateTime.Now.ToString());
-                iniVal(m, p, s, ref fram.Recipe.ReviseTime, "fram.Recipe.ReviseTime", DateTime.Now.ToString());
-                iniVal(m, p, s, ref fram.Recipe.MotionPatternName, "fram.Recipe.MotionPatternName", "Default");
-                iniVal(m, p, s, ref fram.Recipe.MotionPatternPath, "fram.Recipe.MotionPatternPath", "D:\\FTGM1\\ParameterDirectory\\TTVPath");
-                iniVal(m, p, s, ref fram.Recipe.SF3_ID, "fram.Recipe.SF3_ID", "1");
-                iniVal(m, p, s, ref fram.Recipe.SF3_Name, "fram.Recipe.SF3_Name", "1");
+                iniVal(m, p, s, ref recipe.Angle[0], "fram.Recipe.Angle" + 1, 1);
+                iniVal(m, p, s, ref recipe.Angle[1], "fram.Recipe.Angle" + 2, 45);
+                iniVal(m, p, s, ref recipe.Angle[2], "fram.Recipe.Angle" + 3, 90);
+                iniVal(m, p, s, ref recipe.Angle[3], "fram.Recipe.Angle" + 4, 135);
+                iniVal(m, p, s, ref recipe.Angle[4], "fram.Recipe.Angle" + 5, 180);
+                iniVal(m, p, s, ref recipe.Angle[5], "fram.Recipe.Angle" + 6, 225);
+                iniVal(m, p, s, ref recipe.Angle[6], "fram.Recipe.Angle" + 7, 270);
+                iniVal(m, p, s, ref recipe.Angle[7], "fram.Recipe.Angle" + 8, 315);
+                iniVal(m, p, s, ref recipe.CreateTime, "fram.Recipe.CreateTime", DateTime.Now.ToString());
+                iniVal(m, p, s, ref recipe.ReviseTime, "fram.Recipe.ReviseTime", DateTime.Now.ToString());
+                iniVal(m, p, s, ref recipe.MotionPatternName, "fram.Recipe.MotionPatternName", "Default");
+                iniVal(m, p, s, ref recipe.MotionPatternPath, "fram.Recipe.MotionPatternPath", "D:\\FTGM1\\ParameterDirectory\\TTVPath");
+                iniVal(m, p, s, ref recipe.SF3_ID, "fram.Recipe.SF3_ID", "1");
+                iniVal(m, p, s, ref recipe.SF3_Name, "fram.Recipe.SF3_Name", "1");
+                iniVal(m, p, s, ref recipe.WaferEdgeEvaluate, "fram.Recipe.WaferEdgeEvaluate", 0);
+                iniVal(m, p, s, ref recipe.BlueTapeThreshold, "fram.Recipe.BlueTapeThreshold", 17);
+                iniVal(m, p, s, ref recipe.Step1_Range_step1x0, "fram.Recipe.Step1_Range_step1x0", 1);
+                iniVal(m, p, s, ref recipe.Step1_Range_step1x1, "fram.Recipe.Step1_Range_step1x1", 4000);
+                iniVal(m, p, s, ref recipe.Step2_Range_step1x0, "fram.Recipe.Step2_Range_step1x0", 2300);
+                iniVal(m, p, s, ref recipe.Step2_Range_step1x1, "fram.Recipe.Step2_Range_step1x1", 2900);
+                iniVal(m, p, s, ref recipe.Step2_Range_step2x0, "fram.Recipe.Step2_Range_step2x0", 1800);
+                iniVal(m, p, s, ref recipe.Step2_Range_step2x1, "fram.Recipe.Step2_Range_step2x1", 2000);
+                iniVal(m, p, s, ref recipe.Range1_Percent, "fram.Recipe.Range1_Percent", 5);
+                iniVal(m, p, s, ref recipe.Range2_Percent, "fram.Recipe.Range2_Percent", 15);
             }
         }
-
         //public static bool Save3MDistribution_Csv(System.Windows.Forms.DataGridView dataGridView1, string fullPath) // 20200310
         public static bool SaveDistribution_Csv(float[,] All_hist, string fullPath, DateTime dt, int index) // 20200310
         {

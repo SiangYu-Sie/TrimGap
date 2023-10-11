@@ -4,7 +4,7 @@
 library
 C#
 .cs
-E:\專案\TrimGap\TrimGap - 20230915\Modules\Modules\obj\Debug\
+E:\專案\TrimGap\TrimGap - 20230918\Modules\Modules\obj\Debug\
 Modules
 none
 false
@@ -12,9 +12,9 @@ DEBUG;TRACE
 
 8-340662530
 61141219437
-33-850373166
-45-1305607079
+32-95803382
+45-1733349878
 AxisSetting\AxisSetting.xaml;AxisSetting\AxisSettingControl.xaml;SignInControl\SignInWindow.xaml;SignInControl\UserAddWindow.xaml;SignInControl\UserEditWindow.xaml;SignInControl\UserLogWindow.xaml;SignInControl\UserManagerWindow.xaml;SignInControl\UserRightsControl.xaml;
 
-True
+False
 
