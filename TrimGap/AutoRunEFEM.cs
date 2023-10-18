@@ -1445,12 +1445,17 @@ namespace TrimGap
                             else
                             {
                                 Console.WriteLine("Alignment Fail " + Common.EFEM.Aligner.ErrorDescription);
+                                Common.EFEM.Aligner.ResetError();
+                                Common.CGWrapper.AlarmReportSend(TrimGap_EqpID.EFEM_Aligner1_AlignmentError, 128);
+                                InsertLog.SavetoDB(134, Common.EFEM.Aligner.ErrorDescription);
                                 EFEMGotoErrorCheckStep();
                             }
                         }
                         else
                         {
                             Console.WriteLine("Alignment Fail " + Common.EFEM.Aligner.ErrorDescription);
+                            Common.CGWrapper.AlarmReportSend(TrimGap_EqpID.EFEM_Aligner1_AlignmentError, 128);
+                            InsertLog.SavetoDB(134, Common.EFEM.Aligner.ErrorDescription);
                             EFEMGotoErrorCheckStep();
                         }
                     }
@@ -2103,12 +2108,12 @@ namespace TrimGap
             if (Common.EFEM.Aligner.WaferPresence)
             {
                 rtn = Common.EFEM.Aligner.Alignment();
-                if (!rtn)
+                /*if (!rtn)
                 {
                     Flag.AllHome_busyFlag = false;
                     HomeAllFailStr = Common.EFEM.Aligner.ErrorDescription;
                     return false;
-                }
+                }*/   //遇到破片的話，這樣退出會變成破片放不回去 20231016
             }
 
             #endregion Aligner Home
@@ -2213,8 +2218,10 @@ namespace TrimGap
                 }
                 else
                 {
+                    Common.CGWrapper.AlarmReportSend(TrimGap_EqpID.EFEM_Robot_WaferGetError_LowerArm_Aligner1_Slot1 + Common.EFEM.Aligner.Slot - 1, 128);
+                    InsertLog.SavetoDB(102, Common.EFEM.Robot.ErrorDescription);
                     Flag.AllHome_busyFlag = false;
-                    HomeAllFailStr = "Aligner Wafer Home Fail";
+                    HomeAllFailStr = "Aligner Wafer Get Fail";
                     return false;
                 }
             }
