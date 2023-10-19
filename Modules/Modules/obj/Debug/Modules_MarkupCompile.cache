@@ -12,9 +12,9 @@ DEBUG;TRACE
 
 8-340662530
 61141219437
-33-850373166
+32-95803382
 451976070240
 AxisSetting\AxisSetting.xaml;AxisSetting\AxisSettingControl.xaml;SignInControl\SignInWindow.xaml;SignInControl\UserAddWindow.xaml;SignInControl\UserEditWindow.xaml;SignInControl\UserLogWindow.xaml;SignInControl\UserManagerWindow.xaml;SignInControl\UserRightsControl.xaml;
 
-True
+False
 

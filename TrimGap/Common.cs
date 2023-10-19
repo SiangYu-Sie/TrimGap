@@ -11,6 +11,7 @@ using System.Threading;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.Diagnostics;
 
 namespace TrimGap
 {
@@ -70,6 +71,10 @@ namespace TrimGap
                 fram.m_WaferStageType = 1; // 0:平坦台面+氣缸頂升  1:凹槽台面+牙叉抬升
                 fram.m_Hardware_CCD = 0; // 0:None 1:藍膜Z向拍照
             }
+            FileVersionInfo info = FileVersionInfo.GetVersionInfo("PMLcmpDll.dll");
+            sram.AnalysisVersion = info.FileMajorPart + "." + info.FileMinorPart + "." + info.FileBuildPart;
+            info = FileVersionInfo.GetVersionInfo("TrimGap.exe");
+            sram.ProgramVersion = info.FileMajorPart + "." + info.FileMinorPart + "." + info.FileBuildPart;
             InitDataBase();
             InitKeyence();
             InitIO();
@@ -82,6 +87,8 @@ namespace TrimGap
             InitSF3(fram.m_Hardware_SF3);
             InitCCD(fram.m_Hardware_CCD);
             InitPT(fram.m_Hardware_PT);
+
+
         }
 
         static public void Close()

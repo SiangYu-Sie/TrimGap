@@ -369,7 +369,7 @@
             this.lbControlStatus.BackColor = System.Drawing.Color.Yellow;
             this.lbControlStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbControlStatus.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.lbControlStatus.Location = new System.Drawing.Point(4, 194);
+            this.lbControlStatus.Location = new System.Drawing.Point(4, 198);
             this.lbControlStatus.Name = "lbControlStatus";
             this.lbControlStatus.Size = new System.Drawing.Size(202, 40);
             this.lbControlStatus.TabIndex = 115;

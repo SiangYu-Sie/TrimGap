@@ -422,20 +422,22 @@ namespace TrimGap
 
                             #region Cancel
 
-                            if (Common.SecsgemForm.bWaitSECS_CancelCmd && !EFEMCmd)
+                            if (Common.SecsgemForm.bWaitSECS_CancelCmd && !EFEMCmd && !Common.EFEM.LoadPort1.Busy && !Common.EFEM.LoadPort2.Busy)
                             {
                                 if (Common.SecsgemForm.CancelData.CarrierID == "")
                                 {
                                     if (Common.SecsgemForm.CancelData.LoadPortID == "1" && fram.SECSPara.Loadport1_AccessMode == Mode.Auto.GetHashCode())
                                     {
-                                        FoupHome(ref Common.EFEM.LoadPort1);
+                                        //FoupHome(ref Common.EFEM.LoadPort1);
                                         AutoRunEFEMStep1 = EFEMStep.JudgeStep;
+                                        Flag.AbortFlag = true;
                                         bWEFEMAutoRun.ReportProgress(99);
                                     }
                                     else if (Common.SecsgemForm.CancelData.LoadPortID == "2" && fram.SECSPara.Loadport1_AccessMode == Mode.Auto.GetHashCode())
                                     {
-                                        FoupHome(ref Common.EFEM.LoadPort2);
+                                        //FoupHome(ref Common.EFEM.LoadPort2);
                                         AutoRunEFEMStep2 = EFEMStep.JudgeStep;
+                                        Flag.AbortFlag = true;
                                         bWEFEMAutoRun.ReportProgress(99);
                                     }
                                 }
@@ -443,8 +445,9 @@ namespace TrimGap
                                 {
                                     if (Common.SecsgemForm.CancelData.CarrierID == Common.EFEM.LoadPort1.FoupID && fram.SECSPara.Loadport1_AccessMode == Mode.Auto.GetHashCode())
                                     {
-                                        FoupHome(ref Common.EFEM.LoadPort1);
+                                        //FoupHome(ref Common.EFEM.LoadPort1);
                                         AutoRunEFEMStep1 = EFEMStep.JudgeStep;
+                                        Flag.AbortFlag = true;
                                         bWEFEMAutoRun.ReportProgress(99);
                                     }
                                 }
@@ -452,8 +455,9 @@ namespace TrimGap
                                 {
                                     if (Common.SecsgemForm.CancelData.CarrierID == Common.EFEM.LoadPort2.FoupID && fram.SECSPara.Loadport2_AccessMode == Mode.Auto.GetHashCode())
                                     {
-                                        FoupHome(ref Common.EFEM.LoadPort2);
+                                        //FoupHome(ref Common.EFEM.LoadPort2);
                                         AutoRunEFEMStep2 = EFEMStep.JudgeStep;
+                                        Flag.AbortFlag = true;
                                         bWEFEMAutoRun.ReportProgress(99);
                                     }
                                 }
@@ -1134,101 +1138,237 @@ namespace TrimGap
                     }
                     loadPort.AutoGetSlot();
                     fram.PT_PLC_AutoRunEFEM_RetryCount = 0; //PTPLC的retry次數做重置
-                    #region Stage 沒有
 
-                    if (!Common.EFEM.Stage1.WaferPresence)
+                    if(!Flag.AbortFlag)   //正常情況
                     {
-                        #region Aligner 沒有
+                        #region Stage 沒有
 
-                        if (!Common.EFEM.Aligner.WaferPresence)
+                        if (!Common.EFEM.Stage1.WaferPresence)
                         {
-                            #region 兩隻arm的排列組合 Lower / Upper
+                            #region Aligner 沒有
 
-                            #region 0 0 0 0
-
-                            if (!Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
+                            if (!Common.EFEM.Aligner.WaferPresence)
                             {
-                                if (loadPort.ReadryToLoadWafer)
+                                #region 兩隻arm的排列組合 Lower / Upper
+
+                                #region 0 0 0 0
+
+                                if (!Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
                                 {
-                                    eFEMStep = EFEMStep.WaferGetFormLoadPort;
-                                }
-                                else
-                                {
-                                    eFEMStep = EFEMStep.Finish;
-                                }
-                            }
-
-                            #endregion 0 0 0 0
-
-                            #region 0 1 0 0
-
-                            else if (!Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
-                            {
-                                if (Common.EFEM.Robot.slot_Status[(int)Robot.ArmID.UpperArm - 1] == EFEM.slot_status.ProcessEnd)
-                                {
-                                    eFEMStep = EFEMStep.WaferPut2LoadPort; // 做完才回LoadPort
-                                }
-                                else
-                                {
-                                    eFEMStep = EFEMStep.WaferPut2Stage1; // 還沒做完去Stage
-                                }
-                            }
-
-                            #endregion 0 1 0 0
-
-                            #region 1 0 0 0
-
-                            else if (Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
-                            {
-                                eFEMStep = EFEMStep.WaferPut2Aligner1;
-                            }
-
-                            #endregion 1 0 0 0
-
-                            #region 1 1 0 0
-
-                            else if (Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
-                            {
-                                eFEMStep = EFEMStep.WaferPut2Aligner1;
-                            }
-
-                            #endregion 1 1 0 0
-
-                            #region ? ? error
-
-                            else
-                            {
-                            }
-
-                            #endregion ? ? error
-
-                            #endregion 兩隻arm的排列組合 Lower / Upper
-                        }
-
-                        #endregion Aligner 沒有
-
-                        #region Aligner 有
-
-                        else
-                        {
-                            #region 兩隻arm的排列組合 Lower / Upper
-
-                            #region 0 0 1 0
-
-                            if (!Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
-                            {
-                                if (loadPort.ReadryToLoadWafer)
-                                {
-                                    if (!Common.EFEM.Aligner.Alignement_Done)
-                                    {
-                                        eFEMStep = EFEMStep.DoAlignement;
-                                    }
-                                    else
+                                    if (loadPort.ReadryToLoadWafer)
                                     {
                                         eFEMStep = EFEMStep.WaferGetFormLoadPort;
                                     }
+                                    else
+                                    {
+                                        eFEMStep = EFEMStep.Finish;
+                                    }
                                 }
+
+                                #endregion 0 0 0 0
+
+                                #region 0 1 0 0
+
+                                else if (!Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
+                                {
+                                    if (Common.EFEM.Robot.slot_Status[(int)Robot.ArmID.UpperArm - 1] == EFEM.slot_status.ProcessEnd)
+                                    {
+                                        eFEMStep = EFEMStep.WaferPut2LoadPort; // 做完才回LoadPort
+                                    }
+                                    else
+                                    {
+                                        eFEMStep = EFEMStep.WaferPut2Stage1; // 還沒做完去Stage
+                                    }
+                                }
+
+                                #endregion 0 1 0 0
+
+                                #region 1 0 0 0
+
+                                else if (Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
+                                {
+                                    eFEMStep = EFEMStep.WaferPut2Aligner1;
+                                }
+
+                                #endregion 1 0 0 0
+
+                                #region 1 1 0 0
+
+                                else if (Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
+                                {
+                                    eFEMStep = EFEMStep.WaferPut2Aligner1;
+                                }
+
+                                #endregion 1 1 0 0
+
+                                #region ? ? error
+
                                 else
+                                {
+                                }
+
+                                #endregion ? ? error
+
+                                #endregion 兩隻arm的排列組合 Lower / Upper
+                            }
+
+                            #endregion Aligner 沒有
+
+                            #region Aligner 有
+
+                            else
+                            {
+                                #region 兩隻arm的排列組合 Lower / Upper
+
+                                #region 0 0 1 0
+
+                                if (!Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
+                                {
+                                    if (loadPort.ReadryToLoadWafer)
+                                    {
+                                        if (!Common.EFEM.Aligner.Alignement_Done)
+                                        {
+                                            eFEMStep = EFEMStep.DoAlignement;
+                                        }
+                                        else
+                                        {
+                                            eFEMStep = EFEMStep.WaferGetFormLoadPort;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (!Common.EFEM.Aligner.Alignement_Done)
+                                        {
+                                            eFEMStep = EFEMStep.DoAlignement;
+                                        }
+                                        else
+                                        {
+                                            eFEMStep = EFEMStep.WaferGetFormAligner1;
+                                        }
+                                    }
+                                }
+
+                                #endregion 0 0 1 0
+
+                                #region 0 1 1 0
+
+                                else if (!Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
+                                {
+                                    if (Common.EFEM.Robot.slot_Status[(int)Robot.ArmID.UpperArm - 1] == EFEM.slot_status.ProcessEnd)
+                                    {
+                                        eFEMStep = EFEMStep.WaferPut2LoadPort;
+                                    }
+                                    else
+                                    {
+                                        eFEMStep = EFEMStep.WaferPut2Stage1;
+                                    }
+                                }
+
+                                #endregion 0 1 1 0
+
+                                #region 1 0 1 0
+
+                                else if (Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
+                                {
+                                    eFEMStep = EFEMStep.WaferGetFormAligner1;
+                                }
+
+                                #endregion 1 0 1 0
+
+                                #region 1 1 1 0
+
+                                else if (Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
+                                {
+                                    //eFEMStep = EFEMStep.WaferPut2LoadPort;
+                                }
+
+                                #endregion 1 1 1 0
+
+                                #region ? ? error
+
+                                else
+                                {
+                                }
+
+                                #endregion ? ? error
+
+                                #endregion 兩隻arm的排列組合 Lower / Upper
+                            }
+
+                            #endregion Aligner 有
+                        }
+
+                        #endregion Stage 沒有
+
+                        #region Stage有
+
+                        else
+                        {
+                            #region Aligner 沒有
+
+                            if (!Common.EFEM.Aligner.WaferPresence)
+                            {
+                                #region 兩隻arm的排列組合 Lower / Upper
+
+                                #region 0 0 0 1
+
+                                // Stage有 兩手空空
+                                if (!Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
+                                {
+                                    eFEMStep = EFEMStep.WaferGetFormStage1;
+                                }
+
+                                #endregion 0 0 0 1
+
+                                #region 0 1 0 1
+
+                                else if (!Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
+                                {
+                                    //eFEMStep = EFEMStep.WaferPut2Stage1; // 還沒做完去Stage
+                                }
+
+                                #endregion 0 1 0 1
+
+                                #region 1 0 0 1
+
+                                else if (Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
+                                {
+                                }
+
+                                #endregion 1 0 0 1
+
+                                #region 1 1 0 1
+
+                                else if (Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
+                                {
+                                }
+
+                                #endregion 1 1 0 1
+
+                                #region ? ? error
+
+                                else
+                                {
+                                }
+
+                                #endregion ? ? error
+
+                                #endregion 兩隻arm的排列組合 Lower / Upper
+                            }
+
+                            #endregion Aligner 沒有
+
+                            #region Aligner 有
+
+                            else
+                            {
+                                #region 兩隻arm的排列組合 Lower / Upper
+
+                                #region 0 0 1 1
+
+                                // 兩站都有 兩手空空
+                                // 先做 Do Alignement ->
+                                if (!Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
                                 {
                                     if (!Common.EFEM.Aligner.Alignement_Done)
                                     {
@@ -1236,187 +1376,253 @@ namespace TrimGap
                                     }
                                     else
                                     {
-                                        eFEMStep = EFEMStep.WaferGetFormAligner1;
+                                        eFEMStep = EFEMStep.WaferGetFormStage1;
                                     }
                                 }
+
+                                #endregion 0 0 1 1
+
+                                #region 0 1 1 1
+
+                                else if (!Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
+                                {
+                                    //eFEMStep = EFEMStep.;
+                                }
+
+                                #endregion 0 1 1 1
+
+                                #region 1 0 1 1
+
+                                else if (Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
+                                {
+                                    //eFEMStep = EFEMStep.WaferGetFormStage1;
+                                }
+
+                                #endregion 1 0 1 1
+
+                                #region 1 1 1 1
+
+                                else if (Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
+                                {
+                                    //eFEMStep = EFEMStep.;
+                                }
+
+                                #endregion 1 1 1 1
+
+                                #region ? ? error
+
+                                else
+                                {
+                                }
+
+                                #endregion ? ? error
+
+                                #endregion 兩隻arm的排列組合 Lower / Upper
                             }
 
-                            #endregion 0 0 1 0
+                            #endregion Aligner 有
+                        }
 
-                            #region 0 1 1 0
-
-                            else if (!Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
+                        #endregion Stage有
+                    }
+                    else                 //Abort時
+                    {
+                        //Lower Arm有
+                        if(Common.EFEM.Robot.WaferPresence_Lower)
+                        {
+                            InsertLog.SavetoDB(61, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Robot.Slot_Arm_lower);
+                            switch (loadPort.pn)
                             {
-                                if (Common.EFEM.Robot.slot_Status[(int)Robot.ArmID.UpperArm - 1] == EFEM.slot_status.ProcessEnd)
+                                case LoadPort.Pn.P1:
+                                    rtn = Common.EFEM.Robot.WaferPut(Robot.ArmID.LowerArm, Robot.Pn.P1, Common.EFEM.Robot.Slot_Arm_lower, loadPort, EFEM.slot_status.ProcessEnd);
+                                    break;
+
+                                case LoadPort.Pn.P2:
+                                    rtn = Common.EFEM.Robot.WaferPut(Robot.ArmID.LowerArm, Robot.Pn.P2, Common.EFEM.Robot.Slot_Arm_lower, loadPort, EFEM.slot_status.ProcessEnd);
+                                    break;
+
+                                default:
+                                    rtn = false;
+                                    break;
+                            }
+                            if (rtn)
+                            {
+                                eFEMStep_Back = EFEMStep.JudgeStep;
+                            }
+                            else
+                            {
+                                InsertLog.SavetoDB(104, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Robot.Slot_Arm_lower + ", msg：" + loadPort.ErrorDescription); //
+                                EFEMGotoErrorCheckStep();
+                            }
+                            Common.EFEM.Robot.GetStatus();
+                        }
+                        else if(Common.EFEM.Robot.WaferPresence_Upper)   //Lower Arm 沒有了 Upper Arm 有
+                        {
+                            InsertLog.SavetoDB(61, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Robot.Slot_Arm_upper);
+                            switch (loadPort.pn)
+                            {
+                                case LoadPort.Pn.P1:
+                                    rtn = Common.EFEM.Robot.WaferPut(Robot.ArmID.UpperArm, Robot.Pn.P1, Common.EFEM.Robot.Slot_Arm_upper, loadPort, EFEM.slot_status.ProcessEnd);
+                                    break;
+
+                                case LoadPort.Pn.P2:
+                                    rtn = Common.EFEM.Robot.WaferPut(Robot.ArmID.UpperArm, Robot.Pn.P2, Common.EFEM.Robot.Slot_Arm_upper, loadPort, EFEM.slot_status.ProcessEnd);
+                                    break;
+
+                                default:
+                                    rtn = false;
+                                    break;
+                            }
+                            if (rtn)
+                            {
+                                eFEMStep_Back = EFEMStep.JudgeStep;
+                            }
+                            else
+                            {
+                                InsertLog.SavetoDB(104, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Robot.Slot_Arm_upper + ", msg：" + loadPort.ErrorDescription); //
+                                EFEMGotoErrorCheckStep();
+                            }
+                            Common.EFEM.Robot.GetStatus();
+                        }
+                        else if(Common.EFEM.Aligner.WaferPresence) //Lower Arm Upper Arm 沒有了 Aligner 有
+                        {
+                            eFEMStep = EFEMStep.WaferGetFormAligner1; //借用 把Aligner Wafer拿在手上，之後又回到上面手上有Wafer情況
+                        }
+                        else if (Common.io.In(IOName.In.StageWafer在席)) //Lower Arm Upper Arm 沒有了 Aligner 沒有 stage 有
+                        {
+                            if (machineType == MachineType.AP6)
+                            {
+                                // 解真空 & 汽缸up
+                                if (Common.io.In(IOName.In.真空平台_負壓檢))
                                 {
-                                    eFEMStep = EFEMStep.WaferPut2LoadPort;
+                                    Common.io.WriteOut(IOName.Out.平台真空電磁閥, false);
+                                    Common.io.WriteOut(IOName.Out.平台破真空電磁閥, true);
+                                }
+                                if (!Common.io.In(IOName.In.Wafer汽缸_抬起檢) && (fram.m_Hardware_PT == 1 && Common.PTForm.GetPointMoveFinish(9)))
+                                {
+                                    Common.io.WriteOut(IOName.Out.Wafer汽缸_降下, false);
+                                    Common.io.WriteOut(IOName.Out.Wafer汽缸_抬起, true);
+                                }
+                                SpinWait.SpinUntil(() => (!Common.io.In(IOName.In.真空平台_負壓檢) && Common.io.In(IOName.In.Wafer汽缸_抬起檢)), 5000);
+                                if (!Common.io.In(IOName.In.Wafer汽缸_抬起檢))
+                                {
+                                    InsertLog.SavetoDB(103, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Stage1.Slot + ", msg：" + "Wafer汽缸_抬起檢"); //
+                                    EFEMGotoErrorCheckStep();
+                                    break;
+                                }
+                                else if (Common.io.In(IOName.In.真空平台_負壓檢))
+                                {
+                                    InsertLog.SavetoDB(103, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Stage1.Slot + ", msg：" + "真空平台_負壓檢"); //
+                                    EFEMGotoErrorCheckStep();
+                                    break;
+                                }
+                                else if ((fram.m_Hardware_PT == 1 && !Common.PTForm.GetPointMoveFinish(9)))
+                                {
+                                    InsertLog.SavetoDB(103, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Stage1.Slot + ", msg：" + "PT PLC未退至安全位置"); //
+                                    EFEMGotoErrorCheckStep();
+                                    break;
+                                }
+                                Common.EFEM.Stage1.Ready = true;
+                                Common.io.WriteOut(IOName.Out.StageWaferReady, true);
+                                Common.io.WriteOut(IOName.Out.StageWafer在席, true);
+                                rtn = Common.EFEM.Robot.WaferGet(Robot.ArmID.UpperArm, Robot.Pn.Stage1, Common.EFEM.Stage1.Slot, Common.EFEM.LoadPort_Run, EFEM.slot_status.Ready);
+                                if (rtn)
+                                {
+                                    Common.EFEM.Robot.Update_slot_Status(Robot.ArmID.UpperArm, EFEM.slot_status.Ready);
+                                    SpinWait.SpinUntil(() => false, 1000);
+                                    Common.io.WriteOut(IOName.Out.StageWafer在席, false);
                                 }
                                 else
                                 {
-                                    eFEMStep = EFEMStep.WaferPut2Stage1;
+                                    InsertLog.SavetoDB(103, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Robot.Slot_Arm_upper + ", msg：" + loadPort.ErrorDescription); //
+                                    EFEMGotoErrorCheckStep();
+                                    break;
                                 }
                             }
-
-                            #endregion 0 1 1 0
-
-                            #region 1 0 1 0
-
-                            else if (Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
+                            else if (machineType == MachineType.N2)
                             {
-                                eFEMStep = EFEMStep.WaferGetFormAligner1;
+                                // 先移動 在解真空
+                                Common.motion.PosMove(Mo.AxisNo.DD, 0);
+                                Common.motion.PosMove(Mo.AxisNo.X, AutoRunStage.Homepos.WaferSwitch.X);
+                                Common.motion.PosMove(Mo.AxisNo.Y, AutoRunStage.Homepos.WaferSwitch.Y);
+
+                                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 15000);
+                                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X), 15000);
+                                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.Y), 15000);
+                                if (!Common.motion.MotionDone(Mo.AxisNo.DD) || !Common.motion.MotionDone(Mo.AxisNo.X) || !Common.motion.MotionDone(Mo.AxisNo.Y))
+                                {
+                                    if(!Common.motion.MotionDone(Mo.AxisNo.DD))
+                                        InsertLog.SavetoDB(103, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Stage1.Slot + ", msg：" + "DD未達取片位置"); //
+                                    if (!Common.motion.MotionDone(Mo.AxisNo.X))
+                                        InsertLog.SavetoDB(103, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Stage1.Slot + ", msg：" + "X軸未達取片位置"); //
+                                    if (!Common.motion.MotionDone(Mo.AxisNo.Y))
+                                        InsertLog.SavetoDB(103, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Stage1.Slot + ", msg：" + "Y軸未達取片位置"); //
+                                    EFEMGotoErrorCheckStep();
+                                    break;
+                                }
+
+                                // 解真空 & 汽缸up
+                                if (Common.io.In(IOName.In.真空平台_負壓檢))
+                                {
+                                    Common.io.WriteOut(IOName.Out.平台真空電磁閥, false);
+                                    Common.io.WriteOut(IOName.Out.平台破真空電磁閥, true);
+                                }
+                                SpinWait.SpinUntil(() => !Common.io.In(IOName.In.真空平台_負壓檢), 3000);
+                                if (Common.io.In(IOName.In.真空平台_負壓檢))
+                                {
+                                    InsertLog.SavetoDB(103, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Stage1.Slot + ", msg：" + "真空平台_破真空異常"); //
+                                    EFEMGotoErrorCheckStep();
+                                    break;
+                                }
+
+                                Common.EFEM.Stage1.Ready = true;
+                                Common.io.WriteOut(IOName.Out.StageWaferReady, true);
+                                Common.io.WriteOut(IOName.Out.StageWafer在席, true);
+                                rtn = Common.EFEM.Robot.WaferGet(Robot.ArmID.UpperArm, Robot.Pn.Stage1, Common.EFEM.Stage1.Slot, Common.EFEM.LoadPort_Run, EFEM.slot_status.Ready);
+                                if (rtn)
+                                {
+                                    Common.EFEM.Robot.Update_slot_Status(Robot.ArmID.UpperArm, EFEM.slot_status.Ready);
+                                    SpinWait.SpinUntil(() => false, 1000);
+                                    Common.io.WriteOut(IOName.Out.StageWafer在席, false);
+                                }
+                                else
+                                {
+                                    InsertLog.SavetoDB(103, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Stage1.Slot + ", msg：" + loadPort.ErrorDescription); //
+                                    EFEMGotoErrorCheckStep();
+                                    break;
+                                }
                             }
-
-                            #endregion 1 0 1 0
-
-                            #region 1 1 1 0
-
-                            else if (Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
-                            {
-                                //eFEMStep = EFEMStep.WaferPut2LoadPort;
-                            }
-
-                            #endregion 1 1 1 0
-
-                            #region ? ? error
-
-                            else
-                            {
-                            }
-
-                            #endregion ? ? error
-
-                            #endregion 兩隻arm的排列組合 Lower / Upper
                         }
-
-                        #endregion Aligner 有
-                    }
-
-                    #endregion Stage 沒有
-
-                    #region Stage有
-
-                    else
-                    {
-                        #region Aligner 沒有
-
-                        if (!Common.EFEM.Aligner.WaferPresence)
-                        {
-                            #region 兩隻arm的排列組合 Lower / Upper
-
-                            #region 0 0 0 1
-
-                            // Stage有 兩手空空
-                            if (!Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
-                            {
-                                eFEMStep = EFEMStep.WaferGetFormStage1;
-                            }
-
-                            #endregion 0 0 0 1
-
-                            #region 0 1 0 1
-
-                            else if (!Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
-                            {
-                                //eFEMStep = EFEMStep.WaferPut2Stage1; // 還沒做完去Stage
-                            }
-
-                            #endregion 0 1 0 1
-
-                            #region 1 0 0 1
-
-                            else if (Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
-                            {
-                            }
-
-                            #endregion 1 0 0 1
-
-                            #region 1 1 0 1
-
-                            else if (Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
-                            {
-                            }
-
-                            #endregion 1 1 0 1
-
-                            #region ? ? error
-
-                            else
-                            {
-                            }
-
-                            #endregion ? ? error
-
-                            #endregion 兩隻arm的排列組合 Lower / Upper
-                        }
-
-                        #endregion Aligner 沒有
-
-                        #region Aligner 有
-
                         else
                         {
-                            #region 兩隻arm的排列組合 Lower / Upper
-
-                            #region 0 0 1 1
-
-                            // 兩站都有 兩手空空
-                            // 先做 Do Alignement ->
-                            if (!Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
+                            //Abort完成
+                            loadPort.Busy = false;
+                            if (loadPort.pn == LoadPort.Pn.P1)
                             {
-                                if (!Common.EFEM.Aligner.Alignement_Done)
+                                Common.CGWrapper.UpdateSV(TrimGap_EqpID.PortID, 1);
+                                FoupHome(ref Common.EFEM.LoadPort1);
+                            }
+                            else if (loadPort.pn == LoadPort.Pn.P2)
+                            {
+                                Common.CGWrapper.UpdateSV(TrimGap_EqpID.PortID, 2);
+                                FoupHome(ref Common.EFEM.LoadPort2);
+                            }
+                            Common.CGWrapper.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID);
+                            //Common.CGWrapper.EventReportSend(TrimGap_EqpID.MeasureResultSend);  // 這邊應該要回報一個Abort Finish
+                            for (int i = 0; i < 25; i++)
+                            {
+                                for (int j = 0; j < sram.Recipe.Rotate_Count; j++)
                                 {
-                                    eFEMStep = EFEMStep.DoAlignement;
+                                    fram.EFEMSts.H1[i, j] = 0;
+                                    fram.EFEMSts.W1[i, j] = 0;
+                                    fram.EFEMSts.H2[i, j] = 0;
+                                    fram.EFEMSts.W2[i, j] = 0;
                                 }
-                                else
-                                {
-                                    eFEMStep = EFEMStep.WaferGetFormStage1;
-                                }
                             }
-
-                            #endregion 0 0 1 1
-
-                            #region 0 1 1 1
-
-                            else if (!Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
-                            {
-                                //eFEMStep = EFEMStep.;
-                            }
-
-                            #endregion 0 1 1 1
-
-                            #region 1 0 1 1
-
-                            else if (Common.EFEM.Robot.WaferPresence_Lower && !Common.EFEM.Robot.WaferPresence_Upper)
-                            {
-                                //eFEMStep = EFEMStep.WaferGetFormStage1;
-                            }
-
-                            #endregion 1 0 1 1
-
-                            #region 1 1 1 1
-
-                            else if (Common.EFEM.Robot.WaferPresence_Lower && Common.EFEM.Robot.WaferPresence_Upper)
-                            {
-                                //eFEMStep = EFEMStep.;
-                            }
-
-                            #endregion 1 1 1 1
-
-                            #region ? ? error
-
-                            else
-                            {
-                            }
-
-                            #endregion ? ? error
-
-                            #endregion 兩隻arm的排列組合 Lower / Upper
+                            bWEFEMAutoRun.ReportProgress(99);
+                            Flag.AbortFlag = false;
                         }
-
-                        #endregion Aligner 有
                     }
-
-                    #endregion Stage有
 
                     bWEFEMAutoRun.ReportProgress(99);
                     break;
@@ -2016,8 +2222,9 @@ namespace TrimGap
         public static bool EFEMHomeAll()
         {
             bool rtn;
+            Flag.AbortFlag = false;  // 20231019
             #region PT PLC
-            if(fram.m_Hardware_PT == 1 && machineType == MachineType.AP6)
+            if (fram.m_Hardware_PT == 1 && machineType == MachineType.AP6)
             {
                 if (Common.PTForm.GetDriverAlarm())
                 {
@@ -2348,19 +2555,34 @@ namespace TrimGap
                     Common.motion.PosMove(Mo.AxisNo.X, AutoRunStage.Homepos.WaferSwitch.X);
                     Common.motion.PosMove(Mo.AxisNo.Y, AutoRunStage.Homepos.WaferSwitch.Y);
 
-                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 10000);
-                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X), 10000);
-                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.Y), 10000);
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 15000);
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X), 15000);
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.Y), 15000);
                     if (!Common.motion.MotionDone(Mo.AxisNo.DD) || !Common.motion.MotionDone(Mo.AxisNo.X) || !Common.motion.MotionDone(Mo.AxisNo.Y))
                     {
-                        SpinWait.SpinUntil(() => false, 5000);
+                        if (!Common.motion.MotionDone(Mo.AxisNo.DD))
+                            HomeAllFailStr = "DD未達取片位置"; //
+                        if (!Common.motion.MotionDone(Mo.AxisNo.X))
+                            HomeAllFailStr = "X軸未達取片位置"; //
+                        if (!Common.motion.MotionDone(Mo.AxisNo.Y))
+                            HomeAllFailStr = "Y軸未達取片位置"; //
+
+                        Flag.AllHome_busyFlag = false;
+                        return false;
                     }
 
-                    // 解真空 & 汽缸up
+                    // 解真空
                     if (Common.io.In(IOName.In.真空平台_負壓檢))
                     {
                         Common.io.WriteOut(IOName.Out.平台真空電磁閥, false);
                         Common.io.WriteOut(IOName.Out.平台破真空電磁閥, true);
+                    }
+                    SpinWait.SpinUntil(() => !Common.io.In(IOName.In.真空平台_負壓檢), 3000);
+                    if(Common.io.In(IOName.In.真空平台_負壓檢))
+                    {
+                        HomeAllFailStr = "真空平台_破真空異常"; //
+                        Flag.AllHome_busyFlag = false;
+                        return false;
                     }
 
                     Common.EFEM.Stage1.Ready = true;

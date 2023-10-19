@@ -182,6 +182,9 @@ namespace TrimGap
         public static bool AlarmOpenFlag = false;
 
         public static bool isPT = false;
+
+        //進行Abort流程
+        public static bool AbortFlag = false;
     }
 
     //需記憶參數
@@ -524,6 +527,10 @@ namespace TrimGap
     // 暫存參數
     public struct sram
     {
+        //版本號
+        public static string ProgramVersion;
+        public static string AnalysisVersion;
+
         public static double PitchAngle = 0;
         public static double PitchAngleTotal = 0;
         public static EFEMStep EFEMStep1 = EFEMStep.WaitLoadPort; //預設等待loadport

@@ -161,6 +161,7 @@ namespace TrimGap
             {
                 _cp.Entries[i] = Color.FromArgb(255, i, i, i);
             }
+            label2.Text = "Trim Gap Metrology\n大量科技股份有限公司\nVersion: " + sram.ProgramVersion + " / " + sram.AnalysisVersion;
             //Common.EFEM.IO.SetFFUVoltage(0);
         }
 
