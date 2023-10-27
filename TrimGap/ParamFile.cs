@@ -166,6 +166,7 @@ namespace TrimGap
                 //iniVal(m, p, s, ref fram.S_SensorConnectType, "fram.S_SensorConnectType", 0);
                 //iniVal(m, p, s, ref fram.S_SensorProgram, "fram.S_SensorProgram", 0);
                 //iniVal(m, p, s, ref fram.S_Triggerbool, "fram.S_Triggerbool", 1);
+                iniVal(m, p, s, ref fram.m_SecsgemType, "fram.m_SecsgemType", 0);
             }
 
             if (KeyName == "all" || KeyName == "System")

@@ -20,6 +20,7 @@ namespace TrimGap
     {
         private static MotionControl frmUsrAssign;
         private ColorPalette _cp;
+        public static string err = string.Empty;
 
         public Form1()
         {
@@ -350,7 +351,7 @@ namespace TrimGap
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (Common.isRemote())
+            if (Common.SecsgemForm.isRemote())
             {
                 return;
             }
@@ -398,7 +399,7 @@ namespace TrimGap
 
                 SpinWait.SpinUntil(() => false, 10);
                 Flag.AutoidleFlag = true;
-                if (!Common.isRemote())
+                if (!Common.SecsgemForm.isRemote())
                 {
                     Flag.Autoidle_LocalFlag = true;
                 }
@@ -466,7 +467,7 @@ namespace TrimGap
 
         private void btnModeAuto_LP1_Click(object sender, EventArgs e)
         {
-            if (Common.SecsgemForm.Comm_State == 7 && Common.SecsgemForm.Control_State == 5) //Remote
+            if (Common.SecsgemForm.isRemote()) //Remote
             {
                 MessageBox.Show("The current status is remote control");
             }
@@ -482,14 +483,14 @@ namespace TrimGap
                 Common.EFEM.E84.SetAuto(E84.E84_Num.E841);
 
                 fram.SECSPara.Loadport1_AccessMode = Mode.Auto.GetHashCode();
-                Common.CGWrapper.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, fram.SECSPara.Loadport1_AccessMode);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, fram.SECSPara.Loadport1_AccessMode, out err);
                 InsertLog.SavetoDB(50, "LP1 Switch to Auto");// Auto
             }
         }
 
         private void btnModeManual_LP1_Click(object sender, EventArgs e)
         {
-            if (Common.SecsgemForm.Comm_State == 7 && Common.SecsgemForm.Control_State == 5) //Remote
+            if (Common.SecsgemForm.isRemote()) //Remote
             {
                 MessageBox.Show("The current status is remote control");
             }
@@ -504,14 +505,14 @@ namespace TrimGap
                 Common.EFEM.E84.SetManual(E84.E84_Num.E841);
                 Console.WriteLine("LP1 Switch to Manual");
                 fram.SECSPara.Loadport1_AccessMode = Mode.Manual.GetHashCode();
-                Common.CGWrapper.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, fram.SECSPara.Loadport1_AccessMode);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, fram.SECSPara.Loadport1_AccessMode, out err);
                 InsertLog.SavetoDB(51, "LP1 Switch to Manual");// Manual
             }
         }
 
         private void btnModeAuto_LP2_Click(object sender, EventArgs e)
         {
-            if (Common.isRemote()) //Remote
+            if (Common.SecsgemForm.isRemote()) //Remote
             {
                 MessageBox.Show("The current status is remote control");
             }
@@ -527,14 +528,14 @@ namespace TrimGap
                 Common.EFEM.E84.SetAuto(E84.E84_Num.E842);
 
                 fram.SECSPara.Loadport2_AccessMode = Mode.Auto.GetHashCode();
-                Common.CGWrapper.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, fram.SECSPara.Loadport2_AccessMode);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, fram.SECSPara.Loadport2_AccessMode, out err);
                 InsertLog.SavetoDB(50, "LP2 Switch to Auto");// Auto
             }
         }
 
         private void btnModeManual_LP2_Click(object sender, EventArgs e)
         {
-            if (Common.isRemote()) //Remote
+            if (Common.SecsgemForm.isRemote()) //Remote
             {
                 MessageBox.Show("The current status is remote control");
             }
@@ -547,7 +548,7 @@ namespace TrimGap
                 }
                 Common.EFEM.E84.SetManual(E84.E84_Num.E842);
                 fram.SECSPara.Loadport2_AccessMode = Mode.Manual.GetHashCode();
-                Common.CGWrapper.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, fram.SECSPara.Loadport2_AccessMode);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, fram.SECSPara.Loadport2_AccessMode, out err);
                 InsertLog.SavetoDB(51, "LP2 Switch to Manual");// Manual
             }
         }
@@ -723,7 +724,7 @@ namespace TrimGap
 
             if (Flag.AutoidleFlag)
             {
-                if (Common.isRemote())
+                if (Common.SecsgemForm.isRemote())
                 {
                     if (btnStart.BackColor != Color.DarkGreen)
                     {
@@ -763,14 +764,14 @@ namespace TrimGap
 
         private void lbControlMode()
         {
-            if (Common.SecsgemForm.Comm_State == 7) //1:DISABLE, 3:NOT_COMMUNICATING, 7:COMMUNICATING
+            if (Common.SecsgemForm.isCommunicating()) //1:DISABLE, 3:NOT_COMMUNICATING, 7:COMMUNICATING
             {
-                if (Common.SecsgemForm.Control_State == 5) // 3:Offline, 4:Local, 5:Remote
+                if (Common.SecsgemForm.isControlRemote()) // 3:Offline, 4:Local, 5:Remote
                 {
                     lbControlStatus.Text = "Remote";
                     lbControlStatus.BackColor = Color.Green;
                 }
-                else if (Common.SecsgemForm.Control_State == 4)
+                else if (Common.SecsgemForm.isControlLocal())
                 {
                     lbControlStatus.Text = "Local";
                     lbControlStatus.BackColor = Color.Yellow;
@@ -1092,7 +1093,7 @@ namespace TrimGap
                         bWAnalysis.ReportProgress(20); //report在關flag
                         Console.WriteLine("Analysis Fail:", ee.Message);
                         //InsertLog.SavetoDB(67, "Analysis Fail:" + ee.Message);
-                        Common.CGWrapper.AlarmReportSend(TrimGap_EqpID.EQP_DataAnalysisError, 128);
+                        Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_DataAnalysisError, true, out err);
                     }
                     Flag.SensorAnalysisFlag = false;
                 }
@@ -1611,7 +1612,7 @@ namespace TrimGap
 
         private void timer_EFEM_Event_Tick(object sender, EventArgs e)
         {
-            if ((Common.isRemote() || (!Flag.AutoidleFlag || !Flag.Autoidle_LocalFlag)) && Flag.AlarmFlag && !Flag.EFEMAlarmReportFlag && !Flag.AllHomeFlag) //EFEMAlarmReportFlag 要false才能進來
+            if ((Common.SecsgemForm.isRemote() || (!Flag.AutoidleFlag || !Flag.Autoidle_LocalFlag)) && Flag.AlarmFlag && !Flag.EFEMAlarmReportFlag && !Flag.AllHomeFlag) //EFEMAlarmReportFlag 要false才能進來
             {   // 如果是遠端就不看 Auto flag
                 if (Common.EFEM.CmdSend == "")
                 {

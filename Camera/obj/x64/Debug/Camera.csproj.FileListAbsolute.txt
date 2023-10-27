@@ -85,3 +85,13 @@ E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Debug\Camera.csproj.CoreComp
 E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
 E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Debug\Camera.dll
 E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Debug\Camera.pdb
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\bin\Debug\Camera.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\bin\Debug\Camera.pdb
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\bin\Debug\Basler.Pylon.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\bin\Debug\SpinnakerNET_v140.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\bin\Debug\Basler.Pylon.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\x64\Debug\Camera.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\x64\Debug\Camera.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\x64\Debug\Camera.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\x64\Debug\Camera.pdb

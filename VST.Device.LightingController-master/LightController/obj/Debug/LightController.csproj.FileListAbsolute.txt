@@ -37,3 +37,13 @@ E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightC
 E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.CoreCompileInputs.cache
 E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\obj\Debug\LightController.exe
 E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\obj\Debug\LightController.pdb
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\VST.Device.LightingController-master\LightController\bin\Debug\LightController.exe.config
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\VST.Device.LightingController-master\LightController\bin\Debug\LightController.exe
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\VST.Device.LightingController-master\LightController\bin\Debug\LightController.pdb
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\VST.Device.LightingController-master\LightController\obj\Debug\LightController.Form1.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\VST.Device.LightingController-master\LightController\obj\Debug\LightController.Properties.Resources.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\VST.Device.LightingController-master\LightController\obj\Debug\LightController.exe
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\VST.Device.LightingController-master\LightController\obj\Debug\LightController.pdb

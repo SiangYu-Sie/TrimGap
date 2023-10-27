@@ -17,8 +17,8 @@ namespace TrimGap
 {
     internal class Common
     {
-        public static SECSGEM.SecsgemForm SecsgemForm;
-        public static CTLT.ctlt_GEM CGWrapper;
+        public static SecsGemInterface SecsgemForm;
+
         public static Io io;
 
         //public static LJ LJ8020;
@@ -42,7 +42,7 @@ namespace TrimGap
         static public void InitAll()
         {
             ParamFile.initparam(); //讀ini參數檔
-            ParamFile.ReadRcpini(fram.Recipe.Path + "\\" + fram.Recipe.Filename + ".ini", "Recipe");
+            ParamFile.ReadRcpini(fram.Recipe.Path + "\\" + fram.Recipe.FilenameSelect + ".ini", "Recipe");
             InsertLog.Init(sram.ErrorCodeCsvPath);
             if (fram.m_MachineType == 0) //AP6
             {
@@ -81,7 +81,8 @@ namespace TrimGap
             InitMotion(fram.m_MotionType);
             InitMatlab();
             InitEFEM(fram.m_MachineType);
-            InitSecs();
+            SecsgemForm = new SecsGemInterface(fram.m_SecsgemType);
+            SecsgemForm.InitSecs();
             SECSListening.InitSECSListening();
             InitAutoRun(fram.m_MachineType);
             InitSF3(fram.m_Hardware_SF3);
@@ -272,53 +273,7 @@ namespace TrimGap
             //this.chartSensor.Series.Add(series1);//將線畫在圖上
         }
 
-        static private void InitSecs()
-        {
-            SecsgemForm = new SECSGEM.SecsgemForm();
-            CGWrapper = SECSGEM.SecsgemForm.CGWrapper;
-            CGWrapper.UpdateSV(GemSystemID.GEM_SOFTREV, sram.SofewareVersion); // 先更新版本號，把SECS裡自動更新版本號的地方刪除
-            SecsgemForm.Show();
-            SpinWait.SpinUntil(() => CGWrapper.GetCurrentCommState().GetHashCode() == 7, 5000);
-            SecsgemForm.Hide();
-
-            // init secs後 先update EC 更新機台參數
-
-            CGWrapper.UpdateEC(TrimGap_EqpID.ChunkRotateDistance, fram.m_posV[0]);
-            CGWrapper.UpdateEC(TrimGap_EqpID.Cofficient, fram.Analysis.Coefficient);
-            CGWrapper.UpdateEC(TrimGap_EqpID.RobotSpeed, 50);
-            CGWrapper.UpdateEC(TrimGap_EqpID.SoftWareVersion, 110);  // 版本號 目前是1.1.0.0503 ，更新前面三碼就好，這個之後再改成直接抓版本號
-            if (fram.S_MotionRotate == "True")
-            {
-                CGWrapper.UpdateEC(TrimGap_EqpID.MotionRotate, 1);
-            }
-            else
-            {
-                CGWrapper.UpdateEC(TrimGap_EqpID.MotionRotate, 0);
-            }
-            Common.CGWrapper.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, fram.SECSPara.Loadport1_AccessMode);              // 開啟程式後先更新 Access Mode & PortTranmsferState
-            Common.CGWrapper.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, fram.SECSPara.Loadport2_AccessMode);
-            Common.CGWrapper.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, fram.SECSPara.Loadport1_PortTransferState);
-            Common.CGWrapper.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, fram.SECSPara.Loadport2_PortTransferState);
-        }
-
-        public static bool isRemote()
-        {
-            try
-            {
-                if (Common.SecsgemForm != null && Common.SecsgemForm.Comm_State == 7 && Common.SecsgemForm.Control_State == 5)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-        }
+        //SECS 
 
         static private void InitMatlab()
         {

@@ -320,3 +320,33 @@ E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\obj\Debug\SF3.csproj.CopyComplete
 E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\obj\Debug\SF3.dll
 E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\obj\Debug\SF3.pdb
 E:\專案\TrimGap\TrimGap - 20230808\SF3\SF3\obj\Debug\SF3.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\SF3.dll.config
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\SF3.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\SF3.pdb
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\CsvHelper.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\Microsoft.Bcl.HashCode.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Buffers.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Memory.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Numerics.Vectors.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\CsvHelper.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\Microsoft.Bcl.HashCode.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Buffers.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Memory.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Numerics.Vectors.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\Otsuka.DeleteRecipes.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3_Form.Main.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\Otsuka.NewRecipesInformation.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.Properties.Resources.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3_Form.Recipes.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.csproj.CopyComplete
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.pdb

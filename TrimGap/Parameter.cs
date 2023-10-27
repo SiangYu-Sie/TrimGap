@@ -244,6 +244,7 @@ namespace TrimGap
         public static int m_WaferStageType; // 0:平坦台面+氣缸頂升  1:凹槽台面+牙叉抬升
         public static int m_Hardware_CCD; // 0:None 1:藍膜Z向拍照
         public static int m_Hardware_PT;  // 0:None 1:all type
+        public static int m_SecsgemType;  // 0:創界 1:台達
 
         public static int m_WaferAlignAngle;  // WaferAlignAngle
         public static int m_WaferBackToFoupAngle;  // WaferBackToFoupAngle 所以最後回到FOUP的角度會是WaferAlignAngle+WaferBackToFoupAngle

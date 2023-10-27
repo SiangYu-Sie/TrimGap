@@ -1000,3 +1000,38 @@ E:\專案\TrimGap\TrimGap - 20230918\SECSGEM\obj\Debug\SECSGEM.csproj.CoreCompil
 E:\專案\TrimGap\TrimGap - 20230918\SECSGEM\obj\Debug\SECSGEM.csproj.CopyComplete
 E:\專案\TrimGap\TrimGap - 20230918\SECSGEM\obj\Debug\SECSGEM.dll
 E:\專案\TrimGap\TrimGap - 20230918\SECSGEM\obj\Debug\SECSGEM.pdb
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\SECSGEM.dll.config
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\SECSGEM.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\SECSGEM.pdb
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\CsvHelper.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\MediaBrowser.Common.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\MediaBrowser.Model.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\Microsoft.Bcl.HashCode.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\System.Buffers.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\System.Memory.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\System.Numerics.Vectors.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\System.Text.Encoding.CodePages.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\WinFormAnimation.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\System.IO.Pipelines.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\CsvHelper.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\MediaBrowser.Common.pdb
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\MediaBrowser.Model.pdb
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\Microsoft.Bcl.HashCode.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\System.Buffers.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\System.Memory.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\System.Numerics.Vectors.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\System.Text.Encoding.CodePages.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\obj\Debug\SECSGEM.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\obj\Debug\SECSGEM.Config.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\obj\Debug\SECSGEM.SecsgemForm.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\obj\Debug\SECSGEM.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\obj\Debug\SECSGEM.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\obj\Debug\SECSGEM.csproj.CopyComplete
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\obj\Debug\SECSGEM.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\obj\Debug\SECSGEM.pdb

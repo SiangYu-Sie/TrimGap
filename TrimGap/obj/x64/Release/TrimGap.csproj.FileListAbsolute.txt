@@ -357,3 +357,20 @@ E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.csproj.Core
 E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
 E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.exe
 E:\專案\TrimGap\TrimGap - 20230907\TrimGap\obj\x64\Release\TrimGap.pdb
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.exe
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.pdb
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete

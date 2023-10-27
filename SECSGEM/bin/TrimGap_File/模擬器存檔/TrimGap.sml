@@ -1569,7 +1569,7 @@ S7F25_RequestPP(PP1_Formatted): S7F25 W
 <A[19]"AOI_Recipe_3535_3x6">
 .
 S7F25_RequestPP(PP2_Formatted): S7F25 W
-<A[15]"Sorter-Recipe_A">
+<A[7]"AutoRun">
 .
 S7F25_RequestSubfolderPP(PP2_Formatted): S7F25 W
 <A[20]"PPData\PP2_Formatted">

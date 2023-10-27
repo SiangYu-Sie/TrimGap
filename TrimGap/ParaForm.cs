@@ -13,6 +13,7 @@ namespace TrimGap
 {
     public partial class ParaForm : Form
     {
+        public static string err = string.Empty;
         public ParaForm()
         {
             InitializeComponent();
@@ -145,11 +146,11 @@ namespace TrimGap
 
                     if (fram.S_MotionRotate == "True")
                     {
-                        Common.CGWrapper.UpdateEC(TrimGap_EqpID.MotionRotate, 1);
+                        Common.SecsgemForm.UpdateEC(TrimGap_EqpID.MotionRotate, 1, out err);
                     }
                     else
                     {
-                        Common.CGWrapper.UpdateEC(TrimGap_EqpID.MotionRotate, 0);
+                        Common.SecsgemForm.UpdateEC(TrimGap_EqpID.MotionRotate, 0, out err);
                     }
                 }
                 if (tb_Sensorbypass.Text != cb_Sensorbypass_copy.Text)
@@ -175,7 +176,7 @@ namespace TrimGap
                         InsertLog.SavetoDB(7, "Coefficient " + fram.Analysis.Coefficient + "->" + tb_Analysis_Coefficient_copy.Text);
                         tb_Analysis_Coefficient.Text = tb_Analysis_Coefficient_copy.Text;
                         fram.Analysis.Coefficient = Convert.ToInt32(tb_Analysis_Coefficient_copy.Text);
-                        Common.CGWrapper.UpdateEC(TrimGap_EqpID.Cofficient, fram.Analysis.Coefficient);
+                        Common.SecsgemForm.UpdateEC(TrimGap_EqpID.Cofficient, fram.Analysis.Coefficient, out err);
                     }
                 }
                 if (tb_Analysis_BlueTapeThreshold_copy.Text != "")

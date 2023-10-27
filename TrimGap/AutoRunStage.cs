@@ -22,6 +22,7 @@ namespace TrimGap
         public static BluetapeStep AutoBlueTapeStep;
         public static TTVStep AutoTTVStep;
         public static Chart chartSensor;
+        public static string err = string.Empty;
 
         //public static bool WaferPresence = false;
         public static bool AnalysisFlag = true;
@@ -638,7 +639,7 @@ namespace TrimGap
                                 Slot_InfoMax += "0";
                             }
                         }
-                        Common.CGWrapper.UpdateSV(TrimGap_EqpID.Slot1_Max + i, Slot_InfoMax);
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Slot1_Max + i, Slot_InfoMax, out err);
                         Slot_InfoMax = "";
                     }
 
@@ -719,19 +720,19 @@ namespace TrimGap
                                 Slot_Info += 0 + ",";
                             }
                         }
-                        Common.CGWrapper.UpdateSV(TrimGap_EqpID.Slot1_Info + i, Slot_Info);
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Slot1_Info + i, Slot_Info, out err);
                         Slot_Info = "";
                     }
                     if (EFEM.IsInit)
                     {
-                        Common.CGWrapper.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort_Run.FoupID);
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort_Run.FoupID, out err);
                         if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P1)
                         {
-                            Common.CGWrapper.UpdateSV(TrimGap_EqpID.PortID, 1);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
                         }
                         else if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P2)
                         {
-                            Common.CGWrapper.UpdateSV(TrimGap_EqpID.PortID, 2);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
                         }
                     }
 
@@ -900,7 +901,7 @@ namespace TrimGap
                     else
                     {
                         fram.PT_PLC_AutoRunStage_RetryCount = 0;
-                        Common.CGWrapper.AlarmReportSend(TrimGap_EqpID.EQP_PT_PLC_MoveTimeoutError, 128);
+                        Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_PT_PLC_MoveTimeoutError, true, out err);
                         InsertLog.SavetoDB(TrimGap_EqpID.EQP_PT_PLC_MoveTimeoutError, "PT PLC Move To Point 1 Timeout");
                         //MessageBox.Show("PT PLC Move To Point 1 Timeout");
                     }
@@ -1239,8 +1240,8 @@ namespace TrimGap
                                 Slot_InfoMax += "0";
                             }
                         }
-                        
-                        Common.CGWrapper.UpdateSV(TrimGap_EqpID.Slot1_Max + i, Slot_InfoMax);
+
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Slot1_Max + i, Slot_InfoMax, out err);
                         Slot_InfoMax = "";
                     }
 
@@ -1321,19 +1322,19 @@ namespace TrimGap
                                 Slot_Info += 0 + ",";
                             }
                         }
-                        Common.CGWrapper.UpdateSV(TrimGap_EqpID.Slot1_Info + i, Slot_Info);
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Slot1_Info + i, Slot_Info, out err);
                         Slot_Info = "";
                     }
                     if (EFEM.IsInit)
                     {
-                        Common.CGWrapper.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort_Run.FoupID);
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort_Run.FoupID, out err);
                         if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P1)
                         {
-                            Common.CGWrapper.UpdateSV(TrimGap_EqpID.PortID, 1);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
                         }
                         else if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P2)
                         {
-                            Common.CGWrapper.UpdateSV(TrimGap_EqpID.PortID, 2);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
                         }
                     }
 
@@ -1840,7 +1841,7 @@ namespace TrimGap
                                 Slot_InfoMax += "0";
                             }
                         }
-                        Common.CGWrapper.UpdateSV(TrimGap_EqpID.Slot1_Max + i, Slot_InfoMax);
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Slot1_Max + i, Slot_InfoMax, out err);
                         Slot_InfoMax = "";
                     }
 
@@ -1908,19 +1909,19 @@ namespace TrimGap
                                 Slot_Info += 0 + ",";
                             }
                         }
-                        Common.CGWrapper.UpdateSV(TrimGap_EqpID.Slot1_Info + i, Slot_Info);
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Slot1_Info + i, Slot_Info, out err);
                         Slot_Info = "";
                     }
                     if (EFEM.IsInit)
                     {
-                        Common.CGWrapper.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort_Run.FoupID);
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort_Run.FoupID, out err);
                         if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P1)
                         {
-                            Common.CGWrapper.UpdateSV(TrimGap_EqpID.PortID, 1);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
                         }
                         else if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P2)
                         {
-                            Common.CGWrapper.UpdateSV(TrimGap_EqpID.PortID, 2);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
                         }
                     }
 

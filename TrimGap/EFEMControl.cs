@@ -15,6 +15,7 @@ namespace TrimGap
     {
         public static string API_Mode;
         public static string FoupID;
+        public static string err = string.Empty;
 
         private struct listBox_Str
         {
@@ -520,7 +521,7 @@ namespace TrimGap
                     rtn = Common.EFEM.Robot.SetRobotSpeed(10, 10);
                     if (rtn)
                     {
-                        Common.CGWrapper.UpdateEC(TrimGap_EqpID.RobotSpeed, 10);  //更新EC參數
+                        Common.SecsgemForm.UpdateEC(TrimGap_EqpID.RobotSpeed, 10, out err);  //更新EC參數
                     }
                     break;
 
@@ -528,7 +529,7 @@ namespace TrimGap
                     rtn = Common.EFEM.Robot.SetRobotSpeed(30, 30);
                     if (rtn)
                     {
-                        Common.CGWrapper.UpdateEC(TrimGap_EqpID.RobotSpeed, 30); //更新EC參數
+                        Common.SecsgemForm.UpdateEC(TrimGap_EqpID.RobotSpeed, 30, out err); //更新EC參數
                     }
                     break;
 
@@ -536,7 +537,7 @@ namespace TrimGap
                     rtn = Common.EFEM.Robot.SetRobotSpeed(50, 50);
                     if (rtn)
                     {
-                        Common.CGWrapper.UpdateEC(TrimGap_EqpID.RobotSpeed, 50); //更新EC參數
+                        Common.SecsgemForm.UpdateEC(TrimGap_EqpID.RobotSpeed, 50, out err); //更新EC參數
                     }
                     break;
 

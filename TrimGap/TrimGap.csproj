@@ -90,6 +90,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SECSGEM\bin\Debug\CTLT.SECS.dll</HintPath>
     </Reference>
+    <Reference Include="DiaGemLib_Equipment">
+      <HintPath>..\DIASECSGEM300\bin\Debug\DiaGemLib_Equipment.dll</HintPath>
+    </Reference>
+    <Reference Include="DIASECSGEM">
+      <HintPath>..\DIASECSGEM300\bin\Debug\DIASECSGEM.dll</HintPath>
+    </Reference>
+    <Reference Include="GEMDataModel">
+      <HintPath>..\DIASECSGEM300\bin\Debug\GEMDataModel.dll</HintPath>
+    </Reference>
     <Reference Include="HirataEFEM, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\x64\Debug\HirataEFEM.dll</HintPath>
@@ -214,6 +223,7 @@
     <Compile Include="CCDTest.Designer.cs">
       <DependentUpon>CCDTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="SecsGemInterface.cs" />
     <Compile Include="EFEMControl.cs">
       <SubType>Form</SubType>
     </Compile>

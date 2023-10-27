@@ -17,6 +17,7 @@ namespace TrimGap
         private static string _initFlag = "";
         private static string _ReceiveStr = "";
         private static bool _receiveFlag = false;
+        public static string err = string.Empty;
 
         private static string _socket_cmdSend = "";
 
@@ -378,13 +379,13 @@ namespace TrimGap
                                 }
                                 if (EventStr == EFEM.Evevtlist.EFEM.Vacuum && Str2[3] == "0")
                                 {
-                                    Common.CGWrapper.AlarmReportSend(TrimGap_EqpID.EQP_StageVacuumError, 128);
+                                    Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_StageVacuumError, true, out err);
                                     Flag.EFEMAlarmReportFlag = false;
                                     Flag.AlarmFlag = true;
                                 }
                                 if (EventStr == EFEM.Evevtlist.EFEM.EMO && Str2[3] == "0")
                                 {
-                                    Common.CGWrapper.AlarmReportSend(TrimGap_EqpID.EQP_EMO, 128);
+                                    Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_EMO, true, out err);
                                     InsertLog.SavetoDB(18);
                                     _socket_cmdSend = "";
                                     cSocket.getMessage = "";
