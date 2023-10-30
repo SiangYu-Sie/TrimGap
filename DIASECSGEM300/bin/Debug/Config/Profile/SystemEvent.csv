@@ -1,0 +1,110 @@
+//CEID,Name,Remark,SystemID
+1,Equipment_Off_Line,ON-LINE->OFF-LINE,1
+2,Control_State_Local,REMOTE->LOCAL or OFF-LINE->LOCAL,2
+3,Control_State_Remote,LOCAL->REMOTE or OFF-LINE->REMOTE,3
+4,Processing_State_Change,Any processing state transition(Send by AP),4
+5,Alarmn_Detected,ALARM CLEAR->ALARM SET,5
+6,Alarmn_Cleared,ALARM SET->ALARM CLEAR,6
+7,Operator_Equipment_Constant_Change,Operator activity changed equipment constant,7
+8,Process_Program_Change,Operator activity creation\modification\deletion of a process program(Send by AP),8
+9,Process_Program_Selected,Operator/Host activity Selected Process Program(Send by AP),9
+10,Spooling_Activated,SPOOL INACTIVE->SPOOL ACTIVE,10
+11,Spooling_Deactivated,SPOOL OUTPUT->SPOOL INACTIVE,11
+12,Spool_Transmit_Failure,TRANSMIT SPOOL->NO SPOOL OUTPUT,12
+13,Message_Recognition,Indicating the operator has viewed the text of a host initiated message(Send by AP),13
+41,PJ_NoStateToQueued,(E40-PRJobEvent) The Process Job Object is instantiated and enters QUEUED/POOLED state\Create Process Job Object(Send by AP),41
+42,PJ_QueuedToSettingUp,(E40-PRJobEvent) The Process Job transits from QUEUED/POOLED state to SETTING UP state(Send by AP),42
+43,PJ_SettingUpToWaitingForStart,(E40-PRJobEvent) The Process Job transits from SETTING UP state to WAITING FOR START state(Send by AP),43
+44,PJ_SettingUpToProcessing,(E40-PRJobEvent) The Process Job transits from SETTING UP state to PROCESSING state(Send by AP),44
+45,PJ_WaittingForStartToProcessing,(E40-PRJobEvent) The Process Job transits from WAITING FOR START state to PROCESSING state(Send by AP),45
+46,PJ_ProcessingToProcessComplete,(E40-PRJobEvent) The Process Job transits from PROCESSING state to PROCESS COMPLETE state(Send by AP),46
+47,PJ_ProcessCompleteToComplete,(E40-PRJobEvent) The Process Job transits from PROCESS COMPLETE state to Complete\Delete Process Job Object(Send by AP),47
+48,PJ_ExecutingToPausing,(E40-PRJobEvent) The Process Job transits from EXECUTING state to PAUSING(Send by AP),48
+49,PJ_PausingToPaused,(E40-PRJobEvent) The Process Job transits from PAUSING state to PAUSED(Send by AP),49
+50,PJ_PauseToExecuting,(E40-PRJobEvent) The Process Job transits from PAUSE state to EXECUTING(Send by AP),50
+51,PJ_ExecutingToStopping,(E40-PRJobEvent) The Process Job transits from EXECUTING state to STOPPING(Send by AP),51
+52,PJ_PauseToStopping,(E40-PRJobEvent) The Process Job transits from PAUSE state to STOPPING(Send by AP),52
+53,PJ_ExecutingToAborting,(E40-PRJobEvent) The Process Job transits from EXECUTING state to ABORTING(Send by AP),53
+54,PJ_StoppingToAborting,(E40-PRJobEvent) The Process Job transits from STOPPING state to ABORTING(Send by AP),54
+55,PJ_PauseToAborting,(E40-PRJobEvent) The Process Job transits from PAUSE state to ABORTING(Send by AP),55
+56,PJ_AbortingToComplete,(E40-PRJobEvent) The Process Job transits from ABORTING state to Complete\Delete Process Job Object(Send by AP),56
+57,PJ_StoppingToComplete,(E40-PRJobEvent) The Process Job transits from STOPPING state to Complete\Delete Process Job Object(Send by AP),57
+58,PJ_QueuedToComplete,(E40-PRJobEvent) The Process Job transits from QUEUED/POOLED state to Complete\Delete Process Job Object(Send by AP),58
+71,PJ_PRJobSetup,(E40-PRJobAlert) Process Job milestones - PRJobSetup(Send by AP),71
+72,PJ_JobProcessing,(E40-PRJobAlert) Process Job milestones - JobProcessing(Send by AP),72
+73,PJ_JobProcessingComplete,(E40-PRJobAlert) Process Job milestones - JobProcessingComplete(Send by AP),73
+74,PJ_JobComplete,(E40-PRJobAlert) Process Job milestones - JobComplete(Send by AP),74
+75,PJ_JobWaitingForStart,(E40-PRJobAlert) Process Job milestones - JobWaitingForStart(Send by AP),75
+91,CJ_NoStateToQueued,(E94-CtrlJobEvent) The Control Job Object is instantiated and enters QUEUED/POOLED state\Create Control Job Object(Send by AP),91
+92,CJ_QueuedToComplete(Termination),(E94-CtrlJobEvent) The Control Job transits from QUEUED state to Complete\Delete Control Job Object(Send by AP),92
+93,CJ_QueuedToSelected,(E94-CtrlJobEvent) The Control Job transits from QUEUED state to SELECTED state(Send by AP),93
+94,CJ_SelectedToQueued,(E94-CtrlJobEvent) The Control Job transits from SELECTED state to QUEUED state(Send by AP),94
+95,CJ_SelectedToExecuting,(E94-CtrlJobEvent) The Control Job transits from SELECTED state to EXECUTING state(Send by AP),95
+96,CJ_SelectedToWaitingForStart,(E94-CtrlJobEvent) The Control Job transits from SELECTED state to WAITING FOR START state(Send by AP),96
+97,CJ_WaittingForStartToExecuting,(E94-CtrlJobEvent) The Control Job transits from WAITING FOR START state to EXECUTING state(Send by AP),97
+98,CJ_ExecutingToPaused,(E94-CtrlJobEvent) The Control Job transits from EXECUTING state to PAUSED(Send by AP),98
+99,CJ_PausedToExecuting,(E94-CtrlJobEvent) The Control Job transits from PAUSED state to EXECUTING(Send by AP),99
+100,CJ_ExecutingToCompleted,(E94-CtrlJobEvent) The Control Job transits from EXECUTING state to COMPLETED state(Send by AP),100
+101,CJ_ActiveToCompleted(Stop),(E94-CtrlJobEvent) The Control Job transits from ACTIVE state to COMPLETED state(Send by AP),101
+102,CJ_ActiveToCompleted(Abort),(E94-CtrlJobEvent) The Control Job transits from ACTIVE state to COMPLETED state(Send by AP),102
+103,CJ_CompletedToComplete,(E94-CtrlJobEvent) The Control Job transits from COMPLETED state to Complete\Delete Control Job Object(Send by AP),103
+141,STS_Transport_NoStateToAtSource,(E90-SubstEvent) The Substrate Object is Created and enters AT SOURCE state(Send by AP),141
+142,STS_Transport_AtSourceToAtWork,(E90-SubstEvent) The Substrate transits from AT SOURCE state to AT WORK(Send by AP),142
+143,STS_Transport_AtWorkToAtSource,(E90-SubstEvent) The Substrate transits from AT WORK state to AT SOURCE(Send by AP),143
+144,STS_Transport_AtWorkToAtWork,(E90-SubstEvent) The Substrate transits from AT WORK state to AT WORK(Send by AP),144
+145,STS_Transport_AtWorkToAtDestination,(E90-SubstEvent) The Substrate transits from AT WORK state to AT DESTINATION(Send by AP),145
+146,STS_Transport_AtDestinationToAtWork,(E90-SubstEvent) The Substrate transits from AT DESTINATION state to AT WORK(Send by AP),146
+147,STS_Transport_AtDestinationToExtinction,(E90-SubstEvent) The Substrate transits from AT DESTINATION state to Extinction\Delete Substrate Object(Send by AP),147
+148,STS_Transport_AtDestinationToAtSource,(E90-SubstEvent) The Substrate transits from AT DESTINATION state to AT SOURCE(Send by AP),148
+149,STS_AnySubstateSubStateToExtinction,(E90-SubstEvent) The Substrate transits from Any SUBSTRATE substate state to Extinction\Delete Substrate Object(Send by AP),149
+150,STS_Processing_NoStateToNeedsProcessing,(E90-SubstEvent) The Substrate Object is instantiated and enters NEEDS PROCESSING state\Create Substrate Object(Send by AP),150
+151,STS_Processing_ProcessingToInProcess,(E90-SubstEvent) The Substrate transits from NEEDS PROCESSING state to IN PROCESS state(Send by AP),151
+152,STS_Processing_InProcessToProcessingComplete,(E90-SubstEvent) The Substrate transits from IN PROCESS state to PROCESSING COMPLETE state(Send by AP),152
+153,STS_Processing_InProcessToNeedsProcessing,(E90-SubstEvent) The Substrate transits from IN PROCESS state to NEEDS PROCESSING state(Send by AP),153
+161,STS_SubstLoc_UnOccupiedToOccupied,(E90-SubstLocEvent) The Substrate Location transits from UNOCCUPIED state to OCCUPIED state(Send by AP),161
+162,STS_SubstLoc_OccupiedToUnOccupied,(E90-SubstLocEvent) The Substrate Location transits from OCCUPIED state to UNOCCUPIED state(Send by AP),162
+181,CMS_NoStateToCarrier,(E87-CarrierEvent) The Carrier Object is instantiated\Create Carrier Object(Send by AP),181
+182,CMS_NoStateToIDNotRead,(E87-CarrierEvent) The Carrier transits from not state to ID NOT READ state(Send by AP),182
+183,CMS_NoStateToWaitingForHost,(E87-CarrierEvent) The Carrier transits from not state to WAITING FOR HOST state(Send by AP),183
+184,CMS_NoStateToIDVerificationOk,(E87-CarrierEvent) The Carrier transits from not state to ID VERIFICATION OK state(Send by AP),184
+185,CMS_NoStateToIDVerificationFailed,(E87-CarrierEvent) The Carrier transits from not state to ID VERIFICATION FAILED state(Send by AP),185
+186,CMS_IDNotReadToIDVerificationOk,(E87-CarrierEvent) The Carrier transits from ID NOT READ state to ID VERIFICATION OK state(Send by AP),186
+187,CMS_IDNotReadToWaitingForHost,(E87-CarrierEvent) The Carrier transits from ID NOT READ state to WAITING FOR HOST state(Send by AP),187
+188,CMS_WaitingForHostToIDVerificationOk,(E87-CarrierEvent) The Carrier transits from WAITING FOR HOST state to ID VERIFICATION OK state(Send by AP),188
+189,CMS_WaitingForHostToIDVerificationFailed,(E87-CarrierEvent) The Carrier transits from WAITING FOR HOST state to ID VERIFICATION FAILED state(Send by AP),189
+190,CMS_IDNotReadToWaitingForHost_IDReaderIsNotInService,(E87-CarrierEvent) The Carrier transits from ID NOT READ state to WAITING FOR HOST state. BypassReadID variable is set to FALSE\ and a carrier is received when the id reader is not in service or not installed.(Send by AP),190
+191,CMS_IDNotReadToIDVerificationOk_IDReaderIsNotInService,(E87-CarrierEvent) The Carrier transits from ID NOT READ state to ID VERIFICATION OK state. BypassReadID variable is set to TRUE\ and a carrier is received when the id reader is not in service or not installed.(Send by AP),191
+192,CMS_NoStateToSlotMapNotRead,(E87-CarrierEvent) The Carrier transits from not state to SLOT MAP NOT READ state(Send by AP),192
+193,CMS_SlotMapNotReadToSlotMapVerificationOk,(E87-CarrierEvent) The Carrier transits from SLOT MAP NOT READ state to SLOT MAP VERIFICATION OK state(Send by AP),193
+194,CMS_SlotMapNotReadToWaitingForHost,(E87-CarrierEvent) The Carrier transits from SLOT MAP NOT READ state to WAITING FOR HOST state(Send by AP),194
+195,CMS_WaitingForHostToSlotMapVerificationOk,(E87-CarrierEvent) The Carrier transits from WAITING FOR HOST state to SLOT MAP VERIFICATION OK state(Send by AP),195
+196,CMS_WaitingForHostToSlotMapVerificationFail,(E87-CarrierEvent) The Carrier transits from WAITING FOR HOST state to SLOT MAP VERIFICATION FAIL state(Send by AP),196
+197,CMS_NoStateToNotAccessed,(E87-CarrierEvent) The Carrier Object is instantiated.(Send by AP),197
+198,CMS_NotAccessedToInAccess,(E87-CarrierEvent) The Carrier transits from NOT ACCESSED state to IN ACCESS state(Send by AP),198
+199,CMS_InAccessToCarrierComplete,(E87-CarrierEvent) The Carrier transits from IN ACCESS state to CARRIER COMPLETE state(Send by AP),199
+200,CMS_InAccessToCarrierStopped,(E87-CarrierEvent) The Carrier transits from IN ACCESS state to CARRIER STOPPED state(Send by AP),200
+201,CMS_CarrierToNoState,(E87-CarrierEvent) The Carrier transits from CARRIER state to not state(Send by AP)\Delete Carrier Object,201
+211,CMS_AccessMode_NoStateToManual,(E87-AccessModeEvent) The Access Mode transits from not state to MANUAL(Send by AP),211
+212,CMS_AccessMode_NoStateToAuto,(E87-AccessModeEvent) The Access Mode transits from not state to AUTO(Send by AP),212
+213,CMS_AccessMode_ManualToAuto,(E87-AccessModeEvent) The Access Mode transits from MANUAL to AUTO(Send by AP),213
+214,CMS_AccessMode_AutoToManual,(E87-AccessModeEvent) The Access Mode transits from AUTO to MANUAL(Send by AP),214
+221,CMS_NoStateToOutOfService,(E87-LoadPortEvent) The Load Port transits from not state to OUT OF SERVICE(Send by AP),221
+222,CMS_NoStateToInService,(E87-LoadPortEvent) The Load Port transits from not state to In SERVICE(Send by AP),222
+223,CMS_OutOfServiceToInService,(E87-LoadPortEvent) The Load Port transits from OUT OF SERVICE to In SERVICE(Send by AP),223
+224,CMS_InServiceToOutOfService,(E87-LoadPortEvent) The Load Port transits from In SERVICE to OUT OF SERVICE(Send by AP),224
+225,CMS_InServiceToTransferReady,(E87-LoadPortEvent) The Load Port transits from In SERVICE to TRANSFER READY(Send by AP),225
+226,CMS_InServiceToTransferBlocked,(E87-LoadPortEvent) The Load Port transits from In SERVICE to TRANSFER BLOCKED(Send by AP),226
+227,CMS_TransferReadyToReadyToLoad,(E87-LoadPortEvent) The Load Port transits from TRANSFER READY to READY TO LOAD(Send by AP),227
+228,CMS_TransferReadyToReadyToUnload,(E87-LoadPortEvent) The Load Port transits from TRANSFER READY to READY TO UNLOAD(Send by AP),228
+229,CMS_ReadyToLoadToTransferBlocked,(E87-LoadPortEvent) The Load Port transits from READY TO LOAD to TRANSFER BLOCKED(Send by AP),229
+230,CMS_ReadyToUnloadToTransferBlocked,(E87-LoadPortEvent) The Load Port transits from READY TO UNLOAD to TRANSFER BLOCKED(Send by AP),230
+231,CMS_TransferBlockedToReadyToLoad,(E87-LoadPortEvent) The Load Port transits from TRANSFER BLOCKED to READY TO LOAD(Send by AP),231
+232,CMS_TransferBlockedToReadyToUnload,(E87-LoadPortEvent) The Load Port transits from TRANSFER BLOCKED to READY TO UNLOAD(Send by AP),232
+233,CMS_TransferBlockedToTransferReady,(E87-LoadPortEvent) The Load Port transits from TRANSFER BLOCKED to TRANSFER READY(Send by AP),233
+241,CMS_NoStateToNotReserved,(E87-LoadPortReservation) The Load Port Reservation from not state to NOT RESERVED state(Send by AP),241
+242,CMS_NotReservedToReserved,(E87-LoadPortReservation) The Load Port Reservation from NOT RESERVED state to RESERVED state(Send by AP),242
+243,CMS_ReservedToNotReserved,(E87-LoadPortReservation) The Load Port Reservation from RESERVED state to NOT RESERVED state(Send by AP),243
+251,CMS_NoStateToNotAssociated,(E87-LoadPortOrCarrierAssociation) The LoadPort Carrier Association from not state to NOT ASSOCIATED state(Send by AP),251
+252,CMS_NotAssociatedToAssociated,(E87-LoadPortOrCarrierAssociation) The LoadPort Carrier Association from NOT ASSOCIATED to ASSOCIATED state(Send by AP),252
+253,CMS_AssociatedToNotAssociated,(E87-LoadPortOrCarrierAssociation) The LoadPort Carrier Association from ASSOCIATED to NOT ASSOCIATED state(Send by AP),253
+254,CMS_AssociatedToAssociated,(E87-LoadPortOrCarrierAssociation) The LoadPort Carrier Association from ASSOCIATED to ASSOCIATED state(Send by AP),254

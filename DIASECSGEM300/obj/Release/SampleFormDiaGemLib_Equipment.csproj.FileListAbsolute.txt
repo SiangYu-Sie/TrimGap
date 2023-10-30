@@ -1,0 +1,38 @@
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\DemoFormDiaGemLib_Equipment.dll
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\DemoFormDiaGemLib_Equipment.pdb
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\DIASECSGEM.dll
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\GEMDataModel.dll
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\DIASECS.dll
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\ProductLicenseChecker.dll
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\UniAuto.UniBCS.MISC.StateMachine.dll
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\UniAuto.UniBCS.Core.Cryptography.dll
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\SoftLicenseAPI.dll
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\DIASECSGEM.pdb
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\GEMDataModel.pdb
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\DIASECS.pdb
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\ProductLicenseChecker.pdb
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\UniAuto.UniBCS.MISC.StateMachine.pdb
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\UniAuto.UniBCS.Core.Cryptography.pdb
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\bin\Release\SoftLicenseAPI.pdb
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\obj\Release\SampleFormDiaGemLib_Equipment.csprojAssemblyReference.cache
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\obj\Release\DemoFormDiaGemLib.DriverConfigInfo.resources
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\obj\Release\DemoFormDiaGemLib.MainForm.resources
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\obj\Release\DemoFormDiaGemLib_Equipment.Properties.Resources.resources
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\obj\Release\SampleFormDiaGemLib_Equipment.csproj.GenerateResource.cache
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\obj\Release\SampleFormDiaGemLib_Equipment.csproj.CoreCompileInputs.cache
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\obj\Release\SampleFormDiaGemLib_Equipment.csproj.CopyComplete
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\obj\Release\DemoFormDiaGemLib_Equipment.dll
+E:\專案\SECSGEM\new SECSGEM\TrimGap - 20230719\DIASECSGEM300\obj\Release\DemoFormDiaGemLib_Equipment.pdb
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\bin\Release\DemoFormDiaGemLib_Equipment.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\bin\Release\DemoFormDiaGemLib_Equipment.pdb
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\bin\Release\DIASECSGEM.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\bin\Release\GEMDataModel.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Release\DemoFormDiaGemLib.DriverConfigInfo.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Release\DemoFormDiaGemLib.MainForm.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Release\DemoFormDiaGemLib_Equipment.Properties.Resources.resources
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Release\SampleFormDiaGemLib_Equipment.csproj.GenerateResource.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Release\SampleFormDiaGemLib_Equipment.csproj.CoreCompileInputs.cache
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Release\SampleFormDiaGemLib_Equipment.csproj.CopyComplete
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Release\DemoFormDiaGemLib_Equipment.dll
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Release\DemoFormDiaGemLib_Equipment.pdb
+E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Release\SampleFormDiaGemLib_Equipment.csproj.AssemblyReference.cache

@@ -1,0 +1,91 @@
+//Name,ID,DataType,Length,Unit,Remark,SeqNo
+EquipmentStatus,1998,UINT_1,1000,N/A,Identifier for the equipment status,1
+RecipeID,1999,ASCII,1000,N/A,Identifier for the recipe id,2
+CarrierID,2000,ASCII,1000,N/A,Identifier for the carrier,3
+PortID,2001,UINT_1,1000,N/A,Identifier for the load port,4
+AccessMode,2002,UINT_1,1000,N/A,The access mode of the load port,5
+SlotMapStatus,2003,UINT_1,1000,N/A,Slotmap status of the carrier,6
+PortTransferState,2005,UINT_1,1000,N/A,The current transfer state of the load port,7
+Loadport1_AccessMode,2006,UINT_1,1000,N/A,The access mode of the load port 1,8
+Loadport2_AccessMode,2007,UINT_1,1000,N/A,The access mode of the load port 2,9
+Loadport1_PortTransferState,2008,UINT_1,1000,N/A,The current transfer state of the load port 1,10
+Loadport2_PortTransferState,2009,UINT_1,1000,N/A,The current transfer state of the load port 2,11
+SlotMap_List,2010,LIST,1000,N/A,The slotmap of a carrier,12
+Reason,2013,UINT_1,1000,N/A,Reason for asking the host to proceed with a carrier (slotmap verification),13
+Loadport1_Recipe,2014,ASCII,1000,N/A,The recipe of the load port 1,14
+Loadport2_Recipe,2015,ASCII,1000,N/A,The recipe of the load port 2,15
+SlotMap_1,3001,UINT_1,1000,N/A,SlotMap_1,16
+SlotMap_2,3002,UINT_1,1000,N/A,SlotMap_2,17
+SlotMap_3,3003,UINT_1,1000,N/A,SlotMap_3,18
+SlotMap_4,3004,UINT_1,1000,N/A,SlotMap_4,19
+SlotMap_5,3005,UINT_1,1000,N/A,SlotMap_5,20
+SlotMap_6,3006,UINT_1,1000,N/A,SlotMap_6,21
+SlotMap_7,3007,UINT_1,1000,N/A,SlotMap_7,22
+SlotMap_8,3008,UINT_1,1000,N/A,SlotMap_8,23
+SlotMap_9,3009,UINT_1,1000,N/A,SlotMap_9,24
+SlotMap_10,3010,UINT_1,1000,N/A,SlotMap_10,25
+SlotMap_11,3011,UINT_1,1000,N/A,SlotMap_11,26
+SlotMap_12,3012,UINT_1,1000,N/A,SlotMap_12,27
+SlotMap_13,3013,UINT_1,1000,N/A,SlotMap_13,28
+SlotMap_14,3014,UINT_1,1000,N/A,SlotMap_14,29
+SlotMap_15,3015,UINT_1,1000,N/A,SlotMap_15,30
+SlotMap_16,3016,UINT_1,1000,N/A,SlotMap_16,31
+SlotMap_17,3017,UINT_1,1000,N/A,SlotMap_17,32
+SlotMap_18,3018,UINT_1,1000,N/A,SlotMap_18,33
+SlotMap_19,3019,UINT_1,1000,N/A,SlotMap_19,34
+SlotMap_20,3020,UINT_1,1000,N/A,SlotMap_20,35
+SlotMap_21,3021,UINT_1,1000,N/A,SlotMap_21,36
+SlotMap_22,3022,UINT_1,1000,N/A,SlotMap_22,37
+SlotMap_23,3023,UINT_1,1000,N/A,SlotMap_23,38
+SlotMap_24,3024,UINT_1,1000,N/A,SlotMap_24,39
+SlotMap_25,3025,UINT_1,1000,N/A,SlotMap_25,40
+Slot1_Info,4001,ASCII,1000,N/A,Slot1_Info,41
+Slot2_Info,4002,ASCII,1000,N/A,Slot2_Info,42
+Slot3_Info,4003,ASCII,1000,N/A,Slot3_Info,43
+Slot4_Info,4004,ASCII,1000,N/A,Slot4_Info,44
+Slot5_Info,4005,ASCII,1000,N/A,Slot5_Info,45
+Slot6_Info,4006,ASCII,1000,N/A,Slot6_Info,46
+Slot7_Info,4007,ASCII,1000,N/A,Slot7_Info,47
+Slot8_Info,4008,ASCII,1000,N/A,Slot8_Info,48
+Slot9_Info,4009,ASCII,1000,N/A,Slot9_Info,49
+Slot10_Info,4010,ASCII,1000,N/A,Slot10_Info,50
+Slot11_Info,4011,ASCII,1000,N/A,Slot11_Info,51
+Slot12_Info,4012,ASCII,1000,N/A,Slot12_Info,52
+Slot13_Info,4013,ASCII,1000,N/A,Slot13_Info,53
+Slot14_Info,4014,ASCII,1000,N/A,Slot14_Info,54
+Slot15_Info,4015,ASCII,1000,N/A,Slot15_Info,55
+Slot16_Info,4016,ASCII,1000,N/A,Slot16_Info,56
+Slot17_Info,4017,ASCII,1000,N/A,Slot17_Info,57
+Slot18_Info,4018,ASCII,1000,N/A,Slot18_Info,58
+Slot19_Info,4019,ASCII,1000,N/A,Slot19_Info,59
+Slot20_Info,4020,ASCII,1000,N/A,Slot20_Info,60
+Slot21_Info,4021,ASCII,1000,N/A,Slot21_Info,61
+Slot22_Info,4022,ASCII,1000,N/A,Slot22_Info,62
+Slot23_Info,4023,ASCII,1000,N/A,Slot23_Info,63
+Slot24_Info,4024,ASCII,1000,N/A,Slot24_Info,64
+Slot25_Info,4025,ASCII,1000,N/A,Slot25_Info,65
+Slot1_Max,4026,ASCII,1000,N/A,Slot1_Max,66
+Slot2_Max,4027,ASCII,1000,N/A,Slot2_Max,67
+Slot3_Max,4028,ASCII,1000,N/A,Slot3_Max,68
+Slot4_Max,4029,ASCII,1000,N/A,Slot4_Max,69
+Slot5_Max,4030,ASCII,1000,N/A,Slot5_Max,70
+Slot6_Max,4031,ASCII,1000,N/A,Slot6_Max,71
+Slot7_Max,4032,ASCII,1000,N/A,Slot7_Max,72
+Slot8_Max,4033,ASCII,1000,N/A,Slot8_Max,73
+Slot9_Max,4034,ASCII,1000,N/A,Slot9_Max,74
+Slot10_Max,4035,ASCII,1000,N/A,Slot10_Max,75
+Slot11_Max,4036,ASCII,1000,N/A,Slot11_Max,76
+Slot12_Max,4037,ASCII,1000,N/A,Slot12_Max,77
+Slot13_Max,4038,ASCII,1000,N/A,Slot13_Max,78
+Slot14_Max,4039,ASCII,1000,N/A,Slot14_Max,79
+Slot15_Max,4040,ASCII,1000,N/A,Slot15_Max,80
+Slot16_Max,4041,ASCII,1000,N/A,Slot16_Max,81
+Slot17_Max,4042,ASCII,1000,N/A,Slot17_Max,82
+Slot18_Max,4043,ASCII,1000,N/A,Slot18_Max,83
+Slot19_Max,4044,ASCII,1000,N/A,Slot19_Max,84
+Slot20_Max,4045,ASCII,1000,N/A,Slot20_Max,85
+Slot21_Max,4046,ASCII,1000,N/A,Slot21_Max,86
+Slot22_Max,4047,ASCII,1000,N/A,Slot22_Max,87
+Slot23_Max,4048,ASCII,1000,N/A,Slot23_Max,88
+Slot24_Max,4049,ASCII,1000,N/A,Slot24_Max,89
+Slot25_Max,4050,ASCII,1000,N/A,Slot25_Max,90

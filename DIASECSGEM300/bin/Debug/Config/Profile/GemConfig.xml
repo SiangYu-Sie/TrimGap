@@ -1,0 +1,72 @@
+<Config>
+  <Capability desc="Additional Capabilities">
+    <item name="EstablishCommunications" enable="1" />
+    <item name="DynamicEventReportConfiguration" enable="1" />
+    <item name="VariableDataCollection" enable="1" />
+    <item name="TraceDataCollection" enable="1" />
+    <item name="StatusDataCollection" enable="1" />
+    <item name="AlarmManagement" enable="1" />
+    <item name="RemoteControl" enable="1" />
+    <item name="EquipmentConstants" enable="1" />
+    <item name="ProcessProgramManagement" enable="1" />
+    <item name="EquipmentTerminalServices" enable="1" />
+    <item name="Clock" enable="1" />
+    <item name="Spooling" enable="1" />
+    <item name="ControlHostInitiated" enable="1" />
+    <item name="ObjectServiceStandard" enable="1" />
+  </Capability>
+  <ProcessProgramManagement>
+    <item support_S7F1="0" />
+    <item support_S7F29="0" />
+  </ProcessProgramManagement>
+  <HostSetsCONTROLStateModelManagement>
+    <item CommandAckByEquipment="0" />
+  </HostSetsCONTROLStateModelManagement>
+  <ItemFormatManagement desc="Define Item Fomrat, Select format">
+    <item name="ALID" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+    <item name="CEID" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+    <item name="DATAID" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+    <item name="DATALENGTH" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+    <item name="ECID" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+    <item name="ERRCODE" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+    <item name="LENGTH" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+    <item name="REPGSZ" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+    <item name="RPTID" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+    <item name="SMPLN" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+    <item name="SVID" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+    <item name="TRID" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+    <item name="TOTSMP" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+    <item name="VID" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+  </ItemFormatManagement>
+  <UIForm>
+    <item ShowMainForm="1" desc="0:Disable, 1:Enable" />
+    <item EnableLog="1" desc="0:Disable, 1:Enable" />
+  </UIForm>
+  <SECSDriverConnect desc="SECS Driver Connect">
+    <item EnableLog="1" desc="0:Disable Record Log, 1:Enable Record Log" />
+    <item SECS_Connect_Mode="0" desc="0:HSMS, 1:SECSI" />
+    <item HSMS_DeviceId="0" />
+    <item HSMS_Mode="0" desc="0:Passive Connect Mode, 1:Active Connect Mode" />
+    <item HSMS_PassiveIP="127.0.0.1" />
+    <item HSMS_PassivePort="7000" />
+    <item HSMS_T3="45" />
+    <item HSMS_T5="10" />
+    <item HSMS_T6="5" />
+    <item HSMS_T7="10" />
+    <item HSMS_T8="5" />
+    <item HSMS_LinkTest="60" />
+    <item HSMS_MaxMessageLength="10" desc="Unit(MB)" />
+    <item HSMS_EnableRawDataLog="1" desc="0:Disable Record Raw Log, 1:Enable Record Raw Log" />
+    <item SECSI_DeviceId="0" />
+    <item SECSI_COMPort="1" />
+    <item SECSI_BaudRate="9600" />
+    <item SECSI_Mode="0" desc="0:Equipment Mode, 1:Host Mode" />
+    <item SECSI_RTY="3" />
+    <item SECSI_T1="0.5" />
+    <item SECSI_T2="10" />
+    <item SECSI_T3="45" />
+    <item SECSI_T4="45" />
+    <item SECSI_FlowControl="0" />
+    <item SECSI_EnableSerialPortLog="1" desc="0:Disable Record Serial Port Log, 1:Enable Record Serial Port Log" />
+  </SECSDriverConnect>
+</Config>

@@ -1,0 +1,86 @@
+//OBJTYPE: ObjType name,Comment,EqpBaseUnit
+// AttrName, Attribute Value Format,Comment,CreateInput,Must Attribute
+OBJTYPE: CARRIER,Carrier Type,N
+ OBJID,ASCII,Carrier ID (Identifier ID),M,Y
+ CAPACITY,UINT_1,Capacity,O,N
+ CARRIERIDSTATUS,UINT_1,Carrier ID Status,O,N
+ CARRIERACCESSINGSTATUS,UINT_1,Carrier Accessing Status,O,N
+ SUBSTRATECOUNT,UINT_1,Substrate Count,O,N
+ CONTENTMAP,LIST,Content Map,O,N
+ SLOTMAP,LIST,Slot Map,O,N
+ LOCATIONID,ASCII,Location ID,O,N
+ SLOTMAPSTATUS,UINT_1,Slot Map Status,O,N
+ USAGE,ASCII,Usage,O,N
+
+OBJTYPE: CARRIERLOC,Carrier Location Type,Y
+ OBJID,ASCII,Carrier Location ID (Identifier ID),M,Y
+ CARRIERID,ASCII,Carrier ID of the Carrier at the Carrier location,R,N
+
+OBJTYPE: CONTROLJOB,Control Job Type,N
+ OBJID,ASCII,Control Job ID (Identifier ID),M,Y
+ CARRIERINPUTSPEC,LIST,Carrier Input Spec,R,N
+ CURRENTPRJOB,LIST,Current PR Job,R,N
+ DATACOLLECTIONPLAN,ASCII,Data Collection Plan,M,N
+ MTRLOUTBYSTATUS,LIST,Mtrl Out By Status,O,N
+ MTRLOUTSPEC,LIST,Mtrl Out Spec,M,N
+ PAUSEEVENT,LIST,Pause Event,O,N
+ PROCESSINGCTRLSPEC,LIST,Processing Ctrl Spec,M,N
+ PROCESSORDERMGMT,UINT_1,Process Order Mgmt,M,N
+ STARTMETHOD,BOOLEAN,Start Method,M,N
+ STATE,UINT_1,State,R,N
+
+OBJTYPE: EPTTRACKER,EPT Tracker Type,Y
+ OBJID,ASCII,EPTTracker ID (Identifier ID),M,Y
+ BLOCKEDREASON,UINT_1,Blocked Reason,O,N
+ BLOCKEDREASONTEXT,ASCII,Blocked Reason Text,O,N
+ DISABLEEVENTONTRANSITION,LIST,Disable Event On Transition,O,N
+ EPTELEMENTTYPE,UINT_1,EPT Element Type,O,N
+ EPTSTATE,UINT_1,EPT State,O,N
+ EPTSTATETIME,UINT_4,EPT State Time,O,N
+ EPTELEMENTNAME,ASCII,EPT Element Name,O,N
+ PREVIOUSEPTSTATE,UINT_1,Previous EPT State,O,N
+ PREVIOUSTASKNAME,ASCII,Previous Task Name,O,N
+ PREVIOUSTASKTYPE,UINT_1,Previous Task Type,O,N
+ TASKNAME,ASCII,Task Name,O,N
+ TASKTYPE,UINT_1,Task Type,O,N
+ TRANSITIONTIMESTAMP,ASCII,Transition Timestamp,O,N
+ TRANSITION,UINT_1,Transition,O,N
+ TRACKEREVENTID,UINT_4,Tracker Event ID,O,N
+
+OBJTYPE: LOADPORT,Load Port Type,Y
+ OBJID,UINT_1,Port ID (Identifier ID),M,Y
+ PORTID,UINT_1,Port ID,M,N
+ PORTSTATEINFO,LIST,Port State Info,M,N
+ PORTASSOCIATIONSTATE,UINT_1,Port Association State,M,N
+ PORTTRANSFERSTATE,UINT_1,Port Transfer State,M,N
+ ACCESSMODE,UINT_1,Access Mode,M,N
+
+OBJTYPE: PROCESSJOB,Process Job Type,N
+ OBJID,ASCII,Process Job ID (Identifier ID),M,Y
+ PAUSEEVENT,LIST,Pause Event,M,Y
+ PRJOBSTATE,UINT_1,PR Job State,R,Y
+ PRMTLNAMELIST,LIST,PR Mtl Name List,M,Y
+ PRMTLTYPE,BINARY,PR Mtl Type,M,Y
+ PRPROCESSSTART,BOOLEAN,PR Process Start,M,Y
+ PRRECIPEMETHOD,UINT_1,PR Recipe Method,M,Y
+ RECID,ASCII,Rec ID,M,Y
+ RECVARIABLELIST,LIST,Rec Variable List,M,Y
+
+OBJTYPE: SUBSTLOC,Substrate Location Type,Y
+ OBJID,ASCII,Substrate Location ID (Identifier ID),M,Y
+ SUBSTID,ASCII,Substrate ID of the substrate at the substrate location,R,N
+ SUBSTLOCSTATE,UINT_1,State of Substrate Location,R,N
+
+OBJTYPE: SUBSTRATE,Substrate Type,N
+ OBJID,ASCII,Substrate ID (Identifier ID),M,Y
+ LOTID,ASCII,Lot ID,O,N
+ MATERIALSTATUS,UINT_1,Material Status,O,N
+ SUBSTDESTINATION,ASCII,Subst Destination,O,N
+ SUBSTHISTORY,LIST,Subst History,O,N
+ SUBSTLOCID,ASCII,Subst Loc ID,O,N
+ SUBSTPROCSTATE,UINT_1,Subst Proc State,O,N
+ SUBSTSOURCE,ASCII,Subst Source,O,N
+ SUBSTSTATE,UINT_1,Subst State,R,N
+ SUBSTTYPE,UINT_1,Subst Type,O,N
+ SUBSTUSAGE,UINT_1,Subst Usage,O,N
+

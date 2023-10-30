@@ -1,0 +1,19 @@
+//CTLJOBCMD: command name,Comment
+// Command Parameter Name,DataType,Comment,Length
+CTLJOBCMD: CJDESELECT,CJDeselect Comment
+ UNITNO,UINT_1,12,1
+
+CTLJOBCMD: CJPAUSE,CJPause Comment
+
+CTLJOBCMD: CJRESUME,CJResume Comment
+
+CTLJOBCMD: CJCANCEL, CJCancel Comment
+
+CTLJOBCMD: CJHOQ, CJHOQ Comment
+
+CTLJOBCMD: CJSTART,CJStart Comment
+
+CTLJOBCMD: CJABORT, CJAbort Comment
+
+CTLJOBCMD: CJSTOP, CJStop Comment
+
