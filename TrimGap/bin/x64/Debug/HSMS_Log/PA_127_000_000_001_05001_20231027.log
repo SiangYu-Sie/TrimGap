@@ -1,0 +1,143 @@
+//////////////////////////////////////////////////////////////////////////
+2023-10-27 15:45:28.606: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-10-27 15:45:29.034: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-10-27 15:45:29.115: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-10-27 15:45:36.982: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-10-27 15:45:36.982: Send S1F13(331770).
+00 00 81 0D 00 00 00 05 0F FA   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.046 seconds to log this message.
+2023-10-27 15:45:37.026: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-10-27 15:45:37.026: Receive S1F14(331770).
+00 00 01 0E 00 00 00 05 0F FA   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-10-27 15:45:43.114: Receive Data Message.
+00 00 00 1C 00 00 81 01 00 00
+2023-10-27 15:45:43.114: Receive S1F1(6031835).
+00 00 81 01 00 00 00 5C 09 DB   01 01 41 0E 41 72 65 20 79 6F
+75 20 74 68 65 72 65 3F
+S1F1 W /* Are You Online? */
+<L[1]
+  <A[14]"Are you there?">
+>
+.
+Program takes      0 seconds to log this message.
+2023-10-27 15:45:43.116: Send Data Message.
+00 00 00 1E 00 00 01 02 00 00
+2023-10-27 15:45:43.116: Send S1F2(6031835).
+00 00 01 02 00 00 00 5C 09 DB   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F2  /* On Line Data */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = equipment model type */
+  <A[7]"1.0.0.0"> /* Name = SOFTREV, Keyword = software revision */
+>
+.
+Program takes      0 seconds to log this message.
+2023-10-27 15:46:14.248: Send Data Message.
+00 00 00 0A 00 00 81 01 00 00
+2023-10-27 15:46:14.248: Send S1F1(331771).
+00 00 81 01 00 00 00 05 0F FB
+S1F1 W /* Are You Online? */
+Program takes      0.005 seconds to log this message.
+2023-10-27 15:46:14.257: Receive Data Message.
+00 00 00 0C 00 00 01 02 00 00
+2023-10-27 15:46:14.257: Receive S1F2(331771).
+00 00 01 02 00 00 00 05 0F FB   01 00
+S1F2  /* On Line Data */
+<L[0]
+>
+.
+Program takes      0 seconds to log this message.
+//////////////////////////////////////////////////////////////////////////
+2023-10-27 16:23:32.938: CTLT_SECS (HSMS Mode) Ver. 2.3.6 & CTLT_GEM Ver. 2.9.3 Start...Driver: NO_LICENCE
+2023-10-27 16:23:33.569: Receive Select.req.
+FF FF 00 00 00 01 01 41 CD 62
+2023-10-27 16:23:33.766: Send Select.rsp.
+FF FF 00 00 00 02 01 41 CD 62
+2023-10-27 16:23:42.158: Send Data Message.
+00 00 00 1E 00 00 81 0D 00 00
+2023-10-27 16:23:42.158: Send S1F13(6634420).
+00 00 81 0D 00 00 00 65 3B B4   01 02 41 07 54 72 69 6D 47 61
+70 41 07 31 2E 30 2E 30 2E 30
+S1F13 W /* Establish Communications Request */
+<L[2]
+  <A[7]"TrimGap"> /* Name = MDLN, Keyword = GEM_MDLN (GEM_MDLN) */
+  <A[7]"1.0.0.0"> /* Name = SoftRev, Keyword = GEM_SOFTREV (GEM_SOFTREV) */
+>
+.
+Program takes      0.026 seconds to log this message.
+2023-10-27 16:23:42.183: Receive Data Message.
+00 00 00 11 00 00 01 0E 00 00
+2023-10-27 16:23:42.183: Receive S1F14(6634420).
+00 00 01 0E 00 00 00 65 3B B4   01 02 21 01 00 01 00
+S1F14  /* Establish Communications Request Acknowledge */
+<L[2]
+  <B[1] 0x00> /* Name = COMMACK */
+  <L[0]
+  >
+>
+.
+Program takes      0 seconds to log this message.
+2023-10-27 16:24:15.678: Receive Data Message.
+00 00 00 42 00 00 81 03 00 00
+2023-10-27 16:24:15.678: Receive S1F3(3970191).
+00 00 81 03 00 00 00 3C 94 8F   01 09 B1 04 00 00 0F A0 B1 04
+00 00 0F A1 B1 04 00 00 0F A2   B1 04 00 00 0F A3 B1 04 00 00
+0F A4 B1 04 00 00 0F A5 B1 04   00 00 0F A6 B1 04 00 00 0F A7
+B1 04 00 00 0F A8
+S1F3 W /* Selected Equipment Status Request */
+<L[9]
+  <U4[1] 4000> /* Name = VID */
+  <U4[1] 4001> /* Name = VID, Keyword = Slot1_Info (4001) */
+  <U4[1] 4002> /* Name = VID, Keyword = Slot2_Info (4002) */
+  <U4[1] 4003> /* Name = VID, Keyword = Slot3_Info (4003) */
+  <U4[1] 4004> /* Name = VID, Keyword = Slot4_Info (4004) */
+  <U4[1] 4005> /* Name = VID, Keyword = Slot5_Info (4005) */
+  <U4[1] 4006> /* Name = VID, Keyword = Slot6_Info (4006) */
+  <U4[1] 4007> /* Name = VID, Keyword = Slot7_Info (4007) */
+  <U4[1] 4008> /* Name = VID, Keyword = Slot8_Info (4008) */
+>
+.
+Program takes      0.001 seconds to log this message.
+2023-10-27 16:24:15.685: Send Data Message.
+00 00 00 1E 00 00 01 04 00 00
+2023-10-27 16:24:15.685: Send S1F4(3970191).
+00 00 01 04 00 00 00 3C 94 8F   01 09 01 00 41 00 41 00 41 00
+41 00 41 00 41 00 41 00 41 00
+S1F4  /* Selected Equipment Status Data */
+<L[9]
+  <L[0]
+  >
+  <A[0]""> /* Name = VID, Keyword = Slot1_Info (4001) */
+  <A[0]""> /* Name = VID, Keyword = Slot2_Info (4002) */
+  <A[0]""> /* Name = VID, Keyword = Slot3_Info (4003) */
+  <A[0]""> /* Name = VID, Keyword = Slot4_Info (4004) */
+  <A[0]""> /* Name = VID, Keyword = Slot5_Info (4005) */
+  <A[0]""> /* Name = VID, Keyword = Slot6_Info (4006) */
+  <A[0]""> /* Name = VID, Keyword = Slot7_Info (4007) */
+  <A[0]""> /* Name = VID, Keyword = Slot8_Info (4008) */
+>
+.
+Program takes      0 seconds to log this message.
+2023-10-27 16:25:21.724: Send Linktest.req.
+FF FF 00 00 00 05 00 65 3B B5
+2023-10-27 16:25:21.724: Receive Linktest.rsp.
+FF FF 00 00 00 06 00 65 3B B5
