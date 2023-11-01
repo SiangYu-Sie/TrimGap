@@ -1024,7 +1024,33 @@ namespace TrimGap
             }
             else if (type == 1)
             {
-                return _gemControler.UpdateSV((ulong)id, val, out errLog);
+                long rtn = _gemControler.UpdateSV((ulong)id, val, out errLog);
+                /*if(rtn != 0)
+                {
+                    string[] str = errLog.Split('\'');
+
+                    if (str.Length > 0)
+                    {
+                        switch(str[2])
+                        {
+                            case "U1":
+                                byte val2 = (byte)val;
+                                rtn = _gemControler.UpdateSV((ulong)id, val2, out errLog);
+                                long rtn2 = rtn;
+                                break;
+                            case "U2":
+                                rtn = _gemControler.UpdateSV((ulong)id, (ushort)val, out errLog);
+                                break;
+                            case "U4":
+                                rtn = _gemControler.UpdateSV((ulong)id, (uint)val, out errLog);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                }*/
+                return rtn;
             }
             else
             {

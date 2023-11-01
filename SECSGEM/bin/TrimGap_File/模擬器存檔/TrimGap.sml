@@ -123,18 +123,14 @@ S2F13_EC_Req(All): S2F13 W
 S2F14: S2F14
 .
 S2F15_NewEC_Send: S2F15 W
-<L[3]
+<L[2]
 	<L[2]
-		<U4[1]1002>
-		<U2[1]50>
+		<U4[1]7001>
+		<U2[1]10000>
 	>
 	<L[2]
-		<U4[1]1003>
-		<F4[1]3.456>
-	>
-	<L[2]
-		<U4[1]1011>
-		<A[40]"_123456789_123456789_123456789_123456789">
+		<U4[1]7002>
+		<F4[1]0.931>
 	>
 >
 .
@@ -153,12 +149,12 @@ S2F23_TaceDataInit: S2F23 W
 <L[5]
 	<U4[1]123456789>
 	<A[6]"000003">
-	<U4[1]27>
+	<U4[1]12>
 	<U4[1]3>
 	<L[3]
-		<U4[1]100001>
-		<U4[1]2002>
-		<U4[1]2003>
+		<U4[1]4>
+		<U4[1]5>
+		<U4[1]6>
 	>
 >
 .
@@ -432,9 +428,9 @@ S2F26: S2F26
 .
 S2F29_EC_NameListReq: S2F29 W
 <L[3]
-	<U4[1]1001>
-	<U4[1]1002>
-	<U4[1]1003>
+	<U4[1]7001>
+	<U4[1]7002>
+	<U4[1]7003>
 >
 .
 S2F29_EC_NameListReq(All): S2F29 W
@@ -510,11 +506,9 @@ S2F33_DefineReport(7001): S2F33 W
 	<U1[1]0>
 	<L[1]
 		<L[2]
-			<U4[1]7001>
-			<L[3]
-				<U4[1]17>
-				<U4[1]100001>
-				<U4[1]2002>
+			<U4[1]88>
+			<L[1]
+				<U4[1]2000>
 			>
 		>
 	>
@@ -669,9 +663,9 @@ S2F35_LinkReport(101): S2F35 W
 	<U1[1]0>
 	<L[1]
 		<L[2]
-			<U4[1]101>
+			<U4[1]5999>
 			<L[1]
-				<U4[1]7001>
+				<U4[1]88>
 			>
 		>
 	>
@@ -1111,7 +1105,7 @@ S5F2: S5F2
 S5F3_AlarmEnable_U4(9001): S5F3 W
 <L[2]
 	<B[1]0x80>
-	<U4[1]9001>
+	<U4[1]10010>
 >
 .
 S5F3_AlarmEnable_U4(All): S5F3 W
@@ -1141,7 +1135,7 @@ S5F3__AlarmEnable_(ErrorALID): S5F3 W
 S5F4: S5F4
 .
 S5F5_ListAlarmRequest_U4(9001_3): S5F5 W
-<U4[3]9001 9002 9003>
+<U4[3]10008 10009 10010>
 .
 S5F5_ListAlarmRequest_U4(All): S5F5 W
 <U4[0]>
@@ -1172,7 +1166,7 @@ S6F12: S6F12
 <B[1]0x00>
 .
 S6F15_EventRReportReq(100): S6F15 W
-<U4[1]100>
+<U4[1]6000>
 .
 S6F15_EventRReportReq(101): S6F15 W
 <U4[1]101>
@@ -1186,7 +1180,7 @@ S6F15_EventRReportReq(103): S6F15 W
 S6F16: S6F16
 .
 S6F19_IndivReportReq(7001): S6F19 W
-<U4[1]7001>
+<U4[1]77>
 .
 S6F19_IndivReportReq(7002): S6F19 W
 <U4[1]7002>
@@ -1304,7 +1298,7 @@ S7F4: S7F4
 <B[1]0x00>
 .
 S7F5_RequestPP(PP1): S7F5 W
-<A[3]"PP1">
+<A[7]"AutoRun">
 .
 S7F5_RequestPP(PP1_PPIDWithExtName): S7F5 W
 <A[7]"PP1.pjb">
@@ -1566,7 +1560,7 @@ S7F24: S7F24
 <U1[1]0x00>
 .
 S7F25_RequestPP(PP1_Formatted): S7F25 W
-<A[19]"AOI_Recipe_3535_3x6">
+<A[7]"AutoRun">
 .
 S7F25_RequestPP(PP2_Formatted): S7F25 W
 <A[7]"AutoRun">

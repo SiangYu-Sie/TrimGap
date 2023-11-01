@@ -969,6 +969,19 @@ namespace DemoFormDiaGemLib
                 txtNewECsSystemBytes.Text = e.SystemBytes.ToString();
                 dgvNewECs.Tag = e.NewECVs;
             });
+            string err;
+            byte eac = 0;
+            _gemControler.NewEqpConstantDownloadReply(eac, e.SystemBytes, out err);
+
+            if (eac == 0 && dgvNewECs.Tag != null)
+            {
+                List<NewECV> newECVs = (List<NewECV>)dgvNewECs.Tag;
+                foreach (NewECV newECV in newECVs)
+                {
+                    _gemControler.UpdateEC(newECV.ID, newECV.Value, false, out err);
+                }
+                dgvNewECs.Tag = null;
+            }
         }
 
         private void btnNewECsReply_Click(object sender, EventArgs e)

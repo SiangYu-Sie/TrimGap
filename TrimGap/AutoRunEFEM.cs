@@ -672,15 +672,15 @@ namespace TrimGap
             if (fram.SECSPara.Loadport1_PortTransferState == PortTransferState.ReadyToLoad.GetHashCode() && Common.EFEM.LoadPort1.Placement)
             {
                 Common.EFEM.LoadPort1.ReadFoupID();
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort1.FoupID, out err);
                 Common.SecsgemForm.EventReportSend(TrimGap_EqpID.MaterialReceived, out err);
                 SpinWait.SpinUntil(() => false, 2000);
                 ClampAndReadID(ref Common.EFEM.LoadPort1);
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, "", out err);
                 fram.SECSPara.Loadport1_PortTransferState = PortTransferState.TransferBlocked.GetHashCode();
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, fram.SECSPara.Loadport1_PortTransferState, out err);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err);
             }
             else if (fram.SECSPara.Loadport1_PortTransferState == PortTransferState.TransferBlocked.GetHashCode())
             {
@@ -690,9 +690,9 @@ namespace TrimGap
                     if (!Common.EFEM.LoadPort1.LED_Placement && !Common.EFEM.LoadPort1.LED_Persence)
                     {
                         fram.SECSPara.Loadport1_PortTransferState = PortTransferState.ReadyToLoad.GetHashCode();
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, fram.SECSPara.Loadport1_PortTransferState, out err); // RTL
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToLoad
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // RTL
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToLoad
                         Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ReadyToLoad, out err);
                     }
                 }
@@ -703,14 +703,14 @@ namespace TrimGap
                 if (Common.EFEM.LoadPort1.LED_Placement && Common.EFEM.LoadPort1.LED_Persence)
                 {
                     fram.SECSPara.Loadport1_PortTransferState = PortTransferState.TransferBlocked.GetHashCode();
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, fram.SECSPara.Loadport1_PortTransferState, out err);
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err);
                 }
                 else
                 {
                     fram.SECSPara.Loadport1_PortTransferState = PortTransferState.ReadyToLoad.GetHashCode();
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, fram.SECSPara.Loadport1_PortTransferState, out err); // RTL
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToLoad
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // RTL
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToLoad
                     Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ReadyToLoad, out err);
                 }
             }
@@ -718,16 +718,16 @@ namespace TrimGap
             if (fram.SECSPara.Loadport2_PortTransferState == PortTransferState.ReadyToLoad.GetHashCode() && Common.EFEM.LoadPort2.Placement)
             {
                 Common.EFEM.LoadPort2.ReadFoupID();
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort2.FoupID, out err);
                 Common.SecsgemForm.EventReportSend(TrimGap_EqpID.MaterialReceived, out err);
                 SpinWait.SpinUntil(() => false, 2000);
                 ClampAndReadID(ref Common.EFEM.LoadPort2);
 
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, "", out err);
                 fram.SECSPara.Loadport2_PortTransferState = PortTransferState.TransferBlocked.GetHashCode();
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, fram.SECSPara.Loadport2_PortTransferState, out err);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err);
             }
             else if (fram.SECSPara.Loadport2_PortTransferState == PortTransferState.TransferBlocked.GetHashCode())
             {
@@ -737,9 +737,9 @@ namespace TrimGap
                     if (!Common.EFEM.LoadPort2.LED_Placement && !Common.EFEM.LoadPort2.LED_Persence)
                     {
                         fram.SECSPara.Loadport2_PortTransferState = PortTransferState.ReadyToLoad.GetHashCode();
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, fram.SECSPara.Loadport2_PortTransferState, out err); // RTL
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToLoad
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // RTL
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToLoad
                         Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ReadyToLoad, out err);
                     }
                 }
@@ -750,14 +750,14 @@ namespace TrimGap
                 if (Common.EFEM.LoadPort2.LED_Placement && Common.EFEM.LoadPort2.LED_Persence)
                 {
                     fram.SECSPara.Loadport2_PortTransferState = PortTransferState.TransferBlocked.GetHashCode();
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, fram.SECSPara.Loadport2_PortTransferState, out err);
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err);
                 }
                 else
                 {
                     fram.SECSPara.Loadport2_PortTransferState = PortTransferState.ReadyToLoad.GetHashCode();
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, fram.SECSPara.Loadport2_PortTransferState, out err); // RTL
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToLoad
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // RTL
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToLoad
                     Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ReadyToLoad, out err);
                 }
             }
@@ -773,12 +773,12 @@ namespace TrimGap
             {
                 // 東西拿走後 切成 RTL
                 Common.EFEM.LoadPort1.ReadFoupID();
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort1.FoupID, out err);
                 Common.SecsgemForm.EventReportSend(TrimGap_EqpID.MaterialRemove, out err);
                 fram.SECSPara.Loadport1_PortTransferState = PortTransferState.ReadyToLoad.GetHashCode();
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, PortTransferState.ReadyToLoad.GetHashCode(), out err); // RTL
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToLoad
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, (byte)PortTransferState.ReadyToLoad.GetHashCode(), out err); // RTL
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToLoad
                 Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ReadyToLoad, out err);
                 Common.EFEM.LoadPort1.LEDLoad(LoadPort.LEDsts.Off);
                 Common.EFEM.LoadPort1.LEDUnLoad(LoadPort.LEDsts.Off);
@@ -787,12 +787,12 @@ namespace TrimGap
             {
                 // 東西拿走後 切成 RTL
                 Common.EFEM.LoadPort2.ReadFoupID();
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort2.FoupID, out err);
                 Common.SecsgemForm.EventReportSend(TrimGap_EqpID.MaterialRemove, out err);
                 fram.SECSPara.Loadport2_PortTransferState = PortTransferState.ReadyToLoad.GetHashCode();
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, PortTransferState.ReadyToLoad.GetHashCode(), out err); // RTL
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToLoad
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, (byte)PortTransferState.ReadyToLoad.GetHashCode(), out err); // RTL
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToLoad
                 Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ReadyToLoad, out err);
                 Common.EFEM.LoadPort2.LEDLoad(LoadPort.LEDsts.Off);
                 Common.EFEM.LoadPort2.LEDUnLoad(LoadPort.LEDsts.Off);
@@ -827,12 +827,12 @@ namespace TrimGap
             {
                 if (loadPort.pn == LoadPort.Pn.P1)
                 {
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
                 }
                 else if (loadPort.pn == LoadPort.Pn.P2)
                 {
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
                 }
                 Common.SecsgemForm.EventReportSend(TrimGap_EqpID.CarrierClamped, out err);
@@ -859,11 +859,11 @@ namespace TrimGap
             {
                 if (loadPort.pn == LoadPort.Pn.P1)
                 {
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                 }
                 else if (loadPort.pn == LoadPort.Pn.P2)
                 {
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
                 }
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
                 Common.SecsgemForm.EventReportSend(TrimGap_EqpID.CarrierDock, out err);
@@ -889,19 +889,19 @@ namespace TrimGap
                 loadPort.Busy = false;
                 if (loadPort.pn == LoadPort.Pn.P1)
                 {
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                     fram.SECSPara.Loadport1_PortTransferState = PortTransferState.ReadyToUnload.GetHashCode();
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_RecipeID, "", out err);
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
                 }
                 else if (loadPort.pn == LoadPort.Pn.P2)
                 {
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
                     fram.SECSPara.Loadport2_PortTransferState = PortTransferState.ReadyToUnload.GetHashCode();
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_RecipeID, "", out err);
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
                 }
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
                 Common.SecsgemForm.EventReportSend(TrimGap_EqpID.CarrierDoorClosed, out err);
@@ -923,19 +923,19 @@ namespace TrimGap
                     loadPort.Busy = false;
                     if (loadPort.pn == LoadPort.Pn.P1)
                     {
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                         fram.SECSPara.Loadport1_PortTransferState = PortTransferState.ReadyToUnload.GetHashCode();
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
                         Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_RecipeID, "", out err);
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
                     }
                     else if (loadPort.pn == LoadPort.Pn.P2)
                     {
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
                         fram.SECSPara.Loadport2_PortTransferState = PortTransferState.ReadyToUnload.GetHashCode();
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
                         Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_RecipeID, "", out err);
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
                     }
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
                     Common.SecsgemForm.EventReportSend(TrimGap_EqpID.CarrierDoorClosed, out err);
@@ -972,18 +972,18 @@ namespace TrimGap
                 if (loadPort.pn == LoadPort.Pn.P1)
                 {
                     fram.SECSPara.Loadport1_PortTransferState = PortTransferState.ReadyToUnload.GetHashCode();
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_RecipeID, "", out err);
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
                 }
                 else if (loadPort.pn == LoadPort.Pn.P2)
                 {
                     fram.SECSPara.Loadport2_PortTransferState = PortTransferState.ReadyToUnload.GetHashCode();
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_RecipeID, "", out err);
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
                 }
                 for (int i = 0; i < 25; i++)
                 {
@@ -1020,7 +1020,7 @@ namespace TrimGap
             if (rtn)
             {
                 loadPort.GetWaferSlot2(); //已做完
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, 2, out err);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, (byte)2, out err);
                 // 0 = SLOTMAP NOT READ
                 // 1 = WAITING FOR HOST
                 // 2 = SLOTMAP VERIFIKATION OK
@@ -1028,14 +1028,14 @@ namespace TrimGap
                 string testslotmap = "";
                 for (int i = 0; i < loadPort.Slot.Length; i++)
                 {
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, loadPort.Slot[i], out err); // Wafer有放歪
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, (byte)loadPort.Slot[i], out err); // Wafer有放歪
                     if (loadPort.Slot[i] > 1)
                     {
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, 3, out err); // Wafer有放歪
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)3, out err); // Wafer有放歪
                     }
                     if (SECSGEM.TrimGap_EqpParameter.Reason != 3 && loadPort.Slot[loadPort.Slot.Length - 1] <= 1)
                     {
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, 0, out err); // map 成功沒有error ，等待驗證
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)0, out err); // map 成功沒有error ，等待驗證
                     }
                     testslotmap += Convert.ToString(loadPort.Slot[i]); //測試
                 }
@@ -1070,21 +1070,21 @@ namespace TrimGap
                 if (loadPort.Map())
                 {
                     loadPort.GetWaferSlot2();
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, 2, out err);
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, (byte)2, out err);
                     // 0 = SLOTMAP NOT READ
                     // 1 = WAITING FOR HOST
                     // 2 = SLOTMAP VERIFIKATION OK
                     // 3 = SLOTMAP VERIFICATION FAILED
                     for (int i = 0; i < loadPort.Slot.Length; i++)
                     {
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, loadPort.Slot[i], out err); // Wafer有放歪
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, (byte)loadPort.Slot[i], out err); // Wafer有放歪
                         if (loadPort.Slot[i] > 1)
                         {
-                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, 3, out err); // Wafer有放歪
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)3, out err); // Wafer有放歪
                         }
                         if (SECSGEM.TrimGap_EqpParameter.Reason != 3 && loadPort.Slot[loadPort.Slot.Length - 1] <= 1)
                         {
-                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, 0, out err); // map 成功沒有error ，等待驗證
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)0, out err); // map 成功沒有error ，等待驗證
                         }
                     }
 
@@ -1112,7 +1112,7 @@ namespace TrimGap
                 }
                 else
                 {
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, 2, out err); // 2 = READ FAIL
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)2, out err); // 2 = READ FAIL
                     Console.WriteLine("Map Fail " + loadPort.pn.ToString());
                     InsertLog.SavetoDB(133, loadPort.pn.ToString());
                     EFEMGotoErrorCheckStep();
@@ -1600,12 +1600,12 @@ namespace TrimGap
                             loadPort.Busy = false;
                             if (loadPort.pn == LoadPort.Pn.P1)
                             {
-                                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
+                                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                                 FoupHome(ref Common.EFEM.LoadPort1);
                             }
                             else if (loadPort.pn == LoadPort.Pn.P2)
                             {
-                                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
+                                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
                                 FoupHome(ref Common.EFEM.LoadPort2);
                             }
                             Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
@@ -2113,11 +2113,11 @@ namespace TrimGap
                     loadPort.Busy = false;
                     if (loadPort.pn == LoadPort.Pn.P1)
                     {
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                     }
                     else if (loadPort.pn == LoadPort.Pn.P2)
                     {
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
                     }
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
                     Common.SecsgemForm.EventReportSend(TrimGap_EqpID.MeasureResultSend, out err);  // 先更新 PortID & CarrierID在報

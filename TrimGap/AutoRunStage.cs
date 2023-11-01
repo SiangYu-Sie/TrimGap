@@ -728,11 +728,11 @@ namespace TrimGap
                         Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort_Run.FoupID, out err);
                         if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P1)
                         {
-                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                         }
                         else if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P2)
                         {
-                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
                         }
                     }
 
@@ -1330,11 +1330,11 @@ namespace TrimGap
                         Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort_Run.FoupID, out err);
                         if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P1)
                         {
-                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                         }
                         else if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P2)
                         {
-                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
                         }
                     }
 
@@ -1917,11 +1917,11 @@ namespace TrimGap
                         Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort_Run.FoupID, out err);
                         if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P1)
                         {
-                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 1, out err);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                         }
                         else if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P2)
                         {
-                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, 2, out err);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
                         }
                     }
 

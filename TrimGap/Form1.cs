@@ -483,7 +483,7 @@ namespace TrimGap
                 Common.EFEM.E84.SetAuto(E84.E84_Num.E841);
 
                 fram.SECSPara.Loadport1_AccessMode = Mode.Auto.GetHashCode();
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, fram.SECSPara.Loadport1_AccessMode, out err);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, (byte)fram.SECSPara.Loadport1_AccessMode, out err);
                 InsertLog.SavetoDB(50, "LP1 Switch to Auto");// Auto
             }
         }
@@ -505,7 +505,7 @@ namespace TrimGap
                 Common.EFEM.E84.SetManual(E84.E84_Num.E841);
                 Console.WriteLine("LP1 Switch to Manual");
                 fram.SECSPara.Loadport1_AccessMode = Mode.Manual.GetHashCode();
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, fram.SECSPara.Loadport1_AccessMode, out err);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, (byte)fram.SECSPara.Loadport1_AccessMode, out err);
                 InsertLog.SavetoDB(51, "LP1 Switch to Manual");// Manual
             }
         }
@@ -528,7 +528,7 @@ namespace TrimGap
                 Common.EFEM.E84.SetAuto(E84.E84_Num.E842);
 
                 fram.SECSPara.Loadport2_AccessMode = Mode.Auto.GetHashCode();
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, fram.SECSPara.Loadport2_AccessMode, out err);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, (byte)fram.SECSPara.Loadport2_AccessMode, out err);
                 InsertLog.SavetoDB(50, "LP2 Switch to Auto");// Auto
             }
         }
@@ -548,7 +548,7 @@ namespace TrimGap
                 }
                 Common.EFEM.E84.SetManual(E84.E84_Num.E842);
                 fram.SECSPara.Loadport2_AccessMode = Mode.Manual.GetHashCode();
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, fram.SECSPara.Loadport2_AccessMode, out err);
+                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, (byte)fram.SECSPara.Loadport2_AccessMode, out err);
                 InsertLog.SavetoDB(51, "LP2 Switch to Manual");// Manual
             }
         }
