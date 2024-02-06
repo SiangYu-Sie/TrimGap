@@ -846,23 +846,23 @@ namespace TrimGap
 
                 // init secs後 先update EC 更新機台參數
 
-                _gemControler.UpdateEC(TrimGap_EqpID.ChunkRotateDistance, fram.m_posV[0], true, out err);
-                _gemControler.UpdateEC(TrimGap_EqpID.Cofficient, fram.Analysis.Coefficient, true, out err);
-                _gemControler.UpdateEC(TrimGap_EqpID.RobotSpeed, 50, true, out err);
-                _gemControler.UpdateEC(TrimGap_EqpID.SoftWareVersion, 110, true, out err);  // 版本號 目前是1.1.0.0503 ，更新前面三碼就好，這個之後再改成直接抓版本號
+                _gemControler.UpdateEC(TrimGap_EqpID.ChunkRotateDistance, Convert.ToUInt16(fram.m_posV[0]), true, out err);
+                _gemControler.UpdateEC(TrimGap_EqpID.Cofficient, (float)(fram.Analysis.Coefficient), true, out err);
+                _gemControler.UpdateEC(TrimGap_EqpID.RobotSpeed, (byte)50, true, out err);
+                _gemControler.UpdateEC(TrimGap_EqpID.SoftWareVersion, (byte)110, true, out err);  // 版本號 目前是1.1.0.0503 ，更新前面三碼就好，這個之後再改成直接抓版本號
 
                 if (fram.S_MotionRotate == "True")
                 {
-                    _gemControler.UpdateEC(TrimGap_EqpID.MotionRotate, 1, true, out err);
+                    _gemControler.UpdateEC(TrimGap_EqpID.MotionRotate, (byte)1, true, out err);
                 }
                 else
                 {
-                    _gemControler.UpdateEC(TrimGap_EqpID.MotionRotate, 0, true, out err);
+                    _gemControler.UpdateEC(TrimGap_EqpID.MotionRotate, (byte)0, true, out err);
                 }
-                _gemControler.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, fram.SECSPara.Loadport1_AccessMode, out err);              // 開啟程式後先更新 Access Mode & PortTranmsferState
-                _gemControler.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, fram.SECSPara.Loadport2_AccessMode, out err);
-                _gemControler.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, fram.SECSPara.Loadport1_PortTransferState, out err);
-                _gemControler.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, fram.SECSPara.Loadport2_PortTransferState, out err);
+                _gemControler.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, (byte)fram.SECSPara.Loadport1_AccessMode, out err);              // 開啟程式後先更新 Access Mode & PortTranmsferState
+                _gemControler.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, (byte)fram.SECSPara.Loadport2_AccessMode, out err);
+                _gemControler.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err);
+                _gemControler.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err);
             }
         }
 
