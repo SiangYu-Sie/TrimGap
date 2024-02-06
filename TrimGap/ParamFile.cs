@@ -163,7 +163,7 @@ namespace TrimGap
                 iniVal(m, p, s, ref fram.m_WaferAlignAngle, "fram.m_WaferAlignAngle", 0);
                 iniVal(m, p, s, ref fram.m_WaferBackToFoupAngle, "fram.m_WaferBackToFoupAngle", 0);
                 //iniVal(m, p, s, ref fram.S_SensorType, "fram.S_SensorType", 1);
-                //iniVal(m, p, s, ref fram.S_SensorConnectType, "fram.S_SensorConnectType", 0);
+                iniVal(m, p, s, ref fram.S_SensorConnectType, "fram.S_SensorConnectType", 0);
                 //iniVal(m, p, s, ref fram.S_SensorProgram, "fram.S_SensorProgram", 0);
                 //iniVal(m, p, s, ref fram.S_Triggerbool, "fram.S_Triggerbool", 1);
                 iniVal(m, p, s, ref fram.m_SecsgemType, "fram.m_SecsgemType", 0);
@@ -300,6 +300,8 @@ namespace TrimGap
                     iniVal(m, p, s, ref fram.Analysis.Offset.QC_EDGE_1StepW[i], "fram.Analysis.Offset.EDGE_QC_1StepW" + i, 0);
                     iniVal(m, p, s, ref fram.Analysis.Offset.QC_EDGE_2StepW1[i], "fram.Analysis.Offset.EDGE_QC_2StepW1" + i, 0);
                 }
+
+                iniVal(m, p, s, ref fram.Analysis.HTW_StandardPlane, "fram.Analysis.HTW_StandardPlane", 10.00);
             }
 
             if (KeyName == "all" || KeyName == "Motion")
@@ -310,13 +312,17 @@ namespace TrimGap
                 iniVal(m, p, s, ref fram.m_MotionType, "fram.m_MotionType", 0);
                 iniVal(m, p, s, ref fram.m_MotionParamPath, "fram.m_MotionParamPath", "C:\\Users\\TL\\Documents\\Position Board\\FTGM1\\testData0830.prm2");
                 int axisnum = 0;
-                if (fram.m_MotionType == 0)
+                if (fram.m_MachineType == 0)
                 {
                     axisnum = 2;
                 }
-                else
+                else if(fram.m_MachineType == 1)
                 {
                     axisnum = 3;
+                }
+                else
+                {
+                    axisnum = 5;
                 }
                 for (int i = 0; i < axisnum; i++)
                 {
@@ -330,6 +336,19 @@ namespace TrimGap
                     iniVal(m, p, s, ref fram.m_unit[i], "fram.m_unit" + i, 1);
                 }
             }
+
+            if (KeyName == "all" || KeyName == "Position")
+            {
+                s = "Position";
+                iniVal(m, p, s, ref fram.Position.LJ_Z, "fram.Position.LJ_Z", 0);
+                iniVal(m, p, s, ref fram.Position.RecordCCD_Z, "fram.Position.RecordCCD_Z", 0);
+                iniVal(m, p, s, ref fram.Position.HTW_P1_X, "fram.Position.HTW_P1_X", 0);
+                iniVal(m, p, s, ref fram.Position.HTW_P1_Z, "fram.Position.HTW_P1_Z", 0);
+                iniVal(m, p, s, ref fram.Position.HTW_P2_X, "fram.Position.HTW_P2_X", 0);
+                iniVal(m, p, s, ref fram.Position.HTW_P2_Z, "fram.Position.HTW_P2_Z", 0);
+				iniVal(m, p, s, ref fram.Position.HTW_P1_FocusRange, "fram.Position.HTW_P1_FocusRange", 30); 																							 
+            }
+
             if (KeyName == "all" || KeyName == "EFEMSts")
             {
                 s = "EFEMSts";
@@ -356,6 +375,8 @@ namespace TrimGap
                 {
                     iniVal(m, p, s, ref fram.EFEMSts.Slot_Sts2[i], "fram.EFEMSts.Slot_Sts2" + (i + 1), EFEM.slot_status.Ready.ToString());
                 }
+
+                iniVal(m, p, s, ref fram.EFEMSts.Skip, "fram.EFEMSts.Skip", 0);
             }
             if (KeyName == "all" || KeyName == "SECSPara")
             {
@@ -460,6 +481,10 @@ namespace TrimGap
                 iniVal(m, p, s, ref recipe.Step2_Range_step2x1, "fram.Recipe.Step2_Range_step2x1", 2000);
                 iniVal(m, p, s, ref recipe.Range1_Percent, "fram.Recipe.Range1_Percent", 5);
                 iniVal(m, p, s, ref recipe.Range2_Percent, "fram.Recipe.Range2_Percent", 15);
+                iniVal(m, p, s, ref recipe.RecordCCDRule, "fram.Recipe.RecordCCDRule", 0);
+                iniVal(m, p, s, ref recipe.RecordCCD_Angle_Start, "fram.Recipe.RecordCCD_Angle_Start", 0);
+                iniVal(m, p, s, ref recipe.RecordCCD_Angle_End, "fram.Recipe.RecordCCD_Angle_End", 315);
+                iniVal(m, p, s, ref recipe.RecordCCD_Angle_Pitch, "fram.Recipe.RecordCCD_Angle_Pitch", 45);
             }
         }
         //public static bool Save3MDistribution_Csv(System.Windows.Forms.DataGridView dataGridView1, string fullPath) // 20200310
@@ -851,9 +876,9 @@ namespace TrimGap
             }
         }
 
-        public static void SaveRawdata_Csv(double[] rawdata, string note, DateTime dt)
+        public static void SaveRawdata_Csv(double[] rawdata, string LotID, string note, DateTime dt)
         {
-            string UIDate, Year, month, Date, Hour, minutes, Second, DatasavPath = "";
+            string UIDate, Year, month, Date, Hour, minutes, Second, DatasavPath = "", DatasavPath2 = "";
             DateTime _dt = dt;
             Year = string.Format("{0:yyyy}", _dt);
             month = string.Format("{0:MM}", _dt);
@@ -863,30 +888,26 @@ namespace TrimGap
             Second = string.Format("{0:ss}", _dt);
             UIDate = string.Format("{0:yyyy-MM-dd-HH:mm:ss}", _dt);
             DatasavPath = sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year + "\\" + month + Date;
-            //DatasavPath = sram.dirfilepath + "\\RawData\\" + Year + "\\" + month + Date;
             //DatasavPath = sram.dirfilepath + "\\Baseline\\" + Year + "\\" + month + Date;
             //logsavPath = ParamFile.dirname + "\\Log\\" + Year + "\\" + month + Date;
             //if (Directory.Exists(sram.dirfilepath + "\\Baseline\\" + Year))//***
-            if (Directory.Exists(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year))//***
-            {//判斷有無資料夾
-                if (!Directory.Exists(DatasavPath))
-                {
-                    Directory.CreateDirectory(DatasavPath);
-                }
-            }
-            else
+            DatasavPath2 = DatasavPath + "\\" + LotID;
+            if (!Directory.Exists(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year))//***
             {//無年資料夾
-             //Directory.CreateDirectory(sram.dirfilepath + "\\Baseline\\" + Year);
                 Directory.CreateDirectory(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year);
-                if (!Directory.Exists(DatasavPath))
-                {
-                    Directory.CreateDirectory(DatasavPath);
-                }
+            }
+            if (!Directory.Exists(DatasavPath))
+            {//無月日資料夾
+                Directory.CreateDirectory(DatasavPath);
+            }
+            if (!Directory.Exists(DatasavPath2))
+            {//無FoupID資料夾
+                Directory.CreateDirectory(DatasavPath2);
             }
 
             string Savefilepath;
             //Savefilepath = DatasavPath + "\\" + DateTime.Now.ToString("yyyyMMdd-HHmmss") + ".bin";
-            Savefilepath = DatasavPath + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            Savefilepath = DatasavPath2 + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
             //ParamFile.SaveCsv(rawdata, Savefilepath);
             try
             {
@@ -956,9 +977,9 @@ namespace TrimGap
             }
         }
 
-        public static void SaveRawdata_Csv3(double[] rawdata, double[] rawdata2, double[] rawdata3, string note, DateTime dt)
+        public static void SaveRawdata_Csv3(double[] rawdata, double[] rawdata2, double[] rawdata3, string LotID, string note, DateTime dt)
         {
-            string UIDate, Year, month, Date, Hour, minutes, Second, DatasavPath = "";
+            string UIDate, Year, month, Date, Hour, minutes, Second, DatasavPath = "", DatasavPath2 = "";
             DateTime _dt = dt;
             Year = string.Format("{0:yyyy}", _dt);
             month = string.Format("{0:MM}", _dt);
@@ -971,27 +992,24 @@ namespace TrimGap
             //DatasavPath = sram.dirfilepath + "\\RawData\\" + Year + "\\" + month + Date;
             //DatasavPath = sram.dirfilepath + "\\Baseline\\" + Year + "\\" + month + Date;
             //logsavPath = ParamFile.dirname + "\\Log\\" + Year + "\\" + month + Date;
+            DatasavPath2 = DatasavPath + "\\" + LotID;
             //if (Directory.Exists(sram.dirfilepath + "\\Baseline\\" + Year))//***
-            if (Directory.Exists(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year))//***
-            {//判斷有無資料夾
-                if (!Directory.Exists(DatasavPath))
-                {
-                    Directory.CreateDirectory(DatasavPath);
-                }
-            }
-            else
+            if (!Directory.Exists(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year))//***
             {//無年資料夾
-             //Directory.CreateDirectory(sram.dirfilepath + "\\Baseline\\" + Year);
                 Directory.CreateDirectory(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year);
-                if (!Directory.Exists(DatasavPath))
-                {
-                    Directory.CreateDirectory(DatasavPath);
-                }
+            }
+            if (!Directory.Exists(DatasavPath))
+            {//無月日資料夾
+                Directory.CreateDirectory(DatasavPath);
+            }
+            if (!Directory.Exists(DatasavPath2))
+            {//無FoupID資料夾
+                Directory.CreateDirectory(DatasavPath2);
             }
 
             string Savefilepath;
             //Savefilepath = DatasavPath + "\\" + DateTime.Now.ToString("yyyyMMdd-HHmmss") + ".bin";
-            Savefilepath = DatasavPath + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            Savefilepath = DatasavPath2 + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
             //ParamFile.SaveCsv(rawdata, Savefilepath);
             try
             {
@@ -1055,9 +1073,124 @@ namespace TrimGap
             }
         }
 
-        public static void SaveRawdata_png(Chart chart, string note, DateTime dt)
+        public static void SaveRawdata_Csv4(double[] rawdata, double[] rawdata2, double[] rawdata3, double[] rawdata4, double max_h1, double max_w1, double max_h2, double max_w2, string LotID, string note, DateTime dt, int iCount)
         {
-            string UIDate, Year, month, Date, Hour, minutes, Second, DatasavPath = "";
+            string UIDate, Year, month, Date, Hour, minutes, Second, DatasavPath = "", DatasavPath2 = "";
+            DateTime _dt = dt;
+            Year = string.Format("{0:yyyy}", _dt);
+            month = string.Format("{0:MM}", _dt);
+            Date = string.Format("{0:dd}", _dt);
+            Hour = string.Format("{0:HH}", _dt);
+            minutes = string.Format("{0:mm}", _dt);
+            Second = string.Format("{0:ss}", _dt);
+            UIDate = string.Format("{0:yyyy-MM-dd-HH:mm:ss}", _dt);
+            DatasavPath = sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year + "\\" + month + Date;
+            //DatasavPath = sram.dirfilepath + "\\RawData\\" + Year + "\\" + month + Date;
+            //DatasavPath = sram.dirfilepath + "\\Baseline\\" + Year + "\\" + month + Date;
+            //logsavPath = ParamFile.dirname + "\\Log\\" + Year + "\\" + month + Date;
+            DatasavPath2 = DatasavPath + "\\" + LotID;
+            //if (Directory.Exists(sram.dirfilepath + "\\Baseline\\" + Year))//***
+            if (!Directory.Exists(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year))//***
+            {//無年資料夾
+                Directory.CreateDirectory(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year);
+            }
+            if (!Directory.Exists(DatasavPath))
+            {//無月日資料夾
+                Directory.CreateDirectory(DatasavPath);
+            }
+            if (!Directory.Exists(DatasavPath2))
+            {//無FoupID資料夾
+                Directory.CreateDirectory(DatasavPath2);
+            }
+
+            string str = string.Empty; //沒數據會儲存錯誤
+            string str2 = string.Empty; //沒數據會儲存錯誤
+            string str3 = string.Empty; //沒數據會儲存錯誤
+            string str4 = string.Empty; //沒數據會儲存錯誤
+            string str5 = string.Empty; //沒數據會儲存錯誤
+            string str6 = string.Empty; //沒數據會儲存錯誤
+            string str7 = string.Empty; //沒數據會儲存錯誤
+            string str8 = string.Empty; //沒數據會儲存錯誤
+
+            string Savefilepath;
+            //Savefilepath = DatasavPath + "\\" + DateTime.Now.ToString("yyyyMMdd-HHmmss") + ".bin";
+            Savefilepath = DatasavPath2 + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            //ParamFile.SaveCsv(rawdata, Savefilepath);
+            try
+            {
+                string dateime = dt.ToString("yyyyMMddHHmmss");
+                //File.WriteAllText(@"C:\Users\user\Desktop\laser\1.txt", rtbLaserData.Text); // 也可以指定編碼方式
+                //fullPath = "C:\\AHM-022\\CSV報表\\";
+                //fullPath = @"C:\Users\user\Desktop\laser\";
+                //string reportname = fullPath;// + dateime + ".csv";
+                string reportname = Savefilepath + ".csv";
+                //if (!Directory.Exists(fullPath))
+                //Directory.CreateDirectory(fullPath);
+
+                FileInfo fi = new FileInfo(reportname);
+                if (!fi.Directory.Exists)
+                {
+                    fi.Directory.Create();
+                }
+                FileStream fs = new FileStream(reportname, System.IO.FileMode.Create, System.IO.FileAccess.Write);
+                StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.UTF8);
+                string data = "";
+
+                //寫入列名稱
+                for (int i = 0; i < 1; i++)
+                {
+                    //data += "\"" + dataGridView1.Columns[i].ToString() + "\"";
+                    //if (i == 0)
+                    //{
+                    //    //data += "\"" + "Distance" + "\"";
+                    //    data += "Distance";
+                    //}
+                    //else if (i == 1)
+                    //{
+                    //    data += "\"" + "Intensity" + "\"";
+                    //}
+                    //if (i < 2 - 1)
+                    //{
+                    //    data += ",";
+                    //}
+                }
+                //sw.WriteLine(data);
+
+                //寫出各行數據
+                data = "Angle  , H1 , W1 , H2 , W2";
+                sw.WriteLine(data);
+                if (iCount == 4)
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        //data = "Angle0" + (i+1).ToString() + "," + rawdata[i * 2] + "," + rawdata2[i * 2] + "," + rawdata3[i * 2] + "," + rawdata4[i * 2];
+                        data = "Angle0" + (i + 1).ToString() + "," + rawdata[i] + "," + rawdata2[i] + "," + rawdata3[i] + "," + rawdata4[i];
+                        sw.WriteLine(data);
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < 8; i++)
+                    {
+                        data = "Angle0" + (i + 1).ToString() + "," + rawdata[i] + "," + rawdata2[i] + "," + rawdata3[i] + "," + rawdata4[i];
+                        sw.WriteLine(data);
+                    }
+                }
+                data = "Max," + max_h1 + "," + max_w1 + "," + max_h2 + "," + max_w2;
+                sw.WriteLine(data);
+                sw.Close();
+                fs.Close();
+                //MessageBox.Show("Save data OK");
+            }
+            catch
+            {
+                //MessageBox.Show("數據儲存錯誤");
+            }
+        }
+
+        public static void SaveRawdata_png(Chart chart, string LotID, string note, DateTime dt, int extraDir = 0)
+        {
+            string UIDate, Year, month, Date, Hour, minutes, Second, DatasavPath = "", DatasavPath2 = "";
             DateTime _dt = dt;
             Year = string.Format("{0:yyyy}", _dt);
             month = string.Format("{0:MM}", _dt);
@@ -1071,26 +1204,36 @@ namespace TrimGap
             //DatasavPath = sram.dirfilepath + "\\Baseline\\" + Year + "\\" + month + Date;
             //logsavPath = ParamFile.dirname + "\\Log\\" + Year + "\\" + month + Date;
             //if (Directory.Exists(sram.dirfilepath + "\\Baseline\\" + Year))//***
-            if (Directory.Exists(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year))//***
-            {//判斷有無資料夾
-                if (!Directory.Exists(DatasavPath))
-                {
-                    Directory.CreateDirectory(DatasavPath);
-                }
-            }
-            else
+            DatasavPath2 = DatasavPath + "\\" + LotID;
+            string DatasavPath2_Origin = DatasavPath2 + "\\" + "Origin";
+            string DatasavPath2_Correct = DatasavPath2 + "\\" + "Correct";
+            if (!Directory.Exists(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year))//***
             {//無年資料夾
-             //Directory.CreateDirectory(sram.dirfilepath + "\\Baseline\\" + Year);
                 Directory.CreateDirectory(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year);
-                if (!Directory.Exists(DatasavPath))
-                {
-                    Directory.CreateDirectory(DatasavPath);
-                }
             }
-
+            if (!Directory.Exists(DatasavPath))
+            {//無月日資料夾
+                Directory.CreateDirectory(DatasavPath);
+            }
+            if (!Directory.Exists(DatasavPath2))
+            {//無FoupID資料夾
+                Directory.CreateDirectory(DatasavPath2);           
+            }
+            if (!Directory.Exists(DatasavPath2_Origin))
+            {
+                Directory.CreateDirectory(DatasavPath2_Origin);
+            }
+            if (!Directory.Exists(DatasavPath2_Correct))
+            {
+                Directory.CreateDirectory(DatasavPath2_Correct);
+            }
             string Savefilepath;
-            //Savefilepath = DatasavPath + "\\" + DateTime.Now.ToString("yyyyMMdd-HHmmss") + ".bin";
-            Savefilepath = DatasavPath + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            if(extraDir == 1)
+                Savefilepath = DatasavPath2_Origin + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            else if (extraDir == 2)
+                Savefilepath = DatasavPath2_Correct + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            else
+                Savefilepath = DatasavPath2 + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
             //ParamFile.SaveCsv(rawdata, Savefilepath);
             try
             {
@@ -1107,7 +1250,7 @@ namespace TrimGap
             }
         }
 
-        public static void SaveRawdata_png(Chart chart, string note, DateTime dt, string sText1, string sText2, double w1, double w2, double h1, double h2)
+        public static void SaveRawdata_png(Chart chart, string LotID, string note, DateTime dt, string sText1, string sText2, double w1, double w2, double h1, double h2, int extraDir = 0)
         {
             string UIDate, Year, month, Date, Hour, minutes, Second, DatasavPath = "";
             DateTime _dt = dt;
@@ -1123,26 +1266,36 @@ namespace TrimGap
             //DatasavPath = sram.dirfilepath + "\\Baseline\\" + Year + "\\" + month + Date;
             //logsavPath = ParamFile.dirname + "\\Log\\" + Year + "\\" + month + Date;
             //if (Directory.Exists(sram.dirfilepath + "\\Baseline\\" + Year))//***
-            if (Directory.Exists(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year))//***
-            {//判斷有無資料夾
-                if (!Directory.Exists(DatasavPath))
-                {
-                    Directory.CreateDirectory(DatasavPath);
-                }
-            }
-            else
+            string DatasavPath2 = DatasavPath + "\\" + LotID;
+            string DatasavPath2_Origin = DatasavPath2 + "\\" + "Origin";
+            string DatasavPath2_Correct = DatasavPath2 + "\\" + "Correct";
+            if (!Directory.Exists(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year))//***
             {//無年資料夾
-             //Directory.CreateDirectory(sram.dirfilepath + "\\Baseline\\" + Year);
                 Directory.CreateDirectory(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year);
-                if (!Directory.Exists(DatasavPath))
-                {
-                    Directory.CreateDirectory(DatasavPath);
-                }
             }
-
+            if (!Directory.Exists(DatasavPath))
+            {//無月日資料夾
+                Directory.CreateDirectory(DatasavPath);
+            }
+            if (!Directory.Exists(DatasavPath2))
+            {//無FoupID資料夾
+                Directory.CreateDirectory(DatasavPath2);
+            }
+            if (!Directory.Exists(DatasavPath2_Origin))
+            {
+                Directory.CreateDirectory(DatasavPath2_Origin);
+            }
+            if (!Directory.Exists(DatasavPath2_Correct))
+            {
+                Directory.CreateDirectory(DatasavPath2_Correct);
+            }
             string Savefilepath;
-            //Savefilepath = DatasavPath + "\\" + DateTime.Now.ToString("yyyyMMdd-HHmmss") + ".bin";
-            Savefilepath = DatasavPath + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            if (extraDir == 1)
+                Savefilepath = DatasavPath2_Origin + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            else if (extraDir == 2)
+                Savefilepath = DatasavPath2_Correct + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            else
+                Savefilepath = DatasavPath2 + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
             //ParamFile.SaveCsv(rawdata, Savefilepath);
             try
             {
@@ -1159,7 +1312,7 @@ namespace TrimGap
             }
         }
 
-        public static void SaveImg_png(Image img, string note, DateTime dt)
+        public static void SaveImg_png(Image img, string LotID, string note, DateTime dt, int extraDir = 0)
         {
             string UIDate, Year, month, Date, Hour, minutes, Second, DatasavPath = "";
             DateTime _dt = dt;
@@ -1175,30 +1328,98 @@ namespace TrimGap
             //DatasavPath = sram.dirfilepath + "\\Baseline\\" + Year + "\\" + month + Date;
             //logsavPath = ParamFile.dirname + "\\Log\\" + Year + "\\" + month + Date;
             //if (Directory.Exists(sram.dirfilepath + "\\Baseline\\" + Year))//***
-            if (Directory.Exists(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year))//***
-            {//判斷有無資料夾
-                if (!Directory.Exists(DatasavPath))
-                {
-                    Directory.CreateDirectory(DatasavPath);
-                }
-            }
-            else
+            string DatasavPath2 = DatasavPath + "\\" + LotID;
+            string DatasavPath2_Origin = DatasavPath2 + "\\" + "Origin";
+            string DatasavPath2_Correct = DatasavPath2 + "\\" + "Correct";
+            if (!Directory.Exists(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year))//***
             {//無年資料夾
-             //Directory.CreateDirectory(sram.dirfilepath + "\\Baseline\\" + Year);
                 Directory.CreateDirectory(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year);
-                if (!Directory.Exists(DatasavPath))
-                {
-                    Directory.CreateDirectory(DatasavPath);
-                }
             }
-
+            if (!Directory.Exists(DatasavPath))
+            {//無月日資料夾
+                Directory.CreateDirectory(DatasavPath);
+            }
+            if (!Directory.Exists(DatasavPath2))
+            {//無FoupID資料夾
+                Directory.CreateDirectory(DatasavPath2);
+            }
+            if (!Directory.Exists(DatasavPath2_Origin))
+            {
+                Directory.CreateDirectory(DatasavPath2_Origin);
+            }
+            if (!Directory.Exists(DatasavPath2_Correct))
+            {
+                Directory.CreateDirectory(DatasavPath2_Correct);
+            }
             string Savefilepath;
-            //Savefilepath = DatasavPath + "\\" + DateTime.Now.ToString("yyyyMMdd-HHmmss") + ".bin";
-            Savefilepath = DatasavPath + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            if (extraDir == 1)
+                Savefilepath = DatasavPath2_Origin + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            else if (extraDir == 2)
+                Savefilepath = DatasavPath2_Correct + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            else
+                Savefilepath = DatasavPath2 + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
             //ParamFile.SaveCsv(rawdata, Savefilepath);
             try
             {
                 img.Save(Savefilepath + ".png", ImageFormat.Png);
+            }
+            catch (Exception ee)
+            {
+                InsertLog.SavetoDB(5, "存圖錯誤, " + ee.Message);
+                //MessageBox.Show("數據儲存錯誤");
+            }
+        }
+
+        public static void SaveImg_jpg(Image img, string LotID, string note, DateTime dt, int extraDir = 0)
+        {
+            string UIDate, Year, month, Date, Hour, minutes, Second, DatasavPath = "";
+            DateTime _dt = dt;
+            Year = string.Format("{0:yyyy}", _dt);
+            month = string.Format("{0:MM}", _dt);
+            Date = string.Format("{0:dd}", _dt);
+            Hour = string.Format("{0:HH}", _dt);
+            minutes = string.Format("{0:mm}", _dt);
+            Second = string.Format("{0:ss}", _dt);
+            UIDate = string.Format("{0:yyyy-MM-dd-HH:mm:ss}", _dt);
+            DatasavPath = sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year + "\\" + month + Date;
+            //DatasavPath = sram.dirfilepath + "\\RawData\\" + Year + "\\" + month + Date;
+            //DatasavPath = sram.dirfilepath + "\\Baseline\\" + Year + "\\" + month + Date;
+            //logsavPath = ParamFile.dirname + "\\Log\\" + Year + "\\" + month + Date;
+            //if (Directory.Exists(sram.dirfilepath + "\\Baseline\\" + Year))//***
+            string DatasavPath2 = DatasavPath + "\\" + LotID;
+            string DatasavPath2_Origin = DatasavPath2 + "\\" + "Origin";
+            string DatasavPath2_Correct = DatasavPath2 + "\\" + "Correct";
+            if (!Directory.Exists(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year))//***
+            {//無年資料夾
+                Directory.CreateDirectory(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year);
+            }
+            if (!Directory.Exists(DatasavPath))
+            {//無月日資料夾
+                Directory.CreateDirectory(DatasavPath);
+            }
+            if (!Directory.Exists(DatasavPath2))
+            {//無FoupID資料夾
+                Directory.CreateDirectory(DatasavPath2);
+            }
+            if (!Directory.Exists(DatasavPath2_Origin))
+            {
+                Directory.CreateDirectory(DatasavPath2_Origin);
+            }
+            if (!Directory.Exists(DatasavPath2_Correct))
+            {
+                Directory.CreateDirectory(DatasavPath2_Correct);
+            }
+            string Savefilepath;
+            if (extraDir == 1)
+                Savefilepath = DatasavPath2_Origin + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            else if (extraDir == 2)
+                Savefilepath = DatasavPath2_Correct + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            else
+                Savefilepath = DatasavPath2 + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            //ParamFile.SaveCsv(rawdata, Savefilepath);
+            try
+            {
+                img.Save(Savefilepath + ".jpg", ImageFormat.Jpeg);
             }
             catch (Exception ee)
             {

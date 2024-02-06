@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.RBCHRC = new System.Windows.Forms.RadioButton();
             this.BtDisCon = new System.Windows.Forms.Button();
@@ -68,6 +71,25 @@
             this.label9 = new System.Windows.Forms.Label();
             this.PPaint = new System.Windows.Forms.Panel();
             this.timerProcess = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnExit = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tbPLC = new System.Windows.Forms.TabPage();
+            this.btnResetAlarm = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tb_JogSpeed = new System.Windows.Forms.TextBox();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnSavePosSpd = new System.Windows.Forms.Button();
+            this.tb_InputSpd = new System.Windows.Forms.TextBox();
+            this.tb_InputPos = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cbSelectPoint = new System.Windows.Forms.ComboBox();
+            this.btnJogN = new System.Windows.Forms.Button();
+            this.btnJogP = new System.Windows.Forms.Button();
+            this.btnGotoPoint = new System.Windows.Forms.Button();
+            this.btnGotoP0 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lb_DECNum = new System.Windows.Forms.Label();
             this.lb_SpdNum = new System.Windows.Forms.Label();
@@ -93,28 +115,27 @@
             this.lb_ServoReady = new System.Windows.Forms.Label();
             this.lb_PLimit = new System.Windows.Forms.Label();
             this.lb_NLimit = new System.Windows.Forms.Label();
-            this.btnGotoP0 = new System.Windows.Forms.Button();
-            this.btnGotoPoint = new System.Windows.Forms.Button();
-            this.btnJogP = new System.Windows.Forms.Button();
-            this.btnJogN = new System.Windows.Forms.Button();
-            this.cbSelectPoint = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.tb_InputPos = new System.Windows.Forms.TextBox();
-            this.tb_InputSpd = new System.Windows.Forms.TextBox();
-            this.btnSavePosSpd = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.tb_JogSpeed = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnResetAlarm = new System.Windows.Forms.Button();
+            this.tbHTW = new System.Windows.Forms.TabPage();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.cbGetSpectrum = new System.Windows.Forms.CheckBox();
+            this.RBFFT = new System.Windows.Forms.RadioButton();
+            this.RBConfocal = new System.Windows.Forms.RadioButton();
+            this.RBRaw = new System.Windows.Forms.RadioButton();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnDarkReference = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tbPLC.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.tbHTW.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -492,6 +513,10 @@
             // 
             this.CBDisplaySig.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBDisplaySig.FormattingEnabled = true;
+            this.CBDisplaySig.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2"});
             this.CBDisplaySig.Location = new System.Drawing.Point(90, 3);
             this.CBDisplaySig.Name = "CBDisplaySig";
             this.CBDisplaySig.Size = new System.Drawing.Size(112, 20);
@@ -518,6 +543,201 @@
             // timerProcess
             // 
             this.timerProcess.Tick += new System.EventHandler(this.timerProcess_Tick);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(546, 531);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(113, 40);
+            this.btnExit.TabIndex = 39;
+            this.btnExit.Text = "EXIT";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tbPLC);
+            this.tabControl1.Controls.Add(this.tbHTW);
+            this.tabControl1.Location = new System.Drawing.Point(542, 7);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(514, 518);
+            this.tabControl1.TabIndex = 40;
+            // 
+            // tbPLC
+            // 
+            this.tbPLC.Controls.Add(this.btnResetAlarm);
+            this.tbPLC.Controls.Add(this.label14);
+            this.tbPLC.Controls.Add(this.tb_JogSpeed);
+            this.tbPLC.Controls.Add(this.btnHome);
+            this.tbPLC.Controls.Add(this.btnStop);
+            this.tbPLC.Controls.Add(this.btnSavePosSpd);
+            this.tbPLC.Controls.Add(this.tb_InputSpd);
+            this.tbPLC.Controls.Add(this.tb_InputPos);
+            this.tbPLC.Controls.Add(this.label12);
+            this.tbPLC.Controls.Add(this.label13);
+            this.tbPLC.Controls.Add(this.cbSelectPoint);
+            this.tbPLC.Controls.Add(this.btnJogN);
+            this.tbPLC.Controls.Add(this.btnJogP);
+            this.tbPLC.Controls.Add(this.btnGotoPoint);
+            this.tbPLC.Controls.Add(this.btnGotoP0);
+            this.tbPLC.Controls.Add(this.panel5);
+            this.tbPLC.Location = new System.Drawing.Point(4, 22);
+            this.tbPLC.Name = "tbPLC";
+            this.tbPLC.Padding = new System.Windows.Forms.Padding(3);
+            this.tbPLC.Size = new System.Drawing.Size(506, 492);
+            this.tbPLC.TabIndex = 0;
+            this.tbPLC.Text = "PLC";
+            this.tbPLC.UseVisualStyleBackColor = true;
+            // 
+            // btnResetAlarm
+            // 
+            this.btnResetAlarm.Location = new System.Drawing.Point(166, 394);
+            this.btnResetAlarm.Name = "btnResetAlarm";
+            this.btnResetAlarm.Size = new System.Drawing.Size(83, 37);
+            this.btnResetAlarm.TabIndex = 56;
+            this.btnResetAlarm.Text = "Reset Alarm";
+            this.btnResetAlarm.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.Location = new System.Drawing.Point(395, 26);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(100, 23);
+            this.label14.TabIndex = 55;
+            this.label14.Text = "Jog Speed(mm/s)";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tb_JogSpeed
+            // 
+            this.tb_JogSpeed.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_JogSpeed.Location = new System.Drawing.Point(405, 51);
+            this.tb_JogSpeed.Name = "tb_JogSpeed";
+            this.tb_JogSpeed.Size = new System.Drawing.Size(83, 30);
+            this.tb_JogSpeed.TabIndex = 54;
+            // 
+            // btnHome
+            // 
+            this.btnHome.Location = new System.Drawing.Point(405, 101);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(83, 37);
+            this.btnHome.TabIndex = 53;
+            this.btnHome.Text = "GoHome";
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(284, 101);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(83, 37);
+            this.btnStop.TabIndex = 52;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            // 
+            // btnSavePosSpd
+            // 
+            this.btnSavePosSpd.Location = new System.Drawing.Point(284, 394);
+            this.btnSavePosSpd.Name = "btnSavePosSpd";
+            this.btnSavePosSpd.Size = new System.Drawing.Size(161, 37);
+            this.btnSavePosSpd.TabIndex = 51;
+            this.btnSavePosSpd.Text = "Change Position and Speed";
+            this.btnSavePosSpd.UseVisualStyleBackColor = true;
+            // 
+            // tb_InputSpd
+            // 
+            this.tb_InputSpd.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_InputSpd.Location = new System.Drawing.Point(346, 331);
+            this.tb_InputSpd.Name = "tb_InputSpd";
+            this.tb_InputSpd.Size = new System.Drawing.Size(132, 30);
+            this.tb_InputSpd.TabIndex = 50;
+            // 
+            // tb_InputPos
+            // 
+            this.tb_InputPos.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_InputPos.Location = new System.Drawing.Point(346, 275);
+            this.tb_InputPos.Name = "tb_InputPos";
+            this.tb_InputPos.Size = new System.Drawing.Size(132, 30);
+            this.tb_InputPos.TabIndex = 49;
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(240, 334);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(100, 23);
+            this.label12.TabIndex = 48;
+            this.label12.Text = "Speed(mm/s)";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(240, 282);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(100, 23);
+            this.label13.TabIndex = 47;
+            this.label13.Text = "Position(mm)";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbSelectPoint
+            // 
+            this.cbSelectPoint.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cbSelectPoint.FormattingEnabled = true;
+            this.cbSelectPoint.ItemHeight = 19;
+            this.cbSelectPoint.Items.AddRange(new object[] {
+            "P0",
+            "P1",
+            "P2",
+            "P3",
+            "P4",
+            "P5",
+            "P6",
+            "P7",
+            "P8",
+            "P9"});
+            this.cbSelectPoint.Location = new System.Drawing.Point(284, 211);
+            this.cbSelectPoint.Name = "cbSelectPoint";
+            this.cbSelectPoint.Size = new System.Drawing.Size(161, 27);
+            this.cbSelectPoint.TabIndex = 46;
+            // 
+            // btnJogN
+            // 
+            this.btnJogN.Location = new System.Drawing.Point(284, 30);
+            this.btnJogN.Name = "btnJogN";
+            this.btnJogN.Size = new System.Drawing.Size(83, 37);
+            this.btnJogN.TabIndex = 45;
+            this.btnJogN.Text = "Jog - ";
+            this.btnJogN.UseVisualStyleBackColor = true;
+            // 
+            // btnJogP
+            // 
+            this.btnJogP.Location = new System.Drawing.Point(166, 30);
+            this.btnJogP.Name = "btnJogP";
+            this.btnJogP.Size = new System.Drawing.Size(83, 37);
+            this.btnJogP.TabIndex = 44;
+            this.btnJogP.Text = "Jog + ";
+            this.btnJogP.UseVisualStyleBackColor = true;
+            // 
+            // btnGotoPoint
+            // 
+            this.btnGotoPoint.Location = new System.Drawing.Point(166, 207);
+            this.btnGotoPoint.Name = "btnGotoPoint";
+            this.btnGotoPoint.Size = new System.Drawing.Size(83, 37);
+            this.btnGotoPoint.TabIndex = 43;
+            this.btnGotoPoint.Text = "GoToPoint";
+            this.btnGotoPoint.UseVisualStyleBackColor = true;
+            // 
+            // btnGotoP0
+            // 
+            this.btnGotoP0.Location = new System.Drawing.Point(166, 101);
+            this.btnGotoP0.Name = "btnGotoP0";
+            this.btnGotoP0.Size = new System.Drawing.Size(83, 37);
+            this.btnGotoP0.TabIndex = 42;
+            this.btnGotoP0.Text = "GoToP0";
+            this.btnGotoP0.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
@@ -546,10 +766,10 @@
             this.panel5.Controls.Add(this.lb_ServoReady);
             this.panel5.Controls.Add(this.lb_PLimit);
             this.panel5.Controls.Add(this.lb_NLimit);
-            this.panel5.Location = new System.Drawing.Point(541, 0);
+            this.panel5.Location = new System.Drawing.Point(6, 10);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(120, 472);
-            this.panel5.TabIndex = 24;
+            this.panel5.TabIndex = 41;
             // 
             // lb_DECNum
             // 
@@ -770,174 +990,165 @@
             this.lb_NLimit.TabIndex = 0;
             this.lb_NLimit.Text = "Limit -";
             // 
-            // btnGotoP0
+            // tbHTW
             // 
-            this.btnGotoP0.Location = new System.Drawing.Point(701, 91);
-            this.btnGotoP0.Name = "btnGotoP0";
-            this.btnGotoP0.Size = new System.Drawing.Size(83, 37);
-            this.btnGotoP0.TabIndex = 25;
-            this.btnGotoP0.Text = "GoToP0";
-            this.btnGotoP0.UseVisualStyleBackColor = true;
-            this.btnGotoP0.Click += new System.EventHandler(this.btnGotoP0_Click);
+            this.tbHTW.Controls.Add(this.btnDarkReference);
+            this.tbHTW.Controls.Add(this.panel6);
+            this.tbHTW.Location = new System.Drawing.Point(4, 22);
+            this.tbHTW.Name = "tbHTW";
+            this.tbHTW.Padding = new System.Windows.Forms.Padding(3);
+            this.tbHTW.Size = new System.Drawing.Size(506, 492);
+            this.tbHTW.TabIndex = 1;
+            this.tbHTW.Text = "HTW Spectrum";
+            this.tbHTW.UseVisualStyleBackColor = true;
             // 
-            // btnGotoPoint
+            // panel6
             // 
-            this.btnGotoPoint.Location = new System.Drawing.Point(701, 197);
-            this.btnGotoPoint.Name = "btnGotoPoint";
-            this.btnGotoPoint.Size = new System.Drawing.Size(83, 37);
-            this.btnGotoPoint.TabIndex = 26;
-            this.btnGotoPoint.Text = "GoToPoint";
-            this.btnGotoPoint.UseVisualStyleBackColor = true;
-            this.btnGotoPoint.Click += new System.EventHandler(this.btnGotoPoint_Click);
+            this.panel6.Controls.Add(this.chart1);
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Location = new System.Drawing.Point(0, 37);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(505, 454);
+            this.panel6.TabIndex = 0;
             // 
-            // btnJogP
+            // chart1
             // 
-            this.btnJogP.Location = new System.Drawing.Point(701, 20);
-            this.btnJogP.Name = "btnJogP";
-            this.btnJogP.Size = new System.Drawing.Size(83, 37);
-            this.btnJogP.TabIndex = 27;
-            this.btnJogP.Text = "Jog + ";
-            this.btnJogP.UseVisualStyleBackColor = true;
-            this.btnJogP.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnJogP_MouseDown);
-            this.btnJogP.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnJogP_MouseUp);
+            this.chart1.BackColor = System.Drawing.Color.Black;
+            this.chart1.BorderlineColor = System.Drawing.Color.Yellow;
+            chartArea2.AxisX.IsLabelAutoFit = false;
+            chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea2.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea2.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea2.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisX.MajorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea2.AxisX.MajorTickMark.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisX.MinorGrid.LineColor = System.Drawing.Color.White;
+            chartArea2.AxisX.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisX.MinorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea2.AxisX.MinorTickMark.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisX.ScaleBreakStyle.LineColor = System.Drawing.Color.Yellow;
+            chartArea2.AxisX.TitleForeColor = System.Drawing.Color.White;
+            chartArea2.AxisY.IsLabelAutoFit = false;
+            chartArea2.AxisY.IsStartedFromZero = false;
+            chartArea2.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea2.AxisY.LineColor = System.Drawing.Color.White;
+            chartArea2.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisY.MajorGrid.Interval = 0D;
+            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea2.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisY.MajorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea2.AxisY.MajorTickMark.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisY.MinorGrid.LineColor = System.Drawing.Color.White;
+            chartArea2.AxisY.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisY.MinorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea2.AxisY.MinorTickMark.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea2.AxisY.TitleForeColor = System.Drawing.Color.White;
+            chartArea2.BackColor = System.Drawing.Color.Black;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Enabled = false;
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(0, 24);
+            this.chart1.Margin = new System.Windows.Forms.Padding(0);
+            this.chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Color = System.Drawing.Color.Yellow;
+            series2.IsVisibleInLegend = false;
+            series2.Legend = "Legend1";
+            series2.MarkerColor = System.Drawing.Color.Red;
+            series2.MarkerSize = 2;
+            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(505, 430);
+            this.chart1.TabIndex = 3;
+            this.chart1.Text = "chart1";
             // 
-            // btnJogN
+            // panel8
             // 
-            this.btnJogN.Location = new System.Drawing.Point(819, 20);
-            this.btnJogN.Name = "btnJogN";
-            this.btnJogN.Size = new System.Drawing.Size(83, 37);
-            this.btnJogN.TabIndex = 28;
-            this.btnJogN.Text = "Jog - ";
-            this.btnJogN.UseVisualStyleBackColor = true;
-            this.btnJogN.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnJogN_MouseDown);
-            this.btnJogN.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnJogN_MouseUp);
+            this.panel8.Controls.Add(this.cbGetSpectrum);
+            this.panel8.Controls.Add(this.RBFFT);
+            this.panel8.Controls.Add(this.RBConfocal);
+            this.panel8.Controls.Add(this.RBRaw);
+            this.panel8.Controls.Add(this.label15);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(505, 24);
+            this.panel8.TabIndex = 2;
             // 
-            // cbSelectPoint
+            // cbGetSpectrum
             // 
-            this.cbSelectPoint.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.cbSelectPoint.FormattingEnabled = true;
-            this.cbSelectPoint.ItemHeight = 19;
-            this.cbSelectPoint.Items.AddRange(new object[] {
-            "P0",
-            "P1",
-            "P2",
-            "P3",
-            "P4",
-            "P5",
-            "P6",
-            "P7",
-            "P8",
-            "P9"});
-            this.cbSelectPoint.Location = new System.Drawing.Point(819, 201);
-            this.cbSelectPoint.Name = "cbSelectPoint";
-            this.cbSelectPoint.Size = new System.Drawing.Size(161, 27);
-            this.cbSelectPoint.TabIndex = 29;
-            this.cbSelectPoint.SelectedIndexChanged += new System.EventHandler(this.cbSelectPoint_SelectedIndexChanged);
+            this.cbGetSpectrum.AutoSize = true;
+            this.cbGetSpectrum.Location = new System.Drawing.Point(336, 5);
+            this.cbGetSpectrum.Name = "cbGetSpectrum";
+            this.cbGetSpectrum.Size = new System.Drawing.Size(87, 16);
+            this.cbGetSpectrum.TabIndex = 25;
+            this.cbGetSpectrum.Text = "Get Spectrum";
+            this.cbGetSpectrum.UseVisualStyleBackColor = true;
+            this.cbGetSpectrum.CheckedChanged += new System.EventHandler(this.cbGetSpectrum_CheckedChanged);
             // 
-            // label12
+            // RBFFT
             // 
-            this.label12.Location = new System.Drawing.Point(775, 324);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 23);
-            this.label12.TabIndex = 31;
-            this.label12.Text = "Speed(mm/s)";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RBFFT.AutoSize = true;
+            this.RBFFT.Location = new System.Drawing.Point(256, 4);
+            this.RBFFT.Margin = new System.Windows.Forms.Padding(2);
+            this.RBFFT.Name = "RBFFT";
+            this.RBFFT.Size = new System.Drawing.Size(42, 16);
+            this.RBFFT.TabIndex = 3;
+            this.RBFFT.Text = "FFT";
+            this.RBFFT.UseVisualStyleBackColor = true;
             // 
-            // label13
+            // RBConfocal
             // 
-            this.label13.Location = new System.Drawing.Point(775, 272);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(100, 23);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "Position(mm)";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.RBConfocal.AutoSize = true;
+            this.RBConfocal.Location = new System.Drawing.Point(169, 4);
+            this.RBConfocal.Margin = new System.Windows.Forms.Padding(2);
+            this.RBConfocal.Name = "RBConfocal";
+            this.RBConfocal.Size = new System.Drawing.Size(66, 16);
+            this.RBConfocal.TabIndex = 2;
+            this.RBConfocal.Text = "Confocal";
+            this.RBConfocal.UseVisualStyleBackColor = true;
             // 
-            // tb_InputPos
+            // RBRaw
             // 
-            this.tb_InputPos.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_InputPos.Location = new System.Drawing.Point(881, 265);
-            this.tb_InputPos.Name = "tb_InputPos";
-            this.tb_InputPos.Size = new System.Drawing.Size(132, 30);
-            this.tb_InputPos.TabIndex = 32;
+            this.RBRaw.AutoSize = true;
+            this.RBRaw.Checked = true;
+            this.RBRaw.Location = new System.Drawing.Point(105, 4);
+            this.RBRaw.Margin = new System.Windows.Forms.Padding(2);
+            this.RBRaw.Name = "RBRaw";
+            this.RBRaw.Size = new System.Drawing.Size(44, 16);
+            this.RBRaw.TabIndex = 1;
+            this.RBRaw.TabStop = true;
+            this.RBRaw.Text = "Raw";
+            this.RBRaw.UseVisualStyleBackColor = true;
             // 
-            // tb_InputSpd
+            // label15
             // 
-            this.tb_InputSpd.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_InputSpd.Location = new System.Drawing.Point(881, 321);
-            this.tb_InputSpd.Name = "tb_InputSpd";
-            this.tb_InputSpd.Size = new System.Drawing.Size(132, 30);
-            this.tb_InputSpd.TabIndex = 33;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 6);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(79, 12);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Spectrum Type:";
             // 
-            // btnSavePosSpd
+            // btnDarkReference
             // 
-            this.btnSavePosSpd.Location = new System.Drawing.Point(819, 384);
-            this.btnSavePosSpd.Name = "btnSavePosSpd";
-            this.btnSavePosSpd.Size = new System.Drawing.Size(161, 37);
-            this.btnSavePosSpd.TabIndex = 34;
-            this.btnSavePosSpd.Text = "Change Position and Speed";
-            this.btnSavePosSpd.UseVisualStyleBackColor = true;
-            this.btnSavePosSpd.Click += new System.EventHandler(this.btnSavePosSpd_Click);
-            // 
-            // btnStop
-            // 
-            this.btnStop.Location = new System.Drawing.Point(819, 91);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(83, 37);
-            this.btnStop.TabIndex = 35;
-            this.btnStop.Text = "Stop";
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
-            // 
-            // btnHome
-            // 
-            this.btnHome.Location = new System.Drawing.Point(940, 91);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(83, 37);
-            this.btnHome.TabIndex = 36;
-            this.btnHome.Text = "GoHome";
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // tb_JogSpeed
-            // 
-            this.tb_JogSpeed.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tb_JogSpeed.Location = new System.Drawing.Point(920, 41);
-            this.tb_JogSpeed.Name = "tb_JogSpeed";
-            this.tb_JogSpeed.Size = new System.Drawing.Size(132, 30);
-            this.tb_JogSpeed.TabIndex = 37;
-            // 
-            // label14
-            // 
-            this.label14.Location = new System.Drawing.Point(938, 16);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(100, 23);
-            this.label14.TabIndex = 38;
-            this.label14.Text = "Jog Speed(mm/s)";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(547, 482);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(113, 40);
-            this.btnExit.TabIndex = 39;
-            this.btnExit.Text = "EXIT";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnResetAlarm
-            // 
-            this.btnResetAlarm.Location = new System.Drawing.Point(701, 384);
-            this.btnResetAlarm.Name = "btnResetAlarm";
-            this.btnResetAlarm.Size = new System.Drawing.Size(83, 37);
-            this.btnResetAlarm.TabIndex = 40;
-            this.btnResetAlarm.Text = "Reset Alarm";
-            this.btnResetAlarm.UseVisualStyleBackColor = true;
-            this.btnResetAlarm.Click += new System.EventHandler(this.btnResetAlarm_Click);
+            this.btnDarkReference.Location = new System.Drawing.Point(399, 8);
+            this.btnDarkReference.Name = "btnDarkReference";
+            this.btnDarkReference.Size = new System.Drawing.Size(101, 24);
+            this.btnDarkReference.TabIndex = 42;
+            this.btnDarkReference.Text = "DarkReference";
+            this.btnDarkReference.UseVisualStyleBackColor = true;
+            this.btnDarkReference.Click += new System.EventHandler(this.btnDarkReference_Click);
             // 
             // SingleChannel
             // 
@@ -945,23 +1156,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 581);
             this.ControlBox = false;
-            this.Controls.Add(this.btnResetAlarm);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.tb_JogSpeed);
-            this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.btnStop);
-            this.Controls.Add(this.btnSavePosSpd);
-            this.Controls.Add(this.tb_InputSpd);
-            this.Controls.Add(this.tb_InputPos);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.cbSelectPoint);
-            this.Controls.Add(this.btnJogN);
-            this.Controls.Add(this.btnJogP);
-            this.Controls.Add(this.btnGotoPoint);
-            this.Controls.Add(this.btnGotoP0);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.PPaint);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -981,9 +1177,16 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tbPLC.ResumeLayout(false);
+            this.tbPLC.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.tbHTW.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1028,7 +1231,32 @@
         private System.Windows.Forms.TextBox TBSigMin;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button BtEncoderPos;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tbPLC;
+        private System.Windows.Forms.Button btnResetAlarm;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox tb_JogSpeed;
+        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnSavePosSpd;
+        private System.Windows.Forms.TextBox tb_InputSpd;
+        private System.Windows.Forms.TextBox tb_InputPos;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cbSelectPoint;
+        private System.Windows.Forms.Button btnJogN;
+        private System.Windows.Forms.Button btnJogP;
+        private System.Windows.Forms.Button btnGotoPoint;
+        private System.Windows.Forms.Button btnGotoP0;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label lb_DECNum;
+        private System.Windows.Forms.Label lb_SpdNum;
+        private System.Windows.Forms.Label lb_PosNum;
+        private System.Windows.Forms.Label lb_DriverErrorCode;
+        private System.Windows.Forms.Label lb_Speed;
+        private System.Windows.Forms.Label lb_Positon;
         private System.Windows.Forms.Label lb_INP9;
         private System.Windows.Forms.Label lb_INP8;
         private System.Windows.Forms.Label lb_INP7;
@@ -1047,29 +1275,16 @@
         private System.Windows.Forms.Label lb_ServoReady;
         private System.Windows.Forms.Label lb_PLimit;
         private System.Windows.Forms.Label lb_NLimit;
-        private System.Windows.Forms.Label lb_DECNum;
-        private System.Windows.Forms.Label lb_SpdNum;
-        private System.Windows.Forms.Label lb_PosNum;
-        private System.Windows.Forms.Label lb_DriverErrorCode;
-        private System.Windows.Forms.Label lb_Speed;
-        private System.Windows.Forms.Label lb_Positon;
-        private System.Windows.Forms.Button btnGotoP0;
-        private System.Windows.Forms.Button btnGotoPoint;
-        private System.Windows.Forms.Button btnJogP;
-        private System.Windows.Forms.Button btnJogN;
-        private System.Windows.Forms.ComboBox cbSelectPoint;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox tb_InputPos;
-        private System.Windows.Forms.TextBox tb_InputSpd;
-        private System.Windows.Forms.Button btnSavePosSpd;
-        private System.Windows.Forms.Button btnStop;
-        private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.TextBox tb_JogSpeed;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnResetAlarm;
+        private System.Windows.Forms.TabPage tbHTW;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.RadioButton RBFFT;
+        private System.Windows.Forms.RadioButton RBConfocal;
+        private System.Windows.Forms.RadioButton RBRaw;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.CheckBox cbGetSpectrum;
+        private System.Windows.Forms.Button btnDarkReference;
     }
 }
 

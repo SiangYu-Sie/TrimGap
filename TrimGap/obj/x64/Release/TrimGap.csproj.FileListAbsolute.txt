@@ -374,3 +374,21 @@ E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.exe
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.pdb
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.SECProcess.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.pdb

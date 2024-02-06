@@ -27,7 +27,7 @@ namespace TrimGap
         private Bitmap img;
         private int imgW, imgH, point;
         private byte[] imgData;
-        private RecipeFormat recipe;
+        private RecipeFormat recipe = new RecipeFormat();
 
         public SignalAnalysisForm()
         {
@@ -331,6 +331,39 @@ namespace TrimGap
                             SignalPlotData.rawData3 = array4;
                             read.Close();
                         }
+                        else if (Wafertype == 4)
+                        {
+                            StreamReader read = new StreamReader(openFileDialog1.FileName);
+                            StreamReader readb = new StreamReader(openFileDialog1.FileName.Replace("HTW_RAW","HTW_RAW_BASE"));
+                            string ReadAll;
+                            string[] ReadArray1, ReadArray2;
+                            ReadAll = read.ReadToEnd(); // 一次讀全部
+                            ReadArray1 = Regex.Split(ReadAll, "\r\n", RegexOptions.IgnoreCase);
+                            double[] array2 = new double[ReadArray1.Length - 1];
+                            double[] array3 = new double[ReadArray1.Length - 1];
+                            double[] array4 = new double[ReadArray1.Length - 1];
+                            ReadAll = readb.ReadToEnd(); // 一次讀全部
+                            ReadArray2 = Regex.Split(ReadAll, "\r\n", RegexOptions.IgnoreCase);
+                            double[] arraybase = new double[ReadArray2.Length - 1];
+                            for (int i = 0; i < ReadArray1.Length - 1; i++)
+                            {
+                                string[] tmpArray = Regex.Split(ReadArray1[i], ",", RegexOptions.IgnoreCase);
+                                array2[i] = Convert.ToSingle(tmpArray[0]);
+                                array3[i] = Convert.ToSingle(tmpArray[1]);
+                                array4[i] = Convert.ToSingle(tmpArray[2]);
+                                Console.WriteLine(i.ToString());
+                            }
+                            for (int i = 0; i < ReadArray2.Length - 1; i++)
+                            {
+                                arraybase[i] = Convert.ToSingle(ReadArray2[i]);
+                            }
+                            progressBar_SignalAnalysis.Value = 10;
+                            SignalPlotData.rawData = array2;
+                            SignalPlotData.rawData2 = array3;
+                            SignalPlotData.rawData3 = array4;
+                            SignalPlotData.rawData_base = arraybase;
+                            read.Close();
+                        }
 
                         InsertLog.SavetoDB(4, "分析檔案: " + Name);
                         lb_analysisFileName.Text = Name;
@@ -405,7 +438,29 @@ namespace TrimGap
                             Common.TrimGapAnalysis.CalculateGap3(plotflag, Wafertype_tmp, SignalPlotData.tiltingdata_x, SignalPlotData.tiltingdata_x2, SignalPlotData.tiltingdata_x3, SignalPlotData.tiltingdata_y, SignalPlotData.tiltingdata_y2, SignalPlotData.tiltingdata_y3, AnalysisData.Interval_X, recipe.Step2_Range_step1x0, recipe.Step2_Range_step1x1, recipe.Step2_Range_step2x0, recipe.Step2_Range_step2x1, recipe.Range1_Percent, recipe.Range2_Percent, out SignalPlotData.resultdata);
                             Console.WriteLine("Analysis Finish:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
                         }
+                        else if (Wafertype == 4)
+                        {
+                            int Wafertype_tmp = 2;
+                            int Interval_X_tmp = 1;
 
+                            SignalPlotData.htw_cut = 0;
+                            SignalPlotData.htw_gap = 0;  // 從開始沒資料(wafer圓弧邊起點)到再次有資料且小於(上下顛倒)StandardPlane的距離，後續的資料會剪裁到從這個地方開始，再送計算分析
+                            Console.WriteLine("HTW Analysis start:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
+                            SignalPlotData.htw_baselineIndex = Common.TrimGapAnalysis.findNoiseBoundary(SignalPlotData.rawData_base, 9, 40, "first", false);
+
+                            int sizeHTW = SignalPlotData.rawData_base.Length - SignalPlotData.htw_baselineIndex;
+                            SignalPlotData.removezeroData = new double[sizeHTW];
+                            SignalPlotData.removezeroData2 = new double[sizeHTW];
+                            SignalPlotData.removezeroData3 = new double[sizeHTW];
+                            Array.Copy(SignalPlotData.rawData, SignalPlotData.htw_baselineIndex, SignalPlotData.removezeroData, 0, sizeHTW);
+                            Array.Copy(SignalPlotData.rawData2, SignalPlotData.htw_baselineIndex, SignalPlotData.removezeroData2, 0, sizeHTW);
+                            Array.Copy(SignalPlotData.rawData3, SignalPlotData.htw_baselineIndex, SignalPlotData.removezeroData3, 0, sizeHTW);
+
+                            Common.TrimGapAnalysis.tilting3_htw(false, SignalPlotData.removezeroData, SignalPlotData.removezeroData2, SignalPlotData.removezeroData3, Interval_X_tmp, false, out SignalPlotData.tiltingdata_x, out SignalPlotData.tiltingdata_x2, out SignalPlotData.tiltingdata_x3, out SignalPlotData.tiltingdata_y, out SignalPlotData.tiltingdata_y2, out SignalPlotData.tiltingdata_y3, out SignalPlotData.htw_cut);
+                            Common.TrimGapAnalysis.CalculateGap3_htw(false, Wafertype_tmp, SignalPlotData.tiltingdata_x, SignalPlotData.tiltingdata_x2, SignalPlotData.tiltingdata_x3, SignalPlotData.tiltingdata_y, SignalPlotData.tiltingdata_y2, SignalPlotData.tiltingdata_y3, Interval_X_tmp, sram.Recipe.Step2_Range_step1x0, sram.Recipe.Step2_Range_step1x1, sram.Recipe.Step2_Range_step2x0, sram.Recipe.Step2_Range_step2x1, sram.Recipe.Range1_Percent, sram.Recipe.Range2_Percent, out SignalPlotData.resultdata);
+                            Console.WriteLine("Analysis Finish:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
+                        }
+                      
                         SignalPlotFlag = false;
                         bWSignalPlot.ReportProgress(0);
                     }
@@ -619,7 +674,7 @@ namespace TrimGap
 
                             if (Wafertype != 0)
                                 //ParamFile.SaveRawdata_png(chartSignal, lb_analysisFileName.Text, DateTime.Now);
-                                ParamFile.SaveRawdata_png(chartSignal, lb_analysisFileName.Text, DateTime.Now, dif_H.ToString(), dif_W.ToString(), _w1, _w2, _h1, _h2);
+                                ParamFile.SaveRawdata_png(chartSignal, "Analysis", lb_analysisFileName.Text, DateTime.Now, dif_H.ToString(), dif_W.ToString(), _w1, _w2, _h1, _h2, 2);
                         }
                         else
                         {//Wafertype == 3
@@ -708,7 +763,7 @@ namespace TrimGap
                                 _w2 = SignalPlotData.resultdata[3];
                             }
 
-                            ParamFile.SaveRawdata_png(chartSignalPt, lb_analysisFileName.Text, DateTime.Now, dif_H.ToString(), dif_W.ToString(), _w1, _w2, _h1, _h2);
+                            ParamFile.SaveRawdata_png(chartSignalPt, "Analysis", lb_analysisFileName.Text, DateTime.Now, dif_H.ToString(), dif_W.ToString(), _w1, _w2, _h1, _h2, 2);
                         
                         
                         }

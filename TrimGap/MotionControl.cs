@@ -19,7 +19,7 @@ namespace TrimGap
         private int _TextBoxCount = 0;    //
         private string[] _TextBox_Name, _ComboBox_Name; //
         private Mo.AxisNo _AxisNo;
-        private bool[] _ServoSts = new bool[4];
+        private bool[] _ServoSts = new bool[5];
         private ushort[] _code = new ushort[2];
         private ushort[] _detailCode = new ushort[2];
 
@@ -30,17 +30,27 @@ namespace TrimGap
         private string[] _ComboBox_Name_str = { "unit" };
         private static int MotionType = 0;
         private static int MotionAxisMax = 0;
-        private static bool[] HomeAdditionMove = new bool[3];
+        //private static bool[] HomeAdditionMove = new bool[3];
+        private static bool[] HomeAdditionMove = new bool[5];
         public MotionControl(int type)
         {
             MotionType = type;
             if (MotionType == 0)
             {
                 MotionAxisMax = (int)Mo.AxisNo.indexAP6;
+                //MotionAxisMax = (int)Mo.AxisNo.indexAP6II;
             }
             else if (MotionType == 1)
             {
-                MotionAxisMax = (int)Mo.AxisNo.indexN2;
+                if (fram.m_MachineType == 0)
+                {
+                    MotionAxisMax = (int)Mo.AxisNo.indexN2;
+                }
+                else
+                {
+                    MotionAxisMax = (int)Mo.AxisNo.indexAP6II;
+                }
+
             }
             InitializeComponent();
             Init();
@@ -58,22 +68,51 @@ namespace TrimGap
 
             for (int i = 0; i < MotionAxisMax; i++)
             {
-                for (int j = 0; j < _TextBox_Name_str.Length; j++)
-                {
-                    if (_TextBox[j + i * _TextBox_Name_str.Length].Name == _TextBox_Name_str[3])
-                    {
-                        _TextBox[j + i * _TextBox_Name_str.Length].Text = fram.m_pitch[i].ToString();
-                    }
-                    else if (_TextBox[j + i * _TextBox_Name_str.Length].Name == _TextBox_Name_str[4])
-                    {
-                        _TextBox[j + i * _TextBox_Name_str.Length].Text = fram.m_pitchV[i].ToString();
-                    }
-                    else if (_TextBox[j + i * _TextBox_Name_str.Length].Name == _TextBox_Name_str[5])
-                    {
-                        _TextBox[j + i * _TextBox_Name_str.Length].Text = fram.m_jogV[i].ToString();
-                    }
-                }
+                //DD 0
+                _TextBox[3].Text = fram.m_pitch[0].ToString();
+                _TextBox[4].Text = fram.m_pitchV[0].ToString();
+                _TextBox[5].Text = fram.m_pitchV[0].ToString();
+
+                //Z軸馬達 1
+                _TextBox[12].Text = fram.m_pitch[1].ToString();
+                _TextBox[13].Text = fram.m_pitchV[1].ToString();
+                _TextBox[14].Text = fram.m_pitchV[1].ToString();
+
+                //Z軸馬達2 3
+                _TextBox[30].Text = fram.m_pitch[2].ToString();
+                _TextBox[31].Text = fram.m_pitchV[2].ToString();
+                _TextBox[32].Text = fram.m_pitchV[2].ToString();
+
+                //Z軸馬達3 4
+                _TextBox[39].Text = fram.m_pitch[3].ToString();
+                _TextBox[40].Text = fram.m_pitchV[3].ToString();
+                _TextBox[41].Text = fram.m_pitchV[3].ToString();
+
+                //AP6II_X軸馬達 2
+                _TextBox[21].Text = fram.m_pitch[4].ToString();
+                _TextBox[22].Text = fram.m_pitchV[4].ToString();
+                _TextBox[23].Text = fram.m_pitchV[4].ToString();
+
+                //for (int j = 0; j < _TextBox_Name_str.Length; j++)
+                //{
+                //    if (_TextBox[j + i * _TextBox_Name_str.Length].Name == _TextBox_Name_str[3])
+                //    {
+                //        _TextBox[j + i * _TextBox_Name_str.Length].Text = fram.m_pitch[i].ToString();
+                //    }
+                //    else if (_TextBox[j + i * _TextBox_Name_str.Length].Name == _TextBox_Name_str[4])
+                //    {
+                //        _TextBox[j + i * _TextBox_Name_str.Length].Text = fram.m_pitchV[i].ToString();
+                //    }
+                //    else if (_TextBox[j + i * _TextBox_Name_str.Length].Name == _TextBox_Name_str[5])
+                //    {
+                //        _TextBox[j + i * _TextBox_Name_str.Length].Text = fram.m_jogV[i].ToString();
+                //    }
+                //}
+
+                //_TextBox[39].Text = "10009";
             }
+
+
             if (MotionType == 0)
             {
                 groupBox3.Visible = false;
@@ -81,17 +120,52 @@ namespace TrimGap
                 button21.Text = "Jog↓";
                 button22.Text = "Pitch↑";
                 button12.Text = "Pitch↓";
-                this.Size = new Size(705, 670);
+                button39.Text = "Jog↑";
+                button40.Text = "Jog↓";
+                button41.Text = "Pitch↑";
+                button33.Text = "Pitch↓";
+                button50.Text = "Jog↑";
+                button51.Text = "Jog↓";
+                button52.Text = "Pitch↑";
+                button44.Text = "Pitch↓";
+                this.Size = new Size(800, 670);
             }
             else
             {
-                groupBox3.Visible = true;
-                groupBox2.Text = "Ax2_X軸Sensor馬達";
-                button20.Text = "Jog←";
-                button21.Text = "Jog→";
-                button22.Text = "Pitch←";
-                button12.Text = "Pitch→";
-                this.Size = new Size(1380, 670);
+                if (fram.m_MachineType != 2)
+                {
+                    groupBox3.Visible = true;
+                    groupBox2.Text = "Ax2_X軸Sensor馬達";
+                    button20.Text = "Jog←";
+                    button21.Text = "Jog→";
+                    button22.Text = "Pitch←";
+                    button12.Text = "Pitch→";
+                    this.Size = new Size(1380, 670);
+                }
+                else
+                {
+                    //groupBox3.Visible = false;
+                    button30.Text = "Pitch→";
+                    button4.Text = "Pitch←";
+                    button28.Text = "Jog→";
+                    button29.Text = "Jog←";
+                    groupBox3.Text = "Ax3_X軸Sensor馬達";
+
+
+                    button20.Text = "Jog↑";
+                    button21.Text = "Jog↓";
+                    button22.Text = "Pitch↑";
+                    button12.Text = "Pitch↓";
+                    button39.Text = "Jog↑";
+                    button40.Text = "Jog↓";
+                    button41.Text = "Pitch↑";
+                    button33.Text = "Pitch↓";
+                    button50.Text = "Jog↑";
+                    button51.Text = "Jog↓";
+                    button52.Text = "Pitch↑";
+                    button44.Text = "Pitch↓";
+                    this.Size = new Size(1380, 670);
+                }
             }
         }
 
@@ -331,6 +405,138 @@ namespace TrimGap
             }
 
             #endregion axis 3
+            if (MotionAxisMax < 4)
+            {
+                return;
+            }
+            #region axis 4
+
+            foreach (Control ctl in tableLayoutPanel4.Controls)
+            {
+                ctl.Tag = "4";
+                if (ctl is Button)
+                {
+                    if (MotionType == 0)
+                    {
+                        if (ctl.Text == "Jog↑" || ctl.Text == "Jog↓")
+                        {
+                            ctl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMouseUp);
+                            ctl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMouseDown);
+                        }
+                        else
+                        {
+                            ctl.Click += new System.EventHandler(this.btnFunction);
+                        }
+                    }
+                    else
+                    {
+                        if (ctl.Text == "Jog←" || ctl.Text == "Jog→")
+                        {
+                            ctl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMouseUp);
+                            ctl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMouseDown);
+                        }
+                        else
+                        {
+                            ctl.Click += new System.EventHandler(this.btnFunction);
+                        }
+                    }
+
+                }
+                else if (ctl is TextBox)
+                {
+                    int index = ((TextBox)ctl).TabIndex;
+                    _TextBox[index - 1 + _TextBoxCount * (Convert.ToInt32(ctl.Tag) - 1)] = ((TextBox)ctl);
+                    _TextBox[index - 1 + _TextBoxCount * (Convert.ToInt32(ctl.Tag) - 1)].Name = _TextBox_Name[index - 1];
+                    //_TextBox[index - 1 + _TextBoxCount * 1].Text = _TextBox_Name[index - 1];
+                }
+                else if (ctl is ComboBox)
+                {
+                    ((ComboBox)ctl).Items.Add("10000");
+                    ((ComboBox)ctl).Items.Add("1000");
+                    ((ComboBox)ctl).Items.Add("100");
+                    ((ComboBox)ctl).Items.Add("10");
+                    ((ComboBox)ctl).Items.Add("1");
+                    int index = int.Parse(ctl.Tag.ToString()) - 1;
+                    ((ComboBox)ctl).Text = fram.m_unit[index].ToString();
+                    for (int i = 0; i < _ComboBox.Length; i++)
+                    {
+                        if (_ComboBox[i] == null)
+                        {
+                            _ComboBox[i] = ((ComboBox)ctl);
+                            _ComboBox[i].Name = _ComboBox_Name_str[0];
+                            break;
+                        }
+                    }
+                }
+            }
+
+            #endregion axis 4
+            if (MotionAxisMax < 5)
+            {
+                return;
+            }
+            #region axis 5
+
+            foreach (Control ctl in tableLayoutPanel5.Controls)
+            {
+                ctl.Tag = "5";
+                if (ctl is Button)
+                {
+                    if (MotionType == 0)
+                    {
+                        if (ctl.Text == "Jog↑" || ctl.Text == "Jog↓")
+                        {
+                            ctl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMouseUp);
+                            ctl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMouseDown);
+                        }
+                        else
+                        {
+                            ctl.Click += new System.EventHandler(this.btnFunction);
+                        }
+                    }
+                    else
+                    {
+                        if (ctl.Text == "Jog←" || ctl.Text == "Jog→")
+                        {
+                            ctl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnMouseUp);
+                            ctl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnMouseDown);
+                        }
+                        else
+                        {
+                            ctl.Click += new System.EventHandler(this.btnFunction);
+                        }
+                    }
+
+                }
+                else if (ctl is TextBox)
+                {
+                    int index = ((TextBox)ctl).TabIndex;
+                    _TextBox[index - 1 + _TextBoxCount * (Convert.ToInt32(ctl.Tag) - 1)] = ((TextBox)ctl);
+                    _TextBox[index - 1 + _TextBoxCount * (Convert.ToInt32(ctl.Tag) - 1)].Name = _TextBox_Name[index - 1];
+                    //_TextBox[index - 1 + _TextBoxCount * 1].Text = _TextBox_Name[index - 1];
+                }
+                else if (ctl is ComboBox)
+                {
+                    ((ComboBox)ctl).Items.Add("10000");
+                    ((ComboBox)ctl).Items.Add("1000");
+                    ((ComboBox)ctl).Items.Add("100");
+                    ((ComboBox)ctl).Items.Add("10");
+                    ((ComboBox)ctl).Items.Add("1");
+                    int index = int.Parse(ctl.Tag.ToString()) - 1;
+                    ((ComboBox)ctl).Text = fram.m_unit[index].ToString();
+                    for (int i = 0; i < _ComboBox.Length; i++)
+                    {
+                        if (_ComboBox[i] == null)
+                        {
+                            _ComboBox[i] = ((ComboBox)ctl);
+                            _ComboBox[i].Name = _ComboBox_Name_str[0];
+                            break;
+                        }
+                    }
+                }
+            }
+
+            #endregion axis 5
         }
 
         private void SavePara(Mo.AxisNo axisNo, string ParamName, double newValue)
@@ -380,13 +586,56 @@ namespace TrimGap
                     if (MotionType == 0)
                         axisNo = Mo.AxisNo.Z;
                     else
-                        axisNo = Mo.AxisNo.X;
+                    {
+                        if (fram.m_MachineType != 2)
+                        {
+                            axisNo = Mo.AxisNo.X;
+                        }
+                        else
+                        {
+                            axisNo = Mo.AxisNo.Z;
+                        }
+                    }
                     tlp = this.tableLayoutPanel2;
                     break;
 
                 case "3":
-                    axisNo = Mo.AxisNo.Y;
+                    axisNo = Mo.AxisNo.AP6II_X;
                     tlp = this.tableLayoutPanel3;
+                    break;
+
+                case "4":
+                    if (MotionType == 0)
+                        axisNo = Mo.AxisNo.AP6II_Z2;
+                    else
+                    {
+                        if (fram.m_MachineType != 2)
+                        {
+                            axisNo = Mo.AxisNo.X;
+                        }
+                        else
+                        {
+                            axisNo = Mo.AxisNo.AP6II_Z2;
+                        }
+                    }
+                    tlp = this.tableLayoutPanel4;
+                    break;
+
+                case "5":
+                    if (MotionType == 0)
+                        axisNo = Mo.AxisNo.AP6II_Z3;
+                    else
+                    {
+                        if (fram.m_MachineType != 2)
+                        {
+                            axisNo = Mo.AxisNo.X;
+                        }
+                        else
+                        {
+                            axisNo = Mo.AxisNo.AP6II_Z3;
+                        }
+                    }
+                    tlp = this.tableLayoutPanel5;
                     break;
 
                 default:
@@ -529,14 +778,56 @@ namespace TrimGap
                     if (MotionType == 0)
                         axisNo = Mo.AxisNo.Z;
                     else
-                        axisNo = Mo.AxisNo.X;
+                    {
+                        if (fram.m_MachineType != 2)
+                        {
+                            axisNo = Mo.AxisNo.X;
+                        }
+                        else
+                        {
+                            axisNo = Mo.AxisNo.Z;
+                        }
+                    }
                     break;
 
                 case "3":
-                    axisNo = Mo.AxisNo.Y;
+                    axisNo = Mo.AxisNo.AP6II_X;
+                    break;
+
+                case "4":
+                    if (MotionType == 0)
+                        axisNo = Mo.AxisNo.AP6II_Z2;
+                    else
+                    {
+                        if (fram.m_MachineType != 2)
+                        {
+                            axisNo = Mo.AxisNo.X;
+                        }
+                        else
+                        {
+                            axisNo = Mo.AxisNo.AP6II_Z2;
+                        }
+                    }
+                    break;
+
+                case "5":
+                    if (MotionType == 0)
+                        axisNo = Mo.AxisNo.AP6II_Z3;
+                    else
+                    {
+                        if (fram.m_MachineType != 2)
+                        {
+                            axisNo = Mo.AxisNo.X;
+                        }
+                        else
+                        {
+                            axisNo = Mo.AxisNo.AP6II_Z3;
+                        }
+                    }
                     break;
 
                 default:
+                    axisNo = Mo.AxisNo.DD;
                     break;
             }
             Common.motion.JogStop(axisNo);
@@ -557,14 +848,56 @@ namespace TrimGap
                     if (MotionType == 0)
                         axisNo = Mo.AxisNo.Z;
                     else
-                        axisNo = Mo.AxisNo.X;
+                    {
+                        if (fram.m_MachineType != 2)
+                        {
+                            axisNo = Mo.AxisNo.X;
+                        }
+                        else
+                        {
+                            axisNo = Mo.AxisNo.Z;
+                        }
+                    }
                     break;
 
                 case "3":
-                    axisNo = Mo.AxisNo.Y;
+                    axisNo = Mo.AxisNo.AP6II_X;
+                    break;
+
+                case "4":
+                    if (MotionType == 0)
+                        axisNo = Mo.AxisNo.AP6II_Z2;
+                    else
+                    {
+                        if (fram.m_MachineType != 2)
+                        {
+                            axisNo = Mo.AxisNo.X;
+                        }
+                        else
+                        {
+                            axisNo = Mo.AxisNo.AP6II_Z2;
+                        }
+                    }
+                    break;
+
+                case "5":
+                    if (MotionType == 0)
+                        axisNo = Mo.AxisNo.AP6II_Z3;
+                    else
+                    {
+                        if (fram.m_MachineType != 2)
+                        {
+                            axisNo = Mo.AxisNo.X;
+                        }
+                        else
+                        {
+                            axisNo = Mo.AxisNo.AP6II_Z3;
+                        }
+                    }
                     break;
 
                 default:
+                    axisNo = Mo.AxisNo.DD;
                     break;
             }
             if (HomeAdditionMove[(short)axisNo] == true)
@@ -605,8 +938,8 @@ namespace TrimGap
         {
             try
             {
-                
-                 if (MotionType == 0)
+
+                if (MotionType == 0)
                 {
                     if (Common.motion.ServoReady(Mo.AxisNo.DD))  // 0
                     {
@@ -628,41 +961,118 @@ namespace TrimGap
                         button15.BackColor = SystemColors.Control;
                         button17.BackColor = Color.LimeGreen;
                     }
+                    if (Common.motion.ServoReady(Mo.AxisNo.AP6II_Z2))  // 2
+                    {
+                        button35.BackColor = Color.LimeGreen;
+                        button37.BackColor = SystemColors.Control;
+                    }
+                    else
+                    {
+                        button35.BackColor = SystemColors.Control;
+                        button37.BackColor = Color.LimeGreen;
+                    }
+                    if (Common.motion.ServoReady(Mo.AxisNo.AP6II_Z3))  // 3
+                    {
+                        button46.BackColor = Color.LimeGreen;
+                        button48.BackColor = SystemColors.Control;
+                    }
+                    else
+                    {
+                        button46.BackColor = SystemColors.Control;
+                        button48.BackColor = Color.LimeGreen;
+                    }
                 }
                 else
                 {
-                    if (Common.motion.ServoReady(Mo.AxisNo.DD))  // 0
+                    if (fram.m_MachineType != 2)
                     {
-                        button1.BackColor = Color.LimeGreen;
-                        button2.BackColor = SystemColors.Control;
+                        if (Common.motion.ServoReady(Mo.AxisNo.DD))  // 0
+                        {
+                            button1.BackColor = Color.LimeGreen;
+                            button2.BackColor = SystemColors.Control;
+                        }
+                        else
+                        {
+                            button1.BackColor = SystemColors.Control;
+                            button2.BackColor = Color.LimeGreen;
+                        }
+                        if (Common.motion.ServoReady(Mo.AxisNo.X))  // 1
+                        {
+                            button15.BackColor = Color.LimeGreen;
+                            button17.BackColor = SystemColors.Control;
+                        }
+                        else
+                        {
+                            button15.BackColor = SystemColors.Control;
+                            button17.BackColor = Color.LimeGreen;
+                        }
+                        if (Common.motion.ServoReady(Mo.AxisNo.Y))  // 2
+                        {
+                            button24.BackColor = Color.LimeGreen;
+                            button26.BackColor = SystemColors.Control;
+                        }
+                        else
+                        {
+                            button24.BackColor = SystemColors.Control;
+                            button26.BackColor = Color.LimeGreen;
+                        }
                     }
                     else
                     {
-                        button1.BackColor = SystemColors.Control;
-                        button2.BackColor = Color.LimeGreen;
+                        if (Common.motion.ServoReady(Mo.AxisNo.DD))  // 0
+                        {
+                            button1.BackColor = Color.LimeGreen;
+                            button2.BackColor = SystemColors.Control;
+                        }
+                        else
+                        {
+                            button1.BackColor = SystemColors.Control;
+                            button2.BackColor = Color.LimeGreen;
+                        }
+                        if (Common.motion.ServoReady(Mo.AxisNo.Z)) // 1
+                        {
+                            button15.BackColor = Color.LimeGreen;
+                            button17.BackColor = SystemColors.Control;
+                        }
+                        else
+                        {
+                            button15.BackColor = SystemColors.Control;
+                            button17.BackColor = Color.LimeGreen;
+                        }
+                        if (Common.motion.ServoReady(Mo.AxisNo.AP6II_Z2))  // 2
+                        {
+                            button35.BackColor = Color.LimeGreen;
+                            button37.BackColor = SystemColors.Control;
+                        }
+                        else
+                        {
+                            button35.BackColor = SystemColors.Control;
+                            button37.BackColor = Color.LimeGreen;
+                        }
+                        if (Common.motion.ServoReady(Mo.AxisNo.AP6II_Z3))  // 3
+                        {
+                            button46.BackColor = Color.LimeGreen;
+                            button48.BackColor = SystemColors.Control;
+                        }
+                        else
+                        {
+                            button46.BackColor = SystemColors.Control;
+                            button48.BackColor = Color.LimeGreen;
+                        }
+                        if (Common.motion.ServoReady(Mo.AxisNo.AP6II_X))  // 3
+                        {
+                            button24.BackColor = Color.LimeGreen;
+                            button26.BackColor = SystemColors.Control;
+                        }
+                        else
+                        {
+                            button24.BackColor = SystemColors.Control;
+                            button26.BackColor = Color.LimeGreen;
+                        }
                     }
-                    if (Common.motion.ServoReady(Mo.AxisNo.X))  // 1
-                    {
-                        button15.BackColor = Color.LimeGreen;
-                        button17.BackColor = SystemColors.Control;
-                    }
-                    else
-                    {
-                        button15.BackColor = SystemColors.Control;
-                        button17.BackColor = Color.LimeGreen;
-                    }
-                    if (Common.motion.ServoReady(Mo.AxisNo.Y))  // 2
-                    {
-                        button24.BackColor = Color.LimeGreen;
-                        button26.BackColor = SystemColors.Control;
-                    }
-                    else
-                    {
-                        button24.BackColor = SystemColors.Control;
-                        button26.BackColor = Color.LimeGreen;
-                    }
+
                 }
-                
+
 
                 for (int i = 0; i < _TextBox.Length; i++)
                 {
@@ -676,23 +1086,50 @@ namespace TrimGap
                         {
                             _AxisNo = Mo.AxisNo.Z;
                         }
+
                     }
                     else
                     {
-                        if (i / _TextBox_Name_str.Length == 0)
+                        if (fram.m_MachineType != 2)
                         {
-                            _AxisNo = Mo.AxisNo.DD;
+                            if (i / _TextBox_Name_str.Length == 0)
+                            {
+                                _AxisNo = Mo.AxisNo.DD;
+                            }
+                            else if (i / _TextBox_Name_str.Length == 1)
+                            {
+                                _AxisNo = Mo.AxisNo.X;
+                            }
+                            else if (i / _TextBox_Name_str.Length == 2)
+                            {
+                                _AxisNo = Mo.AxisNo.Y;
+                            }
                         }
-                        else if (i / _TextBox_Name_str.Length == 1)
+                        else
                         {
-                            _AxisNo = Mo.AxisNo.X;
-                        }
-                        else if (i / _TextBox_Name_str.Length == 2)
-                        {
-                            _AxisNo = Mo.AxisNo.Y;
+                            if (i / _TextBox_Name_str.Length == 0)
+                            {
+                                _AxisNo = Mo.AxisNo.DD;
+                            }
+                            else if (i / _TextBox_Name_str.Length == 1)
+                            {
+                                _AxisNo = Mo.AxisNo.Z;
+                            }
+                            else if (i / _TextBox_Name_str.Length == 3)
+                            {
+                                _AxisNo = Mo.AxisNo.AP6II_Z2;
+                            }
+                            else if (i / _TextBox_Name_str.Length == 4)
+                            {
+                                _AxisNo = Mo.AxisNo.AP6II_Z3;
+                            }
+                            else if (i / _TextBox_Name_str.Length == 2)
+                            {
+                                _AxisNo = Mo.AxisNo.AP6II_X;
+                            }
                         }
                     }
-                   
+
 
                     if (_TextBox[i].Name == _TextBox_Name_str[0])       // tbCmdpos
                     {
@@ -710,7 +1147,7 @@ namespace TrimGap
                         _ServoSts[2] = _code[0] == 0 ? true : false;
                         Common.motion.Get_Alarm2(_AxisNo, out _code[1], out _detailCode[1]);
                         _ServoSts[3] = _code[1] == 0 ? true : false;
-                        if ( MotionType == 0)
+                        if (MotionType == 0)
                         {
                             _TextBox[i].BackColor = SystemColors.Control;
                             if (!_ServoSts[0])
@@ -751,7 +1188,7 @@ namespace TrimGap
                                 if (HomeAdditionMove[(short)_AxisNo] == true)
                                 {
                                     double pos = Common.motion.Get_CmdPos(_AxisNo);
-                                    if ( pos == 0)
+                                    if (pos == 0)
                                     {
                                         HomeAdditionMove[(short)_AxisNo] = false;
                                     }
@@ -776,16 +1213,63 @@ namespace TrimGap
                                 _TextBox[i].BackColor = Color.Red;
                             }
                         }
-                        
+                        else
+                        {
+                            _TextBox[i].BackColor = SystemColors.Control;
+                            if (!_ServoSts[0])
+                            {
+                                _TextBox[i].Text = "Servo Off";
+                                _TextBox[i].BackColor = Color.Red;
+                            }
+                            else if (_ServoSts[0] && _ServoSts[1] && _ServoSts[2] && _ServoSts[3])
+                            {
+                                _TextBox[i].Text = "Ready";
+                            }
+                            else if (_ServoSts[0] && !_ServoSts[1] && _ServoSts[2] && _ServoSts[3])
+                            {
+                                _TextBox[i].Text = "Moving";
+                            }
+                            else if (_ServoSts[0] && !_ServoSts[2])
+                            {
+                                _TextBox[i].Text = _code[0].ToString("X") + "(" + _detailCode[0].ToString() + ")";
+                                _TextBox[i].BackColor = Color.Red;
+                            }
+                            else if (_ServoSts[0] && !_ServoSts[3])
+                            {
+                                _TextBox[i].Text = _code[1].ToString("X") + "(" + _detailCode[1].ToString() + ")";
+                                _TextBox[i].BackColor = Color.Red;
+                            }
+                        }
+
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }
         }
 
+        private void button55_Click(object sender, EventArgs e)
+        {
+            groupBox2.Visible = true;
+            groupBox4.Visible = false;
+            groupBox5.Visible = false;
+        }
+
+        private void button56_Click(object sender, EventArgs e)
+        {
+            groupBox2.Visible = false;
+            groupBox4.Visible = true;
+            groupBox5.Visible = false;
+        }
+
+        private void button57_Click(object sender, EventArgs e)
+        {
+            groupBox2.Visible = false;
+            groupBox4.Visible = false;
+            groupBox5.Visible = true;
+        }
 
         private void MotionControl_FormClosed(object sender, FormClosedEventArgs e)
         {

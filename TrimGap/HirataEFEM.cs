@@ -62,10 +62,14 @@ namespace TrimGap
             cSocket.updateTime = updateTime;   //50會爆掉 先改1000
             cSocket.newLineTF = false;
 
-            _initFlag = cSocket.clientStart();
-            Thread _GetMessage = new Thread(getMessage);
-            _GetMessage.IsBackground = true;
-            _GetMessage.Start();
+            if(fram.EFEMSts.Skip == 0)
+            {
+                _initFlag = cSocket.clientStart();
+                Thread _GetMessage = new Thread(getMessage);
+                _GetMessage.IsBackground = true;
+                _GetMessage.Start();
+            }
+            
             switch (LoadPortNum)
             {
                 case 1:

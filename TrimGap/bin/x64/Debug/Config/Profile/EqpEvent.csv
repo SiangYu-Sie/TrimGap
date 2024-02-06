@@ -1,6 +1,6 @@
 //CEID,Name,Remark,BitNo
-104,MaterialReceived,Foup Placed and Report Load Complete,0
-105,MaterialRemove,Foup Removed and Report Unload Complete,1
+2104,MaterialReceived,Foup Placed and Report Load Complete,0
+2105,MaterialRemove,Foup Removed and Report Unload Complete,1
 1000,CarrierIDRead,Carrier ID has been read,2
 1001,CarrierIDReadFail,Carrier ID reading has failed,3
 1002,AccessModeAuto,Load port access mode has changed from MANUAL to AUTO,4

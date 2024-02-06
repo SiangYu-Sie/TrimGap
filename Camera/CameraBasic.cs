@@ -112,8 +112,10 @@ namespace Camera
                             image = HalconMethod.MirrorImage_col(Basler_Camera._image);
                         */
                         //if (!Mirror_Row && !Mirror_Col)
-                        if (image == null) image = new byte[Basler_Camera.Image_Width * Basler_Camera.Image_Height];
-                        Array.Copy(Basler_Camera._imageData, image, Basler_Camera.Image_Width* Basler_Camera.Image_Height);
+                        int size = Basler_Camera._imageData.Length;
+                        if (image == null) image = new byte[size];
+                        //Array.Copy(Basler_Camera._imageData, image, Basler_Camera.Image_Width* Basler_Camera.Image_Height);
+                        Array.Copy(Basler_Camera._imageData, image, size);
                         Width = Basler_Camera.Image_Width;
                         Height = Basler_Camera.Image_Height;
                         break;

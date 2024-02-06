@@ -119,6 +119,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\x64\Debug\KEYENCE_LJ.dll</HintPath>
     </Reference>
+    <Reference Include="LJX8000A">
+      <HintPath>..\LJX8000A\bin\x64\Debug\LJX8000A.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -223,6 +226,18 @@
     <Compile Include="CCDTest.Designer.cs">
       <DependentUpon>CCDTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecipeManagement2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecipeManagement2.Designer.cs">
+      <DependentUpon>RecipeManagement2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SECProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SECProcess.Designer.cs">
+      <DependentUpon>SECProcess.cs</DependentUpon>
+    </Compile>
     <Compile Include="SecsGemInterface.cs" />
     <Compile Include="EFEMControl.cs">
       <SubType>Form</SubType>
@@ -264,12 +279,6 @@
     <Compile Include="ParamFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RecipeManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RecipeManagement.Designer.cs">
-      <DependentUpon>RecipeManagement.cs</DependentUpon>
-    </Compile>
     <Compile Include="SECSListening.cs" />
     <Compile Include="SignalAnalysisForm.cs">
       <SubType>Form</SubType>
@@ -319,8 +328,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RecipeManagement.resx">
-      <DependentUpon>RecipeManagement.cs</DependentUpon>
+    <EmbeddedResource Include="RecipeManagement2.resx">
+      <DependentUpon>RecipeManagement2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SECProcess.resx">
+      <DependentUpon>SECProcess.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignalAnalysisForm.resx">
       <DependentUpon>SignalAnalysisForm.cs</DependentUpon>
@@ -507,6 +519,15 @@
     <None Include="myimage\FoupWaferIn.png" />
     <None Include="myimage\FoupWaferOut.png" />
     <None Include="myimage\SF3Point.png" />
+    <None Include="Resources\Arrow_Up.png" />
+    <None Include="Resources\Icon_Wafer.png" />
+    <None Include="Resources\Icon_WaferAligner.png" />
+    <None Include="Resources\Icon_WaferAligner_NoWafer.png" />
+    <None Include="Resources\Icon_WaferFork.png" />
+    <None Include="Resources\Icon_WaferFork_AlignAndInspectFinish.png" />
+    <None Include="Resources\Icon_WaferFork_AlignFinish.png" />
+    <None Include="Resources\Icon_WaferFork_NoWafer.png" />
+    <None Include="Resources\Trash.png" />
     <Content Include="大量logo紅ico.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -22,3 +22,13 @@ E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Release\Camera.csproj.CopyCo
 E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Release\Camera.dll
 E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Release\Camera.pdb
 E:\專案\TrimGap\TrimGap - 20230808\Camera\obj\x64\Release\Camera.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\Camera\bin\x64\Release\Camera.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\Camera\bin\x64\Release\Camera.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\Camera\bin\x64\Release\Basler.Pylon.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\Camera\bin\x64\Release\SpinnakerNET_v140.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\Camera\bin\x64\Release\Basler.Pylon.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\Camera\obj\x64\Release\Camera.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\Camera\obj\x64\Release\Camera.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\Camera\obj\x64\Release\Camera.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\Camera\obj\x64\Release\Camera.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\Camera\obj\x64\Release\Camera.pdb

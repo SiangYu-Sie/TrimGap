@@ -29,6 +29,26 @@
         private void InitializeComponent()
         {
             this.gbRecipe = new System.Windows.Forms.GroupBox();
+            this.gb_Trim = new System.Windows.Forms.GroupBox();
+            this.tb_Range2_Percent = new System.Windows.Forms.TextBox();
+            this.lb_Range2_Percent = new System.Windows.Forms.Label();
+            this.tb_Range1_Percent = new System.Windows.Forms.TextBox();
+            this.lb_Range1_Percent = new System.Windows.Forms.Label();
+            this.tb_Step2_Range_step2x1 = new System.Windows.Forms.TextBox();
+            this.lb_Step2_Range_step2x1 = new System.Windows.Forms.Label();
+            this.tb_Step2_Range_step2x0 = new System.Windows.Forms.TextBox();
+            this.lb_Step2_Range_step2x0 = new System.Windows.Forms.Label();
+            this.tb_Step2_Range_step1x1 = new System.Windows.Forms.TextBox();
+            this.lb_Step2_Range_step1x1 = new System.Windows.Forms.Label();
+            this.tb_Step2_Range_step1x0 = new System.Windows.Forms.TextBox();
+            this.lb_Step2_Range_step1x0 = new System.Windows.Forms.Label();
+            this.tb_Step1_Range_step1x1 = new System.Windows.Forms.TextBox();
+            this.lb_Step1_Range_Step1x1 = new System.Windows.Forms.Label();
+            this.tb_Step1_Range_step1x0 = new System.Windows.Forms.TextBox();
+            this.lb_Step1_Range_Step1x0 = new System.Windows.Forms.Label();
+            this.gb_BlueTape = new System.Windows.Forms.GroupBox();
+            this.tb_BlueTape_Threshold = new System.Windows.Forms.TextBox();
+            this.lb_BlueTape_Threshold = new System.Windows.Forms.Label();
             this.cb_TrimWaferEdgeEvaluate = new System.Windows.Forms.CheckBox();
             this.cb_Offset = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -116,27 +136,9 @@
             this.btn_ChangeRecipe2 = new System.Windows.Forms.Button();
             this.btn_ClearRecipeLP1 = new System.Windows.Forms.Button();
             this.btn_ClearRecipeLP2 = new System.Windows.Forms.Button();
-            this.tb_BlueTape_Threshold = new System.Windows.Forms.TextBox();
-            this.lb_BlueTape_Threshold = new System.Windows.Forms.Label();
-            this.gb_BlueTape = new System.Windows.Forms.GroupBox();
-            this.gb_Trim = new System.Windows.Forms.GroupBox();
-            this.tb_Step1_Range_step1x0 = new System.Windows.Forms.TextBox();
-            this.lb_Step1_Range_Step1x0 = new System.Windows.Forms.Label();
-            this.tb_Step1_Range_step1x1 = new System.Windows.Forms.TextBox();
-            this.lb_Step1_Range_Step1x1 = new System.Windows.Forms.Label();
-            this.tb_Step2_Range_step1x1 = new System.Windows.Forms.TextBox();
-            this.lb_Step2_Range_step1x1 = new System.Windows.Forms.Label();
-            this.tb_Step2_Range_step1x0 = new System.Windows.Forms.TextBox();
-            this.lb_Step2_Range_step1x0 = new System.Windows.Forms.Label();
-            this.tb_Step2_Range_step2x1 = new System.Windows.Forms.TextBox();
-            this.lb_Step2_Range_step2x1 = new System.Windows.Forms.Label();
-            this.tb_Step2_Range_step2x0 = new System.Windows.Forms.TextBox();
-            this.lb_Step2_Range_step2x0 = new System.Windows.Forms.Label();
-            this.tb_Range2_Percent = new System.Windows.Forms.TextBox();
-            this.lb_Range2_Percent = new System.Windows.Forms.Label();
-            this.tb_Range1_Percent = new System.Windows.Forms.TextBox();
-            this.lb_Range1_Percent = new System.Windows.Forms.Label();
             this.gbRecipe.SuspendLayout();
+            this.gb_Trim.SuspendLayout();
+            this.gb_BlueTape.SuspendLayout();
             this.gB_TTV.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gBRotateCount.SuspendLayout();
@@ -149,8 +151,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Angle2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Angle1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.gb_BlueTape.SuspendLayout();
-            this.gb_Trim.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbRecipe
@@ -206,6 +206,204 @@
             this.gbRecipe.TabIndex = 0;
             this.gbRecipe.TabStop = false;
             this.gbRecipe.Text = "Recipe";
+            // 
+            // gb_Trim
+            // 
+            this.gb_Trim.Controls.Add(this.tb_Range2_Percent);
+            this.gb_Trim.Controls.Add(this.lb_Range2_Percent);
+            this.gb_Trim.Controls.Add(this.tb_Range1_Percent);
+            this.gb_Trim.Controls.Add(this.lb_Range1_Percent);
+            this.gb_Trim.Controls.Add(this.tb_Step2_Range_step2x1);
+            this.gb_Trim.Controls.Add(this.lb_Step2_Range_step2x1);
+            this.gb_Trim.Controls.Add(this.tb_Step2_Range_step2x0);
+            this.gb_Trim.Controls.Add(this.lb_Step2_Range_step2x0);
+            this.gb_Trim.Controls.Add(this.tb_Step2_Range_step1x1);
+            this.gb_Trim.Controls.Add(this.lb_Step2_Range_step1x1);
+            this.gb_Trim.Controls.Add(this.tb_Step2_Range_step1x0);
+            this.gb_Trim.Controls.Add(this.lb_Step2_Range_step1x0);
+            this.gb_Trim.Controls.Add(this.tb_Step1_Range_step1x1);
+            this.gb_Trim.Controls.Add(this.lb_Step1_Range_Step1x1);
+            this.gb_Trim.Controls.Add(this.tb_Step1_Range_step1x0);
+            this.gb_Trim.Controls.Add(this.lb_Step1_Range_Step1x0);
+            this.gb_Trim.Location = new System.Drawing.Point(13, 451);
+            this.gb_Trim.Name = "gb_Trim";
+            this.gb_Trim.Size = new System.Drawing.Size(379, 134);
+            this.gb_Trim.TabIndex = 53;
+            this.gb_Trim.TabStop = false;
+            this.gb_Trim.Text = "Trim";
+            // 
+            // tb_Range2_Percent
+            // 
+            this.tb_Range2_Percent.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Range2_Percent.Location = new System.Drawing.Point(312, 101);
+            this.tb_Range2_Percent.Name = "tb_Range2_Percent";
+            this.tb_Range2_Percent.ReadOnly = true;
+            this.tb_Range2_Percent.Size = new System.Drawing.Size(60, 22);
+            this.tb_Range2_Percent.TabIndex = 68;
+            // 
+            // lb_Range2_Percent
+            // 
+            this.lb_Range2_Percent.AutoSize = true;
+            this.lb_Range2_Percent.Location = new System.Drawing.Point(194, 104);
+            this.lb_Range2_Percent.Name = "lb_Range2_Percent";
+            this.lb_Range2_Percent.Size = new System.Drawing.Size(98, 12);
+            this.lb_Range2_Percent.TabIndex = 69;
+            this.lb_Range2_Percent.Text = "Range2_Percent(%)";
+            // 
+            // tb_Range1_Percent
+            // 
+            this.tb_Range1_Percent.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Range1_Percent.Location = new System.Drawing.Point(128, 101);
+            this.tb_Range1_Percent.Name = "tb_Range1_Percent";
+            this.tb_Range1_Percent.ReadOnly = true;
+            this.tb_Range1_Percent.Size = new System.Drawing.Size(60, 22);
+            this.tb_Range1_Percent.TabIndex = 66;
+            // 
+            // lb_Range1_Percent
+            // 
+            this.lb_Range1_Percent.AutoSize = true;
+            this.lb_Range1_Percent.Location = new System.Drawing.Point(13, 104);
+            this.lb_Range1_Percent.Name = "lb_Range1_Percent";
+            this.lb_Range1_Percent.Size = new System.Drawing.Size(98, 12);
+            this.lb_Range1_Percent.TabIndex = 67;
+            this.lb_Range1_Percent.Text = "Range1_Percent(%)";
+            // 
+            // tb_Step2_Range_step2x1
+            // 
+            this.tb_Step2_Range_step2x1.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Step2_Range_step2x1.Location = new System.Drawing.Point(312, 45);
+            this.tb_Step2_Range_step2x1.Name = "tb_Step2_Range_step2x1";
+            this.tb_Step2_Range_step2x1.ReadOnly = true;
+            this.tb_Step2_Range_step2x1.Size = new System.Drawing.Size(60, 22);
+            this.tb_Step2_Range_step2x1.TabIndex = 64;
+            // 
+            // lb_Step2_Range_step2x1
+            // 
+            this.lb_Step2_Range_step2x1.AutoSize = true;
+            this.lb_Step2_Range_step2x1.Location = new System.Drawing.Point(194, 48);
+            this.lb_Step2_Range_step2x1.Name = "lb_Step2_Range_step2x1";
+            this.lb_Step2_Range_step2x1.Size = new System.Drawing.Size(109, 12);
+            this.lb_Step2_Range_step2x1.TabIndex = 65;
+            this.lb_Step2_Range_step2x1.Text = "Step2_Range_step2x1";
+            // 
+            // tb_Step2_Range_step2x0
+            // 
+            this.tb_Step2_Range_step2x0.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Step2_Range_step2x0.Location = new System.Drawing.Point(128, 45);
+            this.tb_Step2_Range_step2x0.Name = "tb_Step2_Range_step2x0";
+            this.tb_Step2_Range_step2x0.ReadOnly = true;
+            this.tb_Step2_Range_step2x0.Size = new System.Drawing.Size(60, 22);
+            this.tb_Step2_Range_step2x0.TabIndex = 62;
+            // 
+            // lb_Step2_Range_step2x0
+            // 
+            this.lb_Step2_Range_step2x0.AutoSize = true;
+            this.lb_Step2_Range_step2x0.Location = new System.Drawing.Point(13, 48);
+            this.lb_Step2_Range_step2x0.Name = "lb_Step2_Range_step2x0";
+            this.lb_Step2_Range_step2x0.Size = new System.Drawing.Size(109, 12);
+            this.lb_Step2_Range_step2x0.TabIndex = 63;
+            this.lb_Step2_Range_step2x0.Text = "Step2_Range_step2x0";
+            // 
+            // tb_Step2_Range_step1x1
+            // 
+            this.tb_Step2_Range_step1x1.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Step2_Range_step1x1.Location = new System.Drawing.Point(312, 73);
+            this.tb_Step2_Range_step1x1.Name = "tb_Step2_Range_step1x1";
+            this.tb_Step2_Range_step1x1.ReadOnly = true;
+            this.tb_Step2_Range_step1x1.Size = new System.Drawing.Size(60, 22);
+            this.tb_Step2_Range_step1x1.TabIndex = 60;
+            // 
+            // lb_Step2_Range_step1x1
+            // 
+            this.lb_Step2_Range_step1x1.AutoSize = true;
+            this.lb_Step2_Range_step1x1.Location = new System.Drawing.Point(194, 76);
+            this.lb_Step2_Range_step1x1.Name = "lb_Step2_Range_step1x1";
+            this.lb_Step2_Range_step1x1.Size = new System.Drawing.Size(109, 12);
+            this.lb_Step2_Range_step1x1.TabIndex = 61;
+            this.lb_Step2_Range_step1x1.Text = "Step2_Range_step1x1";
+            // 
+            // tb_Step2_Range_step1x0
+            // 
+            this.tb_Step2_Range_step1x0.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Step2_Range_step1x0.Location = new System.Drawing.Point(128, 73);
+            this.tb_Step2_Range_step1x0.Name = "tb_Step2_Range_step1x0";
+            this.tb_Step2_Range_step1x0.ReadOnly = true;
+            this.tb_Step2_Range_step1x0.Size = new System.Drawing.Size(60, 22);
+            this.tb_Step2_Range_step1x0.TabIndex = 58;
+            // 
+            // lb_Step2_Range_step1x0
+            // 
+            this.lb_Step2_Range_step1x0.AutoSize = true;
+            this.lb_Step2_Range_step1x0.Location = new System.Drawing.Point(13, 76);
+            this.lb_Step2_Range_step1x0.Name = "lb_Step2_Range_step1x0";
+            this.lb_Step2_Range_step1x0.Size = new System.Drawing.Size(109, 12);
+            this.lb_Step2_Range_step1x0.TabIndex = 59;
+            this.lb_Step2_Range_step1x0.Text = "Step2_Range_step1x0";
+            // 
+            // tb_Step1_Range_step1x1
+            // 
+            this.tb_Step1_Range_step1x1.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Step1_Range_step1x1.Location = new System.Drawing.Point(312, 17);
+            this.tb_Step1_Range_step1x1.Name = "tb_Step1_Range_step1x1";
+            this.tb_Step1_Range_step1x1.ReadOnly = true;
+            this.tb_Step1_Range_step1x1.Size = new System.Drawing.Size(60, 22);
+            this.tb_Step1_Range_step1x1.TabIndex = 56;
+            // 
+            // lb_Step1_Range_Step1x1
+            // 
+            this.lb_Step1_Range_Step1x1.AutoSize = true;
+            this.lb_Step1_Range_Step1x1.Location = new System.Drawing.Point(194, 20);
+            this.lb_Step1_Range_Step1x1.Name = "lb_Step1_Range_Step1x1";
+            this.lb_Step1_Range_Step1x1.Size = new System.Drawing.Size(109, 12);
+            this.lb_Step1_Range_Step1x1.TabIndex = 57;
+            this.lb_Step1_Range_Step1x1.Text = "Step1_Range_step1x1";
+            // 
+            // tb_Step1_Range_step1x0
+            // 
+            this.tb_Step1_Range_step1x0.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Step1_Range_step1x0.Location = new System.Drawing.Point(128, 17);
+            this.tb_Step1_Range_step1x0.Name = "tb_Step1_Range_step1x0";
+            this.tb_Step1_Range_step1x0.ReadOnly = true;
+            this.tb_Step1_Range_step1x0.Size = new System.Drawing.Size(60, 22);
+            this.tb_Step1_Range_step1x0.TabIndex = 54;
+            // 
+            // lb_Step1_Range_Step1x0
+            // 
+            this.lb_Step1_Range_Step1x0.AutoSize = true;
+            this.lb_Step1_Range_Step1x0.Location = new System.Drawing.Point(13, 20);
+            this.lb_Step1_Range_Step1x0.Name = "lb_Step1_Range_Step1x0";
+            this.lb_Step1_Range_Step1x0.Size = new System.Drawing.Size(109, 12);
+            this.lb_Step1_Range_Step1x0.TabIndex = 55;
+            this.lb_Step1_Range_Step1x0.Text = "Step1_Range_step1x0";
+            // 
+            // gb_BlueTape
+            // 
+            this.gb_BlueTape.Controls.Add(this.tb_BlueTape_Threshold);
+            this.gb_BlueTape.Controls.Add(this.lb_BlueTape_Threshold);
+            this.gb_BlueTape.Location = new System.Drawing.Point(124, 318);
+            this.gb_BlueTape.Name = "gb_BlueTape";
+            this.gb_BlueTape.Size = new System.Drawing.Size(268, 46);
+            this.gb_BlueTape.TabIndex = 52;
+            this.gb_BlueTape.TabStop = false;
+            this.gb_BlueTape.Text = "BlueTape";
+            // 
+            // tb_BlueTape_Threshold
+            // 
+            this.tb_BlueTape_Threshold.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_BlueTape_Threshold.Location = new System.Drawing.Point(128, 15);
+            this.tb_BlueTape_Threshold.Name = "tb_BlueTape_Threshold";
+            this.tb_BlueTape_Threshold.ReadOnly = true;
+            this.tb_BlueTape_Threshold.Size = new System.Drawing.Size(97, 22);
+            this.tb_BlueTape_Threshold.TabIndex = 50;
+            // 
+            // lb_BlueTape_Threshold
+            // 
+            this.lb_BlueTape_Threshold.AutoSize = true;
+            this.lb_BlueTape_Threshold.Location = new System.Drawing.Point(9, 19);
+            this.lb_BlueTape_Threshold.Name = "lb_BlueTape_Threshold";
+            this.lb_BlueTape_Threshold.Size = new System.Drawing.Size(101, 12);
+            this.lb_BlueTape_Threshold.TabIndex = 51;
+            this.lb_BlueTape_Threshold.Text = "BlueTapeThreshold(";
             // 
             // cb_TrimWaferEdgeEvaluate
             // 
@@ -432,11 +630,6 @@
             0,
             0,
             0});
-            this.numericUpDown_Angle8.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericUpDown_Angle8.Name = "numericUpDown_Angle8";
             this.numericUpDown_Angle8.Size = new System.Drawing.Size(92, 22);
             this.numericUpDown_Angle8.TabIndex = 46;
@@ -460,11 +653,6 @@
             this.numericUpDown_Angle7.Location = new System.Drawing.Point(30, 206);
             this.numericUpDown_Angle7.Maximum = new decimal(new int[] {
             360,
-            0,
-            0,
-            0});
-            this.numericUpDown_Angle7.Minimum = new decimal(new int[] {
-            1,
             0,
             0,
             0});
@@ -494,11 +682,6 @@
             0,
             0,
             0});
-            this.numericUpDown_Angle6.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericUpDown_Angle6.Name = "numericUpDown_Angle6";
             this.numericUpDown_Angle6.Size = new System.Drawing.Size(92, 22);
             this.numericUpDown_Angle6.TabIndex = 42;
@@ -522,11 +705,6 @@
             this.numericUpDown_Angle5.Location = new System.Drawing.Point(30, 156);
             this.numericUpDown_Angle5.Maximum = new decimal(new int[] {
             360,
-            0,
-            0,
-            0});
-            this.numericUpDown_Angle5.Minimum = new decimal(new int[] {
-            1,
             0,
             0,
             0});
@@ -556,11 +734,6 @@
             0,
             0,
             0});
-            this.numericUpDown_Angle4.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericUpDown_Angle4.Name = "numericUpDown_Angle4";
             this.numericUpDown_Angle4.Size = new System.Drawing.Size(92, 22);
             this.numericUpDown_Angle4.TabIndex = 38;
@@ -584,11 +757,6 @@
             this.numericUpDown_Angle3.Location = new System.Drawing.Point(30, 106);
             this.numericUpDown_Angle3.Maximum = new decimal(new int[] {
             360,
-            0,
-            0,
-            0});
-            this.numericUpDown_Angle3.Minimum = new decimal(new int[] {
-            1,
             0,
             0,
             0});
@@ -618,11 +786,6 @@
             0,
             0,
             0});
-            this.numericUpDown_Angle2.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericUpDown_Angle2.Name = "numericUpDown_Angle2";
             this.numericUpDown_Angle2.Size = new System.Drawing.Size(92, 22);
             this.numericUpDown_Angle2.TabIndex = 34;
@@ -646,11 +809,6 @@
             this.numericUpDown_Angle1.Location = new System.Drawing.Point(30, 57);
             this.numericUpDown_Angle1.Maximum = new decimal(new int[] {
             360,
-            0,
-            0,
-            0});
-            this.numericUpDown_Angle1.Minimum = new decimal(new int[] {
-            1,
             0,
             0,
             0});
@@ -1193,204 +1351,6 @@
             this.btn_ClearRecipeLP2.UseVisualStyleBackColor = true;
             this.btn_ClearRecipeLP2.Click += new System.EventHandler(this.btn_ClearRecipeLP2_Click);
             // 
-            // tb_BlueTape_Threshold
-            // 
-            this.tb_BlueTape_Threshold.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_BlueTape_Threshold.Location = new System.Drawing.Point(128, 15);
-            this.tb_BlueTape_Threshold.Name = "tb_BlueTape_Threshold";
-            this.tb_BlueTape_Threshold.ReadOnly = true;
-            this.tb_BlueTape_Threshold.Size = new System.Drawing.Size(97, 22);
-            this.tb_BlueTape_Threshold.TabIndex = 50;
-            // 
-            // lb_BlueTape_Threshold
-            // 
-            this.lb_BlueTape_Threshold.AutoSize = true;
-            this.lb_BlueTape_Threshold.Location = new System.Drawing.Point(9, 19);
-            this.lb_BlueTape_Threshold.Name = "lb_BlueTape_Threshold";
-            this.lb_BlueTape_Threshold.Size = new System.Drawing.Size(101, 12);
-            this.lb_BlueTape_Threshold.TabIndex = 51;
-            this.lb_BlueTape_Threshold.Text = "BlueTapeThreshold(";
-            // 
-            // gb_BlueTape
-            // 
-            this.gb_BlueTape.Controls.Add(this.tb_BlueTape_Threshold);
-            this.gb_BlueTape.Controls.Add(this.lb_BlueTape_Threshold);
-            this.gb_BlueTape.Location = new System.Drawing.Point(124, 318);
-            this.gb_BlueTape.Name = "gb_BlueTape";
-            this.gb_BlueTape.Size = new System.Drawing.Size(268, 46);
-            this.gb_BlueTape.TabIndex = 52;
-            this.gb_BlueTape.TabStop = false;
-            this.gb_BlueTape.Text = "BlueTape";
-            // 
-            // gb_Trim
-            // 
-            this.gb_Trim.Controls.Add(this.tb_Range2_Percent);
-            this.gb_Trim.Controls.Add(this.lb_Range2_Percent);
-            this.gb_Trim.Controls.Add(this.tb_Range1_Percent);
-            this.gb_Trim.Controls.Add(this.lb_Range1_Percent);
-            this.gb_Trim.Controls.Add(this.tb_Step2_Range_step2x1);
-            this.gb_Trim.Controls.Add(this.lb_Step2_Range_step2x1);
-            this.gb_Trim.Controls.Add(this.tb_Step2_Range_step2x0);
-            this.gb_Trim.Controls.Add(this.lb_Step2_Range_step2x0);
-            this.gb_Trim.Controls.Add(this.tb_Step2_Range_step1x1);
-            this.gb_Trim.Controls.Add(this.lb_Step2_Range_step1x1);
-            this.gb_Trim.Controls.Add(this.tb_Step2_Range_step1x0);
-            this.gb_Trim.Controls.Add(this.lb_Step2_Range_step1x0);
-            this.gb_Trim.Controls.Add(this.tb_Step1_Range_step1x1);
-            this.gb_Trim.Controls.Add(this.lb_Step1_Range_Step1x1);
-            this.gb_Trim.Controls.Add(this.tb_Step1_Range_step1x0);
-            this.gb_Trim.Controls.Add(this.lb_Step1_Range_Step1x0);
-            this.gb_Trim.Location = new System.Drawing.Point(13, 451);
-            this.gb_Trim.Name = "gb_Trim";
-            this.gb_Trim.Size = new System.Drawing.Size(379, 134);
-            this.gb_Trim.TabIndex = 53;
-            this.gb_Trim.TabStop = false;
-            this.gb_Trim.Text = "Trim";
-            // 
-            // tb_Step1_Range_step1x0
-            // 
-            this.tb_Step1_Range_step1x0.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_Step1_Range_step1x0.Location = new System.Drawing.Point(128, 17);
-            this.tb_Step1_Range_step1x0.Name = "tb_Step1_Range_step1x0";
-            this.tb_Step1_Range_step1x0.ReadOnly = true;
-            this.tb_Step1_Range_step1x0.Size = new System.Drawing.Size(60, 22);
-            this.tb_Step1_Range_step1x0.TabIndex = 54;
-            // 
-            // lb_Step1_Range_Step1x0
-            // 
-            this.lb_Step1_Range_Step1x0.AutoSize = true;
-            this.lb_Step1_Range_Step1x0.Location = new System.Drawing.Point(13, 20);
-            this.lb_Step1_Range_Step1x0.Name = "lb_Step1_Range_Step1x0";
-            this.lb_Step1_Range_Step1x0.Size = new System.Drawing.Size(109, 12);
-            this.lb_Step1_Range_Step1x0.TabIndex = 55;
-            this.lb_Step1_Range_Step1x0.Text = "Step1_Range_step1x0";
-            // 
-            // tb_Step1_Range_step1x1
-            // 
-            this.tb_Step1_Range_step1x1.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_Step1_Range_step1x1.Location = new System.Drawing.Point(312, 17);
-            this.tb_Step1_Range_step1x1.Name = "tb_Step1_Range_step1x1";
-            this.tb_Step1_Range_step1x1.ReadOnly = true;
-            this.tb_Step1_Range_step1x1.Size = new System.Drawing.Size(60, 22);
-            this.tb_Step1_Range_step1x1.TabIndex = 56;
-            // 
-            // lb_Step1_Range_Step1x1
-            // 
-            this.lb_Step1_Range_Step1x1.AutoSize = true;
-            this.lb_Step1_Range_Step1x1.Location = new System.Drawing.Point(194, 20);
-            this.lb_Step1_Range_Step1x1.Name = "lb_Step1_Range_Step1x1";
-            this.lb_Step1_Range_Step1x1.Size = new System.Drawing.Size(109, 12);
-            this.lb_Step1_Range_Step1x1.TabIndex = 57;
-            this.lb_Step1_Range_Step1x1.Text = "Step1_Range_step1x1";
-            // 
-            // tb_Step2_Range_step1x1
-            // 
-            this.tb_Step2_Range_step1x1.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_Step2_Range_step1x1.Location = new System.Drawing.Point(312, 73);
-            this.tb_Step2_Range_step1x1.Name = "tb_Step2_Range_step1x1";
-            this.tb_Step2_Range_step1x1.ReadOnly = true;
-            this.tb_Step2_Range_step1x1.Size = new System.Drawing.Size(60, 22);
-            this.tb_Step2_Range_step1x1.TabIndex = 60;
-            // 
-            // lb_Step2_Range_step1x1
-            // 
-            this.lb_Step2_Range_step1x1.AutoSize = true;
-            this.lb_Step2_Range_step1x1.Location = new System.Drawing.Point(194, 76);
-            this.lb_Step2_Range_step1x1.Name = "lb_Step2_Range_step1x1";
-            this.lb_Step2_Range_step1x1.Size = new System.Drawing.Size(109, 12);
-            this.lb_Step2_Range_step1x1.TabIndex = 61;
-            this.lb_Step2_Range_step1x1.Text = "Step2_Range_step1x1";
-            // 
-            // tb_Step2_Range_step1x0
-            // 
-            this.tb_Step2_Range_step1x0.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_Step2_Range_step1x0.Location = new System.Drawing.Point(128, 73);
-            this.tb_Step2_Range_step1x0.Name = "tb_Step2_Range_step1x0";
-            this.tb_Step2_Range_step1x0.ReadOnly = true;
-            this.tb_Step2_Range_step1x0.Size = new System.Drawing.Size(60, 22);
-            this.tb_Step2_Range_step1x0.TabIndex = 58;
-            // 
-            // lb_Step2_Range_step1x0
-            // 
-            this.lb_Step2_Range_step1x0.AutoSize = true;
-            this.lb_Step2_Range_step1x0.Location = new System.Drawing.Point(13, 76);
-            this.lb_Step2_Range_step1x0.Name = "lb_Step2_Range_step1x0";
-            this.lb_Step2_Range_step1x0.Size = new System.Drawing.Size(109, 12);
-            this.lb_Step2_Range_step1x0.TabIndex = 59;
-            this.lb_Step2_Range_step1x0.Text = "Step2_Range_step1x0";
-            // 
-            // tb_Step2_Range_step2x1
-            // 
-            this.tb_Step2_Range_step2x1.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_Step2_Range_step2x1.Location = new System.Drawing.Point(312, 45);
-            this.tb_Step2_Range_step2x1.Name = "tb_Step2_Range_step2x1";
-            this.tb_Step2_Range_step2x1.ReadOnly = true;
-            this.tb_Step2_Range_step2x1.Size = new System.Drawing.Size(60, 22);
-            this.tb_Step2_Range_step2x1.TabIndex = 64;
-            // 
-            // lb_Step2_Range_step2x1
-            // 
-            this.lb_Step2_Range_step2x1.AutoSize = true;
-            this.lb_Step2_Range_step2x1.Location = new System.Drawing.Point(194, 48);
-            this.lb_Step2_Range_step2x1.Name = "lb_Step2_Range_step2x1";
-            this.lb_Step2_Range_step2x1.Size = new System.Drawing.Size(109, 12);
-            this.lb_Step2_Range_step2x1.TabIndex = 65;
-            this.lb_Step2_Range_step2x1.Text = "Step2_Range_step2x1";
-            // 
-            // tb_Step2_Range_step2x0
-            // 
-            this.tb_Step2_Range_step2x0.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_Step2_Range_step2x0.Location = new System.Drawing.Point(128, 45);
-            this.tb_Step2_Range_step2x0.Name = "tb_Step2_Range_step2x0";
-            this.tb_Step2_Range_step2x0.ReadOnly = true;
-            this.tb_Step2_Range_step2x0.Size = new System.Drawing.Size(60, 22);
-            this.tb_Step2_Range_step2x0.TabIndex = 62;
-            // 
-            // lb_Step2_Range_step2x0
-            // 
-            this.lb_Step2_Range_step2x0.AutoSize = true;
-            this.lb_Step2_Range_step2x0.Location = new System.Drawing.Point(13, 48);
-            this.lb_Step2_Range_step2x0.Name = "lb_Step2_Range_step2x0";
-            this.lb_Step2_Range_step2x0.Size = new System.Drawing.Size(109, 12);
-            this.lb_Step2_Range_step2x0.TabIndex = 63;
-            this.lb_Step2_Range_step2x0.Text = "Step2_Range_step2x0";
-            // 
-            // tb_Range2_Percent
-            // 
-            this.tb_Range2_Percent.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_Range2_Percent.Location = new System.Drawing.Point(312, 101);
-            this.tb_Range2_Percent.Name = "tb_Range2_Percent";
-            this.tb_Range2_Percent.ReadOnly = true;
-            this.tb_Range2_Percent.Size = new System.Drawing.Size(60, 22);
-            this.tb_Range2_Percent.TabIndex = 68;
-            // 
-            // lb_Range2_Percent
-            // 
-            this.lb_Range2_Percent.AutoSize = true;
-            this.lb_Range2_Percent.Location = new System.Drawing.Point(194, 104);
-            this.lb_Range2_Percent.Name = "lb_Range2_Percent";
-            this.lb_Range2_Percent.Size = new System.Drawing.Size(98, 12);
-            this.lb_Range2_Percent.TabIndex = 69;
-            this.lb_Range2_Percent.Text = "Range2_Percent(%)";
-            // 
-            // tb_Range1_Percent
-            // 
-            this.tb_Range1_Percent.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_Range1_Percent.Location = new System.Drawing.Point(128, 101);
-            this.tb_Range1_Percent.Name = "tb_Range1_Percent";
-            this.tb_Range1_Percent.ReadOnly = true;
-            this.tb_Range1_Percent.Size = new System.Drawing.Size(60, 22);
-            this.tb_Range1_Percent.TabIndex = 66;
-            // 
-            // lb_Range1_Percent
-            // 
-            this.lb_Range1_Percent.AutoSize = true;
-            this.lb_Range1_Percent.Location = new System.Drawing.Point(13, 104);
-            this.lb_Range1_Percent.Name = "lb_Range1_Percent";
-            this.lb_Range1_Percent.Size = new System.Drawing.Size(98, 12);
-            this.lb_Range1_Percent.TabIndex = 67;
-            this.lb_Range1_Percent.Text = "Range1_Percent(%)";
-            // 
             // RecipeManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1418,6 +1378,10 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RecipeManagement_FormClosed);
             this.gbRecipe.ResumeLayout(false);
             this.gbRecipe.PerformLayout();
+            this.gb_Trim.ResumeLayout(false);
+            this.gb_Trim.PerformLayout();
+            this.gb_BlueTape.ResumeLayout(false);
+            this.gb_BlueTape.PerformLayout();
             this.gB_TTV.ResumeLayout(false);
             this.gB_TTV.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1433,10 +1397,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Angle2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Angle1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.gb_BlueTape.ResumeLayout(false);
-            this.gb_BlueTape.PerformLayout();
-            this.gb_Trim.ResumeLayout(false);
-            this.gb_Trim.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

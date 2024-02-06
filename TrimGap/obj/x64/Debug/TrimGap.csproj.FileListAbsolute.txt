@@ -4713,3 +4713,1317 @@ E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\ProductLicenseCh
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.dll
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.dll
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\SoftLicenseAPI.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\TrimGap.exe.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\TrimGap.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\TrimGap.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Camera.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\CTLT.GEM.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\CTLT.SECS.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\DIASECSGEM.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\GEMDataModel.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\LightController.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Modules.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Cancellation.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Collections.Deque.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Disposables.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\SECSGEM.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\SF3.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\SocketClient2.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Buffers.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Collections.Immutable.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Memory.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Numerics.Vectors.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Reactive.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\WindowsBase.WinForms.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Newtonsoft.Json.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\dsa40net.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\AdvMotAPI.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\CsvHelper.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Basler.Pylon.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\ProductLicenseChecker.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Spire.XLS.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Data.SQLite.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\SunnyUI.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\CircularProgressBar.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Text.Encoding.CodePages.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\WinFormAnimation.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignColors.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\dmd40net.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\SoftLicenseAPI.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Spire.License.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Spire.Pdf.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\SunnyUI.Common.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.mshtml.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Modules.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Modules.dll.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\SF3.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\SF3.dll.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\LightController.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\LightController.exe.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Camera.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Cancellation.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Collections.Deque.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Disposables.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\SECSGEM.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\SECSGEM.dll.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Buffers.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Collections.Immutable.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Memory.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Numerics.Vectors.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Reactive.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Newtonsoft.Json.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\CsvHelper.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Basler.Pylon.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignColors.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.AssemblyReference.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.CCDTest.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.EFEMControl.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.findHomePanel.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.Form1.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.MotionControl.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.ParaForm.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.Properties.Resources.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.RecipeManagement.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.SignalAnalysisForm.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.TTVScanPattern.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.UserPermission.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.GenerateResource.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.CopyComplete
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\TrimGap.exe.config
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\TrimGap.exe
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\TrimGap.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Camera.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CTLT.GEM.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CTLT.SECS.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\DIASECSGEM.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\GEMDataModel.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\LightController.exe
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Modules.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Cancellation.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Collections.Deque.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Disposables.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SECSGEM.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SF3.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SocketClient2.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Buffers.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Collections.Immutable.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Memory.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Numerics.Vectors.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Reactive.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\WindowsBase.WinForms.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Newtonsoft.Json.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\dsa40net.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\AdvMotAPI.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CsvHelper.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Basler.Pylon.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\DIASECS.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\ProductLicenseChecker.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Spire.XLS.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Data.SQLite.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SunnyUI.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CircularProgressBar.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Text.Encoding.CodePages.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\WinFormAnimation.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignColors.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\dmd40net.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SoftLicenseAPI.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Spire.License.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Spire.Pdf.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SunnyUI.Common.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.mshtml.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Modules.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Modules.dll.config
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SF3.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SF3.dll.config
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\LightController.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\LightController.exe.config
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Camera.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Cancellation.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Collections.Deque.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Disposables.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SECSGEM.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SECSGEM.dll.config
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Buffers.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Collections.Immutable.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Memory.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Numerics.Vectors.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Reactive.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Newtonsoft.Json.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CsvHelper.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Basler.Pylon.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignColors.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.AssemblyReference.cache
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.CCDTest.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.EFEMControl.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.findHomePanel.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.Form1.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.MotionControl.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.ParaForm.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.Properties.Resources.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.RecipeManagement.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.SignalAnalysisForm.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.TTVScanPattern.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.UserPermission.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.GenerateResource.cache
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.CoreCompileInputs.cache
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.CopyComplete
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.exe
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\TrimGap.exe.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\TrimGap.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\TrimGap.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Camera.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CTLT.GEM.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CTLT.SECS.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\DIASECSGEM.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\GEMDataModel.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\LightController.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Modules.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Cancellation.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Collections.Deque.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Disposables.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SECSGEM.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SF3.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SocketClient2.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Buffers.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Collections.Immutable.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Memory.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Numerics.Vectors.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Reactive.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\WindowsBase.WinForms.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Newtonsoft.Json.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\dsa40net.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\AdvMotAPI.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CsvHelper.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Basler.Pylon.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\DIASECS.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\ProductLicenseChecker.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Spire.XLS.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Data.SQLite.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SunnyUI.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CircularProgressBar.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Text.Encoding.CodePages.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\WinFormAnimation.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignColors.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\dmd40net.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SoftLicenseAPI.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Spire.License.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Spire.Pdf.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SunnyUI.Common.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.mshtml.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Modules.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Modules.dll.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SF3.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SF3.dll.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\LightController.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\LightController.exe.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Camera.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Cancellation.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Collections.Deque.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Disposables.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SECSGEM.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\SECSGEM.dll.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Buffers.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Collections.Immutable.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Memory.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Numerics.Vectors.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Reactive.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Newtonsoft.Json.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\CsvHelper.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Basler.Pylon.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignColors.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.AssemblyReference.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.CCDTest.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.EFEMControl.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.findHomePanel.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.Form1.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.MotionControl.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.ParaForm.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.Properties.Resources.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.RecipeManagement.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.SignalAnalysisForm.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.TTVScanPattern.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.UserPermission.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.GenerateResource.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.CopyComplete
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_202401111012\TrimGap_20240111\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\ProductLicenseChecker.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\SoftLicenseAPI.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.SECProcess.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\DIASECS.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\DIASECSGEM.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\GEMDataModel.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\TrimGap\bin\x64\Debug\DIASECS.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\TrimGap.exe.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\TrimGap.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Camera.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\CTLT.GEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\CTLT.SECS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\DIASECSGEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\GEMDataModel.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\LightController.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Modules.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Cancellation.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Collections.Deque.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Disposables.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\SECSGEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\SF3.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\SocketClient2.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Buffers.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Collections.Immutable.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Memory.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Numerics.Vectors.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Reactive.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\WindowsBase.WinForms.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Newtonsoft.Json.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\dsa40net.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\AdvMotAPI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\CsvHelper.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Basler.Pylon.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\DIASECS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\ProductLicenseChecker.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Spire.XLS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Data.SQLite.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\SunnyUI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\CircularProgressBar.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Text.Encoding.CodePages.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\WinFormAnimation.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignColors.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\dmd40net.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\SoftLicenseAPI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Spire.License.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Spire.Pdf.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\SunnyUI.Common.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.mshtml.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Modules.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Modules.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\SF3.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\SF3.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\LightController.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\LightController.exe.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Camera.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\DIASECSGEM.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\GEMDataModel.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Cancellation.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Collections.Deque.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Nito.Disposables.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\SECSGEM.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\SECSGEM.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Buffers.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Collections.Immutable.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Memory.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Numerics.Vectors.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Reactive.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Newtonsoft.Json.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\CsvHelper.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Basler.Pylon.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\DIASECS.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\ProductLicenseChecker.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\MaterialDesignColors.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\bin\x64\Debug\SoftLicenseAPI.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.CCDTest.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.EFEMControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.findHomePanel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.Form1.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.MotionControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.ParaForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.RecipeManagement.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.SECProcess.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.SignalAnalysisForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.TTVScanPattern.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.UserPermission.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\TrimGap\obj\x64\Debug\TrimGap.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.CCDTest.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.EFEMControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.findHomePanel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.Form1.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.MotionControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.ParaForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.RecipeManagement.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.SECProcess.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.SignalAnalysisForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.TTVScanPattern.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.UserPermission.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\TrimGap.exe.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\TrimGap.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Camera.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\CTLT.GEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\CTLT.SECS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\DIASECSGEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\GEMDataModel.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\LightController.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Modules.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.Cancellation.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.Collections.Deque.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.Disposables.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\SECSGEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\SF3.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\SocketClient2.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Buffers.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Collections.Immutable.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Memory.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Numerics.Vectors.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Reactive.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\WindowsBase.WinForms.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Newtonsoft.Json.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\dsa40net.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\AdvMotAPI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\CsvHelper.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Basler.Pylon.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\DIASECS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\ProductLicenseChecker.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Spire.XLS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Data.SQLite.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\SunnyUI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\CircularProgressBar.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Text.Encoding.CodePages.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\WinFormAnimation.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\MaterialDesignColors.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\dmd40net.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\SoftLicenseAPI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Spire.License.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Spire.Pdf.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\SunnyUI.Common.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Microsoft.mshtml.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Modules.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Modules.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\SF3.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\SF3.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\LightController.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\LightController.exe.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Camera.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\DIASECSGEM.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\GEMDataModel.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.Cancellation.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.Collections.Deque.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Nito.Disposables.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\SECSGEM.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\SECSGEM.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Buffers.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Collections.Immutable.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Memory.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Numerics.Vectors.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Reactive.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Newtonsoft.Json.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\CsvHelper.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Basler.Pylon.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\DIASECS.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\ProductLicenseChecker.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\MaterialDesignColors.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\bin\x64\Debug\SoftLicenseAPI.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\TrimGap\obj\x64\Debug\TrimGap.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\TrimGap.exe.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\TrimGap.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Camera.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CTLT.GEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CTLT.SECS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\DIASECSGEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\GEMDataModel.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\LightController.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Modules.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.Cancellation.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.Collections.Deque.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.Disposables.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SECSGEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SF3.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SocketClient2.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Buffers.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Collections.Immutable.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Memory.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Numerics.Vectors.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Reactive.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\WindowsBase.WinForms.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Newtonsoft.Json.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\dsa40net.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\AdvMotAPI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CsvHelper.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Basler.Pylon.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\DIASECS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\ProductLicenseChecker.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Spire.XLS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Data.SQLite.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SunnyUI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CircularProgressBar.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Text.Encoding.CodePages.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\WinFormAnimation.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\MaterialDesignColors.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\dmd40net.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SoftLicenseAPI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Spire.License.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Spire.Pdf.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SunnyUI.Common.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Microsoft.mshtml.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Modules.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Modules.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SF3.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SF3.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\LightController.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\LightController.exe.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Camera.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\DIASECSGEM.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\GEMDataModel.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.Cancellation.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.Collections.Deque.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.Disposables.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SECSGEM.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SECSGEM.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Buffers.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Collections.Immutable.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Memory.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Numerics.Vectors.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Reactive.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Newtonsoft.Json.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CsvHelper.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Basler.Pylon.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\DIASECS.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\ProductLicenseChecker.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\MaterialDesignColors.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SoftLicenseAPI.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.CCDTest.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.EFEMControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.findHomePanel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.Form1.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.MotionControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.ParaForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.RecipeManagement.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.SECProcess.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.SignalAnalysisForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.TTVScanPattern.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.UserPermission.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.csproj.AssemblyReference.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.CCDTest.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.EFEMControl.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.findHomePanel.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.Form1.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.MotionControl.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.ParaForm.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.Properties.Resources.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.RecipeManagement.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.SECProcess.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.SignalAnalysisForm.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.TTVScanPattern.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.UserPermission.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.csproj.GenerateResource.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\TrimGap.exe.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\TrimGap.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\TrimGap.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Camera.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CTLT.GEM.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CTLT.SECS.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\DIASECSGEM.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\GEMDataModel.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\LightController.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\LJX8000A.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Modules.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.Cancellation.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.Collections.Deque.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.Disposables.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SECSGEM.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SF3.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SocketClient2.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Buffers.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Collections.Immutable.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Memory.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Numerics.Vectors.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Reactive.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\WindowsBase.WinForms.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Newtonsoft.Json.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\dsa40net.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\AdvMotAPI.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CsvHelper.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Basler.Pylon.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\DIASECS.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\ProductLicenseChecker.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Spire.XLS.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Data.SQLite.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SunnyUI.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CircularProgressBar.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Text.Encoding.CodePages.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\WinFormAnimation.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\MaterialDesignColors.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\dmd40net.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SoftLicenseAPI.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Spire.License.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Spire.Pdf.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SunnyUI.Common.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Microsoft.mshtml.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Modules.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Modules.dll.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SF3.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SF3.dll.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\LightController.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\LightController.exe.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Camera.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\DIASECSGEM.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\GEMDataModel.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\LJX8000A.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.Cancellation.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.Collections.Deque.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Nito.Disposables.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SECSGEM.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SECSGEM.dll.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Buffers.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Collections.Immutable.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Memory.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Numerics.Vectors.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Reactive.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Newtonsoft.Json.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\CsvHelper.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Basler.Pylon.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\DIASECS.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\ProductLicenseChecker.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\MaterialDesignColors.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\bin\x64\Debug\SoftLicenseAPI.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\TrimGap\obj\x64\Debug\TrimGap.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\TrimGap.exe.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\TrimGap.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Camera.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\CTLT.GEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\CTLT.SECS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\DIASECSGEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\GEMDataModel.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\LightController.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\LJX8000A.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Modules.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.Cancellation.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.Collections.Deque.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.Disposables.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\SECSGEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\SF3.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\SocketClient2.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Buffers.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Collections.Immutable.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Memory.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Numerics.Vectors.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Reactive.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\WindowsBase.WinForms.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Newtonsoft.Json.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\dsa40net.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\AdvMotAPI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\CsvHelper.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Basler.Pylon.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\DIASECS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\ProductLicenseChecker.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Spire.XLS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Data.SQLite.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\SunnyUI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\CircularProgressBar.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Text.Encoding.CodePages.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\WinFormAnimation.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\MaterialDesignColors.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\dmd40net.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\SoftLicenseAPI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Spire.License.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Spire.Pdf.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\SunnyUI.Common.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Microsoft.mshtml.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Modules.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Modules.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\SF3.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\SF3.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\LightController.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\LightController.exe.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Camera.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\DIASECSGEM.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\GEMDataModel.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\LJX8000A.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.Cancellation.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.Collections.Deque.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Nito.Disposables.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\SECSGEM.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\SECSGEM.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Buffers.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Collections.Immutable.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Memory.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Numerics.Vectors.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Reactive.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Newtonsoft.Json.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\CsvHelper.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Basler.Pylon.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\DIASECS.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\ProductLicenseChecker.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\MaterialDesignColors.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\bin\x64\Debug\SoftLicenseAPI.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.CCDTest.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.EFEMControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.findHomePanel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.Form1.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.MotionControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.ParaForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.RecipeManagement.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.SECProcess.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.SignalAnalysisForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.TTVScanPattern.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.UserPermission.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\TrimGap\obj\x64\Debug\TrimGap.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\TrimGap.exe.config
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\TrimGap.exe
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\TrimGap.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Camera.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CTLT.GEM.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CTLT.SECS.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\DIASECSGEM.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\GEMDataModel.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\LightController.exe
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\LJX8000A.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Modules.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.Cancellation.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.Collections.Deque.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.Disposables.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SECSGEM.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SF3.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SocketClient2.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Buffers.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Collections.Immutable.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Memory.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Numerics.Vectors.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Reactive.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\WindowsBase.WinForms.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Newtonsoft.Json.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\dsa40net.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\AdvMotAPI.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CsvHelper.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Basler.Pylon.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\DIASECS.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\ProductLicenseChecker.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Spire.XLS.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Data.SQLite.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SunnyUI.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CircularProgressBar.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Text.Encoding.CodePages.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\WinFormAnimation.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\MaterialDesignColors.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\dmd40net.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SoftLicenseAPI.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Spire.License.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Spire.Pdf.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SunnyUI.Common.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Microsoft.mshtml.dll
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Modules.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Modules.dll.config
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SF3.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SF3.dll.config
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\LightController.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\LightController.exe.config
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Camera.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\DIASECSGEM.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\GEMDataModel.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\LJX8000A.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.Cancellation.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.Collections.Deque.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.Disposables.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SECSGEM.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SECSGEM.dll.config
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Buffers.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Collections.Immutable.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Memory.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Numerics.Vectors.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Reactive.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Newtonsoft.Json.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CsvHelper.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Basler.Pylon.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\DIASECS.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\ProductLicenseChecker.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\MaterialDesignColors.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.xml
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SoftLicenseAPI.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.csproj.AssemblyReference.cache
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.CCDTest.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.EFEMControl.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.findHomePanel.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.Form1.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.MotionControl.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.ParaForm.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.Properties.Resources.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.RecipeManagement.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.SECProcess.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.SignalAnalysisForm.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.TTVScanPattern.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.UserPermission.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.csproj.GenerateResource.cache
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.csproj.CoreCompileInputs.cache
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.csproj.CopyComplete
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.exe
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\TrimGap.exe.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\TrimGap.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Camera.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CTLT.GEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CTLT.SECS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\DIASECSGEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\GEMDataModel.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\LightController.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\LJX8000A.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Modules.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.Cancellation.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.Collections.Deque.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.Disposables.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SECSGEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SF3.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SocketClient2.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Buffers.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Collections.Immutable.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Memory.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Numerics.Vectors.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Reactive.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\WindowsBase.WinForms.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Newtonsoft.Json.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\dsa40net.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\AdvMotAPI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CsvHelper.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Basler.Pylon.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\DIASECS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\ProductLicenseChecker.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Spire.XLS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Data.SQLite.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SunnyUI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CircularProgressBar.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Text.Encoding.CodePages.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\WinFormAnimation.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\MaterialDesignColors.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\dmd40net.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SoftLicenseAPI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Spire.License.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Spire.Pdf.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SunnyUI.Common.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Microsoft.mshtml.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Modules.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Modules.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SF3.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SF3.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\LightController.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\LightController.exe.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Camera.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\DIASECSGEM.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\GEMDataModel.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\LJX8000A.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.Cancellation.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.Collections.Deque.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Nito.Disposables.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SECSGEM.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SECSGEM.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Buffers.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Collections.Immutable.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Memory.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Numerics.Vectors.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Reactive.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Newtonsoft.Json.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\CsvHelper.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Basler.Pylon.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\DIASECS.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\ProductLicenseChecker.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\MaterialDesignColors.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\bin\x64\Debug\SoftLicenseAPI.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.CCDTest.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.EFEMControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.findHomePanel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.Form1.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.MotionControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.ParaForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.RecipeManagement.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.SECProcess.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.SignalAnalysisForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.TTVScanPattern.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.UserPermission.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\TrimGap\obj\x64\Debug\TrimGap.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\TrimGap.exe.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\TrimGap.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Camera.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\CTLT.GEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\CTLT.SECS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\DIASECSGEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\GEMDataModel.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\LightController.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\LJX8000A.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Modules.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.Cancellation.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.Collections.Deque.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.Disposables.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\SECSGEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\SF3.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\SocketClient2.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Buffers.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Collections.Immutable.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Memory.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Numerics.Vectors.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Reactive.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\WindowsBase.WinForms.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Newtonsoft.Json.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\dsa40net.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\AdvMotAPI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\CsvHelper.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Basler.Pylon.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\DIASECS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\ProductLicenseChecker.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Spire.XLS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Data.SQLite.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\SunnyUI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\CircularProgressBar.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Text.Encoding.CodePages.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\WinFormAnimation.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\MaterialDesignColors.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\dmd40net.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\SoftLicenseAPI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Spire.License.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Spire.Pdf.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\SunnyUI.Common.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Microsoft.mshtml.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Modules.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Modules.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\SF3.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\SF3.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\LightController.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\LightController.exe.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Camera.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\DiaGemLib_Equipment.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\DIASECSGEM.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\GEMDataModel.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\LJX8000A.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\MvvmFx.Bindings.WinForms.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.AsyncEx.Context.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.AsyncEx.Coordination.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.AsyncEx.Interop.WaitHandles.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.AsyncEx.Oop.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.AsyncEx.Tasks.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.Cancellation.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.Collections.Deque.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Nito.Disposables.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\SECSGEM.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\SECSGEM.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Buffers.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Collections.Immutable.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Memory.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Numerics.Vectors.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Reactive.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\System.Threading.Tasks.Extensions.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\MaterialDesignThemes.Wpf.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Newtonsoft.Json.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\CsvHelper.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Basler.Pylon.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\DIASECS.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\ProductLicenseChecker.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\UniAuto.UniBCS.MISC.StateMachine.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\MaterialDesignColors.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\Microsoft.Bcl.HashCode.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\UniAuto.UniBCS.Core.Cryptography.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\bin\x64\Debug\SoftLicenseAPI.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.CCDTest.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.EFEMControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.findHomePanel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.Form1.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.MotionControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.ParaForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.RecipeManagement.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.SECProcess.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.SignalAnalysisForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.TTVScanPattern.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.UserPermission.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Debug\TrimGap.pdb

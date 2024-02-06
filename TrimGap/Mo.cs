@@ -22,13 +22,17 @@ namespace TrimGap
             if (type == 1)
             {
                 MotionType = 1;
-                Axisnum = 3;
             }
             else
             {
                 MotionType = 0;
-                Axisnum = 2;
             }
+            if(fram.m_MachineType == 0)
+                Axisnum = 3;
+            else if(fram.m_MachineType == 1)
+                Axisnum = 2;
+            else
+                Axisnum = 5;
         }
 
         public static string Get_AxisNo_Description(Enum value)
@@ -42,19 +46,24 @@ namespace TrimGap
         {
             [Description("DD馬達")]
             DD = 0,
-
             [Description("Z軸馬達")]
             Z = 1,
-
             [Description("X軸馬達")]
             X = 1,
-
             [Description("Y軸馬達")]
             Y = 2,
+            [Description("Z軸馬達2")]
+            AP6II_Z2 = 2,
+            [Description("Z軸馬達3")]
+            AP6II_Z3 = 3,
+            [Description("AP6II_X軸馬達")]
+            AP6II_X = 4,
             [Description("AP6 2軸")]
             indexAP6 = 2,
             [Description("N2 3軸")]
             indexN2 = 3,
+            [Description("AP6II 5軸")]
+            indexAP6II = 5,
         }
 
         public enum Dir
@@ -189,10 +198,13 @@ namespace TrimGap
 
         public void Close()
         {
-            if (MotionType == 1)
-                motion_ETEL.close();
-            else
-                motion.close();
+            if(fram.m_simulateRun == 0)
+            {
+                if (MotionType == 1)
+                    motion_ETEL.close();
+                else
+                    motion.close();
+            }
         }
 
         public void SetServo(AxisNo axisNo, bool bOn)
@@ -279,6 +291,26 @@ namespace TrimGap
             }
         }
 
+        public void PosMove(AxisNo axisNo, double pos, double speed)
+        {
+            int axis = (int)axisNo;
+            if (MotionType == 1)
+            {
+                if (axisNo == 0)
+                    motion_ETEL.pos((short)axisNo, pos / 360, 0, speed, fram.m_Acc[axis], fram.m_Dec[axis]);
+                else
+                    motion_ETEL.pos((short)axisNo, pos / 1000000, 0, speed, 0.1 * fram.m_Acc[axis], 0.1 * fram.m_Dec[axis]);
+            }
+
+            else
+            {
+                if (axisNo == 0)
+                    motion.posStart((short)axisNo, pos * deg1, speed, fram.m_pitchV[axis], fram.m_Acc[axis], fram.m_Dec[axis]);
+                else
+                    motion.posStart((short)axisNo, pos, speed, fram.m_pitchV[axis], fram.m_Acc[axis], fram.m_Dec[axis]);
+            }
+        }
+
         /// <summary>
         /// DD 旋轉固定角度用
         /// </summary>
@@ -321,7 +353,7 @@ namespace TrimGap
             }
             else
             {
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < Axisnum; i++)
                 {
                     motion.resetAlarm((short)axisNo, i);
                 }

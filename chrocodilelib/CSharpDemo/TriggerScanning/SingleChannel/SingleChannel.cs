@@ -17,6 +17,7 @@ namespace PT
         private int ScanLineNo, LineSampleCount;
         private int AllSampleCount;
         private int ScanLineIdx, SampleIdx;
+        private int type;
 
         private CHRocodileLib.Data ScanData = null;
         
@@ -30,34 +31,58 @@ namespace PT
         private double SigMin, SigMax;
         public static ActUtlType64Lib.ActUtlType64Class actUtlType;
         private bool bSim;
-        public SingleChannel(int simulate)
+        public SingleChannel(int simulate, int tp)
         {
             InitializeComponent();
             bm = new Bitmap(PPaint.Width, PPaint.Height);
             CleanDataBitmap();
-            actUtlType = new ActUtlType64Lib.ActUtlType64Class();
+
             bSim = simulate != 0 ? true : false;
+            type = tp;
             if(!bSim)
             {
-                try
+                if (type == 1)
                 {
-                    int iRet;
-                    actUtlType.ActLogicalStationNumber = 1;
-                    iRet = actUtlType.Open();
-                    if (iRet != 0)
+                    try
                     {
-                        MessageBox.Show("PT PLC Init Fail.");
+                        actUtlType = new ActUtlType64Lib.ActUtlType64Class();
+                        int iRet;
+                        actUtlType.ActLogicalStationNumber = 1;
+                        iRet = actUtlType.Open();
+                        if (iRet != 0)
+                        {
+                            MessageBox.Show("PT PLC Init Fail.");
+                        }
                     }
+                    catch (Exception ee)
+                    {
+                        MessageBox.Show("PT PLC Init Fail:" + ee);
+                    }
+                    cbSelectPoint.SelectedIndex = 1;
+                    updatePosSpd(1);
                 }
-                catch (Exception ee)
-                {
-                    MessageBox.Show("PT PLC Init Fail:" + ee);
-                }
-                cbSelectPoint.SelectedIndex = 1;
-                updatePosSpd(1);
+
                 timer1.Interval = 200;
                 timer1.Enabled = true;
             }
+            CBDisplaySig.SelectedIndex = 0;
+            CBAxis.SelectedIndex = 0;
+            if (type == 1)
+            {
+                tabControl1.SelectedIndex = 0;
+                tabControl1.TabPages[1].Parent = null;
+                RBCHR2.Checked = false;
+                RBCHRC.Checked = true;
+            }
+            else if (type == 2)
+            {
+                tabControl1.SelectedIndex = 1;
+                tabControl1.TabPages[0].Parent = null;
+                RBCHR2.Checked = true;
+                RBCHRC.Checked = false;
+            }
+            for (int i = 0; i<512; i++)
+                chart1.Series[0].Points.Add(0);
         }
 
         public int GetDevice(string name)
@@ -392,39 +417,29 @@ namespace PT
             }
         }
 
-        //public void getData3(out double[] data, out double[] data2, out double[] data3)
-        //{
-        //    if (ScanData.TotalNumSamples >= AllSampleCount)
-        //    {
-        //        double[] rtn1 = new double[AllSampleCount];
-        //        double[] rtn2 = new double[AllSampleCount];
-        //        double[] rtn3 = new double[AllSampleCount];
-        //        for (int i = 0; i < AllSampleCount; i++)
-        //        {
-        //            rtn1[i] = ScanData.Get(i, 0, 0);
-        //            rtn2[i] = ScanData.Get(i, 1, 0);
-        //            rtn3[i] = ScanData.Get(i, 2, 0);
-        //        }
-        //        data = rtn1;
-        //        data2 = rtn2;
-        //        data3 = rtn3;
-        //    }
-        //    else
-        //    {
-        //        double[] rtn1 = new double[ScanData.TotalNumSamples];
-        //        double[] rtn2 = new double[ScanData.TotalNumSamples];
-        //        double[] rtn3 = new double[ScanData.TotalNumSamples];
-        //        for (int i = 0; i < ScanData.TotalNumSamples; i++)
-        //        {
-        //            rtn1[i] = ScanData.Get(i, 0, 0);
-        //            rtn2[i] = ScanData.Get(i, 1, 0);
-        //            rtn3[i] = ScanData.Get(i, 2, 0);
-        //        }
-        //        data = rtn1;
-        //        data2 = rtn2;
-        //        data3 = rtn3;
-        //    }
-        //}
+        public void SetTriggerMode(int mode)  // 0: free run  1:wait trigger  2:trigger each  3:trigger windows
+        {
+            Conn.Exec(CHRocodileLib.CmdID.DeviceTriggerMode, mode);
+        }
+
+        public void DarkReference()
+        {
+            SetTriggerMode(0);
+            Conn.Exec(CHRocodileLib.CmdID.DarkReference);
+        }
+
+        public short[] GetSpectrum(int specType) // 0: Raw  1: Confocal  2:FT
+        {
+            CHRocodileLib.Response oRsp;
+            SetTriggerMode(0);
+            oRsp = Conn.Exec(CHRocodileLib.CmdID.DownloadSpectrum, specType);
+            //the last parameter of the response is the spectrum data
+            var aBytes = oRsp.GetParam<byte[]>(oRsp.ParamCount - 1);
+            //convert to 16bit data
+            Int16[] SpecData = new Int16[aBytes.Length / 2];
+            Buffer.BlockCopy(aBytes, 0, SpecData, 0, aBytes.Length);
+            return SpecData;
+        }
 
         private void SetupDevice(CHRocodileLib.DeviceType _nDeviceType)
         {
@@ -809,7 +824,7 @@ namespace PT
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(isShown)
+            if(isShown && type == 1)
             {
                 lb_DECNum.Text = GetDriverAlarmCode().ToString();
                 lb_SpdNum.Text = ((double)GetSpeed() / 10000.0).ToString("F4");
@@ -833,6 +848,29 @@ namespace PT
                 lb_ServoReady.BackColor = GetServoReady() ? Color.Yellow : Color.Transparent;
                 lb_ServoBusy.BackColor = GetZeroSpeed() ? Color.Yellow : Color.Transparent;
             }
+            else if(isShown && type == 2 && cbGetSpectrum.Checked)
+            {
+                var specType = CHRocodileLib.SpecType.Raw;
+                if (RBConfocal.Checked)
+                    specType = CHRocodileLib.SpecType.Confocal;
+                else if (RBFFT.Checked)
+                    specType = CHRocodileLib.SpecType.FT;
+                CHRocodileLib.Response oRsp;
+                oRsp = Conn.Exec(CHRocodileLib.CmdID.DownloadSpectrum, specType);
+                //the last parameter of the response is the spectrum data
+                var aBytes = oRsp.GetParam<byte[]>(oRsp.ParamCount - 1);
+                //convert to 16bit data
+                Int16[] SpecData = new Int16[aBytes.Length / 2];
+                Buffer.BlockCopy(aBytes, 0, SpecData, 0, aBytes.Length);
+
+                for (int i = 0; i < SpecData.Length; i++)
+                    chart1.Series[0].Points[i].YValues[0] = SpecData[i];
+                // TODO: check why!?
+                //for (int i = SpecData.Length / 2; i < 1024; i++)
+                //    chart1.Series[0].Points[i].YValues[0] = 0;
+                chart1.ChartAreas[0].RecalculateAxesScale();
+                chart1.Invalidate();
+            }
 
         }
 
@@ -850,6 +888,23 @@ namespace PT
         private void SingleChannel_Shown(object sender, EventArgs e)
         {
             isShown = true;
+        }
+
+        private void cbGetSpectrum_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbGetSpectrum.Checked)
+            {
+                SetTriggerMode(0);
+            }
+            else
+            {
+                SetTriggerMode(2);
+            }
+        }
+
+        private void btnDarkReference_Click(object sender, EventArgs e)
+        {
+            DarkReference();
         }
 
 

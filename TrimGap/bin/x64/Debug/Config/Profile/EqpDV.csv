@@ -89,3 +89,9 @@ SLOT22_MAX,4047,ASCII,,,Slot22_Max,87
 SLOT23_MAX,4048,ASCII,,,Slot23_Max,88
 SLOT24_MAX,4049,ASCII,,,Slot24_Max,89
 SLOT25_MAX,4050,ASCII,,,Slot25_Max,90
+LOADPORT1_PORTASSOCIATION,2016,UINT_1,,,The association status of the load port 1,91
+LOADPORT2_PORTASSOCIATION,2017,UINT_1,,,The association status of the load port 2,92
+LOADPORT1_CARRIERID,2018,ASCII,,,Identifier for the carrier of the loadport 1,93
+LOADPORT2_CARRIERID,2019,ASCII,,,Identifier for the carrier of the loadport 2,94
+LOADPORT1_PORTID,2020,UINT_1,,,Identifier for the load port 1,95
+LOADPORT2_PORTID,2021,UINT_1,,,Identifier for the load port 2,96

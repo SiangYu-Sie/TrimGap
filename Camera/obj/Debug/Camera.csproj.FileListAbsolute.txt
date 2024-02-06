@@ -74,3 +74,10 @@ E:\專案\TrimGap\TrimGap - 20230918\Camera\obj\Debug\Camera.csproj.CoreCompileI
 E:\專案\TrimGap\TrimGap - 20230918\Camera\obj\Debug\Camera.csproj.CopyComplete
 E:\專案\TrimGap\TrimGap - 20230918\Camera\obj\Debug\Camera.dll
 E:\專案\TrimGap\TrimGap - 20230918\Camera\obj\Debug\Camera.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\bin\Lib\Camera.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\bin\Lib\Camera.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\Debug\Camera.csproj.AssemblyReference.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\Debug\Camera.csproj.CopyComplete
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\Debug\Camera.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\Debug\Camera.pdb

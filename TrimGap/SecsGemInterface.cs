@@ -359,6 +359,7 @@ namespace TrimGap
                 }
             }
         }
+
         public string LoadPortID
         {
             get
@@ -821,6 +822,8 @@ namespace TrimGap
             {
                 int result = 0;
                 MainForm = new DemoFormDiaGemLib.MainForm();
+                MainForm.Initnal_SECSFunction_CallBack(SECSListening.FunctionCommand_CallBack);
+                MainForm.Initnal_RemoteCommand_CallBack(SECSListening.RemoteCommand_CallBack);
                 _gemControler = DemoFormDiaGemLib.MainForm._gemControler;
                 _gemControler.UpdateSV(GemSystemID.GEM_SOFTREV, sram.SofewareVersion, out err); // 先更新版本號，把SECS裡自動更新版本號的地方刪除
                 MainForm.Show();
@@ -1110,6 +1113,91 @@ namespace TrimGap
             {
                 return 0;
             }
+        }
+
+        // ====================  GEM300  ==============================
+        public int LoadportMatchToRun(string lpno)
+        {
+            if (type == 1)
+            {
+                return MainForm.LoadportMatchToRun(lpno);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public int GetControlJobAttr(string RunningCJ, out string carrierInputSpec, out string curPJ, out string dataCollection, out string mtrloutStatus,
+                out string stringmtrloutSpec, out string pauseEvent, out string procCtrlSpec, out byte procOrder, out bool bStart, out byte state, out string err)
+        {
+            if (type == 1)
+                return MainForm.GetControlJobAttr(RunningCJ, out carrierInputSpec, out curPJ, out dataCollection, out mtrloutStatus,
+                out stringmtrloutSpec, out pauseEvent, out procCtrlSpec, out procOrder, out bStart, out state, out err);
+            else
+            {
+                carrierInputSpec = "";
+                curPJ = "";
+                dataCollection = "";
+                mtrloutStatus = "";
+                stringmtrloutSpec = "";
+                pauseEvent = "";
+                procCtrlSpec = "";
+                procOrder = 0;
+                bStart = true;
+                state = 0;
+                err = "";
+                return 0;
+            }
+        }
+
+        public int SetCarrierStatus_ID(string data, DemoFormDiaGemLib.CarrierIDState state)
+        {
+            if (type == 1)
+                return MainForm.SetCarrierStatus_ID(data, state);
+            else
+                return 0;
+        }
+
+        public int CreateCarrier(string foupid)
+        {
+            if (type == 1)
+                return MainForm.CreateCarrier(foupid);
+            else
+                return 0;
+        }
+
+        public int DeleteCarrier(string foupid, out string err)  //刪除Carrier Object
+        {
+            err = "";
+            if (type == 1)
+                return MainForm.DeleteCarrier(foupid, out err);
+            else
+                return 0;
+        }
+
+        public int SetCarrierAttr_Location(string foupid, string location, byte cap = 25)
+        {
+            if (type == 1)
+                return MainForm.SetCarrierAttr_Location(foupid, location, cap);
+            else
+                return 0;
+        }
+
+        public int SetCarrierAttr_SlotMap(string foupid, int[] slot)
+        {
+            if (type == 1)
+                return MainForm.SetCarrierAttr_SlotMap(foupid, slot);
+            else
+                return 0;
+        }
+
+        public int SetCarrierStatus_SlotMap(string foupid, DemoFormDiaGemLib.SlotMapState state)
+        {
+            if (type == 1)
+                return MainForm.SetCarrierStatus_SlotMap(foupid, state);
+            else
+                return 0;
         }
     }
 }

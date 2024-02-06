@@ -35,14 +35,16 @@ namespace Camera
             int no = -1;
             try
             {
-                BaslerC = new Basler.Pylon.Camera();
+                if(CameraName == "")
+                    BaslerC = new Basler.Pylon.Camera();
+                else
+                    BaslerC = new Basler.Pylon.Camera(CameraName);
                 BaslerC.CameraOpened += Configuration.SoftwareTrigger;
                 BaslerC.Open();
                 BaslerC.Parameters[PLCamera.TriggerSelector].SetValue(PLCamera.TriggerSelector.FrameStart);
                 BaslerC.Parameters[PLCamera.TriggerSource].SetValue(PLCamera.TriggerSource.Software);
                 BaslerC.Parameters[PLCamera.TriggerMode].SetValue(PLCamera.TriggerMode.On);
                 BaslerC.Parameters[PLCameraInstance.MaxNumBuffer].SetValue(10);
-
                 StartStream();
                 Console.WriteLine("Basler init compelete");
                 //Console.WriteLine("Advance Stream");
@@ -108,6 +110,17 @@ namespace Camera
 
                         LastestFrameAdress = Marshal.AllocHGlobal((Int32)grabResult.PayloadSize);
                         converter.OutputPixelFormat = PixelType.Mono8;
+                        converter.Convert(LastestFrameAdress, grabResult.PayloadSize, grabResult);
+                        _imageData = grabResult.PixelData as byte[];
+                        Image_Width = grabResult.Width;
+                        Image_Height = grabResult.Height;
+                        Marshal.FreeHGlobal(LastestFrameAdress);
+                    }
+                    else if (grabResult.PixelTypeValue == PixelType.RGB8packed)
+                    {
+
+                        LastestFrameAdress = Marshal.AllocHGlobal((Int32)grabResult.PayloadSize);
+                        converter.OutputPixelFormat = PixelType.RGB8packed;
                         converter.Convert(LastestFrameAdress, grabResult.PayloadSize, grabResult);
                         _imageData = grabResult.PixelData as byte[];
                         Image_Width = grabResult.Width;

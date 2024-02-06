@@ -50,7 +50,7 @@ namespace TrimGap
 
             MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, (MWNumericArray)InputData, (double)x_interval };
             MWArray[] argOut = new MWArray[2];
-            pml.tilting(2, ref argOut, argIn);
+            pml.tilting(3, ref argOut, argIn);
             double[,] MatlabToCsharp = (double[,])argOut[0].ToArray(); // 格式轉換
 
             double[] OutputData1 = new double[MatlabToCsharp.Length];
@@ -67,6 +67,11 @@ namespace TrimGap
                 OutputData2[i] = MatlabToCsharp2[0, i];
                 //OutputData2[i] = Math.Round(MatlabToCsharp2[0, i], 2, MidpointRounding.AwayFromZero);
             }
+
+            double[,] MatlabToCsharp3 = (double[,])argOut[2].ToArray(); // 格式轉換
+
+            double[] OutputData3 = new double[MatlabToCsharp3.Length];
+
             tiltingdata_x = OutputData1;
             tiltingdata_y = OutputData2;
         }
@@ -152,7 +157,95 @@ namespace TrimGap
             tiltingdata_y2 = OutputData5;
             tiltingdata_y3 = OutputData6;
         }
+        public void tilting3_htw(bool plotflag, double[] rawdata, double[] rawdata2, double[] rawdata3, double x_interval, bool reverse, out double[] tiltingdata_x1, out double[] tiltingdata_x2, out double[] tiltingdata_x3, out double[] tiltingdata_y1, out double[] tiltingdata_y2, out double[] tiltingdata_y3, out double cut)
+        {
+            double[] InputData = rawdata;
+            double[] InputData2 = rawdata2;
+            double[] InputData3 = rawdata3;
 
+            MWNumericArray array1 = (MWNumericArray)InputData;
+            MWNumericArray array2 = (MWNumericArray)InputData2;
+            MWNumericArray array3 = (MWNumericArray)InputData3;
+
+            MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, (MWNumericArray)InputData, (MWNumericArray)InputData2, (MWNumericArray)InputData3, (double)x_interval, (MWLogicalArray)reverse };
+            MWArray[] argOut = new MWArray[6];
+            pml.tilting3_htw(8, ref argOut, argIn);
+            double[,] MatlabToCsharp = (double[,])argOut[0].ToArray(); // 格式轉換
+
+            double[] OutputData1 = new double[MatlabToCsharp.Length];
+            for (int i = 0; i < MatlabToCsharp.Length; i++)
+            {
+                //OutputData1[i] = MatlabToCsharp[0, i];
+                OutputData1[i] = Math.Round(MatlabToCsharp[0, i], 2, MidpointRounding.AwayFromZero);
+            }
+            //ParamFile.SaveRawdata_Csv(OutputData1, "tilting3_OutputData1", DateTime.Now);
+
+            double[,] MatlabToCsharp2 = (double[,])argOut[1].ToArray(); // 格式轉換
+
+            double[] OutputData2 = new double[MatlabToCsharp2.Length];
+            for (int i = 0; i < MatlabToCsharp2.Length; i++)
+            {
+                //OutputData2[i] = MatlabToCsharp2[0, i];
+                OutputData2[i] = Math.Round(MatlabToCsharp2[0, i], 2, MidpointRounding.AwayFromZero);
+            }
+            //ParamFile.SaveRawdata_Csv(OutputData2, "tilting3_OutputData2", DateTime.Now);
+
+            double[,] MatlabToCsharp3 = (double[,])argOut[2].ToArray(); // 格式轉換
+
+            double[] OutputData3 = new double[MatlabToCsharp3.Length];
+            for (int i = 0; i < MatlabToCsharp3.Length; i++)
+            {
+                //OutputData3[i] = MatlabToCsharp3[0, i];
+                OutputData3[i] = Math.Round(MatlabToCsharp3[0, i], 2, MidpointRounding.AwayFromZero);
+            }
+            //ParamFile.SaveRawdata_Csv(OutputData3, "tilting3_OutputData3", DateTime.Now);
+
+            double[,] MatlabToCsharp4 = (double[,])argOut[3].ToArray(); // 格式轉換
+
+            double[] OutputData4 = new double[MatlabToCsharp4.Length];
+            for (int i = 0; i < MatlabToCsharp4.Length; i++)
+            {
+                //OutputData4[i] = MatlabToCsharp4[0, i];
+                OutputData4[i] = Math.Round(MatlabToCsharp4[0, i], 2, MidpointRounding.AwayFromZero);
+            }
+            //ParamFile.SaveRawdata_Csv(OutputData4, "tilting3_OutputData4", DateTime.Now);
+
+            double[,] MatlabToCsharp5 = (double[,])argOut[4].ToArray(); // 格式轉換
+
+            double[] OutputData5 = new double[MatlabToCsharp5.Length];
+            for (int i = 0; i < MatlabToCsharp5.Length; i++)
+            {
+                //OutputData5[i] = MatlabToCsharp5[0, i];
+                OutputData5[i] = Math.Round(MatlabToCsharp5[0, i], 2, MidpointRounding.AwayFromZero);
+            }
+            //ParamFile.SaveRawdata_Csv(OutputData5, "tilting3_OutputData5", DateTime.Now);
+
+            double[,] MatlabToCsharp6 = (double[,])argOut[5].ToArray(); // 格式轉換
+
+            double[] OutputData6 = new double[MatlabToCsharp6.Length];
+            for (int i = 0; i < MatlabToCsharp6.Length; i++)
+            {
+                //OutputData6[i] = MatlabToCsharp6[0, i];
+                OutputData6[i] = Math.Round(MatlabToCsharp6[0, i], 2, MidpointRounding.AwayFromZero);
+            }
+            //ParamFile.SaveRawdata_Csv(OutputData6, "tilting3_OutputData6", DateTime.Now);
+
+            double[,] MatlabToCsharp7 = (double[,])argOut[6].ToArray(); // 格式轉換
+
+            double[] OutputData7 = new double[MatlabToCsharp7.Length];
+
+            double[,] MatlabToCsharp8 = (double[,])argOut[7].ToArray(); // 格式轉換
+
+            double[] OutputData8 = new double[MatlabToCsharp8.Length];
+
+            tiltingdata_x1 = OutputData1;
+            tiltingdata_x2 = OutputData2;
+            tiltingdata_x3 = OutputData3;
+            tiltingdata_y1 = OutputData4;
+            tiltingdata_y2 = OutputData5;
+            tiltingdata_y3 = OutputData6;
+            cut = OutputData7[0];
+        }
         public void CalculateGap(bool plotflag, double[] rawdata_x, double[] rawdata_y, double x_interval, int Step, int step1x0, int step1x1, int step2x0, int step2x1, int range1, int range2, out double[] Resultdata)
         {
             double[] InputData = rawdata_x;
@@ -215,7 +308,62 @@ namespace TrimGap
             //}
             Resultdata = OutputData;
         }
+        public void CalculateGap3_htw(bool plotflag, int Step, double[] tiltdata_x1, double[] tiltdata_x2, double[] tiltdata_x3, double[] tiltdata_y1, double[] tiltdata_y2, double[] tiltdata_y3, double x_interval, int step1x0, int step1x1, int step2x0, int step2x1, int range1, int range2, out double[] Resultdata)
+        {
+            double[] InputData = tiltdata_x1;
+            double[] InputData2 = tiltdata_x2;
+            double[] InputData3 = tiltdata_x3;
+            double[] InputData4 = tiltdata_y1;
+            double[] InputData5 = tiltdata_y2;
+            double[] InputData6 = tiltdata_y3;
 
+            MWNumericArray array1 = (MWNumericArray)InputData;
+            MWNumericArray array2 = (MWNumericArray)InputData2;
+            MWNumericArray array3 = (MWNumericArray)InputData3;
+            MWNumericArray array4 = (MWNumericArray)InputData4;
+            MWNumericArray array5 = (MWNumericArray)InputData5;
+            MWNumericArray array6 = (MWNumericArray)InputData6;
+
+            //MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, 2, (MWNumericArray)InputData, (MWNumericArray)InputData2, (MWNumericArray)InputData3, (MWNumericArray)InputData4, (MWNumericArray)InputData5, (MWNumericArray)InputData6 , (double)x_interval, step1x0, step1x1, step2x0, step2x1, range1, range2 };
+            MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, 2, (MWNumericArray)InputData, (MWNumericArray)InputData2, (MWNumericArray)InputData3, (MWNumericArray)InputData4, (MWNumericArray)InputData5, (MWNumericArray)InputData6, 1, step1x0, step1x1, step2x0, 2100, range1, range2 };
+            MWArray[] argOut = new MWArray[13];
+            pml.calculateGap3_htw(13, ref argOut, argIn);
+            //argOut = pml.calculateGap3(13, (MWLogicalArray)plotflag, Step, (MWNumericArray)tiltdata_x1, (MWNumericArray)tiltdata_x2, (MWNumericArray)tiltdata_x3, (MWNumericArray)tiltdata_y1, (MWNumericArray)tiltdata_y2, (MWNumericArray)tiltdata_y3, x_interval, step1x0, step1x1, step2x0, step2x1, range1, range2);
+            double[,] MatlabToCsharp;
+            double[] OutputData = new double[argOut.Length];
+            for (int i = 0; i < argOut.Length; i++)
+            {
+                MatlabToCsharp = (double[,])argOut[i].ToArray(); // 格式轉換
+                //OutputData[i] = MatlabToCsharp[0, 0];
+                OutputData[i] = Math.Round(MatlabToCsharp[0, 0], 2, MidpointRounding.AwayFromZero);
+            }
+
+            //for (int i = 0; i < MatlabToCsharp.Length; i++)
+            //{
+            //    OutputData1[i] = MatlabToCsharp[0, i];
+            //}
+            Resultdata = OutputData;
+        }
+
+        public int findNoiseBoundary(double[] data, int windowSize, int thStd, string type, bool flagFigure)
+        {
+            double[] InputData = data;
+
+            MWNumericArray array1 = (MWNumericArray)InputData;
+
+            MWArray[] argIn = new MWArray[] { array1, windowSize, thStd, type, (MWLogicalArray)flagFigure};
+            MWArray[] argOut = new MWArray[6];
+            pml.findNoiseBoundary(1, ref argOut, argIn);
+            double[,] MatlabToCsharp = (double[,])argOut[0].ToArray(); // 格式轉換
+
+            double[] OutputData1 = new double[MatlabToCsharp.Length];
+            for (int i = 0; i < MatlabToCsharp.Length; i++)
+            {
+                //OutputData1[i] = MatlabToCsharp[0, i];
+                OutputData1[i] = Math.Round(MatlabToCsharp[0, i], 2, MidpointRounding.AwayFromZero);
+            }
+            return (int)OutputData1[0];
+        }
         #endregion TrimGap
 
         #region 公用區
@@ -1465,6 +1613,54 @@ namespace TrimGap
             newdata1 = OutputData;
             newdata2 = OutputData2;
             newdata3 = OutputData3;
+        }
+
+        public void removeZero3_htw(double[] data, double[] data2, double[] data3, double baseline, out double[] newdata1, out double[] newdata2, out double[] newdata3, out double gapW) //把數據為0的直接拿掉 資料出來會比進去少
+        {
+            MWArray[] result;
+
+            double[] InputData = data;
+            double[] InputData2 = data2;
+            double[] InputData3 = data3;
+
+
+            MWNumericArray array1 = (MWNumericArray)InputData;
+            MWNumericArray array2 = (MWNumericArray)InputData2;
+            MWNumericArray array3 = (MWNumericArray)InputData3;
+            MWNumericArray array4 = (MWNumericArray)baseline;
+
+            MWArray[] argIn = new MWArray[] { (MWNumericArray)array1, (MWNumericArray)array2, (MWNumericArray)array3, (double)baseline };
+            MWArray[] argOut = new MWArray[4];
+
+            //result = pml.removeZero3_htw(4, array1, array2, array3, array4);
+            pml.removeZero3_htw(4, ref argOut, argIn);
+            double[,] MatlabToCsharp = (double[,])argOut[0].ToArray(); // 格式轉換
+            double[,] MatlabToCsharp2 = (double[,])argOut[1].ToArray(); // 格式轉換
+            double[,] MatlabToCsharp3 = (double[,])argOut[2].ToArray(); // 格式轉換
+            double[,] MatlabToCsharp4 = (double[,])argOut[3].ToArray();
+            double[] OutputData = new double[MatlabToCsharp.Length];
+            double[] OutputData2 = new double[MatlabToCsharp2.Length];
+            double[] OutputData3 = new double[MatlabToCsharp3.Length];
+            double OutputData4 = MatlabToCsharp4[0, 0];
+            for (int i = 0; i < MatlabToCsharp.Length; i++)
+            {
+                OutputData[i] = MatlabToCsharp[0, i];
+            }
+
+            for (int i = 0; i < MatlabToCsharp2.Length; i++)
+            {
+                OutputData2[i] = MatlabToCsharp2[0, i];
+            }
+
+            for (int i = 0; i < MatlabToCsharp3.Length; i++)
+            {
+                OutputData3[i] = MatlabToCsharp3[0, i];
+            }
+
+            newdata1 = OutputData;
+            newdata2 = OutputData2;
+            newdata3 = OutputData3;
+            gapW = OutputData4;
         }
 
         /// <summary>

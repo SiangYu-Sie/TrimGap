@@ -95,3 +95,23 @@ E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\x64\Debug\Camera.csproj.Cor
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\x64\Debug\Camera.dll
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\x64\Debug\Camera.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\bin\Debug\Camera.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\bin\Debug\Camera.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\bin\Debug\Basler.Pylon.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\bin\Debug\SpinnakerNET_v140.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\bin\Debug\Basler.Pylon.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\x64\Debug\Camera.csproj.AssemblyReference.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\x64\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\x64\Debug\Camera.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\Camera\obj\x64\Debug\Camera.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\Camera\bin\Debug\Camera.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\Camera\bin\Debug\Camera.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\Camera\bin\Debug\Basler.Pylon.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\Camera\bin\Debug\SpinnakerNET_v140.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\Camera\bin\Debug\Basler.Pylon.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\Camera\obj\x64\Debug\Camera.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\Camera\obj\x64\Debug\Camera.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\Camera\obj\x64\Debug\Camera.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\Camera\obj\x64\Debug\Camera.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\Camera\obj\x64\Debug\Camera.pdb

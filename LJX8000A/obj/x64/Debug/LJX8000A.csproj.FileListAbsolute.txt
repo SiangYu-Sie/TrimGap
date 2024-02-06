@@ -1,0 +1,24 @@
+D:\專案\TrimGap\CS\LJX8000A\obj\x64\Debug\LJX8000A.csproj.AssemblyReference.cache
+D:\專案\TrimGap\CS\LJX8000A\obj\x64\Debug\LJX8000A.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\CS\LJX8000A\bin\x64\Debug\LJX8000A.dll
+D:\專案\TrimGap\CS\LJX8000A\bin\x64\Debug\LJX8000A.pdb
+D:\專案\TrimGap\CS\LJX8000A\obj\x64\Debug\LJX8000A.dll
+D:\專案\TrimGap\CS\LJX8000A\obj\x64\Debug\LJX8000A.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\LJX8000A\bin\x64\Debug\LJX8000A.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\LJX8000A\bin\x64\Debug\LJX8000A.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\LJX8000A\obj\x64\Debug\LJX8000A.csproj.AssemblyReference.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\LJX8000A\obj\x64\Debug\LJX8000A.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\LJX8000A\obj\x64\Debug\LJX8000A.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240126_1930\TrimGap_1_20240126_1930\TrimGap_1_20240126\LJX8000A\obj\x64\Debug\LJX8000A.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\LJX8000A\bin\x64\Debug\LJX8000A.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\LJX8000A\bin\x64\Debug\LJX8000A.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\LJX8000A\obj\x64\Debug\LJX8000A.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\LJX8000A\obj\x64\Debug\LJX8000A.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\LJX8000A\obj\x64\Debug\LJX8000A.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240129_1500\LJX8000A\obj\x64\Debug\LJX8000A.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\LJX8000A\bin\x64\Debug\LJX8000A.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\LJX8000A\bin\x64\Debug\LJX8000A.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\LJX8000A\obj\x64\Debug\LJX8000A.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\LJX8000A\obj\x64\Debug\LJX8000A.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\LJX8000A\obj\x64\Debug\LJX8000A.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\LJX8000A\obj\x64\Debug\LJX8000A.pdb

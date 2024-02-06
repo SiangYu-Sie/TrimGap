@@ -810,3 +810,42 @@ E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\obj\Release\SECSGEM.csproj.Cor
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\obj\Release\SECSGEM.dll
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SECSGEM\obj\Release\SECSGEM.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\SECSGEM.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\SECSGEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\SECSGEM.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\AxInterop.QGACTIVEXLib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\AxInterop.QSACTIVEXLib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\CsvHelper.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\CTLT.GEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\CTLT.SECS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\MediaBrowser.Common.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\MediaBrowser.Model.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\System.Buffers.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\System.Memory.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\System.Numerics.Vectors.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\System.Text.Encoding.CodePages.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\WinFormAnimation.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\System.IO.Pipelines.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\CsvHelper.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\MediaBrowser.Common.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\MediaBrowser.Model.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\Microsoft.Bcl.HashCode.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\System.Buffers.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\System.Memory.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\System.Numerics.Vectors.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\System.Text.Encoding.CodePages.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\bin\Release\System.Threading.Tasks.Extensions.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\obj\Release\SECSGEM.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\obj\Release\SECSGEM.Config.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\obj\Release\SECSGEM.SecsgemForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\obj\Release\SECSGEM.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\obj\Release\SECSGEM.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\obj\Release\SECSGEM.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\obj\Release\SECSGEM.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\SECSGEM\obj\Release\SECSGEM.pdb

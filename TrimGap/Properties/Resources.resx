@@ -310,4 +310,31 @@
   <data name="SF3Point" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\myimage\SF3Point.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Arrow_Up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Arrow_Up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_Wafer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Wafer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_WaferAligner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_WaferAligner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_WaferAligner_NoWafer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_WaferAligner_NoWafer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_WaferFork" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_WaferFork.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_WaferFork_AlignAndInspectFinish" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_WaferFork_AlignAndInspectFinish.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_WaferFork_AlignFinish" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_WaferFork_AlignFinish.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_WaferFork_NoWafer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_WaferFork_NoWafer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

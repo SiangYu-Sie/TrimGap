@@ -15,23 +15,6 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace DemoFormDiaGemLib
 {
-    public enum ProcessState
-    {
-        Initial = 0,
-        Idle = 1,
-        Run = 2,
-        Stop = 3,
-        Pause = 4,
-        Down = 5
-    }
-
-    public enum PPBodyType
-    {
-        Unformatted,
-        Formatted,
-        Both
-    }
-
     public partial class MainForm : Form
     {
         private DriverConfigInfo _frmDriverConfigInfo;
@@ -67,6 +50,8 @@ namespace DemoFormDiaGemLib
         private string _softRev = "1.0.0.0";
         private PPBodyType _ppBodyType = PPBodyType.Both;
         private int paramCount = 40;//Recipe Parameters Count
+        private bool bDataCheckOK;
+        private string err;
 
         public bool bCanReplyCreateObjectRequestCommand = false;
         public bool bCanReplyDeleteObjectRequestCommand = false;
@@ -78,6 +63,34 @@ namespace DemoFormDiaGemLib
         public bool bCanReplyS2F42 = false;
         public bool bCanReplyS10F04orS10F06 = false;
         public bool bCanReplySetsCONTROLStateModel = false;
+
+        public static List<string> PJ_list = new List<string>();
+        public static List<string> CJ_list = new List<string>();
+        public static List<string> Carrier_list = new List<string>();
+        public static List<string> Substrate_list = new List<string>();
+
+        public delegate byte SECSFunction_CallBack(List<string> data);
+        SECSFunction_CallBack function_CallBack;
+
+        public delegate byte RemoteCommand_CallBack(List<string> data); //S2F41
+        RemoteCommand_CallBack remoteCommand_CallBack;
+
+        public enum SecsData
+        {
+            SlotMap,
+            Release,
+            MeasureStart,
+            Cancel,
+            AccessModeChange,
+            AccessModeAsk,
+            ChangeRecipe,
+        }
+
+        public enum SecsDataElement
+        {
+            LoadPortID,
+            CarrierID,
+        }
 
         public class SecsDataTemp
         {
@@ -437,23 +450,44 @@ namespace DemoFormDiaGemLib
             }
 
             //Update Object Info
-            //GetObject
-            ObjectInstance objectInstance = null;
-            result = _gemControler.GetObject(txtCreateObjType.Text, txtCreateObjID.Text, out objectInstance, out err);
-            //UpdateObject
-            if (objectInstance != null)
+            List<ObjectInstance> listObjectInstance = null;
+            _gemControler.GetObject(out listObjectInstance, out err);
+            string strObjectInfo = string.Empty;
+            List<ObjectAttribute> listObjectAttributes = null;
+            foreach (ObjectInstance objectInstance in listObjectInstance.OrderBy(o => o.ObjType))
             {
-                List<ObjectAttribute> listObjectAttributes = new List<ObjectAttribute>();
-                //CARRIER Update
-                ObjectAttribute objectAttribute = new ObjectAttribute(441, ObjectAttributeKey.OBJID, objectInstance.ObjID);
-                listObjectAttributes.Add(objectAttribute);
-                objectAttribute = new ObjectAttribute(443, "CARRIERIDSTATUS", (byte)0);
-                listObjectAttributes.Add(objectAttribute);
-                //...other ObjectAttribute
-
-                objectInstance.ListObjectAttributes = listObjectAttributes;
-                result = _gemControler.UpdateObject(objectInstance, out err);
+                switch (objectInstance.ObjType)
+                {
+                    case ObjectTypeKey.PROCESSJOB:
+                        PJ_list.Add(objectInstance.ObjID);
+                        break;
+                    case ObjectTypeKey.CONTROLJOB:
+                        CJ_list.Add(objectInstance.ObjID);
+                        break;
+                    case ObjectTypeKey.CARRIER:
+                        Carrier_list.Add(objectInstance.ObjID);
+                        break;
+                    default:
+                        break;
+                }
             }
+            //GetObject
+            /* ObjectInstance objectInstance = null;
+             result = _gemControler.GetObject(txtCreateObjType.Text, txtCreateObjID.Text, out objectInstance, out err);
+             //UpdateObject
+             if (objectInstance != null)
+             {
+                 List<ObjectAttribute> listObjectAttributes = new List<ObjectAttribute>();
+                 //CARRIER Update
+                 ObjectAttribute objectAttribute = new ObjectAttribute(441, ObjectAttributeKey.OBJID, objectInstance.ObjID);
+                 listObjectAttributes.Add(objectAttribute);
+                 objectAttribute = new ObjectAttribute(443, "CARRIERIDSTATUS", (byte)0);
+                 listObjectAttributes.Add(objectAttribute);
+                 //...other ObjectAttribute
+
+                 objectInstance.ListObjectAttributes = listObjectAttributes;
+                 result = _gemControler.UpdateObject(objectInstance, out err);
+             }*/
         }
 
         //SECS Driver Connect Status----------------------------------------------------------------------------------------------------
@@ -1086,9 +1120,26 @@ namespace DemoFormDiaGemLib
             //ItemFmt.U8,       ulong[]
 
             string[] row = new string[e.ReceiveCommandParameters.Count];
-            bool bDataCheckOK = false;
-
+            bDataCheckOK = false;
+            List<string> dataList = new List<string>();
+            List<string> errList = new List<string>();
             #region Check Data, Keep Data, Reply CP Ack..
+            byte btHCACK = 0;
+            /*
+            ack
+            0 - ok, completed
+            1 - invalid command
+            2 - cannot do now
+            3 - parameter error
+            4 - initiated for asynchronous completion
+            5 - rejected, already in desired condition
+            6 - invalid object
+
+            CPAck
+            1 - unknown CPNAME
+            2 - illegal value for CPVAL
+            3 - illegal format for CPVAL
+            */
             switch (e.ReceiveMessageName)
             {
                 case eReceiveRemoteControlMessageName.S2F41:
@@ -1149,7 +1200,6 @@ namespace DemoFormDiaGemLib
                                         string log = string.Empty;
                                         if (_gemControler != null)
                                         {
-                                            string err;
                                             int result = _gemControler.OnlineRemote(out err);
                                             if (result != 0)
                                             {
@@ -1180,7 +1230,6 @@ namespace DemoFormDiaGemLib
                                         string log = string.Empty;
                                         if (_gemControler != null)
                                         {
-                                            string err;
                                             int result = _gemControler.OnLineLocal(out err);
                                             if (result != 0)
                                             {
@@ -1203,6 +1252,7 @@ namespace DemoFormDiaGemLib
                             case "ACCESSMODE-ASK":
                                 {
                                     bWaitSECS_ACCESSMODE_ASK = true;
+                                    errList.Clear();
                                     RCMD_ACCESSMODE_ASK obj = new RCMD_ACCESSMODE_ASK();
                                     bDataCheckOK = RunDecode(e, out obj);
                                     if (bDataCheckOK)
@@ -1210,8 +1260,25 @@ namespace DemoFormDiaGemLib
                                         //OK, get Info
                                         _rcmdACCESSMODE_ASK = obj;
                                         LoadPortID = _rcmdACCESSMODE_ASK.LOADPORT_ID;
-                                        AccessModeAskData.Set(LoadPortID);
+                                        //AccessModeAskData.Set(LoadPortID);
+                                        if(LoadPortID == "1" || LoadPortID == "2")
+                                        {
+                                            dataList.Clear();
+                                            dataList.Add(e.RCMD);
+                                            dataList.Add(LoadPortID);
+                                            btHCACK = remoteCommand_CallBack(dataList);
+                                        }
+                                        else
+                                        {
+                                            btHCACK = 3;
+                                            e.ReceiveCommandParameters[0].Ack = (byte)2;
+                                        }
+
                                     }
+                                    else
+                                        btHCACK = 3;
+
+
 
                                     this.Invoke((MethodInvoker)delegate ()
                                     {
@@ -1558,29 +1625,7 @@ namespace DemoFormDiaGemLib
             #endregion
 
             #region Check OK Use Keep Data
-            byte btHCACK = 0;
 
-            //handle...
-            switch (e.RCMD)
-            {
-                case "PP-SELECT":
-                    {
-                        //Use _rcmdPPSELECT
-                        //string strPPID = _rcmdPPSELECT.PPID;
-                        //...
-                    }
-                    break;
-                case "START":
-                    {
-                        //Use _rcmdSTART
-                    }
-                    break;
-                case "GO":
-                    {
-                        //Use _rcmdGO
-                    }
-                    break;
-            }
 
             //Sample handle
             if (e.ReceiveMessageName == eReceiveRemoteControlMessageName.S2F49)
@@ -1601,9 +1646,12 @@ namespace DemoFormDiaGemLib
                 }
 
                 //Sample S2F50 Auto Reply
-                string err;
-                _gemControler.RemoteCommandReply(eReceiveRemoteControlMessageName.S2F49,
-                    e.SystemBytes, btHCACK, e.ReceiveCommandParameters, out err);
+                
+                _gemControler.RemoteCommandReply(eReceiveRemoteControlMessageName.S2F49, e.SystemBytes, btHCACK, e.ReceiveCommandParameters, out err);
+            }
+            else if(e.ReceiveMessageName == eReceiveRemoteControlMessageName.S2F41)
+            {
+                int a = _gemControler.RemoteCommandReply(eReceiveRemoteControlMessageName.S2F41, e.SystemBytes, btHCACK, e.ReceiveCommandParameters, out err);
             }
             #endregion
 
@@ -4654,32 +4702,144 @@ namespace DemoFormDiaGemLib
         ////Host CreateObject
         private void _gemControler_CreateObjectRequestCommand(object sender, CreateObjectRequestArgs e)
         {
+            string err;
             foreach (ObjectInstance objectEntity in e.ListObjectEntities)
             {
+                this.Invoke((MethodInvoker)delegate ()
+                {
+                    txtS14F9_OBJSPEC_Recv.Text = objectEntity.ObjSpec.ToString();
+                    txtS14F9_OBJTYPE_Recv.Text = objectEntity.ObjType.ToString();
+                    txtS14F9_OBJID_Recv.Text = objectEntity.ObjID.ToString();
+                    txtS14F9_SystemBytes_Recv.Text = e.SystemBytes.ToString();
+                    txtS14F9_CreateOBJ_Type.Text = e.ReceiveMessageName.ToString();
+                });
+                bCanReplyCreateObjectRequestCommand = true;
+                lastRecvListObjectInstance = e.ListObjectEntities;
+
+                eReceiveCreateMessageName createType = (eReceiveCreateMessageName)Enum.Parse(typeof(eReceiveCreateMessageName), e.ReceiveMessageName.ToString());
+                List<ObjectInstance> listObjectEntities = new List<ObjectInstance>();
+                List<ErrorReport> listErrorReports = new List<ErrorReport>();
+                byte bAck;
+                uint uSystemBytes = e.SystemBytes;
+                ObjectInstance createObjectEntity = new ObjectInstance();
+                createObjectEntity.ObjType = objectEntity.ObjType;
+                createObjectEntity.ObjID = objectEntity.ObjID;
+                createObjectEntity.ObjSpec = objectEntity.ObjSpec;
+                List<ObjectAttribute> listObjectAttributes = new List<ObjectAttribute>();
+                foreach (ObjectAttribute objAttr in e.ListObjectEntities[0].ListObjectAttributes)
+                {
+                    createObjectEntity.ListObjectAttributes.Add(objAttr);
+                }
+
                 switch (objectEntity.ObjType.ToUpper())
                 {
-                    case ObjectTypeKey.PROCESSJOB:
-                    case ObjectTypeKey.SUBSTRATE:
+                    case ObjectTypeKey.PROCESSJOB:                 
+                        bAck = PJ_list.Contains(objectEntity.ObjID) ? byte.Parse("1") : byte.Parse("0");  //檢查pj是否重複
+
+                        switch (createType)
+                        {
+                            case eReceiveCreateMessageName.S16F11:
+                            case eReceiveCreateMessageName.S16F15:
+                                if (bAck == 1)
+                                {
+                                    ErrorReport er = new ErrorReport();
+                                    er.ErrorCode = 11;
+                                    er.ErrorText = "object ID in use";
+                                    listErrorReports.Add(er);
+                                }
+                                int result = _gemControler.CreateObjectRequestCommandReply(createType, listObjectEntities, bAck, listErrorReports, uSystemBytes, out err);
+
+                                PJ_list.Add(objectEntity.ObjID);
+                                ChangeProcessJobState(objectEntity.ObjID, ProcessJobState.QUEUED);
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
                     case ObjectTypeKey.CONTROLJOB:
+                        bAck = CJ_list.Contains(objectEntity.ObjID) ? byte.Parse("1") : byte.Parse("0");  //檢查cj是否重複
+                        switch (createType)
+                        {
+                            case eReceiveCreateMessageName.S14F9:
+
+                                listObjectEntities.Add(createObjectEntity);
+                                if (bAck == 1)
+                                {
+                                    ErrorReport er = new ErrorReport();
+                                    er.ErrorCode = 11;
+                                    er.ErrorText = "object ID in use";
+                                    listErrorReports.Add(er);
+                                }
+                                int result = _gemControler.CreateObjectRequestCommandReply(createType, listObjectEntities, bAck, listErrorReports, uSystemBytes, out err);
+                                if (objectEntity.ObjType.ToUpper() == ObjectTypeKey.CONTROLJOB)
+                                {
+                                    CJ_list.Add(objectEntity.ObjID);
+                                    ChangeControlJobState(objectEntity.ObjID, ControlJobState.QUEUED, 0);
+                                }
+                                if(CJ_list.Count == 1)
+                                {
+                                    ChangeControlJobState(objectEntity.ObjID, ControlJobState.SELECTED, 0);  //只有一個人就直接選了
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case ObjectTypeKey.CARRIER:
+                        bAck = Carrier_list.Contains(objectEntity.ObjID) ? byte.Parse("1") : byte.Parse("0");  //檢查carrier是否重複
+                        switch (createType)
+                        {
+                            case eReceiveCreateMessageName.S14F9:
+
+                                listObjectEntities.Add(createObjectEntity);
+                                if (bAck == 1)
+                                {
+                                    ErrorReport er = new ErrorReport();
+                                    er.ErrorCode = 11;
+                                    er.ErrorText = "object ID in use";
+                                    listErrorReports.Add(er);
+                                }
+                                int result = _gemControler.CreateObjectRequestCommandReply(createType, listObjectEntities, bAck, listErrorReports, uSystemBytes, out err);
+                                if (objectEntity.ObjType.ToUpper() == ObjectTypeKey.CARRIER)
+                                {
+                                    Carrier_list.Add(objectEntity.ObjID);
+                                    _gemControler.EventReportSend(181, out err); //CMS_NoStateToCarrier
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    case ObjectTypeKey.SUBSTRATE:
+                        bAck = Substrate_list.Contains(objectEntity.ObjID) ? byte.Parse("1") : byte.Parse("0");  //檢查substrate是否重複
+                        switch (createType)
+                        {
+                            case eReceiveCreateMessageName.S14F9:
+
+                                listObjectEntities.Add(createObjectEntity);
+                                if (bAck == 1)
+                                {
+                                    ErrorReport er = new ErrorReport();
+                                    er.ErrorCode = 11;
+                                    er.ErrorText = "object ID in use";
+                                    listErrorReports.Add(er);
+                                }
+                                int result = _gemControler.CreateObjectRequestCommandReply(createType, listObjectEntities, bAck, listErrorReports, uSystemBytes, out err);
+                                if (objectEntity.ObjType.ToUpper() == ObjectTypeKey.SUBSTRATE)
+                                {
+                                    Substrate_list.Add(objectEntity.ObjID);
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
                     default:
                         {
-                            this.Invoke((MethodInvoker)delegate ()
-                            {
-                                txtS14F9_OBJSPEC_Recv.Text = objectEntity.ObjSpec.ToString();
-                                txtS14F9_OBJTYPE_Recv.Text = objectEntity.ObjType.ToString();
-                                txtS14F9_OBJID_Recv.Text = objectEntity.ObjID.ToString();
-                                txtS14F9_SystemBytes_Recv.Text = e.SystemBytes.ToString();
-                                txtS14F9_CreateOBJ_Type.Text = e.ReceiveMessageName.ToString();
-                            });
-                            bCanReplyCreateObjectRequestCommand = true;
-                            lastRecvListObjectInstance = e.ListObjectEntities;
-
                             //Handle
-
 
                             //Reply
                             //Call _gemControler.CreateObjectRequestCommandReply
-
 
                             //Sample Use Button Reply 
                             //private void btnCreate_Reply_Click(object sender, EventArgs e)
@@ -4770,14 +4930,35 @@ namespace DemoFormDiaGemLib
             });
             bCanReplyDeleteObjectRequestCommand = true;
 
+            byte bAck = 0;
+            List<ObjectAttribute> listObjectAttributes = new List<ObjectAttribute>();
             //Handle
+            switch (e.ObjSpec)
+            {
+                case ObjectTypeKey.PROCESSJOB:
+                    break;
+                case ObjectTypeKey.CONTROLJOB:
+                    //ddd
+                    break;
+                case ObjectTypeKey.CARRIER:
+                    break;
+            }
+            //e.ListObjectAttributes.
+            ObjectAttribute objectAttribute = new ObjectAttribute(ObjectAttributeKey.OBJID, "");
+            listObjectAttributes.Add(objectAttribute);
 
+            List<ErrorReport> listErrorReports = new List<ErrorReport>();
+            ErrorReport objectErrors = new ErrorReport();
+            objectErrors.ErrorCode = 3;
+            objectErrors.ErrorText = "TestError3";
+            listErrorReports.Add(objectErrors);
+            objectErrors = new ErrorReport();
+            objectErrors.ErrorCode = 5;
+            objectErrors.ErrorText = "TestError5";
+            listErrorReports.Add(objectErrors);
 
             //Reply
-            //Call _gemControler.DeleteObjectRequestCommandReply
-
-            //Sample Use Button Reply 
-            //private void btnS14F12_Reply_Click(object sender, EventArgs e)
+            _gemControler.DeleteObjectRequestCommandReply(listObjectAttributes, bAck, listErrorReports, e.SystemBytes, out err);
 
             //Ex: 
             //OK, Call EventReportSend
@@ -4916,14 +5097,96 @@ namespace DemoFormDiaGemLib
             bCanReplyCarrierActionRequest = true;
 
             //Handle
+            byte ack = 0;
+            byte btHCACK = 0;
+            List<ErrorReport> listErrorReports = new List<ErrorReport>();
+            List<string> dataList = new List<string>();
+            ErrorReport errR = new ErrorReport();
+            switch (e.CARRIERACTION)
+            {
+                case "PROCEEDWITHCARRIER":
+                    LoadPortID = e.PORTNO.ToString();
+                    CarrierID = e.CARRIERID;
+                    SlotMapData.Set(LoadPortID, CarrierID);
+                    dataList.Clear();
+                    dataList.Add("PROCEEDWITHCARRIER");
+                    dataList.Add(CarrierID);
+                    dataList.Add(LoadPortID);
+                    errR = new ErrorReport();
+                    if (LoadPortID == "1" || LoadPortID == "2")
+                    {
+                        ack = function_CallBack(dataList);
+                        if (ack != 0)
+                        {
+                            btHCACK = ack;
+                            errR.ErrorCode = 22;
+                            errR.ErrorText = "failure when processing";
+                        }
+                    }
+                    else
+                    {
+                        btHCACK = 3;
 
+                        errR.ErrorCode = 47;
+                        errR.ErrorText = "invalid parameter";
+                    }
+                    listErrorReports.Add(errR);
+                    break;
+                case "PROCEEDWITHCARRIER2":
+                    if(Carrier_list.Contains(e.CARRIERID))
+                    {
+                        SetCarrierStatus_ID(e.CARRIERID, CarrierIDState.ID_VERIFICATION_OK);
+                    }
+                    else
+                    {
+                        errR = new ErrorReport();
+                        btHCACK = 3;
+
+                        errR.ErrorCode = 47;
+                        errR.ErrorText = "invalid parameter. CarrierID is not found";
+                    }
+                    break;
+                case "CARRIERRELEASE":
+                    LoadPortID = e.PORTNO.ToString();
+                    CarrierID = e.CARRIERID;
+                    ReleaseData.Set(LoadPortID, CarrierID);
+                    dataList.Clear();
+                    dataList.Add("CARRIERRELEASE");
+                    dataList.Add(CarrierID);
+                    dataList.Add(LoadPortID);
+                    errR = new ErrorReport();
+                    if (LoadPortID == "1" || LoadPortID == "2")
+                    {
+                        ack = function_CallBack(dataList);
+                        if (ack != 0)
+                        {
+                            btHCACK = ack;
+                            errR.ErrorCode = 22;
+                            errR.ErrorText = "failure when processing";
+                        }
+                    }
+                    else
+                    {
+                        btHCACK = 3;
+
+                        errR.ErrorCode = 47;
+                        errR.ErrorText = "invalid parameter";
+                    }
+                    listErrorReports.Add(errR);
+                    break;
+                case "CANCELCARRIER":
+                    break;
+                case "CARRIEROUT":
+                    break;
+                case "CARRIERRECREATE":
+                    break;
+                case "CANCELCARRIERATPORT":
+                    break;
+            }
 
             //Reply
-            //Call _gemControler.CarrierActionRequestReply
+            _gemControler.CarrierActionRequestReply(btHCACK, listErrorReports, e.SystemBytes, out err);
 
-
-            //Sample Use Button Reply 
-            //private void btnCarrierActionAck_Click(object sender, EventArgs e)
         }
 
         private void btnCarrierActionAck_Click(object sender, EventArgs e)
@@ -5048,9 +5311,43 @@ namespace DemoFormDiaGemLib
         private void _gemControler_PortChangeAccessRequest(object sender, PortChangeAccessRequestArgs e)
         {
             //Handle
+            bDataCheckOK = false;
+            List<string> dataList = new List<string>();
+            List<ErrorReport> errList = new List<ErrorReport>();
+            byte ack = 0;
+            byte btHCACK = 0;
 
+            foreach (byte p in e.PORTNOs)
+            {
+                LoadPortID = p.ToString();
+                AccessMode = e.ACCESSMODE.ToString();
+                dataList.Clear();
+                dataList.Add("ACCESSMODE-CHANGE");
+                dataList.Add(AccessMode);
+                dataList.Add(LoadPortID);
+                ErrorReport errR = new ErrorReport();
+                if ((AccessMode == "0" || AccessMode == "1") && (LoadPortID == "1" || LoadPortID == "2"))
+                {
+                    ack = function_CallBack(dataList);
+                    if (ack != 0)
+                    {
+                        btHCACK = ack;
+                        errR.ErrorCode = 22;
+                        errR.ErrorText = "failure when processing";
+                    }
+                }
+                else
+                {
+                    btHCACK = 3;
+                    
+                    errR.ErrorCode = 47;
+                    errR.ErrorText = "invalid parameter";
+                }
+                errList.Add(errR);
+            }
+            
             //Reply
-            //Call _gemControler.PortChangeAccessReply
+            _gemControler.PortChangeAccessReply(e.ReceiveMessageName, btHCACK, errList, e.SystemBytes, out err);
         }
 
         private void _gemControler_PortActionRequest(object sender, PortActionRequestArgs e)
@@ -5094,6 +5391,1508 @@ namespace DemoFormDiaGemLib
 
                 lblABS_Check.Text = $" Check = {TestABS[0] == e.ABS[0]}";
             });
+        }
+
+        // GEM300
+
+        public int CreateProcessJob(string objID, string recID, bool bStart, string carrierID, byte[] slot, out string err, string objSpec = "")
+        {
+            int result = 0;
+            int result2 = 0;
+            //CreateObject
+            result = _gemControler.CreateObject(ObjectTypeKey.PROCESSJOB, objID, out err, objSpec);
+
+            if (result != 0) return result;
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.PROCESSJOB;
+            updateObjectEntity.ObjID = objID;
+            updateObjectEntity.ObjSpec = objSpec;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(141, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(143, ObjectAttributeKey.ProcessJob.PRJOBSTATE, (byte)ProcessJobState.QUEUED);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            ListWrapper lw = new ListWrapper();
+            ListWrapper lw_1 = new ListWrapper();
+            lw.TryAdd(ItemFmt.L, lw_1, out err);
+            lw_1.TryAdd(ItemFmt.A, carrierID, out err);
+            List<byte> lsts = new List<byte>();
+            for (byte i = 0; i < 25; i++)
+            {
+                if (slot[i] == 1)
+                    lsts.Add(i);
+            }
+            lw_1.TryAdd(ItemFmt.U1, lsts.ToArray(), out err);
+            objectAttribute = new ObjectAttribute(144, ObjectAttributeKey.ProcessJob.PRMTLNAMELIST, lw);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(145, ObjectAttributeKey.ProcessJob.PRMTLTYPE, (byte)13);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(146, ObjectAttributeKey.ProcessJob.PRPROCESSSTART, bStart);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(147, ObjectAttributeKey.ProcessJob.PRRECIPEMETHOD, (byte)0);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(148, ObjectAttributeKey.ProcessJob.RECID, recID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            result2 = _gemControler.UpdateObject(updateObjectEntity, out err);
+            PJ_list.Add(objID);
+            //ObjectInstance updateObjectEntity2 = null;
+            //result = gtlhomeSECS._gemControler.GetObject(ObjectTypeKey.PROCESSJOB, objID, out updateObjectEntity2, out err);
+            return result;
+        }
+
+        public int SetProcessJobAttr(string objID, string pauseEvent, string carrierID, byte[] slot, byte PRType, bool bStart, byte recMethod, string recID, string recVarList, out string err, string objSpec = "")
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.PROCESSJOB;
+            updateObjectEntity.ObjID = objID;
+            updateObjectEntity.ObjSpec = objSpec;
+            ListWrapper lw, lw_1;
+            ObjectAttribute objectAttribute = new ObjectAttribute(141, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            if (!(pauseEvent == string.Empty || pauseEvent == null))
+            {
+                string[] s = pauseEvent.Split(',');
+                uint[] os = new uint[s.Length];
+                for (int i = 0; i < s.Length; i++)
+                    os[i] = Convert.ToUInt32(s[i]);
+                lw = new ListWrapper();
+                lw.TryAdd(ItemFmt.U4, os, out err);
+                objectAttribute = new ObjectAttribute(142, ObjectAttributeKey.ProcessJob.PAUSEEVENT, lw);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            }
+            /*if (PJState != 255)
+            {
+                objectAttribute = new ObjectAttribute(143, ObjectAttributeKey.ProcessJob.PRJOBSTATE, PJState);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            }*/
+            if (slot != null)
+            {
+                lw = new ListWrapper();
+                lw_1 = new ListWrapper();
+                lw.TryAdd(ItemFmt.L, lw_1, out err);
+                lw_1.TryAdd(ItemFmt.A, carrierID, out err);
+                lw_1.TryAdd(ItemFmt.U1, slot, out err);
+                objectAttribute = new ObjectAttribute(144, ObjectAttributeKey.ProcessJob.PRMTLNAMELIST, lw);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            }
+            objectAttribute = new ObjectAttribute(145, ObjectAttributeKey.ProcessJob.PRMTLTYPE, PRType);  // 13 Carrier  14 substrate
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(146, ObjectAttributeKey.ProcessJob.PRPROCESSSTART, bStart);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            if (recMethod != null)
+            {
+                objectAttribute = new ObjectAttribute(147, ObjectAttributeKey.ProcessJob.PRRECIPEMETHOD, recMethod);  //0 - recipe without variable tuning   1 - recipe with variable tuning
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            }
+            objectAttribute = new ObjectAttribute(148, ObjectAttributeKey.ProcessJob.RECID, recID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            if (!(recVarList == string.Empty || recVarList == null))
+            {
+                string[] s1 = recVarList.Split(';');
+                if (s1.Length > 0)
+                {
+                    lw = new ListWrapper();
+                    foreach (string s in s1)
+                    {
+                        if (s != String.Empty)
+                        {
+                            string[] s2 = s.Split(',');
+                            if (s2.Length == 2)
+                            {
+                                lw_1 = new ListWrapper();
+                                lw_1.TryAdd(ItemFmt.A, s2[0], out err);
+                                lw_1.TryAdd(ItemFmt.A, s2[1], out err);
+                                lw.TryAdd(ItemFmt.L, lw_1, out err);
+                            }
+                        }
+                    }
+                    objectAttribute = new ObjectAttribute(149, ObjectAttributeKey.ProcessJob.RECVARIABLELIST, lw);
+                    updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                }
+            }
+
+            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+
+            //ObjectInstance updateObjectEntity2 = null;
+            //result = gtlhomeSECS._gemControler.GetObject(ObjectTypeKey.PROCESSJOB, objID, out updateObjectEntity2, out err);
+            return result;
+        }
+
+        public int GetProcessJobAttr(string objID, out string pauseEvent, out byte PJState, out string carrierID, out byte[] slot, out byte PRType, out bool bStart, out byte recMethod, out string recID, out string recVarList, out string err)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            result = _gemControler.GetObject(ObjectTypeKey.PROCESSJOB, objID, out updateObjectEntity, out err);
+
+            ListWrapper lw, lw_1;
+            SecsIIValue val;
+            pauseEvent = string.Empty;
+            PJState = 0;
+            carrierID = string.Empty;
+            slot = new byte[25];
+            PRType = 0x0D;
+            bStart = false;
+            recMethod = 0;
+            recID = string.Empty;
+            recVarList = string.Empty;
+            if (result != 0) return result;
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                switch (o.ATTRID)
+                {
+                    case ObjectAttributeKey.ProcessJob.PAUSEEVENT:
+                        lw = (ListWrapper)o.ATTRDATA;
+                        pauseEvent = string.Empty;
+                        for (int i = 0; i < lw.Items.Count; i++)
+                        {
+                            uint[] b = (uint[])lw.Items[i].Value;
+                            for (int j = 0; j < b.Length; ++j)
+                            {
+                                if (i == 0 && j == 0)
+                                {
+                                    pauseEvent += Convert.ToString((b as uint[])[j]);
+                                }
+                                else
+                                {
+                                    pauseEvent += ',' + Convert.ToString((b as uint[])[j]);
+                                }
+                            }
+                        };
+                        break;
+                    case ObjectAttributeKey.ProcessJob.PRJOBSTATE:
+                        PJState = Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    case ObjectAttributeKey.ProcessJob.PRMTLNAMELIST:
+                        lw = (ListWrapper)o.ATTRDATA;
+                        lw_1 = (ListWrapper)lw.Items[0].Value;
+                        carrierID = lw_1.Items[0].ToString();
+                        byte[] slot2 = (byte[])lw_1.Items[1].Value;
+                        foreach (byte a in slot2)
+                        {
+                            slot[a] = 1;
+                        }
+                        break;
+                    case ObjectAttributeKey.ProcessJob.PRMTLTYPE:
+                        PRType = Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    case ObjectAttributeKey.ProcessJob.PRPROCESSSTART:
+                        bStart = Convert.ToBoolean(o.ATTRDATA.ToString());
+                        break;
+                    case ObjectAttributeKey.ProcessJob.PRRECIPEMETHOD:
+                        recMethod = Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    case ObjectAttributeKey.ProcessJob.RECID:
+                        recID = o.ATTRDATA.ToString();
+                        break;
+                    case ObjectAttributeKey.ProcessJob.RECVARIABLELIST:
+                        lw = (ListWrapper)o.ATTRDATA;
+                        recVarList = string.Empty;
+                        for (int i = 0; i < lw.Items.Count; i++)
+                        {
+                            lw_1 = (ListWrapper)lw.Items[i].Value;
+                            recVarList += lw_1.Items[0].ToString() + ',' + lw_1.Items[1].ToString() + ';';
+                        };
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return result;
+        }
+
+        public int DeleteProcessJob(string objID, out string errstr)
+        {
+            string err;
+            int result;
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.PROCESSJOB;
+            updateObjectEntity.ObjID = objID;
+            updateObjectEntity.ObjSpec = string.Empty;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(141, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(143, ObjectAttributeKey.ProcessJob.PRJOBSTATE, (byte)4);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+
+            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+            if (result == 0)
+            {
+                errstr = err;
+                result = _gemControler.EventReportSend(47, out err);
+                if (result == 0)  //Offline就刪不掉，list也就不刪了
+                    PJ_list.Remove(objID);
+            }
+            else
+            {
+                errstr = err;
+                return result;
+            }
+            errstr = err;
+            return result;
+        }
+
+        public int ChangeProcessJobState(string objID, ProcessJobState state)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            ProcessJobState oldstate = ProcessJobState.QUEUED;
+
+            result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, objID, out updateObjectEntity, out err);
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                if (o.ATTRID == ObjectAttributeKey.ProcessJob.PRJOBSTATE)
+                    oldstate = (ProcessJobState)Convert.ToByte(o.ATTRDATA);
+            }
+            ObjectInstance updateObjectEntity2 = new ObjectInstance();
+            updateObjectEntity2.ObjType = updateObjectEntity.ObjType;
+            updateObjectEntity2.ObjID = updateObjectEntity.ObjID;
+            updateObjectEntity2.ObjSpec = updateObjectEntity.ObjSpec;
+            ObjectAttribute objectAttribute2 = new ObjectAttribute(143, ObjectAttributeKey.ProcessJob.PRJOBSTATE, (byte)state);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute2);
+            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+
+            if (result == 0)
+            {
+                /*
+                 QUEUED = 0,
+                 SETTING_UP = 1,
+                 WAITING_FOR_START = 2,
+                 PROCESSING = 3,
+                 PROCESS_COMPLETE = 4,
+                 RESERVED = 5,
+                 PAUSING = 6, 
+                 PAUSED = 7,
+                 STOPPING = 8,
+                 ABORTING = 9,
+                 STOPPED = 10,
+                 ABORTED = 11,
+                 UNQUEUED = 12,
+                */
+                switch (state)
+                {
+                    case ProcessJobState.QUEUED:
+                            _gemControler.EventReportSend(41, out err);
+                        break;
+                    case ProcessJobState.SETTING_UP:
+                        if (oldstate == ProcessJobState.QUEUED)
+                            _gemControler.EventReportSend(42, out err);
+                        break;
+                    case ProcessJobState.WAITING_FOR_START:
+                        if (oldstate == ProcessJobState.SETTING_UP)
+                            _gemControler.EventReportSend(43, out err);
+                        break;
+                    case ProcessJobState.PROCESSING:
+                        if (oldstate == ProcessJobState.SETTING_UP)
+                            _gemControler.EventReportSend(44, out err);
+                        else if (oldstate == ProcessJobState.WAITING_FOR_START)
+                            _gemControler.EventReportSend(45, out err);
+                        else if (oldstate == ProcessJobState.PAUSED)
+                            _gemControler.EventReportSend(50, out err);
+                        break;
+                    case ProcessJobState.PROCESS_COMPLETE:
+                        if (oldstate == ProcessJobState.PROCESSING)
+                        {
+                            _gemControler.EventReportSend(46, out err);
+                            result = _gemControler.EventReportSend(47, out err);  //PJ_ProcessCompleteToComplete 刪除PJ
+                            if (result == 0)  //Offline就刪不掉，list也就不刪了
+                                PJ_list.Remove(objID);
+                        }
+                        break;
+                    case ProcessJobState.PAUSING:
+                        if (oldstate == ProcessJobState.PROCESSING)
+                            _gemControler.EventReportSend(48, out err);  
+                        break;
+                    case ProcessJobState.PAUSED:
+                        if (oldstate == ProcessJobState.PAUSING)
+                            _gemControler.EventReportSend(49, out err);
+                        break;
+                    case ProcessJobState.STOPPING:
+                        if (oldstate == ProcessJobState.PROCESSING)
+                            _gemControler.EventReportSend(51, out err);
+                        else if (oldstate == ProcessJobState.PAUSED)
+                            _gemControler.EventReportSend(52, out err);
+                        break;
+                    case ProcessJobState.ABORTING:
+                        if (oldstate == ProcessJobState.PROCESSING)
+                            _gemControler.EventReportSend(53, out err);
+                        else if (oldstate == ProcessJobState.STOPPING)
+                            _gemControler.EventReportSend(54, out err);
+                        else if (oldstate == ProcessJobState.PAUSED)
+                            _gemControler.EventReportSend(55, out err);
+                        break;
+                    case ProcessJobState.ABORTED:
+                        if (oldstate == ProcessJobState.ABORTING)
+                        {
+                            result = _gemControler.EventReportSend(56, out err); //PJ_AbortingToComplete 刪除PJ
+                            if (result == 0)  //Offline就刪不掉，list也就不刪了
+                                PJ_list.Remove(objID);
+                        }                          
+                        break;
+                    case ProcessJobState.STOPPED:
+                        if (oldstate == ProcessJobState.STOPPING)
+                        {
+                            _gemControler.EventReportSend(57, out err); //PJ_StoppingToComplete 刪除PJ
+                            if (result == 0)  //Offline就刪不掉，list也就不刪了
+                                PJ_list.Remove(objID);
+                        }
+                        break;
+                    case ProcessJobState.UNQUEUED:
+                        if (oldstate == ProcessJobState.QUEUED)
+                        {
+                            _gemControler.EventReportSend(58, out err); //PJ_QueuedToComplete 刪除PJ
+                            if (result == 0)  //Offline就刪不掉，list也就不刪了
+                                PJ_list.Remove(objID);
+                        }
+                        break;
+                }
+            }
+            return result;
+        }
+
+        public int CreateControlJob(string objID, string CarrierInputSpec, string dcp, string[] PRJob, byte PROrder, bool bStart, out string err, string objSpec = "")
+        {
+            int result = 0;
+            int result2 = 0;
+            //CreateObject
+            result = _gemControler.CreateObject(ObjectTypeKey.CONTROLJOB, objID, out err, objSpec);
+
+            if (result != 0) return result;
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.CONTROLJOB;
+            updateObjectEntity.ObjID = objID;
+            updateObjectEntity.ObjSpec = objSpec;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(241, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            string[] s = CarrierInputSpec.Split(',');
+            ListWrapper lw = new ListWrapper();
+            lw.TryAdd(ItemFmt.A, s, out err);
+            objectAttribute = new ObjectAttribute(242, ObjectAttributeKey.ControlJob.CARRIERINPUTSPEC, lw);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(244, ObjectAttributeKey.ControlJob.DATACOLLECTIONPLAN, dcp);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            lw = new ListWrapper();
+            ListWrapper lw_1 = new ListWrapper();
+            ListWrapper lw_0 = new ListWrapper();
+            foreach (string pj in PRJob)
+            {
+                lw_1 = new ListWrapper();
+                lw_1.TryAdd(ItemFmt.A, pj, out err);
+                lw_1.TryAdd(ItemFmt.L, lw_0, out err);
+                lw_1.TryAdd(ItemFmt.L, lw_0, out err);
+                lw.TryAdd(ItemFmt.L, lw_1, out err);
+            }
+            objectAttribute = new ObjectAttribute(245, ObjectAttributeKey.ControlJob.PROCESSINGCTRLSPEC, lw);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(249, ObjectAttributeKey.ControlJob.PROCESSORDERMGMT, PROrder);  //1:ARRIVAL 2:OPTIMIZE 3:LIST
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(250, ObjectAttributeKey.ControlJob.STARTMETHOD, bStart);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(251, ObjectAttributeKey.ControlJob.STATE, (byte)ControlJobState.QUEUED);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            lw = new ListWrapper();
+            ObjectInstance updateObjectEntity2 = null;
+            byte PJState = (byte)0;
+            foreach (string pj in PRJob)
+            {
+                lw_1 = new ListWrapper();
+                lw_1.TryAdd(ItemFmt.A, pj, out err);
+                updateObjectEntity2 = null;
+                _gemControler.GetObject(ObjectTypeKey.PROCESSJOB, pj, out updateObjectEntity2, out err);
+                foreach (ObjectAttribute o in updateObjectEntity2.ListObjectAttributes)
+                {
+                    if (o.ATTRID == ObjectAttributeKey.ProcessJob.PRJOBSTATE)
+                    {
+                        PJState = Convert.ToByte(o.ATTRDATA.ToString());
+                    }
+                }
+                lw_1.TryAdd(ItemFmt.U1, PJState, out err);
+                lw.TryAdd(ItemFmt.L, lw_1, out err);
+            }
+            objectAttribute = new ObjectAttribute(252, "PRJOBSTATUSLIST", lw);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            result2 = _gemControler.UpdateObject(updateObjectEntity, out err);
+            if(result2 == 0)
+            {
+                _gemControler.EventReportSend(91, out err); //CJ_NoStateToQueued
+            }
+            CJ_list.Add(objID);
+            if (CJ_list.Count == 1)
+            {
+                ChangeControlJobState(objID, ControlJobState.SELECTED, 0);  //只有一個人就直接選了
+            }
+            //ObjectInstance updateObjectEntity2 = null;
+            //result = gtlhomeSECS._gemControler.GetObject(ObjectTypeKey.PROCESSJOB, objID, out updateObjectEntity2, out err);
+            return result;
+        }
+
+        public int SetControlJobAttr(string objID, string carrierInput, string dataPlan, string pauseEvent, string[] pj, byte processOrder, bool bStart, byte recMethod, string recID, string recVarList, out string err, string objSpec = "")
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.CONTROLJOB;
+            updateObjectEntity.ObjID = objID;
+            updateObjectEntity.ObjSpec = objSpec;
+            ListWrapper lw, lw_1, lw_2;
+            ObjectAttribute objectAttribute = new ObjectAttribute(241, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            if (!(carrierInput == null))
+            {
+                string[] s = carrierInput.Split(',');
+                lw = new ListWrapper();
+                lw.TryAdd(ItemFmt.A, s, out err);
+                objectAttribute = new ObjectAttribute(242, ObjectAttributeKey.ControlJob.CARRIERINPUTSPEC, lw);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            }
+            if (dataPlan != null)
+            {
+                objectAttribute = new ObjectAttribute(244, ObjectAttributeKey.ControlJob.DATACOLLECTIONPLAN, dataPlan);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            }
+            if (!(pauseEvent == string.Empty || pauseEvent == null))
+            {
+                string[] s = pauseEvent.Split(',');
+                uint[] os = new uint[s.Length];
+                for (int i = 0; i < s.Length; i++)
+                    os[i] = Convert.ToUInt32(s[i]);
+                lw = new ListWrapper();
+                lw.TryAdd(ItemFmt.U4, os, out err);
+                objectAttribute = new ObjectAttribute(247, ObjectAttributeKey.ControlJob.PAUSEEVENT, lw);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            }
+            if (!(pj == null))
+            {
+                lw = new ListWrapper();
+                lw_2 = new ListWrapper();
+                foreach (string s in pj)
+                {
+                    lw_1 = new ListWrapper();
+
+                    lw_1.TryAdd(ItemFmt.A, s, out err);
+                    lw_1.TryAdd(ItemFmt.L, lw_2, out err);
+                    lw_1.TryAdd(ItemFmt.L, lw_2, out err);
+                    lw.TryAdd(ItemFmt.L, lw_1, out err);
+                }
+                objectAttribute = new ObjectAttribute(248, ObjectAttributeKey.ControlJob.PROCESSINGCTRLSPEC, lw);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            }
+            if((processOrder != null) && processOrder >= 1 && processOrder <= 3)
+            {
+                objectAttribute = new ObjectAttribute(249, ObjectAttributeKey.ControlJob.PROCESSORDERMGMT, processOrder);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            }
+            if (recMethod != null)
+            {
+                objectAttribute = new ObjectAttribute(250, ObjectAttributeKey.ControlJob.STARTMETHOD, bStart);  
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            }
+            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+
+            //ObjectInstance updateObjectEntity2 = null;
+            //result = gtlhomeSECS._gemControler.GetObject(ObjectTypeKey.PROCESSJOB, objID, out updateObjectEntity2, out err);
+            return result;
+        }
+
+        public int SetControlJobCurrentPrJob(string objID, string pj)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.CONTROLJOB;
+            updateObjectEntity.ObjID = objID;
+            ListWrapper lw = new ListWrapper();
+            if (pj != null && pj != String.Empty)
+                lw.TryAdd(ItemFmt.A, pj, out err);
+            ObjectAttribute objectAttribute = new ObjectAttribute(241, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(243, ObjectAttributeKey.ControlJob.CURRENTPRJOB, lw);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+            return result;
+        }
+        public int GetControlJobAttr(string objID, out string carrierInputSpec, out string curPJ, out string dataCollection, out string mtrloutStatus, out string mtrloutSpec, out string pauseEvent, out string procCtrlSpec, out byte procOrder, out bool bStart, out byte state, out string err)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, objID, out updateObjectEntity, out err);
+
+            ListWrapper lw, lw_1;
+            SecsIIValue val;
+            carrierInputSpec = string.Empty;
+            curPJ = string.Empty;
+            dataCollection = string.Empty;
+            mtrloutStatus = string.Empty;
+            mtrloutSpec = string.Empty;
+            pauseEvent = string.Empty;
+            procCtrlSpec = string.Empty;
+            procOrder = 0;
+            bStart = false;
+            state = (byte)ControlJobState.QUEUED;
+
+            if (result != 0) return result;
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                switch (o.ATTRID)
+                {
+                    case ObjectAttributeKey.ControlJob.CARRIERINPUTSPEC:
+                        lw = (ListWrapper)o.ATTRDATA;
+                        for (int i = 0; i < lw.Items.Count; i++)
+                        {
+                            string[] b = (string[])lw.Items[i].Value;
+                            for (int j = 0; j < b.Length; ++j)
+                            {
+                                if (i == 0 && j == 0)
+                                {
+                                    carrierInputSpec += b[j];
+                                }
+                                else
+                                {
+                                    carrierInputSpec += ',' + b[j];
+                                }
+                            }
+                        };
+                        break;
+                    case ObjectAttributeKey.ControlJob.CURRENTPRJOB:
+                        lw = (ListWrapper)o.ATTRDATA;
+                        curPJ = lw.Items[0].ToString();
+                        break;
+                    case ObjectAttributeKey.ControlJob.DATACOLLECTIONPLAN:
+                        lw = (ListWrapper)o.ATTRDATA;
+                        for (int i = 0; i < lw.Items.Count; i++)
+                        {
+                            string[] b = (string[])lw.Items[i].Value;
+                            for (int j = 0; j < b.Length; ++j)
+                            {
+                                if (i == 0 && j == 0)
+                                {
+                                    dataCollection += b[j];
+                                }
+                                else
+                                {
+                                    dataCollection += ',' + b[j];
+                                }
+                            }
+                        };
+                        break;
+                    case ObjectAttributeKey.ControlJob.MTRLOUTBYSTATUS:
+                        break;
+                    case ObjectAttributeKey.ControlJob.MTRLOUTSPEC:
+                        break;
+                    case ObjectAttributeKey.ControlJob.PAUSEEVENT:
+                        lw = (ListWrapper)o.ATTRDATA;
+                        for (int i = 0; i < lw.Items.Count; i++)
+                        {
+                            string[] b = (string[])lw.Items[i].Value;
+                            for (int j = 0; j < b.Length; ++j)
+                            {
+                                if (i == 0 && j == 0)
+                                {
+                                    pauseEvent += b[j];
+                                }
+                                else
+                                {
+                                    pauseEvent += ',' + b[j];
+                                }
+                            }
+                        };
+                        break;
+                    case ObjectAttributeKey.ControlJob.PROCESSINGCTRLSPEC:
+                        lw = (ListWrapper)o.ATTRDATA;
+                        for (int i = 0; i < lw.Items.Count; i++)
+                        {
+                            lw_1 = (ListWrapper)lw.Items[i].Value;
+                            procCtrlSpec += lw_1.Items[0].ToString() + ';';
+                        };
+                        break;
+                    case ObjectAttributeKey.ControlJob.PROCESSORDERMGMT:
+                        procOrder = Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    case ObjectAttributeKey.ControlJob.STARTMETHOD:
+                        bStart = Convert.ToBoolean(o.ATTRDATA.ToString());
+                        break;
+                    case ObjectAttributeKey.ControlJob.STATE:
+                        state = Convert.ToByte(o.ATTRDATA);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
+            return result;
+        }
+
+        public int DeleteControlJob(string objID, out string errstr)
+        {
+            string err = "";
+            int result;
+            /*
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.CONTROLJOB;
+            updateObjectEntity.ObjID = objID;
+            updateObjectEntity.ObjSpec = string.Empty;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(241, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(143, ObjectAttributeKey.ControlJob.STATE, (byte)ControlJobState.COMPLETED);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+
+            result = _gemControler.UpdateObject(updateObjectEntity, out err);*/
+            result = ChangeControlJobState(objID, ControlJobState.COMPLETED, 0);
+
+            errstr = err;
+            return result;
+        }
+
+        public int ChangeControlJobState(string objID, ControlJobState state, int unnormal)    //unnormal 0:normal 1:stop 2:abort
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            byte oldstate = (byte)ControlJobState.QUEUED;
+
+            result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, objID, out updateObjectEntity, out err);
+            foreach(ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                if(o.ATTRID == ObjectAttributeKey.ControlJob.STATE)
+                    oldstate = Convert.ToByte(o.ATTRDATA);
+            }
+            ObjectInstance updateObjectEntity2 = new ObjectInstance();
+            updateObjectEntity2.ObjType = updateObjectEntity.ObjType;
+            updateObjectEntity2.ObjID = updateObjectEntity.ObjID;
+            updateObjectEntity2.ObjSpec = updateObjectEntity.ObjSpec;
+            ObjectAttribute objectAttribute2 = new ObjectAttribute(251, ObjectAttributeKey.ControlJob.STATE, state);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute2);
+            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+
+            if(result == 0)
+            {
+                /*
+                QUEUED = 0,
+                SELECTED = 1,
+                WAITING_FOR_START = 2,
+                EXECUTING = 3,
+                PAUSED = 4,
+                COMPLETED = 5  
+                */
+                switch(state)
+                {
+                    case ControlJobState.QUEUED:
+                        if(oldstate == 1)
+                            _gemControler.EventReportSend(94, out err);
+                        else
+                            _gemControler.EventReportSend(91, out err);
+                        break;
+                    case ControlJobState.SELECTED:
+                        if (oldstate == 0)
+                            _gemControler.EventReportSend(93, out err);
+                        break;
+                    case ControlJobState.WAITING_FOR_START:
+                        if (oldstate == 1)
+                            _gemControler.EventReportSend(96, out err);
+                        break;
+                    case ControlJobState.EXECUTING:
+                        if (oldstate == 1)
+                            _gemControler.EventReportSend(95, out err);
+                        else if (oldstate == 2)
+                            _gemControler.EventReportSend(97, out err);
+                        else if (oldstate == 4)
+                            _gemControler.EventReportSend(99, out err);
+                        break;
+                    case ControlJobState.PAUSED:
+                        if (oldstate == 3)
+                            _gemControler.EventReportSend(98, out err);
+                        break;
+                    case ControlJobState.COMPLETED:
+                        if (oldstate == 0 && unnormal == 0)
+                        {
+                            result = _gemControler.EventReportSend(92, out err);  //CJ_QueuedToComplete  刪除CJ
+                            if (result == 0)
+                            {
+                                if (result == 0)  //Offline就刪不掉，list也就不刪了
+                                    CJ_list.Remove(objID);
+                                if (CJ_list.Count >= 1)
+                                {
+                                    ChangeControlJobState(CJ_list[0], ControlJobState.SELECTED, 0);  //Select CJ
+                                }
+                            }
+                            break;
+                        }
+                        else if (oldstate == 3 && unnormal == 0)
+                            _gemControler.EventReportSend(100, out err);
+                        else if (unnormal == 1)
+                            _gemControler.EventReportSend(101, out err);
+                        else if (unnormal == 2)
+                            _gemControler.EventReportSend(102, out err);
+                        result = _gemControler.EventReportSend(103, out err);   //CJ_CompletedToComplete  刪除CJ
+                        if (result == 0)
+                        {
+                            if (result == 0)  //Offline就刪不掉，list也就不刪了
+                                CJ_list.Remove(objID);
+                            if (CJ_list.Count >= 1)
+                            {
+                                ChangeControlJobState(CJ_list[0], ControlJobState.SELECTED, 0);  //Select CJ
+                            }
+                        }
+                        break;
+                }
+            }
+            return result;
+        }
+
+        public int CreateCarrier(string objID, string objSpec = "")
+        {
+            int result = 0;
+            int result2 = 0;
+            //CreateObject
+            result = _gemControler.CreateObject(ObjectTypeKey.CARRIER, objID, out err, objSpec);
+
+            if (result != 0) return result;
+
+            _gemControler.EventReportSend(181, out err); //CMS_NoStateToCarrier
+
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.CARRIER;
+            updateObjectEntity.ObjID = objID;
+            updateObjectEntity.ObjSpec = objSpec;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(441, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(442, "CAPACITY", (byte)25);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(443, "CARRIERIDSTATUS", (byte)CarrierIDState.ID_NOT_READ);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(444, "CARRIERACCESSINGSTATUS", (byte)CarrierAccessingState.NOT_ACCESSED);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(449, "SLOTMAPSTATUS", (byte)SlotMapState.SLOT_MAP_NOT_READ);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            result2 = _gemControler.UpdateObject(updateObjectEntity, out err);
+            Carrier_list.Add(objID);
+            _gemControler.EventReportSend(182, out err); //CMS_NoStateToIDNotRead
+            _gemControler.EventReportSend(192, out err); //CMS_NoStateToSlotMapNotRead
+            _gemControler.EventReportSend(197, out err); //CMS_NoStateToNotAccessed
+            return result;
+        }
+
+        public int SetCarrierAttr_Location(string objID, string location, byte capacity = 25)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.CARRIER;
+            updateObjectEntity.ObjID = objID;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(441, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(442, "CAPACITY", capacity);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(448, "LOCATIONID", location);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+
+            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+            return result;
+        }
+
+        public int SetCarrierStatus_ID(string objID, CarrierIDState status)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            CarrierIDState oldstate = CarrierIDState.ID_NOT_READ;
+            byte portid = 0;
+            result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, objID, out updateObjectEntity, out err);
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                if (o.ATTRID == "CARRIERIDSTATUS")
+                    oldstate = (CarrierIDState)Convert.ToByte(o.ATTRDATA);
+                if (o.ATTRID == "LOCATIONID")
+                {
+                    if (o.ATTRDATA.ToString() == "LoadPort1")
+                        portid = 1;
+                    else if (o.ATTRDATA.ToString() == "LoadPort2")
+                        portid = 2;
+                }
+            }
+            if (portid != 0)
+                UpdateSV(2001, portid, out err);
+
+            ObjectInstance updateObjectEntity2 = new ObjectInstance();
+            updateObjectEntity2.ObjType = ObjectTypeKey.CARRIER;
+            updateObjectEntity2.ObjID = objID;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(441, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(443, "CARRIERIDSTATUS", (byte)status);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+
+            result = _gemControler.UpdateObject(updateObjectEntity2, out err);
+            if(result == 0)
+            {
+                switch(status)
+                {
+                    case CarrierIDState.ID_NOT_READ:
+                        _gemControler.EventReportSend(182, out err); 
+                        break;
+                    case CarrierIDState.WAITING_FOR_HOST:
+                        if(oldstate == CarrierIDState.ID_NOT_READ)
+                            _gemControler.EventReportSend(187, out err);
+                        else
+                            _gemControler.EventReportSend(183, out err);
+                        break;
+                    case CarrierIDState.ID_VERIFICATION_OK:
+                        if (oldstate == CarrierIDState.ID_NOT_READ)
+                            _gemControler.EventReportSend(186, out err);
+                        else if (oldstate == CarrierIDState.WAITING_FOR_HOST)
+                            _gemControler.EventReportSend(188, out err);
+                        else
+                            _gemControler.EventReportSend(184, out err);
+                        break;
+                    case CarrierIDState.ID_VERIFICATION_FAILED:
+                        if (oldstate == CarrierIDState.WAITING_FOR_HOST)
+                            _gemControler.EventReportSend(189, out err);
+                        else
+                            _gemControler.EventReportSend(185, out err);
+                        break;
+                }
+            }
+            return result;
+        }
+
+        public int SetCarrierStatus_Accessing(string objID, CarrierAccessingState status)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            CarrierAccessingState oldstate = CarrierAccessingState.NOT_ACCESSED;
+
+            result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, objID, out updateObjectEntity, out err);
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                if (o.ATTRID == "CARRIERACCESSINGSTATUS")
+                    oldstate = (CarrierAccessingState)Convert.ToByte(o.ATTRDATA);
+            }
+            ObjectInstance updateObjectEntity2 = new ObjectInstance();
+            updateObjectEntity2.ObjType = ObjectTypeKey.CARRIER;
+            updateObjectEntity2.ObjID = objID;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(441, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(444, "CARRIERACCESSINGSTATUS", (byte)status);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+
+            result = _gemControler.UpdateObject(updateObjectEntity2, out err);
+            if (result == 0)
+            {
+                switch (status)
+                {
+                    case CarrierAccessingState.NOT_ACCESSED:
+                        _gemControler.EventReportSend(197, out err);
+                        break;
+                    case CarrierAccessingState.IN_ACCESS:
+                        _gemControler.EventReportSend(198, out err);
+                        break;
+                    case CarrierAccessingState.CARRIER_COMPLETE:
+                        _gemControler.EventReportSend(199, out err);
+                        break;
+                    case CarrierAccessingState.CARRIER_STOPPED:
+                        _gemControler.EventReportSend(200, out err);
+                        break;
+                }
+            }
+            return result;
+        }
+
+        public int SetCarrierStatus_SlotMap(string objID, SlotMapState status)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            SlotMapState oldstate = SlotMapState.SLOT_MAP_NOT_READ;
+            byte portid = 0;
+            byte acc = 0;
+            string locationid = "";
+            result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, objID, out updateObjectEntity, out err);
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                if (o.ATTRID == "SLOTMAPSTATUS")
+                    oldstate = (SlotMapState)Convert.ToByte(o.ATTRDATA);
+                if (o.ATTRID == "LOCATIONID")
+                {
+                    locationid = o.ATTRDATA.ToString();
+                    if (locationid == "LoadPort1")
+                        portid = 1;
+                    else if (locationid == "LoadPort2")
+                        portid = 2;
+                }
+                if (o.ATTRID == "CARRIERACCESSINGSTATUS")
+                    acc = Convert.ToByte(o.ATTRDATA);
+            }
+            if (portid != 0)
+                UpdateSV(2001, portid, out err);
+            ObjectInstance updateObjectEntity2 = new ObjectInstance();
+            updateObjectEntity2.ObjType = ObjectTypeKey.CARRIER;
+            updateObjectEntity2.ObjID = objID;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(441, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(444, "CARRIERACCESSINGSTATUS", (byte)status);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(448, "LOCATIONID", locationid);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(449, "SLOTMAPSTATUS", (byte)status);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+
+            result = _gemControler.UpdateObject(updateObjectEntity2, out err);
+            if (result == 0)
+            {
+                switch (status)
+                {
+                    case SlotMapState.SLOT_MAP_NOT_READ:
+                        _gemControler.EventReportSend(192, out err);
+                        break;
+                    case SlotMapState.WAITING_FOR_HOST:
+                        _gemControler.EventReportSend(194, out err);
+                        break;
+                    case SlotMapState.SLOT_MAP_VERIFICATION_OK:
+                        if(oldstate == SlotMapState.WAITING_FOR_HOST)
+                            _gemControler.EventReportSend(195, out err);
+                        else
+                            _gemControler.EventReportSend(193, out err);
+                        break;
+                    case SlotMapState.SLOT_MAP_VERIFICATION_FAILED:
+                        _gemControler.EventReportSend(196, out err);
+                        break;
+                }
+            }
+            return result;
+        }
+
+        public int SetCarrierAttr_SlotMap(string objID, int[] slotmap)
+        {
+            int result = 0;
+            byte[] slot = new byte[25];
+            byte count = 0;
+            if (slotmap.Length != 25)
+            {
+                return 1;
+            }
+            else
+            {
+                for(int i = 0; i<25; i++)
+                {
+                    if (slotmap[i] == 0)  //  empty
+                        slot[i] = 1;
+                    else if(slotmap[i] == 1)  // ok
+                    {
+                        slot[i] = 3;
+                        count++;
+                    }
+                    else if (slotmap[i] == 2)  //cross
+                        slot[i] = 5;
+                    else
+                        slot[i] = 2;   //error
+                }
+            }
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.CARRIER;
+            updateObjectEntity.ObjID = objID;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(441, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(445, "SUBSTRATECOUNT", count);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            ListWrapper lw = new ListWrapper();
+            lw.TryAdd(ItemFmt.U1, slot, out err);
+            objectAttribute = new ObjectAttribute(447, "SLOTMAP", count);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+
+            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+            return result;
+        }
+
+        public int SetCarrierAttr_ContentMap(string objID, string[] lotID, string[] substrateID)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.CARRIER;
+            updateObjectEntity.ObjID = objID;
+            ObjectAttribute objectAttribute = new ObjectAttribute(441, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            ListWrapper lw = new ListWrapper();
+            ListWrapper lw_1;
+            if (lotID.Length != 25 || substrateID.Length != 25)
+            {
+                return 1;
+            }
+            else
+            {
+                for(int i = 0; i< 25; i++)
+                {
+                    lw_1 = new ListWrapper();
+                    lw_1.TryAdd(ItemFmt.A, lotID[i], out err);
+                    lw_1.TryAdd(ItemFmt.A, substrateID[i], out err);
+                    lw.TryAdd(ItemFmt.L, lw_1, out err);
+                }
+            }
+            
+            objectAttribute = new ObjectAttribute(446, "CONTENTMAP", lw);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+
+            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+            return result;
+        }
+
+        public int SetCarrierStatus_Usage(string objID, string usage)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.CARRIER;
+            updateObjectEntity.ObjID = objID;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(441, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(450, "USAGE", usage);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+
+            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+            return result;
+        }
+
+        public int GetCarrierAttr(string objID, out byte cap, out byte count, out string[] lotid, out string[] substrateid, out byte[] slotmap, out string loc, out string usage, out string err)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            result = _gemControler.GetObject(ObjectTypeKey.CARRIER, objID, out updateObjectEntity, out err);
+
+            ListWrapper lw, lw_1;
+            SecsIIValue val;
+            cap = 25;
+            count = 0;
+            lotid = new string[25];
+            substrateid = new string[25];
+            slotmap = new byte[25];
+            loc = string.Empty;
+            usage = string.Empty;
+            if (result != 0) return result;
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                switch (o.ATTRID)
+                {
+                    case "CAPACITY":
+                        cap = Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    case "SUBSTRATECOUNT":
+                        count = Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    case "CONTENTMAP":
+                        lw = (ListWrapper)o.ATTRDATA;
+                        for (int i = 0; i < lw.Items.Count; i++)
+                        {
+                            lw_1 = (ListWrapper)lw.Items[i].Value;
+                            lotid[i] = (lw_1.Items[0].Value).ToString();
+                            substrateid[i] = (lw_1.Items[1].Value).ToString();
+                        };
+                        break;
+                    case "SLOTMAP":
+                        lw = (ListWrapper)o.ATTRDATA;
+                        for (int i = 0; i < lw.Items.Count; i++)
+                        {
+                            slotmap[i] = Convert.ToByte(lw.Items[i].Value);
+                        };
+                        break;
+                    case "LOCATIONID":
+                        loc = o.ATTRDATA.ToString();
+                        break;
+                    case "USAGE":
+                        usage = o.ATTRDATA.ToString();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return result;
+        }
+
+        public int GetCarrierStatus(string objID, out byte id, out byte accessing, out byte slotmap, out string err)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            result = _gemControler.GetObject(ObjectTypeKey.CARRIER, objID, out updateObjectEntity, out err);
+
+            id = 0;
+            accessing = 0;
+            slotmap = 0;
+
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                switch (o.ATTRID)
+                {
+                    case "CARRIERIDSTATUS":
+                        id = Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    case "CARRIERACCESSINGSTATUS":
+                        accessing = Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    case "SLOTMAPSTATUS":
+                        accessing = Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return result;
+        }
+
+        public int DeleteCarrier(string objID, out string errstr)
+        {
+            string err;
+            int result;
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.CARRIER;
+            updateObjectEntity.ObjID = objID;
+            updateObjectEntity.ObjSpec = string.Empty;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(441, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+
+            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+            if (result == 0)
+            {
+                errstr = err;
+                result = _gemControler.EventReportSend(201, out err); //CMS_CarrierToNoState
+                if (result == 0)  //Offline就刪不掉，list也就不刪了
+                    Carrier_list.Remove(objID);
+            }
+            else
+            {
+                errstr = err;
+                return result;
+            }
+            errstr = err;
+            return result;
+        }
+
+        public int CreateSubstrate(string objID, string lotID, string locationID, string objSpec = "")
+        {
+            int result = 0;
+            int result2 = 0;
+            //CreateObject
+            result = _gemControler.CreateObject(ObjectTypeKey.SUBSTRATE, objID, out err, objSpec);
+
+            if (result != 0) return result;
+
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.SUBSTRATE;
+            updateObjectEntity.ObjID = objID;
+            updateObjectEntity.ObjSpec = objSpec;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(341, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(342, ObjectAttributeKey.Substrate.LOTID, lotID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            string clock;
+            GetSV(3, out clock, out err);
+            ListWrapper lw = new ListWrapper();
+            ListWrapper lw_1 = new ListWrapper();
+            lw_1.TryAdd(ItemFmt.A, locationID, out err);
+            lw_1.TryAdd(ItemFmt.A, clock, out err);
+            lw_1.TryAdd(ItemFmt.A, "", out err);
+            lw.TryAdd(ItemFmt.L, lw_1, out err);
+            objectAttribute = new ObjectAttribute(345, ObjectAttributeKey.Substrate.SUBSTHISTORY, lw);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(346, ObjectAttributeKey.Substrate.SUBSTLOCID, locationID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(347, ObjectAttributeKey.Substrate.SUBSTPROCSTATE, (byte)SubstProcState.NEEDS_PROCESSING);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(348, ObjectAttributeKey.Substrate.SUBSTSOURCE, locationID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(349, ObjectAttributeKey.Substrate.SUBSTSTATE, (byte)SubstrateTransState.AT_SOURCE);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(350, ObjectAttributeKey.Substrate.SUBSTTYPE, (byte)0); //0:wafer
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            //objectAttribute = new ObjectAttribute(351, ObjectAttributeKey.Substrate.SUBSTUSAGE, (byte)0); 
+            //updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            result2 = _gemControler.UpdateObject(updateObjectEntity, out err);
+            Substrate_list.Add(objID);
+            _gemControler.EventReportSend(141, out err); //STS_Transport_NoStateToAtSource
+            _gemControler.EventReportSend(150, out err); //STS_Processing_NoStateToNeedsProcessing
+            return result;
+        }
+
+        public int SetSubstrateAttr_Location(string objID, string location)
+        {
+            int result = 0;
+            ListWrapper lw, lw_1, lwout;
+            lwout = new ListWrapper();
+            ObjectInstance updateObjectEntity = null;
+            result = _gemControler.GetObject(ObjectTypeKey.SUBSTRATE, objID, out updateObjectEntity, out err);
+            string clock;
+            GetSV(3, out clock, out err);
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                if (o.ATTRID == ObjectAttributeKey.Substrate.SUBSTHISTORY)
+                {
+                    lw = (ListWrapper)o.ATTRDATA;
+                    for(int i = 0; i< lw.Items.Count; i++)
+                    {
+                        lw_1 = (ListWrapper)lw.Items[i].Value;
+                        if (i != lw.Items.Count-1)
+                        {                          
+                            lwout.TryAdd(ItemFmt.L, lw_1, out err);
+                        }
+                        else
+                        {
+                            string[] s1 = new string[3];
+                            s1[0] = lw_1.Items[0].ToString();
+                            s1[1] = lw_1.Items[1].ToString();
+                            s1[2] = clock;
+                            lw_1 = new ListWrapper();
+                            lw_1.TryAdd(ItemFmt.A, s1, out err);
+                            lwout.TryAdd(ItemFmt.L, lw_1, out err);
+                        }
+                    }
+                    string[] s2 = new string[3];
+                    s2[0] = location;
+                    s2[1] = clock;
+                    s2[2] = "";
+                    lw_1 = new ListWrapper();
+                    lw_1.TryAdd(ItemFmt.A, s2, out err);
+                    lwout.TryAdd(ItemFmt.L, lw_1, out err);
+                }
+            }
+
+            ObjectInstance updateObjectEntity2 = new ObjectInstance();
+            updateObjectEntity2.ObjType = ObjectTypeKey.SUBSTRATE;
+            updateObjectEntity2.ObjID = objID;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(341, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(345, ObjectAttributeKey.Substrate.SUBSTHISTORY, lwout);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(346, ObjectAttributeKey.Substrate.SUBSTLOCID, location);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+
+            result = _gemControler.UpdateObject(updateObjectEntity2, out err);
+            return result;
+        }
+
+        public int SetSubstrateStatus_Proc(string objID, SubstProcState status)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            SubstProcState oldstate = SubstProcState.NEEDS_PROCESSING;
+            result = _gemControler.GetObject(ObjectTypeKey.SUBSTRATE, objID, out updateObjectEntity, out err);
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                if (o.ATTRID == ObjectAttributeKey.Substrate.SUBSTPROCSTATE)
+                    oldstate = (SubstProcState)Convert.ToByte(o.ATTRDATA);
+            }
+
+            ObjectInstance updateObjectEntity2 = new ObjectInstance();
+            updateObjectEntity2.ObjType = ObjectTypeKey.SUBSTRATE;
+            updateObjectEntity2.ObjID = objID;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(341, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(347, ObjectAttributeKey.Substrate.SUBSTPROCSTATE, (byte)status);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+
+            result = _gemControler.UpdateObject(updateObjectEntity2, out err);
+            if (result == 0)
+            {
+                switch (status)
+                {
+                    case SubstProcState.NEEDS_PROCESSING:
+                        _gemControler.EventReportSend(150, out err);
+                        break;
+                    case SubstProcState.IN_PROCESS:
+                        _gemControler.EventReportSend(151, out err);
+                        break;
+                    case SubstProcState.PROCESSED:
+                        _gemControler.EventReportSend(152, out err);
+                        break;
+                }
+            }
+            return result;
+        }
+
+        public int SetSubstrateStatus_Trans(string objID, SubstrateTransState status)
+        {
+            int result = 0;
+            int result2 = 0;
+            ObjectInstance updateObjectEntity = null;
+            SubstrateTransState oldstate = SubstrateTransState.AT_SOURCE;
+            result = _gemControler.GetObject(ObjectTypeKey.SUBSTRATE, objID, out updateObjectEntity, out err);
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                if (o.ATTRID == ObjectAttributeKey.Substrate.SUBSTSTATE)
+                    oldstate = (SubstrateTransState)Convert.ToByte(o.ATTRDATA);
+            }
+
+            ObjectInstance updateObjectEntity2 = new ObjectInstance();
+            updateObjectEntity2.ObjType = ObjectTypeKey.SUBSTRATE;
+            updateObjectEntity2.ObjID = objID;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(341, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(349, ObjectAttributeKey.Substrate.SUBSTSTATE, (byte)status);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+
+            result = _gemControler.UpdateObject(updateObjectEntity2, out err);
+            if (result == 0)
+            {
+                switch (status)
+                {
+                    case SubstrateTransState.AT_SOURCE:
+                        _gemControler.EventReportSend(141, out err);
+                        break;
+                    case SubstrateTransState.AT_WORK:
+                        _gemControler.EventReportSend(142, out err);
+                        break;
+                    case SubstrateTransState.AT_DESTINATION:
+                        _gemControler.EventReportSend(145, out err);
+                        break;
+                    case SubstrateTransState.EXTINXTION:
+                        if(oldstate == SubstrateTransState.AT_DESTINATION)
+                            result2 = _gemControler.EventReportSend(147, out err); //STS_Transport_AtDestinationToExtinction
+                        else
+                            result2 = _gemControler.EventReportSend(149, out err); //STS_AnySubstateSubStateToExtinction
+                        if (result2 == 0)
+                            Substrate_list.Remove(objID);
+                        break;
+                }
+            }
+            return result;
+        }
+
+        public int SetSubstrateAttr(string objID, string lotID, string sourceloc)
+        {
+            int result2 = 0;
+
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.SUBSTRATE;
+            updateObjectEntity.ObjID = objID;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(341, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(342, ObjectAttributeKey.Substrate.LOTID, lotID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(348, ObjectAttributeKey.Substrate.SUBSTSOURCE, sourceloc);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(350, ObjectAttributeKey.Substrate.SUBSTTYPE, (byte)0); //0:wafer
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            //objectAttribute = new ObjectAttribute(351, ObjectAttributeKey.Substrate.SUBSTUSAGE, (byte)0); 
+            //updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            result2 = _gemControler.UpdateObject(updateObjectEntity, out err);
+            Substrate_list.Add(objID);
+            _gemControler.EventReportSend(141, out err); //STS_Transport_NoStateToAtSource
+            _gemControler.EventReportSend(150, out err); //STS_Processing_NoStateToNeedsProcessing
+            return result2;
+        }
+
+        public int GetSubstrateAttr(string objID, out Substrate data, out string err)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            result = _gemControler.GetObject(ObjectTypeKey.CARRIER, objID, out updateObjectEntity, out err);
+            data = new Substrate();
+            ListWrapper lw, lw_1;
+            if (result != 0) return result;
+
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                switch (o.ATTRID)
+                {
+                    case ObjectAttributeKey.OBJID:
+                        data.objID = o.ATTRDATA.ToString();
+                        break;
+                    case ObjectAttributeKey.Substrate.LOTID:
+                        data.lotID = o.ATTRDATA.ToString();
+                        break;
+                    case ObjectAttributeKey.Substrate.MATERIALSTATUS:
+                        data.materialStatus = Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    case ObjectAttributeKey.Substrate.SUBSTDESTINATIO:
+                        data.substDesrination = o.ATTRDATA.ToString();
+                        break;
+                    case ObjectAttributeKey.Substrate.SUBSTHISTORY:
+                        lw = (ListWrapper)o.ATTRDATA;
+                        List<string> history = new List<string>();
+                        for (int i = 0; i < lw.Items.Count; i++)
+                        {
+                            lw_1 = (ListWrapper)lw.Items[i].Value;
+                            history.Add((lw_1.Items[0].Value).ToString() + ',' + (lw_1.Items[1].Value).ToString() + ',' + (lw_1.Items[2].Value).ToString());
+                        }
+                        data.substHistory = history;
+                        break;
+                    case ObjectAttributeKey.Substrate.SUBSTLOCID:
+                        data.substLocID = o.ATTRDATA.ToString();
+                        break;
+                    case ObjectAttributeKey.Substrate.SUBSTPROCSTATE:
+                        data.substProcState = (SubstProcState)Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    case ObjectAttributeKey.Substrate.SUBSTSOURCE:
+                        data.substSource = o.ATTRDATA.ToString();
+                        break;
+                    case ObjectAttributeKey.Substrate.SUBSTSTATE:
+                        data.substState = (SubstrateTransState)Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    case ObjectAttributeKey.Substrate.SUBSTTYPE:
+                        data.substType = Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    case ObjectAttributeKey.Substrate.SUBSTUSAGE:
+                        data.substUsage = Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return result;
+        }
+
+        public int LoadportMatchToRun(string selectedCJ) //return 0 就是沒有match到
+        {
+            int rtn = 0;
+            string carrierInputSpec;
+            string curPJ;
+            string dataCollection;
+            string mtrloutStatus;
+            string mtrloutSpec;
+            string pauseEvent;
+            string procCtrlSpec;
+            byte procOrder;
+            bool bStart;
+            byte state;
+            GetControlJobAttr(selectedCJ, out carrierInputSpec, out curPJ, out dataCollection, out mtrloutStatus, out mtrloutSpec, out pauseEvent, out procCtrlSpec, out procOrder, out bStart, out state, out string err);
+            string[] cain = carrierInputSpec.Split(',');
+            if ((ControlJobState)state != ControlJobState.SELECTED)
+                return rtn;
+            foreach(string s in cain)
+            {
+                foreach (string carrier in Carrier_list)
+                {
+                    if (s == carrier)  //Selected CJ有找到對應的Carrier有出現
+                    {
+                        byte id, accessing, slotmap;
+                        GetCarrierStatus(carrier, out id, out accessing, out slotmap, out err);
+                        if(id == (byte)CarrierIDState.ID_VERIFICATION_OK && slotmap == (byte)SlotMapState.SLOT_MAP_VERIFICATION_OK)  //ID跟Slotmap都通過驗證
+                        {
+                            if(accessing == (byte)CarrierAccessingState.NOT_ACCESSED)  //Carrier 還沒開run 所以要開run了
+                            {
+                                byte cap;
+                                byte count;
+                                string[] lotid;
+                                string[] substrateid;
+                                byte[] slot;
+                                string loc;
+                                string usage;
+                                GetCarrierAttr(carrier, out cap, out count, out lotid, out substrateid, out slot, out loc, out usage, out err);
+                                if (loc == "LoadPort1")
+                                    rtn = 1;
+                                else if (loc == "LoadPort2")
+                                    rtn = 2;
+                            }
+                        }
+                    }
+                }
+            }
+            return rtn;
         }
 
         //Form Control----------------------------------------------------------------------------------------------------
@@ -6198,6 +7997,420 @@ namespace DemoFormDiaGemLib
         private void 離開ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
+        }
+
+        #region Initnal Call Back
+        public void Initnal_SECSFunction_CallBack(SECSFunction_CallBack funcCallBack)
+        {
+            function_CallBack = funcCallBack;
+        }
+
+        public void Initnal_RemoteCommand_CallBack(RemoteCommand_CallBack funcCallBack)  //S2F41
+        {
+            remoteCommand_CallBack = funcCallBack;
+        }
+
+        #endregion
+
+        //擴張用
+        public bool isRemote()
+        {
+            return isControlRemote() && isCommunicating();
+        }
+
+        public bool isCommunicating()
+        {
+            try
+            {
+
+                if (_gemControler.CommunicationState == eCommunicationState.Communicating)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool isControlRemote()
+        {
+            try
+            {
+
+                if (_gemControler.ControlMode == eControlMode.OnlineRemote)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool isControlLocal()
+        {
+            try
+            {
+
+                if (_gemControler.ControlMode == eControlMode.OnlineLocal)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public int GetSV(int id, out byte val, out string errLog)
+        {
+            errLog = string.Empty;
+            ItemFmt fmt;
+            object v;
+            int rtn =_gemControler.GetSV((ulong)id, out fmt, out v, out errLog);
+            val = Convert.ToByte(v);
+            if (fmt == ItemFmt.B || fmt == ItemFmt.U1)
+                return rtn;
+            else
+                return -1;
+        }
+
+        public int GetSV(int id, out uint val, out string errLog)
+        {
+            errLog = string.Empty;
+            ItemFmt fmt;
+            object v;
+            int rtn = _gemControler.GetSV((ulong)id, out fmt, out v, out errLog);
+            val = Convert.ToUInt32(v);
+            if (fmt == ItemFmt.U4)
+                return rtn;
+            else
+                return -1;
+        }
+
+        public int GetSV(int id, out string val, out string errLog)
+        {
+            errLog = string.Empty;
+            ItemFmt fmt;
+            object v;
+            int rtn = _gemControler.GetSV((ulong)id, out fmt, out v, out errLog);
+            val = Convert.ToString(v);
+            if (fmt == ItemFmt.A)
+                return rtn;
+            else
+                return -1;
+        }
+
+        public int UpdateSV(int id, object val, out string errLog)
+        {
+            errLog = string.Empty;
+            return _gemControler.UpdateSV((ulong)id, val, out errLog);
+        }
+
+        public int UpdateEC(int id, object val, out string errLog)
+        {
+            errLog = string.Empty;
+            return _gemControler.UpdateEC((ulong)id, val, true, out errLog);
+        }
+
+        public int EventReportSend(int id, out string errLog)
+        {
+            errLog = string.Empty;
+            return _gemControler.EventReportSend((ulong)id, out errLog);
+        }
+
+        public int AlarmReportSend(int id, bool bSet, out string errLog)
+        {
+            errLog = string.Empty;
+            return _gemControler.AlarmReportSend((ulong)id, bSet, out errLog);
+        }
+
+        public void SecsDataClear(SecsData s)
+        {
+            switch (s)
+            {
+                case SecsData.SlotMap:
+                    SlotMapData.Clear();
+                    break;
+                case SecsData.Release:
+                    ReleaseData.Clear();
+                    break;
+                case SecsData.MeasureStart:
+                    MeasureStartData.Clear();
+                    break;
+                case SecsData.Cancel:
+                    CancelData.Clear();
+                    break;
+                case SecsData.AccessModeChange:
+                    AccessModeChangeData.Clear();
+                    break;
+                case SecsData.AccessModeAsk:
+                    AccessModeAskData.Clear();
+                    break;
+                case SecsData.ChangeRecipe:
+                    ChangeRecipeData.Clear();
+                    break;
+                default:
+                    break;
+            }
+        }
+        public string SecsDataGet(SecsData s, SecsDataElement e)
+        {
+            string rtn = "";
+            if (e == SecsDataElement.LoadPortID)
+            {
+                switch (s)
+                {
+                    case SecsData.SlotMap:
+                        rtn = SlotMapData.LoadPortID;
+                        break;
+                    case SecsData.Release:
+                        rtn = ReleaseData.LoadPortID;
+                        break;
+                    case SecsData.MeasureStart:
+                        rtn = MeasureStartData.LoadPortID;
+                        break;
+                    case SecsData.Cancel:
+                        rtn = CancelData.LoadPortID;
+                        break;
+                    case SecsData.AccessModeChange:
+                        rtn = AccessModeChangeData.LoadPortID;
+                        break;
+                    case SecsData.AccessModeAsk:
+                        rtn = AccessModeAskData.LoadPortID;
+                        break;
+                    case SecsData.ChangeRecipe:
+                        rtn = ChangeRecipeData.LoadPortID;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (e == SecsDataElement.CarrierID)
+            {
+                switch (s)
+                {
+                    case SecsData.SlotMap:
+                        rtn = SlotMapData.CarrierID;
+                        break;
+                    case SecsData.Release:
+                        rtn = ReleaseData.CarrierID;
+                        break;
+                    case SecsData.MeasureStart:
+                        rtn = MeasureStartData.CarrierID;
+                        break;
+                    case SecsData.Cancel:
+                        rtn = CancelData.CarrierID;
+                        break;
+                    case SecsData.AccessModeChange:
+                        rtn = AccessModeChangeData.CarrierID;
+                        break;
+                    case SecsData.AccessModeAsk:
+                        rtn = AccessModeAskData.CarrierID;
+                        break;
+                    case SecsData.ChangeRecipe:
+                        rtn = ChangeRecipeData.CarrierID;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return rtn;
+        }
+
+        public void SecsDataSet(SecsData s, SecsDataElement e, string value)
+        {
+            if (e == SecsDataElement.LoadPortID)
+            {
+                switch (s)
+                {
+                    case SecsData.SlotMap:
+                        SlotMapData.LoadPortID = value;
+                        break;
+                    case SecsData.Release:
+                        ReleaseData.LoadPortID = value;
+                        break;
+                    case SecsData.MeasureStart:
+                        MeasureStartData.LoadPortID = value;
+                        break;
+                    case SecsData.Cancel:
+                        CancelData.LoadPortID = value;
+                        break;
+                    case SecsData.AccessModeChange:
+                        AccessModeChangeData.LoadPortID = value;
+                        break;
+                    case SecsData.AccessModeAsk:
+                        AccessModeAskData.LoadPortID = value;
+                        break;
+                    case SecsData.ChangeRecipe:
+                        ChangeRecipeData.LoadPortID = value;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (e == SecsDataElement.CarrierID)
+            {
+                switch (s)
+                {
+                    case SecsData.SlotMap:
+                        SlotMapData.CarrierID = value;
+                        break;
+                    case SecsData.Release:
+                        ReleaseData.CarrierID = value;
+                        break;
+                    case SecsData.MeasureStart:
+                        MeasureStartData.CarrierID = value;
+                        break;
+                    case SecsData.Cancel:
+                        CancelData.CarrierID = value;
+                        break;
+                    case SecsData.AccessModeChange:
+                        AccessModeChangeData.CarrierID = value;
+                        break;
+                    case SecsData.AccessModeAsk:
+                        AccessModeAskData.CarrierID = value;
+                        break;
+                    case SecsData.ChangeRecipe:
+                        ChangeRecipeData.CarrierID = value;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    }
+
+    public enum ProcessState
+    {
+        Initial = 0,
+        Idle = 1,
+        Run = 2,
+        Stop = 3,
+        Pause = 4,
+        Down = 5
+    }
+
+    public enum PPBodyType
+    {
+        Unformatted,
+        Formatted,
+        Both
+    }
+
+    public enum ControlJobState
+    {
+        QUEUED = 0,
+        SELECTED = 1,
+        WAITING_FOR_START = 2,
+        EXECUTING = 3,
+        PAUSED = 4,
+        COMPLETED = 5,
+    }
+
+    public enum ProcessJobState
+    {
+        QUEUED = 0,
+        SETTING_UP = 1,
+        WAITING_FOR_START = 2,
+        PROCESSING = 3,
+        PROCESS_COMPLETE = 4,
+        RESERVED = 5,
+        PAUSING = 6,
+        PAUSED = 7,
+        STOPPING = 8,
+        ABORTING = 9,
+        STOPPED = 10,
+        ABORTED = 11,
+        UNQUEUED = 12,
+    }
+
+    public enum CarrierAccessingState
+    {
+        NOT_ACCESSED = 0,
+        IN_ACCESS = 1,
+        CARRIER_COMPLETE = 2,
+        CARRIER_STOPPED = 3,
+    }
+
+    public enum CarrierIDState
+    {
+        ID_NOT_READ = 0,
+        WAITING_FOR_HOST = 1,
+        ID_VERIFICATION_OK = 2,
+        ID_VERIFICATION_FAILED = 3,
+    }
+
+    public enum SlotMapState
+    {
+        SLOT_MAP_NOT_READ = 0,
+        WAITING_FOR_HOST = 1,
+        SLOT_MAP_VERIFICATION_OK = 2,
+        SLOT_MAP_VERIFICATION_FAILED = 3,
+    }
+
+    public enum SubstrateTransState
+    {
+        AT_SOURCE = 0,
+        AT_WORK = 1,
+        AT_DESTINATION = 2,
+        EXTINXTION = 3,
+    }
+
+    public enum SubstProcState
+    {
+        NEEDS_PROCESSING = 0,
+        IN_PROCESS = 1,
+        PROCESSED = 2,
+        ABORTED = 3,
+        STOPPED = 4,
+        REJECTED = 5,
+        LOST = 6,
+        SKIPPED = 7,
+    }
+
+    public class Substrate
+    {
+        public string objID;
+        public string lotID;
+        public byte materialStatus;
+        public string substDesrination;
+        public List<string> substHistory;
+        public string substLocID;
+        public SubstProcState substProcState;
+        public string substSource;
+        public SubstrateTransState substState;
+        public byte substType;
+        public byte substUsage;
+        //public ushort substWID_Angle;
+        //public string batchLocID;
+        //public string substPosInBatch;
+
+        public Substrate()
+        {
+            objID = "";
+            lotID = "";
+            substHistory = new List<string>();
+            substLocID = "";
+            substSource = "";
+            substState = SubstrateTransState.AT_SOURCE;
+            substType = 0; //0 = WAFER 1 = FLAT PANEL 2 = COMPACT DISK 3 = MASK OR RETICLE
         }
     }
 }

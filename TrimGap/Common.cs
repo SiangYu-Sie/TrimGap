@@ -23,8 +23,8 @@ namespace TrimGap
 
         //public static LJ LJ8020;
         private static KEYENCE_LJ.FTP LJ8020_FTP;
-
         private static KEYENCE_LJ.Client2 LJ8020_Client;
+        public static LJX8000A.LJX8000A LJX8000A;
         public static SQLite.DataBase dataBase;
         public static Mo motion;
         public static MatlabAnalysis TrimGapAnalysis;
@@ -33,6 +33,7 @@ namespace TrimGap
         public static AutoRunStage autoRun;
         public static Otsuka.SF3 SF3;
         public static Camera.CameraBasic camera;
+        public static Camera.CameraBasic camera2; //正面記錄
         public static LightController.Rs232LightingController Rs232LightingController;
         public static LightController.EthernetLightingController EthernetLightingController;
         public static LightController.Form1 LightCtrlForm;
@@ -49,27 +50,40 @@ namespace TrimGap
                 fram.m_MotionType = 0;   // 0:SSC, 1:ETEL
                 fram.m_Hardware_LJ = 1;  // 0:None 1:all type
                 fram.m_Hardware_PT = 1;  // 0:None 1:all type
+                fram.m_Hardware_HTW = 0;  // 0:None 1:all type
                 fram.m_Hardware_SF3 = 0; // 0:None 1:all type
                 fram.m_WaferStageType = 0; // 0:平坦台面+氣缸頂升  1:凹槽台面+牙叉抬升
-                fram.m_Hardware_CCD = 1; // 0:None 1:藍膜Z向拍照
+                fram.m_Hardware_CCD = 1; // 0:None 1:藍膜Z向拍照 2:藍膜Z向拍照+wafer正向記錄拍照
             }
             else if (fram.m_MachineType == 1) // N2
             {
                 fram.m_MotionType = 1;   // 0:SSC, 1:ETEL
                 fram.m_Hardware_LJ = 1;  // 0:None 1:all type
                 fram.m_Hardware_PT = 0;  // 0:None 1:all type
+                fram.m_Hardware_HTW = 0;  // 0:None 1:all type
                 fram.m_Hardware_SF3 = 1; // 0:None 1:all type
                 fram.m_WaferStageType = 1; // 0:平坦台面+氣缸頂升  1:凹槽台面+牙叉抬升
-                fram.m_Hardware_CCD = 0; // 0:None 1:藍膜Z向拍照
+                fram.m_Hardware_CCD = 0; // 0:None 1:藍膜Z向拍照 2:藍膜Z向拍照+wafer正向記錄拍照
+            }
+            else if (fram.m_MachineType == 2) //AP6II
+            {
+                fram.m_MotionType = 1;   // 0:SSC, 1:ETEL
+                fram.m_Hardware_LJ = 1;  // 0:None 1:all type
+                fram.m_Hardware_PT = 0;  // 0:None 1:all type
+                fram.m_Hardware_HTW = 1;  // 0:None 1:all type
+                fram.m_Hardware_SF3 = 0; // 0:None 1:all type
+                fram.m_WaferStageType = 0; // 0:平坦台面+氣缸頂升  1:凹槽台面+牙叉抬升
+                fram.m_Hardware_CCD = 2; // 0:None 1:藍膜Z向拍照 2:藍膜Z向拍照+wafer正向記錄拍照
             }
             else
             {
                 fram.m_MotionType = 0;   // 0:SSC, 1:ETEL
                 fram.m_Hardware_LJ = 1;  // 0:None 1:all type
                 fram.m_Hardware_PT = 0;  // 0:None 1:all type
+                fram.m_Hardware_HTW = 0;  // 0:None 1:all type
                 fram.m_Hardware_SF3 = 0; // 0:None 1:all type
                 fram.m_WaferStageType = 1; // 0:平坦台面+氣缸頂升  1:凹槽台面+牙叉抬升
-                fram.m_Hardware_CCD = 0; // 0:None 1:藍膜Z向拍照
+                fram.m_Hardware_CCD = 0; // 0:None 1:藍膜Z向拍照 2:藍膜Z向拍照+wafer正向記錄拍照
             }
             FileVersionInfo info = FileVersionInfo.GetVersionInfo("PMLcmpDll.dll");
             sram.AnalysisVersion = info.FileMajorPart + "." + info.FileMinorPart + "." + info.FileBuildPart;
@@ -87,7 +101,7 @@ namespace TrimGap
             InitAutoRun(fram.m_MachineType);
             InitSF3(fram.m_Hardware_SF3);
             InitCCD(fram.m_Hardware_CCD);
-            InitPT(fram.m_Hardware_PT);
+            InitPT(fram.m_Hardware_PT+ fram.m_Hardware_HTW*2);
 
 
         }
@@ -287,11 +301,20 @@ namespace TrimGap
 
         static private void InitKeyence()
         {
-            LJ8020_FTP = new KEYENCE_LJ.FTP(fram.LJ_ipaddress_FTP, fram.LJ_User_FTP, fram.LJ_Password_FTP);
-            if (!LJ.LJtestMode)
+            if(fram.S_SensorConnectType == 0)
             {
-                LJ8020_Client = new KEYENCE_LJ.Client2(fram.LJ_ipaddress_Controller, fram.LJ_portNo_Controller, 1000);
+                LJ8020_FTP = new KEYENCE_LJ.FTP(fram.LJ_ipaddress_FTP, fram.LJ_User_FTP, fram.LJ_Password_FTP);
+                if (!LJ.LJtestMode)
+                {
+                    LJ8020_Client = new KEYENCE_LJ.Client2(fram.LJ_ipaddress_Controller, fram.LJ_portNo_Controller, 1000);
+                }
             }
+            else if(fram.S_SensorConnectType == 1)
+            {
+                LJX8000A = new LJX8000A.LJX8000A(fram.LJ_ipaddress_Controller);
+                LJX8000A.Connect();
+            }
+
         }
 
         static private void InitSF3(int type)
@@ -309,22 +332,38 @@ namespace TrimGap
         {
             if (type > 0)
             {
-                camera = new Camera.CameraBasic();
+                if(type == 1)
+                {
+                    camera = new Camera.CameraBasic();
+                }
+                else if(type == 2)
+                {
+                    camera = new Camera.CameraBasic();
+                    camera2 = new Camera.CameraBasic();
+                }
                 LightCtrlForm = new LightController.Form1();
 
                 if(fram.m_simulateRun == 0)
                 {
                     try
                     {
-                        camera.init(2, "CCD1", false, false);
+                        if (type == 1)
+                        {
+                            camera.init(2, "", false, false);
+                        }
+                        else if(type == 2)
+                        {
+                            camera2.init(2, "24281394", false, false);
+                            camera.init(2, "24250154", false, false);
+                        }
                         Rs232LightingController = new LightController.Rs232LightingController("GLC-DPI2-170", 1);
                         EthernetLightingController = new LightController.EthernetLightingController("VLP-2460-4eN", 2);
                         Rs232LightingController.Open("COM2"); // 要看機台是COM幾
                         EthernetLightingController.Open();
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("CCD Init Fail");
+                        MessageBox.Show("CCD Init Fail" + ex);
                     }
                 }
 
@@ -335,7 +374,7 @@ namespace TrimGap
         {
             if (type > 0)
             {
-                PTForm = new PT.SingleChannel(fram.m_simulateRun);
+                PTForm = new PT.SingleChannel(fram.m_simulateRun, type);
                 PTForm.Show();
                 PTForm.Hide();
                 if(fram.m_simulateRun == 0)
@@ -350,47 +389,16 @@ namespace TrimGap
                     }
                 }
             }
-            /*
-           if (false)
-           {
-               //Common.actProgType = new AxActProgTypeLib.AxActProgType();
-               try
-               {                  
-                   int iRet;
-                   //Common.actProgType.ActCpuType = Convert.ToInt16("0x0210", 16);
-                   //Common.actUtlType.ActUnitType = Convert.ToInt16("0x2001", 16);
-                   //Common.actUtlType.ActProtocolType = 5;
-                   Common.actUtlType.ActLogicalStationNumber = 1;
-                   //Common.actProgType.ActIONumber = fram.PLC.ActIONumber;
-                   //Common.actProgType.ActTimeOut = 2000;
-                   //Common.actUtlType.ActHostAddress = "192.168.170.33";
-                   //Common.actUtlType.ActDestinationPortNumber = 1;
-                   iRet = Common.actUtlType.Open();
-                   if(iRet != 0)
-                   {
-                       //Common.actUtlType.ActCpuType = Convert.ToInt16("0x0210", 16);
-                       //Common.actUtlType.ActUnitType = Convert.ToInt16("0x2001", 16);
-                       iRet = Common.actUtlType.Open();
-                       if (iRet != 0)
-                       {
-                           MessageBox.Show("PT Sensor Init Fail.");
-                       }
-                   }
-
-               }
-               catch (Exception ee)
-               {
-                   MessageBox.Show("PT Sensor Init Fail:" + ee);
-               }
-           }*/
         }
 
         static private void InitIO()
         {
-            if(fram.m_simulateRun == 0)
-                io = new Io(fram.m_MachineType, fram.S_IOCardName);
+            int mt = 0;
+            if (fram.m_MachineType == 1) mt = 1;
+            if (fram.m_simulateRun == 0)
+                io = new Io(mt, fram.S_IOCardName);
             else
-                io = new Io(fram.m_MachineType, fram.S_IOCardName, -1);
+                io = new Io(mt, fram.S_IOCardName, -1);
 
             if (io.initial(System.Windows.Forms.Application.StartupPath))
             {
@@ -424,7 +432,7 @@ namespace TrimGap
 
         public static void SaveEFEMSts()
         {
-            if (!EFEM.IsInit)
+            if (!EFEM.IsInit || fram.EFEMSts.Skip == 1)
             {
                 return;
             }
@@ -726,58 +734,66 @@ namespace TrimGap
             sram.Recipe.Step2_Range_step1x1 = fram.Recipe.Step2_Range_step1x1;
             sram.Recipe.Range1_Percent = fram.Recipe.Range1_Percent;
             sram.Recipe.Range2_Percent = fram.Recipe.Range2_Percent;
-        }
+
+            sram.Recipe.RecordCCDRule = fram.Recipe.RecordCCDRule;
+            sram.Recipe.RecordCCD_Angle_Start = fram.Recipe.RecordCCD_Angle_Start;
+            sram.Recipe.RecordCCD_Angle_End = fram.Recipe.RecordCCD_Angle_End;
+            sram.Recipe.RecordCCD_Angle_Pitch = fram.Recipe.RecordCCD_Angle_Pitch;
+    }
 
         static public void InitEFEM(int machineType)
         {
-            //if(fram.m_simulateRun == 0)
-            EFEM = new EFEM("192.168.0.1", 48879, 2000, 2);
-            bool rtn_b;
-            if (!EFEM.IsInit)
-            {          
-                if(fram.m_simulateRun == 0)
-                    MessageBox.Show("請檢查 EFEM 軟體是否開啟");
-                AutoRunEFEM.InitEFEMAutoRun(machineType);
-                return;
-            }
-            // 先下一個remotecontrol
-            rtn_b = EFEM.API.Remote();
-            Common.EFEM.GetStatus();
-            if (!Common.EFEM.Power_Sts)
-            {
-                MessageBox.Show("請檢查機台電源，上電後軟體重新開啟");
-                return;
-            }
-            if (Common.EFEM.EMO_Sts)
-            {
-                MessageBox.Show("請檢查機台EMO，處理完成後軟體重新開啟");
-                return;
-            }
 
-            Common.EFEM.Robot.ResetError();
-            Common.EFEM.LoadPort1.ResetError();
-            Common.EFEM.LoadPort2.ResetError();
-            Common.EFEM.Aligner.ResetError();
-            AutoRunEFEM.InitEFEMAutoRun(machineType);
-            Common.EFEM.LoadPort1.GetLEDStatus();
-            Common.EFEM.LoadPort2.GetLEDStatus();
-            if (Common.EFEM.LoadPort1.LED_Placement && Common.EFEM.LoadPort1.LED_Persence)
-            {
-                Common.EFEM.LoadPort1.Placement = true;
-            }
-            else
-            {
-                Common.EFEM.LoadPort1.Placement = false;
-            }
-            if (Common.EFEM.LoadPort2.LED_Placement && Common.EFEM.LoadPort2.LED_Persence)
-            {
-                Common.EFEM.LoadPort2.Placement = true;
-            }
-            else
-            {
-                Common.EFEM.LoadPort2.Placement = false;
-            }
-            Init_EFEMSts();
+                EFEM = new EFEM("192.168.0.1", 48879, 2000, 2);
+                bool rtn_b;
+                if (!EFEM.IsInit)
+                {
+                    if (fram.m_simulateRun == 0 && fram.EFEMSts.Skip == 0)
+                        MessageBox.Show("請檢查 EFEM 軟體是否開啟");
+                    AutoRunEFEM.InitEFEMAutoRun(machineType);
+                    return;
+                }
+                // 先下一個remotecontrol
+                rtn_b = EFEM.API.Remote();
+                Common.EFEM.GetStatus();
+                if (!Common.EFEM.Power_Sts)
+                {
+                    MessageBox.Show("請檢查機台電源，上電後軟體重新開啟");
+                    return;
+                }
+                if (Common.EFEM.EMO_Sts)
+                {
+                    MessageBox.Show("請檢查機台EMO，處理完成後軟體重新開啟");
+                    return;
+                }
+
+                Common.EFEM.Robot.ResetError();
+                Common.EFEM.LoadPort1.ResetError();
+                Common.EFEM.LoadPort2.ResetError();
+                Common.EFEM.Aligner.ResetError();
+                AutoRunEFEM.InitEFEMAutoRun(machineType);
+                Common.EFEM.LoadPort1.GetLEDStatus();
+                Common.EFEM.LoadPort2.GetLEDStatus();
+                if (Common.EFEM.LoadPort1.LED_Placement && Common.EFEM.LoadPort1.LED_Persence)
+                {
+                    Common.EFEM.LoadPort1.Placement = true;
+                }
+                else
+                {
+                    Common.EFEM.LoadPort1.Placement = false;
+                }
+                if (Common.EFEM.LoadPort2.LED_Placement && Common.EFEM.LoadPort2.LED_Persence)
+                {
+                    Common.EFEM.LoadPort2.Placement = true;
+                }
+                else
+                {
+                    Common.EFEM.LoadPort2.Placement = false;
+                }
+                Init_EFEMSts();
+
+                //if(fram.m_simulateRun == 0)
+            
         }
 
         public static string Get_Description(Enum value)
@@ -986,7 +1002,8 @@ namespace TrimGap
             public static string[] GetCsvlist(string Path)
             {
                 string[] filelist;
-                Path += @"/HEAD_A/";
+                //Path += @"/HEAD_A/";
+                Path += @"/lj-x2d/profile/SD1_000/";
                 csvfilelistPath = Path;
                 filelist = LJ8020_FTP.GetFileList(Path);
 

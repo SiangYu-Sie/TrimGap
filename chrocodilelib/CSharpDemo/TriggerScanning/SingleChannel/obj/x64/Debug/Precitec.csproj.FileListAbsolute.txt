@@ -66,3 +66,81 @@ E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanni
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CopyComplete
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.dll
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.AssemblyReference.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\TCHRLibSingleChannelScanning.Properties.Resources.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\PT.SingleChannel.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.GenerateResource.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CopyComplete
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\TCHRLibSingleChannelScanning.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\PT.SingleChannel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\TCHRLibSingleChannelScanning.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\PT.SingleChannel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240125_1900\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240125_1900\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240125_1900\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240125_1900\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240125_1900\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240125_1900\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.AssemblyReference.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240125_1900\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\TCHRLibSingleChannelScanning.Properties.Resources.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240125_1900\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\PT.SingleChannel.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240125_1900\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.GenerateResource.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240125_1900\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240125_1900\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CopyComplete
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240125_1900\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240125_1900\TrimGap_1_20240125\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\TCHRLibSingleChannelScanning.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\PT.SingleChannel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240126_1930\TrimGap_1_20240126\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\Interop.ActUtlType64Lib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\bin\x64\Debug\Interop.ActUtlTypeLib.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\TCHRLibSingleChannelScanning.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\PT.SingleChannel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240130_1500\TrimGap_1_20240130\TrimGap_1_20240130\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.pdb

@@ -19,3 +19,13 @@ E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightC
 E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\obj\Release\LightController.exe
 E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\obj\Release\LightController.pdb
 E:\專案\TrimGap\TrimGap - 20230808\VST.Device.LightingController-master\LightController\obj\Release\LightController.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\VST.Device.LightingController-master\LightController\bin\Release\LightController.exe.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\VST.Device.LightingController-master\LightController\bin\Release\LightController.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\VST.Device.LightingController-master\LightController\bin\Release\LightController.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\VST.Device.LightingController-master\LightController\obj\Release\LightController.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\VST.Device.LightingController-master\LightController\obj\Release\LightController.Form1.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\VST.Device.LightingController-master\LightController\obj\Release\LightController.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\VST.Device.LightingController-master\LightController\obj\Release\LightController.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\VST.Device.LightingController-master\LightController\obj\Release\LightController.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\VST.Device.LightingController-master\LightController\obj\Release\LightController.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\VST.Device.LightingController-master\LightController\obj\Release\LightController.pdb

@@ -350,3 +350,63 @@ E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.csproj.CoreCompi
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.csproj.CopyComplete
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.dll
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\SF3.dll.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\SF3.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\SF3.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\CsvHelper.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Buffers.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Memory.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Numerics.Vectors.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\CsvHelper.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Buffers.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Memory.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Numerics.Vectors.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.csproj.AssemblyReference.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\Otsuka.DeleteRecipes.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3_Form.Main.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\Otsuka.NewRecipesInformation.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.Properties.Resources.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3_Form.Recipes.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.csproj.GenerateResource.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.csproj.CopyComplete
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\SF3\SF3\obj\Debug\SF3.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\SF3.dll.config
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\SF3.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\SF3.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\CsvHelper.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\Microsoft.Bcl.HashCode.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\System.Buffers.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\System.Memory.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\System.Numerics.Vectors.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\CsvHelper.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\System.Buffers.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\System.Memory.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\System.Numerics.Vectors.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\obj\Debug\SF3.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\obj\Debug\Otsuka.DeleteRecipes.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\obj\Debug\SF3_Form.Main.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\obj\Debug\Otsuka.NewRecipesInformation.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\obj\Debug\SF3.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\obj\Debug\SF3_Form.Recipes.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\obj\Debug\SF3.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\obj\Debug\SF3.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\obj\Debug\SF3.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\obj\Debug\SF3.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\SF3\SF3\obj\Debug\SF3.pdb

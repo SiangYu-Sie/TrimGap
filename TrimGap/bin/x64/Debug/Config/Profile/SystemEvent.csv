@@ -12,6 +12,7 @@
 11,Spooling_Deactivated,SPOOL OUTPUT->SPOOL INACTIVE,11
 12,Spool_Transmit_Failure,TRANSMIT SPOOL->NO SPOOL OUTPUT,12
 13,Message_Recognition,Indicating the operator has viewed the text of a host initiated message(Send by AP),13
+6001,SYS_Communications_State_Disable,Communications State: Operator switches from ENABLED to DISABLED. (SECS-II communications are prohibited.),14
 41,PJ_NoStateToQueued,(E40-PRJobEvent) The Process Job Object is instantiated and enters QUEUED/POOLED state\Create Process Job Object(Send by AP),41
 42,PJ_QueuedToSettingUp,(E40-PRJobEvent) The Process Job transits from QUEUED/POOLED state to SETTING UP state(Send by AP),42
 43,PJ_SettingUpToWaitingForStart,(E40-PRJobEvent) The Process Job transits from SETTING UP state to WAITING FOR START state(Send by AP),43

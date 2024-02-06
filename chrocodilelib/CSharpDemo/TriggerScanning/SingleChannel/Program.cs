@@ -16,7 +16,7 @@ namespace PT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SingleChannel(0));
+            Application.Run(new SingleChannel(0,1));
         }
     }
 }

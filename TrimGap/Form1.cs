@@ -96,6 +96,10 @@ namespace TrimGap
                 {
                     //Common.EFEM.Aligner.pb.BackColor = EFEM.slot_status_Color.AlignerStageReady;
                 }
+                if(fram.m_MachineType != 0)
+                {
+                    label1.Visible = false;
+                }
             }
 
             if (fram.m_Hardware_SF3 > 0)
@@ -109,6 +113,11 @@ namespace TrimGap
 
             if (fram.m_Hardware_CCD == 0)
                 this.toolStripDropDownButton1.DropDownItems.Remove(cCDToolStripMenuItem);
+
+            if (fram.m_MachineType != 0)
+            {
+                label1.Visible = false;
+            }
         }
 
         private void InitBW()
@@ -361,7 +370,7 @@ namespace TrimGap
                 MessageBox.Show("請先完成歸零後再開始");
                 return;
             }
-            if (EFEM.IsInit)
+            if (EFEM.IsInit && fram.EFEMSts.Skip == 0)
             {
                 if (Common.EFEM.Stage1.pb.BackColor == EFEM.slot_status_Color.Unknow)
                 {
@@ -380,7 +389,7 @@ namespace TrimGap
                 InsertLog.SavetoDB(14); // Start
                                         //if (Flag.SensorConnectFlag || Flag.VirSensorFlag)
                                         //{
-                if (EFEM.IsInit)
+                if (EFEM.IsInit && fram.EFEMSts.Skip == 0)
                 {
                     //Common.EFEM.E84.SetAuto(E84.E84_Num.E841);
                     //Common.EFEM.E84.SetAuto(E84.E84_Num.E842);
@@ -414,7 +423,7 @@ namespace TrimGap
             PauseAction(false);
         }
 
-        private void PauseAction(bool bRemote)
+        public void PauseAction(bool bRemote)
         {
             Flag.AutoidleFlag = false;
             Flag.Autoidle_LocalFlag = false;
@@ -423,14 +432,18 @@ namespace TrimGap
             ParamFile.saveparam("EFEMSts");
             InsertLog.SavetoDB(15); //Stop
 
-            if (Common.EFEM.CmdSend != "" && EFEM.IsInit)
+            if (fram.EFEMSts.Skip == 0)
             {
-                Console.WriteLine(DateTime.Now.ToString() + "  Stop, Cmd: " + Common.EFEM.CmdSend + ", Rcv Flag: " + Common.EFEM.ReceiveFlag + ", StepDone: " + Flag.EFEMStepDoneFlag);
-                if(!bRemote) 
-                    MessageBox.Show("動作完成後自動停止");
-                SpinWait.SpinUntil(() => Common.EFEM.CmdSend == "" && Common.EFEM.ReceiveFlag && Flag.EFEMStepDoneFlag, 60000);
-                Console.WriteLine(DateTime.Now.ToString() + "  Stop OK, Cmd: " + Common.EFEM.CmdSend + ", Rcv Flag: " + Common.EFEM.ReceiveFlag + ", StepDone: " + Flag.EFEMStepDoneFlag);
+                if (Common.EFEM.CmdSend != "" && EFEM.IsInit)
+                {
+                    Console.WriteLine(DateTime.Now.ToString() + "  Stop, Cmd: " + Common.EFEM.CmdSend + ", Rcv Flag: " + Common.EFEM.ReceiveFlag + ", StepDone: " + Flag.EFEMStepDoneFlag);
+                    if (!bRemote)
+                        MessageBox.Show("動作完成後自動停止");
+                    SpinWait.SpinUntil(() => Common.EFEM.CmdSend == "" && Common.EFEM.ReceiveFlag && Flag.EFEMStepDoneFlag, 60000);
+                    Console.WriteLine(DateTime.Now.ToString() + "  Stop OK, Cmd: " + Common.EFEM.CmdSend + ", Rcv Flag: " + Common.EFEM.ReceiveFlag + ", StepDone: " + Flag.EFEMStepDoneFlag);
+                }
             }
+               
 
             if (!Common.io.In(IOName.In.StageWafer在席))
             {
@@ -456,7 +469,7 @@ namespace TrimGap
             {
                 return;
             }
-            if (EFEM.IsInit)
+            if (EFEM.IsInit && fram.EFEMSts.Skip == 0)
             {
                 Common.EFEM.IO.SignalTower(IO.LampState.GreenOff);
                 Common.EFEM.IO.SignalTower(IO.LampState.YellowOn);
@@ -479,8 +492,12 @@ namespace TrimGap
                     return;
                 }
 
-                Common.EFEM.E84.Reset(E84.E84_Num.E841);
-                Common.EFEM.E84.SetAuto(E84.E84_Num.E841);
+                if (fram.EFEMSts.Skip == 0)
+                {
+                    Common.EFEM.E84.Reset(E84.E84_Num.E841);
+                    Common.EFEM.E84.SetAuto(E84.E84_Num.E841);
+                }
+                    
 
                 fram.SECSPara.Loadport1_AccessMode = Mode.Auto.GetHashCode();
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, (byte)fram.SECSPara.Loadport1_AccessMode, out err);
@@ -502,7 +519,11 @@ namespace TrimGap
                     return;
                 }
 
-                Common.EFEM.E84.SetManual(E84.E84_Num.E841);
+                if (fram.EFEMSts.Skip == 0)
+                {
+                    Common.EFEM.E84.SetManual(E84.E84_Num.E841);
+                }
+
                 Console.WriteLine("LP1 Switch to Manual");
                 fram.SECSPara.Loadport1_AccessMode = Mode.Manual.GetHashCode();
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, (byte)fram.SECSPara.Loadport1_AccessMode, out err);
@@ -524,8 +545,11 @@ namespace TrimGap
                     return;
                 }
 
-                Common.EFEM.E84.Reset(E84.E84_Num.E842);
-                Common.EFEM.E84.SetAuto(E84.E84_Num.E842);
+                if (fram.EFEMSts.Skip == 0)
+                {
+                    Common.EFEM.E84.Reset(E84.E84_Num.E842);
+                    Common.EFEM.E84.SetAuto(E84.E84_Num.E842);
+                }
 
                 fram.SECSPara.Loadport2_AccessMode = Mode.Auto.GetHashCode();
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, (byte)fram.SECSPara.Loadport2_AccessMode, out err);
@@ -546,7 +570,10 @@ namespace TrimGap
                     MessageBox.Show("請先停止後再切換");
                     return;
                 }
-                Common.EFEM.E84.SetManual(E84.E84_Num.E842);
+                if (fram.EFEMSts.Skip == 0)
+                {
+                    Common.EFEM.E84.SetManual(E84.E84_Num.E842);
+                }
                 fram.SECSPara.Loadport2_AccessMode = Mode.Manual.GetHashCode();
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, (byte)fram.SECSPara.Loadport2_AccessMode, out err);
                 InsertLog.SavetoDB(51, "LP2 Switch to Manual");// Manual
@@ -586,7 +613,7 @@ namespace TrimGap
             if (e.ProgressPercentage % 1 == 0) // 每 100ms 刷一次
             {
                 ModeLight(); // 右上手自動、開始停止狀態顏色
-                if(fram.m_simulateRun == 0)
+                if(fram.m_simulateRun == 0 && fram.m_MachineType == 0)
                 {
                     int arrDeviceValue;             // Data for 'DeviceData'
                     arrDeviceValue = Common.PTForm.GetDevice("D100");
@@ -818,6 +845,14 @@ namespace TrimGap
             {
                 tslbStatus.Text += " , TTV： " + Common.Get_Description(AutoRunStage.AutoTTVStep);   // TTV 流程的步驟
             }
+            else if (AutoRunStage.AutoRunStageStep == AutoRunStage.AutoStep.HTWMode)
+            {
+                tslbStatus.Text += " , HTW： " + Common.Get_Description(AutoRunStage.AutoHTWStep);   // HTW 流程的步驟
+            }
+            else if (AutoRunStage.AutoRunStageStep == AutoRunStage.AutoStep.RecordCCDMode)
+            {
+                tslbStatus.Text += " , CCD： " + Common.Get_Description(AutoRunStage.AutoRecordCCDStep);   // CCD 流程的步驟
+            }
         }
 
         #region bW
@@ -845,6 +880,7 @@ namespace TrimGap
             double[] tmp1 = new double[5000];
             double[] tmp2 = new double[5000];
             double[] tmp3 = new double[5000];
+
             while (Flag.FormOpenFlag)
             {
                 SpinWait.SpinUntil(() => false, 1000); // 刷新頻率 200ms
@@ -854,7 +890,7 @@ namespace TrimGap
                 {
                     try
                     {
-                        if (sram.Recipe.Type == 0) // taping 不用給rawdata
+                        if (sram.Recipe.Type == 0 || sram.Recipe.Type == 5) // taping 不用給rawdata  RecordCCD也不用
                         {
                         }
                         else // 1/2 step要給rawdata
@@ -866,7 +902,7 @@ namespace TrimGap
                                     tmp[i] = AnalysisData.rawData[i] * AnalysisData.um2mm * fram.Analysis.Coefficient;
                                 }
                             }
-                            else if((sram.Recipe.Type == 3 && Flag.isPT == true))
+                            else if((sram.Recipe.Type == 3 && Flag.isPT == true) || sram.Recipe.Type == 4)
                             {
                                 for (int i = 0; i < AnalysisData.rawData.Length; i++)
                                 {
@@ -896,7 +932,7 @@ namespace TrimGap
                             AnalysisData.removezeroData = Common.TrimGapAnalysis.removeZero2_threshold(tmp, fram.Analysis.LJ_StandardPlane);
                             Console.WriteLine("Analysis start:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
                             Common.TrimGapAnalysis.tilting(false, AnalysisData.removezeroData, AnalysisData.Interval_X, out AnalysisData.tiltingdata_x, out AnalysisData.tiltingdata_y);
-                            ParamFile.SaveRawdata_Csv(AnalysisData.tiltingdata_y, "tilting", DateTime.Now);
+                            ParamFile.SaveRawdata_Csv(AnalysisData.tiltingdata_y, ReportData.Lot, ReportData.Lot + "_" + ReportData.Slot + "_" + sram.PitchAngleTotal + "_tilting", DateTime.Now);
                             Common.TrimGapAnalysis.CalculateGap(false, AnalysisData.tiltingdata_x, AnalysisData.tiltingdata_y, AnalysisData.Interval_X, sram.Recipe.Type, sram.Recipe.Step1_Range_step1x0, sram.Recipe.Step1_Range_step1x1, 0, 0, sram.Recipe.Range1_Percent, sram.Recipe.Range2_Percent, out AnalysisData.resultdata[AnalysisData.rotateCount_current]);
 
                             for (int i = 0; i < AnalysisData.resultdata[AnalysisData.rotateCount_current].Count(); i++)
@@ -912,7 +948,7 @@ namespace TrimGap
                             AnalysisData.removezeroData = Common.TrimGapAnalysis.removeZero2_threshold(tmp, fram.Analysis.LJ_StandardPlane);
                             Console.WriteLine("Analysis start:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
                             Common.TrimGapAnalysis.tilting(false, AnalysisData.removezeroData, AnalysisData.Interval_X, out AnalysisData.tiltingdata_x, out AnalysisData.tiltingdata_y);
-                            ParamFile.SaveRawdata_Csv(AnalysisData.tiltingdata_y, "tilting", DateTime.Now);
+                            ParamFile.SaveRawdata_Csv(AnalysisData.tiltingdata_y, ReportData.Lot, ReportData.Lot + "_" + ReportData.Slot + "_" + sram.PitchAngleTotal + "tilting", DateTime.Now);
                             Common.TrimGapAnalysis.CalculateGap(false, AnalysisData.tiltingdata_x, AnalysisData.tiltingdata_y, AnalysisData.Interval_X, 2, sram.Recipe.Step2_Range_step1x0, sram.Recipe.Step2_Range_step1x1, sram.Recipe.Step2_Range_step2x0, sram.Recipe.Step2_Range_step2x1, sram.Recipe.Range1_Percent, sram.Recipe.Range2_Percent, out AnalysisData.resultdata[AnalysisData.rotateCount_current]);
 
                             for (int i = 0; i < AnalysisData.resultdata[AnalysisData.rotateCount_current].Count(); i++)
@@ -931,7 +967,7 @@ namespace TrimGap
                             Common.TrimGapAnalysis.removeZero3(tmp1, tmp2, tmp3, out AnalysisData.removezeroData, out AnalysisData.removezeroData2, out AnalysisData.removezeroData3);
                             Console.WriteLine("Analysis start:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
                             Common.TrimGapAnalysis.tilting3(false, AnalysisData.removezeroData, AnalysisData.removezeroData2, AnalysisData.removezeroData3, Interval_X_tmp, out AnalysisData.tiltingdata_x, out AnalysisData.tiltingdata_x2, out AnalysisData.tiltingdata_x3, out AnalysisData.tiltingdata_y, out AnalysisData.tiltingdata_y2, out AnalysisData.tiltingdata_y3);
-                            ParamFile.SaveRawdata_Csv3(AnalysisData.tiltingdata_y, AnalysisData.tiltingdata_y2, AnalysisData.tiltingdata_y3, "tilting", DateTime.Now);
+                            ParamFile.SaveRawdata_Csv3(AnalysisData.tiltingdata_y, AnalysisData.tiltingdata_y2, AnalysisData.tiltingdata_y3, ReportData.Lot, ReportData.Lot + "_" + ReportData.Slot + "_" + sram.PitchAngleTotal + "tilting", DateTime.Now);
                             //ParamFile.SaveRawdata_Csv(AnalysisData.tiltingdata_y2, "tilting2", DateTime.Now);
                             //ParamFile.SaveRawdata_Csv(AnalysisData.tiltingdata_y3, "tilting3", DateTime.Now);
                             Common.TrimGapAnalysis.CalculateGap3(false, Wafertype_tmp, AnalysisData.tiltingdata_x, AnalysisData.tiltingdata_x2, AnalysisData.tiltingdata_x3, AnalysisData.tiltingdata_y, AnalysisData.tiltingdata_y2, AnalysisData.tiltingdata_y3, Interval_X_tmp, sram.Recipe.Step2_Range_step1x0, sram.Recipe.Step2_Range_step1x1, sram.Recipe.Step2_Range_step2x0, sram.Recipe.Step2_Range_step2x1, sram.Recipe.Range1_Percent, sram.Recipe.Range2_Percent, out AnalysisData.resultdata[AnalysisData.rotateCount_current]);
@@ -943,8 +979,47 @@ namespace TrimGap
                             }
                             Console.WriteLine("Analysis Finish:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
                         }
+                        else if (sram.Recipe.Type == 4)
+                        {
+                            int Wafertype_tmp = 2;
+                            int Interval_X_tmp = 1;
+                            AnalysisData.htw_cut = 0;
+                            AnalysisData.htw_gap = 0;  // 從開始沒資料(wafer圓弧邊起點)到再次有資料且小於(上下顛倒)StandardPlane的距離，後續的資料會剪裁到從這個地方開始，再送計算分析
+                           // Common.TrimGapAnalysis.removeZero3_htw(tmp1, tmp2, tmp3, fram.Analysis.HTW_StandardPlane, out AnalysisData.removezeroData, out AnalysisData.removezeroData2, out AnalysisData.removezeroData3, out AnalysisData.htw_gap);
+                            Console.WriteLine("HTW Analysis start:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
+                            AnalysisData.htw_baselineIndex = Common.TrimGapAnalysis.findNoiseBoundary(AnalysisData.rawData_base, 9, 40, "first", false);
+                            int size = AnalysisData.rawData_base.Length - AnalysisData.htw_baselineIndex;
+                            AnalysisData.removezeroData = new double[size];
+                            AnalysisData.removezeroData2 = new double[size];
+                            AnalysisData.removezeroData3 = new double[size];
+                            Array.Copy(tmp1, AnalysisData.htw_baselineIndex, AnalysisData.removezeroData, 0, size);
+                            Array.Copy(tmp2, AnalysisData.htw_baselineIndex, AnalysisData.removezeroData2, 0, size);
+                            Array.Copy(tmp3, AnalysisData.htw_baselineIndex, AnalysisData.removezeroData3, 0, size);
+                            Common.TrimGapAnalysis.tilting3_htw(false, AnalysisData.removezeroData, AnalysisData.removezeroData2, AnalysisData.removezeroData3, Interval_X_tmp, false, out AnalysisData.tiltingdata_x, out AnalysisData.tiltingdata_x2, out AnalysisData.tiltingdata_x3, out AnalysisData.tiltingdata_y, out AnalysisData.tiltingdata_y2, out AnalysisData.tiltingdata_y3, out AnalysisData.htw_cut);
+                            ParamFile.SaveRawdata_Csv3(AnalysisData.tiltingdata_y, AnalysisData.tiltingdata_y2, AnalysisData.tiltingdata_y3, ReportData.Lot, ReportData.Lot + "_" + ReportData.Slot + "_" + sram.PitchAngleTotal + "_HTW_tilting", DateTime.Now);
+                            Common.TrimGapAnalysis.CalculateGap3_htw(false, Wafertype_tmp, AnalysisData.tiltingdata_x, AnalysisData.tiltingdata_x2, AnalysisData.tiltingdata_x3, AnalysisData.tiltingdata_y, AnalysisData.tiltingdata_y2, AnalysisData.tiltingdata_y3, Interval_X_tmp, sram.Recipe.Step2_Range_step1x0, sram.Recipe.Step2_Range_step1x1, sram.Recipe.Step2_Range_step2x0, sram.Recipe.Step2_Range_step2x1, sram.Recipe.Range1_Percent, sram.Recipe.Range2_Percent, out AnalysisData.resultdata[AnalysisData.rotateCount_current]);
 
+                            for (int i = 0; i < AnalysisData.resultdata[AnalysisData.rotateCount_current].Count(); i++)
+                            {
+                                if (Double.NaN.Equals(AnalysisData.resultdata[AnalysisData.rotateCount_current][i]))
+                                    AnalysisData.resultdata[AnalysisData.rotateCount_current][i] = 0.0;
+                            }
+                            Console.WriteLine("Analysis Finish:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
+                        }
 
+                        fram.Analysis.Offset1StepH = 0;
+                        fram.Analysis.Offset1StepW = 0;
+                        fram.Analysis.Offset_PT_1StepH = 0;
+                        fram.Analysis.Offset_PT_1StepW = 0;
+                        fram.Analysis.Offset2StepH1 = 0;
+                        fram.Analysis.Offset2StepW1 = 0;
+                        fram.Analysis.Offset2StepH2 = 0;
+                        fram.Analysis.Offset2StepW2 = 0;
+                        fram.Analysis.Offset_PT_2StepH1 = 0;
+                        fram.Analysis.Offset_PT_2StepW1 = 0;
+                        fram.Analysis.Offset_PT_2StepH2 = 0;
+                        fram.Analysis.Offset_PT_2StepW2 = 0;
+                        fram.Analysis.OffsetBlueTapeW = 0;
 
                         switch (sram.Recipe.OffsetType)
                         {
@@ -1055,7 +1130,10 @@ namespace TrimGap
                             ReportData.W2 = AnalysisData.resultdata[AnalysisData.rotateCount_current][3] + fram.Analysis.Offset2StepW2;
                             ReportData.Chipping = (int)AnalysisData.resultdata[AnalysisData.rotateCount_current][12];
                             if (sram.Recipe.WaferEdgeEvaluate == 1)
+                            {
                                 ReportData.W1 = ReportData.W1 + (AnalysisData.removezeroData.Length - AnalysisData.tiltingdata_x.Length) * AnalysisData.Interval_X;
+                                ReportData.W2 = ReportData.W2 + (AnalysisData.removezeroData.Length - AnalysisData.tiltingdata_x.Length) * AnalysisData.Interval_X;
+                            }
                         }
                         else if (sram.Recipe.Type == 3 && Flag.isPT)
                         {
@@ -1064,6 +1142,14 @@ namespace TrimGap
                             ReportData.H2 = AnalysisData.resultdata[AnalysisData.rotateCount_current][2] + AnalysisData.resultdata[AnalysisData.rotateCount_current][0] + fram.Analysis.Offset_PT_2StepH2;
                             ReportData.W2 = AnalysisData.resultdata[AnalysisData.rotateCount_current][3] + fram.Analysis.Offset_PT_2StepW2;
                         }
+                        else if (sram.Recipe.Type == 4)
+                        {
+                            ReportData.H1 = AnalysisData.resultdata[AnalysisData.rotateCount_current][0] + fram.Analysis.Offset_PT_2StepH1;
+                            ReportData.W1 = AnalysisData.resultdata[AnalysisData.rotateCount_current][1] + AnalysisData.resultdata[AnalysisData.rotateCount_current][3] + fram.Analysis.Offset_PT_2StepW1 + AnalysisData.htw_cut + AnalysisData.htw_gap;
+                            ReportData.H2 = AnalysisData.resultdata[AnalysisData.rotateCount_current][2] + AnalysisData.resultdata[AnalysisData.rotateCount_current][0] + fram.Analysis.Offset_PT_2StepH2;
+                            ReportData.W2 = AnalysisData.resultdata[AnalysisData.rotateCount_current][3] + fram.Analysis.Offset_PT_2StepW2 + AnalysisData.htw_cut;
+                        }
+
 
                         if (sram.Recipe.Type == 3 && Flag.isPT) //僅更新H1 H2
                         {
@@ -1077,6 +1163,8 @@ namespace TrimGap
                             fram.EFEMSts.H2[Common.EFEM.Stage1.Slot - 1, AnalysisData.rotateCount_current] = ReportData.H2;
                             fram.EFEMSts.W2[Common.EFEM.Stage1.Slot - 1, AnalysisData.rotateCount_current] = ReportData.W2;
                         }
+
+                        
 
                         bWAnalysis.ReportProgress(10); //report在關flag
                     }
@@ -1141,7 +1229,7 @@ namespace TrimGap
                 "OK",
                 Note);
                 }
-                else if (sram.Recipe.Type == 2 || sram.Recipe.Type == 3) // 2 step    //
+                else if (sram.Recipe.Type == 2 || sram.Recipe.Type == 3 || sram.Recipe.Type == 4) // 2 step    //
                 {
                     InsertReportTable(
                 DateTime.Now,
@@ -1154,6 +1242,17 @@ namespace TrimGap
                 ReportData.W2,
                 "OK",
                 "");
+                }
+                else if(sram.Recipe.Type == 5)
+                {
+                    InsertReportTable(
+                DateTime.Now,
+                ReportData.Lot,
+                ReportData.Slot,
+                sram.PitchAngleTotal,
+                0, 0, 0, 0,
+                "OK",
+                Note);
                 }
                 else
                 {
@@ -1246,7 +1345,7 @@ namespace TrimGap
                 "OK",
                 "Max");
                 }
-                else if (sram.Recipe.Type == 2 || (sram.Recipe.Type == 3 && !Flag.isPT)) // 2 step    //
+                else if (sram.Recipe.Type == 2 || (sram.Recipe.Type == 3 && !Flag.isPT) || sram.Recipe.Type == 4) // 2 step    //
                 {
                     InsertReportTable(
                 DateTime.Now,
@@ -1290,7 +1389,15 @@ namespace TrimGap
             {
                 pB_BlueTape.Image = ImageFromRawBgraArray(Common.camera.image, Common.camera.Width, Common.camera.Height, PixelFormat.Format8bppIndexed);
                 pB_BlueTape.Image.Palette = _cp;
-                ParamFile.SaveImg_png(pB_BlueTape.Image, Common.EFEM.LoadPort_Run.FoupID + "_" + Common.EFEM.Stage1.Slot + "_" + sram.PitchAngleTotal, DateTime.Now);
+
+                //20240126
+                ParamFile.SaveImg_png(pB_BlueTape.Image, Common.EFEM.LoadPort_Run.FoupID, Common.EFEM.LoadPort_Run.FoupID + "_" + Common.EFEM.Stage1.Slot + "_" + sram.PitchAngleTotal, DateTime.Now, 1);
+                //ParamFile.SaveImg_png(pB_BlueTape.Image, "01", "01" + "_" + "01" + "_" + sram.PitchAngleTotal, DateTime.Now, 1);
+            }
+            else if (sram.Recipe.Type == 5)
+            {
+                pB_RecordImage.Image = ImageFromRawBgraArray(Common.camera2.image, Common.camera2.Width, Common.camera2.Height, PixelFormat.Format24bppRgb);
+                ParamFile.SaveImg_jpg(pB_RecordImage.Image, Common.EFEM.LoadPort_Run.FoupID, Common.EFEM.LoadPort_Run.FoupID + "_" + Common.EFEM.Stage1.Slot + "_" + sram.PitchAngleTotal + "_Record", DateTime.Now, 1);
             }
             else // Trim
             {
@@ -1309,13 +1416,16 @@ namespace TrimGap
 
                     if (AnalysisData.removezeroData.Max() + Math.Abs(AnalysisData.removezeroData.Min()) > AnalysisData.tiltingdata_y.Max())
                     {
+                        //20240201 修改
                         if (AnalysisData.removezeroData.Max() / 10 < 10)
                         {
-                            chartSensor.ChartAreas[0].AxisY.Maximum = ((int)((AnalysisData.removezeroData.Max() + Math.Abs(AnalysisData.removezeroData.Min())) / 10) + 1) * 10;
+                            //chartSensor.ChartAreas[0].AxisY.Maximum = ((int)((AnalysisData.removezeroData.Max() + Math.Abs(AnalysisData.removezeroData.Min())) / 10) + 1) * 10;
+                            chartSensor.ChartAreas[0].AxisY.Maximum = ((int)((AnalysisData.removezeroData.Max() - Math.Abs(AnalysisData.removezeroData.Min())) / 10) + 1) * 10;
                         }
                         else
                         {
-                            chartSensor.ChartAreas[0].AxisY.Maximum = ((int)((AnalysisData.removezeroData.Max() + Math.Abs(AnalysisData.removezeroData.Min())) / 100) + 1) * 100;
+                            //chartSensor.ChartAreas[0].AxisY.Maximum = ((int)((AnalysisData.removezeroData.Max() + Math.Abs(AnalysisData.removezeroData.Min())) / 100) + 1) * 100;
+                            chartSensor.ChartAreas[0].AxisY.Maximum = ((int)((AnalysisData.removezeroData.Max() - Math.Abs(AnalysisData.removezeroData.Min())) / 100) + 1) * 100;
                         }
                     }
                     else
@@ -1376,7 +1486,7 @@ namespace TrimGap
                                 _w1 = AnalysisData.resultdata[AnalysisData.rotateCount_current][1] + fram.Analysis.Offset1StepW - dif;
                             else
                                 _w1 = AnalysisData.resultdata[AnalysisData.rotateCount_current][1] + fram.Analysis.Offset1StepW;
-                            ParamFile.SaveRawdata_png(chartSensor, Common.EFEM.LoadPort_Run.FoupID + "_" + Common.EFEM.Stage1.Slot + "_" + sram.PitchAngleTotal, DateTime.Now, dif_H.ToString(), dif_W.ToString(), _w1, _w2, _h1, _h2);
+                            ParamFile.SaveRawdata_png(chartSensor, Common.EFEM.LoadPort_Run.FoupID, Common.EFEM.LoadPort_Run.FoupID + "_" + Common.EFEM.Stage1.Slot + "_" + sram.PitchAngleTotal, DateTime.Now, dif_H.ToString(), dif_W.ToString(), _w1, _w2, _h1, _h2, 2);
                         }
                         else if (sram.Recipe.Type == 2 || (sram.Recipe.Type == 3 && Flag.isPT == false))
                         {
@@ -1415,10 +1525,10 @@ namespace TrimGap
                             
 
 
-                            ParamFile.SaveRawdata_png(chartSensor, Common.EFEM.LoadPort_Run.FoupID + "_" + Common.EFEM.Stage1.Slot + "_" + sram.PitchAngleTotal, DateTime.Now, dif_H.ToString(), dif_W.ToString(), _w1, _w2, _h1, _h2);
+                            ParamFile.SaveRawdata_png(chartSensor, Common.EFEM.LoadPort_Run.FoupID, Common.EFEM.LoadPort_Run.FoupID + "_" + Common.EFEM.Stage1.Slot + "_" + sram.PitchAngleTotal, DateTime.Now, dif_H.ToString(), dif_W.ToString(), _w1, _w2, _h1, _h2, 2);
 
                         }
-                        else if (sram.Recipe.Type == 3 && Flag.isPT == true)
+                        else if ((sram.Recipe.Type == 3 && Flag.isPT == true) || sram.Recipe.Type == 4)
                         {
                             chartSensorPt.Series[0].ChartType = SeriesChartType.Point;
                             chartSensorPt.Series[0].Color = Color.Yellow;
@@ -1458,7 +1568,7 @@ namespace TrimGap
                             _h2 = AnalysisData.resultdata[AnalysisData.rotateCount_current][2] + AnalysisData.resultdata[AnalysisData.rotateCount_current][0] + fram.Analysis.Offset2StepH2;
                             _w2 = AnalysisData.resultdata[AnalysisData.rotateCount_current][3] + fram.Analysis.Offset2StepW2;
 
-                            ParamFile.SaveRawdata_png(chartSensorPt, Common.EFEM.LoadPort_Run.FoupID + "_" + Common.EFEM.Stage1.Slot + "_" + sram.PitchAngleTotal, DateTime.Now, dif_H.ToString(), dif_W.ToString(), _w1, _w2, _h1, _h2);
+                            ParamFile.SaveRawdata_png(chartSensorPt, Common.EFEM.LoadPort_Run.FoupID, Common.EFEM.LoadPort_Run.FoupID + "_" + Common.EFEM.Stage1.Slot + "_" + sram.PitchAngleTotal, DateTime.Now, dif_H.ToString(), dif_W.ToString(), _w1, _w2, _h1, _h2, 2);
                         }
                     }
                     //ParamFile.SaveRawdata_png(chartSensor, Common.EFEM.LoadPort_Run.FoupID + "_" + Common.EFEM.Stage1.Slot + "_" + sram.PitchAngleTotal, DateTime.Now);
@@ -1483,10 +1593,28 @@ namespace TrimGap
             // Row-by-row copy
             var arrRowLength = width * Image.GetPixelFormatSize(output.PixelFormat) / 8;
             var ptr = bmpData.Scan0;
-            for (var i = 0; i < height; i++)
+            if (Image.GetPixelFormatSize(output.PixelFormat) / 8 == 3)
             {
-                Marshal.Copy(arr, i * arrRowLength, ptr, arrRowLength);
-                ptr += bmpData.Stride;
+
+                for (var i = 0; i < height; i++)
+                {
+                    //Marshal.Copy(arr, i * arrRowLength, ptr, arrRowLength);
+                    for (int j = 0; j < width; j++)
+                    {
+                        Marshal.Copy(arr, i * arrRowLength + 3 * j + 2, ptr + 3 * j, 1);
+                        Marshal.Copy(arr, i * arrRowLength + 3 * j + 1, ptr + 3 * j + 1, 1);
+                        Marshal.Copy(arr, i * arrRowLength + 3 * j, ptr + 3 * j + 2, 1);
+                    }
+                    ptr += bmpData.Stride;
+                }
+            }
+            else
+            {
+                for (var i = 0; i < height; i++)
+                {
+                    Marshal.Copy(arr, i * arrRowLength, ptr, arrRowLength);
+                    ptr += bmpData.Stride;
+                }
             }
 
             output.UnlockBits(bmpData);
@@ -1594,6 +1722,11 @@ namespace TrimGap
         {
             Flag.AllHome_busyFlag = true;
             if (fram.m_Hardware_PT == 1) Common.PTForm.PointMove(9);
+            if (fram.m_MachineType == 2 && fram.m_simulateRun == 0)
+            {
+                Common.motion.PosMove(Mo.AxisNo.AP6II_X, 0);
+                Common.motion.PosMove(Mo.AxisNo.AP6II_Z2, 0);
+            }
             if (EFEM.IsInit)
             {
                 Common.EFEM.CmdRcv_Clear();
@@ -1612,73 +1745,76 @@ namespace TrimGap
 
         private void timer_EFEM_Event_Tick(object sender, EventArgs e)
         {
-            if ((Common.SecsgemForm.isRemote() || (!Flag.AutoidleFlag || !Flag.Autoidle_LocalFlag)) && Flag.AlarmFlag && !Flag.EFEMAlarmReportFlag && !Flag.AllHomeFlag) //EFEMAlarmReportFlag 要false才能進來
-            {   // 如果是遠端就不看 Auto flag
-                if (Common.EFEM.CmdSend == "")
-                {
-                    Common.EFEM.GetStatus();
+            if (fram.EFEMSts.Skip == 0)
+            {
+                if ((Common.SecsgemForm.isRemote() || (!Flag.AutoidleFlag || !Flag.Autoidle_LocalFlag)) && Flag.AlarmFlag && !Flag.EFEMAlarmReportFlag && !Flag.AllHomeFlag) //EFEMAlarmReportFlag 要false才能進來
+                {   // 如果是遠端就不看 Auto flag
+                    if (Common.EFEM.CmdSend == "")
+                    {
+                        Common.EFEM.GetStatus();
 
-                    if (!Common.EFEM.Power_Sts || !Common.EFEM.Pressure_Sts || !Common.EFEM.Vacuum_Sts || Common.EFEM.EMO_Sts || !Common.EFEM.RobotMode_Sts || !Common.io.In(IOName.In.Wafer汽缸_抬起檢))
-                    {
-                        Flag.EFEMAlarmReportFlag = true;
-                    }
-                    if (Flag.EQAlarmReportFlag && !Common.io.In(IOName.In.Wafer汽缸_降下檢) || !Common.io.In(IOName.In.真空平台_負壓檢))
-                    {
-                        Flag.EFEMAlarmReportFlag = true;
-                    }
+                        if (!Common.EFEM.Power_Sts || !Common.EFEM.Pressure_Sts || !Common.EFEM.Vacuum_Sts || Common.EFEM.EMO_Sts || !Common.EFEM.RobotMode_Sts || !Common.io.In(IOName.In.Wafer汽缸_抬起檢))
+                        {
+                            Flag.EFEMAlarmReportFlag = true;
+                        }
+                        if (Flag.EQAlarmReportFlag && !Common.io.In(IOName.In.Wafer汽缸_降下檢) || !Common.io.In(IOName.In.真空平台_負壓檢))
+                        {
+                            Flag.EFEMAlarmReportFlag = true;
+                        }
 
-                    if (Flag.EFEMAlarmReportFlag)
-                    {
-                        Common.EFEM.IO.SignalTower(IO.LampState.AllOff);
-                        Common.EFEM.IO.SignalTower(IO.LampState.RedFlash);
-                        Common.EFEM.IO.Buzzer(IO.BuzzerSts.On);
-                    }
-                    if (Flag.EQAlarmReportFlag)
-                    {
-                        if (!Common.io.In(IOName.In.Wafer汽缸_降下檢))
+                        if (Flag.EFEMAlarmReportFlag)
                         {
-                            Flag.EQAlarmReportFlag = false;
-                            MessageBox.Show("請檢查 Wafer汽缸_降下檢", "TopMostMessageBox", MessageBoxButtons.OKCancel,
-                            MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                            Common.EFEM.IO.SignalTower(IO.LampState.AllOff);
+                            Common.EFEM.IO.SignalTower(IO.LampState.RedFlash);
+                            Common.EFEM.IO.Buzzer(IO.BuzzerSts.On);
                         }
-                        if (!Common.io.In(IOName.In.真空平台_負壓檢))
+                        if (Flag.EQAlarmReportFlag)
                         {
-                            Flag.EQAlarmReportFlag = false;
-                            MessageBox.Show("請檢查 真空平台_負壓檢", "TopMostMessageBox", MessageBoxButtons.OKCancel,
-                            MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                            if (!Common.io.In(IOName.In.Wafer汽缸_降下檢))
+                            {
+                                Flag.EQAlarmReportFlag = false;
+                                MessageBox.Show("請檢查 Wafer汽缸_降下檢", "TopMostMessageBox", MessageBoxButtons.OKCancel,
+                                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                            }
+                            if (!Common.io.In(IOName.In.真空平台_負壓檢))
+                            {
+                                Flag.EQAlarmReportFlag = false;
+                                MessageBox.Show("請檢查 真空平台_負壓檢", "TopMostMessageBox", MessageBoxButtons.OKCancel,
+                                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                            }
                         }
-                    }
-                    else
-                    {
-                        if (!Common.io.In(IOName.In.Wafer汽缸_抬起檢))
+                        else
                         {
-                            MessageBox.Show("請檢查 Wafer汽缸_抬起檢", "TopMostMessageBox", MessageBoxButtons.OKCancel,
-                            MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
-                        }
-                        if (!Common.EFEM.Power_Sts)
-                        {
-                            MessageBox.Show("請檢查 機台電源", "TopMostMessageBox", MessageBoxButtons.OKCancel,
-                            MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
-                        }
-                        if (!Common.EFEM.Pressure_Sts)
-                        {
-                            MessageBox.Show("請檢查 正壓源", "TopMostMessageBox", MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
-                        }
-                        if (!Common.EFEM.Vacuum_Sts)
-                        {
-                            MessageBox.Show("請檢查 Vaccum", "TopMostMessageBox", MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
-                        }
-                        if (Common.EFEM.EMO_Sts)
-                        {
-                            MessageBox.Show("請檢查 EMO", "TopMostMessageBox", MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
-                        }
-                        if (!Common.EFEM.RobotMode_Sts)
-                        {
-                            MessageBox.Show("請檢查 Robot狀態", "TopMostMessageBox", MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                            if (!Common.io.In(IOName.In.Wafer汽缸_抬起檢))
+                            {
+                                MessageBox.Show("請檢查 Wafer汽缸_抬起檢", "TopMostMessageBox", MessageBoxButtons.OKCancel,
+                                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                            }
+                            if (!Common.EFEM.Power_Sts)
+                            {
+                                MessageBox.Show("請檢查 機台電源", "TopMostMessageBox", MessageBoxButtons.OKCancel,
+                                MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                            }
+                            if (!Common.EFEM.Pressure_Sts)
+                            {
+                                MessageBox.Show("請檢查 正壓源", "TopMostMessageBox", MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                            }
+                            if (!Common.EFEM.Vacuum_Sts)
+                            {
+                                MessageBox.Show("請檢查 Vaccum", "TopMostMessageBox", MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                            }
+                            if (Common.EFEM.EMO_Sts)
+                            {
+                                MessageBox.Show("請檢查 EMO", "TopMostMessageBox", MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                            }
+                            if (!Common.EFEM.RobotMode_Sts)
+                            {
+                                MessageBox.Show("請檢查 Robot狀態", "TopMostMessageBox", MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                            }
                         }
                     }
                 }
@@ -1731,6 +1867,30 @@ namespace TrimGap
         private void ndTrimSensorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Common.PTForm.Show();
+        }
+
+        private void pJCJToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!Flag.FormPJOpenFlag)
+                {
+                    SECProcess frmSecprocess = new SECProcess();
+                    //tabControl1.SelectedIndex = 0;  //martin
+                    //this.Visible = false;
+                    frmSecprocess.Show();
+                    Flag.FormPJOpenFlag = true;
+                    //frmUsrAssign.FormClosed += new FormClosedEventHandler(frmUsrAssign_FormClosed);
+                }
+                else
+                {
+                    // 如果已開啟，叫到最上面?
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.ToString(), "recipeManagement Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

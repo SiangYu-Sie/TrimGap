@@ -96,6 +96,8 @@ namespace TrimGap
             tb_BlueTapeW.Text = fram.Analysis.OffsetBlueTapeW.ToString();
             tb_EDGE_1StepW.Text = fram.Analysis.Offset_EDGE_1StepW.ToString();
             tb_EDGE_2StepW1.Text = fram.Analysis.Offset_EDGE_2StepW1.ToString();
+
+            tb_Analysis_HTW_StandardPlane.Text = fram.Analysis.HTW_StandardPlane.ToString();
         }
 
         private void btnParamSave_Click(object sender, EventArgs e)
@@ -811,6 +813,26 @@ namespace TrimGap
                 pattern = "^[+]?([0-9]+\\.?)?[0-9]+$";
 
                 #endregion [Analysis offset] groupbox3
+
+                #region [Analysis] groupbox4
+
+                pattern = "^[+-]?([0-9]+\\.?)?[0-9]+$";
+                if (tb_Analysis_HTW_StandardPlane_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_Analysis_HTW_StandardPlane_copy.Text, pattern))
+                    {
+                        MessageBox.Show("LJ_StandardPlane" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "HTW_StandardPlane " + fram.Analysis.HTW_StandardPlane + "->" + tb_Analysis_HTW_StandardPlane_copy.Text);
+                        tb_Analysis_HTW_StandardPlane.Text = tb_Analysis_HTW_StandardPlane_copy.Text;
+                        fram.Analysis.HTW_StandardPlane = Convert.ToDouble(tb_Analysis_HTW_StandardPlane_copy.Text);
+                    }
+                }
+
+                #endregion [Analysis] groupbox4
 
                 ParamFile.saveparam("all");
                 btnParamClear_Click(null, null);

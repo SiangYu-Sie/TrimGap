@@ -216,3 +216,37 @@ E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\bin\Debug\DiaGemLib_Equi
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\bin\Debug\DiaGemLib_Equipment.pdb
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Debug\DiaGemLib_Equipment.dll
 E:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Debug\DiaGemLib_Equipment.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\bin\Debug\DiaGemLib_Equipment.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\bin\Debug\DiaGemLib_Equipment.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Debug\SampleFormDiaGemLib_Equipment.csproj.AssemblyReference.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Debug\DemoFormDiaGemLib.DriverConfigInfo.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Debug\DemoFormDiaGemLib.MainForm.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Debug\DemoFormDiaGemLib_Equipment.Properties.Resources.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Debug\SampleFormDiaGemLib_Equipment.csproj.GenerateResource.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Debug\SampleFormDiaGemLib_Equipment.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Debug\SampleFormDiaGemLib_Equipment.csproj.CopyComplete
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Debug\DiaGemLib_Equipment.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1\DIASECSGEM300\obj\Debug\DiaGemLib_Equipment.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\bin\Debug\DiaGemLib_Equipment.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\bin\Debug\DiaGemLib_Equipment.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\bin\Debug\DIASECS.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\bin\Debug\ProductLicenseChecker.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\bin\Debug\UniAuto.UniBCS.MISC.StateMachine.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\bin\Debug\UniAuto.UniBCS.Core.Cryptography.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\bin\Debug\SoftLicenseAPI.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\bin\Debug\DIASECSGEM.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\bin\Debug\GEMDataModel.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\bin\Debug\DIASECS.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\bin\Debug\ProductLicenseChecker.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\bin\Debug\UniAuto.UniBCS.MISC.StateMachine.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\bin\Debug\UniAuto.UniBCS.Core.Cryptography.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\bin\Debug\SoftLicenseAPI.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\obj\Debug\SampleFormDiaGemLib_Equipment.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\obj\Debug\DemoFormDiaGemLib.DriverConfigInfo.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\obj\Debug\DemoFormDiaGemLib.MainForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\obj\Debug\DemoFormDiaGemLib_Equipment.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\obj\Debug\SampleFormDiaGemLib_Equipment.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\obj\Debug\SampleFormDiaGemLib_Equipment.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\obj\Debug\SampleFormDiaGemLib_Equipment.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\obj\Debug\DiaGemLib_Equipment.dll
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\DIASECSGEM300\obj\Debug\DiaGemLib_Equipment.pdb

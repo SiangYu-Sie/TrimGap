@@ -234,7 +234,10 @@ public static class TrimGap_EqpID
     public const int EQP_PT_PLC_ReturnHomeError = 10012;
     public const int EQP_PT_PLC_MoveToSafePointError = 10013;
     public const int EQP_PT_PLC_MoveTimeoutError = 10014;
-
+    public const int EQP_HTW_ReturnHome_TimeoutError = 10015;
+    public const int EQP_HTW_DD_TimeoutError = 10016;
+    public const int EQP_HTW_Z_TimeoutError = 10017;
+    public const int EQP_HTW_X_TimeoutError = 10018;
     public const int EFEM_GetVersionError = 20001;
     public const int EFEM_RemoteControlError = 20002;
     public const int EFEM_LocalControlError = 20003;

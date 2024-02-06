@@ -232,13 +232,16 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.p = new System.Windows.Forms.TabControl();
             this.tabPage_TrimData = new System.Windows.Forms.TabPage();
             this.tabPage_TapeImg = new System.Windows.Forms.TabPage();
             this.pB_BlueTape = new System.Windows.Forms.PictureBox();
             this.tabPage_TrimDataPt = new System.Windows.Forms.TabPage();
             this.chartSensorPt = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage_RecordImage = new System.Windows.Forms.TabPage();
+            this.pB_RecordImage = new System.Windows.Forms.PictureBox();
             this.btn_FreshDataGridView = new System.Windows.Forms.Button();
+            this.pJCJToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rbtn.SuspendLayout();
             this.panelTest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBLogo)).BeginInit();
@@ -328,12 +331,14 @@
             this.tabPage_TrimReport.SuspendLayout();
             this.tabPage_TTVReport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ReportTTV)).BeginInit();
-            this.tabControl2.SuspendLayout();
+            this.p.SuspendLayout();
             this.tabPage_TrimData.SuspendLayout();
             this.tabPage_TapeImg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pB_BlueTape)).BeginInit();
             this.tabPage_TrimDataPt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartSensorPt)).BeginInit();
+            this.tabPage_RecordImage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pB_RecordImage)).BeginInit();
             this.SuspendLayout();
             // 
             // rbtn
@@ -648,6 +653,7 @@
             this.tTVToolStripMenuItem,
             this.cCDToolStripMenuItem,
             this.ndTrimSensorToolStripMenuItem,
+            this.pJCJToolStripMenuItem,
             this.eXITToolStripMenuItem});
             this.toolStripDropDownButton1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.toolStripDropDownButton1.ForeColor = System.Drawing.SystemColors.MenuText;
@@ -754,7 +760,7 @@
             // 
             this.ndTrimSensorToolStripMenuItem.Name = "ndTrimSensorToolStripMenuItem";
             this.ndTrimSensorToolStripMenuItem.Size = new System.Drawing.Size(283, 30);
-            this.ndTrimSensorToolStripMenuItem.Text = "2ndTrimSensor";
+            this.ndTrimSensorToolStripMenuItem.Text = "PTTrimSensor";
             this.ndTrimSensorToolStripMenuItem.Click += new System.EventHandler(this.ndTrimSensorToolStripMenuItem_Click);
             // 
             // eXITToolStripMenuItem
@@ -2107,18 +2113,19 @@
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Width = 180;
             // 
-            // tabControl2
+            // p
             // 
-            this.tabControl2.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.tabControl2.Controls.Add(this.tabPage_TrimData);
-            this.tabControl2.Controls.Add(this.tabPage_TapeImg);
-            this.tabControl2.Controls.Add(this.tabPage_TrimDataPt);
-            this.tabControl2.Location = new System.Drawing.Point(541, 3);
-            this.tabControl2.Multiline = true;
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(610, 427);
-            this.tabControl2.TabIndex = 99;
+            this.p.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.p.Controls.Add(this.tabPage_TrimData);
+            this.p.Controls.Add(this.tabPage_TapeImg);
+            this.p.Controls.Add(this.tabPage_TrimDataPt);
+            this.p.Controls.Add(this.tabPage_RecordImage);
+            this.p.Location = new System.Drawing.Point(541, 3);
+            this.p.Multiline = true;
+            this.p.Name = "p";
+            this.p.SelectedIndex = 0;
+            this.p.Size = new System.Drawing.Size(610, 427);
+            this.p.TabIndex = 99;
             // 
             // tabPage_TrimData
             // 
@@ -2221,6 +2228,26 @@
             this.chartSensorPt.TabIndex = 98;
             this.chartSensorPt.Text = "chart1";
             // 
+            // tabPage_RecordImage
+            // 
+            this.tabPage_RecordImage.Controls.Add(this.pB_RecordImage);
+            this.tabPage_RecordImage.Location = new System.Drawing.Point(22, 4);
+            this.tabPage_RecordImage.Name = "tabPage_RecordImage";
+            this.tabPage_RecordImage.Size = new System.Drawing.Size(584, 419);
+            this.tabPage_RecordImage.TabIndex = 3;
+            this.tabPage_RecordImage.Text = "Record";
+            this.tabPage_RecordImage.UseVisualStyleBackColor = true;
+            // 
+            // pB_RecordImage
+            // 
+            this.pB_RecordImage.BackColor = System.Drawing.Color.White;
+            this.pB_RecordImage.Location = new System.Drawing.Point(1, 2);
+            this.pB_RecordImage.Name = "pB_RecordImage";
+            this.pB_RecordImage.Size = new System.Drawing.Size(583, 414);
+            this.pB_RecordImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pB_RecordImage.TabIndex = 1;
+            this.pB_RecordImage.TabStop = false;
+            // 
             // btn_FreshDataGridView
             // 
             this.btn_FreshDataGridView.Location = new System.Drawing.Point(36, 401);
@@ -2231,6 +2258,13 @@
             this.btn_FreshDataGridView.UseVisualStyleBackColor = true;
             this.btn_FreshDataGridView.Click += new System.EventHandler(this.btn_FreshDataGridView_Click);
             // 
+            // pJCJToolStripMenuItem
+            // 
+            this.pJCJToolStripMenuItem.Name = "pJCJToolStripMenuItem";
+            this.pJCJToolStripMenuItem.Size = new System.Drawing.Size(283, 30);
+            this.pJCJToolStripMenuItem.Text = "PJ/CJ";
+            this.pJCJToolStripMenuItem.Click += new System.EventHandler(this.pJCJToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2238,7 +2272,7 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1364, 696);
             this.Controls.Add(this.btn_FreshDataGridView);
-            this.Controls.Add(this.tabControl2);
+            this.Controls.Add(this.p);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel5);
@@ -2349,12 +2383,14 @@
             this.tabPage_TrimReport.ResumeLayout(false);
             this.tabPage_TTVReport.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ReportTTV)).EndInit();
-            this.tabControl2.ResumeLayout(false);
+            this.p.ResumeLayout(false);
             this.tabPage_TrimData.ResumeLayout(false);
             this.tabPage_TapeImg.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pB_BlueTape)).EndInit();
             this.tabPage_TrimDataPt.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartSensorPt)).EndInit();
+            this.tabPage_RecordImage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pB_RecordImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2534,7 +2570,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.ToolStripMenuItem cCDToolStripMenuItem;
-        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabControl p;
         private System.Windows.Forms.TabPage tabPage_TrimData;
         private System.Windows.Forms.TabPage tabPage_TapeImg;
         private System.Windows.Forms.PictureBox pB_BlueTape;
@@ -2545,6 +2581,9 @@
         private System.Windows.Forms.ToolStripMenuItem ndTrimSensorToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage_TrimDataPt;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartSensorPt;
+        private System.Windows.Forms.TabPage tabPage_RecordImage;
+        private System.Windows.Forms.PictureBox pB_RecordImage;
+        private System.Windows.Forms.ToolStripMenuItem pJCJToolStripMenuItem;
     }
 }
 

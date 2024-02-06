@@ -185,6 +185,9 @@ namespace TrimGap
 
         //進行Abort流程
         public static bool AbortFlag = false;
+
+        //PJ/CJ
+        public static bool FormPJOpenFlag = false;
     }
 
     //需記憶參數
@@ -234,16 +237,17 @@ namespace TrimGap
         public static int S_SECSGEM_Use;
         public static int m_simulateRun;
         public static string S_IOCardName;
-        public static int S_SensorConnectType;
+        public static int S_SensorConnectType;  // 0:FTP, 1:LJX8IF
         public static string S_MotionRotate;
         public static string S_Sensorbypass;
-        public static int m_MachineType;  // 0:AP6, 1:N2
+        public static int m_MachineType;  // 0:AP6, 1:N2, 2:AP6II 
         public static int m_MotionType;   // 0:SSC, 1:ETEL
         public static int m_Hardware_LJ;  // 0:None 1:all type
         public static int m_Hardware_SF3; // 0:None 1:all type
         public static int m_WaferStageType; // 0:平坦台面+氣缸頂升  1:凹槽台面+牙叉抬升
         public static int m_Hardware_CCD; // 0:None 1:藍膜Z向拍照
         public static int m_Hardware_PT;  // 0:None 1:all type
+        public static int m_Hardware_HTW;  // 0:None 1:all type
         public static int m_SecsgemType;  // 0:創界 1:台達
 
         public static int m_WaferAlignAngle;  // WaferAlignAngle
@@ -252,20 +256,32 @@ namespace TrimGap
         // [motion]
         public static string m_MotionParamPath;
 
-        public static double[] m_Acc = new double[3];            // Acc
-        public static double[] m_Dec = new double[3];            // Dec
-        public static double[] m_posV = new double[3];            // 自動對焦速度
-        public static double[] m_pitch = new double[3];            // pitch距離
-        public static double[] m_pitchV = new double[3];            // pitch速度
-        public static double[] m_jogV = new double[3];            // jov速度
-        public static double[] m_unit = new double[3];            // 單位
+        public static double[] m_Acc = new double[5];            // Acc
+        public static double[] m_Dec = new double[5];            // Dec
+        public static double[] m_posV = new double[5];            // 自動對焦速度
+        public static double[] m_pitch = new double[5];            // pitch距離
+        public static double[] m_pitchV = new double[5];            // pitch速度
+        public static double[] m_jogV = new double[5];            // jov速度
+        public static double[] m_unit = new double[5];            // 單位
 
-        public static double[] m_CurrentV = new double[3];        // 目前速度
-        public static double[] m_homeV = new double[3];      // homeoffset
-        public static int[] m_SoftLimit_SPEL = new int[3];      // Soft Limit SPEL
-        public static int[] m_SoftLimit_SMEL = new int[3];      // Soft Limit SMEL
-        public static int[] m_SoftLimit_SPEL_Flag = new int[3]; // Soft Limit SPEL Flag
-        public static int[] m_SoftLimit_SMEL_Flag = new int[3]; // Soft Limit SMEL Flag
+        public static double[] m_CurrentV = new double[5];        // 目前速度
+        public static double[] m_homeV = new double[5];      // homeoffset
+        public static int[] m_SoftLimit_SPEL = new int[5];      // Soft Limit SPEL
+        public static int[] m_SoftLimit_SMEL = new int[5];      // Soft Limit SMEL
+        public static int[] m_SoftLimit_SPEL_Flag = new int[5]; // Soft Limit SPEL Flag
+        public static int[] m_SoftLimit_SMEL_Flag = new int[5]; // Soft Limit SMEL Flag
+
+        // [Position]
+        public struct Position
+        {
+            public static double LJ_Z;
+            public static double RecordCCD_Z;
+            public static double HTW_P1_X;
+            public static double HTW_P1_Z;
+            public static double HTW_P2_X;
+            public static double HTW_P2_Z;
+            public static int HTW_P1_FocusRange; // 搜尋次數，每次上升10um，看要找幾次
+        }
 
         // [Sensor]
         public static int S_ShowDataNum;
@@ -287,6 +303,8 @@ namespace TrimGap
 
         public static int PT_PLC_AutoRunStage_RetryCount;
         public static int PT_PLC_AutoRunEFEM_RetryCount;
+
+        public static int HTW_Autofocus_Index;
 
         // 量測開始延遲時間
         //   192//1//10//16 用// 拆字串
@@ -321,6 +339,8 @@ namespace TrimGap
             public static double OffsetBlueTapeW; // 藍膜 offset W
             public static double Offset_EDGE_1StepW; // 1階產品 EDGE offset W
             public static double Offset_EDGE_2StepW1; // 2階產品 EDGE offset W1
+
+            public static double HTW_StandardPlane; // HTW基準面
 
             public struct Offset
             {
@@ -403,6 +423,7 @@ namespace TrimGap
             public static double[,] H2 = new double[25, 8];
             public static double[,] W1 = new double[25, 8];
             public static double[,] W2 = new double[25, 8];
+            public static int Skip; //0:正常 1:略過EFEM 2:自我檢測用
         }
 
         public static RecipeFormat Recipe = new RecipeFormat();
@@ -469,6 +490,10 @@ namespace TrimGap
         public static double[][] resultdata = new double[8][];
         public static double[][] resultdata2 = new double[8][];
         public static double[][] resultdata_blueW = new double[8][];
+        public static double htw_gap;
+        public static double htw_cut;
+        public static double[] rawData_base;
+        public static int htw_baselineIndex;
     }
 
     public struct AnalysisData2
@@ -514,6 +539,10 @@ namespace TrimGap
         public static double[] tiltingdata_y2;
         public static double[] tiltingdata_y3;
         public static double[] resultdata;
+        public static double htw_gap;
+        public static double htw_cut;
+        public static double[] rawData_base;
+        public static int htw_baselineIndex;
     }
 
 
@@ -594,8 +623,46 @@ namespace TrimGap
 
         public static int PTRetry;
 
+        public static short[] SpectrumMaxValue;  //儲存spectrum最大值
+        public static int[] SpectrumMaxValueBias;  //儲存spectrum最大值距離中間的偏差值。例如70-80內的最大值在72，則記錄+3，到時候對焦的位置要額外+3
+        public static double Focus_Offset; //總對焦Z補正值
+
         //
         public static RecipeFormat Recipe = new RecipeFormat();
+
+        //GEM300
+        public static string RunningCJ;
+        public static string RunningPJ;
+        public static List<string> QueuePJ;
+
+        public struct CJInfo
+        {
+            public static string objID;
+            public static string carrierInputSpec;
+            public static string curPJ;
+            public static string dataCollection;
+            public static string mtrloutStatus;
+            public static string mtrloutSpec;
+            public static string pauseEvent;
+            public static string procCtrlSpec;
+            public static byte procOrder;
+            public static bool bStart;
+            public static byte state;
+        }
+
+        public struct PJInfo
+        {
+            public static string objID;
+            public static string pauseEvent;
+            public static byte PJState;
+            public static string carrierID;
+            public static byte[] slot;
+            public static byte PRType;
+            public static bool bStart;
+            public static byte recMethod;
+            public static string recID;
+            public static string recVarList;
+        }
         // [Recipe]
         /*public struct Recipe
         {
@@ -652,6 +719,13 @@ namespace TrimGap
         public int Step1_Range_step1x1;
         public int Range1_Percent; // 基準範圍 5%
         public int Range2_Percent; // 基準範圍 15%
+
+        //Record CCD
+        public int RecordCCDRule;   // 0:Position 1:Pitch
+        public int RecordCCD_Angle_Start;
+        public int RecordCCD_Angle_End;
+        public int RecordCCD_Angle_Pitch;
+
     }
 
     public struct UI

@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using DemoFormDiaGemLib;
 
 namespace TrimGap
 {
@@ -25,6 +26,7 @@ namespace TrimGap
         {
             AP6 = 0,
             N2 = 1,
+            AP6II = 2,
         }
 
         public enum EFEMStep : int
@@ -278,10 +280,17 @@ namespace TrimGap
                     machineType = MachineType.N2;
                     break;
 
+                case (int)MachineType.AP6II:
+                    machineType = MachineType.AP6II;
+                    break;
+
                 default:
                     break;
             }
-            Init_EFEMSts();
+            if (fram.EFEMSts.Skip == 0)
+            {
+                Init_EFEMSts();
+            }
 
             if (!bWEFEMAutoRun.IsBusy)
             {
@@ -495,7 +504,16 @@ namespace TrimGap
                         {
                             #region clamp readid // local模式 先看有沒有foup 有就直接做
 
-                            CheckMaterialLocal();
+                            if (fram.EFEMSts.Skip == 0)
+                            {
+                                EFEMCmd = false;
+                                CheckMaterialLocal();
+                            }
+                            //else
+                            //{
+                            //    EFEMCmd = true;
+                            //}
+
                             if (!EFEMCmd) // false 才能下指令         // 要看Flag來切換 看是哪個foup
                             {
                                 if (!Common.EFEM.LoadPort1.Busy && Common.EFEM.LoadPort1.Placement && fram.SECSPara.Loadport1_AccessMode == Mode.Auto.GetHashCode())
@@ -574,6 +592,10 @@ namespace TrimGap
                                     EFEMRun(ref Common.EFEM.LoadPort2, ref AutoRunEFEMStep2, ref AutoRunEFEMStepBack1);
                                     Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort2;
                                 }
+                                else if(fram.EFEMSts.Skip == 1)
+                                {
+                                    Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort1;
+                                }
                             }
 
                             #endregion EFEMRun
@@ -625,8 +647,11 @@ namespace TrimGap
                         }
                         AutoRunEFEMStep1 = EFEMStep.JudgeStep;
                         AutoRunEFEMStep2 = EFEMStep.JudgeStep;
-                        Common.EFEM.LoadPort1.Busy = false;
-                        Common.EFEM.LoadPort2.Busy = false;
+                        if (fram.EFEMSts.Skip == 0)
+                        {
+                            Common.EFEM.LoadPort1.Busy = false;
+                            Common.EFEM.LoadPort2.Busy = false;
+                        }
                         AutoRunStage.AutoRunStageStep = AutoRunStage.AutoStep.GotoSwitchWaferPos;
                         AutoRunStage.AutoTrimStep = AutoRunStage.TrimStep.LJHome;
                         AutoRunStage.AutoBlueTapeStep = AutoRunStage.BluetapeStep.Finish;
@@ -656,8 +681,11 @@ namespace TrimGap
             }
             else if (e.ProgressPercentage == 99)
             {
-                SaveEFEMSts();
-                Update_EFEM_Sts();
+                if (fram.EFEMSts.Skip == 0)
+                {
+                    SaveEFEMSts();
+                    Update_EFEM_Sts();
+                }
                 ParamFile.saveparam("EFEMSts");
             }
         }
@@ -668,7 +696,6 @@ namespace TrimGap
             // PortTransferState: 1:block, 2:RTL, 3:RTUL
             // 對應到TSMC的狀態    1:ini  , 2:Mir, 3:Mor
             // block的時候就不用再看了
-
             if (fram.SECSPara.Loadport1_PortTransferState == PortTransferState.ReadyToLoad.GetHashCode() && Common.EFEM.LoadPort1.Placement)
             {
                 Common.EFEM.LoadPort1.ReadFoupID();
@@ -772,6 +799,7 @@ namespace TrimGap
             if (fram.SECSPara.Loadport1_PortTransferState == PortTransferState.ReadyToUnload.GetHashCode() && !Common.EFEM.LoadPort1.Placement)
             {
                 // 東西拿走後 切成 RTL
+                Common.SecsgemForm.DeleteCarrier(Common.EFEM.LoadPort1.FoupID, out err);  //刪除Carrier Object
                 Common.EFEM.LoadPort1.ReadFoupID();
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort1.FoupID, out err);
@@ -785,6 +813,7 @@ namespace TrimGap
             }
             if (fram.SECSPara.Loadport2_PortTransferState == PortTransferState.ReadyToUnload.GetHashCode() && !Common.EFEM.LoadPort2.Placement)
             {
+                Common.SecsgemForm.DeleteCarrier(Common.EFEM.LoadPort2.FoupID, out err);  //刪除Carrier Object
                 // 東西拿走後 切成 RTL
                 Common.EFEM.LoadPort2.ReadFoupID();
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
@@ -840,6 +869,11 @@ namespace TrimGap
                 if (rtn)
                 {
                     Common.SecsgemForm.EventReportSend(TrimGap_EqpID.CarrierIDRead, out err);
+                    Common.SecsgemForm.CreateCarrier(loadPort.FoupID);
+                    if (loadPort.pn == LoadPort.Pn.P1)
+                        Common.SecsgemForm.SetCarrierAttr_Location(loadPort.FoupID, "LoadPort1");
+                    else if (loadPort.pn == LoadPort.Pn.P2)
+                        Common.SecsgemForm.SetCarrierAttr_Location(loadPort.FoupID, "LoadPort2");
                 }
                 else
                 {
@@ -1020,7 +1054,7 @@ namespace TrimGap
             if (rtn)
             {
                 loadPort.GetWaferSlot2(); //已做完
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, (byte)2, out err);
+                //Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, (byte)2, out err);
                 // 0 = SLOTMAP NOT READ
                 // 1 = WAITING FOR HOST
                 // 2 = SLOTMAP VERIFIKATION OK
@@ -1028,14 +1062,11 @@ namespace TrimGap
                 string testslotmap = "";
                 for (int i = 0; i < loadPort.Slot.Length; i++)
                 {
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, (byte)loadPort.Slot[i], out err); // Wafer有放歪
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, (byte)loadPort.Slot[i], out err);
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)0, out err); // map 成功沒有error ，等待驗證
                     if (loadPort.Slot[i] > 1)
                     {
                         Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)3, out err); // Wafer有放歪
-                    }
-                    if (SECSGEM.TrimGap_EqpParameter.Reason != 3 && loadPort.Slot[loadPort.Slot.Length - 1] <= 1)
-                    {
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)0, out err); // map 成功沒有error ，等待驗證
                     }
                     testslotmap += Convert.ToString(loadPort.Slot[i]); //測試
                 }
@@ -1050,41 +1081,31 @@ namespace TrimGap
                     Common.SecsgemForm.EventReportSend(TrimGap_EqpID.LP2_CarrierMapped, out err);
                 }
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
-                Common.SecsgemForm.EventReportSend(TrimGap_EqpID.SlotMap, out err);
-                //for (int i = 0; i < 25; i++)
-                //{
-                //    if (loadPort.slot_Status[i] == EFEM.slot_status.Ready)
-                //    {
-                //        if (fram.Recipe.Slot[i] == 0)
-                //        {
-                //            loadPort.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
-                //        }
-                //    }
-                //    testRecipeslotmap += Convert.ToString(fram.Recipe.Slot[i]); //測試
-                //}
-                //InsertLog.SavetoDB(67, "Recipeslotmap:" + testRecipeslotmap);
-                //loadPort.AutoGetSlot(); // 此步驟是先更新 LoadPort Ready to load
+                //Common.SecsgemForm.EventReportSend(TrimGap_EqpID.SlotMap, out err);
+
+                if(fram.m_SecsgemType == 1)
+                {
+                    Common.SecsgemForm.SetCarrierAttr_SlotMap(loadPort.FoupID, loadPort.Slot);
+                    Common.SecsgemForm.SetCarrierStatus_SlotMap(loadPort.FoupID, SlotMapState.WAITING_FOR_HOST);
+                }
             }
             else
             {
                 if (loadPort.Map())
                 {
                     loadPort.GetWaferSlot2();
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, (byte)2, out err);
+                    //Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, (byte)2, out err);
                     // 0 = SLOTMAP NOT READ
                     // 1 = WAITING FOR HOST
                     // 2 = SLOTMAP VERIFIKATION OK
                     // 3 = SLOTMAP VERIFICATION FAILED
                     for (int i = 0; i < loadPort.Slot.Length; i++)
                     {
-                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, (byte)loadPort.Slot[i], out err); // Wafer有放歪
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, (byte)loadPort.Slot[i], out err); 
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)0, out err); // map 成功沒有error ，等待驗證
                         if (loadPort.Slot[i] > 1)
                         {
                             Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)3, out err); // Wafer有放歪
-                        }
-                        if (SECSGEM.TrimGap_EqpParameter.Reason != 3 && loadPort.Slot[loadPort.Slot.Length - 1] <= 1)
-                        {
-                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)0, out err); // map 成功沒有error ，等待驗證
                         }
                     }
 
@@ -1097,18 +1118,10 @@ namespace TrimGap
                         Common.SecsgemForm.EventReportSend(TrimGap_EqpID.LP2_CarrierMapped, out err);
                     }
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
-                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.SlotMap, out err);
-                    //for (int i = 0; i < 25; i++)
-                    //{
-                    //    if (loadPort.slot_Status[i] == EFEM.slot_status.Ready)
-                    //    {
-                    //        if (sram.Recipe.Slot[i] == 0)
-                    //        {
-                    //            loadPort.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
-                    //        }
-                    //    }
-                    //}
-                    //loadPort.AutoGetSlot(); // 此步驟是先更新 LoadPort Ready to load
+                    //Common.SecsgemForm.EventReportSend(TrimGap_EqpID.SlotMap, out err);
+
+                    Common.SecsgemForm.SetCarrierAttr_SlotMap(loadPort.FoupID, loadPort.Slot);
+                    Common.SecsgemForm.SetCarrierStatus_SlotMap(loadPort.FoupID, SlotMapState.WAITING_FOR_HOST);
                 }
                 else
                 {
@@ -1491,7 +1504,7 @@ namespace TrimGap
                         }
                         else if (Common.io.In(IOName.In.StageWafer在席)) //Lower Arm Upper Arm 沒有了 Aligner 沒有 stage 有
                         {
-                            if (machineType == MachineType.AP6)
+                            if (machineType == MachineType.AP6 || machineType == MachineType.AP6II)
                             {
                                 // 解真空 & 汽缸up
                                 if (Common.io.In(IOName.In.真空平台_負壓檢))
@@ -1499,10 +1512,21 @@ namespace TrimGap
                                     Common.io.WriteOut(IOName.Out.平台真空電磁閥, false);
                                     Common.io.WriteOut(IOName.Out.平台破真空電磁閥, true);
                                 }
-                                if (!Common.io.In(IOName.In.Wafer汽缸_抬起檢) && (fram.m_Hardware_PT == 1 && Common.PTForm.GetPointMoveFinish(9)))
+                                if(machineType == MachineType.AP6)
                                 {
-                                    Common.io.WriteOut(IOName.Out.Wafer汽缸_降下, false);
-                                    Common.io.WriteOut(IOName.Out.Wafer汽缸_抬起, true);
+                                    if (!Common.io.In(IOName.In.Wafer汽缸_抬起檢) && (fram.m_Hardware_PT == 0 || Common.PTForm.GetPointMoveFinish(9)))
+                                    {
+                                        Common.io.WriteOut(IOName.Out.Wafer汽缸_降下, false);
+                                        Common.io.WriteOut(IOName.Out.Wafer汽缸_抬起, true);
+                                    }
+                                }
+                                else if(machineType == MachineType.AP6II)
+                                {
+                                    if (!Common.io.In(IOName.In.Wafer汽缸_抬起檢) && Math.Abs((Common.motion.Get_FBPos(Mo.AxisNo.AP6II_Z2)))<0.1 && Math.Abs((Common.motion.Get_FBPos(Mo.AxisNo.AP6II_X))) < 0.1)
+                                    {
+                                        Common.io.WriteOut(IOName.Out.Wafer汽缸_降下, false);
+                                        Common.io.WriteOut(IOName.Out.Wafer汽缸_抬起, true);
+                                    }
                                 }
                                 SpinWait.SpinUntil(() => (!Common.io.In(IOName.In.真空平台_負壓檢) && Common.io.In(IOName.In.Wafer汽缸_抬起檢)), 5000);
                                 if (!Common.io.In(IOName.In.Wafer汽缸_抬起檢))
@@ -1520,6 +1544,18 @@ namespace TrimGap
                                 else if ((fram.m_Hardware_PT == 1 && !Common.PTForm.GetPointMoveFinish(9)))
                                 {
                                     InsertLog.SavetoDB(103, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Stage1.Slot + ", msg：" + "PT PLC未退至安全位置"); //
+                                    EFEMGotoErrorCheckStep();
+                                    break;
+                                }
+                                else if ((machineType == MachineType.AP6II && !(Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_Z2)) < 0.1)))
+                                {
+                                    InsertLog.SavetoDB(103, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Stage1.Slot + ", msg：" + "AP6II_Z2未退至安全位置"); //
+                                    EFEMGotoErrorCheckStep();
+                                    break;
+                                }
+                                else if ((machineType == MachineType.AP6II && !(Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_X)) < 0.1)))
+                                {
+                                    InsertLog.SavetoDB(103, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Stage1.Slot + ", msg：" + "AP6II_X未退至安全位置"); //
                                     EFEMGotoErrorCheckStep();
                                     break;
                                 }
@@ -1544,8 +1580,8 @@ namespace TrimGap
                             {
                                 // 先移動 在解真空
                                 Common.motion.PosMove(Mo.AxisNo.DD, 0);
-                                Common.motion.PosMove(Mo.AxisNo.X, AutoRunStage.Homepos.WaferSwitch.X);
-                                Common.motion.PosMove(Mo.AxisNo.Y, AutoRunStage.Homepos.WaferSwitch.Y);
+                                Common.motion.PosMove(Mo.AxisNo.X, AutoRunStage.Homepos.N2.WaferSwitch.X);
+                                Common.motion.PosMove(Mo.AxisNo.Y, AutoRunStage.Homepos.N2.WaferSwitch.Y);
 
                                 SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 15000);
                                 SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X), 15000);
@@ -1921,7 +1957,7 @@ namespace TrimGap
                 case EFEMStep.WaferPut2Stage1:
 
                     eFEMStep_Back = EFEMStep.WaferPut2Stage1;
-                    if (machineType == MachineType.AP6)
+                    if (machineType == MachineType.AP6 || machineType == MachineType.AP6II)
                     {
                         if (fram.m_Hardware_PT == 1)
                         {
@@ -1946,6 +1982,36 @@ namespace TrimGap
                                 Flag.AlarmFlag = true;
                                 fram.PT_PLC_AutoRunEFEM_RetryCount = 0;
                                 MessageBox.Show("PT PLC 無法退回安全位置");
+                                break;
+                            }
+                        }
+                        else if (machineType == MachineType.AP6II)
+                        { 
+                            if (Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_X)) < 0.1 && Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_Z2)) < 0.1)
+                            {
+                                fram.PT_PLC_AutoRunEFEM_RetryCount = 0;
+                                Common.io.WriteOut(IOName.Out.Wafer汽缸_降下, false);
+                                Common.io.WriteOut(IOName.Out.Wafer汽缸_抬起, true);
+                                SpinWait.SpinUntil(() => Common.io.In(IOName.In.Wafer汽缸_抬起檢), 5000);
+                            }
+                            else if (fram.PT_PLC_AutoRunEFEM_RetryCount < 1)
+                            {
+                                fram.PT_PLC_AutoRunEFEM_RetryCount++;
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_X, 0);
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_Z2, 0);
+                                SpinWait.SpinUntil(() => (Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_X)) < 0.1 && Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_Z2)) < 0.1), 5000);
+                                break;
+                            }
+                            else
+                            {
+                                InsertLog.SavetoDB(TrimGap_EqpID.EQP_PT_PLC_MoveToSafePointError, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Robot.Slot_Arm_upper + ", PT PLC 無法退回安全位置");
+                                Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_PT_PLC_MoveToSafePointError, true, out err);
+                                Flag.AlarmFlag = true;
+                                fram.PT_PLC_AutoRunEFEM_RetryCount = 0;
+                                if(!(Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_X)) < 0.1))
+                                    MessageBox.Show("AP6II_X軸無法退回安全位置");
+                                if (!(Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_Z2)) < 0.1))
+                                    MessageBox.Show("AP6II_Z2軸無法退回安全位置");
                                 break;
                             }
                         }
@@ -2274,6 +2340,43 @@ namespace TrimGap
             }
             #endregion PT PLC
 
+            #region AP6II Home
+            if (machineType == MachineType.AP6II)
+            {
+                if (!(Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_X)) < 0.1 && Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_Z2)) < 0.1))
+                {
+                    //PLC歸零前要先降汽缸才不會干涉
+                    if (Common.io.In(IOName.In.Wafer汽缸_抬起檢) || !Common.io.In(IOName.In.Wafer汽缸_降下檢))
+                    {
+                        Common.io.WriteOut(IOName.Out.Wafer汽缸_降下, true);
+                        Common.io.WriteOut(IOName.Out.Wafer汽缸_抬起, false);
+                    }
+                    SpinWait.SpinUntil(() => (!Common.io.In(IOName.In.Wafer汽缸_抬起檢) && Common.io.In(IOName.In.Wafer汽缸_降下檢)), 5000);
+                    if (Common.io.In(IOName.In.Wafer汽缸_抬起檢) || !Common.io.In(IOName.In.Wafer汽缸_降下檢))
+                    {
+                        Flag.AllHome_busyFlag = false;
+                        Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_PT_PLC_ReturnHomeBlockError, true, out err);
+                        HomeAllFailStr = "無法回原點，Wafer汽缸未降下";
+                        MessageBox.Show(HomeAllFailStr);
+                        return false;
+                    }
+                    Common.motion.PosMove(Mo.AxisNo.AP6II_X, 0);
+                    Common.motion.PosMove(Mo.AxisNo.AP6II_Z2, 0);
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_X), 10000);
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z2), 10000);
+                }
+                SpinWait.SpinUntil(() => ((Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_X)) < 0.1 && Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_Z2)) < 0.1)), 5000);
+                if (!(Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_X)) < 0.1 && Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_Z2)) < 0.1))
+                {
+                    Flag.AllHome_busyFlag = false;
+                    Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_PT_PLC_MoveToSafePointError, true, out err);
+                    HomeAllFailStr = "PT PLC 無法退回安全位置";
+                    MessageBox.Show(HomeAllFailStr);
+                    return false;
+                }
+            }
+            #endregion AP6II Home
+
             #region Robot Home
 
             Common.EFEM.Robot.ResetError();
@@ -2433,7 +2536,7 @@ namespace TrimGap
                     return false;
                 }
             }
-            if (machineType == MachineType.AP6)
+            if (machineType == MachineType.AP6 || machineType == MachineType.AP6II)
             {
                 if (Common.io.In(IOName.In.StageWafer在席))
                 {
@@ -2447,6 +2550,14 @@ namespace TrimGap
                     {
                         Common.io.WriteOut(IOName.Out.Wafer汽缸_降下, false);
                         Common.io.WriteOut(IOName.Out.Wafer汽缸_抬起, true);
+                    }
+                    else if (machineType == MachineType.AP6II)
+                    {
+                        if (!Common.io.In(IOName.In.Wafer汽缸_抬起檢) && Math.Abs((Common.motion.Get_FBPos(Mo.AxisNo.AP6II_Z2))) < 0.1 && Math.Abs((Common.motion.Get_FBPos(Mo.AxisNo.AP6II_X))) < 0.1)
+                        {
+                            Common.io.WriteOut(IOName.Out.Wafer汽缸_降下, false);
+                            Common.io.WriteOut(IOName.Out.Wafer汽缸_抬起, true);
+                        }
                     }
                     SpinWait.SpinUntil(() => (!Common.io.In(IOName.In.真空平台_負壓檢) && Common.io.In(IOName.In.Wafer汽缸_抬起檢)), 5000);
                     if(!Common.io.In(IOName.In.Wafer汽缸_抬起檢))
@@ -2553,8 +2664,8 @@ namespace TrimGap
                 {
                     // 先移動 在解真空
                     Common.motion.PosMove(Mo.AxisNo.DD, 0);
-                    Common.motion.PosMove(Mo.AxisNo.X, AutoRunStage.Homepos.WaferSwitch.X);
-                    Common.motion.PosMove(Mo.AxisNo.Y, AutoRunStage.Homepos.WaferSwitch.Y);
+                    Common.motion.PosMove(Mo.AxisNo.X, AutoRunStage.Homepos.N2.WaferSwitch.X);
+                    Common.motion.PosMove(Mo.AxisNo.Y, AutoRunStage.Homepos.N2.WaferSwitch.Y);
 
                     SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 15000);
                     SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X), 15000);

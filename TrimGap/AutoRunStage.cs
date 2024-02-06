@@ -18,9 +18,11 @@ namespace TrimGap
         public static int Tapetest = 0;
         public static AutoStep AutoRunStageStep;
         public static TrimStep AutoTrimStep; // 第一步都會先旋轉
-        public static Trim2ndStep AutoTrim2ndStep; 
+        public static Trim2ndStep AutoTrim2ndStep;
+        public static HTWStep AutoHTWStep;
         public static BluetapeStep AutoBlueTapeStep;
         public static TTVStep AutoTTVStep;
+        public static RecordCCDStep AutoRecordCCDStep;
         public static Chart chartSensor;
         public static string err = string.Empty;
 
@@ -30,10 +32,14 @@ namespace TrimGap
         public static bool Measure_TrimType_On = false;
         public static bool Measure_BlueTape_On = false;
         public static bool Measure_TTV_On = false;
+        public static bool Measure_HTW_On = false;
+        public static bool Measure_RecordCCD_On = false;
         public static bool Measure_TrimType_Done = false;
         public static bool Measure_TrimType2nd_Done = false;
         public static bool Measure_BlueTape_Done = false;
         public static bool Measure_TTV_Done = false;
+        public static bool Measure_HTW_Done = false;
+        public static bool Measure_RecordCCD_Done = false;
         public static string FoupID = "r";
         public static int Slot = 0;
         private static int MachineType = 0; // 0:AP6, 1:N2
@@ -47,36 +53,84 @@ namespace TrimGap
 
         public struct Homepos
         {
-            public struct WaferSwitch
+            public struct AP6
             {
-                public static double X = 315 * 1000;
-                public static double Y = 79.5 * 1000;
+                public struct BlueTape
+                {
+                    public static double X = 135.86 * 1000;
+                    public static double Y = 171.24 * 1000;
+                    public static double Angle = -92;
+                }
+                public struct Precitec
+                {
+                    public static double X = 135.86 * 1000;
+                    public static double Y = 171.24 * 1000;
+                    public static double Angle = 90;
+                }
             }
 
-            public struct LJ8020
+            public struct AP6II
             {
-                public static double X = 135.86 * 1000;
-                public static double Y = 171.24 * 1000;
+                public struct LJ8020
+                {
+                    public static double X = 135.86 * 1000;
+                    public static double Y = 171.24 * 1000;
+                    public static double Angle = -90;
+                    public static double Z = 0;
+                }
+                public struct BlueTape
+                {
+                    public static double X = 135.86 * 1000;
+                    public static double Y = 171.24 * 1000;
+                    public static double Angle = -2;
+                }
+                public struct HTW
+                {
+                    public static double X = 135.86 * 1000;
+                    public static double Y = 171.24 * 1000;
+                    public static double Angle = 90;
+                    public static double AP6II_Z3 = 0;
+                    public static double AP6II_X = 0;
+                }
+                public struct RecordCCD
+                {
+                    public static double X = 135.86 * 1000;
+                    public static double Y = 171.24 * 1000;
+                    public static double Angle = 45;
+                    public static double AP6II_Z2 = 0;
+                }
             }
 
-            public struct Precitec
+            public struct N2
             {
-                public static double X = 135.86 * 1000;
-                public static double Y = 171.24 * 1000;
-                public static double Angle = 90;
-            }
+                public struct WaferSwitch
+                {
+                    public static double X = 315 * 1000;
+                    public static double Y = 79.5 * 1000;
+                }
 
-            public struct BlueTape
-            {
-                public static double X = 135.86 * 1000;
-                public static double Y = 171.24 * 1000;
-                public static double Angle = -92;
-            }
-
-            public struct SF3
-            {
-                public static double X = 166 * 1000;
-                public static double Y = 168 * 1000;
+                public struct LJ8020
+                {
+                    public static double X = 135.86 * 1000;
+                    public static double Y = 171.24 * 1000;
+                }
+                public struct BlueTape
+                {
+                    public static double X = 135.86 * 1000;
+                    public static double Y = 171.24 * 1000;
+                    public static double Angle = -92;
+                }
+                public struct SF3
+                {
+                    public static double X = 166 * 1000;
+                    public static double Y = 168 * 1000;
+                }
+                public struct RecordCCD
+                {
+                    public static double X = 135.86 * 1000;
+                    public static double Y = 171.24 * 1000;
+                    public static double Angle = 45;
+                }
             }
 
             public struct Done
@@ -105,28 +159,70 @@ namespace TrimGap
                 Measure_TrimType_On = true;
                 Measure_BlueTape_On = true;
                 Measure_TTV_On = false;
+                Measure_RecordCCD_On = false;
+                Measure_HTW_On = false;
+            }
+            else if (MachineType == 2) // AP6 II
+            {
+                Measure_TrimType_On = true;
+                Measure_BlueTape_On = true;
+                Measure_TTV_On = false;
+                Measure_RecordCCD_On = true;
+                Measure_HTW_On = true;
+
+                if(fram.m_simulateRun == 0)
+                {
+                    Common.motion.FindHome(Mo.AxisNo.DD);
+                    Common.motion.FindHome(Mo.AxisNo.Z);
+                    Common.motion.FindHome(Mo.AxisNo.AP6II_Z2);
+                    Common.motion.FindHome(Mo.AxisNo.AP6II_Z3);
+                    Common.motion.FindHome(Mo.AxisNo.AP6II_X);
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 20000); // 等待10秒
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.Z), 10000); // 等待10秒
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z2), 10000); // 等待10秒
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3), 10000); // 等待10秒
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_X), 20000); // 等待20秒
+                    if (Common.motion.MotionDone(Mo.AxisNo.DD) && Common.motion.MotionDone(Mo.AxisNo.Z) && Common.motion.MotionDone(Mo.AxisNo.AP6II_Z2) && Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3) && Common.motion.MotionDone(Mo.AxisNo.AP6II_X))
+                    {
+                        Common.motion.PosMove(Mo.AxisNo.DD, 0);
+                        Common.motion.PosMove(Mo.AxisNo.Z, 0);
+                        Common.motion.PosMove(Mo.AxisNo.AP6II_Z2, 0);
+                        Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, 0);
+                        Common.motion.PosMove(Mo.AxisNo.AP6II_X, 0);
+                    }
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 10000); // 等待10秒
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.Z), 5000); // 等待5秒
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z2), 5000); // 等待5秒
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3), 5000); // 等待5秒
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_X), 15000); // 等待15秒
+                }
             }
             else if (MachineType == 1) // N2
             {
                 Measure_TrimType_On = true;
                 Measure_BlueTape_On = false;
                 Measure_TTV_On = true;
+                Measure_RecordCCD_On = false;
+                Measure_HTW_On = false;
 
-                Common.motion.FindHome(Mo.AxisNo.DD);
-                Common.motion.FindHome(Mo.AxisNo.X);
-                Common.motion.FindHome(Mo.AxisNo.Y);
-                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 20000); // 等待10秒
-                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X), 10000); // 等待10秒
-                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.Y), 10000); // 等待10秒
-                if (Common.motion.MotionDone(Mo.AxisNo.DD) && Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y))
+                if (fram.m_simulateRun == 0)
                 {
-                    Common.motion.PosMove(Mo.AxisNo.DD, 0);
-                    Common.motion.PosMove(Mo.AxisNo.X, Homepos.WaferSwitch.X);
-                    Common.motion.PosMove(Mo.AxisNo.Y, Homepos.WaferSwitch.Y);
+                    Common.motion.FindHome(Mo.AxisNo.DD);
+                    Common.motion.FindHome(Mo.AxisNo.X);
+                    Common.motion.FindHome(Mo.AxisNo.Y);
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 20000); // 等待10秒
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X), 10000); // 等待10秒
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.Y), 10000); // 等待10秒
+                    if (Common.motion.MotionDone(Mo.AxisNo.DD) && Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y))
+                    {
+                        Common.motion.PosMove(Mo.AxisNo.DD, 0);
+                        Common.motion.PosMove(Mo.AxisNo.X, Homepos.N2.WaferSwitch.X);
+                        Common.motion.PosMove(Mo.AxisNo.Y, Homepos.N2.WaferSwitch.Y);
+                    }
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 10000); // 等待10秒
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X), 15000); // 等待10秒
+                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.Y), 15000); // 等待10秒
                 }
-                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 10000); // 等待10秒
-                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X), 15000); // 等待10秒
-                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.Y), 15000); // 等待10秒
             }
             AutoRunStageStep = AutoStep.GotoSwitchWaferPos;
             InitBwAutorun();
@@ -187,6 +283,44 @@ namespace TrimGap
 
             [Description("取得量測資料")]
             Download,
+
+            [Description("判斷量測次數")]
+            JudgeRotateCount,
+
+            [Description("數據分析")]
+            Analysis,
+
+            [Description("儲存log")]
+            Savelog,
+
+            [Description("上拋SECS")]
+            UpdateSecs,
+
+            [Description("結束")]
+            Finish = 255,
+        }
+
+        public enum HTWStep : int
+        {
+            [Description("HTWHome")]
+            HTWHome,
+
+			[Description("HTWAutoFocus")]
+            HTWAutoFocus,							 					 
+            [Description("Wafer旋轉")]
+            DDRotate,
+
+            [Description("開始量測")]
+            Measurement,
+
+            [Description("取得量測資料")]
+            Download,
+
+            [Description("開始量測2")]
+            Measurement2,
+
+            [Description("取得量測資料2")]
+            Download2,
 
             [Description("判斷量測次數")]
             JudgeRotateCount,
@@ -278,7 +412,40 @@ namespace TrimGap
             [Description("結束")]
             Finish = 255,
         }
+        
 
+        public enum RecordCCDStep : int
+        {
+            [Description("RecordCCDStepStart")]
+            RecordCCDStart,
+
+            [Description("CCDHome")]
+            CCDHome,
+
+            [Description("Wafer旋轉")]
+            DDRotate,
+
+            [Description("開始量測")]
+            Measurement,
+
+            [Description("取得量測資料")]
+            Download,
+
+            [Description("判斷量測次數")]
+            JudgeRotateCount,
+
+            [Description("數據分析")]
+            Analysis,
+
+            [Description("儲存log")]
+            Savelog,
+
+            [Description("上拋SECS")]
+            UpdateSecs,
+
+            [Description("結束")]
+            Finish = 255,
+        }
         public enum AutoStep : int
         {
             [Description("GotoSwitchWaferPos")]
@@ -293,11 +460,17 @@ namespace TrimGap
             [Description("TrimMode2nd")]
             TrimMode2nd,
 
+            [Description("HTWMode")]
+            HTWMode,
+
             [Description("BlueTapeMode")]
             BlueTapeMode,
 
             [Description("TTVMode")]
             TTVMode,
+
+            [Description("RecordCCDMode")]
+            RecordCCDMode,
 
             [Description("等待Stage1_Wafer")]
             WaitWaferPresence,
@@ -382,13 +555,25 @@ namespace TrimGap
                             Flag.isPT = false;
                         }
                     }
+                    else if (MachineType == 2) // AP6II
+                    {
+                        if (Common.motion.MotionDone(Mo.AxisNo.DD) && Common.motion.MotionDone(Mo.AxisNo.Z))
+                        {
+                            Common.motion.PosMove(Mo.AxisNo.Z, fram.Position.LJ_Z);
+                            Common.motion.PosMove(Mo.AxisNo.DD, fram.m_WaferAlignAngle);
+                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 5000);
+                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.Z), 5000);
+                            AutoTrimStep = TrimStep.DDRotate;
+                            Flag.isPT = false;
+                        }
+                    }
                     else if (MachineType == 1) // N2 要移動到LJ的home點
                     {
                         if (Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y))
                         {
                             //這裡要下XY軸的絕對位置，走去LJ的原點
-                            Common.motion.PosMove(Mo.AxisNo.X, Homepos.LJ8020.X);
-                            Common.motion.PosMove(Mo.AxisNo.Y, Homepos.LJ8020.Y);
+                            Common.motion.PosMove(Mo.AxisNo.X, Homepos.N2.LJ8020.X);
+                            Common.motion.PosMove(Mo.AxisNo.Y, Homepos.N2.LJ8020.Y);
                             SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X), 10000); // 等待10秒
                             SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.Y), 10000); // 等待10秒
                             if (Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y))
@@ -406,7 +591,7 @@ namespace TrimGap
                     }
                     else
                     {
-                        if (MachineType == 0) // AP6
+                        if (MachineType == 0 || MachineType == 2) // AP6
                         {
                             if (!Common.motion.MotionDone(Mo.AxisNo.DD))
                             {
@@ -464,7 +649,11 @@ namespace TrimGap
                         }
                         sram.PitchAngleTotal += sram.PitchAngle;
                         InsertLog.SavetoDB(67, sram.PitchAngleTotal.ToString());
-                        Common.motion.PitchAngle(Mo.AxisNo.DD, Mo.Dir.Postive, sram.PitchAngle);
+                        //20240104 自我檢測時不進入
+                        if (fram.EFEMSts.Skip == 0 || fram.EFEMSts.Skip == 1)
+                        {
+                            Common.motion.PitchAngle(Mo.AxisNo.DD, Mo.Dir.Postive, sram.PitchAngle);
+                        }
                         SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 2000);
                         if (!Common.motion.MotionDone(Mo.AxisNo.DD))
                         {
@@ -481,11 +670,24 @@ namespace TrimGap
                         double posnow = Common.motion.Get_FBAngle(Mo.AxisNo.DD) - fram.m_WaferAlignAngle;
                         InsertLog.SavetoDB(69, "Target:" + sram.PitchAngleTotal.ToString() + ",Real:" + posnow.ToString());
                         Console.WriteLine(DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString() + " Measure Start");
-                        Common.LJ.GetFolderPath(fram.LJ_FTPfilePath);
-                        Common.LJ.Csvlist = Common.LJ.GetCsvlist(Common.LJ.FolderPath);
-                        Common.LJ.CurrentListCount = Common.LJ.GetCurrentCsvListCount(Common.LJ.FolderPath);
 
-                        AnalysisData.rtn = Common.LJ.Measure();
+                        if (fram.S_SensorConnectType == 0)
+                        {
+
+                            Common.LJ.GetFolderPath(fram.LJ_FTPfilePath);
+                            Common.LJ.Csvlist = Common.LJ.GetCsvlist(Common.LJ.FolderPath);
+                            Common.LJ.CurrentListCount = Common.LJ.GetCurrentCsvListCount(Common.LJ.FolderPath);
+
+                            AnalysisData.rtn = Common.LJ.Measure();
+                        }
+                        else if (fram.S_SensorConnectType == 1)
+                        {
+                            Common.LJX8000A.ClearMemory();
+
+                            Common.LJX8000A.Trigger();
+                            Common.LJX8000A.Trigger();
+                            Common.LJX8000A.Trigger();
+                        }
 
                         AutoTrimStep = TrimStep.Download;
                         Console.WriteLine(DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString() + " Measure End");
@@ -494,24 +696,37 @@ namespace TrimGap
                     break;
 
                 case TrimStep.Download:
-                    Common.LJ.Csvlist = Common.LJ.GetCsvlist(Common.LJ.FolderPath);
-                    AnalysisData.LastFilePath = Common.LJ.GetlastfilePath(Common.LJ.FolderPath);
-                    // 先判斷資料數量在判斷資料大小
-                    if (Common.LJ.GetCurrentCsvListCount(Common.LJ.FolderPath) > Common.LJ.CurrentListCount)
+                    if (fram.S_SensorConnectType == 0)
                     {
-                        Console.WriteLine(DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString() + " Download");
-                        SpinWait.SpinUntil(() => Common.LJ.GetFileSize(AnalysisData.LastFilePath) > AnalysisData.FtpFileSize, 1000);
-
-                        Common.LJ.DownloadName = Common.LJ.Csvlist[Common.LJ.Csvlist.Length - 2];
-                        AnalysisData.rawData = Common.LJ.Downloaddata(Common.LJ.DownloadName);
-                        if (AnalysisData.rawData.Length < 3200)
+                        Common.LJ.Csvlist = Common.LJ.GetCsvlist(Common.LJ.FolderPath);
+                        AnalysisData.LastFilePath = Common.LJ.GetlastfilePath(Common.LJ.FolderPath);
+                        // 先判斷資料數量在判斷資料大小
+                        if (Common.LJ.GetCurrentCsvListCount(Common.LJ.FolderPath) > Common.LJ.CurrentListCount)
                         {
-                            break;
+                            Console.WriteLine(DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString() + " Download");
+                            SpinWait.SpinUntil(() => Common.LJ.GetFileSize(AnalysisData.LastFilePath) > AnalysisData.FtpFileSize, 1000);
+
+                            Common.LJ.DownloadName = Common.LJ.Csvlist[Common.LJ.Csvlist.Length - 2];
+                            AnalysisData.rawData = Common.LJ.Downloaddata(Common.LJ.DownloadName);
+                            if (AnalysisData.rawData.Length < 3200)
+                            {
+                                break;
+                            }
+                            sram.saveDataTime = DateTime.Now;
+                            ParamFile.SaveRawdata_Csv(AnalysisData.rawData, FoupID, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal, sram.saveDataTime);
+                            Console.WriteLine("Download End " + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
+                            InsertLog.SavetoDB(70, Common.LJ.DownloadName);
+                            AutoTrimStep = TrimStep.Analysis;
                         }
+                    }
+                    else if (fram.S_SensorConnectType == 1)
+                    {
+                        AnalysisData.rawData = Common.LJX8000A.GetProfile();
                         sram.saveDataTime = DateTime.Now;
-                        ParamFile.SaveRawdata_Csv(AnalysisData.rawData, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal, sram.saveDataTime);
+                        ParamFile.SaveRawdata_Csv(AnalysisData.rawData, FoupID, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal, sram.saveDataTime);
                         Console.WriteLine("Download End " + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
                         InsertLog.SavetoDB(70, Common.LJ.DownloadName);
+                        Common.LJX8000A.ClearMemory();
                         AutoTrimStep = TrimStep.Analysis;
                     }
                     break;
@@ -544,7 +759,7 @@ namespace TrimGap
                         {
                             //Common.motion.PitchAngle(SSCNET.AxisNo.DD, SSCNET.Dir.Postive, sram.PitchAngle);
                             //Common.motion.PitchAngle(Mo.AxisNo.DD, Mo.Dir.Postive, 360 - sram.PitchAngleTotal); // 最到最後一個角度後 補到360度
-                            if((MachineType == 0 && sram.Recipe.Type == 3) || MachineType == 1)  //有做PT時先回0度 或是  N2那種檯面一定要回0度
+                            if((MachineType == 0 && sram.Recipe.Type == 3) || MachineType == 1 || MachineType == 2)  //有做PT時先回0度 或是  N2那種檯面一定要回0度
                             {
                                 Common.motion.PosMove(Mo.AxisNo.DD, 0); // 回0度                               
                             }
@@ -686,7 +901,7 @@ namespace TrimGap
                                 }
                                 else
                                 {
-                                    Slot_Info += sram.Recipe.Angle[j * 2] + ",";
+                                    Slot_Info += sram.Recipe.Angle[j] + ",";
                                 }
                             }
 
@@ -736,11 +951,27 @@ namespace TrimGap
                         }
                     }
 
+                    double[] data1 = new double[8];
+                    double[] data2 = new double[8];
+                    double[] data3 = new double[8];
+                    double[] data4 = new double[8];
+                    for (int i=0; i<8; i++)
+                    {
+                        data1[i] = fram.EFEMSts.H1[Slot - 1, i];
+                        data2[i] = fram.EFEMSts.W1[Slot - 1, i];
+                        data3[i] = fram.EFEMSts.H2[Slot - 1, i];
+                        data4[i] = fram.EFEMSts.W2[Slot - 1, i];
+                    }
+
+                    ParamFile.SaveRawdata_Csv4(data1, data2, data3, data4, max_H1, max_W1, max_H2, max_W2, FoupID, FoupID + "_" + Slot + "_" + "LJ_resultdata", DateTime.Now, AnalysisData.rotateCount_current);
+
                     AutoTrimStep = TrimStep.Finish;
                     break;
 
                 case TrimStep.Finish:
-
+  
+                    
+ 
                     Measure_TrimType_Done = true;
                     AnalysisData.rotateCount_current = 0;
                     AutoTrimStep = TrimStep.LJHome;
@@ -767,12 +998,12 @@ namespace TrimGap
                     {
                         AnalysisData.WaferMeasure[i] = false;
                     }
-                    if (MachineType == 0) // AP6 不用回home
+                    if (MachineType == 0 || MachineType == 2) // AP6 不用回home
                     {
                         if (Common.motion.MotionDone(Mo.AxisNo.DD))
                         {
                             //Common.motion.PitchAngle(Mo.AxisNo.DD, Mo.Dir.Postive,Homepos.Precitec.Angle);
-                            Common.motion.PosMove(Mo.AxisNo.DD, Homepos.Precitec.Angle + fram.m_WaferAlignAngle);
+                            Common.motion.PosMove(Mo.AxisNo.DD, Homepos.AP6.Precitec.Angle + fram.m_WaferAlignAngle);
                             SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 5000);
                             AutoTrim2ndStep = Trim2ndStep.DDRotate;
                             Flag.isPT = true;
@@ -783,8 +1014,8 @@ namespace TrimGap
                         if (Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y))
                         {
                             //這裡要下XY軸的絕對位置，走去LJ的原點
-                            Common.motion.PosMove(Mo.AxisNo.X, Homepos.LJ8020.X);
-                            Common.motion.PosMove(Mo.AxisNo.Y, Homepos.LJ8020.Y);
+                            Common.motion.PosMove(Mo.AxisNo.X, Homepos.N2.LJ8020.X);
+                            Common.motion.PosMove(Mo.AxisNo.Y, Homepos.N2.LJ8020.Y);
                             SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X), 10000); // 等待10秒
                             SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.Y), 10000); // 等待10秒
                             if (Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y))
@@ -802,7 +1033,7 @@ namespace TrimGap
                     }
                     else
                     {
-                        if (MachineType == 0) // AP6
+                        if (MachineType == 0 || MachineType == 2) // AP6
                         {
                             if (!Common.motion.MotionDone(Mo.AxisNo.DD))
                             {
@@ -877,7 +1108,7 @@ namespace TrimGap
                 case Trim2ndStep.Measurement:
                     if (Common.motion.MotionDone(Mo.AxisNo.DD) && Common.PTForm.GetPointMoveFinish(1))
                     {
-                        double posnow = Common.motion.Get_FBAngle(Mo.AxisNo.DD) - fram.m_WaferAlignAngle - Homepos.Precitec.Angle;
+                        double posnow = Common.motion.Get_FBAngle(Mo.AxisNo.DD) - fram.m_WaferAlignAngle - Homepos.AP6.Precitec.Angle;
                         InsertLog.SavetoDB(69, "Target:" + sram.PitchAngleTotal.ToString() + ",Real:" + posnow.ToString());
                         Console.WriteLine(DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString() + " Measure Start");
 
@@ -923,7 +1154,7 @@ namespace TrimGap
                                 Common.PTForm.getData(out AnalysisData.rawData);
                                 Common.PTForm.getData2(out AnalysisData.rawData2);
                                 Common.PTForm.getData3(out AnalysisData.rawData3);
-                                ParamFile.SaveRawdata_Csv3(AnalysisData.rawData, AnalysisData.rawData2, AnalysisData.rawData3, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal + "_PT_" + rtn.ToString(), sram.saveDataTime);
+                                ParamFile.SaveRawdata_Csv3(AnalysisData.rawData, AnalysisData.rawData2, AnalysisData.rawData3, FoupID, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal + "_PT_" + rtn.ToString(), sram.saveDataTime);
 
                                 Console.WriteLine("PT Download End " + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
                                 InsertLog.SavetoDB(70, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal + "_PT");
@@ -1126,7 +1357,7 @@ namespace TrimGap
                         {
                             //Common.motion.PitchAngle(SSCNET.AxisNo.DD, SSCNET.Dir.Postive, sram.PitchAngle);
                             //Common.motion.PitchAngle(Mo.AxisNo.DD, Mo.Dir.Postive, 360 - sram.PitchAngleTotal - Homepos.Precitec.Angle - fram.m_WaferAlignAngle); // 最到最後一個角度後 補到360度
-                            if (MachineType == 0)
+                            if (MachineType == 0 || MachineType == 2)
                             {
                                 Common.motion.PosMove(Mo.AxisNo.DD, fram.m_WaferBackToFoupAngle);
                             }
@@ -1338,6 +1569,20 @@ namespace TrimGap
                         }
                     }
 
+                    double[] data1 = new double[8];
+                    double[] data2 = new double[8];
+                    double[] data3 = new double[8];
+                    double[] data4 = new double[8];
+                    for (int i = 0; i < 8; i++)
+                    {
+                        data1[i] = fram.EFEMSts.H1[Slot - 1, i];
+                        data2[i] = fram.EFEMSts.W1[Slot - 1, i];
+                        data3[i] = fram.EFEMSts.H2[Slot - 1, i];
+                        data4[i] = fram.EFEMSts.W2[Slot - 1, i];
+                    }
+
+                    ParamFile.SaveRawdata_Csv4(data1, data2, data3, data4, max_H1, max_W1, max_H2, max_W2, FoupID, FoupID + "_" + Slot + "_" + "PT_resultdata", DateTime.Now, AnalysisData.rotateCount_current);
+
                     AutoTrim2ndStep = Trim2ndStep.Finish;
                     Flag.isPT = false;
                     break;
@@ -1354,6 +1599,665 @@ namespace TrimGap
 
                 default:
                     AutoTrim2ndStep = Trim2ndStep.PTHome;
+                    break;
+            }
+        }
+
+        private static void Measurement_TrimType_HTW()
+        {
+            switch (AutoHTWStep)
+            {
+                case HTWStep.HTWHome:
+                    sram.PitchAngleTotal = 0;
+                    sram.PTRetry = 0;
+                    AnalysisData.rotateCount_current = 0;
+                    Flag.isPT = false;
+                    for (int i = 0; i < sram.Recipe.Rotate_Count; i++)
+                    {
+                        AnalysisData.WaferMeasure[i] = false;
+                    }
+                    if (MachineType == 0) // AP6 不用回home
+                    {
+                        if (Common.motion.MotionDone(Mo.AxisNo.DD))
+                        {
+                            //Common.motion.PitchAngle(Mo.AxisNo.DD, Mo.Dir.Postive,Homepos.Precitec.Angle);
+                            Common.motion.PosMove(Mo.AxisNo.DD, Homepos.AP6.Precitec.Angle + fram.m_WaferAlignAngle);
+                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 5000);
+                            AutoHTWStep = HTWStep.DDRotate;
+                        }
+                    }
+                    else if (MachineType == 1) // N2 要移動到LJ的home點
+                    {
+                        if (Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y))
+                        {
+                            //這裡要下XY軸的絕對位置，走去LJ的原點
+                            Common.motion.PosMove(Mo.AxisNo.X, Homepos.N2.LJ8020.X);
+                            Common.motion.PosMove(Mo.AxisNo.Y, Homepos.N2.LJ8020.Y);
+                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X), 10000); // 等待10秒
+                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.Y), 10000); // 等待10秒
+                            if (Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y))
+                            {
+                                AutoHTWStep = HTWStep.DDRotate;
+                            }
+                        }
+                    }
+                    else if(MachineType == 2) //AP6II
+                    {
+                        if (Common.motion.MotionDone(Mo.AxisNo.DD) && Common.motion.MotionDone(Mo.AxisNo.AP6II_Z2) && Common.motion.MotionDone(Mo.AxisNo.AP6II_X))
+                        {
+                            Common.motion.PosMove(Mo.AxisNo.DD, Homepos.AP6II.HTW.Angle + fram.m_WaferAlignAngle);
+                            Common.motion.PosMove(Mo.AxisNo.AP6II_Z2, Homepos.AP6II.RecordCCD.AP6II_Z2);
+                            Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X + 5000);
+                            Common.PTForm.DarkReference();
+                            bool rtn = true;
+                            rtn &= SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 10000);
+                            rtn &= SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z2), 10000);
+                            rtn &= SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_X), 30000);
+                            if(rtn)
+                                AutoHTWStep = HTWStep.DDRotate;
+                            else
+                            {
+                                Flag.AutoidleFlag = false;
+                                Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_HTW_ReturnHome_TimeoutError, true, out err);
+                                InsertLog.SavetoDB(TrimGap_EqpID.EQP_HTW_ReturnHome_TimeoutError, "HTW ReturnHome Timeout");
+                            }
+                        }
+                    }
+                    break;
+
+                case HTWStep.DDRotate:
+                    if (fram.S_MotionRotate == "False") // Bypass motion
+                    {
+                        AutoHTWStep = HTWStep.HTWAutoFocus;
+                    }
+                    else
+                    {
+                        if (MachineType == 0) // AP6
+                        {
+                            if (!Common.motion.MotionDone(Mo.AxisNo.DD))
+                            {
+                                break;  // 動作未完成就跳走等等再看一次
+                            }
+                        }
+                        else if (MachineType == 1) // N26
+                        {
+                            if (!Common.motion.MotionDone(Mo.AxisNo.DD) && !Common.motion.MotionDone(Mo.AxisNo.X) && !Common.motion.MotionDone(Mo.AxisNo.Y))
+                            {
+                                break; // 動作未完成就跳走等等再看一次
+                            }
+                        }
+                        else if (MachineType == 2) // AP6II
+                        {
+                            if (!Common.motion.MotionDone(Mo.AxisNo.DD) && !Common.motion.MotionDone(Mo.AxisNo.AP6II_Z2) && !Common.motion.MotionDone(Mo.AxisNo.AP6II_X))
+                            {
+                                break; // 動作未完成就跳走等等再看一次
+                            }
+                        }
+                        if (AnalysisData.rotateCount_current == 0)
+                        {
+                            //sram.PitchAngle = 1;
+                            sram.PitchAngle = sram.Recipe.Angle[0];
+                        }
+                        else if (AnalysisData.rotateCount_current == 1)
+                        {
+                            //sram.PitchAngle = fram.Analysis.PitchAngle - 1;
+                            if (sram.Recipe.Rotate_Count == 4)
+                            {
+                                sram.PitchAngle = sram.Recipe.Angle[2] - sram.Recipe.Angle[0];
+                            }
+                            else
+                            {
+                                sram.PitchAngle = sram.Recipe.Angle[1] - sram.Recipe.Angle[0];
+                            }
+                        }
+                        else
+                        {
+                            //sram.PitchAngle = fram.Analysis.PitchAngle;
+                            if (sram.Recipe.Rotate_Count == 4)
+                            {
+                                sram.PitchAngle = sram.Recipe.Angle[AnalysisData.rotateCount_current * 2]
+                                                - sram.Recipe.Angle[AnalysisData.rotateCount_current * 2 - 2];
+                            }
+                            else
+                            {
+                                sram.PitchAngle = sram.Recipe.Angle[AnalysisData.rotateCount_current]
+                                                - sram.Recipe.Angle[AnalysisData.rotateCount_current - 1];
+                            }
+                        }
+                        sram.PitchAngleTotal += sram.PitchAngle;
+                        InsertLog.SavetoDB(67, sram.PitchAngleTotal.ToString());
+                        Common.motion.PitchAngle(Mo.AxisNo.DD, Mo.Dir.Postive, sram.PitchAngle);
+                        Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X + 5000);
+                        Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P1_Z);
+                        bool rtn;
+                        rtn = SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 5000);
+                        if (!rtn)
+                        {
+                            Console.WriteLine("DD Rotate Time Out");
+                            InsertLog.SavetoDB(67, "DD Rotate Time Out");
+                            Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_HTW_DD_TimeoutError, true, out err);
+                            //AutoHTWStep = HTWStep.Finish;
+                            Flag.AutoidleFlag = false;
+                            break;
+                        }
+                        rtn = SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3), 4000);
+                        if (!rtn)
+                        {
+                            Console.WriteLine("Axis Z3 GoTo P1 Time Out");
+                            InsertLog.SavetoDB(67, "Axis Z3 GoTo P1 Time Out");
+                            Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_HTW_Z_TimeoutError, true, out err);
+                            //AutoHTWStep = HTWStep.Finish;
+                            Flag.AutoidleFlag = false;
+                            break;
+                        }
+                        rtn = SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_X), 10000);
+                        if (!rtn)
+                        {
+                            Console.WriteLine("Axis X GoTo P1 Time Out");
+                            InsertLog.SavetoDB(67, "Axis X GoTo P1 Time Out");
+                            Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_HTW_X_TimeoutError, true, out err);
+                            //AutoHTWStep = HTWStep.Finish;
+                            Flag.AutoidleFlag = false;
+                            break;
+                        }
+                        AutoHTWStep = HTWStep.HTWAutoFocus;
+                        fram.PT_PLC_AutoRunStage_RetryCount = 0;
+                    }
+                    break;
+                case HTWStep.HTWAutoFocus:
+                    fram.HTW_Autofocus_Index = 0;
+                    sram.Focus_Offset = 0;
+                    short[] spectrumData;
+                    sram.SpectrumMaxValue = new short[fram.Position.HTW_P1_FocusRange];
+                    sram.SpectrumMaxValueBias = new int[fram.Position.HTW_P1_FocusRange];
+                    short max_allpos = 0;
+                    for (int i = 0; i < fram.Position.HTW_P1_FocusRange; i++)
+                    {
+                        Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P1_Z + i * 10);
+                        SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3), 8000);
+                        spectrumData = Common.PTForm.GetSpectrum(2); //Get FT
+                        if (spectrumData.Length >= 160)
+                        {
+                            short max = 0;
+                            int pos = 145;
+                            for (int j = 145; j <= 155; j++)
+                            {
+                                if (spectrumData[j] > max)
+                                {
+                                    max = spectrumData[j];
+                                    pos = j;
+                                }
+                            }
+                            sram.SpectrumMaxValueBias[i] = pos - 150;
+                            sram.SpectrumMaxValue[i] = max;
+                            if (max > max_allpos)
+                            {
+                                max_allpos = max;
+                                fram.HTW_Autofocus_Index = i;
+                            }
+                        }
+                        else
+                            sram.SpectrumMaxValue[i] = 0;
+                    }
+                    sram.Focus_Offset = 1 * fram.HTW_Autofocus_Index * 10 + sram.SpectrumMaxValueBias[fram.HTW_Autofocus_Index];
+
+                    Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X);//走到起點
+                    Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P1_Z + sram.Focus_Offset);
+
+                    AutoHTWStep = HTWStep.Measurement;
+                    break;
+                case HTWStep.Measurement:
+                    if (Common.motion.MotionDone(Mo.AxisNo.DD) && Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3) && Common.motion.MotionDone(Mo.AxisNo.AP6II_X))
+                    {
+                        sram.PTRetry = 0;
+                        double posnow = Common.motion.Get_FBAngle(Mo.AxisNo.DD) - fram.m_WaferAlignAngle - Homepos.AP6II.HTW.Angle;
+                        InsertLog.SavetoDB(69, "(HTW) Target:" + sram.PitchAngleTotal.ToString() + ",Real:" + posnow.ToString());
+                        Console.WriteLine(DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString() + " Measure Start");
+
+                        Common.PTForm.StartTrigger(4802, 48010, 0, -10);
+                        SpinWait.SpinUntil(() => false, 1000);
+                        Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X + 5000, 0.0008);
+
+                        AutoHTWStep = HTWStep.Download;
+                        Console.WriteLine(DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString() + " HTW Measure 1 End");
+                    }
+                    else if (fram.PT_PLC_AutoRunStage_RetryCount < 200)
+                    {
+                        SpinWait.SpinUntil(() => false, 50);
+                        fram.PT_PLC_AutoRunStage_RetryCount++;
+                    }
+                    else
+                    {
+                        fram.PT_PLC_AutoRunStage_RetryCount = 0;
+                        Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_HTW_X_TimeoutError, true, out err);
+                        InsertLog.SavetoDB(TrimGap_EqpID.EQP_HTW_X_TimeoutError, "PT PLC Move To Point 1 Timeout");
+                        Flag.AutoidleFlag = false;
+                    }
+
+                    break;
+
+                case HTWStep.Download:
+                    if (Common.motion.MotionDone(Mo.AxisNo.AP6II_X))
+                    {
+                        if (fram.m_simulateRun == 0)
+                        {
+                            SpinWait.SpinUntil(() => false, 1500);
+                            bool rtn = Common.PTForm.isFinish();
+
+                            if (rtn || sram.PTRetry >= 3)
+                            {
+                                sram.saveDataTime = DateTime.Now;
+                                Common.PTForm.getData(out AnalysisData.rawData);
+                                Common.PTForm.getData2(out AnalysisData.rawData2);
+                                Common.PTForm.getData3(out AnalysisData.rawData3);
+                                for (int i = 0; i < AnalysisData.rawData.Length; i++)
+                                {
+                                    if (Double.NaN.Equals((AnalysisData.rawData[i])))
+                                    {
+                                        AnalysisData.rawData[i] = 0;
+                                    }
+                                    if (Double.NaN.Equals((AnalysisData.rawData2[i])))
+                                    {
+                                        AnalysisData.rawData2[i] = 0;
+                                    }
+                                    if (Double.NaN.Equals((AnalysisData.rawData3[i])))
+                                    {
+                                        AnalysisData.rawData3[i] = 0;
+                                    }
+                                }
+
+                                ParamFile.SaveRawdata_Csv3(AnalysisData.rawData, AnalysisData.rawData2, AnalysisData.rawData3, FoupID, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal + "_HTW_RAW_" + rtn.ToString(), sram.saveDataTime);
+
+                                //Console.WriteLine("PT Download End " + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
+                                //InsertLog.SavetoDB(70, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal + "_PT");
+                                AutoHTWStep = HTWStep.Measurement2;
+                                sram.PTRetry = 0;
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X);//走到起點
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P2_Z);//走到起點
+                            }
+                            else
+                            {
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X);//走到起點
+                                sram.PTRetry++;
+                                AutoHTWStep = HTWStep.Measurement;
+                            }
+                        }
+                        else
+                        {
+                            StreamReader read = new StreamReader("PT.csv");
+
+                            string ReadAll;
+                            string[] ReadArray1;//, ReadArray2;
+                            ReadAll = read.ReadToEnd(); // 一次讀全部
+                            ReadArray1 = Regex.Split(ReadAll, "\r\n", RegexOptions.IgnoreCase);
+                            double[] array2 = new double[ReadArray1.Length - 1];
+                            double[] array3 = new double[ReadArray1.Length - 1];
+                            double[] array4 = new double[ReadArray1.Length - 1];
+                            for (int i = 0; i < ReadArray1.Length - 1; i++)
+                            {
+                                string[] tmpArray = Regex.Split(ReadArray1[i], ",", RegexOptions.IgnoreCase);
+                                array2[i] = Convert.ToSingle(tmpArray[0]);
+                                array3[i] = Convert.ToSingle(tmpArray[1]);
+                                array4[i] = Convert.ToSingle(tmpArray[2]);
+                                Console.WriteLine(i.ToString());
+                            }
+                            AnalysisData.rawData = array2;
+                            AnalysisData.rawData2 = array3;
+                            AnalysisData.rawData3 = array4;
+                            read.Close();
+                            AutoHTWStep = HTWStep.Analysis;
+                        }
+
+                    }
+                    break;
+                case HTWStep.Measurement2:
+                    if (Common.motion.MotionDone(Mo.AxisNo.DD) && Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3) && Common.motion.MotionDone(Mo.AxisNo.AP6II_X))
+                    {
+                        sram.PTRetry = 0;
+                        double posnow = Common.motion.Get_FBAngle(Mo.AxisNo.DD) - fram.m_WaferAlignAngle - Homepos.AP6II.HTW.Angle;
+                        InsertLog.SavetoDB(69, "(HTW) Target:" + sram.PitchAngleTotal.ToString() + ",Real:" + posnow.ToString());
+                        Console.WriteLine(DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString() + " Measure 2 Start");
+
+                        Common.PTForm.StartTrigger(4802, 48010, 0, -10);
+                        SpinWait.SpinUntil(() => false, 1000);
+                        Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X + 5000, 0.0008);
+
+                        AutoHTWStep = HTWStep.Download2;
+                        Console.WriteLine(DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString() + " HTW Measure 2 End");
+                    }
+                    else if (fram.PT_PLC_AutoRunStage_RetryCount < 200)
+                    {
+                        SpinWait.SpinUntil(() => false, 50);
+                        fram.PT_PLC_AutoRunStage_RetryCount++;
+                    }
+                    else
+                    {
+                        fram.PT_PLC_AutoRunStage_RetryCount = 0;
+                        Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_HTW_X_TimeoutError, true, out err);
+                        InsertLog.SavetoDB(TrimGap_EqpID.EQP_HTW_X_TimeoutError, "PT PLC Move To Point 2 Timeout");
+                        Flag.AutoidleFlag = false;
+                    }
+
+                    break;
+
+                case HTWStep.Download2:
+                    if (Common.motion.MotionDone(Mo.AxisNo.AP6II_X))
+                    {
+                        if (fram.m_simulateRun == 0)
+                        {
+                            SpinWait.SpinUntil(() => false, 1500);
+                            bool rtn = Common.PTForm.isFinish();
+
+                            if (rtn || sram.PTRetry >= 3)
+                            {
+                                //sram.saveDataTime = DateTime.Now;
+
+                                Common.PTForm.getData(out AnalysisData.rawData_base);
+                                ParamFile.SaveRawdata_Csv(AnalysisData.rawData_base, FoupID, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal + "_HTW_RAW_BASE_" + rtn.ToString(), sram.saveDataTime);
+                                
+                                Console.WriteLine("HTW Download End " + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
+                                InsertLog.SavetoDB(70, FoupID + "_" + Slot + "_" + sram.PitchAngleTotal + "_HTW");
+                                AutoHTWStep = HTWStep.Analysis;
+                                sram.PTRetry = 0;
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X);//走到起點
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P1_Z);
+                            }
+                            else
+                            {
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X);//走到起點
+                                sram.PTRetry++;
+                                AutoHTWStep = HTWStep.Measurement2;
+                            }
+                        }
+                        else
+                        {
+                            StreamReader read = new StreamReader("PT.csv");
+
+                            string ReadAll;
+                            string[] ReadArray1;//, ReadArray2;
+                            ReadAll = read.ReadToEnd(); // 一次讀全部
+                            ReadArray1 = Regex.Split(ReadAll, "\r\n", RegexOptions.IgnoreCase);
+                            double[] array2 = new double[ReadArray1.Length - 1];
+                            double[] array3 = new double[ReadArray1.Length - 1];
+                            double[] array4 = new double[ReadArray1.Length - 1];
+                            for (int i = 0; i < ReadArray1.Length - 1; i++)
+                            {
+                                string[] tmpArray = Regex.Split(ReadArray1[i], ",", RegexOptions.IgnoreCase);
+                                array2[i] = Convert.ToSingle(tmpArray[0]);
+                                array3[i] = Convert.ToSingle(tmpArray[1]);
+                                array4[i] = Convert.ToSingle(tmpArray[2]);
+                                Console.WriteLine(i.ToString());
+                            }
+                            AnalysisData.rawData = array2;
+                            AnalysisData.rawData2 = array3;
+                            AnalysisData.rawData3 = array4;
+                            read.Close();
+                        }
+
+                    }
+                    break;
+                case HTWStep.Analysis:
+                    InsertLog.SavetoDB(71);
+
+                    Flag.SensorAnalysisFlag = true;
+                    Flag.SaveChartFlag = false; //主畫面分析
+                    AutoHTWStep = HTWStep.Savelog;
+                    break;
+
+                case HTWStep.Savelog:
+                    if (!Flag.SensorAnalysisFlag && Flag.SaveChartFlag && Common.motion.MotionDone(Mo.AxisNo.AP6II_X) && Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3))
+                    {
+                        InsertLog.SavetoDB(72);
+                        AnalysisData.WaferMeasure[AnalysisData.rotateCount_current] = true;
+                        SpinWait.SpinUntil(() => false, 100);
+                        AutoHTWStep = HTWStep.JudgeRotateCount;
+                    }
+                    break;
+                case HTWStep.JudgeRotateCount:
+                    Console.WriteLine("CurrentTimes : " + AnalysisData.rotateCount_current);
+
+                    if (AnalysisData.rotateCount_current < sram.Recipe.Rotate_Count)
+                    {
+                        AnalysisData.rotateCount_current += 1;
+                        if (AnalysisData.rotateCount_current == sram.Recipe.Rotate_Count)
+                        {
+                            if (MachineType == 0 || MachineType == 2)
+                            {
+                                Common.motion.PosMove(Mo.AxisNo.DD, fram.m_WaferBackToFoupAngle);
+                            }
+                            else
+                            {
+                                Common.motion.PosMove(Mo.AxisNo.DD, 0); // 回0度
+                            }
+                            Common.motion.PosMove(Mo.AxisNo.AP6II_X, Homepos.AP6II.HTW.AP6II_X);
+                            SpinWait.SpinUntil(() => false, 500);
+                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD) && Common.motion.MotionDone(Mo.AxisNo.AP6II_X), 20000);
+                            InsertLog.SavetoDB(72);
+                            AutoHTWStep = HTWStep.UpdateSecs;
+                        }
+                        else
+                        {
+                            AutoHTWStep = HTWStep.DDRotate;
+                        }
+                    }
+
+                    break;
+
+                case HTWStep.UpdateSecs:
+
+                    #region 算完8個角度後計算最大值
+
+                    string Slot_InfoMax = "";
+                    double max_H1 = 0, max_H2 = 0, max_W1 = 0, max_W2 = 0;
+
+                    for (int i = 0; i < 25; i++)
+                    {
+                        //max_H1 = 0; max_H2 = 0; max_W1 = 0; max_W2 = 0;
+                        if (EFEM.IsInit || fram.EFEMSts.Skip == 1)
+                        {
+                            if (sram.Recipe.Slot[i] == 1)
+                            {
+                                for (int j = 0; j < 8; j++)
+                                {
+                                    if (fram.EFEMSts.H1[i, j] > max_H1)
+                                    {
+                                        max_H1 = fram.EFEMSts.H1[i, j];
+                                    }
+
+                                    if (fram.EFEMSts.H2[i, j] > max_H2)
+                                    {
+                                        max_H2 = fram.EFEMSts.H2[i, j];
+                                    }
+
+                                    if (fram.EFEMSts.W1[i, j] > max_W1)
+                                    {
+                                        max_W1 = fram.EFEMSts.W1[i, j];
+                                    }
+
+                                    if (fram.EFEMSts.W2[i, j] > max_W2)
+                                    {
+                                        max_W2 = fram.EFEMSts.W2[i, j];
+                                    }
+                                }
+                                //for (int j = 0; j < 8; j++)
+                                //{
+                                //    if (fram.EFEMSts.H2[i, j] > max_H2)
+                                //    {
+                                //        max_H2 = fram.EFEMSts.H2[i, j];
+                                //    }
+                                //}
+                                //for (int j = 0; j < 8; j++)
+                                //{
+                                //    if (fram.EFEMSts.W1[i, j] > max_W1)
+                                //    {
+                                //        max_W1 = fram.EFEMSts.W1[i, j];
+                                //    }
+                                //}
+                                //for (int j = 0; j < 8; j++)
+                                //{
+                                //    if (fram.EFEMSts.W2[i, j] > max_W2)
+                                //    {
+                                //        max_W2 = fram.EFEMSts.W2[i, j];
+                                //    }
+                                //}
+
+                                if (sram.Recipe.Type == 0)
+                                {
+                                    Slot_InfoMax += "0,";
+                                    Slot_InfoMax += max_W1 + ",";
+                                    Slot_InfoMax += "0,";
+                                    Slot_InfoMax += "0";
+                                }
+                                else if (sram.Recipe.Type == 1) // 1step
+                                {
+                                    Slot_InfoMax += max_H1 + ",";
+                                    Slot_InfoMax += max_W1 + ",";
+                                    Slot_InfoMax += "0,";
+                                    Slot_InfoMax += "0";
+                                }
+                                else if (sram.Recipe.Type == 2 || sram.Recipe.Type == 3 || sram.Recipe.Type == 4) // 2 step    //
+                                {
+                                    Slot_InfoMax += max_H1 + ",";
+                                    Slot_InfoMax += max_W1 + ",";
+                                    Slot_InfoMax += max_H2 + ",";
+                                    Slot_InfoMax += max_W2 + "";
+                                }
+                            }
+                            else
+                            {
+                                Slot_InfoMax += "0,";
+                                Slot_InfoMax += "0,";
+                                Slot_InfoMax += "0,";
+                                Slot_InfoMax += "0";
+                            }
+                        }
+
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Slot1_Max + i, Slot_InfoMax, out err);
+                        Slot_InfoMax = "";
+                    }
+
+                    #endregion 算完8個角度後計算最大值
+
+                    string Slot_Info = "";
+                    for (int i = 0; i < 25; i++)
+                    {
+                        Slot_Info += sram.Recipe.Type + ","; // 0: blue tape, 1: 1step, 2: 2step
+                        Slot_Info += sram.Recipe.Rotate_Count + ","; // 4 or 8 個點
+                        for (int j = 0; j < sram.Recipe.Rotate_Count; j++) // 每一片的 4/8 個位置
+                        {
+                            // 加入 Angle
+                            if (sram.Recipe.Rotate_Count == 4)
+                            {
+                                if (EFEM.IsInit || fram.EFEMSts.Skip == 1)
+                                {
+                                    if (Common.EFEM.LoadPort_Run.Slot[i] == 1)
+                                    {
+                                        Slot_Info += sram.Recipe.Angle[j * 2] + ",";
+                                    }
+                                    else
+                                    {
+                                        Slot_Info += "0,";
+                                    }
+                                }
+                                else
+                                {
+                                    Slot_Info += sram.Recipe.Angle[j * 2] + ",";
+                                }
+                            }
+                            else
+                            {
+                                if (EFEM.IsInit || fram.EFEMSts.Skip == 1)
+                                {
+                                    if (Common.EFEM.LoadPort_Run.Slot[i] == 1)
+                                    {
+                                        Slot_Info += sram.Recipe.Angle[j] + ",";
+                                    }
+                                    else
+                                    {
+                                        Slot_Info += "0,";
+                                    }
+                                }
+                                else
+                                {
+                                    Slot_Info += sram.Recipe.Angle[j] + ",";
+                                }
+                            }
+
+                            // 每個type上傳的不一樣
+                            if (sram.Recipe.Type == 0) // Blue Tape
+                            {
+                                Slot_Info += 0 + ",";
+                                Slot_Info += fram.EFEMSts.W1[i, j] + ",";                           // blueTape只有W1
+                                Slot_Info += 0 + ",";
+                                Slot_Info += 0 + ",";
+                            }
+                            else if (sram.Recipe.Type == 1) // 1 step
+                            {
+                                Slot_Info += fram.EFEMSts.H1[i, j] + ",";                           // H1
+                                Slot_Info += fram.EFEMSts.W1[i, j] + ",";                           // H2
+                                Slot_Info += 0 + ",";
+                                Slot_Info += 0 + ",";
+                            }
+                            else if (sram.Recipe.Type == 2 || sram.Recipe.Type == 3 || sram.Recipe.Type == 4) // 2 step    //
+                            {
+                                Slot_Info += fram.EFEMSts.H1[i, j] + ",";                           // h1 = H2
+                                Slot_Info += fram.EFEMSts.W1[i, j] + ",";   // w1 = W1+W2
+                                Slot_Info += fram.EFEMSts.H2[i, j] + ",";   // h2 = H1+H2
+                                Slot_Info += fram.EFEMSts.W2[i, j] + ",";                           // w2 = W1
+                            }
+                            else
+                            {
+                                Slot_Info += 0 + ",";
+                                Slot_Info += 0 + ",";
+                                Slot_Info += 0 + ",";
+                                Slot_Info += 0 + ",";
+                            }
+                        }
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Slot1_Info + i, Slot_Info, out err);
+                        Slot_Info = "";
+                    }
+                    if (EFEM.IsInit)
+                    {
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort_Run.FoupID, out err);
+                        if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P1)
+                        {
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
+                        }
+                        else if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P2)
+                        {
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
+                        }
+                    }
+
+                    double[] data1 = new double[8];
+                    double[] data2 = new double[8];
+                    double[] data3 = new double[8];
+                    double[] data4 = new double[8];
+                    for (int i = 0; i < 8; i++)
+                    {
+                        data1[i] = fram.EFEMSts.H1[Slot - 1, i];
+                        data2[i] = fram.EFEMSts.W1[Slot - 1, i];
+                        data3[i] = fram.EFEMSts.H2[Slot - 1, i];
+                        data4[i] = fram.EFEMSts.W2[Slot - 1, i];
+                    }
+
+                    ParamFile.SaveRawdata_Csv4(data1, data2, data3, data4, max_H1, max_W1, max_H2, max_W2, FoupID, FoupID + "_" + Slot + "_" + "HTW_resultdata", DateTime.Now, AnalysisData.rotateCount_current);
+
+                    Measure_HTW_Done = true;
+                    AutoHTWStep = HTWStep.Finish;
+                    break;
+
+                case HTWStep.Finish:
+
+                    AnalysisData.rotateCount_current = 0;
+                    AutoHTWStep = HTWStep.HTWHome;
+
+                    Trimtest = 0;
+                    Trimtest_break = 0;
+                    break;
+
+                default:
+                    AutoHTWStep = HTWStep.HTWHome;
                     break;
             }
         }
@@ -1405,8 +2309,8 @@ namespace TrimGap
                         if (Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y))
                         {
                             //這裡要下XY軸的絕對位置，走去SF3的原點
-                            Common.motion.PosMove(Mo.AxisNo.X, Homepos.SF3.X);
-                            Common.motion.PosMove(Mo.AxisNo.Y, Homepos.SF3.Y);
+                            Common.motion.PosMove(Mo.AxisNo.X, Homepos.N2.SF3.X);
+                            Common.motion.PosMove(Mo.AxisNo.Y, Homepos.N2.SF3.Y);
                             AutoTTVStep = TTVStep.TTVHomeDone;
                         }
                     }
@@ -1470,8 +2374,8 @@ namespace TrimGap
                         if (Common.motion.MotionDone(Mo.AxisNo.DD) && Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y))
                         {
                             InsertLog.SavetoDB(68, TTVData.shiftCount_current.ToString());
-                            Common.motion.PosMove(Mo.AxisNo.X, Homepos.SF3.X + TTVData.lsShift[TTVData.shiftCount_current].X);
-                            Common.motion.PosMove(Mo.AxisNo.Y, Homepos.SF3.Y + TTVData.lsShift[TTVData.shiftCount_current].Y);
+                            Common.motion.PosMove(Mo.AxisNo.X, Homepos.N2.SF3.X + TTVData.lsShift[TTVData.shiftCount_current].X);
+                            Common.motion.PosMove(Mo.AxisNo.Y, Homepos.N2.SF3.Y + TTVData.lsShift[TTVData.shiftCount_current].Y);
                             AutoTTVStep = TTVStep.ShiftPositionDone;
                         }
                     }
@@ -1540,7 +2444,7 @@ namespace TrimGap
                     }
                     else
                     {
-                        if (MachineType == 0)
+                        if (MachineType == 0 || MachineType == 2)
                         {
                             Common.motion.PosMove(Mo.AxisNo.DD, fram.m_WaferBackToFoupAngle);
                         }
@@ -1583,7 +2487,7 @@ namespace TrimGap
                     InsertLog.SavetoDB(72);
                     Measure_TTV_Done = true;            //改true之後AutoRunStageStep會跳到下一步驟
                     sram.saveDataTime = DateTime.Now;
-                    ParamFile.SaveRawdata_Csv(ReportData.TTVData, FoupID + "_" + Slot + "_" + fram.Recipe.MotionPatternName, sram.saveDataTime);
+                    ParamFile.SaveRawdata_Csv(ReportData.TTVData, FoupID, FoupID + "_" + Slot + "_" + fram.Recipe.MotionPatternName, sram.saveDataTime);
                     Common.SF3.Action_CmdMeasStop();
                     AutoTTVStep = TTVStep.Finish;
                     break;
@@ -1608,18 +2512,18 @@ namespace TrimGap
                     AnalysisData.rotateCount_current = 0;
                     for (int i = 0; i < sram.Recipe.Rotate_Count; i++)
                     {
-                        //AnalysisData.WaferMeasure[i] = false;
+                        AnalysisData.WaferMeasure[i] = false;
                     }
                     AutoBlueTapeStep = BluetapeStep.CCDHome;
                     break;
 
                 case BluetapeStep.CCDHome:
-                    if (MachineType == 0)    // AP6 BT起點
+                    if (MachineType == 0 || MachineType == 2)    // AP6 BT起點
                     {
                         if (Common.motion.MotionDone(Mo.AxisNo.DD))
                         {
                             //Common.motion.PitchAngle(Mo.AxisNo.DD, Mo.Dir.Postive, Homepos.BlueTape.Angle);
-                            Common.motion.PosMove(Mo.AxisNo.DD, Homepos.BlueTape.Angle + fram.m_WaferAlignAngle);
+                            Common.motion.PosMove(Mo.AxisNo.DD, Homepos.AP6.BlueTape.Angle + fram.m_WaferAlignAngle);
                             SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 5000);
                             if (Common.motion.MotionDone(Mo.AxisNo.DD))
                             {
@@ -1637,9 +2541,9 @@ namespace TrimGap
                         if (Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y) && Common.motion.MotionDone(Mo.AxisNo.DD))
                         {
                             //這裡要下XY軸的絕對位置，走去LJ的原點
-                            Common.motion.PosMove(Mo.AxisNo.X, Homepos.BlueTape.X);
-                            Common.motion.PosMove(Mo.AxisNo.Y, Homepos.BlueTape.Y);
-                            Common.motion.PosMove(Mo.AxisNo.DD, Homepos.BlueTape.Angle);
+                            Common.motion.PosMove(Mo.AxisNo.X, Homepos.N2.BlueTape.X);
+                            Common.motion.PosMove(Mo.AxisNo.Y, Homepos.N2.BlueTape.Y);
+                            Common.motion.PosMove(Mo.AxisNo.DD, Homepos.N2.BlueTape.Angle);
                             SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y) && Common.motion.MotionDone(Mo.AxisNo.DD), 10000); // 等待10秒
                             if (Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y) && Common.motion.MotionDone(Mo.AxisNo.DD))
                             {
@@ -1656,7 +2560,7 @@ namespace TrimGap
                     }
                     else
                     {
-                        if (MachineType == 0) // AP6
+                        if (MachineType == 0 || MachineType == 2) // AP6
                         {
                             if (!Common.motion.MotionDone(Mo.AxisNo.DD))
                             {
@@ -1702,7 +2606,11 @@ namespace TrimGap
                         }
                         sram.PitchAngleTotal += sram.PitchAngle;
                         InsertLog.SavetoDB(67, sram.PitchAngleTotal.ToString());
-                        Common.motion.PitchAngle(Mo.AxisNo.DD, Mo.Dir.Postive, sram.PitchAngle);
+                        //20240104 2:自我檢測 不進入
+                        if (fram.EFEMSts.Skip == 0 || fram.EFEMSts.Skip == 1)
+                        {
+                            Common.motion.PitchAngle(Mo.AxisNo.DD, Mo.Dir.Postive, sram.PitchAngle);
+                        }
                         SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 2000);
                         //if (!Common.motion.MotionDone(Mo.AxisNo.DD))
                         //{
@@ -1718,7 +2626,7 @@ namespace TrimGap
                 case BluetapeStep.Measurement:
                     if (Common.motion.MotionDone(Mo.AxisNo.DD))
                     {
-                        double posnow = Common.motion.Get_FBAngle(Mo.AxisNo.DD) - fram.m_WaferAlignAngle - Homepos.Precitec.Angle;
+                        double posnow = 1*(Common.motion.Get_FBAngle(Mo.AxisNo.DD) - fram.m_WaferAlignAngle - Homepos.AP6.BlueTape.Angle);
                         InsertLog.SavetoDB(69, "Target:" + sram.PitchAngleTotal.ToString() + ",Real:" + posnow.ToString());
                         Console.WriteLine(DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString() + " Bluetape Measure Start");
                         //Common.Rs232LightingController.SetIntensity(1, 24); // 開燈           C:1, F:8, 1*16+8 = 24
@@ -1889,7 +2797,405 @@ namespace TrimGap
                                 }
                                 else
                                 {
+                                    Slot_Info += sram.Recipe.Angle[j] + ",";
+                                }
+                            }
+
+                            // 每個type上傳的不一樣
+                            if (sram.Recipe.Type == 0) // Blue Tape
+                            {
+                                Slot_Info += 0 + ",";
+                                Slot_Info += fram.EFEMSts.W1[i, j] + ",";                           // blueTape只有W1
+                                Slot_Info += 0 + ",";
+                                Slot_Info += 0 + ",";
+                            }
+                            else
+                            {
+                                Slot_Info += 0 + ",";
+                                Slot_Info += 0 + ",";
+                                Slot_Info += 0 + ",";
+                                Slot_Info += 0 + ",";
+                            }
+                        }
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Slot1_Info + i, Slot_Info, out err);
+                        Slot_Info = "";
+                    }
+                    if (EFEM.IsInit)
+                    {
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort_Run.FoupID, out err);
+                        if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P1)
+                        {
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
+                        }
+                        else if (Common.EFEM.LoadPort_Run.pn == LoadPort.Pn.P2)
+                        {
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
+                        }
+                    }
+
+                    double[] data1 = new double[8];
+                    double[] data2 = new double[8];
+                    double[] data3 = new double[8];
+                    double[] data4 = new double[8];
+                    for (int i = 0; i < 8; i++)
+                    {
+                        data1[i] = fram.EFEMSts.H1[Slot - 1, i];
+                        data2[i] = fram.EFEMSts.W1[Slot - 1, i];
+                        data3[i] = fram.EFEMSts.H2[Slot - 1, i];
+                        data4[i] = fram.EFEMSts.W2[Slot - 1, i];
+                    }
+
+                    ParamFile.SaveRawdata_Csv4(data1, data2, data3, data4, 0, max_W1, 0, 0, FoupID, FoupID + "_" + Slot + "_" + "BlueTape_resultdata", DateTime.Now, AnalysisData.rotateCount_current);
+
+                    Measure_BlueTape_Done = true;
+                    AutoBlueTapeStep = BluetapeStep.Finish;
+                    AnalysisData.rotateCount_current = 0;
+                    break;
+
+                case BluetapeStep.Finish:
+                    if (Measure_BlueTape_Done == false)        //在Finish待命的時候，如果有把Measure_BlueTape_Done改false會觸發一次BT檢測
+                        AutoBlueTapeStep = BluetapeStep.BlueTapeStart;
+                    AnalysisData.rotateCount_current = 0;
+
+                    Tapetest = 0;
+                    break;
+
+                default:
+                    AutoBlueTapeStep = BluetapeStep.Finish;
+                    break;
+            }
+        }
+
+        private static void Measurement_Record_CCD()
+        {
+            switch (AutoRecordCCDStep)
+            {
+                case RecordCCDStep.RecordCCDStart:
+                    sram.PitchAngleTotal = 0;
+                    AnalysisData.rotateCount_current = 0;
+                    for (int i = 0; i < sram.Recipe.Rotate_Count; i++)
+                    {
+                        //AnalysisData.WaferMeasure[i] = false;
+                    }
+                    AutoRecordCCDStep = RecordCCDStep.CCDHome;
+                    break;
+
+                case RecordCCDStep.CCDHome:
+                    if (MachineType == 0)    // AP6 
+                    {
+                        if (Common.motion.MotionDone(Mo.AxisNo.DD))
+                        {
+                            //Common.motion.PitchAngle(Mo.AxisNo.DD, Mo.Dir.Postive, Homepos.BlueTape.Angle);
+                            Common.motion.PosMove(Mo.AxisNo.DD, Homepos.AP6II.RecordCCD.Angle + fram.m_WaferAlignAngle);
+                            bool rtn = true;
+                            rtn &= SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 5000);
+                            if (rtn)
+                            {
+                                AutoRecordCCDStep = RecordCCDStep.DDRotate;
+                            }
+                            else
+                            {
+                                AutoRecordCCDStep = RecordCCDStep.Finish;
+                                Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_HTW_ReturnHome_TimeoutError, true, out err);
+                                InsertLog.SavetoDB(TrimGap_EqpID.EQP_HTW_ReturnHome_TimeoutError, "HTW ReturnHome Timeout");
+                            }
+                        }
+                    }
+                    else if (MachineType == 2)    // AP6 II
+                    {
+                        if (Common.motion.MotionDone(Mo.AxisNo.DD) && Common.motion.MotionDone(Mo.AxisNo.AP6II_Z2))
+                        {
+                            //Common.motion.PitchAngle(Mo.AxisNo.DD, Mo.Dir.Postive, Homepos.BlueTape.Angle);
+                            Common.motion.PosMove(Mo.AxisNo.DD, Homepos.AP6II.RecordCCD.Angle + fram.m_WaferAlignAngle);
+                            Common.motion.PosMove(Mo.AxisNo.AP6II_Z2, fram.Position.RecordCCD_Z);
+                            bool rtn = true;
+                            rtn &= SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 5000);
+                            rtn &= SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z2), 5000);
+                            if (rtn)
+                            {
+                                AutoRecordCCDStep = RecordCCDStep.DDRotate;
+                            }
+                            else
+                            {
+                                AutoRecordCCDStep = RecordCCDStep.Finish;
+                                Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_HTW_ReturnHome_TimeoutError, true, out err);
+                                InsertLog.SavetoDB(TrimGap_EqpID.EQP_HTW_ReturnHome_TimeoutError, "HTW ReturnHome Timeout");
+                            }
+                        }
+                    }
+                    else if (MachineType == 1) // N2 要移動到BT的home點
+                    {
+                        /*
+                        if (Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y) && Common.motion.MotionDone(Mo.AxisNo.DD))
+                        {
+                            //這裡要下XY軸的絕對位置，走去LJ的原點
+                            Common.motion.PosMove(Mo.AxisNo.X, Homepos.N2.RecordCCD.X);
+                            Common.motion.PosMove(Mo.AxisNo.Y, Homepos.N2.RecordCCD.Y);
+                            Common.motion.PosMove(Mo.AxisNo.DD, Homepos.N2.RecordCCD.Angle);
+                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y) && Common.motion.MotionDone(Mo.AxisNo.DD), 10000); // 等待10秒
+                            if (Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y) && Common.motion.MotionDone(Mo.AxisNo.DD))
+                            {
+                                AutoBlueTapeStep = BluetapeStep.DDRotate;
+                            }
+                        }*/
+                        Measure_RecordCCD_Done = true;
+                        AutoRecordCCDStep = RecordCCDStep.Finish;
+                    }
+                    break;
+
+                case RecordCCDStep.DDRotate:
+                    if (fram.S_MotionRotate == "False") // Bypass motion
+                    {
+                        AutoRecordCCDStep = RecordCCDStep.Measurement;
+                    }
+                    else
+                    {
+                        if (MachineType == 0 || MachineType == 2) // AP6
+                        {
+                            if (!Common.motion.MotionDone(Mo.AxisNo.DD))
+                            {
+                                break;  // 動作未完成就跳走等等再看一次
+                            }
+                        }
+
+
+                        if (AnalysisData.rotateCount_current == 0)
+                        {
+                            sram.PitchAngle = sram.Recipe.Angle[0];
+                            if(sram.Recipe.RecordCCDRule == 1)  //修改起始點
+                                sram.PitchAngle = sram.Recipe.RecordCCD_Angle_Start;
+                        }
+                        else if (AnalysisData.rotateCount_current == 1)
+                        {
+                            if (sram.Recipe.Rotate_Count == 4)
+                            {
+                                sram.PitchAngle = sram.Recipe.Angle[2] - sram.Recipe.Angle[0];
+                            }
+                            else
+                            {
+                                sram.PitchAngle = sram.Recipe.Angle[1] - sram.Recipe.Angle[0];
+                            }
+                            if (sram.Recipe.RecordCCDRule == 1)  //修改Pitch
+                                sram.PitchAngle = sram.Recipe.RecordCCD_Angle_Pitch;
+                        }
+                        else
+                        {
+                            if (sram.Recipe.Rotate_Count == 4)
+                            {
+                                sram.PitchAngle = sram.Recipe.Angle[AnalysisData.rotateCount_current * 2]
+                                                - sram.Recipe.Angle[AnalysisData.rotateCount_current * 2 - 2];
+                            }
+                            else
+                            {
+                                sram.PitchAngle = sram.Recipe.Angle[AnalysisData.rotateCount_current]
+                                                - sram.Recipe.Angle[AnalysisData.rotateCount_current - 1];
+                            }
+                            if (sram.Recipe.RecordCCDRule == 1)  //修改Pitch
+                                sram.PitchAngle = sram.Recipe.RecordCCD_Angle_Pitch;
+                        }
+                        sram.PitchAngleTotal += sram.PitchAngle;
+                        InsertLog.SavetoDB(67, sram.PitchAngleTotal.ToString());
+                        Common.motion.PitchAngle(Mo.AxisNo.DD, Mo.Dir.Postive, sram.PitchAngle);
+                        SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 2000);
+                        AutoRecordCCDStep = RecordCCDStep.Measurement;
+                    }
+                    break;
+
+                case RecordCCDStep.Measurement:
+                    if (Common.motion.MotionDone(Mo.AxisNo.DD))
+                    {
+                        double posnow = 1 * (Common.motion.Get_FBAngle(Mo.AxisNo.DD) - fram.m_WaferAlignAngle - Homepos.AP6II.RecordCCD.Angle);
+                        InsertLog.SavetoDB(69, "Target:" + sram.PitchAngleTotal.ToString() + ",Real:" + posnow.ToString());
+                        Console.WriteLine(DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString() + " RecordCCD Measure Start");
+                        //Common.Rs232LightingController.SetIntensity(1, 24); // 開燈           C:1, F:8, 1*16+8 = 24
+                        //Common.EthernetLightingController.SetIntensity(0, 25); // 開燈 Ch0    25
+                        //Common.EthernetLightingController.SetIntensity(1, 0); // 開燈 Ch1    0
+                        Common.camera2.GetImage();
+                        //Common.Rs232LightingController.SetIntensity(1, 0); // 關燈
+                        //Common.EthernetLightingController.SetIntensity(0, 0); // 關燈 Ch0
+                        //Common.EthernetLightingController.SetIntensity(1, 0); // 關燈 Ch1
+
+                        AutoRecordCCDStep = RecordCCDStep.Download;
+                        Console.WriteLine(DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString() + " RecordCCD Measure End");
+                    }
+                    break;
+
+                case RecordCCDStep.Download:
+                    InsertLog.SavetoDB(70);
+                    byte[] data = Common.camera2.image; //1D gray level array
+                    int w = Common.camera2.Width;    // image Width
+                    int h = Common.camera2.Height;   // image Height
+                    AutoRecordCCDStep = RecordCCDStep.Analysis;
+                    break;
+
+                case RecordCCDStep.Analysis:
+                    InsertLog.SavetoDB(71);
+                    Flag.SensorAnalysisFlag = true;
+                    Flag.SaveChartFlag = false; //主畫面分析
+                    AutoRecordCCDStep = RecordCCDStep.Savelog;
+                    break;
+
+                case RecordCCDStep.Savelog:
+                    if (!Flag.SensorAnalysisFlag && Flag.SaveChartFlag)
+                    {
+                        InsertLog.SavetoDB(72);
+                        AutoRecordCCDStep = RecordCCDStep.JudgeRotateCount;
+                    }
+                    break;
+
+                case RecordCCDStep.JudgeRotateCount:
+                    Console.WriteLine("CurrentTimes : " + AnalysisData.rotateCount_current);
+                    if(sram.Recipe.RecordCCDRule == 0)
+                    {
+                        if (AnalysisData.rotateCount_current < sram.Recipe.Rotate_Count)
+                        {
+                            AnalysisData.rotateCount_current += 1;
+                            if (AnalysisData.rotateCount_current == sram.Recipe.Rotate_Count)
+                            {
+                                //Common.motion.PitchAngle(Mo.AxisNo.DD, Mo.Dir.Postive, 360 - sram.PitchAngleTotal); // 最到最後一個角度後 補到360度
+                                if (MachineType == 0 || MachineType == 2)
+                                {
+                                    Common.motion.PosMove(Mo.AxisNo.DD, fram.m_WaferBackToFoupAngle);
+                                    if (MachineType == 2)
+                                        Common.motion.PosMove(Mo.AxisNo.AP6II_Z2, Homepos.AP6II.RecordCCD.AP6II_Z2);
+                                }
+                                else
+                                {
+                                    Common.motion.PosMove(Mo.AxisNo.DD, 0); // 回0度
+                                }
+                                SpinWait.SpinUntil(() => false, 500);
+                                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 20000);
+                                if (MachineType == 2)
+                                    SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z2), 20000);
+                                AutoRecordCCDStep = RecordCCDStep.UpdateSecs;
+                                break;
+                            }
+                            else
+                            {
+                                AutoRecordCCDStep = RecordCCDStep.DDRotate;
+                                Tapetest = 0;
+                            }
+                        }
+                    }
+                    else if(sram.Recipe.RecordCCDRule == 1)
+                    {
+                        AnalysisData.rotateCount_current += 1;
+                        if (sram.PitchAngleTotal + sram.Recipe.RecordCCD_Angle_Pitch > sram.Recipe.RecordCCD_Angle_End)  //超過了要停了
+                        {
+                            //Common.motion.PitchAngle(Mo.AxisNo.DD, Mo.Dir.Postive, 360 - sram.PitchAngleTotal); // 最到最後一個角度後 補到360度
+                            if (MachineType == 0 || MachineType == 2)
+                            {
+                                Common.motion.PosMove(Mo.AxisNo.DD, fram.m_WaferBackToFoupAngle);
+                                if (MachineType == 2)
+                                    Common.motion.PosMove(Mo.AxisNo.AP6II_Z2, Homepos.AP6II.RecordCCD.AP6II_Z2);
+                            }
+                            else
+                            {
+                                Common.motion.PosMove(Mo.AxisNo.DD, 0); // 回0度
+                            }
+                            SpinWait.SpinUntil(() => false, 500);
+                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 20000);
+                            if (MachineType == 2)
+                                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z2), 20000);
+                            AutoRecordCCDStep = RecordCCDStep.UpdateSecs;
+                            break;
+                        }
+                        else
+                        {
+                            AutoRecordCCDStep = RecordCCDStep.DDRotate;
+                            Tapetest = 0;
+                        }
+                    }
+
+                    break;
+
+                case RecordCCDStep.UpdateSecs:
+
+                    #region 算完8個角度後計算最大值
+
+                    string Slot_InfoMax = "";
+                    double max_W1 = 0;
+
+                    for (int i = 0; i < 25; i++)
+                    {
+                        max_W1 = 0;
+                        if (EFEM.IsInit)
+                        {
+                            if (sram.Recipe.Slot[i] == 1)
+                            {
+                                for (int j = 0; j < 8; j++)
+                                {
+                                    if (fram.EFEMSts.H1[i, j] > max_W1)
+                                    {
+                                        max_W1 = fram.EFEMSts.H1[i, j];
+                                    }
+                                }
+
+                                if (sram.Recipe.Type == 0)
+                                {
+                                    Slot_InfoMax += "0,";
+                                    Slot_InfoMax += "0,";//max_W1 + ",";   20230628
+                                    Slot_InfoMax += "0,";
+                                    Slot_InfoMax += "0";
+                                }
+                            }
+                            else
+                            {
+                                Slot_InfoMax += "0,";
+                                Slot_InfoMax += "0,";
+                                Slot_InfoMax += "0,";
+                                Slot_InfoMax += "0";
+                            }
+                        }
+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Slot1_Max + i, Slot_InfoMax, out err);
+                        Slot_InfoMax = "";
+                    }
+
+                    #endregion 算完8個角度後計算最大值
+
+                    string Slot_Info = "";
+
+                    for (int i = 0; i < 25; i++)
+                    {
+                        Slot_Info += sram.Recipe.Type + ","; // 0: blue tape, 1: 1step, 2: 2step
+                        Slot_Info += sram.Recipe.Rotate_Count + ","; // 4 or 8 個點
+                        for (int j = 0; j < sram.Recipe.Rotate_Count; j++) // 每一片的 4/8 個位置
+                        {
+                            // 加入 Angle
+                            if (sram.Recipe.Rotate_Count == 4)
+                            {
+                                if (EFEM.IsInit)
+                                {
+                                    if (Common.EFEM.LoadPort_Run.Slot[i] == 1)
+                                    {
+                                        Slot_Info += sram.Recipe.Angle[j * 2] + ",";
+                                    }
+                                    else
+                                    {
+                                        Slot_Info += "0,";
+                                    }
+                                }
+                                else
+                                {
                                     Slot_Info += sram.Recipe.Angle[j * 2] + ",";
+                                }
+                            }
+                            else
+                            {
+                                if (EFEM.IsInit)
+                                {
+                                    if (Common.EFEM.LoadPort_Run.Slot[i] == 1)
+                                    {
+                                        Slot_Info += sram.Recipe.Angle[j] + ",";
+                                    }
+                                    else
+                                    {
+                                        Slot_Info += "0,";
+                                    }
+                                }
+                                else
+                                {
+                                    Slot_Info += sram.Recipe.Angle[j] + ",";
                                 }
                             }
 
@@ -1926,31 +3232,32 @@ namespace TrimGap
                     }
 
 
-                    Measure_BlueTape_Done = true;
-                    AutoBlueTapeStep = BluetapeStep.Finish;
+                    Measure_RecordCCD_Done = true;
+                    AutoRecordCCDStep = RecordCCDStep.Finish;
                     AnalysisData.rotateCount_current = 0;
                     break;
 
-                case BluetapeStep.Finish:
-                    if (Measure_BlueTape_Done == false)        //在Finish待命的時候，如果有把Measure_BlueTape_Done改false會觸發一次BT檢測
-                        AutoBlueTapeStep = BluetapeStep.BlueTapeStart;
+                case RecordCCDStep.Finish:
+                    if (Measure_RecordCCD_Done == false)        //在Finish待命的時候，如果有把Measure_RecordCCD_Done改false會觸發一次BT檢測
+                        AutoRecordCCDStep = RecordCCDStep.RecordCCDStart;
                     AnalysisData.rotateCount_current = 0;
 
                     Tapetest = 0;
                     break;
 
                 default:
-                    AutoBlueTapeStep = BluetapeStep.Finish;
+                    AutoRecordCCDStep = RecordCCDStep.Finish;
                     break;
             }
         }
 
         private static void AutoModule()
         {
+            bool EFEM_Skip = false;
             switch (AutoRunStageStep)
             {
                 case AutoStep.GotoSwitchWaferPos:
-                    if (MachineType == 0) // AP6 直接解真空
+                    if (MachineType == 0 || MachineType == 2) // AP6 直接解真空
                     {
 
                         AutoRunStageStep = AutoStep.WaitWaferPresence;
@@ -1958,8 +3265,8 @@ namespace TrimGap
                     else if (MachineType == 1) // N2 X Y Theta 軸也要回原點
                     {
                         Common.motion.PosMove(Mo.AxisNo.DD, 0);
-                        Common.motion.PosMove(Mo.AxisNo.X, Homepos.WaferSwitch.X);
-                        Common.motion.PosMove(Mo.AxisNo.Y, Homepos.WaferSwitch.Y);
+                        Common.motion.PosMove(Mo.AxisNo.X, Homepos.N2.WaferSwitch.X);
+                        Common.motion.PosMove(Mo.AxisNo.Y, Homepos.N2.WaferSwitch.Y);
                         SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 20000);
                         SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X), 10000);
                         SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.Y), 10000);
@@ -1971,9 +3278,20 @@ namespace TrimGap
                     break;
 
                 case AutoStep.WaitWaferPresence:
-                    if (EFEM.IsInit)
+                    EFEM_Skip = false;
+                    if (fram.EFEMSts.Skip == 0)
                     {
-                        if (MachineType == 0)
+                        EFEM_Skip = EFEM.IsInit;
+                    }
+                    else
+                    {
+                        EFEM_Skip = true;
+                    }
+
+
+                    if (!EFEM_Skip)
+                    {
+                        if (MachineType == 0 || MachineType == 2)
                         {
                             if (Common.io.In(IOName.In.Wafer汽缸_抬起檢) && !Common.EFEM.Stage1.Measuredone)
                             {
@@ -2004,10 +3322,10 @@ namespace TrimGap
                     }
                     else
                     {
-                        if (MachineType == 0)
+                        if (MachineType == 0 || MachineType == 2)
                         {
                             //|| fram.m_simulateRun != 0
-                            if (Common.io.In(IOName.In.Wafer汽缸_抬起檢))
+                            if (Common.io.In(IOName.In.Wafer汽缸_抬起檢) || true)
                             {
                                 //if (Common.io.In(IOName.In.StageWafer在席) && !Common.EFEM.Robot.WaferPresence_Upper)
                                 if (Common.io.In(IOName.In.StageWafer在席)) // 把EFEM分離
@@ -2039,7 +3357,7 @@ namespace TrimGap
                     break;
 
                 case AutoStep.VacuumOn:
-                    if (MachineType == 0)
+                    if (MachineType == 0 || MachineType == 2)
                     {
                         Common.io.WriteOut(IOName.Out.平台破真空電磁閥, false);
                         Common.io.WriteOut(IOName.Out.平台真空電磁閥, true);
@@ -2064,24 +3382,48 @@ namespace TrimGap
                     // AP6 N6負壓檢同一個
                     // AP6 還要檢查降下檢
                     // N2 只看負壓檢就好
-                    if (MachineType == 0)
+                    if (MachineType == 0 || MachineType == 2)
                     {
                         SpinWait.SpinUntil(() => Common.io.In(IOName.In.Wafer汽缸_降下檢), 10000);
                         SpinWait.SpinUntil(() => Common.io.In(IOName.In.真空平台_負壓檢), 10000);
                         if (Common.io.In(IOName.In.真空平台_負壓檢) && Common.io.In(IOName.In.Wafer汽缸_降下檢))
+                        //if (true)
                         {
-                            ReportData.Lot = FoupID;
-                            ReportData.Slot = Slot;
+                            if(fram.EFEMSts.Skip == 0)
+                            {
+                                ReportData.Lot = FoupID;
+                                ReportData.Slot = Slot;
+                            }
+                            else
+                            {
+                                ReportData.Lot = "TestLot";
+                                ReportData.Slot = 7;
+
+                                Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort1;
+
+                                Common.EFEM.LoadPort_Run.FoupID = ReportData.Lot;
+                                Common.EFEM.Stage1.Slot = ReportData.Slot;
+                                FoupID = ReportData.Lot;
+                                Slot = ReportData.Slot;
+                            }
+
                             if (Measure_TrimType_On)
                             {
-                                Common.LJ.ModeInfo();
-
-                                if (Common.LJ.LJ_Mode == Common.LJ.LJMode.Setting_Mode)
+                                if (fram.S_SensorConnectType == 0)
                                 {
-                                    Common.LJ.Set_RunningMode();
+                                    Common.LJ.ModeInfo();
+
+                                    if (Common.LJ.LJ_Mode == Common.LJ.LJMode.Setting_Mode)
+                                    {
+                                        Common.LJ.Set_RunningMode();
+                                    }
+                                    Common.LJ.Reset();   // 每個lot結束後把量測資料夾reset
+                                    Common.LJ.Measure(); // 馬上拍一個避免抓不到最新的資料夾
                                 }
-                                Common.LJ.Reset();   // 每個lot結束後把量測資料夾reset
-                                Common.LJ.Measure(); // 馬上拍一個避免抓不到最新的資料夾
+                                else if (fram.S_SensorConnectType == 1)
+                                {
+
+                                }
                                 AutoTrimStep = TrimStep.LJHome;
                                 AutoRunStageStep = AutoStep.TrimMode;
                             }
@@ -2119,14 +3461,21 @@ namespace TrimGap
                             ReportData.Slot = Slot;
                             if (Measure_TrimType_On)
                             {
-                                Common.LJ.ModeInfo();
-
-                                if (Common.LJ.LJ_Mode == Common.LJ.LJMode.Setting_Mode)
+                                if (fram.S_SensorConnectType == 0)
                                 {
-                                    Common.LJ.Set_RunningMode();
+                                    Common.LJ.ModeInfo();
+
+                                    if (Common.LJ.LJ_Mode == Common.LJ.LJMode.Setting_Mode)
+                                    {
+                                        Common.LJ.Set_RunningMode();
+                                    }
+                                    Common.LJ.Reset();   // 每個lot結束後把量測資料夾reset
+                                    Common.LJ.Measure(); // 馬上拍一個避免抓不到最新的資料夾
                                 }
-                                Common.LJ.Reset();   // 每個lot結束後把量測資料夾reset
-                                Common.LJ.Measure(); // 馬上拍一個避免抓不到最新的資料夾
+                                else if (fram.S_SensorConnectType == 1)
+                                {
+
+                                }
                                 AutoTrimStep = TrimStep.LJHome;
 
                                 AutoRunStageStep = AutoStep.TrimMode;
@@ -2146,11 +3495,23 @@ namespace TrimGap
                 case AutoStep.TrimMode:
                     if (Measure_TrimType_On)
                     {
-                        if (fram.m_MachineType == 0 && sram.Recipe.Type == 0) // AP62的recipe若選擇 0(藍膜)， LJ直接bypass
+                        if ((fram.m_MachineType == 0 || MachineType == 2) && sram.Recipe.Type == 0) // AP62的recipe若選擇 0(藍膜)， LJ直接bypass
                         {
                             Measure_TrimType_Done = false;
                             AutoBlueTapeStep = BluetapeStep.Finish;
                             AutoRunStageStep = AutoStep.BlueTapeMode;
+                        }
+                        else if ((fram.m_MachineType == 0 || MachineType == 2) && sram.Recipe.Type == 4) // AP62的recipe若選擇 4， LJ直接bypass
+                        {
+                            Measure_TrimType_Done = false;
+                            AutoHTWStep = HTWStep.Finish;
+                            AutoRunStageStep = AutoStep.HTWMode;
+                        }
+                        else if ((fram.m_MachineType == 0 || MachineType == 2) && sram.Recipe.Type == 5) // AP62的recipe若選擇 5， LJ直接bypass
+                        {
+                            Measure_TrimType_Done = false;
+                            AutoRecordCCDStep = RecordCCDStep.Finish;
+                            AutoRunStageStep = AutoStep.RecordCCDMode;
                         }
                         else
                         {
@@ -2164,9 +3525,9 @@ namespace TrimGap
                                 {
                                     AutoRunStageStep = AutoStep.TrimMode2nd;
                                 }
-                                else if (fram.m_MachineType == 0 && sram.Recipe.Type > 0)
+                                else if ((fram.m_MachineType == 0 || fram.m_MachineType == 2 )&& sram.Recipe.Type > 0)
                                 {
-                                    AutoRunStageStep = AutoStep.TTVMode;
+                                    AutoRunStageStep = AutoStep.GotoWaitGetHomePos;
                                 }
                                 else
                                 {
@@ -2178,14 +3539,15 @@ namespace TrimGap
                     }
                     else
                     {
-                        AutoRunStageStep = AutoStep.BlueTapeMode;
+                        AutoHTWStep = HTWStep.Finish;
+                        AutoRunStageStep = AutoStep.HTWMode;
                     }
                     break;
 
                 case AutoStep.TrimMode2nd:
                     if (Measure_TrimType_On)
                     {
-                        if (fram.m_MachineType == 0 && sram.Recipe.Type == 0) // AP62的recipe若選擇 0(藍膜)， LJ直接bypass
+                        if ((fram.m_MachineType == 0 || fram.m_MachineType == 2) && sram.Recipe.Type == 0) // AP62的recipe若選擇 0(藍膜)， LJ直接bypass
                         {
                             Measure_TrimType2nd_Done = false;
                             AutoBlueTapeStep = BluetapeStep.Finish;
@@ -2205,6 +3567,45 @@ namespace TrimGap
                                 }
                                 else
                                 {
+                                    AutoHTWStep = HTWStep.Finish;
+                                    AutoRunStageStep = AutoStep.HTWMode;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        AutoHTWStep = HTWStep.Finish;
+                        AutoRunStageStep = AutoStep.HTWMode;
+                    }
+                    break;
+                case AutoStep.HTWMode:
+                    if (Measure_HTW_On)
+                    {
+                        if ((fram.m_MachineType == 0 || fram.m_MachineType == 2) && sram.Recipe.Type == 0) // AP62的recipe若選擇 0(藍膜)， LJ直接bypass
+                        {
+                            Measure_HTW_Done = false;
+                            AutoBlueTapeStep = BluetapeStep.Finish;
+                            AutoRunStageStep = AutoStep.BlueTapeMode;
+                        }
+                        else
+                        {
+                            Measurement_TrimType_HTW();
+
+                            // 完成之後跳下一個量測模式
+                            if (Measure_HTW_Done)
+                            {
+                                Measure_HTW_Done = false;
+                                if (fram.m_MachineType == 0 && sram.Recipe.Type > 0)
+                                {
+                                    AutoRunStageStep = AutoStep.TTVMode;
+                                }
+                                else if (sram.Recipe.Type == 4)
+                                {
+                                    AutoRunStageStep = AutoStep.GotoWaitGetHomePos;
+                                }
+                                else
+                                {
                                     AutoBlueTapeStep = BluetapeStep.Finish;
                                     AutoRunStageStep = AutoStep.BlueTapeMode;
                                 }
@@ -2213,10 +3614,10 @@ namespace TrimGap
                     }
                     else
                     {
+                        AutoBlueTapeStep = BluetapeStep.Finish;
                         AutoRunStageStep = AutoStep.BlueTapeMode;
                     }
                     break;
-
                 case AutoStep.BlueTapeMode:
                     if (Measure_BlueTape_On)
                     {
@@ -2224,8 +3625,15 @@ namespace TrimGap
                         Measurement_BlueTape_CCD();
                         if (Measure_BlueTape_Done)
                         {
-                            AutoTTVStep = TTVStep.Finish;
-                            AutoRunStageStep = AutoStep.TTVMode;
+                            if (sram.Recipe.Type == 0)
+                            {
+                                AutoRunStageStep = AutoStep.GotoWaitGetHomePos;
+                            }
+                            else
+                            {
+                                AutoTTVStep = TTVStep.Finish;
+                                AutoRunStageStep = AutoStep.TTVMode;
+                            }
                         }
                     }
                     else
@@ -2247,6 +3655,28 @@ namespace TrimGap
                     }
                     else
                     {
+                        if(sram.Recipe.Type == 5)
+                        {
+                            AutoRecordCCDStep = RecordCCDStep.Finish;
+                            AutoRunStageStep = AutoStep.RecordCCDMode;
+                        }
+                        else
+                            AutoRunStageStep = AutoStep.GotoWaitGetHomePos;
+                    }
+                    break;
+
+                case AutoStep.RecordCCDMode:
+                    if (Measure_RecordCCD_On)
+                    {
+                        Measure_RecordCCD_Done = false;
+                        Measurement_Record_CCD();
+                        if (Measure_RecordCCD_Done)
+                        {
+                            AutoRunStageStep = AutoStep.GotoWaitGetHomePos;
+                        }
+                    }
+                    else
+                    {
                         AutoRunStageStep = AutoStep.GotoWaitGetHomePos;
                     }
                     break;
@@ -2260,13 +3690,19 @@ namespace TrimGap
                             Common.PTForm.PointMove(9);
                         }
                     }
+                    else if(MachineType == 2)
+                    {
+                        AutoRunStageStep = AutoStep.VacuumOff;
+                        Common.motion.PosMove(Mo.AxisNo.AP6II_X, Homepos.AP6II.HTW.AP6II_X);
+                        Common.motion.PosMove(Mo.AxisNo.AP6II_Z2, Homepos.AP6II.RecordCCD.AP6II_Z2);
+                    }
                     else if (MachineType == 1) // N2 X Y Theta 軸也要回原點
                     {
                         if (Common.motion.MotionDone(Mo.AxisNo.DD) && Common.motion.MotionDone(Mo.AxisNo.X) && Common.motion.MotionDone(Mo.AxisNo.Y))
                         {
                             Common.motion.PosMove(Mo.AxisNo.DD, 0);
-                            Common.motion.PosMove(Mo.AxisNo.X, Homepos.WaferSwitch.X);
-                            Common.motion.PosMove(Mo.AxisNo.Y, Homepos.WaferSwitch.Y);
+                            Common.motion.PosMove(Mo.AxisNo.X, Homepos.N2.WaferSwitch.X);
+                            Common.motion.PosMove(Mo.AxisNo.Y, Homepos.N2.WaferSwitch.Y);
                             SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.DD), 20000);
                             SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.X), 10000);
                             SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.Y), 10000);
@@ -2286,6 +3722,17 @@ namespace TrimGap
                         if (fram.m_Hardware_PT == 1 && Common.PTForm.GetPointMoveFinish(9))
                             AutoRunStageStep = AutoStep.CylinderUp;
                     }
+                    else if (MachineType == 2)
+                    {
+                        if(fram.EFEMSts.Skip == 0)
+                        {
+                            Common.io.WriteOut(IOName.Out.平台真空電磁閥, false);
+                            Common.io.WriteOut(IOName.Out.平台破真空電磁閥, true);
+                        }
+                        if(Common.motion.MotionDone(Mo.AxisNo.AP6II_X) && Common.motion.MotionDone(Mo.AxisNo.AP6II_Z2) 
+                            && Common.motion.Get_FBPos(Mo.AxisNo.AP6II_X) == 0 && Common.motion.Get_FBPos(Mo.AxisNo.AP6II_Z2) == 0)
+                            AutoRunStageStep = AutoStep.CylinderUp;
+                    }
                     else if (MachineType == 1)
                     {
                         Common.io.WriteOut(IOName.Out.平台真空電磁閥, false);
@@ -2296,7 +3743,7 @@ namespace TrimGap
                     break;
 
                 case AutoStep.CylinderUp:
-                    if (MachineType == 0)
+                    if (MachineType == 0 || MachineType == 2)
                     {
                         if (fram.m_Hardware_PT == 1)
                         {
@@ -2313,6 +3760,25 @@ namespace TrimGap
                                 break;
                             }
                         }
+                        else if(MachineType == 2)
+                        {
+                            if (Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_X)) < 0.1 && Math.Abs(Common.motion.Get_FBPos(Mo.AxisNo.AP6II_Z2)) < 0.1)
+                            {
+                                if (fram.EFEMSts.Skip == 0)
+                                {
+                                    Common.io.WriteOut(IOName.Out.Wafer汽缸_降下, false);
+                                    Common.io.WriteOut(IOName.Out.Wafer汽缸_抬起, true);
+                                    SpinWait.SpinUntil(() => (Common.io.In(IOName.In.Wafer汽缸_抬起檢)), 5000);
+                                }
+                            }
+                            else
+                            {
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_X, Homepos.AP6II.HTW.AP6II_X);
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_Z2, Homepos.AP6II.RecordCCD.AP6II_Z2);
+                                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_X) && Common.motion.MotionDone(Mo.AxisNo.AP6II_Z2), 5000);
+                                break;
+                            }
+                        }
                         else
                         {
                             Common.io.WriteOut(IOName.Out.Wafer汽缸_降下, false);
@@ -2320,7 +3786,7 @@ namespace TrimGap
                             SpinWait.SpinUntil(() => (Common.io.In(IOName.In.Wafer汽缸_抬起檢)), 5000);
                         }
 
-                        if (Common.io.In(IOName.In.Wafer汽缸_抬起檢))
+                        if (Common.io.In(IOName.In.Wafer汽缸_抬起檢) || fram.EFEMSts.Skip == 1)
                         {
                             Common.io.WriteOut(IOName.Out.StageWaferReady, true);
                             AutoRunStageStep = AutoStep.WaitWaferunload;
@@ -2343,6 +3809,15 @@ namespace TrimGap
                     break;
 
                 case AutoStep.WaitWaferunload:
+                    EFEM_Skip = false;
+                    if (fram.EFEMSts.Skip == 0)
+                    {
+                        EFEM_Skip = EFEM.IsInit;
+                    }
+                    else
+                    {
+                        EFEM_Skip = true;
+                    }
                     if (EFEM.IsInit) // 這裡做完後等著被拿走
                     {
                         Common.EFEM.Stage1.Ready = true;
@@ -2351,7 +3826,7 @@ namespace TrimGap
 
                     if (!Common.io.In(IOName.In.StageWafer在席) && !Common.EFEM.Stage1.WaferPresence) // Common.EFEM.Stage1.WaferPresence => WagetGet完後會自動切
                     {
-                        if (MachineType == 0)
+                        if (MachineType == 0 || MachineType == 2)
                         {
                             Common.motion.SetHome(Mo.AxisNo.DD);
                         }
@@ -2362,11 +3837,21 @@ namespace TrimGap
 
                         AutoRunStageStep = AutoStep.Finish;
                     }
+                    else if(EFEM_Skip)
+                    {
+                        AutoRunStageStep = AutoStep.Finish;
+                    }
                     break;
 
                 case AutoStep.Finish:
 
                     AutoRunStageStep = AutoStep.GotoSwitchWaferPos;
+                    if (fram.EFEMSts.Skip == 1)
+                    {
+                        Flag.AutoidleFlag = false;
+                        Flag.Autoidle_LocalFlag = false;
+                    }
+
                     break;
 
                 default:
