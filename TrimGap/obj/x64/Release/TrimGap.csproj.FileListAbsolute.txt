@@ -392,3 +392,21 @@ D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Releas
 D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
 D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.exe
 D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\TrimGap\obj\x64\Release\TrimGap.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SECProcess.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.pdb

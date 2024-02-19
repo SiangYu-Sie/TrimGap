@@ -1151,6 +1151,27 @@ namespace TrimGap
             }
         }
 
+        public int GetProcessJobAttr(string objID, out string pauseEvent, out byte PJState, out string carrierID, out byte[] slot, out byte PRType, out bool bStart, out byte recMethod, out string recID, out string recVarList, out string err)
+        {
+            if (type == 1)
+                return MainForm.GetProcessJobAttr(objID, out pauseEvent, out PJState, out carrierID, out slot,
+                out PRType, out bStart, out recMethod, out recID, out recVarList, out err);
+            else
+            {
+                pauseEvent = "";
+                PJState = 0;
+                carrierID = "";
+                slot = new byte[25];
+                PRType = 0;
+                bStart = true;
+                recMethod = 0;
+                recID = "";
+                recVarList = "";
+                err = "";
+                return 0;
+            }
+        }
+
         public int SetCarrierStatus_ID(string data, DemoFormDiaGemLib.CarrierIDState state)
         {
             if (type == 1)
@@ -1199,5 +1220,38 @@ namespace TrimGap
             else
                 return 0;
         }
+
+        public int SetCarrierStatus_Accessing(string foupid, DemoFormDiaGemLib.CarrierAccessingState state)
+        {
+            if (type == 1)
+                return MainForm.SetCarrierStatus_Accessing(foupid, state);
+            else
+                return 0;
+        }
+
+        public int ChangeControlJobState(string cj, DemoFormDiaGemLib.ControlJobState state, int unnormal)
+        {
+            if (type == 1)
+                return MainForm.ChangeControlJobState(cj, state, unnormal);
+            else
+                return 0;
+        }
+
+        public int SetControlJobCurrentPrJob(string cj, string pj)
+        {
+            if (type == 1)
+                return MainForm.SetControlJobCurrentPrJob(cj, pj);
+            else
+                return 0;
+        }
+
+        public int ChangeProcessJobState(string pj, DemoFormDiaGemLib.ProcessJobState state)
+        {
+            if (type == 1)
+                return MainForm.ChangeProcessJobState(pj, state);
+            else
+                return 0;
+        }
+        
     }
 }

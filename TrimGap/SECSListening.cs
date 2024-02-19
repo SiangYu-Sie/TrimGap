@@ -111,10 +111,15 @@ namespace TrimGap
                 }
                 if (MainForm.CJ_list.Count >= 1 && fram.m_SecsgemType == 1)
                 {
-                    if (Common.EFEM.LoadPort1.Busy || Common.EFEM.LoadPort2.Busy)
+                    if (!(Common.EFEM.LoadPort1.Busy || Common.EFEM.LoadPort2.Busy))
                     {
                         int lpn = Common.SecsgemForm.LoadportMatchToRun(MainForm.CJ_list[0]);
-                        if (lpn == 1 || lpn == 2)
+                        if (lpn == 1 && sram.LoadPort1_Carrier_Vertify)
+                        {
+                            sram.RunningCJ = MainForm.CJ_list[0];
+                            CJStart(lpn);
+                        }
+                        else if(lpn == 2 && sram.LoadPort2_Carrier_Vertify)
                         {
                             sram.RunningCJ = MainForm.CJ_list[0];
                             CJStart(lpn);
@@ -353,125 +358,19 @@ namespace TrimGap
             {
                 Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort1;
                 Common.EFEM.LoadPort1.Busy = true;
+                Common.SecsgemForm.ChangeControlJobState(sram.RunningCJ, ControlJobState.EXECUTING, 0);
+                Common.SecsgemForm.SetCarrierStatus_Accessing(Common.EFEM.LoadPort_Run.FoupID, CarrierAccessingState.IN_ACCESS);
             }
             else if(lpn == 2)
             {
                 Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort2;
                 Common.EFEM.LoadPort2.Busy = true;
+                Common.SecsgemForm.ChangeControlJobState(sram.RunningCJ, ControlJobState.EXECUTING, 0);
+                Common.SecsgemForm.SetCarrierStatus_Accessing(Common.EFEM.LoadPort_Run.FoupID, CarrierAccessingState.IN_ACCESS);
             }
-
-
-
-
-
-
-
-
-
-
-
-
-            string testRecipeslotmap = "";
-            if (Common.SecsgemForm.SecsDataGet(SecsData.MeasureStart, SecsDataElement.CarrierID) == "")
-            {
-                if (Common.SecsgemForm.SecsDataGet(SecsData.MeasureStart, SecsDataElement.LoadPortID) == "1")
-                {
-                    Common.ChangeRecipe(fram.Recipe.Filename_LP1);
-                    ClearReportdata();
-                    for (int i = 0; i < 25; i++)
-                    {
-                        if (Common.EFEM.LoadPort1.slot_Status[i] == EFEM.slot_status.Ready)
-                        {
-                            if (sram.Recipe.Slot[i] == 0)
-                            {
-                                Common.EFEM.LoadPort1.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
-                            }
-                        }
-                        testRecipeslotmap += Convert.ToString(sram.Recipe.Slot[i]); //測試
-                    }
-                    InsertLog.SavetoDB(67, "Recipeslotmap:" + testRecipeslotmap);
-                    Common.EFEM.LoadPort1.AutoGetSlot();
-
-                    Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort1;
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort1.FoupID, out err);
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
-                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ProcessStart, out err);
-                    Common.EFEM.LoadPort1.Busy = true;
-                }
-                else
-                {
-                    Common.ChangeRecipe(fram.Recipe.Filename_LP2);
-                    ClearReportdata();
-                    for (int i = 0; i < 25; i++)
-                    {
-                        if (Common.EFEM.LoadPort2.slot_Status[i] == EFEM.slot_status.Ready)
-                        {
-                            if (sram.Recipe.Slot[i] == 0)
-                            {
-                                Common.EFEM.LoadPort2.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
-                            }
-                        }
-                        testRecipeslotmap += Convert.ToString(sram.Recipe.Slot[i]); //測試
-                    }
-                    InsertLog.SavetoDB(67, "Recipeslotmap:" + testRecipeslotmap);
-                    Common.EFEM.LoadPort2.AutoGetSlot();
-
-                    Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort2;
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort2.FoupID, out err);
-                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
-                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ProcessStart, out err);
-                    Common.EFEM.LoadPort2.Busy = true;
-                }
-            }
-            else if (Common.SecsgemForm.SecsDataGet(SecsData.MeasureStart, SecsDataElement.LoadPortID) == "1")
-            {
-                Common.ChangeRecipe(fram.Recipe.Filename_LP1);
-                ClearReportdata();
-                for (int i = 0; i < 25; i++)
-                {
-                    if (Common.EFEM.LoadPort1.slot_Status[i] == EFEM.slot_status.Ready)
-                    {
-                        if (sram.Recipe.Slot[i] == 0)
-                        {
-                            Common.EFEM.LoadPort1.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
-                        }
-                    }
-                    testRecipeslotmap += Convert.ToString(sram.Recipe.Slot[i]); //測試
-                }
-                InsertLog.SavetoDB(67, "Recipeslotmap:" + testRecipeslotmap);
-                Common.EFEM.LoadPort1.AutoGetSlot();
-
-                Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort1;
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort1.FoupID, out err);
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
-                Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ProcessStart, out err);
-                Common.EFEM.LoadPort1.Busy = true;
-            }
-            else if (Common.SecsgemForm.SecsDataGet(SecsData.MeasureStart, SecsDataElement.LoadPortID) == "2")
-            {
-                Common.ChangeRecipe(fram.Recipe.Filename_LP2);
-                ClearReportdata();
-                for (int i = 0; i < 25; i++)
-                {
-                    if (Common.EFEM.LoadPort2.slot_Status[i] == EFEM.slot_status.Ready)
-                    {
-                        if (sram.Recipe.Slot[i] == 0)
-                        {
-                            Common.EFEM.LoadPort2.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
-                        }
-                    }
-                    testRecipeslotmap += Convert.ToString(sram.Recipe.Slot[i]); //測試
-                }
-                InsertLog.SavetoDB(67, "Recipeslotmap:" + testRecipeslotmap);
-                Common.EFEM.LoadPort2.AutoGetSlot();
-
-                Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort2;
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort2.FoupID, out err);
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
-                Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ProcessStart, out err);
-                Common.EFEM.LoadPort2.Busy = true;
-            }
+            ClearReportdata();
         }
+
         public static void ClearReportdata()
         {
             string Slot_Info = "";
@@ -565,29 +464,34 @@ namespace TrimGap
                 case "PROCEEDWITHCARRIER":
                     if (dataList[2] == "1")  //loarport
                     {
-                        Common.SecsgemForm.SetCarrierStatus_ID(dataList[1], CarrierIDState.ID_VERIFICATION_OK);
+                        //Common.SecsgemForm.SetCarrierStatus_ID(dataList[1], CarrierIDState.ID_VERIFICATION_OK);
                         if (Common.EFEM.LoadPort1.Busy)
                             rtn = 5;
                         if(MainForm.Carrier_list.Contains(dataList[1]))
                         {
-                            Common.SecsgemForm.bWaitSECS_SlotMapCmd = true;
-                        }
+                            if(dataList[3] == "1")
+                                Common.SecsgemForm.bWaitSECS_SlotMapCmd = true;
+                            else if(dataList[3] == "2")
+                                sram.LoadPort1_Carrier_Vertify = true;
+                        }       
                     }
                     else if(dataList[2] == "2")  //loarport
                     {
-                        Common.SecsgemForm.SetCarrierStatus_ID(dataList[1], CarrierIDState.ID_VERIFICATION_OK);
+                        //Common.SecsgemForm.SetCarrierStatus_ID(dataList[1], CarrierIDState.ID_VERIFICATION_OK);
                         if (Common.EFEM.LoadPort2.Busy)
                             rtn = 5;
                         if (MainForm.Carrier_list.Contains(dataList[1]))
                         {
-                            Common.SecsgemForm.bWaitSECS_SlotMapCmd = true;
+                            if (dataList[3] == "1")
+                                Common.SecsgemForm.bWaitSECS_SlotMapCmd = true;
+                            else if (dataList[3] == "2")
+                                sram.LoadPort2_Carrier_Vertify = true;
                         }
                     }
                     break;
                 case "CARRIERRELEASE":
                     if (dataList[2] == "1")  //loarport
                     {
-                        Common.SecsgemForm.SetCarrierStatus_ID(dataList[1], CarrierIDState.ID_VERIFICATION_OK);
                         if (Common.EFEM.LoadPort1.Busy)
                             rtn = 5;
                         if (MainForm.Carrier_list.Contains(dataList[1]))
@@ -597,7 +501,6 @@ namespace TrimGap
                     }
                     else if (dataList[2] == "2")  //loarport
                     {
-                        Common.SecsgemForm.SetCarrierStatus_ID(dataList[1], CarrierIDState.ID_VERIFICATION_OK);
                         if (Common.EFEM.LoadPort2.Busy)
                             rtn = 5;
                         if (MainForm.Carrier_list.Contains(dataList[1]))

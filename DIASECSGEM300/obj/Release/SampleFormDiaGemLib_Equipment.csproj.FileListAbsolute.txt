@@ -74,3 +74,28 @@ D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\DIASECSGEM300\obj\Rele
 D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\DIASECSGEM300\obj\Release\SampleFormDiaGemLib_Equipment.csproj.CopyComplete
 D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\DIASECSGEM300\obj\Release\DiaGemLib_Equipment.dll
 D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240202\DIASECSGEM300\obj\Release\DiaGemLib_Equipment.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\DiaGemLib_Equipment.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\DiaGemLib_Equipment.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\DIASECSGEM.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\GEMDataModel.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\DIASECS.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\ProductLicenseChecker.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\UniAuto.UniBCS.MISC.StateMachine.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\UniAuto.UniBCS.Core.Cryptography.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\SoftLicenseAPI.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\DIASECSGEM.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\GEMDataModel.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\DIASECS.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\ProductLicenseChecker.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\UniAuto.UniBCS.MISC.StateMachine.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\UniAuto.UniBCS.Core.Cryptography.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\bin\Release\SoftLicenseAPI.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\obj\Release\SampleFormDiaGemLib_Equipment.csproj.AssemblyReference.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\obj\Release\DemoFormDiaGemLib.DriverConfigInfo.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\obj\Release\DemoFormDiaGemLib.MainForm.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\obj\Release\DemoFormDiaGemLib_Equipment.Properties.Resources.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\obj\Release\SampleFormDiaGemLib_Equipment.csproj.GenerateResource.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\obj\Release\SampleFormDiaGemLib_Equipment.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\obj\Release\SampleFormDiaGemLib_Equipment.csproj.CopyComplete
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\obj\Release\DiaGemLib_Equipment.dll
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\DIASECSGEM300\obj\Release\DiaGemLib_Equipment.pdb

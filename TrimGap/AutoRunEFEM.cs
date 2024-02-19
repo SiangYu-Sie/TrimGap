@@ -701,7 +701,10 @@ namespace TrimGap
                 Common.EFEM.LoadPort1.ReadFoupID();
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort1.FoupID, out err);
-                Common.SecsgemForm.EventReportSend(TrimGap_EqpID.MaterialReceived, out err);
+                if(fram.m_SecsgemType == 0)
+                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.MaterialReceived, out err);
+                else
+                    Common.SecsgemForm.EventReportSend(2104, out err);
                 SpinWait.SpinUntil(() => false, 2000);
                 ClampAndReadID(ref Common.EFEM.LoadPort1);
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
@@ -747,7 +750,10 @@ namespace TrimGap
                 Common.EFEM.LoadPort2.ReadFoupID();
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort2.FoupID, out err);
-                Common.SecsgemForm.EventReportSend(TrimGap_EqpID.MaterialReceived, out err);
+                if (fram.m_SecsgemType == 0)
+                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.MaterialReceived, out err);
+                else
+                    Common.SecsgemForm.EventReportSend(2104, out err);
                 SpinWait.SpinUntil(() => false, 2000);
                 ClampAndReadID(ref Common.EFEM.LoadPort2);
 
@@ -803,7 +809,10 @@ namespace TrimGap
                 Common.EFEM.LoadPort1.ReadFoupID();
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort1.FoupID, out err);
-                Common.SecsgemForm.EventReportSend(TrimGap_EqpID.MaterialRemove, out err);
+                if (fram.m_SecsgemType == 0)
+                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.MaterialRemove, out err);
+                else
+                    Common.SecsgemForm.EventReportSend(2105, out err);
                 fram.SECSPara.Loadport1_PortTransferState = PortTransferState.ReadyToLoad.GetHashCode();
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, (byte)PortTransferState.ReadyToLoad.GetHashCode(), out err); // RTL
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToLoad
@@ -818,7 +827,10 @@ namespace TrimGap
                 Common.EFEM.LoadPort2.ReadFoupID();
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, Common.EFEM.LoadPort2.FoupID, out err);
-                Common.SecsgemForm.EventReportSend(TrimGap_EqpID.MaterialRemove, out err);
+                if (fram.m_SecsgemType == 0)
+                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.MaterialRemove, out err);
+                else
+                    Common.SecsgemForm.EventReportSend(2105, out err);
                 fram.SECSPara.Loadport2_PortTransferState = PortTransferState.ReadyToLoad.GetHashCode();
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, (byte)PortTransferState.ReadyToLoad.GetHashCode(), out err); // RTL
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToLoad
@@ -836,6 +848,7 @@ namespace TrimGap
                 if (Common.EFEM.LoadPort1.LED_Placement && Common.EFEM.LoadPort1.LED_Persence)
                 {
                     Common.EFEM.LoadPort1.Placement = true;
+                    sram.LoadPort1_Carrier_Vertify = true;
                 }
             }
             else if (fram.SECSPara.Loadport2_AccessMode == Mode.Auto.GetHashCode())
@@ -844,6 +857,7 @@ namespace TrimGap
                 if (Common.EFEM.LoadPort2.LED_Placement && Common.EFEM.LoadPort2.LED_Persence)
                 {
                     Common.EFEM.LoadPort2.Placement = true;
+                    sram.LoadPort1_Carrier_Vertify = true;
                 }
             }
         }
@@ -858,11 +872,13 @@ namespace TrimGap
                 {
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
+                    sram.LoadPort1_Carrier_Vertify = false;
                 }
                 else if (loadPort.pn == LoadPort.Pn.P2)
                 {
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
+                    sram.LoadPort2_Carrier_Vertify = false;
                 }
                 Common.SecsgemForm.EventReportSend(TrimGap_EqpID.CarrierClamped, out err);
                 rtn = loadPort.ReadFoupID();
@@ -928,6 +944,7 @@ namespace TrimGap
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_RecipeID, "", out err);
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
+                    sram.LoadPort1_Carrier_Vertify = false;
                 }
                 else if (loadPort.pn == LoadPort.Pn.P2)
                 {
@@ -936,6 +953,7 @@ namespace TrimGap
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_RecipeID, "", out err);
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
+                    sram.LoadPort2_Carrier_Vertify = false;
                 }
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
                 Common.SecsgemForm.EventReportSend(TrimGap_EqpID.CarrierDoorClosed, out err);
@@ -962,6 +980,7 @@ namespace TrimGap
                         Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
                         Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_RecipeID, "", out err);
                         Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err); // ReadyToUnload
+                        sram.LoadPort1_Carrier_Vertify = false;
                     }
                     else if (loadPort.pn == LoadPort.Pn.P2)
                     {
@@ -970,6 +989,7 @@ namespace TrimGap
                         Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
                         Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_RecipeID, "", out err);
                         Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err); // ReadyToUnload
+                        sram.LoadPort2_Carrier_Vertify = false;
                     }
                     Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
                     Common.SecsgemForm.EventReportSend(TrimGap_EqpID.CarrierDoorClosed, out err);
@@ -1099,6 +1119,12 @@ namespace TrimGap
                     // 1 = WAITING FOR HOST
                     // 2 = SLOTMAP VERIFIKATION OK
                     // 3 = SLOTMAP VERIFICATION FAILED
+
+                    //Reason
+                    // 0 = VERIFICATION NEEDED
+                    // 1 = VERIFICATION BY EQUIPMENT UNSUCCESSFUL                     
+                    // 2 = READ FAIL, 
+                    // 3 = IMPROPER SUBSTRATE POSITION
                     for (int i = 0; i < loadPort.Slot.Length; i++)
                     {
                         Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, (byte)loadPort.Slot[i], out err); 
@@ -1175,7 +1201,55 @@ namespace TrimGap
                                     }
                                     else
                                     {
-                                        eFEMStep = EFEMStep.Finish;
+                                        if(sram.RunningCJ == "")
+                                            eFEMStep = EFEMStep.Finish;   //沒有使用CJ的情況(舊方法)
+                                        else
+                                        {
+                                            if(sram.RunningPJ == "")   //有CJ沒有正在跑的PJ，看看還有沒有沒run到的PJ
+                                            {
+                                                if (sram.QueuePJ.Count == 0)  //pj run光了
+                                                {
+                                                    Common.SecsgemForm.ChangeControlJobState(sram.RunningCJ, ControlJobState.COMPLETED, 0); //CJ完成
+                                                    sram.RunningCJ = "";
+                                                    eFEMStep = EFEMStep.Finish;
+                                                }
+                                                else
+                                                {
+                                                    sram.RunningPJ = sram.QueuePJ[0];  //run一個pj
+                                                    Common.SecsgemForm.ChangeProcessJobState(sram.RunningPJ, ProcessJobState.SETTING_UP);
+                                                    Common.SecsgemForm.GetProcessJobAttr(sram.RunningPJ, out sram.PJInfo.pauseEvent, out sram.PJInfo.PJState, out sram.PJInfo.carrierID, out sram.PJInfo.slot,
+                                                        out sram.PJInfo.PRType, out sram.PJInfo.bStart, out sram.PJInfo.recMethod, out sram.PJInfo.recID, out sram.PJInfo.recVarList, out err);
+                                                    if (sram.PJInfo.bStart)
+                                                        Common.SecsgemForm.ChangeProcessJobState(sram.RunningPJ, ProcessJobState.PROCESSING);
+                                                    else
+                                                    {
+                                                        Common.SecsgemForm.ChangeProcessJobState(sram.RunningPJ, ProcessJobState.WAITING_FOR_START);  //不知道收什麼指令來繼續
+                                                        Common.SecsgemForm.ChangeProcessJobState(sram.RunningPJ, ProcessJobState.PROCESSING);
+                                                    }
+                                                    Common.ChangeRecipe(sram.PJInfo.recID);
+                                                    for (int i = 0; i < 25; i++)
+                                                    {
+                                                        if (loadPort.slot_Status[i] == EFEM.slot_status.Ready || loadPort.slot_Status[i] == EFEM.slot_status.ProcessEnd)
+                                                        {
+                                                            if (sram.PJInfo.slot[i] == 1)
+                                                            {
+                                                                loadPort.Update_slot_Status(i + 1, EFEM.slot_status.Ready);
+                                                            }
+                                                            else
+                                                            {
+                                                                loadPort.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            else     //有CJ有PJ，但是已經沒有還需要跑的slot，pj完成
+                                            {
+                                                Common.SecsgemForm.ChangeProcessJobState(sram.RunningPJ, ProcessJobState.PROCESS_COMPLETE);
+                                                sram.QueuePJ.RemoveAt(0);
+                                                sram.RunningPJ = "";
+                                            }
+                                        }
                                     }
                                 }
 
@@ -2177,6 +2251,7 @@ namespace TrimGap
 
                 case EFEMStep.Finish:
                     loadPort.Busy = false;
+                    Common.SecsgemForm.SetCarrierStatus_Accessing(Common.EFEM.LoadPort_Run.FoupID, CarrierAccessingState.CARRIER_COMPLETE);
                     if (loadPort.pn == LoadPort.Pn.P1)
                     {
                         Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);

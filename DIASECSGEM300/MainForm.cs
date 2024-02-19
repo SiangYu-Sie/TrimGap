@@ -5102,40 +5102,30 @@ namespace DemoFormDiaGemLib
             List<ErrorReport> listErrorReports = new List<ErrorReport>();
             List<string> dataList = new List<string>();
             ErrorReport errR = new ErrorReport();
+            byte status_id, status_accessing, status_slotMap;
             switch (e.CARRIERACTION)
             {
                 case "PROCEEDWITHCARRIER":
+                    GetCarrierStatus(e.CARRIERID, out status_id, out status_accessing, out status_slotMap, out err);
+                    status_id = 1;
+                    status_slotMap = 1;
+                    string pwc_step = "0";
                     LoadPortID = e.PORTNO.ToString();
                     CarrierID = e.CARRIERID;
-                    SlotMapData.Set(LoadPortID, CarrierID);
-                    dataList.Clear();
-                    dataList.Add("PROCEEDWITHCARRIER");
-                    dataList.Add(CarrierID);
-                    dataList.Add(LoadPortID);
-                    errR = new ErrorReport();
-                    if (LoadPortID == "1" || LoadPortID == "2")
+                    if (Carrier_list.Contains(e.CARRIERID))
                     {
-                        ack = function_CallBack(dataList);
-                        if (ack != 0)
+                        if (status_id == (byte)CarrierIDState.WAITING_FOR_HOST)   // PROCEEDWITHCARRIER #1
                         {
-                            btHCACK = ack;
-                            errR.ErrorCode = 22;
-                            errR.ErrorText = "failure when processing";
+                            SetCarrierStatus_ID(e.CARRIERID, CarrierIDState.ID_VERIFICATION_OK);
+                            SlotMapData.Set(LoadPortID, CarrierID);
+                            pwc_step = "1";
                         }
-                    }
-                    else
-                    {
-                        btHCACK = 3;
-
-                        errR.ErrorCode = 47;
-                        errR.ErrorText = "invalid parameter";
-                    }
-                    listErrorReports.Add(errR);
-                    break;
-                case "PROCEEDWITHCARRIER2":
-                    if(Carrier_list.Contains(e.CARRIERID))
-                    {
-                        SetCarrierStatus_ID(e.CARRIERID, CarrierIDState.ID_VERIFICATION_OK);
+                        else if((status_id == (byte)CarrierIDState.ID_VERIFICATION_OK) && (status_slotMap == (byte)SlotMapState.WAITING_FOR_HOST))  // PROCEEDWITHCARRIER #2
+                        {
+                            SetCarrierStatus_SlotMap(e.CARRIERID, SlotMapState.SLOT_MAP_VERIFICATION_OK);
+                            MeasureStartData.Set(LoadPortID, CarrierID);
+                            pwc_step = "2";
+                        }
                     }
                     else
                     {
@@ -5144,7 +5134,55 @@ namespace DemoFormDiaGemLib
 
                         errR.ErrorCode = 47;
                         errR.ErrorText = "invalid parameter. CarrierID is not found";
+                        listErrorReports.Add(errR);
                     }
+                    dataList.Clear();
+                    dataList.Add("PROCEEDWITHCARRIER");
+                    dataList.Add(CarrierID);
+                    dataList.Add(LoadPortID);
+                    dataList.Add(pwc_step);
+                    errR = new ErrorReport();
+                    if ((LoadPortID == "1" || LoadPortID == "2") && btHCACK == 0)
+                    {
+                        ack = function_CallBack(dataList);
+                        if (ack != 0)
+                        {
+                            btHCACK = ack;
+                            errR.ErrorCode = 22;
+                            errR.ErrorText = "failure when processing";
+                            listErrorReports.Add(errR);
+                        }
+                        else   //可執行指令
+                        {
+                            List<string> lotID, SubstrateID;
+                            lotID = new List<string>();
+                            SubstrateID = new List<string>();
+                            foreach (CarrierActionRequestParameter par in e.ReceiveRequestParameters)
+                            {
+                                if(par.Name == "CONTENTMAP")
+                                {
+                                    //Delta.DIAAuto.DIASECSGEM.GEMDataModel.SECSItemEntity
+                                    ListWrapper lw = par.Value.SetListSECSItemEntityToListWrapper();
+                                    ListWrapper lw2;
+                                    for (int i = 0; i < lw.Items.Count; i++)
+                                    {
+                                        lw2 = (ListWrapper)lw.Items[i].Value;
+                                        lotID.Add(lw2.Items[0].Value.ToString());
+                                        SubstrateID.Add(lw2.Items[1].Value.ToString());
+                                    };
+                                    SetCarrierAttr_ContentMap(e.CARRIERID, lotID.ToArray(), SubstrateID.ToArray());
+                                }
+                            }                                                   
+                        }
+                    }
+                    else
+                    {
+                        btHCACK = 3;
+
+                        errR.ErrorCode = 47;
+                        errR.ErrorText = "invalid parameter";
+                        listErrorReports.Add(errR);
+                    }          
                     break;
                 case "CARRIERRELEASE":
                     LoadPortID = e.PORTNO.ToString();
@@ -5639,7 +5677,7 @@ namespace DemoFormDiaGemLib
             ObjectInstance updateObjectEntity = null;
             ProcessJobState oldstate = ProcessJobState.QUEUED;
 
-            result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, objID, out updateObjectEntity, out err);
+            result = _gemControler.GetObject(ObjectTypeKey.PROCESSJOB, objID, out updateObjectEntity, out err);
             foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
             {
                 if (o.ATTRID == ObjectAttributeKey.ProcessJob.PRJOBSTATE)
@@ -5911,6 +5949,7 @@ namespace DemoFormDiaGemLib
             result = _gemControler.UpdateObject(updateObjectEntity, out err);
             return result;
         }
+
         public int GetControlJobAttr(string objID, out string carrierInputSpec, out string curPJ, out string dataCollection, out string mtrloutStatus, out string mtrloutSpec, out string pauseEvent, out string procCtrlSpec, out byte procOrder, out bool bStart, out byte state, out string err)
         {
             int result = 0;

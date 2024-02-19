@@ -312,7 +312,8 @@ namespace TrimGap
             else if(fram.S_SensorConnectType == 1)
             {
                 LJX8000A = new LJX8000A.LJX8000A(fram.LJ_ipaddress_Controller);
-                LJX8000A.Connect();
+                if(fram.m_simulateRun == 0)
+                    LJX8000A.Connect();
             }
 
         }

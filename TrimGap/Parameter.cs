@@ -634,6 +634,8 @@ namespace TrimGap
         public static string RunningCJ;
         public static string RunningPJ;
         public static List<string> QueuePJ;
+        public static bool LoadPort1_Carrier_Vertify = false;
+        public static bool LoadPort2_Carrier_Vertify = false;
 
         public struct CJInfo
         {
