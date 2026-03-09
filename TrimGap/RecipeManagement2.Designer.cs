@@ -29,6 +29,21 @@
         private void InitializeComponent()
         {
             this.gbRecipe = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cb_RD_LJ = new System.Windows.Forms.CheckBox();
+            this.td_LJ_Flat = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt_H2 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txt_W2 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txt_H1 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txt_W1 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.cb_RecordAfterMeasure = new System.Windows.Forms.CheckBox();
+            this.cbAnalysis_method = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tb_CCDMode_Angle_Pitch = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -72,6 +87,9 @@
             this.tb_CreateTime = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbtn_TTV = new System.Windows.Forms.RadioButton();
+            this.rbtn_Trim1step3rd = new System.Windows.Forms.RadioButton();
+            this.rbtn_Trim1step2nd = new System.Windows.Forms.RadioButton();
             this.rbtn_CCD = new System.Windows.Forms.RadioButton();
             this.rbtn_Trim2step3rd = new System.Windows.Forms.RadioButton();
             this.rbtn_Trim2step2nd = new System.Windows.Forms.RadioButton();
@@ -147,7 +165,27 @@
             this.btn_ChangeRecipe2 = new System.Windows.Forms.Button();
             this.btn_ClearRecipeLP1 = new System.Windows.Forms.Button();
             this.btn_ClearRecipeLP2 = new System.Windows.Forms.Button();
+            this.gb_Limit = new System.Windows.Forms.GroupBox();
+            this.tb_H2_Lower_Limit = new System.Windows.Forms.TextBox();
+            this.lb_H2_Lower_Limit = new System.Windows.Forms.Label();
+            this.tb_H1_Lower_Limit = new System.Windows.Forms.TextBox();
+            this.lb_H1_Lower_Limit = new System.Windows.Forms.Label();
+            this.tb_W2_Lower_Limit = new System.Windows.Forms.TextBox();
+            this.lb_W2_Lower_Limit = new System.Windows.Forms.Label();
+            this.tb_W1_Lower_Limit = new System.Windows.Forms.TextBox();
+            this.lb_W1_Lower_Limit = new System.Windows.Forms.Label();
+            this.tb_H2_Upper_Limit = new System.Windows.Forms.TextBox();
+            this.lb_H2_Upper_Limit = new System.Windows.Forms.Label();
+            this.tb_H1_Upper_Limit = new System.Windows.Forms.TextBox();
+            this.lb_H1_Upper_Limit = new System.Windows.Forms.Label();
+            this.tb_W2_Upper_Limit = new System.Windows.Forms.TextBox();
+            this.lb_W2_Upper_Limit = new System.Windows.Forms.Label();
+            this.tb_W1_Upper_Limit = new System.Windows.Forms.TextBox();
+            this.lb_W1_Upper_Limit = new System.Windows.Forms.Label();
+            this.cb_LimitMethod = new System.Windows.Forms.CheckBox();
             this.gbRecipe.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gb_Trim.SuspendLayout();
             this.gb_BlueTape.SuspendLayout();
@@ -163,10 +201,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Angle2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Angle1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.gb_Limit.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbRecipe
             // 
+            this.gbRecipe.Controls.Add(this.gb_Limit);
+            this.gbRecipe.Controls.Add(this.groupBox4);
+            this.gbRecipe.Controls.Add(this.groupBox3);
+            this.gbRecipe.Controls.Add(this.cb_RecordAfterMeasure);
+            this.gbRecipe.Controls.Add(this.cbAnalysis_method);
             this.gbRecipe.Controls.Add(this.groupBox2);
             this.gbRecipe.Controls.Add(this.gb_Trim);
             this.gbRecipe.Controls.Add(this.gb_BlueTape);
@@ -215,10 +259,151 @@
             this.gbRecipe.Controls.Add(this.checkBox1);
             this.gbRecipe.Location = new System.Drawing.Point(501, 72);
             this.gbRecipe.Name = "gbRecipe";
-            this.gbRecipe.Size = new System.Drawing.Size(401, 677);
+            this.gbRecipe.Size = new System.Drawing.Size(506, 767);
             this.gbRecipe.TabIndex = 0;
             this.gbRecipe.TabStop = false;
             this.gbRecipe.Text = "Recipe";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.cb_RD_LJ);
+            this.groupBox4.Controls.Add(this.td_LJ_Flat);
+            this.groupBox4.Controls.Add(this.label29);
+            this.groupBox4.Location = new System.Drawing.Point(74, 191);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(161, 52);
+            this.groupBox4.TabIndex = 58;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "LJ";
+            // 
+            // cb_RD_LJ
+            // 
+            this.cb_RD_LJ.Location = new System.Drawing.Point(5, 16);
+            this.cb_RD_LJ.Name = "cb_RD_LJ";
+            this.cb_RD_LJ.Size = new System.Drawing.Size(57, 25);
+            this.cb_RD_LJ.TabIndex = 61;
+            this.cb_RD_LJ.Text = "RD_LJ";
+            this.cb_RD_LJ.UseVisualStyleBackColor = true;
+            // 
+            // td_LJ_Flat
+            // 
+            this.td_LJ_Flat.BackColor = System.Drawing.SystemColors.Window;
+            this.td_LJ_Flat.Location = new System.Drawing.Point(115, 16);
+            this.td_LJ_Flat.Name = "td_LJ_Flat";
+            this.td_LJ_Flat.Size = new System.Drawing.Size(35, 22);
+            this.td_LJ_Flat.TabIndex = 60;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(70, 21);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(39, 12);
+            this.label29.TabIndex = 59;
+            this.label29.Text = "LJ_Flat";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txt_H2);
+            this.groupBox3.Controls.Add(this.label28);
+            this.groupBox3.Controls.Add(this.txt_W2);
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.txt_H1);
+            this.groupBox3.Controls.Add(this.label26);
+            this.groupBox3.Controls.Add(this.txt_W1);
+            this.groupBox3.Controls.Add(this.label25);
+            this.groupBox3.Location = new System.Drawing.Point(263, 518);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(237, 82);
+            this.groupBox3.TabIndex = 57;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "係數";
+            // 
+            // txt_H2
+            // 
+            this.txt_H2.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_H2.Location = new System.Drawing.Point(151, 49);
+            this.txt_H2.Name = "txt_H2";
+            this.txt_H2.Size = new System.Drawing.Size(74, 22);
+            this.txt_H2.TabIndex = 65;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(125, 52);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(19, 12);
+            this.label28.TabIndex = 64;
+            this.label28.Text = "H2";
+            // 
+            // txt_W2
+            // 
+            this.txt_W2.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_W2.Location = new System.Drawing.Point(151, 21);
+            this.txt_W2.Name = "txt_W2";
+            this.txt_W2.Size = new System.Drawing.Size(74, 22);
+            this.txt_W2.TabIndex = 63;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(125, 24);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(22, 12);
+            this.label27.TabIndex = 62;
+            this.label27.Text = "W2";
+            // 
+            // txt_H1
+            // 
+            this.txt_H1.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_H1.Location = new System.Drawing.Point(36, 49);
+            this.txt_H1.Name = "txt_H1";
+            this.txt_H1.Size = new System.Drawing.Size(70, 22);
+            this.txt_H1.TabIndex = 61;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(10, 52);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(19, 12);
+            this.label26.TabIndex = 60;
+            this.label26.Text = "H1";
+            // 
+            // txt_W1
+            // 
+            this.txt_W1.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_W1.Location = new System.Drawing.Point(36, 21);
+            this.txt_W1.Name = "txt_W1";
+            this.txt_W1.Size = new System.Drawing.Size(70, 22);
+            this.txt_W1.TabIndex = 59;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(10, 24);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(22, 12);
+            this.label25.TabIndex = 58;
+            this.label25.Text = "W1";
+            // 
+            // cb_RecordAfterMeasure
+            // 
+            this.cb_RecordAfterMeasure.Location = new System.Drawing.Point(76, 131);
+            this.cb_RecordAfterMeasure.Name = "cb_RecordAfterMeasure";
+            this.cb_RecordAfterMeasure.Size = new System.Drawing.Size(144, 35);
+            this.cb_RecordAfterMeasure.TabIndex = 56;
+            this.cb_RecordAfterMeasure.Text = "Record After Measure";
+            this.cb_RecordAfterMeasure.UseVisualStyleBackColor = true;
+            // 
+            // cbAnalysis_method
+            // 
+            this.cbAnalysis_method.Location = new System.Drawing.Point(76, 112);
+            this.cbAnalysis_method.Name = "cbAnalysis_method";
+            this.cbAnalysis_method.Size = new System.Drawing.Size(105, 25);
+            this.cbAnalysis_method.TabIndex = 55;
+            this.cbAnalysis_method.Text = "Analysis_method";
+            this.cbAnalysis_method.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -230,9 +415,9 @@
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.cb_CCDMode);
-            this.groupBox2.Location = new System.Drawing.Point(78, 182);
+            this.groupBox2.Location = new System.Drawing.Point(82, 465);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(175, 136);
+            this.groupBox2.Size = new System.Drawing.Size(158, 128);
             this.groupBox2.TabIndex = 54;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CCD Mode";
@@ -240,7 +425,7 @@
             // tb_CCDMode_Angle_Pitch
             // 
             this.tb_CCDMode_Angle_Pitch.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_CCDMode_Angle_Pitch.Location = new System.Drawing.Point(83, 101);
+            this.tb_CCDMode_Angle_Pitch.Location = new System.Drawing.Point(75, 92);
             this.tb_CCDMode_Angle_Pitch.Name = "tb_CCDMode_Angle_Pitch";
             this.tb_CCDMode_Angle_Pitch.Size = new System.Drawing.Size(60, 22);
             this.tb_CCDMode_Angle_Pitch.TabIndex = 60;
@@ -248,7 +433,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(14, 106);
+            this.label24.Location = new System.Drawing.Point(7, 97);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(59, 12);
             this.label24.TabIndex = 61;
@@ -257,7 +442,7 @@
             // tb_CCDMode_Angle_End
             // 
             this.tb_CCDMode_Angle_End.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_CCDMode_Angle_End.Location = new System.Drawing.Point(83, 73);
+            this.tb_CCDMode_Angle_End.Location = new System.Drawing.Point(75, 67);
             this.tb_CCDMode_Angle_End.Name = "tb_CCDMode_Angle_End";
             this.tb_CCDMode_Angle_End.Size = new System.Drawing.Size(60, 22);
             this.tb_CCDMode_Angle_End.TabIndex = 58;
@@ -265,7 +450,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(14, 78);
+            this.label23.Location = new System.Drawing.Point(8, 72);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(55, 12);
             this.label23.TabIndex = 59;
@@ -274,7 +459,7 @@
             // tb_CCDMode_Angle_Start
             // 
             this.tb_CCDMode_Angle_Start.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_CCDMode_Angle_Start.Location = new System.Drawing.Point(83, 45);
+            this.tb_CCDMode_Angle_Start.Location = new System.Drawing.Point(75, 39);
             this.tb_CCDMode_Angle_Start.Name = "tb_CCDMode_Angle_Start";
             this.tb_CCDMode_Angle_Start.Size = new System.Drawing.Size(60, 22);
             this.tb_CCDMode_Angle_Start.TabIndex = 56;
@@ -282,7 +467,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(14, 50);
+            this.label22.Location = new System.Drawing.Point(8, 44);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(57, 12);
             this.label22.TabIndex = 57;
@@ -291,7 +476,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(16, 18);
+            this.label21.Location = new System.Drawing.Point(9, 18);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(61, 12);
             this.label21.TabIndex = 47;
@@ -304,7 +489,7 @@
             this.cb_CCDMode.Items.AddRange(new object[] {
             "Position",
             "Pitch"});
-            this.cb_CCDMode.Location = new System.Drawing.Point(83, 15);
+            this.cb_CCDMode.Location = new System.Drawing.Point(76, 15);
             this.cb_CCDMode.Name = "cb_CCDMode";
             this.cb_CCDMode.Size = new System.Drawing.Size(75, 20);
             this.cb_CCDMode.TabIndex = 45;
@@ -327,9 +512,9 @@
             this.gb_Trim.Controls.Add(this.lb_Step1_Range_Step1x1);
             this.gb_Trim.Controls.Add(this.tb_Step1_Range_step1x0);
             this.gb_Trim.Controls.Add(this.lb_Step1_Range_Step1x0);
-            this.gb_Trim.Location = new System.Drawing.Point(13, 451);
+            this.gb_Trim.Location = new System.Drawing.Point(82, 599);
             this.gb_Trim.Name = "gb_Trim";
-            this.gb_Trim.Size = new System.Drawing.Size(379, 134);
+            this.gb_Trim.Size = new System.Drawing.Size(393, 134);
             this.gb_Trim.TabIndex = 53;
             this.gb_Trim.TabStop = false;
             this.gb_Trim.Text = "Trim Analysis Range";
@@ -339,7 +524,6 @@
             this.tb_Range2_Percent.BackColor = System.Drawing.SystemColors.Window;
             this.tb_Range2_Percent.Location = new System.Drawing.Point(312, 101);
             this.tb_Range2_Percent.Name = "tb_Range2_Percent";
-            this.tb_Range2_Percent.ReadOnly = true;
             this.tb_Range2_Percent.Size = new System.Drawing.Size(60, 22);
             this.tb_Range2_Percent.TabIndex = 68;
             // 
@@ -357,7 +541,6 @@
             this.tb_Range1_Percent.BackColor = System.Drawing.SystemColors.Window;
             this.tb_Range1_Percent.Location = new System.Drawing.Point(128, 101);
             this.tb_Range1_Percent.Name = "tb_Range1_Percent";
-            this.tb_Range1_Percent.ReadOnly = true;
             this.tb_Range1_Percent.Size = new System.Drawing.Size(60, 22);
             this.tb_Range1_Percent.TabIndex = 66;
             // 
@@ -375,7 +558,6 @@
             this.tb_Step2_Range_step2x1.BackColor = System.Drawing.SystemColors.Window;
             this.tb_Step2_Range_step2x1.Location = new System.Drawing.Point(312, 45);
             this.tb_Step2_Range_step2x1.Name = "tb_Step2_Range_step2x1";
-            this.tb_Step2_Range_step2x1.ReadOnly = true;
             this.tb_Step2_Range_step2x1.Size = new System.Drawing.Size(60, 22);
             this.tb_Step2_Range_step2x1.TabIndex = 64;
             // 
@@ -393,7 +575,6 @@
             this.tb_Step2_Range_step2x0.BackColor = System.Drawing.SystemColors.Window;
             this.tb_Step2_Range_step2x0.Location = new System.Drawing.Point(128, 45);
             this.tb_Step2_Range_step2x0.Name = "tb_Step2_Range_step2x0";
-            this.tb_Step2_Range_step2x0.ReadOnly = true;
             this.tb_Step2_Range_step2x0.Size = new System.Drawing.Size(60, 22);
             this.tb_Step2_Range_step2x0.TabIndex = 62;
             // 
@@ -411,7 +592,6 @@
             this.tb_Step2_Range_step1x1.BackColor = System.Drawing.SystemColors.Window;
             this.tb_Step2_Range_step1x1.Location = new System.Drawing.Point(312, 73);
             this.tb_Step2_Range_step1x1.Name = "tb_Step2_Range_step1x1";
-            this.tb_Step2_Range_step1x1.ReadOnly = true;
             this.tb_Step2_Range_step1x1.Size = new System.Drawing.Size(60, 22);
             this.tb_Step2_Range_step1x1.TabIndex = 60;
             // 
@@ -429,7 +609,6 @@
             this.tb_Step2_Range_step1x0.BackColor = System.Drawing.SystemColors.Window;
             this.tb_Step2_Range_step1x0.Location = new System.Drawing.Point(128, 73);
             this.tb_Step2_Range_step1x0.Name = "tb_Step2_Range_step1x0";
-            this.tb_Step2_Range_step1x0.ReadOnly = true;
             this.tb_Step2_Range_step1x0.Size = new System.Drawing.Size(60, 22);
             this.tb_Step2_Range_step1x0.TabIndex = 58;
             // 
@@ -447,7 +626,6 @@
             this.tb_Step1_Range_step1x1.BackColor = System.Drawing.SystemColors.Window;
             this.tb_Step1_Range_step1x1.Location = new System.Drawing.Point(312, 17);
             this.tb_Step1_Range_step1x1.Name = "tb_Step1_Range_step1x1";
-            this.tb_Step1_Range_step1x1.ReadOnly = true;
             this.tb_Step1_Range_step1x1.Size = new System.Drawing.Size(60, 22);
             this.tb_Step1_Range_step1x1.TabIndex = 56;
             // 
@@ -465,7 +643,6 @@
             this.tb_Step1_Range_step1x0.BackColor = System.Drawing.SystemColors.Window;
             this.tb_Step1_Range_step1x0.Location = new System.Drawing.Point(128, 17);
             this.tb_Step1_Range_step1x0.Name = "tb_Step1_Range_step1x0";
-            this.tb_Step1_Range_step1x0.ReadOnly = true;
             this.tb_Step1_Range_step1x0.Size = new System.Drawing.Size(60, 22);
             this.tb_Step1_Range_step1x0.TabIndex = 54;
             // 
@@ -482,9 +659,9 @@
             // 
             this.gb_BlueTape.Controls.Add(this.tb_BlueTape_Threshold);
             this.gb_BlueTape.Controls.Add(this.lb_BlueTape_Threshold);
-            this.gb_BlueTape.Location = new System.Drawing.Point(124, 318);
+            this.gb_BlueTape.Location = new System.Drawing.Point(263, 465);
             this.gb_BlueTape.Name = "gb_BlueTape";
-            this.gb_BlueTape.Size = new System.Drawing.Size(268, 46);
+            this.gb_BlueTape.Size = new System.Drawing.Size(237, 47);
             this.gb_BlueTape.TabIndex = 52;
             this.gb_BlueTape.TabStop = false;
             this.gb_BlueTape.Text = "BlueTape";
@@ -494,7 +671,6 @@
             this.tb_BlueTape_Threshold.BackColor = System.Drawing.SystemColors.Window;
             this.tb_BlueTape_Threshold.Location = new System.Drawing.Point(128, 15);
             this.tb_BlueTape_Threshold.Name = "tb_BlueTape_Threshold";
-            this.tb_BlueTape_Threshold.ReadOnly = true;
             this.tb_BlueTape_Threshold.Size = new System.Drawing.Size(97, 22);
             this.tb_BlueTape_Threshold.TabIndex = 50;
             // 
@@ -509,9 +685,9 @@
             // 
             // cb_TrimWaferEdgeEvaluate
             // 
-            this.cb_TrimWaferEdgeEvaluate.Location = new System.Drawing.Point(12, 119);
+            this.cb_TrimWaferEdgeEvaluate.Location = new System.Drawing.Point(76, 87);
             this.cb_TrimWaferEdgeEvaluate.Name = "cb_TrimWaferEdgeEvaluate";
-            this.cb_TrimWaferEdgeEvaluate.Size = new System.Drawing.Size(93, 35);
+            this.cb_TrimWaferEdgeEvaluate.Size = new System.Drawing.Size(159, 26);
             this.cb_TrimWaferEdgeEvaluate.TabIndex = 49;
             this.cb_TrimWaferEdgeEvaluate.Text = "Trim Wafer Edge Evaluate";
             this.cb_TrimWaferEdgeEvaluate.UseVisualStyleBackColor = true;
@@ -520,7 +696,7 @@
             // 
             this.cb_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_Offset.FormattingEnabled = true;
-            this.cb_Offset.Location = new System.Drawing.Point(12, 87);
+            this.cb_Offset.Location = new System.Drawing.Point(109, 65);
             this.cb_Offset.Name = "cb_Offset";
             this.cb_Offset.Size = new System.Drawing.Size(104, 20);
             this.cb_Offset.TabIndex = 48;
@@ -528,7 +704,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(13, 71);
+            this.label20.Location = new System.Drawing.Point(110, 49);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(60, 12);
             this.label20.TabIndex = 47;
@@ -541,16 +717,16 @@
             this.gB_TTV.Controls.Add(this.label18);
             this.gB_TTV.Controls.Add(this.btn_TTVScanPattern);
             this.gB_TTV.Controls.Add(this.cb_SF3RecipeName);
-            this.gB_TTV.Location = new System.Drawing.Point(124, 370);
+            this.gB_TTV.Location = new System.Drawing.Point(74, 246);
             this.gB_TTV.Name = "gB_TTV";
-            this.gB_TTV.Size = new System.Drawing.Size(268, 71);
+            this.gB_TTV.Size = new System.Drawing.Size(287, 73);
             this.gB_TTV.TabIndex = 46;
             this.gB_TTV.TabStop = false;
             this.gB_TTV.Text = "TTV";
             // 
             // tb_ScanPatternName
             // 
-            this.tb_ScanPatternName.Location = new System.Drawing.Point(98, 17);
+            this.tb_ScanPatternName.Location = new System.Drawing.Point(99, 17);
             this.tb_ScanPatternName.Name = "tb_ScanPatternName";
             this.tb_ScanPatternName.ReadOnly = true;
             this.tb_ScanPatternName.Size = new System.Drawing.Size(97, 22);
@@ -595,16 +771,16 @@
             // 
             // tb_ReviseTime
             // 
-            this.tb_ReviseTime.Location = new System.Drawing.Point(224, 642);
+            this.tb_ReviseTime.Location = new System.Drawing.Point(326, 738);
             this.tb_ReviseTime.Name = "tb_ReviseTime";
             this.tb_ReviseTime.ReadOnly = true;
-            this.tb_ReviseTime.Size = new System.Drawing.Size(168, 22);
+            this.tb_ReviseTime.Size = new System.Drawing.Size(153, 22);
             this.tb_ReviseTime.TabIndex = 43;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(128, 646);
+            this.label16.Location = new System.Drawing.Point(252, 742);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(63, 12);
             this.label16.TabIndex = 42;
@@ -612,16 +788,16 @@
             // 
             // tb_CreateTime
             // 
-            this.tb_CreateTime.Location = new System.Drawing.Point(224, 614);
+            this.tb_CreateTime.Location = new System.Drawing.Point(71, 738);
             this.tb_CreateTime.Name = "tb_CreateTime";
             this.tb_CreateTime.ReadOnly = true;
-            this.tb_CreateTime.Size = new System.Drawing.Size(168, 22);
+            this.tb_CreateTime.Size = new System.Drawing.Size(153, 22);
             this.tb_CreateTime.TabIndex = 41;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(128, 618);
+            this.label15.Location = new System.Drawing.Point(6, 742);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(62, 12);
             this.label15.TabIndex = 40;
@@ -629,18 +805,54 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rbtn_TTV);
+            this.groupBox1.Controls.Add(this.rbtn_Trim1step3rd);
+            this.groupBox1.Controls.Add(this.rbtn_Trim1step2nd);
             this.groupBox1.Controls.Add(this.rbtn_CCD);
             this.groupBox1.Controls.Add(this.rbtn_Trim2step3rd);
             this.groupBox1.Controls.Add(this.rbtn_Trim2step2nd);
             this.groupBox1.Controls.Add(this.rbtn_Trim2step);
             this.groupBox1.Controls.Add(this.rbtn_Trim1step);
             this.groupBox1.Controls.Add(this.rbtn_BlueTape);
-            this.groupBox1.Location = new System.Drawing.Point(133, 48);
+            this.groupBox1.Location = new System.Drawing.Point(241, 49);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(120, 128);
+            this.groupBox1.Size = new System.Drawing.Size(120, 195);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Type";
+            // 
+            // rbtn_TTV
+            // 
+            this.rbtn_TTV.AutoSize = true;
+            this.rbtn_TTV.Location = new System.Drawing.Point(6, 149);
+            this.rbtn_TTV.Name = "rbtn_TTV";
+            this.rbtn_TTV.Size = new System.Drawing.Size(45, 16);
+            this.rbtn_TTV.TabIndex = 36;
+            this.rbtn_TTV.TabStop = true;
+            this.rbtn_TTV.Text = "TTV";
+            this.rbtn_TTV.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_Trim1step3rd
+            // 
+            this.rbtn_Trim1step3rd.AutoSize = true;
+            this.rbtn_Trim1step3rd.Location = new System.Drawing.Point(6, 133);
+            this.rbtn_Trim1step3rd.Name = "rbtn_Trim1step3rd";
+            this.rbtn_Trim1step3rd.Size = new System.Drawing.Size(85, 16);
+            this.rbtn_Trim1step3rd.TabIndex = 35;
+            this.rbtn_Trim1step3rd.TabStop = true;
+            this.rbtn_Trim1step3rd.Text = "Trim 1 Inlne ";
+            this.rbtn_Trim1step3rd.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_Trim1step2nd
+            // 
+            this.rbtn_Trim1step2nd.AutoSize = true;
+            this.rbtn_Trim1step2nd.Location = new System.Drawing.Point(6, 117);
+            this.rbtn_Trim1step2nd.Name = "rbtn_Trim1step2nd";
+            this.rbtn_Trim1step2nd.Size = new System.Drawing.Size(71, 16);
+            this.rbtn_Trim1step2nd.TabIndex = 34;
+            this.rbtn_Trim1step2nd.TabStop = true;
+            this.rbtn_Trim1step2nd.Text = "Trim 1 PT";
+            this.rbtn_Trim1step2nd.UseVisualStyleBackColor = true;
             // 
             // rbtn_CCD
             // 
@@ -671,10 +883,10 @@
             this.rbtn_Trim2step2nd.AutoSize = true;
             this.rbtn_Trim2step2nd.Location = new System.Drawing.Point(6, 69);
             this.rbtn_Trim2step2nd.Name = "rbtn_Trim2step2nd";
-            this.rbtn_Trim2step2nd.Size = new System.Drawing.Size(103, 16);
+            this.rbtn_Trim2step2nd.Size = new System.Drawing.Size(71, 16);
             this.rbtn_Trim2step2nd.TabIndex = 31;
             this.rbtn_Trim2step2nd.TabStop = true;
-            this.rbtn_Trim2step2nd.Text = "Trim 2 Step + PT";
+            this.rbtn_Trim2step2nd.Text = "Trim 2 PT";
             this.rbtn_Trim2step2nd.UseVisualStyleBackColor = true;
             this.rbtn_Trim2step2nd.CheckedChanged += new System.EventHandler(this.rbtn_Trim2step_CheckedChanged);
             // 
@@ -734,9 +946,9 @@
             this.gBRotateCount.Controls.Add(this.numericUpDown_Angle1);
             this.gBRotateCount.Controls.Add(this.rbtn_Rotate4);
             this.gBRotateCount.Controls.Add(this.rbtn_Rotate8);
-            this.gBRotateCount.Location = new System.Drawing.Point(259, 48);
+            this.gBRotateCount.Location = new System.Drawing.Point(372, 48);
             this.gBRotateCount.Name = "gBRotateCount";
-            this.gBRotateCount.Size = new System.Drawing.Size(128, 263);
+            this.gBRotateCount.Size = new System.Drawing.Size(128, 271);
             this.gBRotateCount.TabIndex = 36;
             this.gBRotateCount.TabStop = false;
             this.gBRotateCount.Text = "RotateCount";
@@ -975,28 +1187,26 @@
             // cb_selectAll
             // 
             this.cb_selectAll.AutoSize = true;
-            this.cb_selectAll.Location = new System.Drawing.Point(79, 63);
+            this.cb_selectAll.Location = new System.Drawing.Point(22, 466);
             this.cb_selectAll.Name = "cb_selectAll";
             this.cb_selectAll.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cb_selectAll.Size = new System.Drawing.Size(15, 14);
             this.cb_selectAll.TabIndex = 33;
             this.cb_selectAll.UseVisualStyleBackColor = true;
-            this.cb_selectAll.Visible = false;
             this.cb_selectAll.CheckedChanged += new System.EventHandler(this.cb_selectAll_CheckedChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(67, 48);
+            this.label7.Location = new System.Drawing.Point(10, 451);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 12);
             this.label7.TabIndex = 32;
             this.label7.Text = "Select All";
-            this.label7.Visible = false;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(8, 419);
+            this.numericUpDown1.Location = new System.Drawing.Point(148, 163);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             200,
             0,
@@ -1008,24 +1218,22 @@
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(114, 22);
+            this.numericUpDown1.Size = new System.Drawing.Size(74, 22);
             this.numericUpDown1.TabIndex = 31;
             this.numericUpDown1.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 400);
+            this.label6.Location = new System.Drawing.Point(76, 168);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 12);
             this.label6.TabIndex = 30;
             this.label6.Text = "Repeat Times";
-            this.label6.Visible = false;
             // 
             // label4
             // 
@@ -1035,14 +1243,13 @@
             this.label4.Size = new System.Drawing.Size(32, 12);
             this.label4.TabIndex = 27;
             this.label4.Text = "Select";
-            this.label4.Visible = false;
             // 
             // tb_RecipeSelect
             // 
             this.tb_RecipeSelect.Location = new System.Drawing.Point(79, 15);
             this.tb_RecipeSelect.Name = "tb_RecipeSelect";
             this.tb_RecipeSelect.ReadOnly = true;
-            this.tb_RecipeSelect.Size = new System.Drawing.Size(221, 22);
+            this.tb_RecipeSelect.Size = new System.Drawing.Size(321, 22);
             this.tb_RecipeSelect.TabIndex = 12;
             // 
             // checkBox25
@@ -1055,11 +1262,10 @@
             this.checkBox25.TabIndex = 25;
             this.checkBox25.Text = "25";
             this.checkBox25.UseVisualStyleBackColor = true;
-            this.checkBox25.Visible = false;
             // 
             // btn_SaveRecipe
             // 
-            this.btn_SaveRecipe.Location = new System.Drawing.Point(306, 13);
+            this.btn_SaveRecipe.Location = new System.Drawing.Point(407, 13);
             this.btn_SaveRecipe.Name = "btn_SaveRecipe";
             this.btn_SaveRecipe.Size = new System.Drawing.Size(95, 23);
             this.btn_SaveRecipe.TabIndex = 8;
@@ -1086,7 +1292,6 @@
             this.checkBox24.TabIndex = 24;
             this.checkBox24.Text = "24";
             this.checkBox24.UseVisualStyleBackColor = true;
-            this.checkBox24.Visible = false;
             // 
             // checkBox23
             // 
@@ -1098,7 +1303,6 @@
             this.checkBox23.TabIndex = 23;
             this.checkBox23.Text = "23";
             this.checkBox23.UseVisualStyleBackColor = true;
-            this.checkBox23.Visible = false;
             // 
             // checkBox22
             // 
@@ -1110,7 +1314,6 @@
             this.checkBox22.TabIndex = 22;
             this.checkBox22.Text = "22";
             this.checkBox22.UseVisualStyleBackColor = true;
-            this.checkBox22.Visible = false;
             // 
             // checkBox21
             // 
@@ -1122,7 +1325,6 @@
             this.checkBox21.TabIndex = 21;
             this.checkBox21.Text = "21";
             this.checkBox21.UseVisualStyleBackColor = true;
-            this.checkBox21.Visible = false;
             // 
             // checkBox20
             // 
@@ -1134,7 +1336,6 @@
             this.checkBox20.TabIndex = 20;
             this.checkBox20.Text = "20";
             this.checkBox20.UseVisualStyleBackColor = true;
-            this.checkBox20.Visible = false;
             // 
             // checkBox19
             // 
@@ -1146,7 +1347,6 @@
             this.checkBox19.TabIndex = 19;
             this.checkBox19.Text = "19";
             this.checkBox19.UseVisualStyleBackColor = true;
-            this.checkBox19.Visible = false;
             // 
             // checkBox18
             // 
@@ -1158,7 +1358,6 @@
             this.checkBox18.TabIndex = 18;
             this.checkBox18.Text = "18";
             this.checkBox18.UseVisualStyleBackColor = true;
-            this.checkBox18.Visible = false;
             // 
             // checkBox17
             // 
@@ -1170,7 +1369,6 @@
             this.checkBox17.TabIndex = 17;
             this.checkBox17.Text = "17";
             this.checkBox17.UseVisualStyleBackColor = true;
-            this.checkBox17.Visible = false;
             // 
             // checkBox16
             // 
@@ -1182,7 +1380,6 @@
             this.checkBox16.TabIndex = 16;
             this.checkBox16.Text = "16";
             this.checkBox16.UseVisualStyleBackColor = true;
-            this.checkBox16.Visible = false;
             // 
             // checkBox15
             // 
@@ -1194,7 +1391,6 @@
             this.checkBox15.TabIndex = 15;
             this.checkBox15.Text = "15";
             this.checkBox15.UseVisualStyleBackColor = true;
-            this.checkBox15.Visible = false;
             // 
             // checkBox14
             // 
@@ -1206,7 +1402,6 @@
             this.checkBox14.TabIndex = 14;
             this.checkBox14.Text = "14";
             this.checkBox14.UseVisualStyleBackColor = true;
-            this.checkBox14.Visible = false;
             // 
             // checkBox13
             // 
@@ -1218,7 +1413,6 @@
             this.checkBox13.TabIndex = 13;
             this.checkBox13.Text = "13";
             this.checkBox13.UseVisualStyleBackColor = true;
-            this.checkBox13.Visible = false;
             // 
             // checkBox12
             // 
@@ -1230,7 +1424,6 @@
             this.checkBox12.TabIndex = 12;
             this.checkBox12.Text = "12";
             this.checkBox12.UseVisualStyleBackColor = true;
-            this.checkBox12.Visible = false;
             // 
             // checkBox11
             // 
@@ -1242,7 +1435,6 @@
             this.checkBox11.TabIndex = 11;
             this.checkBox11.Text = "11";
             this.checkBox11.UseVisualStyleBackColor = true;
-            this.checkBox11.Visible = false;
             // 
             // checkBox10
             // 
@@ -1254,7 +1446,6 @@
             this.checkBox10.TabIndex = 10;
             this.checkBox10.Text = "10";
             this.checkBox10.UseVisualStyleBackColor = true;
-            this.checkBox10.Visible = false;
             // 
             // checkBox9
             // 
@@ -1266,7 +1457,6 @@
             this.checkBox9.TabIndex = 9;
             this.checkBox9.Text = "9";
             this.checkBox9.UseVisualStyleBackColor = true;
-            this.checkBox9.Visible = false;
             // 
             // checkBox8
             // 
@@ -1278,7 +1468,6 @@
             this.checkBox8.TabIndex = 8;
             this.checkBox8.Text = "8";
             this.checkBox8.UseVisualStyleBackColor = true;
-            this.checkBox8.Visible = false;
             // 
             // checkBox7
             // 
@@ -1290,7 +1479,6 @@
             this.checkBox7.TabIndex = 7;
             this.checkBox7.Text = "7";
             this.checkBox7.UseVisualStyleBackColor = true;
-            this.checkBox7.Visible = false;
             // 
             // checkBox6
             // 
@@ -1302,7 +1490,6 @@
             this.checkBox6.TabIndex = 6;
             this.checkBox6.Text = "6";
             this.checkBox6.UseVisualStyleBackColor = true;
-            this.checkBox6.Visible = false;
             // 
             // checkBox5
             // 
@@ -1314,7 +1501,6 @@
             this.checkBox5.TabIndex = 5;
             this.checkBox5.Text = "5";
             this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.Visible = false;
             // 
             // checkBox4
             // 
@@ -1326,7 +1512,6 @@
             this.checkBox4.TabIndex = 4;
             this.checkBox4.Text = "4";
             this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.Visible = false;
             // 
             // checkBox3
             // 
@@ -1338,7 +1523,6 @@
             this.checkBox3.TabIndex = 3;
             this.checkBox3.Text = "3";
             this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.Visible = false;
             // 
             // checkBox2
             // 
@@ -1350,7 +1534,6 @@
             this.checkBox2.TabIndex = 2;
             this.checkBox2.Text = "2";
             this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.Visible = false;
             // 
             // checkBox1
             // 
@@ -1362,7 +1545,6 @@
             this.checkBox1.TabIndex = 1;
             this.checkBox1.Text = "1";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.Visible = false;
             // 
             // label1
             // 
@@ -1387,7 +1569,7 @@
             this.treeView_Recipe.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.treeView_Recipe.Location = new System.Drawing.Point(12, 165);
             this.treeView_Recipe.Name = "treeView_Recipe";
-            this.treeView_Recipe.Size = new System.Drawing.Size(483, 584);
+            this.treeView_Recipe.Size = new System.Drawing.Size(483, 674);
             this.treeView_Recipe.TabIndex = 3;
             this.treeView_Recipe.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_Recipe_AfterSelect);
             // 
@@ -1430,7 +1612,7 @@
             // 
             // btn_CreateNew
             // 
-            this.btn_CreateNew.Location = new System.Drawing.Point(807, 11);
+            this.btn_CreateNew.Location = new System.Drawing.Point(907, 11);
             this.btn_CreateNew.Name = "btn_CreateNew";
             this.btn_CreateNew.Size = new System.Drawing.Size(95, 23);
             this.btn_CreateNew.TabIndex = 9;
@@ -1442,19 +1624,19 @@
             // 
             this.tb_CreateNewName.Location = new System.Drawing.Point(501, 12);
             this.tb_CreateNewName.Name = "tb_CreateNewName";
-            this.tb_CreateNewName.Size = new System.Drawing.Size(300, 22);
+            this.tb_CreateNewName.Size = new System.Drawing.Size(400, 22);
             this.tb_CreateNewName.TabIndex = 10;
             // 
             // tb_CopyFromName
             // 
             this.tb_CopyFromName.Location = new System.Drawing.Point(501, 41);
             this.tb_CopyFromName.Name = "tb_CopyFromName";
-            this.tb_CopyFromName.Size = new System.Drawing.Size(300, 22);
+            this.tb_CopyFromName.Size = new System.Drawing.Size(400, 22);
             this.tb_CopyFromName.TabIndex = 12;
             // 
             // btn_CopyFrom
             // 
-            this.btn_CopyFrom.Location = new System.Drawing.Point(807, 40);
+            this.btn_CopyFrom.Location = new System.Drawing.Point(907, 40);
             this.btn_CopyFrom.Name = "btn_CopyFrom";
             this.btn_CopyFrom.Size = new System.Drawing.Size(95, 23);
             this.btn_CopyFrom.TabIndex = 11;
@@ -1509,11 +1691,182 @@
             this.btn_ClearRecipeLP2.UseVisualStyleBackColor = true;
             this.btn_ClearRecipeLP2.Click += new System.EventHandler(this.btn_ClearRecipeLP2_Click);
             // 
+            // gb_Limit
+            // 
+            this.gb_Limit.Controls.Add(this.tb_W1_Upper_Limit);
+            this.gb_Limit.Controls.Add(this.cb_LimitMethod);
+            this.gb_Limit.Controls.Add(this.tb_H2_Lower_Limit);
+            this.gb_Limit.Controls.Add(this.lb_H2_Lower_Limit);
+            this.gb_Limit.Controls.Add(this.tb_H1_Lower_Limit);
+            this.gb_Limit.Controls.Add(this.lb_H1_Lower_Limit);
+            this.gb_Limit.Controls.Add(this.tb_W2_Lower_Limit);
+            this.gb_Limit.Controls.Add(this.lb_W2_Lower_Limit);
+            this.gb_Limit.Controls.Add(this.tb_W1_Lower_Limit);
+            this.gb_Limit.Controls.Add(this.lb_W1_Lower_Limit);
+            this.gb_Limit.Controls.Add(this.tb_H2_Upper_Limit);
+            this.gb_Limit.Controls.Add(this.lb_H2_Upper_Limit);
+            this.gb_Limit.Controls.Add(this.tb_H1_Upper_Limit);
+            this.gb_Limit.Controls.Add(this.lb_H1_Upper_Limit);
+            this.gb_Limit.Controls.Add(this.tb_W2_Upper_Limit);
+            this.gb_Limit.Controls.Add(this.lb_W2_Upper_Limit);
+            this.gb_Limit.Controls.Add(this.lb_W1_Upper_Limit);
+            this.gb_Limit.Location = new System.Drawing.Point(82, 325);
+            this.gb_Limit.Name = "gb_Limit";
+            this.gb_Limit.Size = new System.Drawing.Size(393, 134);
+            this.gb_Limit.TabIndex = 59;
+            this.gb_Limit.TabStop = false;
+            this.gb_Limit.Text = "Trim Data Limit";
+            // 
+            // tb_H2_Lower_Limit
+            // 
+            this.tb_H2_Lower_Limit.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_H2_Lower_Limit.Location = new System.Drawing.Point(312, 101);
+            this.tb_H2_Lower_Limit.Name = "tb_H2_Lower_Limit";
+            this.tb_H2_Lower_Limit.Size = new System.Drawing.Size(60, 22);
+            this.tb_H2_Lower_Limit.TabIndex = 68;
+            // 
+            // lb_H2_Lower_Limit
+            // 
+            this.lb_H2_Lower_Limit.AutoSize = true;
+            this.lb_H2_Lower_Limit.Location = new System.Drawing.Point(194, 104);
+            this.lb_H2_Lower_Limit.Name = "lb_H2_Lower_Limit";
+            this.lb_H2_Lower_Limit.Size = new System.Drawing.Size(86, 12);
+            this.lb_H2_Lower_Limit.TabIndex = 69;
+            this.lb_H2_Lower_Limit.Text = "H2_Lower_Limit";
+            // 
+            // tb_H1_Lower_Limit
+            // 
+            this.tb_H1_Lower_Limit.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_H1_Lower_Limit.Location = new System.Drawing.Point(128, 101);
+            this.tb_H1_Lower_Limit.Name = "tb_H1_Lower_Limit";
+            this.tb_H1_Lower_Limit.Size = new System.Drawing.Size(60, 22);
+            this.tb_H1_Lower_Limit.TabIndex = 66;
+            // 
+            // lb_H1_Lower_Limit
+            // 
+            this.lb_H1_Lower_Limit.AutoSize = true;
+            this.lb_H1_Lower_Limit.Location = new System.Drawing.Point(13, 104);
+            this.lb_H1_Lower_Limit.Name = "lb_H1_Lower_Limit";
+            this.lb_H1_Lower_Limit.Size = new System.Drawing.Size(86, 12);
+            this.lb_H1_Lower_Limit.TabIndex = 67;
+            this.lb_H1_Lower_Limit.Text = "H1_Lower_Limit";
+            // 
+            // tb_W2_Lower_Limit
+            // 
+            this.tb_W2_Lower_Limit.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_W2_Lower_Limit.Location = new System.Drawing.Point(312, 45);
+            this.tb_W2_Lower_Limit.Name = "tb_W2_Lower_Limit";
+            this.tb_W2_Lower_Limit.Size = new System.Drawing.Size(60, 22);
+            this.tb_W2_Lower_Limit.TabIndex = 64;
+            // 
+            // lb_W2_Lower_Limit
+            // 
+            this.lb_W2_Lower_Limit.AutoSize = true;
+            this.lb_W2_Lower_Limit.Location = new System.Drawing.Point(194, 48);
+            this.lb_W2_Lower_Limit.Name = "lb_W2_Lower_Limit";
+            this.lb_W2_Lower_Limit.Size = new System.Drawing.Size(89, 12);
+            this.lb_W2_Lower_Limit.TabIndex = 65;
+            this.lb_W2_Lower_Limit.Text = "W2_Lower_Limit";
+            // 
+            // tb_W1_Lower_Limit
+            // 
+            this.tb_W1_Lower_Limit.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_W1_Lower_Limit.Location = new System.Drawing.Point(128, 45);
+            this.tb_W1_Lower_Limit.Name = "tb_W1_Lower_Limit";
+            this.tb_W1_Lower_Limit.Size = new System.Drawing.Size(60, 22);
+            this.tb_W1_Lower_Limit.TabIndex = 62;
+            // 
+            // lb_W1_Lower_Limit
+            // 
+            this.lb_W1_Lower_Limit.AutoSize = true;
+            this.lb_W1_Lower_Limit.Location = new System.Drawing.Point(13, 48);
+            this.lb_W1_Lower_Limit.Name = "lb_W1_Lower_Limit";
+            this.lb_W1_Lower_Limit.Size = new System.Drawing.Size(89, 12);
+            this.lb_W1_Lower_Limit.TabIndex = 63;
+            this.lb_W1_Lower_Limit.Text = "W1_Lower_Limit";
+            // 
+            // tb_H2_Upper_Limit
+            // 
+            this.tb_H2_Upper_Limit.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_H2_Upper_Limit.Location = new System.Drawing.Point(312, 73);
+            this.tb_H2_Upper_Limit.Name = "tb_H2_Upper_Limit";
+            this.tb_H2_Upper_Limit.Size = new System.Drawing.Size(60, 22);
+            this.tb_H2_Upper_Limit.TabIndex = 60;
+            // 
+            // lb_H2_Upper_Limit
+            // 
+            this.lb_H2_Upper_Limit.AutoSize = true;
+            this.lb_H2_Upper_Limit.Location = new System.Drawing.Point(194, 76);
+            this.lb_H2_Upper_Limit.Name = "lb_H2_Upper_Limit";
+            this.lb_H2_Upper_Limit.Size = new System.Drawing.Size(85, 12);
+            this.lb_H2_Upper_Limit.TabIndex = 61;
+            this.lb_H2_Upper_Limit.Text = "H2_Upper_Limit";
+            // 
+            // tb_H1_Upper_Limit
+            // 
+            this.tb_H1_Upper_Limit.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_H1_Upper_Limit.Location = new System.Drawing.Point(128, 73);
+            this.tb_H1_Upper_Limit.Name = "tb_H1_Upper_Limit";
+            this.tb_H1_Upper_Limit.Size = new System.Drawing.Size(60, 22);
+            this.tb_H1_Upper_Limit.TabIndex = 58;
+            // 
+            // lb_H1_Upper_Limit
+            // 
+            this.lb_H1_Upper_Limit.AutoSize = true;
+            this.lb_H1_Upper_Limit.Location = new System.Drawing.Point(13, 76);
+            this.lb_H1_Upper_Limit.Name = "lb_H1_Upper_Limit";
+            this.lb_H1_Upper_Limit.Size = new System.Drawing.Size(85, 12);
+            this.lb_H1_Upper_Limit.TabIndex = 59;
+            this.lb_H1_Upper_Limit.Text = "H1_Upper_Limit";
+            // 
+            // tb_W2_Upper_Limit
+            // 
+            this.tb_W2_Upper_Limit.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_W2_Upper_Limit.Location = new System.Drawing.Point(312, 17);
+            this.tb_W2_Upper_Limit.Name = "tb_W2_Upper_Limit";
+            this.tb_W2_Upper_Limit.Size = new System.Drawing.Size(60, 22);
+            this.tb_W2_Upper_Limit.TabIndex = 56;
+            // 
+            // lb_W2_Upper_Limit
+            // 
+            this.lb_W2_Upper_Limit.AutoSize = true;
+            this.lb_W2_Upper_Limit.Location = new System.Drawing.Point(194, 20);
+            this.lb_W2_Upper_Limit.Name = "lb_W2_Upper_Limit";
+            this.lb_W2_Upper_Limit.Size = new System.Drawing.Size(88, 12);
+            this.lb_W2_Upper_Limit.TabIndex = 57;
+            this.lb_W2_Upper_Limit.Text = "W2_Upper_Limit";
+            // 
+            // tb_W1_Upper_Limit
+            // 
+            this.tb_W1_Upper_Limit.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_W1_Upper_Limit.Location = new System.Drawing.Point(128, 17);
+            this.tb_W1_Upper_Limit.Name = "tb_W1_Upper_Limit";
+            this.tb_W1_Upper_Limit.Size = new System.Drawing.Size(60, 22);
+            this.tb_W1_Upper_Limit.TabIndex = 54;
+            // 
+            // lb_W1_Upper_Limit
+            // 
+            this.lb_W1_Upper_Limit.AutoSize = true;
+            this.lb_W1_Upper_Limit.Location = new System.Drawing.Point(13, 20);
+            this.lb_W1_Upper_Limit.Name = "lb_W1_Upper_Limit";
+            this.lb_W1_Upper_Limit.Size = new System.Drawing.Size(88, 12);
+            this.lb_W1_Upper_Limit.TabIndex = 55;
+            this.lb_W1_Upper_Limit.Text = "W1_Upper_Limit";
+            // 
+            // cb_LimitMethod
+            // 
+            this.cb_LimitMethod.Location = new System.Drawing.Point(7, -5);
+            this.cb_LimitMethod.Name = "cb_LimitMethod";
+            this.cb_LimitMethod.Size = new System.Drawing.Size(142, 25);
+            this.cb_LimitMethod.TabIndex = 62;
+            this.cb_LimitMethod.Text = "Trim Data Limit Method";
+            this.cb_LimitMethod.UseVisualStyleBackColor = true;
+            // 
             // RecipeManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 761);
+            this.ClientSize = new System.Drawing.Size(1019, 851);
             this.Controls.Add(this.btn_ClearRecipeLP2);
             this.Controls.Add(this.btn_ClearRecipeLP1);
             this.Controls.Add(this.btn_ChangeRecipe2);
@@ -1536,6 +1889,10 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RecipeManagement_FormClosed);
             this.gbRecipe.ResumeLayout(false);
             this.gbRecipe.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.gb_Trim.ResumeLayout(false);
@@ -1557,6 +1914,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Angle2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Angle1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.gb_Limit.ResumeLayout(false);
+            this.gb_Limit.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1683,5 +2042,41 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox tb_CCDMode_Angle_Start;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.CheckBox cbAnalysis_method;
+        private System.Windows.Forms.RadioButton rbtn_TTV;
+        private System.Windows.Forms.RadioButton rbtn_Trim1step3rd;
+        private System.Windows.Forms.RadioButton rbtn_Trim1step2nd;
+        private System.Windows.Forms.CheckBox cb_RecordAfterMeasure;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txt_H2;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox txt_W2;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox txt_H1;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox txt_W1;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox td_LJ_Flat;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.CheckBox cb_RD_LJ;
+        private System.Windows.Forms.GroupBox gb_Limit;
+        private System.Windows.Forms.TextBox tb_H2_Lower_Limit;
+        private System.Windows.Forms.Label lb_H2_Lower_Limit;
+        private System.Windows.Forms.TextBox tb_H1_Lower_Limit;
+        private System.Windows.Forms.Label lb_H1_Lower_Limit;
+        private System.Windows.Forms.TextBox tb_W2_Lower_Limit;
+        private System.Windows.Forms.Label lb_W2_Lower_Limit;
+        private System.Windows.Forms.TextBox tb_W1_Lower_Limit;
+        private System.Windows.Forms.Label lb_W1_Lower_Limit;
+        private System.Windows.Forms.TextBox tb_H2_Upper_Limit;
+        private System.Windows.Forms.Label lb_H2_Upper_Limit;
+        private System.Windows.Forms.TextBox tb_H1_Upper_Limit;
+        private System.Windows.Forms.Label lb_H1_Upper_Limit;
+        private System.Windows.Forms.TextBox tb_W2_Upper_Limit;
+        private System.Windows.Forms.Label lb_W2_Upper_Limit;
+        private System.Windows.Forms.TextBox tb_W1_Upper_Limit;
+        private System.Windows.Forms.Label lb_W1_Upper_Limit;
+        private System.Windows.Forms.CheckBox cb_LimitMethod;
     }
 }

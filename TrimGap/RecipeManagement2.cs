@@ -82,8 +82,18 @@ namespace TrimGap
             //cb_selectAll.Checked = true;
             //rbtn_Trim2step.Checked = true;
             //rbtn_Rotate8.Checked = true;
-            treeView_Recipe.SelectedNode = treeView_Recipe.Nodes[0];
-            treeView_Recipe.SelectedNode.Text = fram.Recipe.FilenameSelect;
+
+            treeView_Recipe.SelectedNode = treeView_Recipe.Nodes[0].LastNode;
+            foreach (TreeNode t in treeView_Recipe.Nodes[0].Nodes)
+            {
+                if(t.Text == fram.Recipe.FilenameSelect)
+                {
+                    treeView_Recipe.SelectedNode = t;
+                    break;
+                }
+            }
+            
+            //treeView_Recipe.SelectedNode.Text = fram.Recipe.FilenameSelect;
             if (treeView_Recipe.SelectedNode.Text == fram.Recipe.FilenameSelect)
             {
                 ParamFile.ReadRcpini(fram.Recipe.Path, "Recipe");
@@ -123,6 +133,18 @@ namespace TrimGap
                 {
                     rbtn_CCD.Checked = true;
                 }
+                else if (fram.Recipe.Type == 6)
+                {
+                    rbtn_Trim1step2nd.Checked = true;
+                }
+                else if (fram.Recipe.Type == 7)
+                {
+                    rbtn_Trim1step3rd.Checked = true;
+                }
+                else if (fram.Recipe.Type == 8)
+                {
+                    rbtn_TTV.Checked = true;
+                }
                 cb_Offset.SelectedIndex = fram.Recipe.OffsetType;
                 numericUpDown1.Value = fram.Recipe.RepeatTimes;
                 numericUpDown_Angle1.Value = fram.Recipe.Angle[0];
@@ -138,6 +160,7 @@ namespace TrimGap
                 cb_SF3RecipeName.Text = fram.Recipe.SF3_Name;
                 tb_ScanPatternName.Text = fram.Recipe.MotionPatternName;
                 cb_TrimWaferEdgeEvaluate.Checked = (fram.Recipe.WaferEdgeEvaluate == 1);
+                cbAnalysis_method.Checked = (fram.Recipe.Analysis_method == 1);
                 tb_BlueTape_Threshold.Text = fram.Recipe.BlueTapeThreshold.ToString();
                 tb_Step1_Range_step1x0.Text = fram.Recipe.Step1_Range_step1x0.ToString();
                 tb_Step1_Range_step1x1.Text = fram.Recipe.Step1_Range_step1x1.ToString();
@@ -151,6 +174,26 @@ namespace TrimGap
                 tb_CCDMode_Angle_Start.Text = fram.Recipe.RecordCCD_Angle_Start.ToString();
                 tb_CCDMode_Angle_End.Text = fram.Recipe.RecordCCD_Angle_End.ToString();
                 tb_CCDMode_Angle_Pitch.Text = fram.Recipe.RecordCCD_Angle_Pitch.ToString();
+                cb_RecordAfterMeasure.Checked = (fram.Recipe.RecordAfterMeasure == 1);
+                td_LJ_Flat.Text = fram.Recipe.LJ_Flat.ToString();
+                cb_RD_LJ.Checked = (fram.Recipe.RD_LJ == 1);
+
+                //================== 20240628新增系數 ======================
+                txt_H1.Text = fram.Recipe.H1.ToString();
+                txt_H2.Text = fram.Recipe.H2.ToString();
+                txt_W1.Text = fram.Recipe.W1.ToString();
+                txt_W2.Text = fram.Recipe.W2.ToString();
+
+                //====================== 20250815 Limit ============================
+                cb_LimitMethod.Checked = (fram.Recipe.LimitMethod == 1);
+                tb_H1_Lower_Limit.Text = fram.Recipe.H1_LowerLimit.ToString();
+                tb_H1_Upper_Limit.Text = fram.Recipe.H1_UpperLimit.ToString();
+                tb_W1_Lower_Limit.Text = fram.Recipe.W1_LowerLimit.ToString();
+                tb_W1_Upper_Limit.Text = fram.Recipe.W1_UpperLimit.ToString();
+                tb_H2_Lower_Limit.Text = fram.Recipe.H2_LowerLimit.ToString();
+                tb_H2_Upper_Limit.Text = fram.Recipe.H2_UpperLimit.ToString();
+                tb_W2_Lower_Limit.Text = fram.Recipe.W2_LowerLimit.ToString();
+                tb_W2_Upper_Limit.Text = fram.Recipe.W2_UpperLimit.ToString();
             }
         }
 
@@ -163,6 +206,10 @@ namespace TrimGap
             cb_Offset.Items.Add("Inline 2Step");    // 4
             cb_Offset.Items.Add("QC 1 Step");       // 5
             cb_Offset.Items.Add("BlueTape");        // 6
+            cb_Offset.Items.Add("Trim0 1Step");     // 7
+            cb_Offset.Items.Add("Trim0 2Step");     // 8
+            cb_Offset.Items.Add("F2F 1Step");       // 9
+            cb_Offset.Items.Add("F2F 2Step");       // 10
             cb_Offset.SelectedIndex = 0;
         }
 
@@ -254,6 +301,18 @@ namespace TrimGap
                     {
                         rbtn_CCD.Checked = true;
                     }
+                    else if (fram.Recipe.Type == 6)
+                    {
+                        rbtn_Trim1step2nd.Checked = true;
+                    }
+                    else if (fram.Recipe.Type == 7)
+                    {
+                        rbtn_Trim1step3rd.Checked = true;
+                    }
+                    else if (fram.Recipe.Type == 8)
+                    {
+                        rbtn_TTV.Checked = true;
+                    }
                     cb_Offset.SelectedIndex = fram.Recipe.OffsetType;
                     numericUpDown1.Value = fram.Recipe.RepeatTimes;
                     numericUpDown_Angle1.Value = fram.Recipe.Angle[0];
@@ -269,6 +328,7 @@ namespace TrimGap
                     cb_SF3RecipeName.Text = fram.Recipe.SF3_Name;
                     tb_ScanPatternName.Text = fram.Recipe.MotionPatternName;
                     cb_TrimWaferEdgeEvaluate.Checked = (fram.Recipe.WaferEdgeEvaluate == 1);
+                    cbAnalysis_method.Checked = (fram.Recipe.Analysis_method == 1);
                     tb_BlueTape_Threshold.Text = fram.Recipe.BlueTapeThreshold.ToString();
                     tb_Step1_Range_step1x0.Text = fram.Recipe.Step1_Range_step1x0.ToString();
                     tb_Step1_Range_step1x1.Text = fram.Recipe.Step1_Range_step1x1.ToString();
@@ -282,6 +342,27 @@ namespace TrimGap
                     tb_CCDMode_Angle_Start.Text = fram.Recipe.RecordCCD_Angle_Start.ToString();
                     tb_CCDMode_Angle_End.Text = fram.Recipe.RecordCCD_Angle_End.ToString();
                     tb_CCDMode_Angle_Pitch.Text = fram.Recipe.RecordCCD_Angle_Pitch.ToString();
+                    cb_RecordAfterMeasure.Checked = (fram.Recipe.RecordAfterMeasure == 1);
+                    td_LJ_Flat.Text = fram.Recipe.LJ_Flat.ToString();
+                    cb_RD_LJ.Checked = (fram.Recipe.RD_LJ == 1);
+
+                    //================= 20240628係數 ========================
+                    txt_H1.Text = fram.Recipe.H1.ToString();
+                    txt_H2.Text = fram.Recipe.H2.ToString();
+                    txt_W1.Text = fram.Recipe.W1.ToString();
+                    txt_W2.Text = fram.Recipe.W2.ToString();
+
+                    //====================== 20250815 Limit ============================
+                    cb_LimitMethod.Checked = (fram.Recipe.LimitMethod == 1);
+                    tb_H1_Lower_Limit.Text = fram.Recipe.H1_LowerLimit.ToString();
+                    tb_H1_Upper_Limit.Text = fram.Recipe.H1_UpperLimit.ToString();
+                    tb_W1_Lower_Limit.Text = fram.Recipe.W1_LowerLimit.ToString();
+                    tb_W1_Upper_Limit.Text = fram.Recipe.W1_UpperLimit.ToString();
+                    tb_H2_Lower_Limit.Text = fram.Recipe.H2_LowerLimit.ToString();
+                    tb_H2_Upper_Limit.Text = fram.Recipe.H2_UpperLimit.ToString();
+                    tb_W2_Lower_Limit.Text = fram.Recipe.W2_LowerLimit.ToString();
+                    tb_W2_Upper_Limit.Text = fram.Recipe.W2_UpperLimit.ToString();
+
                 }
             }
         }
@@ -326,7 +407,9 @@ namespace TrimGap
             fram.Recipe.MotionPatternName = "default";
             fram.Recipe.SF3_Name = "Default";
             fram.Recipe.WaferEdgeEvaluate = 0;
+            fram.Recipe.Analysis_method = 0;
             cb_TrimWaferEdgeEvaluate.Checked = false;
+            cbAnalysis_method.Checked = false;
             fram.Recipe.BlueTapeThreshold = fram.Analysis.BlueTapeThreshold;
             fram.Recipe.Step1_Range_step1x0 = fram.Analysis.Step1_Range_step1x0;
             fram.Recipe.Step1_Range_step1x1 = fram.Analysis.Step1_Range_step1x1;
@@ -340,6 +423,27 @@ namespace TrimGap
             fram.Recipe.RecordCCD_Angle_Start = 0;
             fram.Recipe.RecordCCD_Angle_End = 315;
             fram.Recipe.RecordCCD_Angle_Pitch = 45;
+            fram.Recipe.RecordAfterMeasure = 0;
+            fram.Recipe.LJ_Flat = 1.5;
+            fram.Recipe.RD_LJ = 0;
+
+            //====================== 20240628 係數 ============================
+            fram.Recipe.H1 = 1;
+            fram.Recipe.H2 = 1;
+            fram.Recipe.W1 = 1;
+            fram.Recipe.W2 = 1;
+
+            //====================== 20250815 Limit ============================
+            fram.Recipe.LimitMethod = 0;
+            fram.Recipe.H1_LowerLimit = 0;
+            fram.Recipe.H2_LowerLimit = 0;
+            fram.Recipe.W1_LowerLimit = 0;
+            fram.Recipe.W2_LowerLimit = 0;
+            fram.Recipe.H1_UpperLimit = 1000;
+            fram.Recipe.H2_UpperLimit = 1000;
+            fram.Recipe.W1_UpperLimit = 1000;
+            fram.Recipe.W2_UpperLimit = 1000;
+
             ParamFile.CreateRCPini(fram.Recipe.Path + "\\" + tb_CreateNewName.Text + ".ini");
             ParamFile.SaveRCPini(sram.dirfilepath + "\\ProcessJob\\" + tb_RecipeSelect.Text + ".pjb", "Recipe");
 
@@ -436,6 +540,23 @@ namespace TrimGap
             fram.Recipe.RecordCCD_Angle_Start = Convert.ToInt32(tb_CCDMode_Angle_Start.Text);
             fram.Recipe.RecordCCD_Angle_End = Convert.ToInt32(tb_CCDMode_Angle_End.Text);
             fram.Recipe.RecordCCD_Angle_Pitch = Convert.ToInt32(tb_CCDMode_Angle_Pitch.Text);
+
+            fram.Recipe.H1 = Convert.ToDouble(txt_H1.Text);
+            fram.Recipe.H2 = Convert.ToDouble(txt_H2.Text);
+            fram.Recipe.W1 = Convert.ToDouble(txt_W1.Text);
+            fram.Recipe.W2 = Convert.ToDouble(txt_W2.Text);
+
+            //====================== 20250815 Limit ============================
+            fram.Recipe.LimitMethod = cb_LimitMethod.Checked ? 1 : 0;
+            fram.Recipe.H1_LowerLimit = Convert.ToDouble(tb_H1_Lower_Limit.Text);
+            fram.Recipe.H1_UpperLimit = Convert.ToDouble(tb_H1_Upper_Limit.Text);
+            fram.Recipe.W1_LowerLimit = Convert.ToDouble(tb_W1_Lower_Limit.Text);
+            fram.Recipe.W1_UpperLimit = Convert.ToDouble(tb_W1_Upper_Limit.Text);
+            fram.Recipe.H2_LowerLimit = Convert.ToDouble(tb_H2_Lower_Limit.Text);
+            fram.Recipe.H2_UpperLimit = Convert.ToDouble(tb_H2_Upper_Limit.Text);
+            fram.Recipe.W2_LowerLimit = Convert.ToDouble(tb_W2_Lower_Limit.Text);
+            fram.Recipe.W2_UpperLimit = Convert.ToDouble(tb_W2_Upper_Limit.Text);
+
             if (fram.Recipe.Angle[7] < fram.Recipe.Angle[6] || fram.Recipe.Angle[6] < fram.Recipe.Angle[5] ||
                 fram.Recipe.Angle[5] < fram.Recipe.Angle[4] || fram.Recipe.Angle[4] < fram.Recipe.Angle[3] ||
                 fram.Recipe.Angle[3] < fram.Recipe.Angle[2] || fram.Recipe.Angle[2] < fram.Recipe.Angle[1] ||
@@ -483,6 +604,18 @@ namespace TrimGap
             {
                 fram.Recipe.Type = 5;
             }
+            else if (rbtn_Trim1step2nd.Checked)
+            {
+                fram.Recipe.Type = 6;
+            }
+            else if (rbtn_Trim1step3rd.Checked)
+            {
+                fram.Recipe.Type = 7;
+            }
+            else if (rbtn_TTV.Checked)
+            {
+                fram.Recipe.Type = 8;
+            }
             else
                 fram.Recipe.Type = 0;
             fram.Recipe.OffsetType = cb_Offset.SelectedIndex;
@@ -508,6 +641,10 @@ namespace TrimGap
                 }
             }
             fram.Recipe.WaferEdgeEvaluate = cb_TrimWaferEdgeEvaluate.Checked ? 1 : 0;
+            fram.Recipe.Analysis_method = cbAnalysis_method.Checked ? 1 : 0;
+            fram.Recipe.RecordAfterMeasure = cb_RecordAfterMeasure.Checked ? 1 : 0;
+            fram.Recipe.LJ_Flat = Convert.ToDouble(td_LJ_Flat.Text);
+            fram.Recipe.RD_LJ = cb_RD_LJ.Checked ? 1 : 0;
 
             tb_ReviseTime.Text = fram.Recipe.ReviseTime;
             ParamFile.SaveRCPini(fram.Recipe.Path + "\\" + tb_RecipeSelect.Text + ".ini", "Recipe");
@@ -608,15 +745,15 @@ namespace TrimGap
                 rbtn_Rotate4.Enabled = false;
                 rbtn_Rotate8.Enabled = false;
             }
-            else if (rbtn_Trim1step.Checked)
+            else if (rbtn_Trim1step.Checked || rbtn_Trim2step.Checked || rbtn_Trim1step2nd.Checked || rbtn_Trim2step2nd.Checked || rbtn_Trim1step3rd.Checked || rbtn_Trim2step3rd.Checked || rbtn_CCD.Checked)
             {
                 rbtn_Rotate4.Enabled = true;
                 rbtn_Rotate8.Enabled = true;
             }
-            else if (rbtn_Trim2step.Checked || rbtn_Trim2step2nd.Checked || rbtn_Trim2step3rd.Checked || rbtn_CCD.Checked)
+            else if (rbtn_TTV.Checked)
             {
-                rbtn_Rotate4.Enabled = true;
-                rbtn_Rotate8.Enabled = true;
+                rbtn_Rotate4.Enabled = false;
+                rbtn_Rotate8.Enabled = false;
             }
         }
 

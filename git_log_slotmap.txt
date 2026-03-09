@@ -1,0 +1,1284 @@
+﻿
+               List<ErrorReport> listErrorReports = new List<ErrorReport>();
+               List<string> dataList = new List<string>();
+               ErrorReport errR = new ErrorReport();
+> +            byte status_id, status_accessing, status_slotMap;
+               switch (e.CARRIERACTION)
+               {
+                   case "PROCEEDWITHCARRIER":
+> +                    GetCarrierStatus(e.CARRIERID, out status_id, out status_accessing, out status_slotMap, out err);
+  +                    status_id = 1;
+> +                    status_slotMap = 1;
+  +                    string pwc_step = "0";
+                       LoadPortID = e.PORTNO.ToString();
+                       CarrierID = e.CARRIERID;
+> -                    SlotMapData.Set(LoadPortID, CarrierID);
+  +                    if (Carrier_list.Contains(e.CARRIERID))
+  +                    {
+  +                        if (status_id == (byte)CarrierIDState.WAITING_FOR_HOST)   // PROCEEDWITHCARRIER #1
+  +                        {
+  +                            SetCarrierStatus_ID(e.CARRIERID, CarrierIDState.ID_VERIFICATION_OK);
+> +                            SlotMapData.Set(LoadPortID, CarrierID);
+  +                            pwc_step = "1";
+  +                        }
+> +                        else if((status_id == (byte)CarrierIDState.ID_VERIFICATION_OK) && (status_slotMap == (byte)S
+lotMapState.WAITING_FOR_HOST))  // PROCEEDWITHCARRIER #2
+  +                        {
+> +                            SetCarrierStatus_SlotMap(e.CARRIERID, SlotMapState.SLOT_MAP_VERIFICATION_OK);
+  +                            MeasureStartData.Set(LoadPortID, CarrierID);
+  +                            pwc_step = "2";
+  +                        }
+                       Common.SecsgemForm.EventReportSend(TrimGap_EqpID.CarrierDoorClosed, out err);
+  @@ -1099,6 +1119,12 @@ namespace TrimGap
+                       // 1 = WAITING FOR HOST
+>                      // 2 = SLOTMAP VERIFIKATION OK
+>                      // 3 = SLOTMAP VERIFICATION FAILED
+  +
+  +                    //Reason
+  +                    // 0 = VERIFICATION NEEDED
+  +                    // 3 = IMPROPER SUBSTRATE POSITION
+                       for (int i = 0; i < loadPort.Slot.Length; i++)
+                       {
+>                          Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, (byte)loadPort.Slot[i], out err); 
+  @@ -1175,7 +1201,55 @@ namespace TrimGap
+                                       }
+                                       else
+  -
+  -
+  -
+> -            string testRecipeslotmap = "";
+  -            if (Common.SecsgemForm.SecsDataGet(SecsData.MeasureStart, SecsDataElement.CarrierID) == "")
+  -            {
+  -                if (Common.SecsgemForm.SecsDataGet(SecsData.MeasureStart, SecsDataElement.LoadPortID) == "1")
+  -                                Common.EFEM.LoadPort1.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
+  -                            }
+  -                        }
+> -                        testRecipeslotmap += Convert.ToString(sram.Recipe.Slot[i]); //皜祈岫
+  -                    }
+> -                    InsertLog.SavetoDB(67, "Recipeslotmap:" + testRecipeslotmap);
+  -                    Common.EFEM.LoadPort1.AutoGetSlot();
+  -
+  -                    Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort1;
+  -                                Common.EFEM.LoadPort2.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
+  -                            }
+  -                        }
+> -                        testRecipeslotmap += Convert.ToString(sram.Recipe.Slot[i]); //皜祈岫
+  -                    }
+> -                    InsertLog.SavetoDB(67, "Recipeslotmap:" + testRecipeslotmap);
+  -                    Common.EFEM.LoadPort2.AutoGetSlot();
+  -
+  -                    Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort2;
+  -                            Common.EFEM.LoadPort1.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
+  -                        }
+  -                    }
+> -                    testRecipeslotmap += Convert.ToString(sram.Recipe.Slot[i]); //皜祈岫
+  -                }
+> -                InsertLog.SavetoDB(67, "Recipeslotmap:" + testRecipeslotmap);
+  -                Common.EFEM.LoadPort1.AutoGetSlot();
+  -
+  -                Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort1;
+  -                            Common.EFEM.LoadPort2.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
+  -                        }
+  -                    }
+> -                    testRecipeslotmap += Convert.ToString(sram.Recipe.Slot[i]); //皜祈岫
+  -                }
+> -                InsertLog.SavetoDB(67, "Recipeslotmap:" + testRecipeslotmap);
+  -                Common.EFEM.LoadPort2.AutoGetSlot();
+  -
+  -                Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort2;
+                               rtn = 5;
+                           if(MainForm.Carrier_list.Contains(dataList[1]))
+                           {
+> -                            Common.SecsgemForm.bWaitSECS_SlotMapCmd = true;
+  -                        }
+  +                            if(dataList[3] == "1")
+> +                                Common.SecsgemForm.bWaitSECS_SlotMapCmd = true;
+  +                            else if(dataList[3] == "2")
+  +                                sram.LoadPort1_Carrier_Vertify = true;
+  +                        }       
+                               rtn = 5;
+                           if (MainForm.Carrier_list.Contains(dataList[1]))
+                           {
+> -                            Common.SecsgemForm.bWaitSECS_SlotMapCmd = true;
+  +                            if (dataList[3] == "1")
+> +                                Common.SecsgemForm.bWaitSECS_SlotMapCmd = true;
+  +                            else if (dataList[3] == "2")
+  +                                sram.LoadPort2_Carrier_Vertify = true;
+                           }
+  +
+  +        public enum SecsData
+  +        {
+> +            SlotMap,
+  +            Release,
+  +            MeasureStart,
+  +            Cancel,
+  +                case "PROCEEDWITHCARRIER":
+  +                    LoadPortID = e.PORTNO.ToString();
+  +                    CarrierID = e.CARRIERID;
+> +                    SlotMapData.Set(LoadPortID, CarrierID);
+  +                    dataList.Clear();
+  +                    dataList.Add("PROCEEDWITHCARRIER");
+  +                    dataList.Add(CarrierID);
+  +            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+  +            objectAttribute = new ObjectAttribute(444, "CARRIERACCESSINGSTATUS", (byte)CarrierAccessingState.NOT_ACC
+ESSED);
+  +            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+> +            objectAttribute = new ObjectAttribute(449, "SLOTMAPSTATUS", (byte)SlotMapState.SLOT_MAP_NOT_READ);
+  +            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+  +            result2 = _gemControler.UpdateObject(updateObjectEntity, out err);
+  +            Carrier_list.Add(objID);
+  +            _gemControler.EventReportSend(182, out err); //CMS_NoStateToIDNotRead
+> +            _gemControler.EventReportSend(192, out err); //CMS_NoStateToSlotMapNotRead
+  +            _gemControler.EventReportSend(197, out err); //CMS_NoStateToNotAccessed
+  +            return result;
+  +        }
+  +            return result;
+  +        }
+  +
+> +        public int SetCarrierStatus_SlotMap(string objID, SlotMapState status)
+  +        {
+  +            int result = 0;
+  +            ObjectInstance updateObjectEntity = null;
+> +            SlotMapState oldstate = SlotMapState.SLOT_MAP_NOT_READ;
+  +            byte portid = 0;
+  +            byte acc = 0;
+  +            string locationid = "";
+  +            result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, objID, out updateObjectEntity, out err);
+  +            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+  +            {
+> +                if (o.ATTRID == "SLOTMAPSTATUS")
+> +                    oldstate = (SlotMapState)Convert.ToByte(o.ATTRDATA);
+  +                if (o.ATTRID == "LOCATIONID")
+  +                {
+  +                    locationid = o.ATTRDATA.ToString();
+  +            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+  +            objectAttribute = new ObjectAttribute(448, "LOCATIONID", locationid);
+  +            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+> +            objectAttribute = new ObjectAttribute(449, "SLOTMAPSTATUS", (byte)status);
+  +            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+  +
+  +            result = _gemControler.UpdateObject(updateObjectEntity2, out err);
+  +            {
+  +                switch (status)
+  +                {
+> +                    case SlotMapState.SLOT_MAP_NOT_READ:
+  +                        _gemControler.EventReportSend(192, out err);
+  +                        break;
+> +                    case SlotMapState.WAITING_FOR_HOST:
+  +                        _gemControler.EventReportSend(194, out err);
+  +                        break;
+> +                    case SlotMapState.SLOT_MAP_VERIFICATION_OK:
+> +                        if(oldstate == SlotMapState.WAITING_FOR_HOST)
+  +                            _gemControler.EventReportSend(195, out err);
+  +                        else
+  +                            _gemControler.EventReportSend(193, out err);
+  +                        break;
+> +                    case SlotMapState.SLOT_MAP_VERIFICATION_FAILED:
+  +                        _gemControler.EventReportSend(196, out err);
+  +                        break;
+  +                }
+  +            return result;
+  +        }
+  +
+> +        public int SetCarrierAttr_SlotMap(string objID, int[] slotmap)
+  +        {
+  +            int result = 0;
+  +            byte[] slot = new byte[25];
+  +            byte count = 0;
+> +            if (slotmap.Length != 25)
+  +            {
+  +                return 1;
+  +            }
+  +            {
+  +                for(int i = 0; i<25; i++)
+  +                {
+> +                    if (slotmap[i] == 0)  //  empty
+  +                        slot[i] = 1;
+> +                    else if(slotmap[i] == 1)  // ok
+  +                    {
+  +                        slot[i] = 3;
+  +                        count++;
+  +                    }
+> +                    else if (slotmap[i] == 2)  //cross
+  +                        slot[i] = 5;
+  +                    else
+  +                        slot[i] = 2;   //error
+  +            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+  +            ListWrapper lw = new ListWrapper();
+  +            lw.TryAdd(ItemFmt.U1, slot, out err);
+> +            objectAttribute = new ObjectAttribute(447, "SLOTMAP", count);
+  +            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+  +
+  +            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+  +            return result;
+  +        }
+  +
+> +        public int GetCarrierAttr(string objID, out byte cap, out byte count, out string[] lotid, out string[] subst
+rateid, out byte[] slotmap, out string loc, out string usage, out string err)
+  +        {
+  +            int result = 0;
+  +            ObjectInstance updateObjectEntity = null;
+  +            count = 0;
+  +            lotid = new string[25];
+  +            substrateid = new string[25];
+> +            slotmap = new byte[25];
+  +            loc = string.Empty;
+  +            usage = string.Empty;
+  +            if (result != 0) return result;
+  +                            substrateid[i] = (lw_1.Items[1].Value).ToString();
+  +                        };
+  +                        break;
+> +                    case "SLOTMAP":
+  +                        lw = (ListWrapper)o.ATTRDATA;
+  +                        for (int i = 0; i < lw.Items.Count; i++)
+  +                        {
+> +                            slotmap[i] = Convert.ToByte(lw.Items[i].Value);
+  +                        };
+  +                        break;
+  +                    case "LOCATIONID":
+  +            return result;
+  +        }
+  +
+> +        public int GetCarrierStatus(string objID, out byte id, out byte accessing, out byte slotmap, out string err)
+  +        {
+  +            int result = 0;
+  +            ObjectInstance updateObjectEntity = null;
+  +
+  +            id = 0;
+  +            accessing = 0;
+> +            slotmap = 0;
+  +
+  +            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+  +            {
+  +                    case "CARRIERACCESSINGSTATUS":
+  +                        accessing = Convert.ToByte(o.ATTRDATA.ToString());
+  +                        break;
+> +                    case "SLOTMAPSTATUS":
+  +                        accessing = Convert.ToByte(o.ATTRDATA.ToString());
+  +                        break;
+  +                    default:
+  +                foreach (string carrier in Carrier_list)
+  +                {
+  +                    if (s == carrier)  //Selected CJ??啣???Carrier???+                    {
+> +                        byte id, accessing, slotmap;
+> +                        GetCarrierStatus(carrier, out id, out accessing, out slotmap, out err);
+> +                        if(id == (byte)CarrierIDState.ID_VERIFICATION_OK && slotmap == (byte)SlotMapState.SLOT_MAP_V
+ERIFICATION_OK)  //ID頝lotmap?賡?撽?
+  +                        {
+  +                            if(accessing == (byte)CarrierAccessingState.NOT_ACCESSED)  //Carrier ???un ?隞亥??un鈭?
++                            {
+  +                                byte cap;
+  +        {
+  +            switch (s)
+  +            {
+> +                case SecsData.SlotMap:
+> +                    SlotMapData.Clear();
+  +                    break;
+  +                case SecsData.Release:
+  +                    ReleaseData.Clear();
+  +            {
+  +                switch (s)
+  +                {
+> +                    case SecsData.SlotMap:
+> +                        rtn = SlotMapData.LoadPortID;
+  +                        break;
+  +                    case SecsData.Release:
+  +                        rtn = ReleaseData.LoadPortID;
+  +            {
+  +                switch (s)
+  +                {
+> +                    case SecsData.SlotMap:
+> +                        rtn = SlotMapData.CarrierID;
+  +                        break;
+  +                    case SecsData.Release:
+  +                        rtn = ReleaseData.CarrierID;
+  +            {
+  +                switch (s)
+  +                {
+> +                    case SecsData.SlotMap:
+> +                        SlotMapData.LoadPortID = value;
+  +                        break;
+  +                    case SecsData.Release:
+  +                        ReleaseData.LoadPortID = value;
+  +            {
+  +                switch (s)
+  +                {
+> +                    case SecsData.SlotMap:
+> +                        SlotMapData.CarrierID = value;
+  +                        break;
+  +                    case SecsData.Release:
+  +                        ReleaseData.CarrierID = value;
+  +        ID_VERIFICATION_FAILED = 3,
+  +    }
+  +
+> +    public enum SlotMapState
+  +    {
+  +        SLOT_MAP_NOT_READ = 0,
+  +        WAITING_FOR_HOST = 1,
+  @@ -1020,7 +1054,7 @@ namespace TrimGap
+               if (rtn)
+               {
+>                  loadPort.GetWaferSlot2(); //撌脣?摰?-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapS
+tatus, (byte)2, out err);
+> +                //Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, (byte)2, out err);
+>                  // 0 = SLOTMAP NOT READ
+                   // 1 = WAITING FOR HOST
+>                  // 2 = SLOTMAP VERIFIKATION OK
+  @@ -1028,15 +1062,12 @@ namespace TrimGap
+>                  string testslotmap = "";
+                   for (int i = 0; i < loadPort.Slot.Length; i++)
+                   {
+> -                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, (byte)loadPort.Slot[i], out err); // Wa
+fer?甇?+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, (byte)loadPort.Slot[i], out err);
+  +                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)0, out err); // map ??瘝?error 嚗?敺?霅?
+                     if (loadPort.Slot[i] > 1)
+                       {
+                           Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)3, out err); // Wafer?甇?          
+           }
+  -                    if (SECSGEM.TrimGap_EqpParameter.Reason != 3 && loadPort.Slot[loadPort.Slot.Length - 1] <= 1)
+  -                    {
+  -                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)0, out err); // map ??瘝?error 嚗?敺
+?霅?-                    }
+>                      testslotmap += Convert.ToString(loadPort.Slot[i]); //皜祈岫
+                   }
+>                  InsertLog.SavetoDB(67, "Slotmap:" + testslotmap);
+  @@ -1050,42 +1081,32 @@ namespace TrimGap
+                       Common.SecsgemForm.EventReportSend(TrimGap_EqpID.LP2_CarrierMapped, out err);
+                   }
+                   Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
+> -                Common.SecsgemForm.EventReportSend(TrimGap_EqpID.SlotMap, out err);
+  -                //for (int i = 0; i < 25; i++)
+  -                //{
+  -                //    if (loadPort.slot_Status[i] == EFEM.slot_status.Ready)
+  -                //            loadPort.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
+  -                //        }
+  -                //    }
+> -                //    testRecipeslotmap += Convert.ToString(fram.Recipe.Slot[i]); //皜祈岫
+  -                //}
+> -                //InsertLog.SavetoDB(67, "Recipeslotmap:" + testRecipeslotmap);
+  -                //loadPort.AutoGetSlot(); // 甇斗郊撽???LoadPort Ready to load
+> +                //Common.SecsgemForm.EventReportSend(TrimGap_EqpID.SlotMap, out err);
+  +
+  +                if(fram.m_SecsgemType == 1)
+  +                {
+> +                    Common.SecsgemForm.SetCarrierAttr_SlotMap(loadPort.FoupID, loadPort.Slot);
+> +                    Common.SecsgemForm.SetCarrierStatus_SlotMap(loadPort.FoupID, SlotMapState.WAITING_FOR_HOST);
+  +                }
+               }
+               else
+                   if (loadPort.Map())
+                   {
+                       loadPort.GetWaferSlot2();
+> -                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, (byte)2, out err);
+> +                    //Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, (byte)2, out err);
+>                      // 0 = SLOTMAP NOT READ
+                       // 1 = WAITING FOR HOST
+>                      // 2 = SLOTMAP VERIFIKATION OK
+>                      // 3 = SLOTMAP VERIFICATION FAILED
+                       for (int i = 0; i < loadPort.Slot.Length; i++)
+                       {
+> -                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, (byte)loadPort.Slot[i], out err); /
+/ Wafer?甇?+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, (byte)loadPort.Slot[i], o
+ut err); 
+  +                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)0, out err); // map ??瘝?error 嚗?敺
+?霅?                         if (loadPort.Slot[i] > 1)
+                           {
+                               Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)3, out err); // Wafer?甇?      
+                   }
+                           Common.SecsgemForm.EventReportSend(TrimGap_EqpID.LP2_CarrierMapped, out err);
+                       }
+                       Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
+> -                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.SlotMap, out err);
+  -                    //for (int i = 0; i < 25; i++)
+  -                    //{
+  -                    //    if (loadPort.slot_Status[i] == EFEM.slot_status.Ready)
+  -                    //    }
+  -                    //}
+  -                    //loadPort.AutoGetSlot(); // 甇斗郊撽???LoadPort Ready to load
+> +                    //Common.SecsgemForm.EventReportSend(TrimGap_EqpID.SlotMap, out err);
+  +
+> +                    Common.SecsgemForm.SetCarrierAttr_SlotMap(loadPort.FoupID, loadPort.Slot);
+> +                    Common.SecsgemForm.SetCarrierStatus_SlotMap(loadPort.FoupID, SlotMapState.WAITING_FOR_HOST);
+                   }
+                   else
+                   {
+  +            string foupID;
+  +            bool bStart = false;
+  +            byte valMethod = (byte)0;
+> +            byte[] slotmap = new byte[25];
+  +            bool bSlot = false;
+  +            for (int i = 0; i < 25; i++)
+  +            {
+> +                slotmap[i] = (byte)(list_Wafer.Items[i].Checked ? 1 : 0);
+  +                bSlot |= list_Wafer.Items[i].Checked;
+  +            }
+  +            if (radio_Foup1.Checked)
+  +
+  +            if (list_Recipe.SelectedItems.Count == 1 && bSlot)
+  +            {
+> +                int rtn = MainForm.CreateProcessJob(text_Add_PJ.Text, list_Recipe.SelectedItems[0].SubItems[1].Text,
+ bStart, foupID, slotmap, out err);
+  +                if ((valMethod == 1 || textBox_PauseEvent.Text != String.Empty) && rtn == 0)
+  +                {
+  +                    //PJState = 255 撠望銝???slot = null 撠望銝???+                    rtn = MainForm.SetProcessJobAtt
+r(text_Add_PJ.Text, textBox_PauseEvent.Text, foupID, null, (byte)13, bStart, valMethod, list_Recipe.SelectedItems[0].Su
+bItems[1].Text, textBox_RecVariableList.Text, out err);
+  +            string foupID;
+  +            bool bStart = false;
+  +            byte processOrder = (byte)2;
+> +            byte[] slotmap = new byte[25];
+  +            int rtn;
+  +            List<string> ls = new List<string>();
+  +            //string pjname;
+  +
+  +
+  +
+> +            string testRecipeslotmap = "";
+  +            if (Common.SecsgemForm.SecsDataGet(SecsData.MeasureStart, SecsDataElement.CarrierID) == "")
+  +            {
+  +                if (Common.SecsgemForm.SecsDataGet(SecsData.MeasureStart, SecsDataElement.LoadPortID) == "1")
+  +                                Common.EFEM.LoadPort1.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
+  +                            }
+  +                        }
+> +                        testRecipeslotmap += Convert.ToString(sram.Recipe.Slot[i]); //皜祈岫
+  +                    }
+> +                    InsertLog.SavetoDB(67, "Recipeslotmap:" + testRecipeslotmap);
+  +                    Common.EFEM.LoadPort1.AutoGetSlot();
+  +
+  +                    Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort1;
+  +                                Common.EFEM.LoadPort2.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
+  +                            }
+  +                        }
+> +                        testRecipeslotmap += Convert.ToString(sram.Recipe.Slot[i]); //皜祈岫
+  +                    }
+> +                    InsertLog.SavetoDB(67, "Recipeslotmap:" + testRecipeslotmap);
+  +                    Common.EFEM.LoadPort2.AutoGetSlot();
+  +
+  +                    Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort2;
+  +                            Common.EFEM.LoadPort1.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
+  +                        }
+  +                    }
+> +                    testRecipeslotmap += Convert.ToString(sram.Recipe.Slot[i]); //皜祈岫
+  +                }
+> +                InsertLog.SavetoDB(67, "Recipeslotmap:" + testRecipeslotmap);
+  +                Common.EFEM.LoadPort1.AutoGetSlot();
+  +
+  +                Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort1;
+  +                            Common.EFEM.LoadPort2.Update_slot_Status(i + 1, EFEM.slot_status.ProcessEnd);
+  +                        }
+  +                    }
+> +                    testRecipeslotmap += Convert.ToString(sram.Recipe.Slot[i]); //皜祈岫
+  +                }
+> +                InsertLog.SavetoDB(67, "Recipeslotmap:" + testRecipeslotmap);
+  +                Common.EFEM.LoadPort2.AutoGetSlot();
+  +
+  +                Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort2;
+  +                            rtn = 5;
+  +                        if(MainForm.Carrier_list.Contains(dataList[1]))
+  +                        {
+> +                            Common.SecsgemForm.bWaitSECS_SlotMapCmd = true;
+  +                        }
+  +                    }
+  +                    else if(dataList[2] == "2")  //loarport
+  +                            rtn = 5;
+  +                        if (MainForm.Carrier_list.Contains(dataList[1]))
+  +                        {
+> +                            Common.SecsgemForm.bWaitSECS_SlotMapCmd = true;
+  +                        }
+  +                    }
+  +                    break;
+  +                return 0;
+  +        }
+  +
+> +        public int SetCarrierAttr_SlotMap(string foupid, int[] slot)
+  +        {
+  +            if (type == 1)
+> +                return MainForm.SetCarrierAttr_SlotMap(foupid, slot);
+  +            else
+  +                return 0;
+  +        }
+  +
+> +        public int SetCarrierStatus_SlotMap(string foupid, DemoFormDiaGemLib.SlotMapState state)
+  +        {
+  +            if (type == 1)
+> +                return MainForm.SetCarrierStatus_SlotMap(foupid, state);
+  +            else
+  +                return 0;
+  +        }
+  @@ -1020,7 +1020,7 @@ namespace TrimGap
+               if (rtn)
+               {
+>                  loadPort.GetWaferSlot2(); //撌脣?摰?-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapS
+tatus, 2, out err);
+> +                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, (byte)2, out err);
+>                  // 0 = SLOTMAP NOT READ
+                   // 1 = WAITING FOR HOST
+>                  // 2 = SLOTMAP VERIFIKATION OK
+  @@ -1028,14 +1028,14 @@ namespace TrimGap
+>                  string testslotmap = "";
+                   for (int i = 0; i < loadPort.Slot.Length; i++)
+                   {
+> -                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, loadPort.Slot[i], out err); // Wafer?
+甇?+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, (byte)loadPort.Slot[i], out err); // Wa
+fer?甇?                     if (loadPort.Slot[i] > 1)
+                       {
+  -                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, 3, out err); // Wafer?甇?+               
+         Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)3, out err); // Wafer?甇?                     }
+                       if (SECSGEM.TrimGap_EqpParameter.Reason != 3 && loadPort.Slot[loadPort.Slot.Length - 1] <= 1)
+                       {
+  -                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, 0, out err); // map ??瘝?error 嚗?敺?霅?+ 
+                       Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)0, out err); // map ??瘝?error 嚗?敺?霅?
+                     }
+>                      testslotmap += Convert.ToString(loadPort.Slot[i]); //皜祈岫
+                   }
+  @@ -1070,21 +1070,21 @@ namespace TrimGap
+                   if (loadPort.Map())
+                   {
+                       loadPort.GetWaferSlot2();
+> -                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, 2, out err);
+> +                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, (byte)2, out err);
+>                      // 0 = SLOTMAP NOT READ
+                       // 1 = WAITING FOR HOST
+>                      // 2 = SLOTMAP VERIFIKATION OK
+>                      // 3 = SLOTMAP VERIFICATION FAILED
+                       for (int i = 0; i < loadPort.Slot.Length; i++)
+                       {
+> -                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, loadPort.Slot[i], out err); // Wafe
+r?甇?+                        Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, (byte)loadPort.Slot[i], out err
+); // Wafer?甇?                         if (loadPort.Slot[i] > 1)
+                           {
+  -                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, 3, out err); // Wafer?甇?+           
+                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, (byte)3, out err); // Wafer?甇?                    
+     }
+                           if (SECSGEM.TrimGap_EqpParameter.Reason != 3 && loadPort.Slot[loadPort.Slot.Length - 1] <= 1
+)
+  -CarrierID,2000,ASCII,1000,N/A,Identifier for the carrier,3
+  -PortID,2001,UINT_1,1000,N/A,Identifier for the load port,4
+  -AccessMode,2002,UINT_1,1000,N/A,The access mode of the load port,5
+> -SlotMapStatus,2003,UINT_1,1000,N/A,Slotmap status of the carrier,6
+  -PortTransferState,2005,UINT_1,1000,N/A,The current transfer state of the load port,7
+  -Loadport1_AccessMode,2006,UINT_1,1000,N/A,The access mode of the load port 1,8
+  -Loadport2_AccessMode,2007,UINT_1,1000,N/A,The access mode of the load port 2,9
+  -Loadport1_PortTransferState,2008,UINT_1,1000,N/A,The current transfer state of the load port 1,10
+  -Loadport2_PortTransferState,2009,UINT_1,1000,N/A,The current transfer state of the load port 2,11
+> -SlotMap_List,2010,LIST,1000,N/A,The slotmap of a carrier,12
+> -Reason,2013,UINT_1,1000,N/A,Reason for asking the host to proceed with a carrier (slotmap verification),13
+  -Loadport1_Recipe,2014,ASCII,1000,N/A,The recipe of the load port 1,14
+  -Loadport2_Recipe,2015,ASCII,1000,N/A,The recipe of the load port 2,15
+> -SlotMap_1,3001,UINT_1,1000,N/A,SlotMap_1,16
+> -SlotMap_2,3002,UINT_1,1000,N/A,SlotMap_2,17
+> -SlotMap_3,3003,UINT_1,1000,N/A,SlotMap_3,18
+> -SlotMap_4,3004,UINT_1,1000,N/A,SlotMap_4,19
+> -SlotMap_5,3005,UINT_1,1000,N/A,SlotMap_5,20
+> -SlotMap_6,3006,UINT_1,1000,N/A,SlotMap_6,21
+> -SlotMap_7,3007,UINT_1,1000,N/A,SlotMap_7,22
+> -SlotMap_8,3008,UINT_1,1000,N/A,SlotMap_8,23
+> -SlotMap_9,3009,UINT_1,1000,N/A,SlotMap_9,24
+> -SlotMap_10,3010,UINT_1,1000,N/A,SlotMap_10,25
+> -SlotMap_11,3011,UINT_1,1000,N/A,SlotMap_11,26
+> -SlotMap_12,3012,UINT_1,1000,N/A,SlotMap_12,27
+> -SlotMap_13,3013,UINT_1,1000,N/A,SlotMap_13,28
+> -SlotMap_14,3014,UINT_1,1000,N/A,SlotMap_14,29
+> -SlotMap_15,3015,UINT_1,1000,N/A,SlotMap_15,30
+> -SlotMap_16,3016,UINT_1,1000,N/A,SlotMap_16,31
+> -SlotMap_17,3017,UINT_1,1000,N/A,SlotMap_17,32
+> -SlotMap_18,3018,UINT_1,1000,N/A,SlotMap_18,33
+> -SlotMap_19,3019,UINT_1,1000,N/A,SlotMap_19,34
+> -SlotMap_20,3020,UINT_1,1000,N/A,SlotMap_20,35
+> -SlotMap_21,3021,UINT_1,1000,N/A,SlotMap_21,36
+> -SlotMap_22,3022,UINT_1,1000,N/A,SlotMap_22,37
+> -SlotMap_23,3023,UINT_1,1000,N/A,SlotMap_23,38
+> -SlotMap_24,3024,UINT_1,1000,N/A,SlotMap_24,39
+> -SlotMap_25,3025,UINT_1,1000,N/A,SlotMap_25,40
+  -Slot1_Info,4001,ASCII,1000,N/A,Slot1_Info,41
+  -Slot2_Info,4002,ASCII,1000,N/A,Slot2_Info,42
+  -Slot3_Info,4003,ASCII,1000,N/A,Slot3_Info,43
+  +CARRIERID,2000,ASCII,,,Identifier for the carrier,3
+  +PORTID,2001,UINT_1,,,Identifier for the load port,4
+  +ACCESSMODE,2002,UINT_1,,,The access mode of the load port,5
+> +SLOTMAPSTATUS,2003,UINT_1,,,Slotmap status of the carrier,6
+  +PORTTRANSFERSTATE,2005,UINT_1,,,The current transfer state of the load port,7
+  +LOADPORT1_ACCESSMODE,2006,UINT_1,,,The access mode of the load port 1,8
+  +LOADPORT2_ACCESSMODE,2007,UINT_1,,,The access mode of the load port 2,9
+  +LOADPORT1_PORTTRANSFERSTATE,2008,UINT_1,,,The current transfer state of the load port 1,10
+  +LOADPORT2_PORTTRANSFERSTATE,2009,UINT_1,,,The current transfer state of the load port 2,11
+> +SLOTMAP_LIST,2010,LIST,,,The slotmap of a carrier,12
+> +REASON,2013,UINT_1,,,Reason for asking the host to proceed with a carrier (slotmap verification),13
+  +LOADPORT1_RECIPE,2014,ASCII,,,The recipe of the load port 1,14
+  +LOADPORT2_RECIPE,2015,ASCII,,,The recipe of the load port 2,15
+> +SLOTMAP_1,3001,UINT_1,,,SlotMap_1,16
+> +SLOTMAP_2,3002,UINT_1,,,SlotMap_2,17
+> +SLOTMAP_3,3003,UINT_1,,,SlotMap_3,18
+> +SLOTMAP_4,3004,UINT_1,,,SlotMap_4,19
+> +SLOTMAP_5,3005,UINT_1,,,SlotMap_5,20
+> +SLOTMAP_6,3006,UINT_1,,,SlotMap_6,21
+> +SLOTMAP_7,3007,UINT_1,,,SlotMap_7,22
+> +SLOTMAP_8,3008,UINT_1,,,SlotMap_8,23
+> +SLOTMAP_9,3009,UINT_1,,,SlotMap_9,24
+> +SLOTMAP_10,3010,UINT_1,,,SlotMap_10,25
+> +SLOTMAP_11,3011,UINT_1,,,SlotMap_11,26
+> +SLOTMAP_12,3012,UINT_1,,,SlotMap_12,27
+> +SLOTMAP_13,3013,UINT_1,,,SlotMap_13,28
+> +SLOTMAP_14,3014,UINT_1,,,SlotMap_14,29
+> +SLOTMAP_15,3015,UINT_1,,,SlotMap_15,30
+> +SLOTMAP_16,3016,UINT_1,,,SlotMap_16,31
+> +SLOTMAP_17,3017,UINT_1,,,SlotMap_17,32
+> +SLOTMAP_18,3018,UINT_1,,,SlotMap_18,33
+> +SLOTMAP_19,3019,UINT_1,,,SlotMap_19,34
+> +SLOTMAP_20,3020,UINT_1,,,SlotMap_20,35
+> +SLOTMAP_21,3021,UINT_1,,,SlotMap_21,36
+> +SLOTMAP_22,3022,UINT_1,,,SlotMap_22,37
+> +SLOTMAP_23,3023,UINT_1,,,SlotMap_23,38
+> +SLOTMAP_24,3024,UINT_1,,,SlotMap_24,39
+> +SLOTMAP_25,3025,UINT_1,,,SlotMap_25,40
+  +SLOT1_INFO,4001,ASCII,,,Slot1_Info,41
+  +SLOT2_INFO,4002,ASCII,,,Slot2_Info,42
+  +SLOT3_INFO,4003,ASCII,,,Slot3_Info,43
+  +{
+  +    public enum SecsData
+  +    {
+> +        SlotMap,
+  +        Release,
+  +        MeasureStart,
+  +        Cancel,
+  +                }
+  +            }
+  +        }
+> +        public bool bWaitSECS_SlotMapCmd
+  +        {
+  +            get
+  +            {
+  +                if (type == 0)
+  +                {
+> +                    return SecsgemForm.bWaitSECS_SlotMapCmd;
+  +                }
+  +                else if (type == 1)
+  +                {
+> +                    return MainForm.bWaitSECS_SlotMapCmd;
+  +                }
+  +                else
+  +                    return false;
+  +            {
+  +                if (type == 0)
+  +                {
+> +                    SecsgemForm.bWaitSECS_SlotMapCmd = value;
+  +                }
+  +                else if (type == 1)
+  +                {
+> +                    MainForm.bWaitSECS_SlotMapCmd = value;
+  +                }
+  +            }
+  +        }
+  +            {
+  +                switch(s)
+  +                {
+> +                    case SecsData.SlotMap:
+> +                        SecsgemForm.SlotMapData.Clear();
+  +                        break;
+  +                    case SecsData.Release:
+  +                        SecsgemForm.ReleaseData.Clear();
+  +            {
+  +                switch (s)
+  +                {
+> +                    case SecsData.SlotMap:
+> +                        MainForm.SlotMapData.Clear();
+  +                        break;
+  +                    case SecsData.Release:
+  +                        MainForm.ReleaseData.Clear();
+  +                {
+  +                    switch (s)
+  +                    {
+> +                        case SecsData.SlotMap:
+> +                            rtn = SecsgemForm.SlotMapData.LoadPortID;
+  +                            break;
+  +                        case SecsData.Release:
+  +                            rtn = SecsgemForm.ReleaseData.LoadPortID;
+  +                {
+  +                    switch (s)
+  +                    {
+> +                        case SecsData.SlotMap:
+> +                            rtn = MainForm.SlotMapData.LoadPortID;
+  +                            break;
+  +                        case SecsData.Release:
+  +                            rtn = MainForm.ReleaseData.LoadPortID;
+  +                {
+  +                    switch (s)
+  +                    {
+> +                        case SecsData.SlotMap:
+> +                            rtn = SecsgemForm.SlotMapData.CarrierID;
+  +                            break;
+  +                        case SecsData.Release:
+  +                            rtn = SecsgemForm.ReleaseData.CarrierID;
+  +                {
+  +                    switch (s)
+  +                    {
+> +                        case SecsData.SlotMap:
+> +                            rtn = MainForm.SlotMapData.CarrierID;
+  +                            break;
+  +                        case SecsData.Release:
+  +                            rtn = MainForm.ReleaseData.CarrierID;
+  +                {
+  +                    switch (s)
+  +                    {
+> +                        case SecsData.SlotMap:
+> +                            SecsgemForm.SlotMapData.LoadPortID = value;
+  +                            break;
+  +                        case SecsData.Release:
+  +                            SecsgemForm.ReleaseData.LoadPortID = value;
+  +                {
+  +                    switch (s)
+  +                    {
+> +                        case SecsData.SlotMap:
+> +                            MainForm.SlotMapData.LoadPortID = value;
+  +                            break;
+  +                        case SecsData.Release:
+  +                            MainForm.ReleaseData.LoadPortID = value;
+  +                {
+  +                    switch (s)
+  +                    {
+> +                        case SecsData.SlotMap:
+> +                            SecsgemForm.SlotMapData.CarrierID = value;
+  +                            break;
+  +                        case SecsData.Release:
+  +                            SecsgemForm.ReleaseData.CarrierID = value;
+  +                {
+  +                    switch (s)
+  +                    {
+> +                        case SecsData.SlotMap:
+> +                            MainForm.SlotMapData.CarrierID = value;
+  +                            break;
+  +                        case SecsData.Release:
+  +                            MainForm.ReleaseData.CarrierID = value;
+  +CarrierID,2000,ASCII,1000,N/A,Identifier for the carrier,3
+  +PortID,2001,UINT_1,1000,N/A,Identifier for the load port,4
+  +AccessMode,2002,UINT_1,1000,N/A,The access mode of the load port,5
+> +SlotMapStatus,2003,UINT_1,1000,N/A,Slotmap status of the carrier,6
+  +PortTransferState,2005,UINT_1,1000,N/A,The current transfer state of the load port,7
+  +Loadport1_AccessMode,2006,UINT_1,1000,N/A,The access mode of the load port 1,8
+  +Loadport2_AccessMode,2007,UINT_1,1000,N/A,The access mode of the load port 2,9
+  +Loadport1_PortTransferState,2008,UINT_1,1000,N/A,The current transfer state of the load port 1,10
+  +Loadport2_PortTransferState,2009,UINT_1,1000,N/A,The current transfer state of the load port 2,11
+> +SlotMap_List,2010,LIST,1000,N/A,The slotmap of a carrier,12
+> +Reason,2013,UINT_1,1000,N/A,Reason for asking the host to proceed with a carrier (slotmap verification),13
+  +Loadport1_Recipe,2014,ASCII,1000,N/A,The recipe of the load port 1,14
+  +Loadport2_Recipe,2015,ASCII,1000,N/A,The recipe of the load port 2,15
+> +SlotMap_1,3001,UINT_1,1000,N/A,SlotMap_1,16
+> +SlotMap_2,3002,UINT_1,1000,N/A,SlotMap_2,17
+> +SlotMap_3,3003,UINT_1,1000,N/A,SlotMap_3,18
+> +SlotMap_4,3004,UINT_1,1000,N/A,SlotMap_4,19
+> +SlotMap_5,3005,UINT_1,1000,N/A,SlotMap_5,20
+> +SlotMap_6,3006,UINT_1,1000,N/A,SlotMap_6,21
+> +SlotMap_7,3007,UINT_1,1000,N/A,SlotMap_7,22
+> +SlotMap_8,3008,UINT_1,1000,N/A,SlotMap_8,23
+> +SlotMap_9,3009,UINT_1,1000,N/A,SlotMap_9,24
+> +SlotMap_10,3010,UINT_1,1000,N/A,SlotMap_10,25
+> +SlotMap_11,3011,UINT_1,1000,N/A,SlotMap_11,26
+> +SlotMap_12,3012,UINT_1,1000,N/A,SlotMap_12,27
+> +SlotMap_13,3013,UINT_1,1000,N/A,SlotMap_13,28
+> +SlotMap_14,3014,UINT_1,1000,N/A,SlotMap_14,29
+> +SlotMap_15,3015,UINT_1,1000,N/A,SlotMap_15,30
+> +SlotMap_16,3016,UINT_1,1000,N/A,SlotMap_16,31
+> +SlotMap_17,3017,UINT_1,1000,N/A,SlotMap_17,32
+> +SlotMap_18,3018,UINT_1,1000,N/A,SlotMap_18,33
+> +SlotMap_19,3019,UINT_1,1000,N/A,SlotMap_19,34
+> +SlotMap_20,3020,UINT_1,1000,N/A,SlotMap_20,35
+> +SlotMap_21,3021,UINT_1,1000,N/A,SlotMap_21,36
+> +SlotMap_22,3022,UINT_1,1000,N/A,SlotMap_22,37
+> +SlotMap_23,3023,UINT_1,1000,N/A,SlotMap_23,38
+> +SlotMap_24,3024,UINT_1,1000,N/A,SlotMap_24,39
+> +SlotMap_25,3025,UINT_1,1000,N/A,SlotMap_25,40
+  +Slot1_Info,4001,ASCII,1000,N/A,Slot1_Info,41
+  +Slot2_Info,4002,ASCII,1000,N/A,Slot2_Info,42
+  +Slot3_Info,4003,ASCII,1000,N/A,Slot3_Info,43
+  +1010,CarrierDoorClosed,Carrier has been closed,12
+  +1011,LP1_CarrierMapStarted,Carrier mapping has been started at Load Port 1.,13
+  +1012,LP1_CarrierMapped,Carrier map completed at Load Port 1.,14
+> +1013,SlotMap,Carrier slotmap status has changed to Completed,15
+  +1014,MachineRunning,Machine running,16
+  +1015,MachineStop,Machine Stop,17
+  +1016,PortTransferStatusAsk,Port transfer status reply,18
+  + CARRIERACCESSINGSTATUS,UINT_1,Carrier Accessing Status,O,N
+  + SUBSTRATECOUNT,UINT_1,Substrate Count,O,N
+  + CONTENTMAP,LIST,Content Map,O,N
+> + SLOTMAP,LIST,Slot Map,O,N
+  + LOCATIONID,ASCII,Location ID,O,N
+> + SLOTMAPSTATUS,UINT_1,Slot Map Status,O,N
+  + USAGE,ASCII,Usage,O,N
+  +
+  +OBJTYPE: CARRIERLOC,Carrier Location Type,Y
+  +
+  +RCMD: GO-LOCAL,GO LOCAL
+  +
+> +RCMD: SLOTMAP-L,SLOTMAP L
+  + LOADPORT-ID,ASCII,LOADPORT ID,20
+  +
+  +RCMD: STOP,STOP CMD
+  + LOADPORT-ID,ASCII,LOADPORT ID,20
+  + CARRIER-ID,ASCII,CARRIER ID,20
+  +
+> +RCMD: SLOTMAP-L&C,SLOTMAP L&C
+  + LOADPORT-ID,ASCII,LOADPORT ID,20
+  + CARRIER-ID,ASCII,CARRIER ID,20
+  +
+  +CMS_CARRIERACCESSINGSTATUS,444,UINT_1,,,(E87-CMS) [CARRIER] Carrier Accessing Status,444,CARRIER,N
+  +CMS_SUBSTRATECOUNT,445,UINT_1,,,(E87-CMS) [CARRIER] Substrate Count,445,CARRIER,N
+  +CMS_CONTENTMAP,446,LIST,,,(E87-CMS) [CARRIER] Content Map,446,CARRIER,N
+> +CMS_SLOTMAP,447,LIST,,,(E87-CMS) [CARRIER] Slot Map,447,CARRIER,N
+  +CMS_LOCATIONID,448,ASCII,,,(E87-CMS) [CARRIER] Location ID,448,CARRIER,N
+> +CMS_SLOTMAPSTATUS,449,UINT_1,,,(E87-CMS) [CARRIER] Slot Map Status,449,CARRIER,N
+  +CMS_USAGE,450,ASCII,,,(E87-CMS) [CARRIER] Usage,450,CARRIER,N
+  +CMS_OBJID,461,UINT_1,,,(E87-CMS) [LOADPORT] Port ID (Identifier ID),461,LOADPORT,Y
+  +CMS_PORTID,462,UINT_1,,,(E87-CMS) [LOADPORT] Port ID,462,LOADPORT,N
+  +189,CMS_WaitingForHostToIDVerificationFailed,(E87-CarrierEvent) The Carrier transits from WAITING FOR HOST state to 
+ID VERIFICATION FAILED state(Send by AP),189
+  +190,CMS_IDNotReadToWaitingForHost_IDReaderIsNotInService,(E87-CarrierEvent) The Carrier transits from ID NOT READ st
+ate to WAITING FOR HOST state. BypassReadID variable is set to FALSE\ and a carrier is received when the id reader is n
+ot in service or not installed.(Send by AP),190
+  +191,CMS_IDNotReadToIDVerificationOk_IDReaderIsNotInService,(E87-CarrierEvent) The Carrier transits from ID NOT READ 
+state to ID VERIFICATION OK state. BypassReadID variable is set to TRUE\ and a carrier is received when the id reader i
+s not in service or not installed.(Send by AP),191
+> +192,CMS_NoStateToSlotMapNotRead,(E87-CarrierEvent) The Carrier transits from not state to SLOT MAP NOT READ state(Se
+nd by AP),192
+> +193,CMS_SlotMapNotReadToSlotMapVerificationOk,(E87-CarrierEvent) The Carrier transits from SLOT MAP NOT READ state t
+o SLOT MAP VERIFICATION OK state(Send by AP),193
+> +194,CMS_SlotMapNotReadToWaitingForHost,(E87-CarrierEvent) The Carrier transits from SLOT MAP NOT READ state to WAITI
+NG FOR HOST state(Send by AP),194
+> +195,CMS_WaitingForHostToSlotMapVerificationOk,(E87-CarrierEvent) The Carrier transits from WAITING FOR HOST state to
+ SLOT MAP VERIFICATION OK state(Send by AP),195
+> +196,CMS_WaitingForHostToSlotMapVerificationFail,(E87-CarrierEvent) The Carrier transits from WAITING FOR HOST state 
+to SLOT MAP VERIFICATION FAIL state(Send by AP),196
+  +197,CMS_NoStateToNotAccessed,(E87-CarrierEvent) The Carrier Object is instantiated.(Send by AP),197
+  +198,CMS_NotAccessedToInAccess,(E87-CarrierEvent) The Carrier transits from NOT ACCESSED state to IN ACCESS state(Sen
+d by AP),198
+  +199,CMS_InAccessToCarrierComplete,(E87-CarrierEvent) The Carrier transits from IN ACCESS state to CARRIER COMPLETE s
+tate(Send by AP),199
+  +0C 43 41 52 52 49 45 52 2D 54   45 53 54
+  +S2F41  /* Host Command Send */
+  +<L[2]
+> +  <A[11]"SLOTMAP-L&C"> /* Name = RCMD */
+  +  <L[2]
+  +    <L[2]
+  +      <A[11]"LOADPORT-ID"> /* Name = CPNAME */
+  +            this.txtType = new System.Windows.Forms.TextBox();
+  +            this.txtRotateCount = new System.Windows.Forms.TextBox();
+  +            this.lblRotateCount = new System.Windows.Forms.Label();
+> +            this.tbPPSlotMap = new System.Windows.Forms.TabPage();
+  +            this.cLBPP = new System.Windows.Forms.CheckedListBox();
+  +            this.tbAngle = new System.Windows.Forms.TabPage();
+  +            this.txtAngle4 = new System.Windows.Forms.TextBox();
+  +            this.groupBox25.SuspendLayout();
+  +            this.tabControl3.SuspendLayout();
+  +            this.tbPPSetting.SuspendLayout();
+> +            this.tbPPSlotMap.SuspendLayout();
+  +            this.tbAngle.SuspendLayout();
+  +            this.tbPPCofficient.SuspendLayout();
+  +            this.tabControl2.SuspendLayout();
+  +            // tabControl3
+  +            // 
+  +            this.tabControl3.Controls.Add(this.tbPPSetting);
+> +            this.tabControl3.Controls.Add(this.tbPPSlotMap);
+  +            this.tabControl3.Controls.Add(this.tbAngle);
+  +            this.tabControl3.Controls.Add(this.tbPPCofficient);
+  +            this.tabControl3.Controls.Add(this.tbMisc);
+  +            this.lblRotateCount.TabIndex = 18;
+  +            this.lblRotateCount.Text = "Rotate Count嚗?;
+  +            // 
+> +            // tbPPSlotMap
+  +            // 
+> +            this.tbPPSlotMap.Controls.Add(this.cLBPP);
+> +            this.tbPPSlotMap.Location = new System.Drawing.Point(4, 28);
+> +            this.tbPPSlotMap.Name = "tbPPSlotMap";
+> +            this.tbPPSlotMap.Padding = new System.Windows.Forms.Padding(3);
+> +            this.tbPPSlotMap.Size = new System.Drawing.Size(261, 159);
+> +            this.tbPPSlotMap.TabIndex = 1;
+> +            this.tbPPSlotMap.Text = "SlotMap";
+> +            this.tbPPSlotMap.UseVisualStyleBackColor = true;
+  +            // 
+  +            // cLBPP
+  +            // 
+  +            this.tabControl3.ResumeLayout(false);
+  +            this.tbPPSetting.ResumeLayout(false);
+  +            this.tbPPSetting.PerformLayout();
+> +            this.tbPPSlotMap.ResumeLayout(false);
+  +            this.tbAngle.ResumeLayout(false);
+  +            this.tbAngle.PerformLayout();
+  +            this.tbPPCofficient.ResumeLayout(false);
+  +        private System.Windows.Forms.TabControl tabControl3;
+  +        private System.Windows.Forms.TabPage tbPPSetting;
+  +        private System.Windows.Forms.Label lblRotateCount;
+> +        private System.Windows.Forms.TabPage tbPPSlotMap;
+  +        private System.Windows.Forms.TabPage tbPPCofficient;
+  +        private System.Windows.Forms.TabControl tabControl2;
+  +        private System.Windows.Forms.TabPage tabPage6;
+  +        private RCMD_ACCESSMODE_ASK _rcmdACCESSMODE_ASK;
+  +        private RCMD_PP_SELECT _rcmdPP_SELECT;
+  +        private RCMD_ACCESSMODE_CHANGE _rcmdACCESSMODE_CHANGE;
+> +        private RCMD_SLOTMAP_L_C _rcmdSLOTMAP_L_C;
+> +        private RCMD_SLOTMAP_L _rcmdSLOTMAP_L;
+  +        private RCMD_MEASURE_L_C _rcmdMEASURE_L_C;
+  +        private RCMD_MEASURE_L _rcmdMEASURE_L;
+  +        private RCMD_RELEASE_L_C _rcmdRRELEASE_L_C;
+  +            }
+  +        }
+  +
+> +        public SecsDataTemp SlotMapData = new SecsDataTemp();
+  +        public SecsDataTemp ReleaseData = new SecsDataTemp();
+  +        public SecsDataTemp MeasureStartData = new SecsDataTemp();
+  +        public SecsDataTemp CancelData = new SecsDataTemp();
+  +            _rcmdACCESSMODE_ASK = new RCMD_ACCESSMODE_ASK();
+  +            _rcmdPP_SELECT = new RCMD_PP_SELECT();
+  +            _rcmdACCESSMODE_CHANGE = new RCMD_ACCESSMODE_CHANGE();
+> +            _rcmdSLOTMAP_L_C = new RCMD_SLOTMAP_L_C();
+> +            _rcmdSLOTMAP_L = new RCMD_SLOTMAP_L();
+  +            _rcmdMEASURE_L_C = new RCMD_MEASURE_L_C();
+  +            _rcmdMEASURE_L = new RCMD_MEASURE_L();
+  +            _rcmdRRELEASE_L_C = new RCMD_RELEASE_L_C();
+  +        public bool bWaitSECS_StopCmd = false;
+  +        public bool bWaitSECS_ACCESSMODE_ASK = false;
+  +        public bool bWaitSECS_PP_SELECT = false;
+> +        public bool bSECS_ChangeAccessMode_Recive = false; // ?斗?????+        public bool bWaitSECS_SlotMapCmd =
+ false;
+  +        public bool bWaitSECS_MeasureCmd = false;
+  +        public bool bWaitSECS_ReleaseCmd = false;
+  +        public bool bWaitSECS_PORT_TRANSFERSTATUS_ASK = false;
+  +                                    });
+  +                                }
+  +                                break;
+> +                            case "SLOTMAP-L&C":
+  +                                {
+> +                                    bWaitSECS_SlotMapCmd = true;
+> +                                    RCMD_SLOTMAP_L_C obj = new RCMD_SLOTMAP_L_C();
+  +                                    bDataCheckOK = RunDecode(e, out obj);
+  +                                    if (bDataCheckOK)
+  +                                    {
+  +                                        //OK, get Info
+> +                                        _rcmdSLOTMAP_L_C = obj;
+> +                                        LoadPortID = _rcmdSLOTMAP_L_C.LOADPORT_ID;
+> +                                        CarrierID = _rcmdSLOTMAP_L_C.CARRIER_ID;
+> +                                        SlotMapData.Set(LoadPortID, CarrierID);
+  +                                    }
+  +
+  +                                    this.Invoke((MethodInvoker)delegate ()
+  +                                    });
+  +                                }
+  +                                break;
+> +                            case "SLOTMAP-L":
+  +                                {
+> +                                    bWaitSECS_SlotMapCmd = true;
+> +                                    RCMD_SLOTMAP_L obj = new RCMD_SLOTMAP_L();
+  +                                    bDataCheckOK = RunDecode(e, out obj);
+  +                                    if (bDataCheckOK)
+  +                                    {
+  +                                        //OK, get Info
+> +                                        _rcmdSLOTMAP_L = obj;
+> +                                        LoadPortID = _rcmdSLOTMAP_L.LOADPORT_ID;
+> +                                        SlotMapData.Set(LoadPortID);
+  +                                    }
+  +
+  +                                    this.Invoke((MethodInvoker)delegate ()
+  +        }
+  +    }
+  +}
+> diff --git a/DIASECSGEM300/RCMD_SLOTMAP-L-C.cs b/DIASECSGEM300/RCMD_SLOTMAP-L-C.cs
+  new file mode 100644
+  index 0000000..28ba668
+  --- /dev/null
+> +++ b/DIASECSGEM300/RCMD_SLOTMAP-L-C.cs
+  @@ -0,0 +1,94 @@
+  +嚜簑sing Delta.DIAAuto.DIASECSGEM.GEMDataModel;
+  +using Delta.DIAAuto.DIASECSGEM;
+  +
+  +namespace DemoFormDiaGemLib
+  +{
+> +    public class RCMD_SLOTMAP_L_C
+  +    {
+  +        public string LOADPORT_ID { get; set; }
+  +        public string CARRIER_ID { get; set; }
+> +        public RCMD_SLOTMAP_L_C() 
+  +        {
+  +            LOADPORT_ID = string.Empty;
+  +            CARRIER_ID = string.Empty;
+  +    }
+  +    public partial class MainForm
+  +    {
+> +        public bool RunDecode(RemoteControlEventRemoteCommandArgs e, out RCMD_SLOTMAP_L_C rcmdInfo)
+  +        {
+  +            bool bDataCheckOK = true;
+> +            rcmdInfo = new RCMD_SLOTMAP_L_C();
+  +            foreach (CommandParameter obj in e.ReceiveCommandParameters)
+  +            {
+  +                switch (obj.Name)
+  +        }
+  +    }
+  +}
+> diff --git a/DIASECSGEM300/RCMD_SLOTMAP-L.cs b/DIASECSGEM300/RCMD_SLOTMAP-L.cs
+  new file mode 100644
+  index 0000000..191a97e
+  --- /dev/null
+> +++ b/DIASECSGEM300/RCMD_SLOTMAP-L.cs
+  @@ -0,0 +1,67 @@
+  +嚜簑sing Delta.DIAAuto.DIASECSGEM.GEMDataModel;
+  +using Delta.DIAAuto.DIASECSGEM;
+  +
+  +namespace DemoFormDiaGemLib
+  +{
+> +    public class RCMD_SLOTMAP_L
+  +    {
+  +        public string LOADPORT_ID { get; set; }
+  +
+> +        public RCMD_SLOTMAP_L()
+  +        {
+  +            LOADPORT_ID = string.Empty;
+  +        }
+  +    }
+  +    public partial class MainForm
+  +    {
+> +        public bool RunDecode(RemoteControlEventRemoteCommandArgs e, out RCMD_SLOTMAP_L rcmdInfo)
+  +        {
+  +            bool bDataCheckOK = true;
+> +            rcmdInfo = new RCMD_SLOTMAP_L();
+  +            foreach (CommandParameter obj in e.ReceiveCommandParameters)
+  +            {
+  +                switch (obj.Name)
+  +    <Compile Include="RCMD_PP-SELECT.cs" />
+  +    <Compile Include="RCMD_RELEASE-L-C.cs" />
+  +    <Compile Include="RCMD_RELEASE-L.cs" />
+> +    <Compile Include="RCMD_SLOTMAP-L-C.cs" />
+> +    <Compile Include="RCMD_SLOTMAP-L.cs" />
+  +    <Compile Include="RCMD_TRANSFER.cs" />
+  +    <Compile Include="RCMD_STOP.cs" />
+  +    <Compile Include="RCMD_START.cs" />
+  +CarrierID,2000,ASCII,1000,N/A,Identifier for the carrier,3
+  +PortID,2001,UINT_1,1000,N/A,Identifier for the load port,4
+  +AccessMode,2002,UINT_1,1000,N/A,The access mode of the load port,5
+> +SlotMapStatus,2003,UINT_1,1000,N/A,Slotmap status of the carrier,6
+  +PortTransferState,2005,UINT_1,1000,N/A,The current transfer state of the load port,7
+  +Loadport1_AccessMode,2006,UINT_1,1000,N/A,The access mode of the load port 1,8
+  +Loadport2_AccessMode,2007,UINT_1,1000,N/A,The access mode of the load port 2,9
+  +Loadport1_PortTransferState,2008,UINT_1,1000,N/A,The current transfer state of the load port 1,10
+  +Loadport2_PortTransferState,2009,UINT_1,1000,N/A,The current transfer state of the load port 2,11
+> +SlotMap_List,2010,LIST,1000,N/A,The slotmap of a carrier,12
+> +Reason,2013,UINT_1,1000,N/A,Reason for asking the host to proceed with a carrier (slotmap verification),13
+  +Loadport1_Recipe,2014,ASCII,1000,N/A,The recipe of the load port 1,14
+  +Loadport2_Recipe,2015,ASCII,1000,N/A,The recipe of the load port 2,15
+> +SlotMap_1,3001,UINT_1,1000,N/A,SlotMap_1,16
+> +SlotMap_2,3002,UINT_1,1000,N/A,SlotMap_2,17
+> +SlotMap_3,3003,UINT_1,1000,N/A,SlotMap_3,18
+> +SlotMap_4,3004,UINT_1,1000,N/A,SlotMap_4,19
+> +SlotMap_5,3005,UINT_1,1000,N/A,SlotMap_5,20
+> +SlotMap_6,3006,UINT_1,1000,N/A,SlotMap_6,21
+> +SlotMap_7,3007,UINT_1,1000,N/A,SlotMap_7,22
+> +SlotMap_8,3008,UINT_1,1000,N/A,SlotMap_8,23
+> +SlotMap_9,3009,UINT_1,1000,N/A,SlotMap_9,24
+> +SlotMap_10,3010,UINT_1,1000,N/A,SlotMap_10,25
+> +SlotMap_11,3011,UINT_1,1000,N/A,SlotMap_11,26
+> +SlotMap_12,3012,UINT_1,1000,N/A,SlotMap_12,27
+> +SlotMap_13,3013,UINT_1,1000,N/A,SlotMap_13,28
+> +SlotMap_14,3014,UINT_1,1000,N/A,SlotMap_14,29
+> +SlotMap_15,3015,UINT_1,1000,N/A,SlotMap_15,30
+> +SlotMap_16,3016,UINT_1,1000,N/A,SlotMap_16,31
+> +SlotMap_17,3017,UINT_1,1000,N/A,SlotMap_17,32
+> +SlotMap_18,3018,UINT_1,1000,N/A,SlotMap_18,33
+> +SlotMap_19,3019,UINT_1,1000,N/A,SlotMap_19,34
+> +SlotMap_20,3020,UINT_1,1000,N/A,SlotMap_20,35
+> +SlotMap_21,3021,UINT_1,1000,N/A,SlotMap_21,36
+> +SlotMap_22,3022,UINT_1,1000,N/A,SlotMap_22,37
+> +SlotMap_23,3023,UINT_1,1000,N/A,SlotMap_23,38
+> +SlotMap_24,3024,UINT_1,1000,N/A,SlotMap_24,39
+> +SlotMap_25,3025,UINT_1,1000,N/A,SlotMap_25,40
+  +Slot1_Info,4001,ASCII,1000,N/A,Slot1_Info,41
+  +Slot2_Info,4002,ASCII,1000,N/A,Slot2_Info,42
+  +Slot3_Info,4003,ASCII,1000,N/A,Slot3_Info,43
+  +1010,CarrierDoorClosed,Carrier has been closed,12
+  +1011,LP1_CarrierMapStarted,Carrier mapping has been started at Load Port 1.,13
+  +1012,LP1_CarrierMapped,Carrier map completed at Load Port 1.,14
+> +1013,SlotMap,Carrier slotmap status has changed to Completed,15
+  +1014,MachineRunning,Machine running,16
+  +1015,MachineStop,Machine Stop,17
+  +1016,PortTransferStatusAsk,Port transfer status reply,18
+  + CARRIERACCESSINGSTATUS,UINT_1,Carrier Accessing Status,O,N
+  + SUBSTRATECOUNT,UINT_1,Substrate Count,O,N
+  + CONTENTMAP,LIST,Content Map,O,N
+> + SLOTMAP,LIST,Slot Map,O,N
+  + LOCATIONID,ASCII,Location ID,O,N
+> + SLOTMAPSTATUS,UINT_1,Slot Map Status,O,N
+  + USAGE,ASCII,Usage,O,N
+  +
+  +OBJTYPE: CARRIERLOC,Carrier Location Type,Y
+  +
+  +RCMD: GO-LOCAL,GO LOCAL
+  +
+> +RCMD: SLOTMAP-L,SLOTMAP L
+  + LOADPORT-ID,ASCII,LOADPORT ID,20
+  +
+  +RCMD: STOP,STOP CMD
+  + LOADPORT-ID,ASCII,LOADPORT ID,20
+  + CARRIER-ID,ASCII,CARRIER ID,20
+  +
+> +RCMD: SLOTMAP-L&C,SLOTMAP L&C
+  + LOADPORT-ID,ASCII,LOADPORT ID,20
+  + CARRIER-ID,ASCII,CARRIER ID,20
+  +
+  +CMS_CARRIERACCESSINGSTATUS,444,UINT_1,,,(E87-CMS) [CARRIER] Carrier Accessing Status,444,CARRIER,N
+  +CMS_SUBSTRATECOUNT,445,UINT_1,,,(E87-CMS) [CARRIER] Substrate Count,445,CARRIER,N
+  +CMS_CONTENTMAP,446,LIST,,,(E87-CMS) [CARRIER] Content Map,446,CARRIER,N
+> +CMS_SLOTMAP,447,LIST,,,(E87-CMS) [CARRIER] Slot Map,447,CARRIER,N
+  +CMS_LOCATIONID,448,ASCII,,,(E87-CMS) [CARRIER] Location ID,448,CARRIER,N
+> +CMS_SLOTMAPSTATUS,449,UINT_1,,,(E87-CMS) [CARRIER] Slot Map Status,449,CARRIER,N
+  +CMS_USAGE,450,ASCII,,,(E87-CMS) [CARRIER] Usage,450,CARRIER,N
+  +CMS_OBJID,461,UINT_1,,,(E87-CMS) [LOADPORT] Port ID (Identifier ID),461,LOADPORT,Y
+  +CMS_PORTID,462,UINT_1,,,(E87-CMS) [LOADPORT] Port ID,462,LOADPORT,N
+  +189,CMS_WaitingForHostToIDVerificationFailed,(E87-CarrierEvent) The Carrier transits from WAITING FOR HOST state to 
+ID VERIFICATION FAILED state(Send by AP),189
+  +190,CMS_IDNotReadToWaitingForHost_IDReaderIsNotInService,(E87-CarrierEvent) The Carrier transits from ID NOT READ st
+ate to WAITING FOR HOST state. BypassReadID variable is set to FALSE\ and a carrier is received when the id reader is n
+ot in service or not installed.(Send by AP),190
+  +191,CMS_IDNotReadToIDVerificationOk_IDReaderIsNotInService,(E87-CarrierEvent) The Carrier transits from ID NOT READ 
+state to ID VERIFICATION OK state. BypassReadID variable is set to TRUE\ and a carrier is received when the id reader i
+s not in service or not installed.(Send by AP),191
+> +192,CMS_NoStateToSlotMapNotRead,(E87-CarrierEvent) The Carrier transits from not state to SLOT MAP NOT READ state(Se
+nd by AP),192
+> +193,CMS_SlotMapNotReadToSlotMapVerificationOk,(E87-CarrierEvent) The Carrier transits from SLOT MAP NOT READ state t
+o SLOT MAP VERIFICATION OK state(Send by AP),193
+> +194,CMS_SlotMapNotReadToWaitingForHost,(E87-CarrierEvent) The Carrier transits from SLOT MAP NOT READ state to WAITI
+NG FOR HOST state(Send by AP),194
+> +195,CMS_WaitingForHostToSlotMapVerificationOk,(E87-CarrierEvent) The Carrier transits from WAITING FOR HOST state to
+ SLOT MAP VERIFICATION OK state(Send by AP),195
+> +196,CMS_WaitingForHostToSlotMapVerificationFail,(E87-CarrierEvent) The Carrier transits from WAITING FOR HOST state 
+to SLOT MAP VERIFICATION FAIL state(Send by AP),196
+  +197,CMS_NoStateToNotAccessed,(E87-CarrierEvent) The Carrier Object is instantiated.(Send by AP),197
+  +198,CMS_NotAccessedToInAccess,(E87-CarrierEvent) The Carrier transits from NOT ACCESSED state to IN ACCESS state(Sen
+d by AP),198
+  +199,CMS_InAccessToCarrierComplete,(E87-CarrierEvent) The Carrier transits from IN ACCESS state to CARRIER COMPLETE s
+tate(Send by AP),199
+                               {
+  @@ -320,9 +321,9 @@ namespace TrimGap
+   
+>                              if (Common.SecsgemForm.bWaitSECS_SlotMapCmd && !EFEMCmd) // false ?銝?隞?              
+               {
+> -                                if (Common.SecsgemForm.SlotMapData.CarrierID == "")
+> +                                if (Common.SecsgemForm.SecsDataGet(SecsData.SlotMap, SecsDataElement.CarrierID) == "
+")
+                                   {
+> -                                    if (Common.SecsgemForm.SlotMapData.LoadPortID == "1")
+> +                                    if (Common.SecsgemForm.SecsDataGet(SecsData.SlotMap, SecsDataElement.LoadPortID)
+ == "1")
+                                       {
+                                           if (fram.SECSPara.Loadport1_AccessMode == Mode.Auto.GetHashCode())
+                                           {
+                                           }
+                                       }
+                                   }
+> -                                else if (Common.SecsgemForm.SlotMapData.LoadPortID == "1")
+> +                                else if (Common.SecsgemForm.SecsDataGet(SecsData.SlotMap, SecsDataElement.LoadPortID
+) == "1")
+                                   {
+> -                                    if (Common.SecsgemForm.SlotMapData.CarrierID == Common.EFEM.LoadPort1.FoupID && 
+fram.SECSPara.Loadport1_AccessMode == Mode.Auto.GetHashCode())
+> +                                    if (Common.SecsgemForm.SecsDataGet(SecsData.SlotMap, SecsDataElement.CarrierID) 
+== Common.EFEM.LoadPort1.FoupID && fram.SECSPara.Loadport1_AccessMode == Mode.Auto.GetHashCode())
+                                       {
+                                           FoupLoad(ref Common.EFEM.LoadPort1); // 閬?Flag靘?????芸oup
+>                                          SlotMap(ref Common.EFEM.LoadPort1);
+  @@ -353,9 +354,9 @@ namespace TrimGap
+                                           AutoRunEFEMStep1 = EFEMStep.JudgeStep;
+                                       }
+                                   }
+> -                                else if (Common.SecsgemForm.SlotMapData.LoadPortID == "2")
+> +                                else if (Common.SecsgemForm.SecsDataGet(SecsData.SlotMap, SecsDataElement.LoadPortID
+) == "2")
+                                   {
+> -                                    if (Common.SecsgemForm.SlotMapData.CarrierID == Common.EFEM.LoadPort2.FoupID && 
+fram.SECSPara.Loadport2_AccessMode == Mode.Auto.GetHashCode())
+> +                                    if (Common.SecsgemForm.SecsDataGet(SecsData.SlotMap, SecsDataElement.CarrierID) 
+== Common.EFEM.LoadPort2.FoupID && fram.SECSPara.Loadport2_AccessMode == Mode.Auto.GetHashCode())
+                                       {
+                                           FoupLoad(ref Common.EFEM.LoadPort2); // 閬?Flag靘?????芸oup
+>                                          SlotMap(ref Common.EFEM.LoadPort2);
+  @@ -367,7 +368,7 @@ namespace TrimGap
+                                   Common.SecsgemForm.CarrierID = "";
+                                   Common.SecsgemForm.LoadPortID = "";
+>                                  Common.SecsgemForm.bWaitSECS_SlotMapCmd = false;
+> -                                Common.SecsgemForm.SlotMapData.Clear();
+> +                                Common.SecsgemForm.SecsDataClear(SecsData.SlotMap);
+                               }
+   
+>                              #endregion slotmap cmd ->  load & slotmap  // 摰?
+  @@ -376,9 +377,9 @@ namespace TrimGap
+   
+                               if (Common.SecsgemForm.bWaitSECS_ReleaseCmd && !EFEMCmd) // false ?銝?隞?        // 閬?
+Flag靘?????芸oup
+   
+               if (rtn)
+               {
+>                  loadPort.GetWaferSlot2(); //撌脣?摰?-                Common.CGWrapper.UpdateSV(TrimGap_EqpID.SlotMapSta
+tus, 2);
+> +                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, 2, out err);
+>                  // 0 = SLOTMAP NOT READ
+                   // 1 = WAITING FOR HOST
+>                  // 2 = SLOTMAP VERIFIKATION OK
+  @@ -1027,14 +1028,14 @@ namespace TrimGap
+>                  string testslotmap = "";
+                   for (int i = 0; i < loadPort.Slot.Length; i++)
+                   {
+> -                    Common.CGWrapper.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, loadPort.Slot[i]); // Wafer?甇?+        
+            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, loadPort.Slot[i], out err); // Wafer?甇?         
+            if (loadPort.Slot[i] > 1)
+                       {
+  -                        Common.CGWrapper.UpdateSV(TrimGap_EqpID.Reason, 3); // Wafer?甇?+                        Co
+mmon.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, 3, out err); // Wafer?甇?                     }
+                       if (SECSGEM.TrimGap_EqpParameter.Reason != 3 && loadPort.Slot[loadPort.Slot.Length - 1] <= 1)
+                       {
+  -                        Common.CGWrapper.UpdateSV(TrimGap_EqpID.Reason, 0); // map ??瘝?error 嚗?敺?霅?+            
+            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, 0, out err); // map ??瘝?error 嚗?敺?霅?                 
+    }
+>                      testslotmap += Convert.ToString(loadPort.Slot[i]); //皜祈岫
+                   }
+  @@ -1042,14 +1043,14 @@ namespace TrimGap
+   
+  +                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.LP2_CarrierMapped, out err);
+                   }
+  -                Common.CGWrapper.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID);
+> -                Common.CGWrapper.EventReportSend(TrimGap_EqpID.SlotMap);
+  +                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
+> +                Common.SecsgemForm.EventReportSend(TrimGap_EqpID.SlotMap, out err);
+                   //for (int i = 0; i < 25; i++)
+                   //{
+                   //    if (loadPort.slot_Status[i] == EFEM.slot_status.Ready)
+                   if (loadPort.Map())
+                   {
+                       loadPort.GetWaferSlot2();
+> -                    Common.CGWrapper.UpdateSV(TrimGap_EqpID.SlotMapStatus, 2);
+> +                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMapStatus, 2, out err);
+>                      // 0 = SLOTMAP NOT READ
+                       // 1 = WAITING FOR HOST
+>                      // 2 = SLOTMAP VERIFIKATION OK
+>                      // 3 = SLOTMAP VERIFICATION FAILED
+                       for (int i = 0; i < loadPort.Slot.Length; i++)
+                       {
+> -                        Common.CGWrapper.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, loadPort.Slot[i]); // Wafer?甇?+    
+                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.SlotMap_1 + i, loadPort.Slot[i], out err); // Wafer?甇? 
+                        if (loadPort.Slot[i] > 1)
+                           {
+  -                            Common.CGWrapper.UpdateSV(TrimGap_EqpID.Reason, 3); // Wafer?甇?+                      
+      Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Reason, 3, out err); // Wafer?甇?                         }
+                           if (SECSGEM.TrimGap_EqpParameter.Reason != 3 && loadPort.Slot[loadPort.Slot.Length - 1] <= 1
+)
+  +                        Common.SecsgemForm.EventReportSend(TrimGap_EqpID.LP2_CarrierMapped, out err);
+                       }
+  -                    Common.CGWrapper.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID);
+> -                    Common.CGWrapper.EventReportSend(TrimGap_EqpID.SlotMap);
+  +                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, loadPort.FoupID, out err);
+> +                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.SlotMap, out err);
+                       //for (int i = 0; i < 25; i++)
+                       //{
+                       //    if (loadPort.slot_Status[i] == EFEM.slot_status.Ready)
+               else // ?賣?鈭箏??靘???             {
+                   ReadyToDo_CarrierID = "";
+                   ReadyToDo_LoadPortID = "";
+>                  string testRecipeslotmap = "";
+  -                if (Common.SecsgemForm.MeasureStartData.CarrierID == "")
+  +                if (Common.SecsgemForm.SecsDataGet(SecsData.MeasureStart, SecsDataElement.CarrierID) == "")
+                   {
+
+

@@ -63,7 +63,7 @@ namespace TrimGap
         private int MachineType = 0;
         private int IoType = 0;     // -1: 模擬用  0:研華 
         public static IO4.BDaq ioBDaq;
-        //private bool[] virin = new bool[32];
+        private bool[] virin = new bool[32];
         //private bool[] virout = new bool[32];
         public Io(int machine_type, string io_card_name, int io_type = 0)
         {
@@ -114,7 +114,7 @@ namespace TrimGap
                     return ioBDaq.In[inmap[(int)name]];
             }
             else
-                return false;
+                return virin[inmap[(int)name]];
         }
 
         public bool Out(IOName.Out name)
@@ -143,8 +143,8 @@ namespace TrimGap
         {
             if (IoType == -1)
             {
-                //if (inmap[(int)name] != -1)  //有連結實體IO
-                   // virin[outmap[(int)name]] = on;
+                if (inmap[(int)name] != -1)  //有連結實體IO
+                    virin[inmap[(int)name]] = on;
             }
         }
 

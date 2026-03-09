@@ -96,8 +96,19 @@
     <Reference Include="DIASECSGEM">
       <HintPath>..\DIASECSGEM300\bin\Debug\DIASECSGEM.dll</HintPath>
     </Reference>
+    <Reference Include="dmd40net, Version=4.36.128.0, Culture=neutral, PublicKeyToken=9bf68223b43a6abc, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ETEL 64dll\dmd40net.dll</HintPath>
+    </Reference>
+    <Reference Include="dsa40net, Version=4.36.128.0, Culture=neutral, PublicKeyToken=9bf68223b43a6abc, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ETEL 64dll\dsa40net.dll</HintPath>
+    </Reference>
     <Reference Include="GEMDataModel">
       <HintPath>..\DIASECSGEM300\bin\Debug\GEMDataModel.dll</HintPath>
+    </Reference>
+    <Reference Include="HarfBuzzSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\HarfBuzzSharp.8.3.0.1\lib\net462\HarfBuzzSharp.dll</HintPath>
     </Reference>
     <Reference Include="HirataEFEM, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
@@ -172,6 +183,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\SocketClient2.dll</HintPath>
     </Reference>
+    <Reference Include="Spire.XLS, Version=15.12.2.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.XLS.15.12.0\lib\net48\Spire.XLS.dll</HintPath>
+    </Reference>
     <Reference Include="SQLite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\x64\Debug\SQLite.dll</HintPath>
@@ -218,6 +232,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoFocus_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoFocus_Test.Designer.cs">
+      <DependentUpon>AutoFocus_Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="AutoRunStage.cs" />
     <Compile Include="AutoRunEFEM.cs" />
     <Compile Include="CCDTest.cs">
@@ -226,6 +246,25 @@
     <Compile Include="CCDTest.Designer.cs">
       <DependentUpon>CCDTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreatPjCJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatPjCJ.Designer.cs">
+      <DependentUpon>CreatPjCJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gem300Monitor.cs" />
     <Compile Include="RecipeManagement2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +326,13 @@
       <DependentUpon>SignalAnalysisForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Mo.cs" />
+    <Compile Include="SimulateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimulateForm.Designer.cs">
+      <DependentUpon>SimulateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimulateMeasureFlow.cs" />
     <Compile Include="TTVScanPattern.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +349,9 @@
     <EmbeddedResource Include="CCDTest.resx">
       <DependentUpon>CCDTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreatPjCJ.resx">
+      <DependentUpon>CreatPjCJ.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EFEMControl.resx">
       <DependentUpon>EFEMControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +360,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MotionControl.resx">
       <DependentUpon>MotionControl.cs</DependentUpon>

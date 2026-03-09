@@ -58,12 +58,12 @@ namespace TrimGap
                 Common.SecsgemForm.bWaitSECS_ACCESSMODE_ASK = false;
                 Common.SecsgemForm.SecsDataClear(SecsData.AccessModeAsk);
             }
-            if (Common.SecsgemForm.bSECS_ChangeAccessMode_Recive)
-            {
-                AccessModeChange();
-                Common.SecsgemForm.bSECS_ChangeAccessMode_Recive = false;
-                Common.SecsgemForm.SecsDataClear(SecsData.AccessModeChange);
-            }
+            //if (Common.SecsgemForm.bSECS_ChangeAccessMode_Recive)
+            //{
+                //AccessModeChange();
+                //Common.SecsgemForm.bSECS_ChangeAccessMode_Recive = false;
+                //Common.SecsgemForm.SecsDataClear(SecsData.AccessModeChange);
+           // }
             if (Common.SecsgemForm.bWaitSECS_PP_SELECT) // 等secs
             {
                 ChangeRecipe();
@@ -86,9 +86,9 @@ namespace TrimGap
                 Flag.AutoidleFlag = false;
                 Common.SecsgemForm.bWaitSECS_StopCmd = false;
             }
-            if (fram.EFEMSts.Skip == 0)
+            if (fram.EFEMSts.Skip == 0 || fram.m_simulateRun == 1)
             {
-                if (!Common.EFEM.LoadPort1.Busy && !Common.EFEM.LoadPort2.Busy)
+                if (!Common.EFEM.LoadPort1.Busy && !Common.EFEM.LoadPort2.Busy && fram.m_SecsgemType == 0)
                 {   // 同時有兩個LP，其中一個做完，兩個busy都是F
                     if (ReadyToDo_LoadPortID != "" || ReadyToDo_CarrierID != "")
                     {   // 看有沒有排隊中的指令
@@ -113,15 +113,32 @@ namespace TrimGap
                 {
                     if (!(Common.EFEM.LoadPort1.Busy || Common.EFEM.LoadPort2.Busy))
                     {
-                        int lpn = Common.SecsgemForm.LoadportMatchToRun(MainForm.CJ_list[0]);
+                        string[] lotID, substrateID;
+                        lotID = new string[25];
+                        substrateID = new string[25];
+                        int lpn = Common.SecsgemForm.LoadportMatchToRun(MainForm.CJ_list[0], ref lotID, ref substrateID);
                         if (lpn == 1 && sram.LoadPort1_Carrier_Vertify)
                         {
                             sram.RunningCJ = MainForm.CJ_list[0];
+                            for (int i = 0; i < 25; i++)
+                            {
+                                sram.CarrierInfo.lotID[i] = lotID[i];
+                                sram.CarrierInfo.substrateID[i] = substrateID[i];
+                                Common.EFEM.LoadPort1.LotID[i] = lotID[i];
+                                Common.EFEM.LoadPort1.SubstrateID[i] = substrateID[i];
+                            }
                             CJStart(lpn);
                         }
-                        else if(lpn == 2 && sram.LoadPort2_Carrier_Vertify)
+                        else if (lpn == 2 && sram.LoadPort2_Carrier_Vertify)
                         {
                             sram.RunningCJ = MainForm.CJ_list[0];
+                            for (int i = 0; i < 25; i++)
+                            {
+                                sram.CarrierInfo.lotID[i] = lotID[i];
+                                sram.CarrierInfo.substrateID[i] = substrateID[i];
+                                Common.EFEM.LoadPort2.LotID[i] = lotID[i];
+                                Common.EFEM.LoadPort2.SubstrateID[i] = substrateID[i];
+                            }
                             CJStart(lpn);
                         }
                     }
@@ -335,26 +352,30 @@ namespace TrimGap
                     Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ProcessStart, out err);
                     Common.EFEM.LoadPort2.Busy = true;
                 }
+                //20240916 搬進來以免亂開綠燈
+                //Common.SecsgemForm.CarrierID = "";
+                //Common.SecsgemForm.LoadPortID = "";
+                //Common.EFEM.IO.SignalTower(IO.LampState.AllOff);
+                //Common.EFEM.IO.SignalTower(IO.LampState.GreenOn);
+                Flag.GreenLightFlag = true;
             }
-            Common.SecsgemForm.CarrierID = "";
-            Common.SecsgemForm.LoadPortID = "";
-            Common.EFEM.IO.SignalTower(IO.LampState.AllOff);
-            Common.EFEM.IO.SignalTower(IO.LampState.GreenOn);
         }
 
         private static void CJStart(int lpn)
         {
-            Common.EFEM.IO.SignalTower(IO.LampState.AllOff);
-            Common.EFEM.IO.SignalTower(IO.LampState.GreenOn);
+            //Common.EFEM.IO.SignalTower(IO.LampState.AllOff);
+            //Common.EFEM.IO.SignalTower(IO.LampState.GreenOn);
             Common.SecsgemForm.GetControlJobAttr(sram.RunningCJ, out sram.CJInfo.carrierInputSpec, out sram.CJInfo.curPJ, out sram.CJInfo.dataCollection, out sram.CJInfo.mtrloutStatus,
                 out sram.CJInfo.mtrloutSpec, out sram.CJInfo.pauseEvent, out sram.CJInfo.procCtrlSpec, out sram.CJInfo.procOrder, out sram.CJInfo.bStart, out sram.CJInfo.state, out err);
             string[] pjl = sram.CJInfo.procCtrlSpec.Split(';');
             sram.QueuePJ = new List<string>();
             foreach (string s in pjl)
             {
-                sram.QueuePJ.Add(s);
+                if((s != null) && (s != ""))
+                    sram.QueuePJ.Add(s);
             }
-            if(lpn == 1)
+            ClearReportdata();
+            if (lpn == 1)
             {
                 Common.EFEM.LoadPort_Run = Common.EFEM.LoadPort1;
                 Common.EFEM.LoadPort1.Busy = true;
@@ -368,7 +389,7 @@ namespace TrimGap
                 Common.SecsgemForm.ChangeControlJobState(sram.RunningCJ, ControlJobState.EXECUTING, 0);
                 Common.SecsgemForm.SetCarrierStatus_Accessing(Common.EFEM.LoadPort_Run.FoupID, CarrierAccessingState.IN_ACCESS);
             }
-            ClearReportdata();
+            Flag.GreenLightFlag = true;
         }
 
         public static void ClearReportdata()
@@ -401,7 +422,7 @@ namespace TrimGap
                         }
                         else
                         {
-                            Slot_Info += sram.Recipe.Angle[j * 2] + ",";
+                            Slot_Info += sram.Recipe.Angle[j] + ",";
                         }
                     }
 
@@ -411,6 +432,17 @@ namespace TrimGap
                     Slot_Info += 0 + ",";
                 }
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Slot1_Info + i, Slot_Info, out err);
+            }
+
+            for (int i = 0; i < 25; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    fram.EFEMSts.H1[i, j] = 0;
+                    fram.EFEMSts.W1[i, j] = 0;
+                    fram.EFEMSts.H2[i, j] = 0;
+                    fram.EFEMSts.W2[i, j] = 0;
+                }
             }
         }
 
@@ -430,12 +462,18 @@ namespace TrimGap
                             Common.EFEM.E84.SetAuto(E84.E84_Num.E841);
                             fram.SECSPara.Loadport1_AccessMode = Mode.Auto.GetHashCode();
                             Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, (byte)fram.SECSPara.Loadport1_AccessMode, out err); // Auto
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.AccessMode, (byte)fram.SECSPara.Loadport1_AccessMode, out err);
+                            Common.SecsgemForm.EventReportSend(TrimGap_EqpID.AccessModeAuto, out err);
                         }
                         else if (dataList[1] == "0")
                         {
                             Common.EFEM.E84.SetManual(E84.E84_Num.E841);
                             fram.SECSPara.Loadport1_AccessMode = Mode.Manual.GetHashCode();
                             Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_AccessMode, (byte)fram.SECSPara.Loadport1_AccessMode, out err); // Manual
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.AccessMode, (byte)fram.SECSPara.Loadport1_AccessMode, out err);
+                            Common.SecsgemForm.EventReportSend(TrimGap_EqpID.AccessModeAuto, out err);
                             fram.SECSPara.Loadport1_PortTransferState = PortTransferState.TransferBlocked.GetHashCode();
                             Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport1_PortTransferState, (byte)fram.SECSPara.Loadport1_PortTransferState, out err);
                         }
@@ -450,12 +488,18 @@ namespace TrimGap
                             Common.EFEM.E84.SetAuto(E84.E84_Num.E842);
                             fram.SECSPara.Loadport2_AccessMode = Mode.Auto.GetHashCode();
                             Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, (byte)fram.SECSPara.Loadport2_AccessMode, out err); // Auto
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.AccessMode, (byte)fram.SECSPara.Loadport2_AccessMode, out err);
+                            Common.SecsgemForm.EventReportSend(TrimGap_EqpID.AccessModeAuto, out err);
                         }
                         else if (dataList[1] == "0")
                         {
                             Common.EFEM.E84.SetManual(E84.E84_Num.E842);
                             fram.SECSPara.Loadport2_AccessMode = Mode.Manual.GetHashCode();
                             Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_AccessMode, (byte)fram.SECSPara.Loadport2_AccessMode, out err); // Manual
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.AccessMode, (byte)fram.SECSPara.Loadport2_AccessMode, out err);
+                            Common.SecsgemForm.EventReportSend(TrimGap_EqpID.AccessModeAuto, out err);
                             fram.SECSPara.Loadport2_PortTransferState = PortTransferState.TransferBlocked.GetHashCode();
                             Common.SecsgemForm.UpdateSV(TrimGap_EqpID.Loadport2_PortTransferState, (byte)fram.SECSPara.Loadport2_PortTransferState, out err);
                         }
@@ -464,7 +508,7 @@ namespace TrimGap
                 case "PROCEEDWITHCARRIER":
                     if (dataList[2] == "1")  //loarport
                     {
-                        //Common.SecsgemForm.SetCarrierStatus_ID(dataList[1], CarrierIDState.ID_VERIFICATION_OK);
+                        Common.SecsgemForm.SetCarrierStatus_ID(dataList[1], CarrierIDState.ID_VERIFICATION_OK);
                         if (Common.EFEM.LoadPort1.Busy)
                             rtn = 5;
                         if(MainForm.Carrier_list.Contains(dataList[1]))
@@ -472,12 +516,14 @@ namespace TrimGap
                             if(dataList[3] == "1")
                                 Common.SecsgemForm.bWaitSECS_SlotMapCmd = true;
                             else if(dataList[3] == "2")
+                            {
                                 sram.LoadPort1_Carrier_Vertify = true;
+                            }                               
                         }       
                     }
                     else if(dataList[2] == "2")  //loarport
                     {
-                        //Common.SecsgemForm.SetCarrierStatus_ID(dataList[1], CarrierIDState.ID_VERIFICATION_OK);
+                        Common.SecsgemForm.SetCarrierStatus_ID(dataList[1], CarrierIDState.ID_VERIFICATION_OK);
                         if (Common.EFEM.LoadPort2.Busy)
                             rtn = 5;
                         if (MainForm.Carrier_list.Contains(dataList[1]))
@@ -485,7 +531,9 @@ namespace TrimGap
                             if (dataList[3] == "1")
                                 Common.SecsgemForm.bWaitSECS_SlotMapCmd = true;
                             else if (dataList[3] == "2")
+                            {
                                 sram.LoadPort2_Carrier_Vertify = true;
+                            }                            
                         }
                     }
                     break;
@@ -494,7 +542,7 @@ namespace TrimGap
                     {
                         if (Common.EFEM.LoadPort1.Busy)
                             rtn = 5;
-                        if (MainForm.Carrier_list.Contains(dataList[1]))
+                        else if (MainForm.Carrier_list.Contains(dataList[1]))
                         {
                             Common.SecsgemForm.bWaitSECS_ReleaseCmd = true;
                         }
@@ -503,10 +551,277 @@ namespace TrimGap
                     {
                         if (Common.EFEM.LoadPort2.Busy)
                             rtn = 5;
-                        if (MainForm.Carrier_list.Contains(dataList[1]))
+                        else if (MainForm.Carrier_list.Contains(dataList[1]))
                         {
                             Common.SecsgemForm.bWaitSECS_ReleaseCmd = true;
                         }
+                    }
+                    break;
+                case "CANCELCARRIER":
+                    if (dataList[1] == Common.EFEM.LoadPort1.FoupID)  //loarport
+                    {
+                        if (Common.EFEM.LoadPort2.Busy)
+                            rtn = 5;
+                        else 
+                        {
+                            Flag.AbortFlag = true;
+                            Common.EFEM.LoadPort1.Busy = true;
+                        }
+                    }
+                    else if (dataList[1] == Common.EFEM.LoadPort2.FoupID)  //loarport
+                    {
+                        if (Common.EFEM.LoadPort1.Busy)
+                            rtn = 5;
+                        else
+                        {                         
+                            Flag.AbortFlag = true;
+                            Common.EFEM.LoadPort2.Busy = true;
+                        }
+                    }
+                    break;
+                case "CANCELCARRIERATPORT":
+                    if (dataList[2] == "1")  //loarport
+                    {
+                        if (Common.EFEM.LoadPort2.Busy)
+                            rtn = 5;
+                        else 
+                        {                           
+                            Flag.AbortFlag = true;
+                            Common.EFEM.LoadPort1.Busy = true;
+                        }
+                    }
+                    else if (dataList[2] == "2")  //loarport
+                    {
+                        if (Common.EFEM.LoadPort1.Busy)
+                            rtn = 5;
+                        else
+                        {
+                            Flag.AbortFlag = true;
+                            Common.EFEM.LoadPort2.Busy = true;
+                        }
+                    }
+                    break;
+                case "PROCESSJOBCOMMAND":
+                    if(dataList[1] == "CANCEL")
+                    {
+                        if (sram.RunningPJ == dataList[2])
+                            rtn = 1;  //PJ is running
+                        else
+                        {
+                            Common.SecsgemForm.ChangeProcessJobState(dataList[2], ProcessJobState.PROCESS_COMPLETE);
+                        }
+                    }
+                    else if(dataList[1] == "ABORT")
+                    {
+                        if (sram.RunningPJ == dataList[2])
+                        {
+                            rtn = 0;  //PJ is running
+                            // ⭐ 在 Aborting 事件上報前，先計算完成數以供 DVID 4160 使用
+                            byte doneWaferCount = 0;
+                            if (Common.EFEM.LoadPort_Run != null)
+                            {
+                                for (int si = 0; si < Common.EFEM.LoadPort_Run.slot_Status.Length; si++)
+                                    if (Common.EFEM.LoadPort_Run.slot_Status[si] == EFEM.slot_status.ProcessEnd)
+                                        doneWaferCount++;
+                            }
+                            Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PJProcessedWaferCount, doneWaferCount, out string err);
+
+                            Common.SecsgemForm.ChangeProcessJobState(dataList[2], ProcessJobState.ABORTING);
+                            Flag.PauseFlag = true;
+                            Flag.AutoidleFlag = false;
+                            Flag.Autoidle_LocalFlag = false;
+                        }
+                        else
+                        {
+                            if (sram.QueuePJ.Contains(dataList[2]))
+                            {
+                                rtn = 0;
+                                Common.SecsgemForm.ChangeProcessJobState(dataList[2], ProcessJobState.PROCESS_COMPLETE);
+                            }
+                            else
+                            {
+                                rtn = 2;
+                            }
+                        }
+                    }
+                    else if (dataList[1] == "STOP")
+                    {
+                        if (sram.RunningPJ == dataList[2])
+                        {
+                            rtn = 0;  //PJ is running
+                            Common.SecsgemForm.ChangeProcessJobState(dataList[2], ProcessJobState.STOPPING);
+                            Flag.PauseFlag = true;
+                            Flag.AutoidleFlag = false;
+                            Flag.Autoidle_LocalFlag = false;
+                        }
+                        else
+                        {
+                            if (sram.QueuePJ.Contains(dataList[2]))
+                            {
+                                rtn = 0;
+                                Common.SecsgemForm.ChangeProcessJobState(dataList[2], ProcessJobState.PROCESS_COMPLETE);
+                            }
+                            else
+                            {
+                                rtn = 2;
+                            }
+                        }
+                    }
+                    else if (dataList[1] == "PAUSE")
+                    {
+                        //有PJ在run
+                        if (sram.RunningPJ == dataList[2] && Flag.AutoidleFlag && dataList[3] == ProcessJobState.PROCESSING.ToString())
+                        {
+                            rtn = 0;
+                            Flag.PauseFlag = true;
+                            Flag.AutoidleFlag = false;
+                            Flag.Autoidle_LocalFlag = false;
+
+                            Common.SecsgemForm.ChangeProcessJobState(dataList[2], ProcessJobState.PAUSING);
+                        }
+                        else
+                            rtn = 3;
+                    }
+                    else if (dataList[1] == "RESUME")
+                    {
+                        //有PJ在run且Pause
+                        if (sram.RunningPJ == dataList[2] && !Flag.AutoidleFlag && Flag.PauseFlag && dataList[3] == ProcessJobState.PAUSED.ToString())
+                        {
+                            rtn = 0;
+                            Flag.PauseFlag = false;
+                            Common.SecsgemForm.ChangeProcessJobState(dataList[2], ProcessJobState.PROCESSING);
+                        }
+                        else
+                            rtn = 4;
+                    }
+                    else if (dataList[1] == "START")
+                    {
+                        if (dataList[3] == ProcessJobState.WAITING_FOR_START.ToString())
+                        {
+                            Common.SecsgemForm.ChangeProcessJobState(dataList[2], ProcessJobState.PROCESSING);
+                            Flag.PauseFlag = false;
+                        }
+                        rtn = 0;
+                    }
+                    break;
+                case "CONTROLJOBCOMMAND":
+                    if (dataList[1] == "CJSTART")
+                    {
+                        rtn = 0;
+                    }
+                    else if (dataList[1] == "CJPAUSE")
+                    {
+                        //有CJ在run
+                        if (sram.RunningCJ == dataList[2] && Flag.AutoidleFlag && dataList[4] == ControlJobState.EXECUTING.ToString())
+                        {
+                            rtn = 0;
+                            Flag.PauseFlag = true;
+                            Flag.AutoidleFlag = false;
+                            Flag.Autoidle_LocalFlag = false;
+
+                            Common.SecsgemForm.ChangeControlJobState(dataList[2], ControlJobState.PAUSED, 0);
+                        }
+                        else
+                            rtn = 3;
+                    }
+                    else if (dataList[1] == "CJRESUME")
+                    {
+                        //有CJ在run且Pause
+                        if (sram.RunningCJ == dataList[2] && !Flag.AutoidleFlag && Flag.PauseFlag && dataList[4] == ControlJobState.PAUSED.ToString())
+                        {
+                            rtn = 0;
+                            Flag.PauseFlag = false;
+                            Common.SecsgemForm.ChangeControlJobState(dataList[2], ControlJobState.EXECUTING, 0);
+                        }
+                        else
+                            rtn = 4;
+                    }
+                    else if (dataList[1] == "CJCANCEL")
+                    {
+                        if (sram.RunningCJ == dataList[2])
+                        {
+                            rtn = 2;
+                        }
+                        else
+                        {
+                            rtn = 0;
+                            if (dataList[3] == "1")
+                            {
+                                Flag.PJDeleteWithCJFlag = true;
+                            }
+                            else
+                            {
+                                Flag.PJDeleteWithCJFlag = false;
+                            }
+                        }
+                    }
+                    else if (dataList[1] == "CJDESELECT")
+                    {
+                        if (sram.RunningCJ == "" || sram.RunningCJ == null)
+                            rtn = 0;
+                        else
+                            rtn = 5;
+                    }
+                    else if (dataList[1] == "CJSTOP") //正常停 Wafer製程要做好之後可以繼續
+                    {
+                        if (sram.RunningCJ == dataList[2])
+                        {
+                            rtn = 0;  //CJ is running
+                            Flag.CJStopFlag = true;
+                            if (dataList[4] == ControlJobState.PAUSED.ToString()) //暫停中接受到STOP，讓他恢復動作才能收片
+                            {
+                                Flag.PauseFlag = false;
+                                Common.SecsgemForm.ChangeControlJobState(dataList[2], ControlJobState.EXECUTING, 0);
+                            }
+
+                            if (dataList[3] == "1")
+                            {
+                                Flag.PJDeleteWithCJFlag = true;
+                                Flag.PJStopFlag = true; // ⭐ 同步中斷正在跑的 PJ
+                            }
+                            else
+                            {
+                                Flag.PJDeleteWithCJFlag = false;
+                            }
+                        }
+                        else
+                        {
+                            rtn = 0;
+                        }
+                    }
+                    else if (dataList[1] == "CJABORT") //緊急停 Wafer可能會因中斷而報廢(可能類似急停) //先暫時當成跟STOP相同
+                    {
+                        if (sram.RunningCJ == dataList[2])
+                        {
+                            rtn = 0;  //CJ is running
+                            Flag.CJAbortFlag = true;
+                            if (dataList[4] == ControlJobState.PAUSED.ToString())//暫停中接受到ABORT，讓他恢復動作才能收片
+                            {
+                                Flag.PauseFlag = false;
+                                Common.SecsgemForm.ChangeControlJobState(dataList[2], ControlJobState.EXECUTING, 0);
+                            }
+
+                            if (dataList[3] == "1")
+                            {
+                                Flag.PJDeleteWithCJFlag = true;
+                                Flag.PJAbortFlag = true; // ⭐ 同步中斷正在跑的 PJ
+                            }
+                            else
+                            {
+                                Flag.PJDeleteWithCJFlag = false;
+                            }
+                        }
+                        else
+                        {
+                            rtn = 0;
+                        }
+                    }
+                    else if (dataList[1] == "CJHOQ")
+                    {
+                        if (sram.RunningCJ == "" || sram.RunningCJ == null)
+                            rtn = 0;
+                        else
+                            rtn = 5;
                     }
                     break;
             }

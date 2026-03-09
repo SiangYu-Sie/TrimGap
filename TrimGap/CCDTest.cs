@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.IO;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace TrimGap
 {
@@ -42,7 +35,7 @@ namespace TrimGap
             //Common.TrimGapAnalysis.convert(Common.camera.image, Common.camera.Width, Common.camera.Height);
             if (sram.UserAuthority == permissionEnum.ad)
             {
-                Common.TrimGapAnalysis.CalculateBlueTape(Common.camera.image, Common.camera.Width, Common.camera.Height, 1, true, fram.Analysis.BlueTapeThreshold, true, out AnalysisData.resultdata_blueW[0]);
+                Common.TrimGapAnalysis.CalculateBlueTape(Common.camera.image, Common.camera.Width, Common.camera.Height, 1, true, fram.Analysis.BlueTapeThreshold, true, fram.Analysis.BlueTapeMethod, out AnalysisData.resultdata_blueW[0]);
             }
         }
 
@@ -106,7 +99,7 @@ namespace TrimGap
             //Common.TrimGapAnalysis.convert(Common.camera.image, Common.camera.Width, Common.camera.Height);
             if (sram.UserAuthority == permissionEnum.ad)
             {
-                Common.TrimGapAnalysis.CalculateBlueTape(Common.camera2.image, Common.camera2.Width, Common.camera2.Height, 1, true, fram.Analysis.BlueTapeThreshold, true, out AnalysisData.resultdata_blueW[0]);
+                Common.TrimGapAnalysis.CalculateBlueTape(Common.camera2.image, Common.camera2.Width, Common.camera2.Height, 1, true, fram.Analysis.BlueTapeThreshold, true, fram.Analysis.BlueTapeMethod, out AnalysisData.resultdata_blueW[0]);
             }
         }
 

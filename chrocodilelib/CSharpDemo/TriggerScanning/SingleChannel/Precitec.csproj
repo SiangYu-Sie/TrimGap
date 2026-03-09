@@ -81,7 +81,15 @@
     <None Include="App.config" />
     <Compile Include="Program.cs" />
     <EmbeddedResource Include="Properties\Resources.resx" />
-    <None Include="Properties\Settings.settings" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="SingleChannel.Designer.cs">
       <DependentUpon>SingleChannel.cs</DependentUpon>
     </Compile>

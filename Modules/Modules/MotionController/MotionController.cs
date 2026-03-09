@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using ch.etel.edi.dmd.v40;
+using ch.etel.edi.dsa.v40;
 
 namespace Modules
 {
@@ -156,6 +158,8 @@ namespace Modules
         public abstract bool IsAxisOpen(int axisId);
 
 
+        public abstract List<DsaDrive> GetDsaDrives();
+
         /// <summary>
         /// 取得運動軸當前的指令位置。
         /// </summary>
@@ -240,6 +244,11 @@ namespace Modules
         /// </summary>
         /// <param name="axisId"></param>
         public abstract void StopCommand(int axisId);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public abstract List<DsaDrive> listDsaDrive();
 
         public virtual void LinearMove(int[] axes, double[] distances, VelocityParams vel)
         {

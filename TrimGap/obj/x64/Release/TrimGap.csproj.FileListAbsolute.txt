@@ -1,6 +1,3 @@
-D:\FTGM1\WorkDirectory\Run\TrimGap.exe.config
-D:\FTGM1\WorkDirectory\Run\TrimGap.exe
-D:\FTGM1\WorkDirectory\Run\TrimGap.pdb
 E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.csprojAssemblyReference.cache
 E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.exe.config
 E:\TL-Chen\C# project file\TrimGap\TrimGap\obj\x64\Release\TrimGap.Form1.resources
@@ -410,3 +407,161 @@ D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Rel
 D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
 D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.exe
 D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SECProcess.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240226_1600\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SECProcess.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240227_1430\TrimGap_1_20240226_2\TrimGap_1_20240223\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.pdb
+D:\FTGM1\WorkDirectory\Run\TrimGap.exe.config
+D:\FTGM1\WorkDirectory\Run\TrimGap.exe
+D:\FTGM1\WorkDirectory\Run\TrimGap.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form2.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form3.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SECProcess.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_0830\TrimGap_1_20240301_0830\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form2.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form3.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SECProcess.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form2.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form3.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SECProcess.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.exe
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20240304_0930\TrimGap_1_20240301_1600\TrimGap_1_20240301_1600\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.pdb
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form2.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form3.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SECProcess.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.exe
+D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240304_1100\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form2.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Form3.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SECProcess.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240422\TrimGap_1\TrimGap\obj\x64\Release\TrimGap.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.csproj.AssemblyReference.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.CCDTest.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.EFEMControl.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.findHomePanel.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.Form1.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.Form3.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.MotionControl.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.ParaForm.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.Properties.Resources.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.RecipeManagement.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.SECProcess.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.SignalAnalysisForm.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.TTVScanPattern.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.UserPermission.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.csproj.GenerateResource.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.csproj.CopyComplete
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\TrimGap\obj\x64\Release\TrimGap.pdb

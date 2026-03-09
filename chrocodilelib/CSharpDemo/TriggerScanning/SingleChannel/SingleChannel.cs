@@ -12,16 +12,20 @@ namespace PT
     public partial class SingleChannel : Form
     {
         static CHRocodileLib.SynchronousConnection Conn;
+        static CHRocodileLib.SynchronousConnection Conn2;
         
         private int[] OutputSignals;
         private int ScanLineNo, LineSampleCount;
         private int AllSampleCount;
+        private int AllSampleCount2;
         private int ScanLineIdx, SampleIdx;
         private int type;
 
         private CHRocodileLib.Data ScanData = null;
-        
+        private CHRocodileLib.Data ScanData2 = null;
+
         private bool InProcess;
+        private bool InProcess2;
         private bool isShown;
         private Bitmap bm;
         private int FirstXPixel;
@@ -41,7 +45,7 @@ namespace PT
             type = tp;
             if(!bSim)
             {
-                if (type == 1)
+                if ((type & 0x100) > 0)
                 {
                     try
                     {
@@ -61,20 +65,22 @@ namespace PT
                     cbSelectPoint.SelectedIndex = 1;
                     updatePosSpd(1);
                 }
+                else
+                    bSim = true;//沒有開PLC的話就用Sim自動回應PLC的應答
 
                 timer1.Interval = 200;
                 timer1.Enabled = true;
             }
             CBDisplaySig.SelectedIndex = 0;
             CBAxis.SelectedIndex = 0;
-            if (type == 1)
+            if ((type & 0x101) > 0 )   //1 PT  or  5 PLC   
             {
                 tabControl1.SelectedIndex = 0;
                 tabControl1.TabPages[1].Parent = null;
                 RBCHR2.Checked = false;
                 RBCHRC.Checked = true;
             }
-            else if (type == 2)
+            else if ((type & 0x010) > 0)   //2   HTW
             {
                 tabControl1.SelectedIndex = 1;
                 tabControl1.TabPages[0].Parent = null;
@@ -321,7 +327,28 @@ namespace PT
             if (Conn != null) return false;
             Conn = new CHRocodileLib.SynchronousConnection(TbConInfo.Text, CHRocodileLib.DeviceType.ChrCMini);
             //SetupDevice(CHRocodileLib.DeviceType.ChrCMini);
-            int[] aTempSig = { 256, 264, 272 };
+            int[] aTempSig = { 256, 264, 272, 257, 82 };
+            var oRsp = Conn.Exec(CHRocodileLib.CmdID.OutputSignals, aTempSig);
+            EnableGui(true, false);
+            return true;
+        }
+
+        public bool OpenConnection(string strTbConInfo)
+        {
+            if (Conn2 != null) return false;
+            Conn2 = new CHRocodileLib.SynchronousConnection(strTbConInfo, CHRocodileLib.DeviceType.ChrCMini);
+            //SetupDevice(CHRocodileLib.DeviceType.ChrCMini);
+            int[] aTempSig = { 256, 264, 272, 257, 82 };
+            var oRsp = Conn2.Exec(CHRocodileLib.CmdID.OutputSignals, aTempSig);
+            EnableGui(true, false);
+            return true;
+        }
+
+        public bool OpenConnection(int[] aTempSig)
+        {
+            if (Conn != null) return false;
+            Conn = new CHRocodileLib.SynchronousConnection(TbConInfo.Text, CHRocodileLib.DeviceType.ChrCMini);
+            //SetupDevice(CHRocodileLib.DeviceType.ChrCMini);
             var oRsp = Conn.Exec(CHRocodileLib.CmdID.OutputSignals, aTempSig);
             EnableGui(true, false);
             return true;
@@ -345,9 +372,36 @@ namespace PT
             InProcess = true;
         }
 
+        public void StartTrigger2(int len, int start, int stop, int interval)
+        {
+            Conn2.Exec(CHRocodileLib.CmdID.EncoderCounter, 0, start + 20);
+
+            //Set trigger settings
+            SendTriggerSetting2(start, stop, interval);
+            //use trigger each mode
+            Conn2.Exec(CHRocodileLib.CmdID.DeviceTriggerMode, (int)CHRocodileLib.TriggerMode.TriggerEach);
+
+            //start recording modes
+            Conn2.StartRecording(len);
+
+            AllSampleCount2 = len;
+            //reset record data
+            ScanData2 = null;
+            InProcess2 = true;
+        }
+
+        public void StartTrigger_N2()
+        {
+            SetTriggerMode(2);
+            Conn.Exec(CHRocodileLib.CmdID.EncoderTriggerEnabled, 0);
+            Conn.Exec(CHRocodileLib.CmdID.DataAverage, 5);
+        }
+
+
         public bool isFinish()
         {
             ScanData = Conn.GetNextSamples();
+
             //get total number of recorded data, TotalNumSamples returns the total recorded sample count
             if (ScanData.TotalNumSamples >= AllSampleCount)
             {
@@ -359,6 +413,25 @@ namespace PT
             {
                 Conn.StopRecording();
                 InProcess = false;
+                return false;
+            }
+        }
+
+        public bool isFinish2()
+        {
+            ScanData2 = Conn2.GetNextSamples();
+
+            //get total number of recorded data, TotalNumSamples returns the total recorded sample count
+            if (ScanData2.TotalNumSamples >= AllSampleCount2)
+            {
+                Conn2.StopRecording();
+                InProcess2 = false;
+                return true;
+            }
+            else
+            {
+                Conn2.StopRecording();
+                InProcess2 = false;
                 return false;
             }
         }
@@ -381,6 +454,24 @@ namespace PT
             }           
         }
 
+        public void getData_PT(out double[] data_PT)
+        {
+            if (ScanData2.TotalNumSamples >= AllSampleCount2)
+            {
+                double[] rtn = new double[AllSampleCount2];
+                for (int i = 0; i < AllSampleCount2; i++)
+                    rtn[i] = ScanData2.Get(i, 0, 0);
+                data_PT = rtn;
+            }
+            else
+            {
+                double[] rtn2 = new double[ScanData2.TotalNumSamples];
+                for (int i = 0; i < ScanData2.TotalNumSamples; i++)
+                    rtn2[i] = ScanData2.Get(i, 0, 0);
+                data_PT = rtn2;
+            }
+        }
+
         public void getData2(out double[] data2)
         {
             if (ScanData.TotalNumSamples >= AllSampleCount)
@@ -395,6 +486,24 @@ namespace PT
                 double[] rtn2 = new double[ScanData.TotalNumSamples];
                 for (int i = 0; i < ScanData.TotalNumSamples; i++)
                     rtn2[i] = ScanData.Get(i, 1, 0);
+                data2 = rtn2;
+            }
+        }
+
+        public void getData2_PT(out double[] data2)
+        {
+            if (ScanData2.TotalNumSamples >= AllSampleCount2)
+            {
+                double[] rtn = new double[AllSampleCount2];
+                for (int i = 0; i < AllSampleCount2; i++)
+                    rtn[i] = ScanData2.Get(i, 1, 0);
+                data2 = rtn;
+            }
+            else
+            {
+                double[] rtn2 = new double[ScanData2.TotalNumSamples];
+                for (int i = 0; i < ScanData2.TotalNumSamples; i++)
+                    rtn2[i] = ScanData2.Get(i, 1, 0);
                 data2 = rtn2;
             }
         }
@@ -416,6 +525,59 @@ namespace PT
                 data3 = rtn2;
             }
         }
+        public void getData3_PT(out double[] data3)
+        {
+            if (ScanData2.TotalNumSamples >= AllSampleCount2)
+            {
+                double[] rtn = new double[AllSampleCount2];
+                for (int i = 0; i < AllSampleCount2; i++)
+                    rtn[i] = ScanData2.Get(i, 2, 0);
+                data3 = rtn;
+            }
+            else
+            {
+                double[] rtn2 = new double[ScanData2.TotalNumSamples];
+                for (int i = 0; i < ScanData2.TotalNumSamples; i++)
+                    rtn2[i] = ScanData2.Get(i, 2, 0);
+                data3 = rtn2;
+            }
+        }
+
+        public void getData4(out double[] data4)
+        {
+            if (ScanData.TotalNumSamples >= AllSampleCount)
+            {
+                double[] rtn = new double[AllSampleCount];
+                for (int i = 0; i < AllSampleCount; i++)
+                    rtn[i] = ScanData.Get(i, 3, 0);
+                data4 = rtn;
+            }
+            else
+            {
+                double[] rtn2 = new double[ScanData.TotalNumSamples];
+                for (int i = 0; i < ScanData.TotalNumSamples; i++)
+                    rtn2[i] = ScanData.Get(i, 3, 0);
+                data4 = rtn2;
+            }
+        }
+
+        public void getData5(out double[] data5)
+        {
+            if (ScanData.TotalNumSamples >= AllSampleCount)
+            {
+                double[] rtn = new double[AllSampleCount];
+                for (int i = 0; i < AllSampleCount; i++)
+                    rtn[i] = ScanData.Get(i, 4, 0);
+                data5 = rtn;
+            }
+            else
+            {
+                double[] rtn2 = new double[ScanData.TotalNumSamples];
+                for (int i = 0; i < ScanData.TotalNumSamples; i++)
+                    rtn2[i] = ScanData.Get(i, 4, 0);
+                data5 = rtn2;
+            }
+        }
 
         public void SetTriggerMode(int mode)  // 0: free run  1:wait trigger  2:trigger each  3:trigger windows
         {
@@ -426,6 +588,8 @@ namespace PT
         {
             SetTriggerMode(0);
             Conn.Exec(CHRocodileLib.CmdID.DarkReference);
+            //Conn.ExecString("FDK");
+            Conn.ExecString("EQN 3141");
         }
 
         public short[] GetSpectrum(int specType) // 0: Raw  1: Confocal  2:FT
@@ -492,6 +656,15 @@ namespace PT
                 //set encoder trigger property
                 //int nAxis = CBAxis.SelectedIndex;
                 Conn.Exec(CHRocodileLib.CmdID.EncoderTriggerProperty, 0, startPos, stopPos, interval, 0);
+        }
+
+        private void SendTriggerSetting2(int startPos, int stopPos, float interval)
+        {
+            //use encoder to trigger
+            Conn2.Exec(CHRocodileLib.CmdID.EncoderTriggerEnabled, 1);
+            //set encoder trigger property
+            //int nAxis = CBAxis.SelectedIndex;
+            Conn2.Exec(CHRocodileLib.CmdID.EncoderTriggerProperty, 0, startPos, stopPos, interval, 0);
         }
 
 
@@ -634,6 +807,62 @@ namespace PT
             InProcess = false;
         }
 
+        private void timerProcess2_Tick(object sender, EventArgs e)
+        {
+            //to make sure the last process has been finished
+            if (InProcess2)
+                return;
+
+            InProcess2 = true;
+
+            //Read Data
+            ScanData2 = Conn2.GetNextSamples();
+
+            //get total number of recorded data, TotalNumSamples returns the total recorded sample count
+            var nTotalSampleCount = ScanData2.TotalNumSamples;
+
+            ScanLineIdx = (int)(Math.Floor((double)nTotalSampleCount / LineSampleCount));
+            SampleIdx = (int)nTotalSampleCount - ScanLineIdx * LineSampleCount;
+
+            //if there is new data comes in, update display
+            //NumSamples returns the new sample count from the last call of GetNextSampels
+            //if (ScanData2.NumSamples > 0)
+            //    UpdateDataDisplay(false);
+
+
+            //enough samples have been saved, stop scan
+            string data;
+            if (nTotalSampleCount >= AllSampleCount2)
+            {
+                StopScan2();
+                FileStream fs = new FileStream("D:\\FTGM1\\TEST2.CSV", System.IO.FileMode.Create, System.IO.FileAccess.Write);
+                StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.UTF8);
+                for (int i = 0; i < AllSampleCount2; i++)
+                {
+                    data = "";
+                    for (int j = 0; j < 1; j++)
+                    {
+                        //dataGridView1.Rows[0].Cells[1].Value = Convert.ToString(2);
+                        string str = ScanData2.Get(i, 0, 0).ToString() + ','; //沒數據會儲存錯誤
+                        //str = string.Format("\"{0}\"", str);
+                        data += str;
+
+                        //if (j < 2 - 1)
+                        //{
+                        //    data += ",";
+                        //}
+                    }
+                    sw.WriteLine(data);
+                }
+                sw.Close();
+                fs.Close();
+
+            }
+
+
+            InProcess2 = false;
+        }
+
         private void BtScan_Click(object sender, EventArgs e)
         {
             if (timerProcess.Enabled)
@@ -711,6 +940,31 @@ namespace PT
             }
             EnableGui(true, false);
             BtScan.Text = "Start Scan";
+        }
+
+        private void StopScan2()
+        {
+            if (!timerProcess2.Enabled)
+                return;
+
+            timerProcess2.Enabled = false;
+
+            //quit recording modes,
+            //StopRecording also returns recorded data object,
+            //which is the same as the data object from GetNextSamples in the timer routine,
+            Conn2.StopRecording();
+
+            try
+            {
+                // Set back to free run mode
+                Conn2.Exec(CHRocodileLib.CmdID.DeviceTriggerMode, CHRocodileLib.TriggerMode.FreeRun);
+            }
+            catch
+            {
+
+            }
+            //EnableGui(true, false);
+            //BtScan.Text = "Start Scan";
         }
 
         private void ResetDrawing()
@@ -824,7 +1078,7 @@ namespace PT
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(isShown && type == 1)
+            if(isShown && ((type & 0x100) > 0))
             {
                 lb_DECNum.Text = GetDriverAlarmCode().ToString();
                 lb_SpdNum.Text = ((double)GetSpeed() / 10000.0).ToString("F4");
@@ -848,7 +1102,7 @@ namespace PT
                 lb_ServoReady.BackColor = GetServoReady() ? Color.Yellow : Color.Transparent;
                 lb_ServoBusy.BackColor = GetZeroSpeed() ? Color.Yellow : Color.Transparent;
             }
-            else if(isShown && type == 2 && cbGetSpectrum.Checked)
+            else if(isShown && ((type & 0x010) > 0) && cbGetSpectrum.Checked)
             {
                 var specType = CHRocodileLib.SpecType.Raw;
                 if (RBConfocal.Checked)
@@ -906,6 +1160,7 @@ namespace PT
         {
             DarkReference();
         }
+
 
 
         //set encoder trigger property

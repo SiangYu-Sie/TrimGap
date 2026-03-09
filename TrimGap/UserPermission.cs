@@ -23,9 +23,20 @@ namespace TrimGap
         {
             try
             {
-                cboUserCount.Items.Add("Operator");
-                cboUserCount.Items.Add("Engineer");
-                cboUserCount.Items.Add("Administrator");
+                for (int i = 0; i < fram.UserData.Count; i++)
+                {
+                    string str = string.Empty;
+                    
+
+                    str = fram.UserData[i].Split(',')[0];
+                    
+                    cboUserCount.Items.Add(str);
+                }
+
+                comPerm.Items.Add(permissionEnum.op);
+                comPerm.Items.Add(permissionEnum.eng);
+                comPerm.Items.Add(permissionEnum.ad);
+
                 cboUserCount.SelectedIndex = 0;
             }
             catch (Exception Ex)
@@ -45,51 +56,35 @@ namespace TrimGap
             {
                 if (txtPassword.Text != "")
                 {
-                    if (cboUserCount.SelectedIndex == 0 && txtPassword.Text == fram.op_password)
-                    {
-                        sram.UserAuthority = permissionEnum.op;
+                    string strUser = cboUserCount.SelectedItem.ToString() ;
+                    string strPas = string.Empty;
+                    int ua = 0;
+                    List<string> usData = new List<string>();
 
-                        this.Close();
-                        //this.Dispose();
-                        DateTime dt = DateTime.Now;
-                        // form1_ref.insertEvent(20007, "Administrator");
-                        //ErrorSystem.addMsg(11, "Op");
-                        Flag.ChangeAuthority = true; // 更改權限後，在timer照權限刷一次狀態
-                    }
-                    else if (cboUserCount.SelectedIndex == 1 && txtPassword.Text == fram.eng_password)
+                    usData = fram.UserData.FindAll(x => x.Contains(strUser));
+                    if (usData.Count > 0)
                     {
-                        sram.UserAuthority = permissionEnum.eng;
+                        strPas = usData[0].Split(',')[1].ToString();
+                        ua = Convert.ToInt32(usData[0].Split(',')[2]);
 
-                        this.Close();
-                        //this.Dispose();
-                        DateTime dt = DateTime.Now;
-                        // form1_ref.insertEvent(20007, "Administrator");
-                        //ErrorSystem.addMsg(11, "Eng");
-                        Flag.ChangeAuthority = true; // 更改權限後，在timer照權限刷一次狀態
-                    }
-                    else if (cboUserCount.SelectedIndex == 2 && txtPassword.Text == fram.ad_password)
-                    {
-                        sram.UserAuthority = permissionEnum.ad;
-
-                        this.Close();
-                        //this.Dispose();
-                        DateTime dt = DateTime.Now;
-                        // form1_ref.insertEvent(20007, "Administrator");
-                        //ErrorSystem.addMsg(11, "Ad");
-                        Flag.ChangeAuthority = true; // 更改權限後，在timer照權限刷一次狀態
-                    }
-                    else
-                    {
-                        //DialogResult tmpResult = MessageBox.Show("密碼錯誤！", "更改使用者權現錯誤 視窗", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                        DialogResult tmpResult = MessageBox.Show("密碼錯誤！", "更改使用者權現錯誤 視窗", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                        if (tmpResult == DialogResult.Retry)
+                        if (txtPassword.Text == strPas)
                         {
-                            txtPassword.Focus();
-                            //this.Dispose();
-                        }
-                        else if (tmpResult == DialogResult.Cancel)
-                        {
+                            switch (ua)
+                            {
+                                case 0:
+                                    sram.UserAuthority = permissionEnum.op;
+                                    break;
+                                case 1:
+                                    sram.UserAuthority = permissionEnum.eng;
+                                    break;
+                                case 2:
+                                    sram.UserAuthority = permissionEnum.ad;
+                                    break;
+                            }
+
                             this.Close();
+                            DateTime dt = DateTime.Now;
+                            Flag.ChangeAuthority = true; // 更改權限後，在timer照權限刷一次狀態
                         }
                     }
                 }
@@ -143,7 +138,7 @@ namespace TrimGap
 
                 default:
                     break;
-            }
+            } 
 
             ParamFile.saveparam("UserPermission");
             MessageBox.Show("使用者:" + (permissionEnum)sram.UserAuthority + "密碼修改成功");
@@ -221,6 +216,92 @@ namespace TrimGap
             {
                 MessageBox.Show("請先更換使用者再修改密碼");
             }
+        }
+
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+            btnChange.Enabled = false;
+            btn_Edit.Enabled = false;
+            cboUserCount.Enabled = false;
+            txtPassword.Enabled = false;
+
+            txtUser.Text = "";
+        }
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            btnChange.Enabled = true;
+            btn_Add.Enabled = true;
+            btn_Edit.Enabled = true;
+            cboUserCount.Enabled = true;
+            txtPassword.Enabled = true;
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            btnChange.Enabled = true;
+            btn_Add.Enabled = true;
+            btn_Edit.Enabled = true;
+            cboUserCount.Enabled = true;
+            txtPassword.Enabled = true;
+
+            if (txtUser.Text == "")
+            {
+                DialogResult tmpResult = MessageBox.Show("使用者沒有輸入");
+
+            }
+
+            if (txtPass.Text == "")
+            {
+                DialogResult tmpResult = MessageBox.Show("密碼沒有輸入");
+            }
+
+            if (txtUser.Text != "" && txtPass.Text != "")
+            {
+                saveData();
+            }
+
+        }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+            btnChange.Enabled = false;
+            btn_Add.Enabled = false;
+            cboUserCount.Enabled = false;
+            txtPassword.Enabled = false;
+            txtUser.Enabled = false;
+
+            txtUser.Text = cboUserCount.SelectedItem.ToString();
+        }
+
+        private void saveData()
+        {
+            int q = 0;
+
+            switch (comPerm.SelectedItem.ToString())
+            {
+                case "op":
+                    q = 0;
+                    break;
+
+                case "eng":
+                    q = 1;
+                    break; ;
+
+                case "ad":
+                    q = 2;
+                    break;
+            }
+
+            fram.Up_UserData = txtUser.Text + "," + txtPass.Text + "," + q.ToString();
+            ParamFile.saveUsData("UserPermission", txtUser.Text);
+            MessageBox.Show("使用者:" + txtUser.Text + "密碼修改成功");
+            ParamFile.initparam();
+            this.Close();
         }
     }
 }

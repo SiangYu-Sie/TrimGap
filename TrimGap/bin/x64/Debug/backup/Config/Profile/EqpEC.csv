@@ -1,0 +1,6 @@
+//Name,ID,DataType,MinValue,MaxValue,DefaultValue,Unit,Remark,SeqNo,Length,CanUpdateByHost
+ChunkRotateDistance,7001,UINT_2,1,50000,10000,pluse,Chunk rotate distance,1,1,1
+Cofficient,7002,FT_4,0,1,0.931,,Sensor data tilting cofficient,2,1,1
+RobotSpeed,7003,UINT_1,1,100,50,,EFEM robot speed,3,1,1
+MotionRotate,7004,UINT_1,0,1,1,,"Chunk rotate, 1:Rotate, 0:No Rotate",4,1,1
+SoftWareVersion,7005,UINT_1,1,200,100,,SoftWare Version,5,1,1

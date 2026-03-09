@@ -1,0 +1,26 @@
+//CEID,Name,Remark,BitNo
+2104,MaterialReceived,Foup Placed and Report Load Complete,0
+2105,MaterialRemove,Foup Removed and Report Unload Complete,1
+1000,CarrierIDRead,Carrier ID has been read,2
+1001,CarrierIDReadFail,Carrier ID reading has failed,3
+1002,AccessModeAuto,Load port access mode has changed from MANUAL to AUTO,4
+1003,AccessModeManu,Load port access mode has changed from AUTO to MANUAL,5
+1004,ReadyToLoad,Load port transfer state has changed to READY TO LOAD,6
+1005,ReadyToUnload,Load port transfer state has changed to READY TO UNLOAD,7
+1006,CarrierClamped,Carrier has been clamped at a load port,8
+1007,CarrierUnclamped,Carrier has been unclamped at a load port,9
+1008,AccessModeAsk,AccessMode Reply,10
+1009,CarrierDoorOpened,Carrier has been opened,11
+1010,CarrierDoorClosed,Carrier has been closed,12
+1011,LP1_CarrierMapStarted,Carrier mapping has been started at Load Port 1.,13
+1012,LP1_CarrierMapped,Carrier map completed at Load Port 1.,14
+1013,SlotMap,Carrier slotmap status has changed to Completed,15
+1014,MachineRunning,Machine running,16
+1015,MachineStop,Machine Stop,17
+1016,PortTransferStatusAsk,Port transfer status reply,18
+2011,LP2_CarrierMapStarted,Carrier mapping has been started at Load Port 2.,19
+2012,LP2_CarrierMapped,Carrier map completed at Load Port 2.,20
+5115,CarrierDock,Carrier completed docking.,21
+5116,CarrierUnDock,Carrier completed undocking.,22
+5999,ProcessStart,Process Start event,23
+6000,MeasureResultSend,Measure Result Send,24

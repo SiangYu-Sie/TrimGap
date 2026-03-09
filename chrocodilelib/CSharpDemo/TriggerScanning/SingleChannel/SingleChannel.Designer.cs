@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.RBCHRC = new System.Windows.Forms.RadioButton();
             this.BtDisCon = new System.Windows.Forms.Button();
@@ -116,6 +116,7 @@
             this.lb_PLimit = new System.Windows.Forms.Label();
             this.lb_NLimit = new System.Windows.Forms.Label();
             this.tbHTW = new System.Windows.Forms.TabPage();
+            this.btnDarkReference = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -124,7 +125,7 @@
             this.RBConfocal = new System.Windows.Forms.RadioButton();
             this.RBRaw = new System.Windows.Forms.RadioButton();
             this.label15 = new System.Windows.Forms.Label();
-            this.btnDarkReference = new System.Windows.Forms.Button();
+            this.timerProcess2 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -402,7 +403,7 @@
             this.TBSignal.Name = "TBSignal";
             this.TBSignal.Size = new System.Drawing.Size(177, 22);
             this.TBSignal.TabIndex = 34;
-            this.TBSignal.Text = "256,264,272";
+            this.TBSignal.Text = "256,264,272,257";
             this.TBSignal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBSignal_KeyPress);
             // 
             // TBSampleNo
@@ -1002,6 +1003,16 @@
             this.tbHTW.Text = "HTW Spectrum";
             this.tbHTW.UseVisualStyleBackColor = true;
             // 
+            // btnDarkReference
+            // 
+            this.btnDarkReference.Location = new System.Drawing.Point(399, 8);
+            this.btnDarkReference.Name = "btnDarkReference";
+            this.btnDarkReference.Size = new System.Drawing.Size(101, 24);
+            this.btnDarkReference.TabIndex = 42;
+            this.btnDarkReference.Text = "DarkReference";
+            this.btnDarkReference.UseVisualStyleBackColor = true;
+            this.btnDarkReference.Click += new System.EventHandler(this.btnDarkReference_Click);
+            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.chart1);
@@ -1015,57 +1026,57 @@
             // 
             this.chart1.BackColor = System.Drawing.Color.Black;
             this.chart1.BorderlineColor = System.Drawing.Color.Yellow;
-            chartArea2.AxisX.IsLabelAutoFit = false;
-            chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea2.AxisX.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisX.MajorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisX.MajorTickMark.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisX.MinorGrid.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisX.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisX.MinorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisX.MinorTickMark.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisX.ScaleBreakStyle.LineColor = System.Drawing.Color.Yellow;
-            chartArea2.AxisX.TitleForeColor = System.Drawing.Color.White;
-            chartArea2.AxisY.IsLabelAutoFit = false;
-            chartArea2.AxisY.IsStartedFromZero = false;
-            chartArea2.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
-            chartArea2.AxisY.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisY.MajorGrid.Interval = 0D;
-            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisY.MajorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisY.MajorTickMark.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisY.MinorGrid.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisY.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisY.MinorTickMark.LineColor = System.Drawing.Color.White;
-            chartArea2.AxisY.MinorTickMark.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea2.AxisY.TitleForeColor = System.Drawing.Color.White;
-            chartArea2.BackColor = System.Drawing.Color.Black;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.MajorTickMark.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea1.AxisX.MinorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.MinorTickMark.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea1.AxisX.ScaleBreakStyle.LineColor = System.Drawing.Color.Yellow;
+            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.White;
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.IsStartedFromZero = false;
+            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea1.AxisY.MajorGrid.Interval = 0D;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY.MajorTickMark.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY.MinorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea1.AxisY.MinorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY.MinorTickMark.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea1.AxisY.TitleForeColor = System.Drawing.Color.White;
+            chartArea1.BackColor = System.Drawing.Color.Black;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Enabled = false;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(0, 24);
             this.chart1.Margin = new System.Windows.Forms.Padding(0);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Color = System.Drawing.Color.Yellow;
-            series2.IsVisibleInLegend = false;
-            series2.Legend = "Legend1";
-            series2.MarkerColor = System.Drawing.Color.Red;
-            series2.MarkerSize = 2;
-            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.Yellow;
+            series1.IsVisibleInLegend = false;
+            series1.Legend = "Legend1";
+            series1.MarkerColor = System.Drawing.Color.Red;
+            series1.MarkerSize = 2;
+            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Square;
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(505, 430);
             this.chart1.TabIndex = 3;
             this.chart1.Text = "chart1";
@@ -1140,15 +1151,9 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Spectrum Type:";
             // 
-            // btnDarkReference
+            // timerProcess2
             // 
-            this.btnDarkReference.Location = new System.Drawing.Point(399, 8);
-            this.btnDarkReference.Name = "btnDarkReference";
-            this.btnDarkReference.Size = new System.Drawing.Size(101, 24);
-            this.btnDarkReference.TabIndex = 42;
-            this.btnDarkReference.Text = "DarkReference";
-            this.btnDarkReference.UseVisualStyleBackColor = true;
-            this.btnDarkReference.Click += new System.EventHandler(this.btnDarkReference_Click);
+            this.timerProcess2.Tick += new System.EventHandler(this.timerProcess2_Tick);
             // 
             // SingleChannel
             // 
@@ -1285,6 +1290,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.CheckBox cbGetSpectrum;
         private System.Windows.Forms.Button btnDarkReference;
+        private System.Windows.Forms.Timer timerProcess2;
     }
 }
 

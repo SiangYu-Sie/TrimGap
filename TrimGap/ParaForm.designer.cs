@@ -34,8 +34,10 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tb_EDGE_2StepW2_copy = new System.Windows.Forms.TextBox();
+            this.tb_EDGE_2StepW2 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
             this.tb_EDGE_2StepW1_copy = new System.Windows.Forms.TextBox();
             this.tb_EDGE_2StepW1 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -132,16 +134,75 @@
             this.tb_ShowDataNum = new System.Windows.Forms.TextBox();
             this.tb_ShowDataNum_copy = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.tb_PT_2_Z_Offset_copy = new System.Windows.Forms.TextBox();
+            this.tb_PT_2_Z_Offset = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.tb_PT_2_copy = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.tb_PT_2 = new System.Windows.Forms.TextBox();
+            this.gp01 = new System.Windows.Forms.GroupBox();
+            this.tb_RD_W_copy = new System.Windows.Forms.TextBox();
+            this.tb_RD_W = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.tb_RD_H = new System.Windows.Forms.TextBox();
+            this.tb_RD_H_copy = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tb_PT_Measure_Count_copy = new System.Windows.Forms.TextBox();
+            this.tb_PT_Measure_Count = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.tb_HTW_Measure_Count_copy = new System.Windows.Forms.TextBox();
+            this.tb_HTW_Measure_Count = new System.Windows.Forms.TextBox();
+            this.tb_LJ_Measure_Count_copy = new System.Windows.Forms.TextBox();
+            this.tb_LJ_Measure_Count = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.tb_Analysis_W2_LJ_Replace_HTW_copy = new System.Windows.Forms.TextBox();
+            this.tb_Analysis_W2_LJ_Replace_HTW = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.tb_Analysis_Use_Intensity_copy = new System.Windows.Forms.TextBox();
+            this.tb_Analysis_Use_Intensity = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.tb_Analysis_nZone_copy = new System.Windows.Forms.TextBox();
+            this.tb_Analysis_nZone = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.tb_Analysis_Use_Leveling_copy = new System.Windows.Forms.TextBox();
+            this.tb_Analysis_Use_Leveling = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.tb_Analysis_HTW_TrimToIntensityShift_copy = new System.Windows.Forms.TextBox();
+            this.tb_Analysis_HTW_TrimToIntensityShift = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.tb_Analysis_HTW_GroupPoints_copy = new System.Windows.Forms.TextBox();
+            this.tb_Analysis_HTW_GroupPoints = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.tb_Analysis_HTW_SearchMaxDiff_copy = new System.Windows.Forms.TextBox();
+            this.tb_Analysis_HTW_SearchMaxDiff = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.tb_Analysis_HTW_HistogramRange_copy = new System.Windows.Forms.TextBox();
+            this.tb_Analysis_HTW_HistogramRange = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.tb_Analysis_HTW_H0FromTilt = new System.Windows.Forms.TextBox();
+            this.tb_Analysis_HTW_H0FromTilt_copy = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.tb_Analysis_HTW_W2EdgeThreshold = new System.Windows.Forms.TextBox();
+            this.tb_Analysis_HTW_W2EdgeThreshold_copy = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.tb_Analysis_HTW_StandardPlane = new System.Windows.Forms.TextBox();
             this.tb_Analysis_HTW_StandardPlane_copy = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
+            this.tb_PT_2_X_copy = new System.Windows.Forms.TextBox();
+            this.tb_PT_2_X = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.gp01.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -196,19 +257,11 @@
             this.tabPage1.Text = "Page1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 40);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(933, 711);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Page2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.tb_EDGE_2StepW2_copy);
+            this.groupBox3.Controls.Add(this.tb_EDGE_2StepW2);
+            this.groupBox3.Controls.Add(this.label33);
             this.groupBox3.Controls.Add(this.tb_EDGE_2StepW1_copy);
             this.groupBox3.Controls.Add(this.tb_EDGE_2StepW1);
             this.groupBox3.Controls.Add(this.label30);
@@ -258,10 +311,37 @@
             this.groupBox3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox3.Location = new System.Drawing.Point(10, 9);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(426, 654);
+            this.groupBox3.Size = new System.Drawing.Size(426, 692);
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Result offset";
+            // 
+            // tb_EDGE_2StepW2_copy
+            // 
+            this.tb_EDGE_2StepW2_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_EDGE_2StepW2_copy.Location = new System.Drawing.Point(320, 642);
+            this.tb_EDGE_2StepW2_copy.Name = "tb_EDGE_2StepW2_copy";
+            this.tb_EDGE_2StepW2_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_EDGE_2StepW2_copy.TabIndex = 82;
+            // 
+            // tb_EDGE_2StepW2
+            // 
+            this.tb_EDGE_2StepW2.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_EDGE_2StepW2.Location = new System.Drawing.Point(212, 642);
+            this.tb_EDGE_2StepW2.Name = "tb_EDGE_2StepW2";
+            this.tb_EDGE_2StepW2.ReadOnly = true;
+            this.tb_EDGE_2StepW2.Size = new System.Drawing.Size(100, 33);
+            this.tb_EDGE_2StepW2.TabIndex = 81;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label33.Location = new System.Drawing.Point(17, 648);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(152, 24);
+            this.label33.TabIndex = 80;
+            this.label33.Text = "Edge 2 Step W2";
             // 
             // tb_EDGE_2StepW1_copy
             // 
@@ -568,6 +648,7 @@
             this.cb_Offset.Name = "cb_Offset";
             this.cb_Offset.Size = new System.Drawing.Size(208, 32);
             this.cb_Offset.TabIndex = 48;
+            this.cb_Offset.SelectedIndexChanged += new System.EventHandler(this.cb_Offset_SelectedIndexChanged);
             // 
             // tb_2StepW1_copy
             // 
@@ -1186,18 +1267,577 @@
             this.label10.TabIndex = 7;
             this.label10.Text = "資料量測數量";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox5);
+            this.tabPage2.Controls.Add(this.gp01);
+            this.tabPage2.Controls.Add(this.groupBox4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 40);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(933, 711);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Page2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.tb_PT_2_X_copy);
+            this.groupBox5.Controls.Add(this.tb_PT_2_Z_Offset_copy);
+            this.groupBox5.Controls.Add(this.tb_PT_2_X);
+            this.groupBox5.Controls.Add(this.label51);
+            this.groupBox5.Controls.Add(this.tb_PT_2_Z_Offset);
+            this.groupBox5.Controls.Add(this.label50);
+            this.groupBox5.Controls.Add(this.tb_PT_2_copy);
+            this.groupBox5.Controls.Add(this.label49);
+            this.groupBox5.Controls.Add(this.tb_PT_2);
+            this.groupBox5.Location = new System.Drawing.Point(514, 169);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(395, 159);
+            this.groupBox5.TabIndex = 17;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "PT_2";
+            // 
+            // tb_PT_2_Z_Offset_copy
+            // 
+            this.tb_PT_2_Z_Offset_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_PT_2_Z_Offset_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_2_Z_Offset_copy.Location = new System.Drawing.Point(276, 108);
+            this.tb_PT_2_Z_Offset_copy.Name = "tb_PT_2_Z_Offset_copy";
+            this.tb_PT_2_Z_Offset_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_2_Z_Offset_copy.TabIndex = 116;
+            // 
+            // tb_PT_2_Z_Offset
+            // 
+            this.tb_PT_2_Z_Offset.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_2_Z_Offset.Location = new System.Drawing.Point(161, 108);
+            this.tb_PT_2_Z_Offset.Name = "tb_PT_2_Z_Offset";
+            this.tb_PT_2_Z_Offset.ReadOnly = true;
+            this.tb_PT_2_Z_Offset.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_2_Z_Offset.TabIndex = 115;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label50.Location = new System.Drawing.Point(6, 117);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(136, 24);
+            this.label50.TabIndex = 114;
+            this.label50.Text = "PT_2_Z_Offset";
+            // 
+            // tb_PT_2_copy
+            // 
+            this.tb_PT_2_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_PT_2_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_2_copy.Location = new System.Drawing.Point(276, 28);
+            this.tb_PT_2_copy.Name = "tb_PT_2_copy";
+            this.tb_PT_2_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_2_copy.TabIndex = 113;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label49.Location = new System.Drawing.Point(6, 37);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(91, 24);
+            this.label49.TabIndex = 111;
+            this.label49.Text = "PT_2_W2";
+            // 
+            // tb_PT_2
+            // 
+            this.tb_PT_2.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_2.Location = new System.Drawing.Point(161, 28);
+            this.tb_PT_2.Name = "tb_PT_2";
+            this.tb_PT_2.ReadOnly = true;
+            this.tb_PT_2.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_2.TabIndex = 112;
+            // 
+            // gp01
+            // 
+            this.gp01.Controls.Add(this.tb_RD_W_copy);
+            this.gp01.Controls.Add(this.tb_RD_W);
+            this.gp01.Controls.Add(this.label47);
+            this.gp01.Controls.Add(this.tb_RD_H);
+            this.gp01.Controls.Add(this.tb_RD_H_copy);
+            this.gp01.Controls.Add(this.label48);
+            this.gp01.Location = new System.Drawing.Point(514, 17);
+            this.gp01.Name = "gp01";
+            this.gp01.Size = new System.Drawing.Size(395, 139);
+            this.gp01.TabIndex = 16;
+            this.gp01.TabStop = false;
+            this.gp01.Text = "RD_offset";
+            // 
+            // tb_RD_W_copy
+            // 
+            this.tb_RD_W_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_RD_W_copy.Location = new System.Drawing.Point(275, 80);
+            this.tb_RD_W_copy.Name = "tb_RD_W_copy";
+            this.tb_RD_W_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_RD_W_copy.TabIndex = 71;
+            // 
+            // tb_RD_W
+            // 
+            this.tb_RD_W.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_RD_W.Location = new System.Drawing.Point(161, 80);
+            this.tb_RD_W.Name = "tb_RD_W";
+            this.tb_RD_W.ReadOnly = true;
+            this.tb_RD_W.Size = new System.Drawing.Size(100, 33);
+            this.tb_RD_W.TabIndex = 70;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label47.Location = new System.Drawing.Point(13, 81);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(29, 24);
+            this.label47.TabIndex = 69;
+            this.label47.Text = "W";
+            // 
+            // tb_RD_H
+            // 
+            this.tb_RD_H.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_RD_H.Location = new System.Drawing.Point(161, 41);
+            this.tb_RD_H.Name = "tb_RD_H";
+            this.tb_RD_H.ReadOnly = true;
+            this.tb_RD_H.Size = new System.Drawing.Size(100, 33);
+            this.tb_RD_H.TabIndex = 68;
+            // 
+            // tb_RD_H_copy
+            // 
+            this.tb_RD_H_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_RD_H_copy.Location = new System.Drawing.Point(275, 41);
+            this.tb_RD_H_copy.Name = "tb_RD_H_copy";
+            this.tb_RD_H_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_RD_H_copy.TabIndex = 67;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label48.Location = new System.Drawing.Point(13, 42);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(24, 24);
+            this.label48.TabIndex = 66;
+            this.label48.Text = "H";
+            // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.tb_PT_Measure_Count_copy);
+            this.groupBox4.Controls.Add(this.tb_PT_Measure_Count);
+            this.groupBox4.Controls.Add(this.label46);
+            this.groupBox4.Controls.Add(this.tb_HTW_Measure_Count_copy);
+            this.groupBox4.Controls.Add(this.tb_HTW_Measure_Count);
+            this.groupBox4.Controls.Add(this.tb_LJ_Measure_Count_copy);
+            this.groupBox4.Controls.Add(this.tb_LJ_Measure_Count);
+            this.groupBox4.Controls.Add(this.label45);
+            this.groupBox4.Controls.Add(this.label44);
+            this.groupBox4.Controls.Add(this.tb_Analysis_W2_LJ_Replace_HTW_copy);
+            this.groupBox4.Controls.Add(this.tb_Analysis_W2_LJ_Replace_HTW);
+            this.groupBox4.Controls.Add(this.label43);
+            this.groupBox4.Controls.Add(this.tb_Analysis_Use_Intensity_copy);
+            this.groupBox4.Controls.Add(this.tb_Analysis_Use_Intensity);
+            this.groupBox4.Controls.Add(this.label42);
+            this.groupBox4.Controls.Add(this.tb_Analysis_nZone_copy);
+            this.groupBox4.Controls.Add(this.tb_Analysis_nZone);
+            this.groupBox4.Controls.Add(this.label40);
+            this.groupBox4.Controls.Add(this.tb_Analysis_Use_Leveling_copy);
+            this.groupBox4.Controls.Add(this.tb_Analysis_Use_Leveling);
+            this.groupBox4.Controls.Add(this.label41);
+            this.groupBox4.Controls.Add(this.tb_Analysis_HTW_TrimToIntensityShift_copy);
+            this.groupBox4.Controls.Add(this.tb_Analysis_HTW_TrimToIntensityShift);
+            this.groupBox4.Controls.Add(this.label39);
+            this.groupBox4.Controls.Add(this.tb_Analysis_HTW_GroupPoints_copy);
+            this.groupBox4.Controls.Add(this.tb_Analysis_HTW_GroupPoints);
+            this.groupBox4.Controls.Add(this.label38);
+            this.groupBox4.Controls.Add(this.tb_Analysis_HTW_SearchMaxDiff_copy);
+            this.groupBox4.Controls.Add(this.tb_Analysis_HTW_SearchMaxDiff);
+            this.groupBox4.Controls.Add(this.label37);
+            this.groupBox4.Controls.Add(this.tb_Analysis_HTW_HistogramRange_copy);
+            this.groupBox4.Controls.Add(this.tb_Analysis_HTW_HistogramRange);
+            this.groupBox4.Controls.Add(this.label36);
+            this.groupBox4.Controls.Add(this.tb_Analysis_HTW_H0FromTilt);
+            this.groupBox4.Controls.Add(this.tb_Analysis_HTW_H0FromTilt_copy);
+            this.groupBox4.Controls.Add(this.label35);
+            this.groupBox4.Controls.Add(this.tb_Analysis_HTW_W2EdgeThreshold);
+            this.groupBox4.Controls.Add(this.tb_Analysis_HTW_W2EdgeThreshold_copy);
+            this.groupBox4.Controls.Add(this.label34);
             this.groupBox4.Controls.Add(this.tb_Analysis_HTW_StandardPlane);
             this.groupBox4.Controls.Add(this.tb_Analysis_HTW_StandardPlane_copy);
             this.groupBox4.Controls.Add(this.label32);
             this.groupBox4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox4.Location = new System.Drawing.Point(16, 17);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(473, 225);
+            this.groupBox4.Size = new System.Drawing.Size(473, 643);
             this.groupBox4.TabIndex = 15;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "HTW";
+            // 
+            // tb_PT_Measure_Count_copy
+            // 
+            this.tb_PT_Measure_Count_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_PT_Measure_Count_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_Measure_Count_copy.Location = new System.Drawing.Point(349, 548);
+            this.tb_PT_Measure_Count_copy.Name = "tb_PT_Measure_Count_copy";
+            this.tb_PT_Measure_Count_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_Measure_Count_copy.TabIndex = 110;
+            // 
+            // tb_PT_Measure_Count
+            // 
+            this.tb_PT_Measure_Count.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_Measure_Count.Location = new System.Drawing.Point(241, 549);
+            this.tb_PT_Measure_Count.Name = "tb_PT_Measure_Count";
+            this.tb_PT_Measure_Count.ReadOnly = true;
+            this.tb_PT_Measure_Count.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_Measure_Count.TabIndex = 109;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label46.Location = new System.Drawing.Point(22, 554);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(148, 24);
+            this.label46.TabIndex = 108;
+            this.label46.Text = "PT_N2 量測次數";
+            // 
+            // tb_HTW_Measure_Count_copy
+            // 
+            this.tb_HTW_Measure_Count_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_HTW_Measure_Count_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_HTW_Measure_Count_copy.Location = new System.Drawing.Point(349, 507);
+            this.tb_HTW_Measure_Count_copy.Name = "tb_HTW_Measure_Count_copy";
+            this.tb_HTW_Measure_Count_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_HTW_Measure_Count_copy.TabIndex = 107;
+            // 
+            // tb_HTW_Measure_Count
+            // 
+            this.tb_HTW_Measure_Count.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_HTW_Measure_Count.Location = new System.Drawing.Point(241, 507);
+            this.tb_HTW_Measure_Count.Name = "tb_HTW_Measure_Count";
+            this.tb_HTW_Measure_Count.ReadOnly = true;
+            this.tb_HTW_Measure_Count.Size = new System.Drawing.Size(100, 33);
+            this.tb_HTW_Measure_Count.TabIndex = 106;
+            // 
+            // tb_LJ_Measure_Count_copy
+            // 
+            this.tb_LJ_Measure_Count_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_LJ_Measure_Count_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_LJ_Measure_Count_copy.Location = new System.Drawing.Point(349, 466);
+            this.tb_LJ_Measure_Count_copy.Name = "tb_LJ_Measure_Count_copy";
+            this.tb_LJ_Measure_Count_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_LJ_Measure_Count_copy.TabIndex = 105;
+            // 
+            // tb_LJ_Measure_Count
+            // 
+            this.tb_LJ_Measure_Count.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_LJ_Measure_Count.Location = new System.Drawing.Point(241, 466);
+            this.tb_LJ_Measure_Count.Name = "tb_LJ_Measure_Count";
+            this.tb_LJ_Measure_Count.ReadOnly = true;
+            this.tb_LJ_Measure_Count.Size = new System.Drawing.Size(100, 33);
+            this.tb_LJ_Measure_Count.TabIndex = 104;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label45.Location = new System.Drawing.Point(22, 512);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(135, 24);
+            this.label45.TabIndex = 103;
+            this.label45.Text = "HTW 量測次數";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label44.Location = new System.Drawing.Point(22, 466);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(108, 24);
+            this.label44.TabIndex = 102;
+            this.label44.Text = "LJ 量測次數";
+            // 
+            // tb_Analysis_W2_LJ_Replace_HTW_copy
+            // 
+            this.tb_Analysis_W2_LJ_Replace_HTW_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Analysis_W2_LJ_Replace_HTW_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_W2_LJ_Replace_HTW_copy.Location = new System.Drawing.Point(349, 425);
+            this.tb_Analysis_W2_LJ_Replace_HTW_copy.Name = "tb_Analysis_W2_LJ_Replace_HTW_copy";
+            this.tb_Analysis_W2_LJ_Replace_HTW_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_W2_LJ_Replace_HTW_copy.TabIndex = 101;
+            // 
+            // tb_Analysis_W2_LJ_Replace_HTW
+            // 
+            this.tb_Analysis_W2_LJ_Replace_HTW.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_W2_LJ_Replace_HTW.Location = new System.Drawing.Point(241, 425);
+            this.tb_Analysis_W2_LJ_Replace_HTW.Name = "tb_Analysis_W2_LJ_Replace_HTW";
+            this.tb_Analysis_W2_LJ_Replace_HTW.ReadOnly = true;
+            this.tb_Analysis_W2_LJ_Replace_HTW.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_W2_LJ_Replace_HTW.TabIndex = 100;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label43.Location = new System.Drawing.Point(22, 426);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(186, 24);
+            this.label43.TabIndex = 99;
+            this.label43.Text = "W2 LJ Replace HTW";
+            // 
+            // tb_Analysis_Use_Intensity_copy
+            // 
+            this.tb_Analysis_Use_Intensity_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Analysis_Use_Intensity_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_Use_Intensity_copy.Location = new System.Drawing.Point(349, 386);
+            this.tb_Analysis_Use_Intensity_copy.Name = "tb_Analysis_Use_Intensity_copy";
+            this.tb_Analysis_Use_Intensity_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_Use_Intensity_copy.TabIndex = 98;
+            // 
+            // tb_Analysis_Use_Intensity
+            // 
+            this.tb_Analysis_Use_Intensity.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_Use_Intensity.Location = new System.Drawing.Point(241, 386);
+            this.tb_Analysis_Use_Intensity.Name = "tb_Analysis_Use_Intensity";
+            this.tb_Analysis_Use_Intensity.ReadOnly = true;
+            this.tb_Analysis_Use_Intensity.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_Use_Intensity.TabIndex = 97;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label42.Location = new System.Drawing.Point(22, 387);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(131, 24);
+            this.label42.TabIndex = 96;
+            this.label42.Text = "Use_Intensity";
+            // 
+            // tb_Analysis_nZone_copy
+            // 
+            this.tb_Analysis_nZone_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Analysis_nZone_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_nZone_copy.Location = new System.Drawing.Point(349, 347);
+            this.tb_Analysis_nZone_copy.Name = "tb_Analysis_nZone_copy";
+            this.tb_Analysis_nZone_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_nZone_copy.TabIndex = 95;
+            // 
+            // tb_Analysis_nZone
+            // 
+            this.tb_Analysis_nZone.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_nZone.Location = new System.Drawing.Point(241, 347);
+            this.tb_Analysis_nZone.Name = "tb_Analysis_nZone";
+            this.tb_Analysis_nZone.ReadOnly = true;
+            this.tb_Analysis_nZone.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_nZone.TabIndex = 94;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label40.Location = new System.Drawing.Point(22, 348);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(69, 24);
+            this.label40.TabIndex = 93;
+            this.label40.Text = "nZone";
+            // 
+            // tb_Analysis_Use_Leveling_copy
+            // 
+            this.tb_Analysis_Use_Leveling_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Analysis_Use_Leveling_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_Use_Leveling_copy.Location = new System.Drawing.Point(349, 306);
+            this.tb_Analysis_Use_Leveling_copy.Name = "tb_Analysis_Use_Leveling_copy";
+            this.tb_Analysis_Use_Leveling_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_Use_Leveling_copy.TabIndex = 92;
+            // 
+            // tb_Analysis_Use_Leveling
+            // 
+            this.tb_Analysis_Use_Leveling.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_Use_Leveling.Location = new System.Drawing.Point(241, 307);
+            this.tb_Analysis_Use_Leveling.Name = "tb_Analysis_Use_Leveling";
+            this.tb_Analysis_Use_Leveling.ReadOnly = true;
+            this.tb_Analysis_Use_Leveling.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_Use_Leveling.TabIndex = 91;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label41.Location = new System.Drawing.Point(22, 307);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(125, 24);
+            this.label41.TabIndex = 90;
+            this.label41.Text = "Use Leveling";
+            // 
+            // tb_Analysis_HTW_TrimToIntensityShift_copy
+            // 
+            this.tb_Analysis_HTW_TrimToIntensityShift_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Analysis_HTW_TrimToIntensityShift_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_HTW_TrimToIntensityShift_copy.Location = new System.Drawing.Point(349, 267);
+            this.tb_Analysis_HTW_TrimToIntensityShift_copy.Name = "tb_Analysis_HTW_TrimToIntensityShift_copy";
+            this.tb_Analysis_HTW_TrimToIntensityShift_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_HTW_TrimToIntensityShift_copy.TabIndex = 89;
+            // 
+            // tb_Analysis_HTW_TrimToIntensityShift
+            // 
+            this.tb_Analysis_HTW_TrimToIntensityShift.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_HTW_TrimToIntensityShift.Location = new System.Drawing.Point(241, 267);
+            this.tb_Analysis_HTW_TrimToIntensityShift.Name = "tb_Analysis_HTW_TrimToIntensityShift";
+            this.tb_Analysis_HTW_TrimToIntensityShift.ReadOnly = true;
+            this.tb_Analysis_HTW_TrimToIntensityShift.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_HTW_TrimToIntensityShift.TabIndex = 88;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label39.Location = new System.Drawing.Point(22, 267);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(134, 24);
+            this.label39.TabIndex = 87;
+            this.label39.Text = "HTW T_I_Shift";
+            // 
+            // tb_Analysis_HTW_GroupPoints_copy
+            // 
+            this.tb_Analysis_HTW_GroupPoints_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Analysis_HTW_GroupPoints_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_HTW_GroupPoints_copy.Location = new System.Drawing.Point(349, 228);
+            this.tb_Analysis_HTW_GroupPoints_copy.Name = "tb_Analysis_HTW_GroupPoints_copy";
+            this.tb_Analysis_HTW_GroupPoints_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_HTW_GroupPoints_copy.TabIndex = 86;
+            // 
+            // tb_Analysis_HTW_GroupPoints
+            // 
+            this.tb_Analysis_HTW_GroupPoints.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_HTW_GroupPoints.Location = new System.Drawing.Point(241, 228);
+            this.tb_Analysis_HTW_GroupPoints.Name = "tb_Analysis_HTW_GroupPoints";
+            this.tb_Analysis_HTW_GroupPoints.ReadOnly = true;
+            this.tb_Analysis_HTW_GroupPoints.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_HTW_GroupPoints.TabIndex = 85;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label38.Location = new System.Drawing.Point(22, 228);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(172, 24);
+            this.label38.TabIndex = 84;
+            this.label38.Text = "HTW GroupPoints";
+            // 
+            // tb_Analysis_HTW_SearchMaxDiff_copy
+            // 
+            this.tb_Analysis_HTW_SearchMaxDiff_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Analysis_HTW_SearchMaxDiff_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_HTW_SearchMaxDiff_copy.Location = new System.Drawing.Point(349, 189);
+            this.tb_Analysis_HTW_SearchMaxDiff_copy.Name = "tb_Analysis_HTW_SearchMaxDiff_copy";
+            this.tb_Analysis_HTW_SearchMaxDiff_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_HTW_SearchMaxDiff_copy.TabIndex = 83;
+            // 
+            // tb_Analysis_HTW_SearchMaxDiff
+            // 
+            this.tb_Analysis_HTW_SearchMaxDiff.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_HTW_SearchMaxDiff.Location = new System.Drawing.Point(241, 189);
+            this.tb_Analysis_HTW_SearchMaxDiff.Name = "tb_Analysis_HTW_SearchMaxDiff";
+            this.tb_Analysis_HTW_SearchMaxDiff.ReadOnly = true;
+            this.tb_Analysis_HTW_SearchMaxDiff.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_HTW_SearchMaxDiff.TabIndex = 82;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label37.Location = new System.Drawing.Point(22, 189);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(187, 24);
+            this.label37.TabIndex = 81;
+            this.label37.Text = "HTW SearchMaxDiff";
+            // 
+            // tb_Analysis_HTW_HistogramRange_copy
+            // 
+            this.tb_Analysis_HTW_HistogramRange_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Analysis_HTW_HistogramRange_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_HTW_HistogramRange_copy.Location = new System.Drawing.Point(349, 150);
+            this.tb_Analysis_HTW_HistogramRange_copy.Name = "tb_Analysis_HTW_HistogramRange_copy";
+            this.tb_Analysis_HTW_HistogramRange_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_HTW_HistogramRange_copy.TabIndex = 80;
+            // 
+            // tb_Analysis_HTW_HistogramRange
+            // 
+            this.tb_Analysis_HTW_HistogramRange.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_HTW_HistogramRange.Location = new System.Drawing.Point(241, 150);
+            this.tb_Analysis_HTW_HistogramRange.Name = "tb_Analysis_HTW_HistogramRange";
+            this.tb_Analysis_HTW_HistogramRange.ReadOnly = true;
+            this.tb_Analysis_HTW_HistogramRange.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_HTW_HistogramRange.TabIndex = 79;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label36.Location = new System.Drawing.Point(22, 150);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(210, 24);
+            this.label36.TabIndex = 78;
+            this.label36.Text = "HTW HistogramRange";
+            // 
+            // tb_Analysis_HTW_H0FromTilt
+            // 
+            this.tb_Analysis_HTW_H0FromTilt.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_HTW_H0FromTilt.Location = new System.Drawing.Point(241, 110);
+            this.tb_Analysis_HTW_H0FromTilt.Name = "tb_Analysis_HTW_H0FromTilt";
+            this.tb_Analysis_HTW_H0FromTilt.ReadOnly = true;
+            this.tb_Analysis_HTW_H0FromTilt.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_HTW_H0FromTilt.TabIndex = 77;
+            // 
+            // tb_Analysis_HTW_H0FromTilt_copy
+            // 
+            this.tb_Analysis_HTW_H0FromTilt_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Analysis_HTW_H0FromTilt_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_HTW_H0FromTilt_copy.Location = new System.Drawing.Point(349, 110);
+            this.tb_Analysis_HTW_H0FromTilt_copy.Name = "tb_Analysis_HTW_H0FromTilt_copy";
+            this.tb_Analysis_HTW_H0FromTilt_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_HTW_H0FromTilt_copy.TabIndex = 76;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label35.Location = new System.Drawing.Point(22, 115);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(169, 24);
+            this.label35.TabIndex = 75;
+            this.label35.Text = "HTW H0 From Tilt";
+            // 
+            // tb_Analysis_HTW_W2EdgeThreshold
+            // 
+            this.tb_Analysis_HTW_W2EdgeThreshold.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_HTW_W2EdgeThreshold.Location = new System.Drawing.Point(241, 71);
+            this.tb_Analysis_HTW_W2EdgeThreshold.Name = "tb_Analysis_HTW_W2EdgeThreshold";
+            this.tb_Analysis_HTW_W2EdgeThreshold.ReadOnly = true;
+            this.tb_Analysis_HTW_W2EdgeThreshold.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_HTW_W2EdgeThreshold.TabIndex = 74;
+            // 
+            // tb_Analysis_HTW_W2EdgeThreshold_copy
+            // 
+            this.tb_Analysis_HTW_W2EdgeThreshold_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Analysis_HTW_W2EdgeThreshold_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Analysis_HTW_W2EdgeThreshold_copy.Location = new System.Drawing.Point(349, 71);
+            this.tb_Analysis_HTW_W2EdgeThreshold_copy.Name = "tb_Analysis_HTW_W2EdgeThreshold_copy";
+            this.tb_Analysis_HTW_W2EdgeThreshold_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_Analysis_HTW_W2EdgeThreshold_copy.TabIndex = 73;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label34.Location = new System.Drawing.Point(22, 76);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(198, 24);
+            this.label34.TabIndex = 72;
+            this.label34.Text = "HTW W2 Edge Thres.";
             // 
             // tb_Analysis_HTW_StandardPlane
             // 
@@ -1227,6 +1867,34 @@
             this.label32.TabIndex = 69;
             this.label32.Text = "HTW Standard Plane";
             // 
+            // tb_PT_2_X_copy
+            // 
+            this.tb_PT_2_X_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_PT_2_X_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_2_X_copy.Location = new System.Drawing.Point(276, 68);
+            this.tb_PT_2_X_copy.Name = "tb_PT_2_X_copy";
+            this.tb_PT_2_X_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_2_X_copy.TabIndex = 119;
+            // 
+            // tb_PT_2_X
+            // 
+            this.tb_PT_2_X.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_PT_2_X.Location = new System.Drawing.Point(161, 68);
+            this.tb_PT_2_X.Name = "tb_PT_2_X";
+            this.tb_PT_2_X.ReadOnly = true;
+            this.tb_PT_2_X.Size = new System.Drawing.Size(100, 33);
+            this.tb_PT_2_X.TabIndex = 118;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label51.Location = new System.Drawing.Point(6, 77);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(73, 24);
+            this.label51.TabIndex = 117;
+            this.label51.Text = "PT_2_X";
+            // 
             // ParaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1240,13 +1908,17 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ParaForm_FormClosed);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.gp01.ResumeLayout(false);
+            this.gp01.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
@@ -1361,5 +2033,64 @@
         private System.Windows.Forms.TextBox tb_Analysis_HTW_StandardPlane;
         private System.Windows.Forms.TextBox tb_Analysis_HTW_StandardPlane_copy;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox tb_EDGE_2StepW2_copy;
+        private System.Windows.Forms.TextBox tb_EDGE_2StepW2;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox tb_Analysis_HTW_H0FromTilt;
+        private System.Windows.Forms.TextBox tb_Analysis_HTW_H0FromTilt_copy;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox tb_Analysis_HTW_W2EdgeThreshold;
+        private System.Windows.Forms.TextBox tb_Analysis_HTW_W2EdgeThreshold_copy;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox tb_Analysis_HTW_HistogramRange_copy;
+        private System.Windows.Forms.TextBox tb_Analysis_HTW_HistogramRange;
+        private System.Windows.Forms.TextBox tb_Analysis_HTW_SearchMaxDiff_copy;
+        private System.Windows.Forms.TextBox tb_Analysis_HTW_SearchMaxDiff;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox tb_Analysis_HTW_TrimToIntensityShift_copy;
+        private System.Windows.Forms.TextBox tb_Analysis_HTW_TrimToIntensityShift;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox tb_Analysis_HTW_GroupPoints_copy;
+        private System.Windows.Forms.TextBox tb_Analysis_HTW_GroupPoints;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox tb_Analysis_nZone_copy;
+        private System.Windows.Forms.TextBox tb_Analysis_nZone;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox tb_Analysis_Use_Leveling_copy;
+        private System.Windows.Forms.TextBox tb_Analysis_Use_Leveling;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox tb_Analysis_Use_Intensity_copy;
+        private System.Windows.Forms.TextBox tb_Analysis_Use_Intensity;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox tb_Analysis_W2_LJ_Replace_HTW_copy;
+        private System.Windows.Forms.TextBox tb_Analysis_W2_LJ_Replace_HTW;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox tb_HTW_Measure_Count_copy;
+        private System.Windows.Forms.TextBox tb_HTW_Measure_Count;
+        private System.Windows.Forms.TextBox tb_LJ_Measure_Count_copy;
+        private System.Windows.Forms.TextBox tb_LJ_Measure_Count;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox tb_PT_Measure_Count_copy;
+        private System.Windows.Forms.TextBox tb_PT_Measure_Count;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.GroupBox gp01;
+        private System.Windows.Forms.TextBox tb_RD_W_copy;
+        private System.Windows.Forms.TextBox tb_RD_W;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.TextBox tb_RD_H;
+        private System.Windows.Forms.TextBox tb_RD_H_copy;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.TextBox tb_PT_2_copy;
+        private System.Windows.Forms.TextBox tb_PT_2;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.TextBox tb_PT_2_Z_Offset_copy;
+        private System.Windows.Forms.TextBox tb_PT_2_Z_Offset;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.TextBox tb_PT_2_X_copy;
+        private System.Windows.Forms.TextBox tb_PT_2_X;
+        private System.Windows.Forms.Label label51;
     }
 }

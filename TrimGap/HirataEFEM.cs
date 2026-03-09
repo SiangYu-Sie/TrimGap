@@ -718,6 +718,8 @@ namespace TrimGap
         private string rtn = "";
         private string[] rtnstring;
         public int[] Slot = new int[25];
+        public string[] SubstrateID = new string[25];
+        public string[] LotID = new string[25];
         public Pn pn;
         public bool[] LEDSts = new bool[7];
         private bool LED_persence = false;        //0
@@ -985,10 +987,15 @@ namespace TrimGap
 
         public bool Home()
         {
-            string str = pn.ToString();
-            rtn = EFEM.EFEMCommand_Send("Home," + str, Timeout_ms.Home);
-            rtnstring = rtnSplit(rtn);
-            return rtnstring[2] == "0" ? true : false;
+            if (fram.m_simulateRun == 0)
+            {
+                string str = pn.ToString();
+                rtn = EFEM.EFEMCommand_Send("Home," + str, Timeout_ms.Home);
+                rtnstring = rtnSplit(rtn);
+                return rtnstring[2] == "0" ? true : false;
+            }
+            else
+                return true;
         }
 
         public bool ResetError()
@@ -1016,69 +1023,128 @@ namespace TrimGap
 
         public bool ReadFoupID()
         {
-            string str = pn.ToString();
-            rtn = EFEM.EFEMCommand_Send("ReadFoupID," + str);
-            rtnstring = rtnSplit(rtn);
-            if (rtnstring[2] == "0")
+            if (fram.m_simulateRun == 0)
             {
-                if (rtnstring[3].Length >= 9)
+                string str = pn.ToString();
+                rtn = EFEM.EFEMCommand_Send("ReadFoupID," + str);
+                rtnstring = rtnSplit(rtn);
+                if (rtnstring[2] == "0")
                 {
-                    foupID = rtnstring[3].Substring(0, 9);
+                    if (rtnstring[3].Length >= 9)
+                    {
+                        foupID = rtnstring[3].Substring(0, 9);
+                    }
+                    else
+                    {
+                        foupID = rtnstring[3];
+                    }
+
+                    return true;
+                }
+                else if (rtnstring[2] == "1")
+                {
+                    errorDescription = rtnstring[3];
+                    foupID = "";
+                    return false;
                 }
                 else
                 {
-                    foupID = rtnstring[3];
+                    foupID = "";
+                    return false;
                 }
-
-                return true;
-            }
-            else if (rtnstring[2] == "1")
-            {
-                errorDescription = rtnstring[3];
-                foupID = "";
-                return false;
             }
             else
             {
-                foupID = "";
-                return false;
+                if (Common.EFEM.LoadPort1.Placement)
+                {
+                    foupID = "TEST12345";
+                }
+                    //if (Common.EFEM.LoadPort1.FoupID == "TEST67890")
+                    //{
+                    //foupID = "TEST12345";
+                //}
+                //else
+                //{
+                //    foupID = "TEST67890";
+                //}
+                //foupID = foupID == "TEST12345"? "TEST67890": "TEST12345";
+                //
+
+                if(Common.EFEM.LoadPort2.Placement)
+                {
+                    foupID = "TEST67890";
+                }
+                    
+
+                //if (Common.EFEM.LoadPort1.Placement)
+                //{
+                //    if (Common.EFEM.LoadPort1.FoupID == "TEST67890")
+                //    {
+                //        foupID = "TEST12345";
+                //    }
+                //    else
+                //    {
+                //        foupID = "TEST67890";
+                //    }
+
+
+                //}
+
+
+                return true;
             }
         }
 
         public bool Clamp()
         {
-            string str = pn.ToString();
-            rtn = EFEM.EFEMCommand_Send("Clamp," + str);
-            rtnstring = rtnSplit(rtn);
-            if (rtnstring[2] == "0")
+            if (fram.m_simulateRun == 0)
             {
-                return true;
+                string str = pn.ToString();
+                rtn = EFEM.EFEMCommand_Send("Clamp," + str);
+                rtnstring = rtnSplit(rtn);
+                if (rtnstring[2] == "0")
+                {
+                    return true;
+                }
+                else
+                {
+                    errorDescription = rtnstring[2];
+                    return false;
+                }
             }
             else
             {
-                errorDescription = rtnstring[2];
-                return false;
+                return true;
             }
         }
 
         public bool UnClamp()
         {
-            string str = pn.ToString();
-            rtn = EFEM.EFEMCommand_Send("UnClamp," + str);
-            rtnstring = rtnSplit(rtn);
-            if (rtnstring[2] == "0")
+            if (fram.m_simulateRun == 0)
             {
-                return true;
+                string str = pn.ToString();
+                rtn = EFEM.EFEMCommand_Send("UnClamp," + str);
+                rtnstring = rtnSplit(rtn);
+                if (rtnstring[2] == "0")
+                {
+                    return true;
+                }
+                else
+                {
+                    errorDescription = rtnstring[2];
+                    return false;
+                }
             }
             else
             {
-                errorDescription = rtnstring[2];
-                return false;
+                return true;
             }
         }
 
         public bool Load()
         {
+            if (fram.m_simulateRun != 0)
+                return true;
             string str = pn.ToString();
             rtn = EFEM.EFEMCommand_Send("Load," + str, Timeout_ms.Load);
             rtnstring = rtnSplit(rtn);
@@ -1095,6 +1161,8 @@ namespace TrimGap
 
         public bool Unload()
         {
+            if (fram.m_simulateRun != 0)
+                return true;
             string str = pn.ToString();
             rtn = EFEM.EFEMCommand_Send("Unload," + str, Timeout_ms.Unload);
             rtnstring = rtnSplit(rtn);
@@ -1111,6 +1179,8 @@ namespace TrimGap
 
         public bool Map()
         {
+            if (fram.m_simulateRun != 0)
+                return true;
             string str = pn.ToString();
             rtn = EFEM.EFEMCommand_Send("Map," + str, Timeout_ms.Map);
             rtnstring = rtnSplit(rtn);
@@ -1131,6 +1201,37 @@ namespace TrimGap
         /// <param name="pn"></param>
         public bool GetWaferSlot()
         {
+            if (fram.m_simulateRun != 0)
+            {
+                string tmp = "1000000000000000000000000";  //模擬的slotmap
+                for (int i = 0; i < 25; i++)
+                {
+                    Slot[i] = Convert.ToInt32(tmp.Substring(i,1));
+                    switch (Slot[i])
+                    {
+                        case 0:
+                            slot_Status[i] = EFEM.slot_status.Empty;
+                            break;
+
+                        case 1:
+                            slot_Status[i] = EFEM.slot_status.Ready;
+                            break;
+
+                        case 2:
+                            slot_Status[i] = EFEM.slot_status.Error;
+                            break;
+
+                        case 9:
+                            slot_Status[i] = EFEM.slot_status.Unknow;
+                            break;
+
+                        default:
+                            slot_Status[i] = EFEM.slot_status.Unknow;
+                            break;
+                    }
+                }
+                return true;
+            }
             string str = pn.ToString();
             rtn = EFEM.EFEMCommand_Send("GetWaferSlot," + str);
             rtnstring = rtnSplit(rtn);
@@ -1177,13 +1278,44 @@ namespace TrimGap
         /// <param name="pn"></param>
         public bool GetWaferSlot2()
         {
+            if (fram.m_simulateRun != 0)
+            {
+                string tmp = "1111111111111111111111111";  //模擬的slotmap
+                for (int i = 0; i < 20; i++)
+                {
+                    Slot[i] = Convert.ToInt32(tmp.Substring(i, 1));
+                    switch (Slot[i])
+                    {
+                        case 0:
+                            slot_Status[i] = EFEM.slot_status.Empty;
+                            break;
+
+                        case 1:
+                            slot_Status[i] = EFEM.slot_status.Ready;
+                            break;
+
+                        case 2:
+                            slot_Status[i] = EFEM.slot_status.Error;
+                            break;
+
+                        case 9:
+                            slot_Status[i] = EFEM.slot_status.Unknow;
+                            break;
+
+                        default:
+                            slot_Status[i] = EFEM.slot_status.Unknow;
+                            break;
+                    }
+                }
+                return true;
+            }
             string str = pn.ToString();
             rtn = EFEM.EFEMCommand_Send("GetWaferSlot2," + str);
             rtnstring = rtnSplit(rtn);
             //bool[] Slot = new bool[25];
             if (rtnstring[2] == "OK")
             {
-                for (int i = 0; i < 25; i++)
+                for (int i = 0; i < 20; i++)
                 {
                     Slot[i] = Convert.ToInt32(rtnstring[i + 3]);
                     switch (Slot[i])
@@ -1229,7 +1361,7 @@ namespace TrimGap
             else
             {
                 // 如果掃失敗，全部給unknow
-                for (int i = 0; i < 25; i++)
+                for (int i = 0; i < 20; i++)
                 {
                     Slot[i] = 9;
                     slot_Status[i] = EFEM.slot_status.Unknow;
@@ -1246,6 +1378,37 @@ namespace TrimGap
         /// <param name="pn"></param>
         public bool GetWaferSlot2(ref int[] slot)
         {
+            if (fram.m_simulateRun != 0)
+            {
+                string tmp = "1000000000000000000000000";  //模擬的slotmap
+                for (int i = 0; i < 25; i++)
+                {
+                    Slot[i] = Convert.ToInt32(tmp.Substring(i, 1));
+                    switch (Slot[i])
+                    {
+                        case 0:
+                            slot_Status[i] = EFEM.slot_status.Empty;
+                            break;
+
+                        case 1:
+                            slot_Status[i] = EFEM.slot_status.Ready;
+                            break;
+
+                        case 2:
+                            slot_Status[i] = EFEM.slot_status.Error;
+                            break;
+
+                        case 9:
+                            slot_Status[i] = EFEM.slot_status.Unknow;
+                            break;
+
+                        default:
+                            slot_Status[i] = EFEM.slot_status.Unknow;
+                            break;
+                    }
+                }
+                return true;
+            }
             string str = pn.ToString();
             rtn = EFEM.EFEMCommand_Send("GetWaferSlot2," + str);
             rtnstring = rtnSplit(rtn);
@@ -1324,6 +1487,8 @@ namespace TrimGap
 
         public bool LEDLoad(LEDsts ledsts)
         {
+            if (fram.m_simulateRun != 0)
+                return true;
             string str = pn.ToString() + "," + ledsts.ToString();
             rtn = EFEM.EFEMCommand_Send("LEDLoad," + str);
             rtnstring = rtnSplit(rtn);
@@ -1340,6 +1505,8 @@ namespace TrimGap
 
         public bool LEDUnLoad(LEDsts ledsts)
         {
+            if (fram.m_simulateRun != 0)
+                return true;
             string str = pn.ToString() + "," + ledsts.ToString();
             rtn = EFEM.EFEMCommand_Send("LEDUnLoad," + str);
             rtnstring = rtnSplit(rtn);
@@ -1356,6 +1523,8 @@ namespace TrimGap
 
         public bool LEDStatus1(LEDsts ledsts)
         {
+            if (fram.m_simulateRun != 0)
+                return true;
             string str = pn.ToString() + "," + ledsts.ToString();
             rtn = EFEM.EFEMCommand_Send("LEDStatus1," + str);
             rtnstring = rtnSplit(rtn);
@@ -1372,6 +1541,8 @@ namespace TrimGap
 
         public bool LEDStatus2(LEDsts ledsts)
         {
+            if (fram.m_simulateRun != 0)
+                return true;
             string str = pn.ToString() + "," + ledsts.ToString();
             rtn = EFEM.EFEMCommand_Send("LEDStatus2," + str);
             rtnstring = rtnSplit(rtn);
@@ -1388,6 +1559,12 @@ namespace TrimGap
 
         public bool GetLEDStatus()
         {
+            if (fram.m_simulateRun != 0)
+            {
+                LED_persence = Placement;
+                LED_placement = Placement;
+                return true;
+            }
             string str = pn.ToString();
             rtn = EFEM.EFEMCommand_Send("GetLEDStatus," + str);
             rtnstring = rtnSplit(rtn);
@@ -1696,6 +1873,10 @@ namespace TrimGap
 
         public bool GetStatus()
         {
+            if (fram.m_simulateRun != 0)
+            {
+                return true;
+            }
             string str = "Robot";
             rtn = EFEM.EFEMCommand_Send("GetStatus," + str, Timeout_ms.GetStatus);
             rtnstring = rtnSplit(rtn);
@@ -1716,6 +1897,10 @@ namespace TrimGap
 
         public bool ResetError()
         {
+            if (fram.m_simulateRun != 0)
+            {
+                return true;
+            }
             string str = "Robot";
             rtn = EFEM.EFEMCommand_Send("ResetError," + str);
             rtnstring = rtnSplit(rtn);
@@ -1731,6 +1916,10 @@ namespace TrimGap
 
         public bool Home()
         {
+            if (fram.m_simulateRun != 0)
+            {
+                return true;
+            }
             string str = "Robot";
             rtn = EFEM.EFEMCommand_Send("Home," + str, Timeout_ms.Home);
             rtnstring = rtnSplit(rtn);
@@ -1837,11 +2026,17 @@ namespace TrimGap
                     str = (int)ArmID + "," + pn.ToString() + "," + 1;
                     break;
             }
-
-            rtn = EFEM.EFEMCommand_Send("WaferGet,Robot," + str, Timeout_ms.WaferGet);
-            rtnstring = rtnSplit(rtn);
-            if (rtnstring[2] == "0")
+            if (fram.m_simulateRun == 0)
             {
+                rtn = EFEM.EFEMCommand_Send("WaferGet,Robot," + str, Timeout_ms.WaferGet);
+                rtnstring = rtnSplit(rtn);
+            }
+            else
+                rtnstring = new string[3];
+
+            if (rtnstring[2] == "0" || fram.m_simulateRun != 0)
+            {
+                WaferGetSECS(ArmID, pn, Slot, loadPort);
                 loadPort.Update_slot_Status(Slot, slot_Status);
                 Slot_pn = loadPort;
                 switch (ArmID)
@@ -1891,6 +2086,8 @@ namespace TrimGap
                         Common.EFEM.Stage1.Slot = 0;
                         Common.EFEM.Stage1.WaferPresence = false;
                         Common.EFEM.Stage1.Slot_pn = loadPort;
+                        if (fram.m_simulateRun != 0)
+                            Common.io.WriteIn(IOName.In.StageWafer在席, false);
                         break;
 
                     default:
@@ -1901,6 +2098,29 @@ namespace TrimGap
                     Update_slot_Status(ArmID, EFEM.slot_status.Unknow);
                 }
                 errorDescription = "";
+
+                if (fram.m_simulateRun != 0)
+                {
+                    switch (ArmID)
+                    {
+                        case ArmID.LowerArm:
+                            waferPresence_Arm_lower = true;
+                            break;
+                        case ArmID.UpperArm:
+                            waferPresence_Arm_upper = true;
+                            break;
+                        default:
+                            break;
+                    }
+                    switch (pn)
+                    {
+                        case Pn.Aligner1:
+                            Common.EFEM.Aligner.WaferPresence = false;
+                            break;
+                        default:
+                            break;
+                    }
+                }
                 return true;
             }
             else
@@ -1964,11 +2184,17 @@ namespace TrimGap
                     str = (int)ArmID + "," + pn.ToString() + "," + 1;
                     break;
             }
-
-            rtn = EFEM.EFEMCommand_Send("WaferPut,Robot," + str, Timeout_ms.WaferPut);
-            rtnstring = rtnSplit(rtn);
-            if (rtnstring[2] == "0")
+            if (fram.m_simulateRun == 0)
             {
+                rtn = EFEM.EFEMCommand_Send("WaferPut,Robot," + str, Timeout_ms.WaferPut);
+                rtnstring = rtnSplit(rtn);
+            }
+            else
+                rtnstring = new string[3];
+
+            if (rtnstring[2] == "0" || fram.m_simulateRun != 0)
+            {
+                WaferPutSECS(ArmID, pn, Slot, loadPort);
                 loadPort.Update_slot_Status(Slot, slot_Status);
                 switch (ArmID)
                 {
@@ -2006,6 +2232,32 @@ namespace TrimGap
                         break;
                 }
                 Update_slot_Status(ArmID, EFEM.slot_status.Empty);
+
+                if (fram.m_simulateRun != 0)
+                {
+                    switch (ArmID)
+                    {
+                        case ArmID.LowerArm:
+                            waferPresence_Arm_lower = false;
+                            break;
+                        case ArmID.UpperArm:
+                            waferPresence_Arm_upper = false;
+                            break;
+                        default:
+                            break;
+                    }
+                    switch (pn)
+                    {
+                        case Pn.Aligner1:
+                            Common.EFEM.Aligner.WaferPresence = true;
+                            break;
+                        case Pn.Stage1:
+                            Common.io.WriteIn(IOName.In.StageWafer在席, true);
+                            break;
+                        default:
+                            break;
+                    }
+                }
 
                 return true;
             }
@@ -2075,8 +2327,12 @@ namespace TrimGap
         {
             string str = ((int)ArmID).ToString();
 
+            if (fram.m_simulateRun != 0)
+                return true;
+
             rtn = EFEM.EFEMCommand_Send("VacuumOn,Robot," + str);
             rtnstring = rtnSplit(rtn);
+
             if (rtnstring.Length > 2)
             {
                 return rtnstring[2] == "0" ? true : false;
@@ -2094,6 +2350,9 @@ namespace TrimGap
         public bool VacuumOff(ArmID ArmID)
         {
             string str = ((int)ArmID).ToString();
+
+            if (fram.m_simulateRun != 0)
+                return true;
 
             rtn = EFEM.EFEMCommand_Send("VacuumOff,Robot," + str);
             rtnstring = rtnSplit(rtn);
@@ -2136,6 +2395,40 @@ namespace TrimGap
             }
         }
 
+        public void WaferGetSECS(Robot.ArmID ArmID, Robot.Pn pn, int Slot, LoadPort loadPort)
+        {
+            if (loadPort.SubstrateID[Slot - 1] == null) return;
+            string loc = ArmID == Robot.ArmID.UpperArm ? "UPPERARM" : "LOWERARM";
+            Common.SecsgemForm.SetSubstrateAttr_Location(loadPort.SubstrateID[Slot - 1], loc);
+        }
+
+        public void WaferPutSECS(Robot.ArmID ArmID, Robot.Pn pn, int Slot, LoadPort loadPort)
+        {
+            if (loadPort.SubstrateID[Slot - 1] == null) return;
+            string loc;
+            switch (pn)
+            {
+                case Robot.Pn.P1:
+                    //loc = loadPort.FoupID + "." + Slot.ToString("00");
+                    loc = "LOADPORT1." + Slot.ToString("00");
+                    break;
+                case Robot.Pn.P2:
+                    //loc = loadPort.FoupID + "." + Slot.ToString("00");
+                    loc = "LOADPORT2." + Slot.ToString("00");
+                    break;
+                case Robot.Pn.Aligner1:
+                    loc = "ALIGNER";
+                    break;
+                case Robot.Pn.Stage1:
+                    loc = "STAGE";
+                    break;
+                default:
+                    loc = "";
+                    break;
+            }
+            if (loc != "")
+                Common.SecsgemForm.SetSubstrateAttr_Location(loadPort.SubstrateID[Slot - 1], loc);
+        }
         public enum Pn
         {
             P1,
@@ -2235,7 +2528,7 @@ namespace TrimGap
         public bool WaferPresence
         {
             get { return waferPresence; }
-            set { }
+            set { waferPresence = value; }
         }
 
         public bool VacuumStatus
@@ -2269,6 +2562,10 @@ namespace TrimGap
 
         public bool Home()
         {
+            if (fram.m_simulateRun != 0)
+            {
+                return true;
+            }
             string str = "Aligner1";
             rtn = EFEM.EFEMCommand_Send("Home," + str, Timeout_ms.Home);
             rtnstring = rtnSplit(rtn);
@@ -2277,6 +2574,10 @@ namespace TrimGap
 
         public bool ResetError()
         {
+            if (fram.m_simulateRun != 0)
+            {
+                return true;
+            }
             string str = "Aligner1";
             rtn = EFEM.EFEMCommand_Send("ResetError," + str);
             rtnstring = rtnSplit(rtn);
@@ -2285,6 +2586,12 @@ namespace TrimGap
 
         public bool GetStatus()
         {
+            if (fram.m_simulateRun != 0)
+            {
+                mode = "Online";
+                return true;
+            }
+
             rtn = EFEM.EFEMCommand_Send("GetStatus,Aligner1", Timeout_ms.GetStatus);
             rtnstring = rtnSplit(rtn);
             if (rtnstring.Length >= 5)
@@ -2313,6 +2620,12 @@ namespace TrimGap
 
         public bool Alignment()
         {
+            if (fram.m_simulateRun != 0)
+            {
+                alignement_Done = true;
+                return true;
+            }
+
             int Degree = fram.m_WaferAlignAngle;
             string str = Degree.ToString();
             rtn = EFEM.EFEMCommand_Send("Alignment,Aligner1," + str, Timeout_ms.Alignment);
@@ -2345,6 +2658,9 @@ namespace TrimGap
 
         public bool ToAngle(int Degree)
         {
+            if (fram.m_simulateRun != 0)
+                return true;
+
             string str = Degree.ToString();
             rtn = EFEM.EFEMCommand_Send("ToAngle,Aligner1," + str);
             rtnstring = rtnSplit(rtn);
@@ -2375,6 +2691,11 @@ namespace TrimGap
 
         public bool AlignerVacuum(OnOff onOff)
         {
+            if (fram.m_simulateRun != 0)
+            {
+                vacuumStatus = onOff == OnOff.On? true : false;
+                return true;
+            }
             string str = onOff.ToString();
             rtn = EFEM.EFEMCommand_Send("AlignerVacuum,Aligner1," + str, Timeout_ms.AlignerVacuum);
             rtnstring = rtnSplit(rtn);
@@ -2446,6 +2767,8 @@ namespace TrimGap
 
         public bool SignalTower(LampState lampState)
         {
+            if (fram.m_simulateRun != 0) return true;
+
             string str = lampState.ToString();
             rtn = EFEM.EFEMCommand_Send("SignalTower,IO," + str);
             rtnstring = rtnSplit(rtn);
@@ -2462,6 +2785,8 @@ namespace TrimGap
         //沒接真空未測試
         public bool GetPressureDifference(ref int pressure)
         {
+            if (fram.m_simulateRun != 0) return true;
+
             rtn = EFEM.EFEMCommand_Send("GetPressureDifference,IO");
             rtnstring = rtnSplit(rtn);
             int Pressure;
@@ -2480,6 +2805,8 @@ namespace TrimGap
 
         public bool SetFFUVoltage(double Voltage)
         {
+            if (fram.m_simulateRun != 0) return true;
+
             string str = Voltage.ToString();
             rtn = EFEM.EFEMCommand_Send("SetFFUVoltage,IO," + str);
             rtnstring = rtnSplit(rtn);
@@ -2488,6 +2815,8 @@ namespace TrimGap
 
         public bool Buzzer(BuzzerSts buzzer)
         {
+            if (fram.m_simulateRun != 0) return true;
+
             string str = buzzer.ToString();
             rtn = EFEM.EFEMCommand_Send("Buzzer,IO," + str);
             rtnstring = rtnSplit(rtn);
@@ -2788,6 +3117,8 @@ namespace TrimGap
 
         public bool SetAuto(E84_Num e84_Num)
         {
+            if (fram.m_simulateRun != 0) return true;
+
             if (!EFEM.IsInit)
             {
                 return false;

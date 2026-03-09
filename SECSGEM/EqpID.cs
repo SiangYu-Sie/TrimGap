@@ -88,8 +88,9 @@ public static class TrimGap_EqpID
 {
     // Event ID
     public const int MaterialReceived = 100;
-
     public const int MaterialRemove = 101;
+    //public const int MaterialReceived = 2104;
+    //public const int MaterialRemove = 2105;
     public const int CarrierIDRead = 1000;
     public const int CarrierIDReadFail = 1001;
     public const int AccessModeAuto = 1002;
@@ -111,9 +112,21 @@ public static class TrimGap_EqpID
     public const int LP2_CarrierMapped = 2012;
     public const int CarrierDock = 5115;
     public const int CarrierUnDock = 5116;
+    public const int CarrierLoadComplete = 5117;       // E87: Carrier Load Complete (CarrierPlaced)
+    public const int CarrierUnloadComplete = 5118;     // E87: Carrier Unload Complete (CarrierRemoved)
     public const int ProcessStart = 5999;
     public const int MeasureResultSend = 6000;
-    public const int MeasureFail = 6001;
+    public const int MeasureFail = 6100;
+    public const int MeasureStart = 6199;
+    public const int MeasureEnd = 6200;
+
+    //============20260301新增============//
+    public const int PJ_JobComplete = 74;
+    //============20260305新增============//
+    public const int WaferProcessStart = 151;         // Wafer Process Start Event (E90 STS_Processing_ProcessingToInProcess)
+    public const int WaferProcessEnd = 152;           // Wafer Process End Event   (E90 STS_Processing_InProcessToProcessingComplete)
+    public const int PJProcessedWaferCount = 4160;    // DV: PJProcessedWaferCount_CompletedNormally
+    //============20260305新增============//
 
     // EC ID
     public const int ChunkRotateDistance = 7001;
@@ -142,6 +155,15 @@ public static class TrimGap_EqpID
     public const int Reason = 2013;
     public const int Loadport1_RecipeID = 2014;
     public const int Loadport2_RecipeID = 2015;
+    public const int Loadport1_PortAssociation = 2016;
+    public const int Loadport2_PortAssociation = 2017;
+    public const int Loadport1_CarrierID = 2018;
+    public const int Loadport2_CarrierID = 2019;
+    public const int Loadport1_PortID = 2020;
+    public const int Loadport2_PortID = 2021;
+    public const int LotID = 2022;
+    public const int SubstrateID = 2023;
+    public const int Angle_Count = 2024;
     public const int SlotMap_1 = 3001;
     public const int SlotMap_2 = 3002;
     public const int SlotMap_3 = 3003;
@@ -217,6 +239,17 @@ public static class TrimGap_EqpID
     public const int Slot23_Max = 4048;
     public const int Slot24_Max = 4049;
     public const int Slot25_Max = 4050;
+    public const int MeasurementData = 4100;
+    public const int Angle1_Info = 4101;
+    public const int Angle2_Info = 4102;
+    public const int Angle3_Info = 4103;
+    public const int Angle4_Info = 4104;
+    public const int Angle5_Info = 4105;
+    public const int Angle6_Info = 4106;
+    public const int Angle7_Info = 4107;
+    public const int Angle8_Info = 4108;
+    public const int Recipe_Type = 4110;
+    public const int MeasurementMax = 4200;
 
     // Alarm ID
     public const int EQP_DDMotorError = 10001;

@@ -11,6 +11,7 @@ namespace TrimGap
     {
         public static Motion.Motion_PB motion;
         public static Motion_ETEL motion_ETEL;
+        public static Modules.ETEL modules_ETEL;
         private static bool binitial;
         private const double deg1 = 1000;
         private static int MotionType = 0; //0:SSCNET  1:ETEL
@@ -28,7 +29,7 @@ namespace TrimGap
                 MotionType = 0;
             }
             if(fram.m_MachineType == 0)
-                Axisnum = 3;
+                Axisnum = 2;
             else if(fram.m_MachineType == 1)
                 Axisnum = 2;
             else
@@ -161,6 +162,7 @@ namespace TrimGap
             if (MotionType == 1 && !VirMode)
             {
                 motion_ETEL = new Motion_ETEL();
+                modules_ETEL = new Modules.ETEL();
                 binitial = motion_ETEL.InitMotion(ParamPath, VirMode);
                 Console.WriteLine(binitial.ToString());
                 if (binitial)
@@ -210,9 +212,15 @@ namespace TrimGap
         public void SetServo(AxisNo axisNo, bool bOn)
         {
             if (MotionType == 1)
+            {
+                InitMotion(fram.m_MotionParamPath, fram.m_simulateRun != 0);
                 motion_ETEL.setServo((short)axisNo, bOn);
+            }
             else
+            {
                 motion.setServo((short)axisNo, bOn);
+            }
+                
         }
 
         public void SetHome(AxisNo axisNo)
@@ -358,6 +366,41 @@ namespace TrimGap
                     motion.resetAlarm((short)axisNo, i);
                 }
             }
+        }
+
+        public void Trigger_Parameters(AxisNo axisNo)
+        {
+            modules_ETEL.Trigger_Parameters((int)axisNo);
+        }
+
+        public void Trigger_ELtable(AxisNo axisNo)
+        {
+            modules_ETEL.Trigger_ELtable((int)axisNo);
+        }
+
+        public void Reset_All_Trigger_Parameters(AxisNo axisNo)
+        {
+            modules_ETEL.Reset_All_Trigger_Parameters((int)axisNo);
+        }
+
+        public void EnableTrigger(AxisNo axisNo)
+        {
+            modules_ETEL.EnableTrigger((int)axisNo);
+        }
+
+        public void StartProfiledMovement(AxisNo axisNo, double pos, double speed, double acc, double jerkTime, int TimeOut)
+        {
+            modules_ETEL.StartProfiledMovement((int)axisNo, pos, speed, acc, jerkTime, TimeOut);
+        }
+
+        public void DisableTrigger(AxisNo axisNo)
+        {
+            modules_ETEL.DisableTrigger((int)axisNo);
+        }
+
+        public void WaitTime(AxisNo axisNo)
+        {
+            modules_ETEL.WaitTime((int)axisNo);
         }
     }
 }

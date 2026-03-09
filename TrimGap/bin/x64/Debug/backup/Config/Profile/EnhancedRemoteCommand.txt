@@ -1,0 +1,2 @@
+//RCMD: command name,Comment
+// Command Parameter Name,DataType,Comment,Length

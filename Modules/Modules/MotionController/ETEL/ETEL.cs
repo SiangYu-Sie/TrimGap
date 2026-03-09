@@ -14,6 +14,7 @@ namespace Modules
     public class ETEL : MotionController
     {
         private List<DsaDrive> dsaDriveList = new List<DsaDrive>();
+        public List<DsaDrive> dsaDriveList2 = new List<DsaDrive>();
         private List<Axis> axes = new List<Axis>();
         private DsaMaster ultimet;
         public override IReadOnlyList<Axis> Axes => axes;
@@ -33,6 +34,7 @@ namespace Modules
                 drv.open($"etb:ULTIMET:{i}");
                 drv.resetErrorEx(0);
                 dsaDriveList.Add(drv);
+                dsaDriveList2.Add(drv);
                 axes.Add(new Axis(this, i));
             }
         }
@@ -85,6 +87,11 @@ namespace Modules
             return Sensors.RDY;
         }
 
+        public override List<DsaDrive> GetDsaDrives()
+        {
+            return dsaDriveList2;
+        }
+
         public override AxisStatus GetStatus(int axisId)
         {
             DsaStatus status = dsaDriveList[axisId].getStatusFromDrive();
@@ -113,6 +120,13 @@ namespace Modules
         {
             dsaDriveList[axisId].startProfiledMovement(position, vel.FinalVel, vel.AccelerationTime);
         }
+
+        public override List<DsaDrive> listDsaDrive()
+        {
+            return dsaDriveList2;
+        }
+
+
         public override void LinearMove(int[] axes, double[] distances, VelocityParams vel)
         {
 
@@ -169,6 +183,53 @@ namespace Modules
         }
         #endregion
 
+        public void Trigger_Parameters(int axisId)
+        {
+            dsaDriveList[axisId].setTriggerPositionType(Dsa.TRIGGER_TYPE_REAL_POSITION, Dsa.DEF_TIMEOUT);          // set K336 = Real position
+            dsaDriveList[axisId].setTriggerFdoutMask(0x01, Dsa.DEF_TIMEOUT);                                       // set C359 = 0x1 = FDOUT1
+            dsaDriveList[axisId].setTriggerPulseGeneratorFdoutMask(Dsa.TRIGGER_PG_1, 0x01, Dsa.DEF_TIMEOUT);       // set K340 PG1 = 0x1 = FDOUT1
+            dsaDriveList[axisId].setTriggerPulseGeneratorDelay(Dsa.TRIGGER_PG_1, 0.0, Dsa.DEF_TIMEOUT);            // set K342 = Pulse Generator Delay 0 sec
+            dsaDriveList[axisId].setTriggerPulseGeneratorPulseWidth(Dsa.TRIGGER_PG_1, 0.000001, Dsa.DEF_TIMEOUT);  // set K343 = Pulse width 1us
+            dsaDriveList[axisId].setTriggerPulseGeneratorInterval(Dsa.TRIGGER_PG_1, 0.000001, Dsa.DEF_TIMEOUT);  // set K344 = Pulse interval 1us
+            dsaDriveList[axisId].setTriggerPulseGeneratorNumber(Dsa.TRIGGER_PG_1, 1, Dsa.DEF_TIMEOUT);             // set K345 = Pulse count
+            dsaDriveList[axisId].getRegister(DmdData.TYP_MONITOR, 346, 0, Dsa.GET_CURRENT, Dsa.DEF_TIMEOUT);
+        }
+        public void Trigger_ELtable(int axisId)
+        {
+            dsaDriveList[axisId].setTriggerIncrementalModeEvent(0, 0.001, Dsa.TRIGGER_POSITIVE, Dsa.TRIGGER_ACTION_START_PG1, 0.000001, Dsa.DEF_TIMEOUT);
+            // EL table start from 0.001m, the delta position is 0.000001m = 1um
+            dsaDriveList[axisId].setTriggerIncrementalModeEvent(1, 0.003000, Dsa.TRIGGER_POSITIVE, Dsa.TRIGGER_ACTION_STOP_PG1, 0.0, Dsa.DEF_TIMEOUT);
+            // EL table stop at 0.003000m,
+        }
+        public void Reset_All_Trigger_Parameters(int axisId)
+        {
+            dsaDriveList[axisId].setTriggerFdoutMask(0, Dsa.DEF_TIMEOUT);                                     // Reset C359 
+            dsaDriveList[axisId].setTriggerPulseGeneratorFdoutMask(Dsa.TRIGGER_PG_1, 0, Dsa.DEF_TIMEOUT);     // Reset K340 
+            dsaDriveList[axisId].setTriggerPulseGeneratorPulseWidth(Dsa.TRIGGER_PG_1, 0, Dsa.DEF_TIMEOUT);    // Reset K343
+            dsaDriveList[axisId].setTriggerPulseGeneratorInterval(Dsa.TRIGGER_PG_1, 0, Dsa.DEF_TIMEOUT);      // Reset K344
+            dsaDriveList[axisId].setTriggerPulseGeneratorNumber(Dsa.TRIGGER_PG_1, 0, Dsa.DEF_TIMEOUT);        // Reset K345
+
+        }
+
+        public void EnableTrigger(int axisId)
+        {
+            dsaDriveList[axisId].enableTrigger(Dsa.TRIGGER_NOT_MOVING, 0, 2, false, Dsa.DEF_TIMEOUT);
+        }
+
+        public void StartProfiledMovement(int axisId, double pos, double speed, double acc, double jerkTime, int TimeOut)
+        {
+            dsaDriveList[axisId].startProfiledMovement(pos, speed, acc, jerkTime, TimeOut); // dsaDriveList[axisId] move to 6mm
+        }
+
+        public void DisableTrigger(int axisId)
+        {
+            dsaDriveList[axisId].disableTrigger(Dsa.TRIGGER_NOT_MOVING, false, 30000);
+        }
+
+        public void WaitTime(int axisId)
+        {
+            dsaDriveList[axisId].waitTime(2.0, 3500);
+        }
 
 
 

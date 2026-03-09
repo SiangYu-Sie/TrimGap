@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30406.217
+# Visual Studio Version 18
+VisualStudioVersion = 18.3.11512.155 d18.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrimGap", "TrimGap\TrimGap.csproj", "{0D5535D1-9E27-477E-A719-74AAB58F42D3}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleFormDiaGemLib_Equipment", "DIASECSGEM300\SampleFormDiaGemLib_Equipment.csproj", "{162D4499-23E8-44B8-B9F2-468C4F17CF0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LJX8000A", "LJX8000A\LJX8000A.csproj", "{9F003F7D-BD90-489F-936F-0F0B6443D21F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gem300Monitor", "Gem300Monitor\Gem300Monitor.csproj", "{707C0E80-4AFA-0359-1972-6F352465DA67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,6 +139,18 @@ Global
 		{9F003F7D-BD90-489F-936F-0F0B6443D21F}.Release|x64.Build.0 = Release|x64
 		{9F003F7D-BD90-489F-936F-0F0B6443D21F}.Release|x86.ActiveCfg = Release|Any CPU
 		{9F003F7D-BD90-489F-936F-0F0B6443D21F}.Release|x86.Build.0 = Release|Any CPU
+		{707C0E80-4AFA-0359-1972-6F352465DA67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{707C0E80-4AFA-0359-1972-6F352465DA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{707C0E80-4AFA-0359-1972-6F352465DA67}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{707C0E80-4AFA-0359-1972-6F352465DA67}.Debug|x64.Build.0 = Debug|Any CPU
+		{707C0E80-4AFA-0359-1972-6F352465DA67}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{707C0E80-4AFA-0359-1972-6F352465DA67}.Debug|x86.Build.0 = Debug|Any CPU
+		{707C0E80-4AFA-0359-1972-6F352465DA67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{707C0E80-4AFA-0359-1972-6F352465DA67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{707C0E80-4AFA-0359-1972-6F352465DA67}.Release|x64.ActiveCfg = Release|Any CPU
+		{707C0E80-4AFA-0359-1972-6F352465DA67}.Release|x64.Build.0 = Release|Any CPU
+		{707C0E80-4AFA-0359-1972-6F352465DA67}.Release|x86.ActiveCfg = Release|Any CPU
+		{707C0E80-4AFA-0359-1972-6F352465DA67}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

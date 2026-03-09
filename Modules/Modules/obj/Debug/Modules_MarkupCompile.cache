@@ -4,16 +4,16 @@
 library
 C#
 .cs
-D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20240205\TrimGap_1\Modules\Modules\obj\Debug\
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Modules\Modules\obj\Debug\
 Modules
 none
 false
 DEBUG;TRACE
 
-8-340662530
-61141219437
-32-95803382
-45-609672473
+8-1405177146
+6-265298852
+32633003560
+452086481028
 AxisSetting\AxisSetting.xaml;AxisSetting\AxisSettingControl.xaml;SignInControl\SignInWindow.xaml;SignInControl\UserAddWindow.xaml;SignInControl\UserEditWindow.xaml;SignInControl\UserLogWindow.xaml;SignInControl\UserManagerWindow.xaml;SignInControl\UserRightsControl.xaml;
 
 False

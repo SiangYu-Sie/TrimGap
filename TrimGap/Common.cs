@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Diagnostics;
 
+
 namespace TrimGap
 {
     internal class Common
@@ -39,6 +40,8 @@ namespace TrimGap
         public static LightController.Form1 LightCtrlForm;
         //public static ActUtlType64Lib.ActUtlType64Class actUtlType = new ActUtlType64Lib.ActUtlType64Class();
         public static PT.SingleChannel PTForm;
+        public static PT.SingleChannel PTForm2;
+
 
         static public void InitAll()
         {
@@ -49,7 +52,7 @@ namespace TrimGap
             {
                 fram.m_MotionType = 0;   // 0:SSC, 1:ETEL
                 fram.m_Hardware_LJ = 1;  // 0:None 1:all type
-                fram.m_Hardware_PT = 1;  // 0:None 1:all type
+                fram.m_Hardware_PT = 0;  // 0:None 1:all type
                 fram.m_Hardware_HTW = 0;  // 0:None 1:all type
                 fram.m_Hardware_SF3 = 0; // 0:None 1:all type
                 fram.m_WaferStageType = 0; // 0:平坦台面+氣缸頂升  1:凹槽台面+牙叉抬升
@@ -57,9 +60,9 @@ namespace TrimGap
             }
             else if (fram.m_MachineType == 1) // N2
             {
-                fram.m_MotionType = 1;   // 0:SSC, 1:ETEL
+                fram.m_MotionType = fram.m_simulateRun == 0 ? 1 : 0;   // 0:SSC, 1:ETEL
                 fram.m_Hardware_LJ = 1;  // 0:None 1:all type
-                fram.m_Hardware_PT = 0;  // 0:None 1:all type
+                fram.m_Hardware_PT = 1;  // 0:None 1:all type
                 fram.m_Hardware_HTW = 0;  // 0:None 1:all type
                 fram.m_Hardware_SF3 = 1; // 0:None 1:all type
                 fram.m_WaferStageType = 1; // 0:平坦台面+氣缸頂升  1:凹槽台面+牙叉抬升
@@ -67,7 +70,7 @@ namespace TrimGap
             }
             else if (fram.m_MachineType == 2) //AP6II
             {
-                fram.m_MotionType = 1;   // 0:SSC, 1:ETEL
+                fram.m_MotionType = fram.m_simulateRun == 0 ? 1 : 0;   // 0:SSC, 1:ETEL
                 fram.m_Hardware_LJ = 1;  // 0:None 1:all type
                 fram.m_Hardware_PT = 0;  // 0:None 1:all type
                 fram.m_Hardware_HTW = 1;  // 0:None 1:all type
@@ -85,6 +88,7 @@ namespace TrimGap
                 fram.m_WaferStageType = 1; // 0:平坦台面+氣缸頂升  1:凹槽台面+牙叉抬升
                 fram.m_Hardware_CCD = 0; // 0:None 1:藍膜Z向拍照 2:藍膜Z向拍照+wafer正向記錄拍照
             }
+            fram.m_Hardware_PT_PLC = 0;  //PT_PLC開關
             FileVersionInfo info = FileVersionInfo.GetVersionInfo("PMLcmpDll.dll");
             sram.AnalysisVersion = info.FileMajorPart + "." + info.FileMinorPart + "." + info.FileBuildPart;
             info = FileVersionInfo.GetVersionInfo("TrimGap.exe");
@@ -93,17 +97,26 @@ namespace TrimGap
             InitKeyence();
             InitIO();
             InitMotion(fram.m_MotionType);
-            InitMatlab();
-            InitEFEM(fram.m_MachineType);
             SecsgemForm = new SecsGemInterface(fram.m_SecsgemType);
             SecsgemForm.InitSecs();
+            InitMatlab();
+            InitEFEM(fram.m_MachineType);
             SECSListening.InitSECSListening();
             InitAutoRun(fram.m_MachineType);
             InitSF3(fram.m_Hardware_SF3);
             InitCCD(fram.m_Hardware_CCD);
-            InitPT(fram.m_Hardware_PT+ fram.m_Hardware_HTW*2);
+            if(fram.m_MachineType == 0)
+                InitPT(fram.m_Hardware_PT + fram.m_Hardware_HTW * 2 + fram.m_Hardware_PT_PLC * 4);
+            else
+                InitPT(fram.m_Hardware_PT + fram.m_Hardware_HTW * 2);
 
-
+            if (fram.m_simulateRun == 0)
+            {
+                //x = Mo.motion_ETEL.listDsaDrive[1];
+                //Trigger_Parameters();
+                //Trigger_ELtable();
+                //Common.PTForm.StartTrigger_N2();
+            }
         }
 
         static public void Close()
@@ -274,8 +287,8 @@ namespace TrimGap
             chart.ChartAreas[0].AxisX.Minimum = 0;            //設定X軸最小值
             chart.ChartAreas[0].AxisX.Interval = 1000;// chart.ChartAreas[0].AxisX.Maximum / 10; //設定X軸間隔 最大值/10
 
-            chart.ChartAreas[0].AxisY.Maximum = 10;  //設定Y軸最大值
-            chart.ChartAreas[0].AxisY.Minimum = -100; //設定Y軸最小值
+            chart.ChartAreas[0].AxisY.Maximum = 100;  //設定Y軸最大值
+            chart.ChartAreas[0].AxisY.Minimum = 10; //設定Y軸最小值
             chart.ChartAreas[0].AxisY.Interval = 10;
             //(chart.ChartAreas[0].AxisY.Maximum - chart.ChartAreas[0].AxisY.Minimum) / 10; //設定Y軸間隔 最大值
 
@@ -301,7 +314,7 @@ namespace TrimGap
 
         static private void InitKeyence()
         {
-            if(fram.S_SensorConnectType == 0)
+            if (fram.S_SensorConnectType == 0)
             {
                 LJ8020_FTP = new KEYENCE_LJ.FTP(fram.LJ_ipaddress_FTP, fram.LJ_User_FTP, fram.LJ_Password_FTP);
                 if (!LJ.LJtestMode)
@@ -309,10 +322,10 @@ namespace TrimGap
                     LJ8020_Client = new KEYENCE_LJ.Client2(fram.LJ_ipaddress_Controller, fram.LJ_portNo_Controller, 1000);
                 }
             }
-            else if(fram.S_SensorConnectType == 1)
+            else if (fram.S_SensorConnectType == 1)
             {
                 LJX8000A = new LJX8000A.LJX8000A(fram.LJ_ipaddress_Controller);
-                if(fram.m_simulateRun == 0)
+                if (fram.m_simulateRun == 0)
                     LJX8000A.Connect();
             }
 
@@ -375,14 +388,27 @@ namespace TrimGap
         {
             if (type > 0)
             {
-                PTForm = new PT.SingleChannel(fram.m_simulateRun, type);
+                PTForm = new PT.SingleChannel(fram.m_simulateRun, type);  //0:None 1: PT  2:HTW  4:PLC  5:PT+PLC
                 PTForm.Show();
                 PTForm.Hide();
-                if(fram.m_simulateRun == 0)
+
+                PTForm2 = new PT.SingleChannel(fram.m_simulateRun, type);  //0:None 1: PT  2:HTW  4:PLC  5:PT+PLC
+                PTForm2.Show();
+                PTForm2.Hide();
+
+                if (fram.m_simulateRun == 0 && (type & 3) > 0)
                 {
                     try
                     {
-                        Common.PTForm.OpenConnection();
+                        //if(type == 2)
+                            Common.PTForm.OpenConnection();
+                            Common.PTForm2.OpenConnection("192.168.170.5"); //IP 之後確定再改
+                        //else
+                        //{
+                        //    int[] a = { 256, 264, 272 };
+                        //    Common.PTForm.OpenConnection(a);
+                        //}
+
                     }
                     catch (Exception ee)
                     {
@@ -723,9 +749,16 @@ namespace TrimGap
             sram.Recipe.OffsetType = fram.Recipe.OffsetType;
             if (fram.m_Hardware_SF3 > 0)
             {
-                //sram.Recipe.TTVrotatePosition = frmTTVScan
+                //================ 20250627 補 ===================
+                sram.Recipe.MotionPatternName = fram.Recipe.MotionPatternName;
+                sram.Recipe.MotionPatternPath = fram.Recipe.MotionPatternPath;
+                sram.Recipe.SF3_ID = fram.Recipe.SF3_ID;
+                sram.Recipe.SF3_Name = fram.Recipe.SF3_Name;
+                sram.Recipe.TTVrotatePosition = fram.Recipe.TTVrotatePosition;
+                sram.Recipe.TTVshiftPosition = fram.Recipe.TTVshiftPosition;
             }
             sram.Recipe.WaferEdgeEvaluate = fram.Recipe.WaferEdgeEvaluate;
+            sram.Recipe.Analysis_method = fram.Recipe.Analysis_method;
             sram.Recipe.BlueTapeThreshold = fram.Recipe.BlueTapeThreshold;
             sram.Recipe.Step1_Range_step1x0 = fram.Recipe.Step1_Range_step1x0;
             sram.Recipe.Step1_Range_step1x1 = fram.Recipe.Step1_Range_step1x1;
@@ -740,7 +773,29 @@ namespace TrimGap
             sram.Recipe.RecordCCD_Angle_Start = fram.Recipe.RecordCCD_Angle_Start;
             sram.Recipe.RecordCCD_Angle_End = fram.Recipe.RecordCCD_Angle_End;
             sram.Recipe.RecordCCD_Angle_Pitch = fram.Recipe.RecordCCD_Angle_Pitch;
-    }
+
+            //================ 20240628 係數 ===================
+            sram.Recipe.H1 = fram.Recipe.H1;
+            sram.Recipe.H2 = fram.Recipe.H2;
+            sram.Recipe.W1 = fram.Recipe.W1;
+            sram.Recipe.W2 = fram.Recipe.W2;
+
+            //================ 20250627 補 ===================
+            sram.Recipe.RecordAfterMeasure = fram.Recipe.RecordAfterMeasure;
+            sram.Recipe.LJ_Flat = fram.Recipe.LJ_Flat;
+            sram.Recipe.RD_LJ = fram.Recipe.RD_LJ;
+
+            //====================== 20250815 Limit ============================
+            sram.Recipe.LimitMethod = fram.Recipe.LimitMethod;
+            sram.Recipe.H1_LowerLimit = fram.Recipe.H1_LowerLimit;
+            sram.Recipe.H2_LowerLimit = fram.Recipe.H2_LowerLimit;
+            sram.Recipe.W1_LowerLimit = fram.Recipe.W1_LowerLimit;
+            sram.Recipe.W2_LowerLimit = fram.Recipe.W2_LowerLimit;
+            sram.Recipe.H1_UpperLimit = fram.Recipe.H1_UpperLimit;
+            sram.Recipe.H2_UpperLimit = fram.Recipe.H2_UpperLimit;
+            sram.Recipe.W1_UpperLimit = fram.Recipe.W1_UpperLimit;
+            sram.Recipe.W2_UpperLimit = fram.Recipe.W2_UpperLimit;
+        }
 
         static public void InitEFEM(int machineType)
         {
@@ -802,6 +857,34 @@ namespace TrimGap
             System.Reflection.FieldInfo fi = value.GetType().GetField(value.ToString());
             DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
             return attributes.Length > 0 ? attributes[0].Description : value.ToString();
+        }
+
+        private static void Trigger_Parameters()
+        {
+            //x.setTriggerPositionType(Dsa.TRIGGER_TYPE_REAL_POSITION, Dsa.DEF_TIMEOUT);          // set K336 = Real position
+            //x.setTriggerFdoutMask(0x01, Dsa.DEF_TIMEOUT);                                       // set C359 = 0x1 = FDOUT1
+            //x.setTriggerPulseGeneratorFdoutMask(Dsa.TRIGGER_PG_1, 0x01, Dsa.DEF_TIMEOUT);       // set K340 PG1 = 0x1 = FDOUT1
+            //x.setTriggerPulseGeneratorDelay(Dsa.TRIGGER_PG_1, 0.0, Dsa.DEF_TIMEOUT);            // set K342 = Pulse Generator Delay 0 sec
+            //x.setTriggerPulseGeneratorPulseWidth(Dsa.TRIGGER_PG_1, 0.000001, Dsa.DEF_TIMEOUT);  // set K343 = Pulse width 1us
+            //x.setTriggerPulseGeneratorInterval(Dsa.TRIGGER_PG_1, 0.000001, Dsa.DEF_TIMEOUT);  // set K344 = Pulse interval 1us
+            //x.setTriggerPulseGeneratorNumber(Dsa.TRIGGER_PG_1, 1, Dsa.DEF_TIMEOUT);             // set K345 = Pulse count
+
+        }
+        private static void Trigger_ELtable()
+        {
+            //x.setTriggerIncrementalModeEvent(0, 0.001, Dsa.TRIGGER_POSITIVE, Dsa.TRIGGER_ACTION_START_PG1, 0.000001, Dsa.DEF_TIMEOUT);
+            //// EL table start from 0.001m, the delta position is 0.000001m = 1um
+            //x.setTriggerIncrementalModeEvent(1, 0.003000, Dsa.TRIGGER_POSITIVE, Dsa.TRIGGER_ACTION_STOP_PG1, 0.0, Dsa.DEF_TIMEOUT);
+            //// EL table stop at 0.003000m,
+        }
+        private static void Reset_All_Trigger_Parameters()
+        {
+            //x.setTriggerFdoutMask(0, Dsa.DEF_TIMEOUT);                                     // Reset C359 
+            //x.setTriggerPulseGeneratorFdoutMask(Dsa.TRIGGER_PG_1, 0, Dsa.DEF_TIMEOUT);     // Reset K340 
+            //x.setTriggerPulseGeneratorPulseWidth(Dsa.TRIGGER_PG_1, 0, Dsa.DEF_TIMEOUT);    // Reset K343
+            //x.setTriggerPulseGeneratorInterval(Dsa.TRIGGER_PG_1, 0, Dsa.DEF_TIMEOUT);      // Reset K344
+            //x.setTriggerPulseGeneratorNumber(Dsa.TRIGGER_PG_1, 0, Dsa.DEF_TIMEOUT);        // Reset K345
+
         }
 
         public class LJ
@@ -1042,6 +1125,34 @@ namespace TrimGap
                 data = LJ8020_FTP.GetFileSize(Path, CsvName);
                 FileSize = data;
                 return data;
+            }
+
+            public static void Trigger_Parameters()
+            {
+                //dsa[0].setTriggerPositionType(Dsa.TRIGGER_TYPE_REAL_POSITION, Dsa.DEF_TIMEOUT);          // set K336 = Real position
+                //dsa[0].setTriggerFdoutMask(0x01, Dsa.DEF_TIMEOUT);                                       // set C359 = 0x1 = FDOUT1
+                //dsa[0].setTriggerPulseGeneratorFdoutMask(Dsa.TRIGGER_PG_1, 0x01, Dsa.DEF_TIMEOUT);       // set K340 PG1 = 0x1 = FDOUT1
+                //dsa[0].setTriggerPulseGeneratorDelay(Dsa.TRIGGER_PG_1, 0.0, Dsa.DEF_TIMEOUT);            // set K342 = Pulse Generator Delay 0 sec
+                //dsa[0].setTriggerPulseGeneratorPulseWidth(Dsa.TRIGGER_PG_1, 0.000001, Dsa.DEF_TIMEOUT);  // set K343 = Pulse width 1us
+                //dsa[0].setTriggerPulseGeneratorInterval(Dsa.TRIGGER_PG_1, 0.000001, Dsa.DEF_TIMEOUT);  // set K344 = Pulse interval 1us
+                //dsa[0].setTriggerPulseGeneratorNumber(Dsa.TRIGGER_PG_1, 1, Dsa.DEF_TIMEOUT);             // set K345 = Pulse count
+
+            }
+            public static void Trigger_ELtable()
+            {
+                //dsa[0].setTriggerIncrementalModeEvent(0, 0.001, Dsa.TRIGGER_POSITIVE, Dsa.TRIGGER_ACTION_START_PG1, 0.000001, Dsa.DEF_TIMEOUT);
+                //// EL table start from 0.001m, the delta position is 0.000001m = 1um
+                //dsa[0].setTriggerIncrementalModeEvent(1, 0.003000, Dsa.TRIGGER_POSITIVE, Dsa.TRIGGER_ACTION_STOP_PG1, 0.0, Dsa.DEF_TIMEOUT);
+                //// EL table stop at 0.003000m,
+            }
+            public static void Reset_All_Trigger_Parameters()
+            {
+                //dsa[0].setTriggerFdoutMask(0, Dsa.DEF_TIMEOUT);                                     // Reset C359 
+                //dsa[0].setTriggerPulseGeneratorFdoutMask(Dsa.TRIGGER_PG_1, 0, Dsa.DEF_TIMEOUT);     // Reset K340 
+                //dsa[0].setTriggerPulseGeneratorPulseWidth(Dsa.TRIGGER_PG_1, 0, Dsa.DEF_TIMEOUT);    // Reset K343
+                //dsa[0].setTriggerPulseGeneratorInterval(Dsa.TRIGGER_PG_1, 0, Dsa.DEF_TIMEOUT);      // Reset K344
+                //dsa[0].setTriggerPulseGeneratorNumber(Dsa.TRIGGER_PG_1, 0, Dsa.DEF_TIMEOUT);        // Reset K345
+
             }
         }
     }

@@ -1,0 +1,20 @@
+//Name,ID,DataType,MinValue,MaxValue,DefaultValue,Unit,Remark,SystemID
+SYS_INIT_COMM_STATE,71,UINT_1,0,1,0,,Initial Communication States (0:Disable; 1:Enable),71
+SYS_INIT_CONTROL_STATE,72,UINT_1,1,2,1,,Initial Control State (1:OffLine; 2:OnLine),72
+SYS_ESTAB_COMM_DELAY,73,UINT_2,1,10000,5,Sec,Interval between attempts to send S1F13 when establishing communications,73
+SYS_OFF_LINE_SUBSTATE,74,UINT_1,1,3,1,,The default entry of offline substate (1:EquipmentOffLine; 3:HostOffLine),74
+SYS_ON_LINE_FAILED,75,UINT_1,1,3,1,,The default offline substate when attempt online fails by a communication failure (1:EquipmentOffLine; 3:HostOffLine),75
+SYS_ON_LINE_SUBSTATE,76,UINT_1,4,5,4,,The default entry of online substate (4:OnlineLocal / 5:OnlineRemote),76
+SYS_CONFIG_SPOOL,77,BOOLEAN,FALSE,TRUE,FALSE,,Spool function switch(FALSE:Disable; TRUE:Enable),77
+SYS_MAX_SPOOL_TRANSMIT,78,UINT_4,0,10000,100,,The maximum transmitting messages from the spool in response to an S6F23(Transmit Spooled Messages) request. (0:no maximum limit),78
+SYS_OVER_WRITE_SPOOL,79,BOOLEAN,FALSE,TRUE,FALSE,,Indicate to the equipment either to overwrite data in the spool area (TRUE:Overwrite; FALSE:Do not overwrite),79
+SYS_TIME_FORMAT,80,UINT_1,0,3,1,,(SV)Clock Format (0:12-bytes; 1:16-bytes; 2:14-bytes; 3:ISO8601 format),80
+SYS_ONE_HANDLE_MAIN_QUEUE_COUNT,81,UINT_1,5,20,10,,SECSGEM One Handle Main Queue Count,81
+SYS_ONE_HANDLE_SPOOL_QUEUE_COUNT,82,UINT_1,5,20,5,,SECSGEM One Handle Spool Queue Count,82
+SYS_LOG_LEVEL,83,UINT_1,0,4,2,,Debug Out Log Level(0:Trace; 1:Debug; 2:Info; 3:Warn; 4:Error),83
+SYS_HOST_ROLE_AUTO_SEND_COMM,84,BOOLEAN,FALSE,TRUE,TRUE,,(Only SECSGEM Host Role Use) Auto Send S1F13(FALSE:Disable; TRUE:Enable),84
+SYS_EQP_ROLE_AUTO_SEND_COMM,85,BOOLEAN,FALSE,TRUE,TRUE,,(Only SECSGEM Eqp Role Use) Auto Send S1F13(FALSE:Disable; TRUE:Enable),85
+SYS_INIT_SECS_DRIVER_CONNECT_STATES,86,UINT_1,0,1,0,,Initial SECS Driver Connect State (0:Stop; 1:Start),86
+PJ_PRMAXJOBSPACE,171,UINT_2,0,65535,100,,(E40-PM) Specifies maximum space for Process Jobs.(Set by AP),171
+CJ_SETUPNAME,271,ASCII,,,unknown,,(E94-CJM) Host sets this to define the operational condition of the equipment. If the equipment is manipulated locally it should set this variable to unknown otherwise it returns the value set by the host (when requested).(Set by AP),271
+CJ_CTRLMAXJOBSPACE,272,UINT_2,0,65535,100,,(E94-CJM) Specifies maximum space for Control Jobs.(Set by AP),272

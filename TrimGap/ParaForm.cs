@@ -57,6 +57,8 @@ namespace TrimGap
             cb_Offset.Items.Add("QC_Angle6");
             cb_Offset.Items.Add("QC_Angle7");
             cb_Offset.Items.Add("QC_Angle8");
+            cb_Offset.Items.Add("Trim0");        //11
+            cb_Offset.Items.Add("F2F");          //12
             cb_Offset.SelectedIndex = 0;
         }
 
@@ -96,8 +98,36 @@ namespace TrimGap
             tb_BlueTapeW.Text = fram.Analysis.OffsetBlueTapeW.ToString();
             tb_EDGE_1StepW.Text = fram.Analysis.Offset_EDGE_1StepW.ToString();
             tb_EDGE_2StepW1.Text = fram.Analysis.Offset_EDGE_2StepW1.ToString();
+            tb_EDGE_2StepW2.Text = fram.Analysis.Offset_EDGE_2StepW2.ToString();
 
             tb_Analysis_HTW_StandardPlane.Text = fram.Analysis.HTW_StandardPlane.ToString();
+            tb_Analysis_HTW_W2EdgeThreshold.Text = fram.Analysis.HTW_W2EdgeThreshold.ToString();
+            tb_Analysis_HTW_H0FromTilt.Text = fram.Analysis.HTW_H0FromTilt.ToString();
+            tb_Analysis_HTW_HistogramRange.Text = fram.Analysis.HTW_HistogramRange.ToString();
+            tb_Analysis_HTW_SearchMaxDiff.Text = fram.Analysis.HTW_TrimSearchMaxDifference.ToString();
+            tb_Analysis_HTW_GroupPoints.Text = fram.Analysis.HTW_GroupPoints.ToString();
+            tb_Analysis_HTW_TrimToIntensityShift.Text = fram.Analysis.HTW_TrimToIntensityShift.ToString();
+
+            tb_Analysis_Use_Leveling.Text = fram.Analysis.Use_Leveling.ToString();
+            tb_Analysis_nZone.Text = fram.Analysis.nZone.ToString();
+            tb_Analysis_Use_Intensity.Text = fram.Analysis.Use_Intensity.ToString();
+            tb_Analysis_W2_LJ_Replace_HTW.Text = fram.Analysis.W2_LJ_Replace_HTW.ToString();
+
+            //20250102 修改 - LJ、HTW量測次數
+            tb_LJ_Measure_Count.Text = fram.Analysis.LJ_Measure_Count.ToString();
+            tb_HTW_Measure_Count.Text = fram.Analysis.HTW_Measure_Count.ToString();
+            tb_PT_Measure_Count.Text = fram.Analysis.PT_Measure_Count.ToString();
+
+            //20250407 RD_OFFSET
+            tb_RD_H.Text = fram.Analysis.Offset_RD_H.ToString();
+            tb_RD_W.Text = fram.Analysis.Offset_RD_W.ToString();
+
+            //20250418 PT_2
+            tb_PT_2.Text = fram.Analysis.PT_2.ToString();
+            tb_PT_2_X.Text = fram.Analysis.PT_2_X.ToString();
+            tb_PT_2_Z_Offset.Text = fram.Analysis.PT_2_Z_Offset.ToString();
+
+
         }
 
         private void btnParamSave_Click(object sender, EventArgs e)
@@ -356,6 +386,14 @@ namespace TrimGap
                                 fram.Analysis.Offset.Inline_1StepW = fram.Analysis.Offset1StepW;
                                 break;
 
+                            case 11:
+                                fram.Analysis.Offset.Trim0_1StepW = fram.Analysis.Offset1StepW;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_1StepW = fram.Analysis.Offset1StepW;
+                                break;
+
                             default:
                                 fram.Analysis.Offset.QC_1StepW[cb_Offset.SelectedIndex - 3] = fram.Analysis.Offset1StepW;
                                 break;
@@ -386,6 +424,14 @@ namespace TrimGap
 
                             case 2:
                                 fram.Analysis.Offset.Inline_1StepH = fram.Analysis.Offset1StepH;
+                                break;
+
+                            case 11:
+                                fram.Analysis.Offset.Trim0_1StepH = fram.Analysis.Offset1StepH;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_1StepH = fram.Analysis.Offset1StepH;
                                 break;
 
                             default:
@@ -420,6 +466,14 @@ namespace TrimGap
                                 fram.Analysis.Offset.Inline_2StepW1 = fram.Analysis.Offset2StepW1;
                                 break;
 
+                            case 11:
+                                fram.Analysis.Offset.Trim0_2StepW1 = fram.Analysis.Offset2StepW1;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_2StepW1 = fram.Analysis.Offset2StepW1;
+                                break;
+
                             default:
                                 fram.Analysis.Offset.QC_2StepW1[cb_Offset.SelectedIndex - 3] = fram.Analysis.Offset2StepW1;
                                 break;
@@ -450,6 +504,14 @@ namespace TrimGap
 
                             case 2:
                                 fram.Analysis.Offset.Inline_2StepH1 = fram.Analysis.Offset2StepH1;
+                                break;
+
+                            case 11:
+                                fram.Analysis.Offset.Trim0_2StepH1 = fram.Analysis.Offset2StepH1;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_2StepH1 = fram.Analysis.Offset2StepH1;
                                 break;
 
                             default:
@@ -484,6 +546,14 @@ namespace TrimGap
                                 fram.Analysis.Offset.Inline_2StepW2 = fram.Analysis.Offset2StepW2;
                                 break;
 
+                            case 11:
+                                fram.Analysis.Offset.Trim0_2StepW2 = fram.Analysis.Offset2StepW2;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_2StepW2 = fram.Analysis.Offset2StepW2;
+                                break;
+
                             default:
                                 fram.Analysis.Offset.QC_2StepW2[cb_Offset.SelectedIndex - 3] = fram.Analysis.Offset2StepW2;
                                 break;
@@ -514,6 +584,14 @@ namespace TrimGap
 
                             case 2:
                                 fram.Analysis.Offset.Inline_2StepH2 = fram.Analysis.Offset2StepH2;
+                                break;
+
+                            case 11:
+                                fram.Analysis.Offset.Trim0_2StepH2 = fram.Analysis.Offset2StepH2;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_2StepH2 = fram.Analysis.Offset2StepH2;
                                 break;
 
                             default:
@@ -548,6 +626,14 @@ namespace TrimGap
                                 fram.Analysis.Offset.Inline_PT_1StepW = fram.Analysis.Offset_PT_1StepW;
                                 break;
 
+                            case 11:
+                                fram.Analysis.Offset.Trim0_PT_1StepW = fram.Analysis.Offset_PT_1StepW;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_PT_1StepW = fram.Analysis.Offset_PT_1StepW;
+                                break;
+
                             default:
                                 fram.Analysis.Offset.QC_PT_1StepW[cb_Offset.SelectedIndex - 3] = fram.Analysis.Offset_PT_1StepW;
                                 break;
@@ -578,6 +664,14 @@ namespace TrimGap
 
                             case 2:
                                 fram.Analysis.Offset.Inline_PT_1StepH = fram.Analysis.Offset_PT_1StepH;
+                                break;
+
+                            case 11:
+                                fram.Analysis.Offset.Trim0_PT_1StepH = fram.Analysis.Offset_PT_1StepH;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_PT_1StepH = fram.Analysis.Offset_PT_1StepH;
                                 break;
 
                             default:
@@ -612,6 +706,14 @@ namespace TrimGap
                                 fram.Analysis.Offset.Inline_PT_2StepW1 = fram.Analysis.Offset_PT_2StepW1;
                                 break;
 
+                            case 11:
+                                fram.Analysis.Offset.Trim0_PT_2StepW1 = fram.Analysis.Offset_PT_2StepW1;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_PT_2StepW1 = fram.Analysis.Offset_PT_2StepW1;
+                                break;
+
                             default:
                                 fram.Analysis.Offset.QC_PT_2StepW1[cb_Offset.SelectedIndex - 3] = fram.Analysis.Offset_PT_2StepW1;
                                 break;
@@ -642,6 +744,14 @@ namespace TrimGap
 
                             case 2:
                                 fram.Analysis.Offset.Inline_PT_2StepH1 = fram.Analysis.Offset_PT_2StepH1;
+                                break;
+
+                            case 11:
+                                fram.Analysis.Offset.Trim0_PT_2StepH1 = fram.Analysis.Offset_PT_2StepH1;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_PT_2StepH1 = fram.Analysis.Offset_PT_2StepH1;
                                 break;
 
                             default:
@@ -676,6 +786,14 @@ namespace TrimGap
                                 fram.Analysis.Offset.Inline_PT_2StepW2 = fram.Analysis.Offset_PT_2StepW2;
                                 break;
 
+                            case 11:
+                                fram.Analysis.Offset.Trim0_PT_2StepW2 = fram.Analysis.Offset_PT_2StepW2;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_PT_2StepW2 = fram.Analysis.Offset_PT_2StepW2;
+                                break;
+
                             default:
                                 fram.Analysis.Offset.QC_PT_2StepW2[cb_Offset.SelectedIndex - 3] = fram.Analysis.Offset_PT_2StepW2;
                                 break;
@@ -706,6 +824,14 @@ namespace TrimGap
 
                             case 2:
                                 fram.Analysis.Offset.Inline_PT_2StepH2 = fram.Analysis.Offset_PT_2StepH2;
+                                break;
+
+                            case 11:
+                                fram.Analysis.Offset.Trim0_PT_2StepH2 = fram.Analysis.Offset_PT_2StepH2;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_PT_2StepH2 = fram.Analysis.Offset_PT_2StepH2;
                                 break;
 
                             default:
@@ -740,6 +866,14 @@ namespace TrimGap
                                 fram.Analysis.Offset.Inline_BlueTapeW = fram.Analysis.OffsetBlueTapeW;
                                 break;
 
+                            case 11:
+                                fram.Analysis.Offset.Trim0_BlueTapeW = fram.Analysis.OffsetBlueTapeW;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_BlueTapeW = fram.Analysis.OffsetBlueTapeW;
+                                break;
+
                             default:
                                 fram.Analysis.Offset.QC_BlueTapeW[cb_Offset.SelectedIndex - 3] = fram.Analysis.OffsetBlueTapeW;
                                 break;
@@ -770,6 +904,14 @@ namespace TrimGap
 
                             case 2:
                                 fram.Analysis.Offset.Inline_EDGE_1StepW = fram.Analysis.Offset_EDGE_1StepW;
+                                break;
+
+                            case 11:
+                                fram.Analysis.Offset.Trim0_EDGE_1StepW = fram.Analysis.Offset_EDGE_1StepW;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_EDGE_1StepW = fram.Analysis.Offset_EDGE_1StepW;
                                 break;
 
                             default:
@@ -804,8 +946,56 @@ namespace TrimGap
                                 fram.Analysis.Offset.Inline_EDGE_2StepW1 = fram.Analysis.Offset_EDGE_2StepW1;
                                 break;
 
+                            case 11:
+                                fram.Analysis.Offset.Trim0_EDGE_2StepW1 = fram.Analysis.Offset_EDGE_2StepW1;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_EDGE_2StepW1 = fram.Analysis.Offset_EDGE_2StepW1;
+                                break;
+
                             default:
                                 fram.Analysis.Offset.QC_EDGE_2StepW1[cb_Offset.SelectedIndex - 3] = fram.Analysis.Offset_EDGE_2StepW1;
+                                break;
+                        }
+                    }
+                }
+
+                if (tb_EDGE_2StepW2_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_EDGE_2StepW2_copy.Text, pattern))
+                    {
+                        MessageBox.Show("Offset EDGE 2 Step W2" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, cb_Offset.SelectedText + " PT W1 " + fram.Analysis.Offset_EDGE_2StepW2 + "->" + tb_EDGE_2StepW2_copy.Text);
+                        tb_EDGE_2StepW2.Text = tb_EDGE_2StepW2_copy.Text;
+                        fram.Analysis.Offset_EDGE_2StepW2 = Convert.ToDouble(tb_EDGE_2StepW2_copy.Text);
+                        switch (cb_Offset.SelectedIndex)
+                        {
+                            case 0:
+
+                                break;
+
+                            case 1:
+                                fram.Analysis.Offset.Offline_EDGE_2StepW2 = fram.Analysis.Offset_EDGE_2StepW2;
+                                break;
+
+                            case 2:
+                                fram.Analysis.Offset.Inline_EDGE_2StepW2 = fram.Analysis.Offset_EDGE_2StepW2;
+                                break;
+                            case 11:
+                                fram.Analysis.Offset.Trim0_EDGE_2StepW2 = fram.Analysis.Offset_EDGE_2StepW2;
+                                break;
+
+                            case 12:
+                                fram.Analysis.Offset.F2F_EDGE_2StepW2 = fram.Analysis.Offset_EDGE_2StepW2;
+                                break;
+
+                            default:
+                                fram.Analysis.Offset.QC_EDGE_2StepW2[cb_Offset.SelectedIndex - 3] = fram.Analysis.Offset_EDGE_2StepW2;
                                 break;
                         }
                     }
@@ -832,8 +1022,279 @@ namespace TrimGap
                     }
                 }
 
+                if (tb_Analysis_HTW_W2EdgeThreshold_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_Analysis_HTW_W2EdgeThreshold_copy.Text, pattern))
+                    {
+                        MessageBox.Show("LJ_W2EdgeThreshold" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "HTW_W2EdgeThreshold " + fram.Analysis.HTW_W2EdgeThreshold + "->" + tb_Analysis_HTW_W2EdgeThreshold_copy.Text);
+                        tb_Analysis_HTW_W2EdgeThreshold.Text = tb_Analysis_HTW_W2EdgeThreshold_copy.Text;
+                        fram.Analysis.HTW_W2EdgeThreshold = Convert.ToDouble(tb_Analysis_HTW_W2EdgeThreshold_copy.Text);
+                    }
+                }
+
+                if (tb_Analysis_HTW_H0FromTilt_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_Analysis_HTW_H0FromTilt_copy.Text, pattern))
+                    {
+                        MessageBox.Show("LJ_H0FromTilt" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "HTW_H0FromTilt " + fram.Analysis.HTW_H0FromTilt + "->" + tb_Analysis_HTW_H0FromTilt_copy.Text);
+                        tb_Analysis_HTW_H0FromTilt.Text = tb_Analysis_HTW_H0FromTilt_copy.Text;
+                        fram.Analysis.HTW_H0FromTilt = Convert.ToInt32(tb_Analysis_HTW_H0FromTilt_copy.Text);
+                    }
+                }
+
+                if (tb_Analysis_HTW_HistogramRange_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_Analysis_HTW_HistogramRange_copy.Text, pattern))
+                    {
+                        MessageBox.Show("HTW_HistogramRange" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "HTW_HistogramRange " + fram.Analysis.HTW_HistogramRange + "->" + tb_Analysis_HTW_HistogramRange_copy.Text);
+                        tb_Analysis_HTW_HistogramRange.Text = tb_Analysis_HTW_HistogramRange_copy.Text;
+                        fram.Analysis.HTW_HistogramRange = Convert.ToDouble(tb_Analysis_HTW_HistogramRange_copy.Text);
+                    }
+                }
+
+                if (tb_Analysis_HTW_SearchMaxDiff_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_Analysis_HTW_SearchMaxDiff_copy.Text, pattern))
+                    {
+                        MessageBox.Show("HTW_SearchMaxDiff" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "HTW_SearchMaxDiff " + fram.Analysis.HTW_TrimSearchMaxDifference + "->" + tb_Analysis_HTW_SearchMaxDiff_copy.Text);
+                        tb_Analysis_HTW_SearchMaxDiff.Text = tb_Analysis_HTW_SearchMaxDiff_copy.Text;
+                        fram.Analysis.HTW_TrimSearchMaxDifference = Convert.ToDouble(tb_Analysis_HTW_SearchMaxDiff_copy.Text);
+                    }
+                }
+
+                if (tb_Analysis_HTW_GroupPoints_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_Analysis_HTW_GroupPoints_copy.Text, pattern))
+                    {
+                        MessageBox.Show("HTW_GroupPoints" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "HTW_GroupPoints " + fram.Analysis.HTW_GroupPoints + "->" + tb_Analysis_HTW_GroupPoints_copy.Text);
+                        tb_Analysis_HTW_GroupPoints.Text = tb_Analysis_HTW_GroupPoints_copy.Text;
+                        fram.Analysis.HTW_GroupPoints = Convert.ToDouble(tb_Analysis_HTW_GroupPoints_copy.Text);
+                    }
+                }
+
+                if (tb_Analysis_HTW_TrimToIntensityShift_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_Analysis_HTW_TrimToIntensityShift_copy.Text, pattern))
+                    {
+                        MessageBox.Show("HTW_TrimToIntensityShift" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "HTW_TrimToIntensityShift " + fram.Analysis.HTW_TrimToIntensityShift + "->" + tb_Analysis_HTW_TrimToIntensityShift_copy.Text);
+                        tb_Analysis_HTW_TrimToIntensityShift.Text = tb_Analysis_HTW_TrimToIntensityShift_copy.Text;
+                        fram.Analysis.HTW_TrimToIntensityShift = Convert.ToDouble(tb_Analysis_HTW_TrimToIntensityShift_copy.Text);
+                    }
+                }
+
+                if (tb_Analysis_Use_Leveling_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_Analysis_Use_Leveling_copy.Text, pattern))
+                    {
+                        MessageBox.Show("Use_Leveling" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "Use_Leveling " + fram.Analysis.Use_Leveling + "->" + tb_Analysis_Use_Leveling_copy.Text);
+                        tb_Analysis_Use_Leveling.Text = tb_Analysis_Use_Leveling_copy.Text;
+                        fram.Analysis.Use_Leveling = Convert.ToDouble(tb_Analysis_Use_Leveling_copy.Text);
+                    }
+                }
+
+                if (tb_Analysis_nZone_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_Analysis_nZone_copy.Text, pattern))
+                    {
+                        MessageBox.Show("nZone" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "nZone " + fram.Analysis.nZone + "->" + tb_Analysis_nZone_copy.Text);
+                        tb_Analysis_nZone.Text = tb_Analysis_nZone_copy.Text;
+                        fram.Analysis.nZone = Convert.ToDouble(tb_Analysis_nZone_copy.Text);
+                    }
+                }
+
+                if (tb_Analysis_Use_Intensity_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_Analysis_Use_Intensity_copy.Text, pattern))
+                    {
+                        MessageBox.Show("Use_Intensity" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "Use_Intensity " + fram.Analysis.Use_Intensity + "->" + tb_Analysis_Use_Intensity_copy.Text);
+                        tb_Analysis_Use_Intensity.Text = tb_Analysis_Use_Intensity_copy.Text;
+                        fram.Analysis.Use_Intensity = Convert.ToDouble(tb_Analysis_Use_Intensity_copy.Text);
+                    }
+                }
+
+                if (tb_Analysis_W2_LJ_Replace_HTW_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_Analysis_W2_LJ_Replace_HTW_copy.Text, pattern))
+                    {
+                        MessageBox.Show("W2_LJ_Replace_HTW" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "W2_LJ_Replace_HTW " + fram.Analysis.W2_LJ_Replace_HTW + "->" + tb_Analysis_W2_LJ_Replace_HTW_copy.Text);
+                        tb_Analysis_W2_LJ_Replace_HTW.Text = tb_Analysis_W2_LJ_Replace_HTW_copy.Text;
+                        fram.Analysis.W2_LJ_Replace_HTW = Convert.ToDouble(tb_Analysis_W2_LJ_Replace_HTW_copy.Text);
+                    }
+                }
+
+                if (tb_LJ_Measure_Count_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_LJ_Measure_Count_copy.Text, pattern))
+                    {
+                        MessageBox.Show("LJ 量測次數" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "LJ 量測次數 " + fram.Analysis.LJ_Measure_Count + "->" + tb_LJ_Measure_Count_copy.Text);
+                        tb_LJ_Measure_Count.Text = tb_LJ_Measure_Count_copy.Text;
+                        fram.Analysis.LJ_Measure_Count = Convert.ToDouble(tb_LJ_Measure_Count_copy.Text);
+                    }
+                }
+
+                if (tb_HTW_Measure_Count_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_HTW_Measure_Count_copy.Text, pattern))
+                    {
+                        MessageBox.Show("HTW 量測次數" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "HTW 量測次數 " + fram.Analysis.HTW_Measure_Count + "->" + tb_HTW_Measure_Count_copy.Text);
+                        tb_HTW_Measure_Count.Text = tb_HTW_Measure_Count_copy.Text;
+                        fram.Analysis.HTW_Measure_Count = Convert.ToDouble(tb_HTW_Measure_Count_copy.Text);
+                    }
+                }
+
+                if (tb_PT_Measure_Count_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_PT_Measure_Count_copy.Text, pattern))
+                    {
+                        MessageBox.Show("HTW 量測次數" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "HTW 量測次數 " + fram.Analysis.PT_Measure_Count + "->" + tb_PT_Measure_Count_copy.Text);
+                        tb_PT_Measure_Count.Text = tb_PT_Measure_Count_copy.Text;
+                        fram.Analysis.PT_Measure_Count = Convert.ToDouble(tb_PT_Measure_Count_copy.Text);
+                    }
+                }
+
+                if (tb_RD_H_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_RD_H_copy.Text, pattern))
+                    {
+                        MessageBox.Show("RD Offset H" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "RD Offset H " + fram.Analysis.Offset_RD_H + "->" + tb_RD_H_copy.Text);
+                        tb_RD_H.Text = tb_RD_H_copy.Text;
+                        fram.Analysis.Offset_RD_H = Convert.ToDouble(tb_RD_H_copy.Text);
+                    }
+                }
+
+                if (tb_RD_W_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_RD_W_copy.Text, pattern))
+                    {
+                        MessageBox.Show("RD Offset W" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "RD Offset W " + fram.Analysis.Offset_RD_W + "->" + tb_RD_W_copy.Text);
+                        tb_RD_W.Text = tb_RD_W_copy.Text;
+                        fram.Analysis.Offset_RD_W = Convert.ToDouble(tb_RD_W_copy.Text);
+                    }
+                }
+
+                if (tb_PT_2_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_PT_2_copy.Text, pattern))
+                    {
+                        MessageBox.Show("PT_2" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "PT_2 " + fram.Analysis.PT_2 + "->" + tb_PT_2_copy.Text);
+                        tb_PT_2.Text = tb_PT_2_copy.Text;
+                        fram.Analysis.PT_2 = Convert.ToDouble(tb_PT_2_copy.Text);
+                    }
+                }
+
+                if (tb_PT_2_Z_Offset_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_PT_2_Z_Offset_copy.Text, pattern))
+                    {
+                        MessageBox.Show("PT_2_Z_Offset" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "PT_2_Z_Offset " + fram.Analysis.PT_2_Z_Offset + "->" + tb_PT_2_Z_Offset_copy.Text);
+                        tb_PT_2_Z_Offset.Text = tb_PT_2_Z_Offset_copy.Text;
+                        fram.Analysis.PT_2_Z_Offset = Convert.ToDouble(tb_PT_2_Z_Offset_copy.Text);
+                    }
+                }
+
+                if (tb_PT_2_X_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_PT_2_X_copy.Text, pattern))
+                    {
+                        MessageBox.Show("PT_2_X" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "PT_2_X " + fram.Analysis.PT_2_X + "->" + tb_PT_2_X_copy.Text);
+                        tb_PT_2_X.Text = tb_PT_2_X_copy.Text;
+                        fram.Analysis.PT_2_X = Convert.ToDouble(tb_PT_2_X_copy.Text);
+                    }
+                }
+
                 #endregion [Analysis] groupbox4
 
+				Flag.isPT_2 = Convert.ToBoolean(fram.Analysis.PT_2);
                 ParamFile.saveparam("all");
                 btnParamClear_Click(null, null);
             }
@@ -915,6 +1376,9 @@ namespace TrimGap
                     tb_PT_2StepH2.Text = "0";
                     tb_PT_2StepW2.Text = "0";
                     tb_BlueTapeW.Text = "0";
+                    tb_EDGE_1StepW.Text = "0";
+                    tb_EDGE_2StepW1.Text = "0";
+                    tb_EDGE_2StepW2.Text = "0";
                     break;
 
                 case 1:
@@ -931,6 +1395,9 @@ namespace TrimGap
                     tb_PT_2StepH2.Text = fram.Analysis.Offset.Offline_PT_2StepH2.ToString();
                     tb_PT_2StepW2.Text = fram.Analysis.Offset.Offline_PT_2StepW2.ToString();
                     tb_BlueTapeW.Text = fram.Analysis.OffsetBlueTapeW.ToString();
+                    tb_EDGE_1StepW.Text = fram.Analysis.Offset.Offline_EDGE_1StepW.ToString();
+                    tb_EDGE_2StepW1.Text = fram.Analysis.Offset.Offline_EDGE_2StepW1.ToString();
+                    tb_EDGE_2StepW2.Text = fram.Analysis.Offset.Offline_EDGE_2StepW2.ToString();
                     break;
 
                 case 2:
@@ -947,7 +1414,48 @@ namespace TrimGap
                     tb_PT_2StepH2.Text = fram.Analysis.Offset.Inline_PT_2StepH2.ToString();
                     tb_PT_2StepW2.Text = fram.Analysis.Offset.Inline_PT_2StepW2.ToString();
                     tb_BlueTapeW.Text = fram.Analysis.Offset.Inline_BlueTapeW.ToString();
+                    tb_EDGE_1StepW.Text = fram.Analysis.Offset.Inline_EDGE_1StepW.ToString();
+                    tb_EDGE_2StepW1.Text = fram.Analysis.Offset.Inline_EDGE_2StepW1.ToString();
+                    tb_EDGE_2StepW2.Text = fram.Analysis.Offset.Inline_EDGE_2StepW2.ToString();
                     break;
+                case 11:
+                    tb_1StepH.Text = fram.Analysis.Offset.Trim0_1StepH.ToString();
+                    tb_1StepW.Text = fram.Analysis.Offset.Trim0_1StepW.ToString();
+                    tb_2StepH1.Text = fram.Analysis.Offset.Trim0_2StepH1.ToString();
+                    tb_2StepW1.Text = fram.Analysis.Offset.Trim0_2StepW1.ToString();
+                    tb_2StepH2.Text = fram.Analysis.Offset.Trim0_2StepH2.ToString();
+                    tb_2StepW2.Text = fram.Analysis.Offset.Trim0_2StepW2.ToString();
+                    tb_PT_1StepH.Text = fram.Analysis.Offset.Trim0_PT_1StepH.ToString();
+                    tb_PT_1StepW.Text = fram.Analysis.Offset.Trim0_PT_1StepW.ToString();
+                    tb_PT_2StepH1.Text = fram.Analysis.Offset.Trim0_PT_2StepH1.ToString();
+                    tb_PT_2StepW1.Text = fram.Analysis.Offset.Trim0_PT_2StepW1.ToString();
+                    tb_PT_2StepH2.Text = fram.Analysis.Offset.Trim0_PT_2StepH2.ToString();
+                    tb_PT_2StepW2.Text = fram.Analysis.Offset.Trim0_PT_2StepW2.ToString();
+                    tb_BlueTapeW.Text = fram.Analysis.Offset.Trim0_BlueTapeW.ToString();
+                    tb_EDGE_1StepW.Text = fram.Analysis.Offset.Trim0_EDGE_1StepW.ToString();
+                    tb_EDGE_2StepW1.Text = fram.Analysis.Offset.Trim0_EDGE_2StepW1.ToString();
+                    tb_EDGE_2StepW2.Text = fram.Analysis.Offset.Trim0_EDGE_2StepW2.ToString();
+                    break;
+
+                case 12:
+                    tb_1StepH.Text = fram.Analysis.Offset.F2F_1StepH.ToString();
+                    tb_1StepW.Text = fram.Analysis.Offset.F2F_1StepW.ToString();
+                    tb_2StepH1.Text = fram.Analysis.Offset.F2F_2StepH1.ToString();
+                    tb_2StepW1.Text = fram.Analysis.Offset.F2F_2StepW1.ToString();
+                    tb_2StepH2.Text = fram.Analysis.Offset.F2F_2StepH2.ToString();
+                    tb_2StepW2.Text = fram.Analysis.Offset.F2F_2StepW2.ToString();
+                    tb_PT_1StepH.Text = fram.Analysis.Offset.F2F_PT_1StepH.ToString();
+                    tb_PT_1StepW.Text = fram.Analysis.Offset.F2F_PT_1StepW.ToString();
+                    tb_PT_2StepH1.Text = fram.Analysis.Offset.F2F_PT_2StepH1.ToString();
+                    tb_PT_2StepW1.Text = fram.Analysis.Offset.F2F_PT_2StepW1.ToString();
+                    tb_PT_2StepH2.Text = fram.Analysis.Offset.F2F_PT_2StepH2.ToString();
+                    tb_PT_2StepW2.Text = fram.Analysis.Offset.F2F_PT_2StepW2.ToString();
+                    tb_BlueTapeW.Text = fram.Analysis.Offset.F2F_BlueTapeW.ToString();
+                    tb_EDGE_1StepW.Text = fram.Analysis.Offset.F2F_EDGE_1StepW.ToString();
+                    tb_EDGE_2StepW1.Text = fram.Analysis.Offset.F2F_EDGE_2StepW1.ToString();
+                    tb_EDGE_2StepW2.Text = fram.Analysis.Offset.F2F_EDGE_2StepW2.ToString();
+                    break;
+
 
                 default:  // >3 (QC)
                     tb_1StepH.Text = fram.Analysis.Offset.QC_1StepH[cb_Offset.SelectedIndex - 3].ToString();
@@ -963,6 +1471,9 @@ namespace TrimGap
                     tb_PT_2StepH2.Text = fram.Analysis.Offset.QC_PT_2StepH2[cb_Offset.SelectedIndex - 3].ToString();
                     tb_PT_2StepW2.Text = fram.Analysis.Offset.QC_PT_2StepW2[cb_Offset.SelectedIndex - 3].ToString();
                     tb_BlueTapeW.Text = fram.Analysis.Offset.QC_BlueTapeW[cb_Offset.SelectedIndex - 3].ToString();
+                    tb_EDGE_1StepW.Text = fram.Analysis.Offset.QC_EDGE_1StepW[cb_Offset.SelectedIndex - 3].ToString();
+                    tb_EDGE_2StepW1.Text = fram.Analysis.Offset.QC_EDGE_2StepW1[cb_Offset.SelectedIndex - 3].ToString();
+                    tb_EDGE_2StepW2.Text = fram.Analysis.Offset.QC_EDGE_2StepW2[cb_Offset.SelectedIndex - 3].ToString();
                     break;
             }
         }

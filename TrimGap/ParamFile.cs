@@ -53,6 +53,14 @@ namespace TrimGap
             iniAllVal("w", filePath, KeyName);
         }
 
+        public static void saveUsData(string KeyName, string strUser)
+        {
+            string filePath = sram.saveinifilepath;
+            string usedata = fram.Up_UserData;
+            iniVal("w", filePath, KeyName, ref fram.Up_UserData, "fram."+ strUser, usedata);
+            //iniVal(m, p, s, ref fram.Up_UserData, "fram.op_password", "111");
+        }
+
         public static void wr(string m, string KeyName, string p)
         {
             //   string p;
@@ -167,6 +175,9 @@ namespace TrimGap
                 //iniVal(m, p, s, ref fram.S_SensorProgram, "fram.S_SensorProgram", 0);
                 //iniVal(m, p, s, ref fram.S_Triggerbool, "fram.S_Triggerbool", 1);
                 iniVal(m, p, s, ref fram.m_SecsgemType, "fram.m_SecsgemType", 0);
+                iniVal(m, p, s, ref fram.m_EFEMbypass, "fram.m_EFEMbypass", 0);
+                iniVal(m, p, s, ref fram.m_DEMOMode, "fram.m_DEMOMode", 0);
+                iniVal(m, p, s, ref fram.m_NG_RecordCCD, "fram.m_NG_RecordCCD", 0); 
             }
 
             if (KeyName == "all" || KeyName == "System")
@@ -182,9 +193,16 @@ namespace TrimGap
             if (KeyName == "all" || KeyName == "UserPermission")
             {
                 s = "UserPermission";
-                iniVal(m, p, s, ref fram.op_password, "fram.op_password", "111");
-                iniVal(m, p, s, ref fram.eng_password, "fram.eng_password", "222");
-                iniVal(m, p, s, ref fram.ad_password, "fram.ad_password", "333");
+                List<string> listkey = new List<string>();
+
+                listkey = ReadKeys(s, p);
+                fram.UserData = ReadKeyValue(s, listkey, p); 
+
+                //iniVal(m, p, s, ref fram.Up_UserData, "fram.op_password", "111");
+                 
+                //iniVal(m, p, s, ref fram.op_password, "fram.op_password", "111");
+                //iniVal(m, p, s, ref fram.eng_password, "fram.eng_password", "222");
+                //iniVal(m, p, s, ref fram.ad_password, "fram.ad_password", "333");
             }
 
             if (KeyName == "all" || KeyName == "SensorLJ")
@@ -282,6 +300,36 @@ namespace TrimGap
                 iniVal(m, p, s, ref fram.Analysis.Offset.Offline_BlueTapeW, "fram.Analysis.Offset.Offline_BlueTapeW", 0);
                 iniVal(m, p, s, ref fram.Analysis.Offset.Offline_EDGE_1StepW, "fram.Analysis.Offset.Offline_EDGE_1StepW", 0);
                 iniVal(m, p, s, ref fram.Analysis.Offset.Offline_EDGE_2StepW1, "fram.Analysis.Offset.Offline_EDGE_2StepW1", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Trim0_1StepH, "fram.Analysis.Offset.Trim0_1StepH", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Trim0_1StepW, "fram.Analysis.Offset.Trim0_1StepW", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Trim0_2StepH1, "fram.Analysis.Offset.Trim0_2StepH1", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Trim0_2StepW1, "fram.Analysis.Offset.Trim0_2StepW1", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Trim0_2StepH2, "fram.Analysis.Offset.Trim0_2StepH2", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Trim0_2StepW2, "fram.Analysis.Offset.Trim0_2StepW2", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Trim0_PT_1StepH, "fram.Analysis.Offset.PT_Trim0_1StepH", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Trim0_PT_1StepW, "fram.Analysis.Offset.PT_Trim0_1StepW", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Trim0_PT_2StepH1, "fram.Analysis.Offset.PT_Trim0_2StepH1", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Trim0_PT_2StepW1, "fram.Analysis.Offset.PT_Trim0_2StepW1", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Trim0_PT_2StepH2, "fram.Analysis.Offset.PT_Trim0_2StepH2", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Trim0_PT_2StepW2, "fram.Analysis.Offset.PT_Trim0_2StepW2", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Trim0_BlueTapeW, "fram.Analysis.Offset.Trim0_BlueTapeW", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Trim0_EDGE_1StepW, "fram.Analysis.Offset.Trim0_EDGE_1StepW", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.Trim0_EDGE_2StepW1, "fram.Analysis.Offset.Trim0_EDGE_2StepW1", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.F2F_1StepH, "fram.Analysis.Offset.F2F_1StepH", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.F2F_1StepW, "fram.Analysis.Offset.F2F_1StepW", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.F2F_2StepH1, "fram.Analysis.Offset.F2F_2StepH1", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.F2F_2StepW1, "fram.Analysis.Offset.F2F_2StepW1", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.F2F_2StepH2, "fram.Analysis.Offset.F2F_2StepH2", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.F2F_2StepW2, "fram.Analysis.Offset.F2F_2StepW2", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.F2F_PT_1StepH, "fram.Analysis.Offset.PT_F2F_1StepH", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.F2F_PT_1StepW, "fram.Analysis.Offset.PT_F2F_1StepW", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.F2F_PT_2StepH1, "fram.Analysis.Offset.PT_F2F_2StepH1", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.F2F_PT_2StepW1, "fram.Analysis.Offset.PT_F2F_2StepW1", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.F2F_PT_2StepH2, "fram.Analysis.Offset.PT_F2F_2StepH2", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.F2F_PT_2StepW2, "fram.Analysis.Offset.PT_F2F_2StepW2", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.F2F_BlueTapeW, "fram.Analysis.Offset.F2F_BlueTapeW", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.F2F_EDGE_1StepW, "fram.Analysis.Offset.F2F_EDGE_1StepW", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.F2F_EDGE_2StepW1, "fram.Analysis.Offset.F2F_EDGE_2StepW1", 0);
                 for (int i = 0; i < 8; i++)
                 {
                     iniVal(m, p, s, ref fram.Analysis.Offset.QC_1StepH[i], "fram.Analysis.Offset.QC_1StepH" + i, 0);
@@ -302,6 +350,35 @@ namespace TrimGap
                 }
 
                 iniVal(m, p, s, ref fram.Analysis.HTW_StandardPlane, "fram.Analysis.HTW_StandardPlane", 10.00);
+				iniVal(m, p, s, ref fram.Analysis.HTW_W2EdgeThreshold, "fram.Analysis.HTW_W2EdgeThreshold", 5.00);
+                iniVal(m, p, s, ref fram.Analysis.HTW_H0FromTilt, "fram.Analysis.HTW_H0FromTilt", 1);
+                iniVal(m, p, s, ref fram.Analysis.HTW_HistogramRange, "fram.Analysis.HTW_HistogramRange", 0.5); 
+                iniVal(m, p, s, ref fram.Analysis.HTW_TrimSearchMaxDifference, "fram.Analysis.HTW_TrimSearchMaxDifference", 4);
+                iniVal(m, p, s, ref fram.Analysis.HTW_GroupPoints, "fram.Analysis.HTW_GroupPoints", 3);
+                iniVal(m, p, s, ref fram.Analysis.HTW_TrimToIntensityShift, "fram.Analysis.HTW_TrimToIntensityShift", 15);
+
+                iniVal(m, p, s, ref fram.Analysis.Use_Leveling, "fram.Analysis.Use_Leveling", 1.00);
+                iniVal(m, p, s, ref fram.Analysis.nZone, "fram.Analysis.nZone", 50.00);
+                iniVal(m, p, s, ref fram.Analysis.PT_TrimSearchMaxDifference, "fram.Analysis.PT_TrimSearchMaxDifference", 30);
+                iniVal(m, p, s, ref fram.Analysis.Use_Intensity, "fram.Analysis.Use_Intensity", 1.00); 
+                iniVal(m, p, s, ref fram.Analysis.W2_LJ_Replace_HTW, "fram.Analysis.W2_LJ_Replace_HTW", 0.00);
+
+                //20250102
+                iniVal(m, p, s, ref fram.Analysis.LJ_Measure_Count, "fram.Analysis.LJ_Measure_Count", 0.00);
+                iniVal(m, p, s, ref fram.Analysis.HTW_Measure_Count, "fram.Analysis.HTW_Measure_Count", 0.00);
+                iniVal(m, p, s, ref fram.Analysis.PT_Measure_Count, "fram.Analysis.HTW_Measure_Count", 0.00);
+
+                //20250407
+                iniVal(m, p, s, ref fram.Analysis.Offset.RD_H, "fram.Analysis.Offset.RD_H", 0);
+                iniVal(m, p, s, ref fram.Analysis.Offset.RD_W, "fram.Analysis.Offset.RD_W", 0);
+
+                //20250418
+                iniVal(m, p, s, ref fram.Analysis.PT_2, "fram.Analysis.PT_2", 0.00);
+                iniVal(m, p, s, ref fram.Analysis.PT_2_Z_Offset, "fram.Analysis.PT_2_Z_Offset", 0.00);
+                iniVal(m, p, s, ref fram.Analysis.PT_2_X, "fram.Analysis.PT_2_X", 0.00);
+
+                //20250724
+                iniVal(m, p, s, ref fram.Analysis.BlueTapeMethod, "fram.Analysis.BlueTapeMethod", 1); 
             }
 
             if (KeyName == "all" || KeyName == "Motion")
@@ -346,7 +423,8 @@ namespace TrimGap
                 iniVal(m, p, s, ref fram.Position.HTW_P1_Z, "fram.Position.HTW_P1_Z", 0);
                 iniVal(m, p, s, ref fram.Position.HTW_P2_X, "fram.Position.HTW_P2_X", 0);
                 iniVal(m, p, s, ref fram.Position.HTW_P2_Z, "fram.Position.HTW_P2_Z", 0);
-				iniVal(m, p, s, ref fram.Position.HTW_P1_FocusRange, "fram.Position.HTW_P1_FocusRange", 30); 																							 
+				iniVal(m, p, s, ref fram.Position.HTW_P1_FocusRange, "fram.Position.HTW_P1_FocusRange", 30); 
+                iniVal(m, p, s, ref fram.Position.HTW_AutoFocus_X, "fram.Position.HTW_AutoFocus_X", 0);
             }
 
             if (KeyName == "all" || KeyName == "EFEMSts")
@@ -472,6 +550,7 @@ namespace TrimGap
                 iniVal(m, p, s, ref recipe.SF3_ID, "fram.Recipe.SF3_ID", "1");
                 iniVal(m, p, s, ref recipe.SF3_Name, "fram.Recipe.SF3_Name", "1");
                 iniVal(m, p, s, ref recipe.WaferEdgeEvaluate, "fram.Recipe.WaferEdgeEvaluate", 0);
+                iniVal(m, p, s, ref recipe.Analysis_method, "fram.Recipe.Analysis_method", 0);
                 iniVal(m, p, s, ref recipe.BlueTapeThreshold, "fram.Recipe.BlueTapeThreshold", 17);
                 iniVal(m, p, s, ref recipe.Step1_Range_step1x0, "fram.Recipe.Step1_Range_step1x0", 1);
                 iniVal(m, p, s, ref recipe.Step1_Range_step1x1, "fram.Recipe.Step1_Range_step1x1", 4000);
@@ -485,6 +564,26 @@ namespace TrimGap
                 iniVal(m, p, s, ref recipe.RecordCCD_Angle_Start, "fram.Recipe.RecordCCD_Angle_Start", 0);
                 iniVal(m, p, s, ref recipe.RecordCCD_Angle_End, "fram.Recipe.RecordCCD_Angle_End", 315);
                 iniVal(m, p, s, ref recipe.RecordCCD_Angle_Pitch, "fram.Recipe.RecordCCD_Angle_Pitch", 45);
+                iniVal(m, p, s, ref recipe.RecordAfterMeasure, "fram.Recipe.RecordAfterMeasure", 0);
+                iniVal(m, p, s, ref recipe.LJ_Flat, "fram.Recipe.LJ_Flat", 1.5);
+                iniVal(m, p, s, ref recipe.RD_LJ, "fram.Recipe.RD_LJ", 0);
+
+                //=============== 20240628係數 ===================
+                iniVal(m, p, s, ref recipe.H1, "fram.Recipe.H1", 1);
+                iniVal(m, p, s, ref recipe.H2, "fram.Recipe.H2", 1);
+                iniVal(m, p, s, ref recipe.W1, "fram.Recipe.W1", 1);
+                iniVal(m, p, s, ref recipe.W2, "fram.Recipe.W2", 1);
+
+                //=============== 20250815 Limit ===================
+                iniVal(m, p, s, ref recipe.LimitMethod, "fram.Recipe.LimitMethod", 0);
+                iniVal(m, p, s, ref recipe.H1_LowerLimit, "fram.Recipe.H1_LowerLimit", 0);
+                iniVal(m, p, s, ref recipe.H2_LowerLimit, "fram.Recipe.H2_LowerLimit", 0);
+                iniVal(m, p, s, ref recipe.W1_LowerLimit, "fram.Recipe.W1_LowerLimit", 0);
+                iniVal(m, p, s, ref recipe.W2_LowerLimit, "fram.Recipe.W2_LowerLimit", 0);
+                iniVal(m, p, s, ref recipe.H1_UpperLimit, "fram.Recipe.H1_UpperLimit", 1000);
+                iniVal(m, p, s, ref recipe.H2_UpperLimit, "fram.Recipe.H2_UpperLimit", 1000);
+                iniVal(m, p, s, ref recipe.W1_UpperLimit, "fram.Recipe.W1_UpperLimit", 1000);
+                iniVal(m, p, s, ref recipe.W2_UpperLimit, "fram.Recipe.W2_UpperLimit", 1000);
             }
         }
         //public static bool Save3MDistribution_Csv(System.Windows.Forms.DataGridView dataGridView1, string fullPath) // 20200310
@@ -917,6 +1016,7 @@ namespace TrimGap
                 //fullPath = @"C:\Users\user\Desktop\laser\";
                 //string reportname = fullPath;// + dateime + ".csv";
                 string reportname = Savefilepath + ".csv";
+                AnalysisData.sPath_Base = reportname;
                 //if (!Directory.Exists(fullPath))
                 //Directory.CreateDirectory(fullPath);
 
@@ -1019,6 +1119,7 @@ namespace TrimGap
                 //fullPath = @"C:\Users\user\Desktop\laser\";
                 //string reportname = fullPath;// + dateime + ".csv";
                 string reportname = Savefilepath + ".csv";
+                AnalysisData.sPath_Raw = reportname;
                 //if (!Directory.Exists(fullPath))
                 //Directory.CreateDirectory(fullPath);
 
@@ -1181,6 +1282,244 @@ namespace TrimGap
                 sw.Close();
                 fs.Close();
                 //MessageBox.Show("Save data OK");
+            }
+            catch
+            {
+                //MessageBox.Show("數據儲存錯誤");
+            }
+        }
+
+        public static void SaveRawdata_Csv5(double[] rawdata, double[] rawdata2, string LotID, string note, DateTime dt)
+        {
+            string UIDate, Year, month, Date, Hour, minutes, Second, DatasavPath = "", DatasavPath2 = "";
+            DateTime _dt = dt;
+            Year = string.Format("{0:yyyy}", _dt);
+            month = string.Format("{0:MM}", _dt);
+            Date = string.Format("{0:dd}", _dt);
+            Hour = string.Format("{0:HH}", _dt);
+            minutes = string.Format("{0:mm}", _dt);
+            Second = string.Format("{0:ss}", _dt);
+            UIDate = string.Format("{0:yyyy-MM-dd-HH:mm:ss}", _dt);
+            DatasavPath = sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year + "\\" + month + Date;
+            //DatasavPath = sram.dirfilepath + "\\RawData\\" + Year + "\\" + month + Date;
+            //DatasavPath = sram.dirfilepath + "\\Baseline\\" + Year + "\\" + month + Date;
+            //logsavPath = ParamFile.dirname + "\\Log\\" + Year + "\\" + month + Date;
+            DatasavPath2 = DatasavPath + "\\" + LotID;
+            //if (Directory.Exists(sram.dirfilepath + "\\Baseline\\" + Year))//***
+            if (!Directory.Exists(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year))//***
+            {//無年資料夾
+                Directory.CreateDirectory(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year);
+            }
+            if (!Directory.Exists(DatasavPath))
+            {//無月日資料夾
+                Directory.CreateDirectory(DatasavPath);
+            }
+            if (!Directory.Exists(DatasavPath2))
+            {//無FoupID資料夾
+                Directory.CreateDirectory(DatasavPath2);
+            }
+
+            string Savefilepath;
+            //Savefilepath = DatasavPath + "\\" + DateTime.Now.ToString("yyyyMMdd-HHmmss") + ".bin";
+            Savefilepath = DatasavPath2 + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            //ParamFile.SaveCsv(rawdata, Savefilepath);
+            try
+            {
+                string dateime = dt.ToString("yyyyMMddHHmmss");
+                //File.WriteAllText(@"C:\Users\user\Desktop\laser\1.txt", rtbLaserData.Text); // 也可以指定編碼方式
+                //fullPath = "C:\\AHM-022\\CSV報表\\";
+                //fullPath = @"C:\Users\user\Desktop\laser\";
+                //string reportname = fullPath;// + dateime + ".csv";
+                string reportname = Savefilepath + ".csv";
+                AnalysisData.sPath_Int = reportname;
+                //if (!Directory.Exists(fullPath))
+                //Directory.CreateDirectory(fullPath);
+
+                FileInfo fi = new FileInfo(reportname);
+                if (!fi.Directory.Exists)
+                {
+                    fi.Directory.Create();
+                }
+                FileStream fs = new FileStream(reportname, System.IO.FileMode.Create, System.IO.FileAccess.Write);
+                StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.UTF8);
+                string data = "";
+
+                //寫入列名稱
+                for (int i = 0; i < 1; i++)
+                {
+                    //data += "\"" + dataGridView1.Columns[i].ToString() + "\"";
+                    //if (i == 0)
+                    //{
+                    //    //data += "\"" + "Distance" + "\"";
+                    //    data += "Distance";
+                    //}
+                    //else if (i == 1)
+                    //{
+                    //    data += "\"" + "Intensity" + "\"";
+                    //}
+                    //if (i < 2 - 1)
+                    //{
+                    //    data += ",";
+                    //}
+                }
+                //sw.WriteLine(data);
+
+                //寫出各行數據
+                for (int i = 0; i < rawdata.Length; i++)
+                {
+                    data = "";
+                    //dataGridView1.Rows[0].Cells[1].Value = Convert.ToString(2);
+                    string str = rawdata[i].ToString(); //沒數據會儲存錯誤
+                    string str2 = rawdata2[i].ToString(); //沒數據會儲存錯誤
+                    //str = string.Format("\"{0}\"", str);
+                    data += str + "," + str2 ;
+                    sw.WriteLine(data);
+                }
+                sw.Close();
+                fs.Close();
+                //MessageBox.Show("Save data OK");
+            }
+            catch
+            {
+                //MessageBox.Show("數據儲存錯誤");
+            }
+        }
+
+        //20251222
+        public static void SaveRawdata_AutoFocus(List<short[]> list_AutoFocus, string LotID, string note, DateTime dt)
+        {
+            string UIDate, Year, month, Date, Hour, minutes, Second, DatasavPath = "", DatasavPath2 = "";
+            DateTime _dt = dt;
+            Year = string.Format("{0:yyyy}", _dt);
+            month = string.Format("{0:MM}", _dt);
+            Date = string.Format("{0:dd}", _dt);
+            Hour = string.Format("{0:HH}", _dt);
+            minutes = string.Format("{0:mm}", _dt);
+            Second = string.Format("{0:ss}", _dt);
+            UIDate = string.Format("{0:yyyy-MM-dd-HH:mm:ss}", _dt);
+            DatasavPath = sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year + "\\" + month + Date;
+            //DatasavPath = sram.dirfilepath + "\\RawData\\" + Year + "\\" + month + Date;
+            //DatasavPath = sram.dirfilepath + "\\Baseline\\" + Year + "\\" + month + Date;
+            //logsavPath = ParamFile.dirname + "\\Log\\" + Year + "\\" + month + Date;
+            DatasavPath2 = DatasavPath + "\\" + LotID;
+            //if (Directory.Exists(sram.dirfilepath + "\\Baseline\\" + Year))//***
+            if (!Directory.Exists(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year))//***
+            {//無年資料夾
+                Directory.CreateDirectory(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year);
+            }
+            if (!Directory.Exists(DatasavPath))
+            {//無月日資料夾
+                Directory.CreateDirectory(DatasavPath);
+            }
+            if (!Directory.Exists(DatasavPath2))
+            {//無FoupID資料夾
+                Directory.CreateDirectory(DatasavPath2);
+            }
+
+            string Savefilepath;
+            //Savefilepath = DatasavPath + "\\" + DateTime.Now.ToString("yyyyMMdd-HHmmss") + ".bin";
+            Savefilepath = DatasavPath2 + "\\" + dt.ToString("yyyyMMdd-HHmmss") + "_" + note; // 加在檔名最後面
+            //ParamFile.SaveCsv(rawdata, Savefilepath);
+            try
+            {
+                string dateime = dt.ToString("yyyyMMddHHmmss");
+                //File.WriteAllText(@"C:\Users\user\Desktop\laser\1.txt", rtbLaserData.Text); // 也可以指定編碼方式
+                //fullPath = "C:\\AHM-022\\CSV報表\\";
+                //fullPath = @"C:\Users\user\Desktop\laser\";
+                //string reportname = fullPath;// + dateime + ".csv";
+                string reportname = Savefilepath + ".csv";
+                AnalysisData.sPath_Int = reportname;
+                //if (!Directory.Exists(fullPath))
+                //Directory.CreateDirectory(fullPath);
+
+                FileInfo fi = new FileInfo(reportname);
+                if (!fi.Directory.Exists)
+                {
+                    fi.Directory.Create();
+                }
+                FileStream fs = new FileStream(reportname, System.IO.FileMode.Create, System.IO.FileAccess.Write);
+                StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.UTF8);
+                string data = "";
+
+                
+
+                //寫出各行數據
+                for (int i = 0; i < list_AutoFocus.Count; i++)
+                {
+                    data = "";
+                    string str = string.Empty;
+                    for (int j = 0; j < list_AutoFocus[i].Length; j++)
+                    {
+                        str += list_AutoFocus[i][j].ToString() + ",";
+                    }
+                    data = str.Substring(0, str.Length - 1);
+                    sw.WriteLine(data);
+                }
+                sw.Close();
+                fs.Close();
+                //MessageBox.Show("Save data OK");
+            }
+            catch
+            {
+                //MessageBox.Show("數據儲存錯誤");
+            }
+        }
+
+        public static void SaveSingledata_Csv(string datain, string LotID, string note, DateTime dt)
+        {
+            string UIDate, Year, month, Date, Hour, minutes, Second, DatasavPath = "", DatasavPath2 = "";
+            DateTime _dt = dt;
+            Year = string.Format("{0:yyyy}", _dt);
+            month = string.Format("{0:MM}", _dt);
+            Date = string.Format("{0:dd}", _dt);
+            Hour = string.Format("{0:HH}", _dt);
+            minutes = string.Format("{0:mm}", _dt);
+            Second = string.Format("{0:ss}", _dt);
+            UIDate = string.Format("{0:yyyy-MM-dd-HH:mm:ss}", _dt);
+            DatasavPath = sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year + "\\" + month + Date;
+            //DatasavPath = sram.dirfilepath + "\\RawData\\" + Year + "\\" + month + Date;
+            //DatasavPath = sram.dirfilepath + "\\Baseline\\" + Year + "\\" + month + Date;
+            //logsavPath = ParamFile.dirname + "\\Log\\" + Year + "\\" + month + Date;
+            //DatasavPath2 = DatasavPath + "\\" + LotID;
+            //if (Directory.Exists(sram.dirfilepath + "\\Baseline\\" + Year))//***
+            if (!Directory.Exists(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year))//***
+            {//無年資料夾
+                Directory.CreateDirectory(sram.Rootfilepath + "\\DataDirectory\\RawData\\" + Year);
+            }
+            if (!Directory.Exists(DatasavPath))
+            {//無月日資料夾
+                Directory.CreateDirectory(DatasavPath);
+            }
+            /*
+            if (!Directory.Exists(DatasavPath2))
+            {//無FoupID資料夾
+                Directory.CreateDirectory(DatasavPath2);
+            }*/
+
+            string Savefilepath;
+            //Savefilepath = DatasavPath + "\\" + DateTime.Now.ToString("yyyyMMdd-HHmmss") + ".bin";
+            if(note != string.Empty)
+                Savefilepath = DatasavPath + "\\" + "HTW_DailyData_" + note; // 加在檔名最後面
+            else
+                Savefilepath = DatasavPath + "\\" + "HTW_DailyData"; 
+            //ParamFile.SaveCsv(rawdata, Savefilepath);
+            try
+            {
+                string datetime = dt.ToString("yyyyMMddHHmmss");
+                string reportname = Savefilepath + ".csv";
+
+                FileInfo fi = new FileInfo(reportname);
+                if (!fi.Directory.Exists)
+                {
+                    fi.Directory.Create();
+                }
+                //FileStream fs = new FileStream(reportname, System.IO.FileMode.Create, System.IO.FileAccess.Write);
+                StreamWriter sw = new StreamWriter(reportname, true, System.Text.Encoding.UTF8);
+
+                string data = datetime + "," + LotID + "," + datain;
+
+                sw.WriteLine(data);
+                sw.Close();
             }
             catch
             {

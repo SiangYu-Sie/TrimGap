@@ -920,3 +920,11 @@ EFEM-OCRReader_P2_ReadError,80002,True,EFEM-OCRReader_P2_ReadError,917
 EFEM-OCRReader_P1_ConnectError,80003,True,EFEM-OCRReader_P1_ConnectError,918
 EFEM-OCRReader_P2_ConnectError,80004,True,EFEM-OCRReader_P2_ConnectError,919
 EQP-DataAnalysisError,10010,True,EQP-DataAnalysisError,920
+EQP_PT_PLC_ReturnHomeBlockError,10011,True,EQP_PT_PLC_ReturnHomeBlockError,921
+EQP_PT_PLC_ReturnHomeError,10012,True,EQP_PT_PLC_ReturnHomeError,922
+EQP_PT_PLC_MoveToSafePointError,10013,True,EQP_PT_PLC_MoveToSafePointError,923
+EQP_PT_PLC_MoveTimeoutError,10014,True,EQP_PT_PLC_MoveTimeoutError,924
+EQP_HTW_ReturnHome_TimeoutError,10015,True,EQP_HTW_ReturnHome_TimeoutError,925
+EQP_HTW_DD_TimeoutError,10016,True,EQP_HTW_DD_TimeoutError,926
+EQP_HTW_Z_TimeoutError,10017,True,EQP_HTW_Z_TimeoutError,927
+EQP_HTW_X_TimeoutError,10018,True,EQP_HTW_X_TimeoutError,928

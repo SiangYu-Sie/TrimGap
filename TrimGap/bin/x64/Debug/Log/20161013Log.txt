@@ -1,2 +1,0 @@
-13:44:16 CTLT.GEM Init->Start Ver.:2.1.6
-13:44:16 CTLT.GEM Init->Success.

@@ -141,6 +141,12 @@ namespace TrimGap
 
         //Autorun
         public static bool AutoidleFlag = false;
+        public static bool PauseFlag = false;
+        //public static bool StopFlag = false;
+        public static bool CJStopFlag = false;
+        public static bool CJAbortFlag = false;
+        public static bool PJStopFlag = false;
+        public static bool PJAbortFlag = false;
 
         public static bool Autoidle_LocalFlag = false;
 
@@ -182,17 +188,31 @@ namespace TrimGap
         public static bool AlarmOpenFlag = false;
 
         public static bool isPT = false;
+        public static bool isLJforHTW = false;
+        public static bool isRecordCCD = false;
 
         //進行Abort流程
         public static bool AbortFlag = false;
 
         //PJ/CJ
         public static bool FormPJOpenFlag = false;
+        public static bool PJDeleteWithCJFlag = false;
+
+        //開PLC綠燈
+        public static bool GreenLightFlag = false;
+
+        //==============20250418
+        public static bool isPT_2 = true;
+
+        //==============
+        public static bool NewSensorFlag = true;
     }
 
     //需記憶參數
     public struct fram
     {
+
+
         public static string ad_password;
 
         public static string eng_password;
@@ -214,6 +234,10 @@ namespace TrimGap
         // [UserPermission]
         public static string op_password;
 
+        public static List<string> UserData;
+
+        public static string Up_UserData;
+
         // [Product]
         public static string P_LotName = "";
 
@@ -233,6 +257,7 @@ namespace TrimGap
 
         public static string R_RemoteFilePassword;
 
+
         // [System]
         public static int S_SECSGEM_Use;
         public static int m_simulateRun;
@@ -249,6 +274,10 @@ namespace TrimGap
         public static int m_Hardware_PT;  // 0:None 1:all type
         public static int m_Hardware_HTW;  // 0:None 1:all type
         public static int m_SecsgemType;  // 0:創界 1:台達
+        public static int m_Hardware_PT_PLC;  // 0:off 1:on
+        public static int m_EFEMbypass;
+        public static int m_DEMOMode;     //展覽用循環模式
+        public static int m_NG_RecordCCD;  //NG拍照
 
         public static int m_WaferAlignAngle;  // WaferAlignAngle
         public static int m_WaferBackToFoupAngle;  // WaferBackToFoupAngle 所以最後回到FOUP的角度會是WaferAlignAngle+WaferBackToFoupAngle
@@ -281,6 +310,7 @@ namespace TrimGap
             public static double HTW_P2_X;
             public static double HTW_P2_Z;
             public static int HTW_P1_FocusRange; // 搜尋次數，每次上升10um，看要找幾次
+            public static double HTW_AutoFocus_X; // AutoFocus X座標
         }
 
         // [Sensor]
@@ -305,6 +335,9 @@ namespace TrimGap
         public static int PT_PLC_AutoRunEFEM_RetryCount;
 
         public static int HTW_Autofocus_Index;
+        public static int HTW_Autofocus_DetectIndex;
+        public static int HTW_Autofocus_2ndPos_Shift;  //第一次找不到焦點時，要偏移多少距離再量一次
+        public static int HTW_Autofocus_Index_Last_Used = 0;   //上次成功對焦位置
 
         // 量測開始延遲時間
         //   192//1//10//16 用// 拆字串
@@ -339,8 +372,37 @@ namespace TrimGap
             public static double OffsetBlueTapeW; // 藍膜 offset W
             public static double Offset_EDGE_1StepW; // 1階產品 EDGE offset W
             public static double Offset_EDGE_2StepW1; // 2階產品 EDGE offset W1
+            public static double Offset_EDGE_2StepW2; // 2階產品 EDGE offset W2
 
             public static double HTW_StandardPlane; // HTW基準面
+			public static double HTW_W2EdgeThreshold; // HTW W2Edge Threshold 
+            public static int HTW_H0FromTilt; // HTW H0 From Tilt
+            public static double HTW_HistogramRange; // HTW Histogram高度分層的Range
+            public static double HTW_TrimSearchMaxDifference; // HTW 從最高分數向左搜索最大可容許高度差
+            public static double HTW_GroupPoints; // HTW 單邊評分範圍
+            public static double HTW_TrimToIntensityShift; // HTW 從Trim位置向右多少距離為Intensity搜尋右邊界
+
+            public static double Use_Leveling; // 
+            public static double nZone; // 
+            public static double PT_TrimSearchMaxDifference; // PT 從最高分數向左搜索最大可容許高度差
+            public static double Use_Intensity; // 
+            public static double W2_LJ_Replace_HTW; // 
+
+            public static double LJ_Measure_Count; //LJ量測次數
+            public static double HTW_Measure_Count; //HTW量測次數
+            public static double PT_Measure_Count; //HTW量測次數
+
+            //20250407 RD_OFFSET
+            public static double Offset_RD_H;
+            public static double Offset_RD_W;
+
+            //20250418 HTW_PT_2
+            public static double PT_2;
+            public static double PT_2_Z_Offset;
+            public static double PT_2_X;
+
+            //BlueTape Method
+            public static int BlueTapeMethod;
 
             public struct Offset
             {
@@ -359,12 +421,29 @@ namespace TrimGap
                 public static double Inline_BlueTapeW; // Inline 藍膜 offset W
                 public static double Inline_EDGE_1StepW;  // Inline EDGE 1階產品 offset W
                 public static double Inline_EDGE_2StepW1;  // Inline EDGE 2階產品 offset W1
+                public static double Inline_EDGE_2StepW2;  // Inline EDGE 2階產品 offset W2
                 public static double Offline_1StepH; // Offline 1階產品 offset H
                 public static double Offline_1StepW; // Offline 1階產品 offset W
                 public static double Offline_2StepH1; // Offline 2階產品 offset H1
                 public static double Offline_2StepW1; // Offline 2階產品 offset W1
                 public static double Offline_2StepH2; // Offline 2階產品 offset H2
                 public static double Offline_2StepW2; // Offline 2階產品 offset W2
+                public static double Trim0_1StepH; // Trim0 1階產品 offset H
+                public static double Trim0_1StepW; // Trim0 1階產品 offset W
+                public static double Trim0_2StepH1; // Trim0 2階產品 offset H1
+                public static double Trim0_2StepW1; // Trim0 2階產品 offset W1
+                public static double Trim0_2StepH2; // Trim0 2階產品 offset H2
+                public static double Trim0_2StepW2; // Trim0 2階產品 offset W2
+                public static double Trim0_PT_1StepH;  // Trim0 PT 1階產品 offset H
+                public static double Trim0_PT_1StepW;  // Trim0 PT 1階產品 offset W
+                public static double Trim0_PT_2StepH1;  // Trim0 PT 2階產品 offset H1
+                public static double Trim0_PT_2StepW1;  // Trim0 PT 2階產品 offset W1
+                public static double Trim0_PT_2StepH2;  // Trim0 PT 2階產品 offset H2
+                public static double Trim0_PT_2StepW2;  // Trim0 PT 2階產品 offset W2
+                public static double Trim0_BlueTapeW; // Trim0 藍膜 offset W
+                public static double Trim0_EDGE_1StepW;  // Trim0 EDGE 1階產品 offset W
+                public static double Trim0_EDGE_2StepW1;  // Trim0 EDGE 2階產品 offset W1
+                public static double Trim0_EDGE_2StepW2;  // Trim0 EDGE 2階產品 offset W2
                 public static double Offline_PT_1StepH; // Offline PT 1階產品 offset H
                 public static double Offline_PT_1StepW; // Offline PT 1階產品 offset W
                 public static double Offline_PT_2StepH1; // Offline PT 2階產品 offset H1
@@ -374,6 +453,23 @@ namespace TrimGap
                 public static double Offline_BlueTapeW; // Offline 藍膜 offset W
                 public static double Offline_EDGE_1StepW;  // Offline EDGE 1階產品 offset W
                 public static double Offline_EDGE_2StepW1;  // Offline EDGE 2階產品 offset W1
+                public static double Offline_EDGE_2StepW2;  // Offline EDGE 2階產品 offset W2
+                public static double F2F_1StepH; // F2F 1階產品 offset H
+                public static double F2F_1StepW; // F2F 1階產品 offset W
+                public static double F2F_2StepH1; // F2F 2階產品 offset H1
+                public static double F2F_2StepW1; // F2F 2階產品 offset W1
+                public static double F2F_2StepH2; // F2F 2階產品 offset H2
+                public static double F2F_2StepW2; // F2F 2階產品 offset W2
+                public static double F2F_PT_1StepH;  // F2F PT 1階產品 offset H
+                public static double F2F_PT_1StepW;  // F2F PT 1階產品 offset W
+                public static double F2F_PT_2StepH1;  // F2F PT 2階產品 offset H1
+                public static double F2F_PT_2StepW1;  // F2F PT 2階產品 offset W1
+                public static double F2F_PT_2StepH2;  // F2F PT 2階產品 offset H2
+                public static double F2F_PT_2StepW2;  // F2F PT 2階產品 offset W2
+                public static double F2F_BlueTapeW; // F2F 藍膜 offset W
+                public static double F2F_EDGE_1StepW;  // F2F EDGE 1階產品 offset W
+                public static double F2F_EDGE_2StepW1;  // F2F EDGE 2階產品 offset W1
+                public static double F2F_EDGE_2StepW2;  // F2F EDGE 2階產品 offset W2
                 public static double[] QC_1StepH = new double[8];  // QC 1階產品 offset H
                 public static double[] QC_1StepW = new double[8];  // QC 1階產品 offset W
                 public static double[] QC_2StepH1 = new double[8];  // QC 2階產品 offset H1
@@ -389,6 +485,10 @@ namespace TrimGap
                 public static double[] QC_BlueTapeW = new double[8]; // QC 藍膜 offset W
                 public static double[] QC_EDGE_1StepW = new double[8];  // QC EDGE 1階產品 offset W
                 public static double[] QC_EDGE_2StepW1 = new double[8];  // QC EDGE 2階產品 offset W1
+                public static double[] QC_EDGE_2StepW2 = new double[8];  // QC EDGE 2階產品 offset W2
+
+                public static double RD_H;
+                public static double RD_W;
             }
         }
 
@@ -424,6 +524,7 @@ namespace TrimGap
             public static double[,] W1 = new double[25, 8];
             public static double[,] W2 = new double[25, 8];
             public static int Skip; //0:正常 1:略過EFEM 2:自我檢測用
+            public static bool bLimitCheckPass;
         }
 
         public static RecipeFormat Recipe = new RecipeFormat();
@@ -444,6 +545,9 @@ namespace TrimGap
         public static double TTVMax;
         public static double TTVMin;
         public static double TTVMean;
+        public static string Note;
+        public static string HTW_Focus_Z;
+        public static double LJ_W2 = 0;
 
         public static void ClearResult()
         {
@@ -478,22 +582,63 @@ namespace TrimGap
         public static double[] rawData;
         public static double[] rawData2;
         public static double[] rawData3;
+        public static double[] rawData4;
+        public static double[] rawData5;
+        //=============================== 20250418
+        public static double[] rawData_2;
+        public static double[] rawData2_2;
+        public static double[] rawData3_2;
+        public static double[] rawData4_2;
+        public static double[] rawData5_2;
+        //===============================
         public static double[] removezeroData;
         public static double[] removezeroData2;
         public static double[] removezeroData3;
+        //===============================20250418
+        public static double[] removezeroData_1;
+        public static double[] removezeroData2_1;
+        public static double[] removezeroData3_1;
+        //===============================20250418
+
         public static double[] tiltingdata_x;
         public static double[] tiltingdata_x2;
         public static double[] tiltingdata_x3;
         public static double[] tiltingdata_y;
         public static double[] tiltingdata_y2;
         public static double[] tiltingdata_y3;
+
+        //===============================20250418
+        public static double[] tiltingdata_x_1;
+        public static double[] tiltingdata_x2_1;
+        public static double[] tiltingdata_x3_1;
+        public static double[] tiltingdata_y_1;
+        public static double[] tiltingdata_y2_1;
+        public static double[] tiltingdata_y3_1;
+        //===============================20250418
+
+
+        public static double[] intensitydata;
         public static double[][] resultdata = new double[8][];
+        //===============================20250418
+        public static double[][] resultdata_1 = new double[8][];
+        //===============================20250418
         public static double[][] resultdata2 = new double[8][];
         public static double[][] resultdata_blueW = new double[8][];
         public static double htw_gap;
         public static double htw_cut;
         public static double[] rawData_base;
+        public static double[] rawData_base_2;
         public static int htw_baselineIndex;
+        public static string sPath_Raw;
+        public static string sPath_Int;
+        public static string sPath_Base;
+        public static double[] LJ_W2 = new double[8];
+
+        public static List<double[]> list_data = new List<double[]>(); //小角度量測_暫存資料
+        public static List<double[]> list_data_2 = new List<double[]>(); //小角度量測_暫存資料
+        public static List<double[]> list_data_3 = new List<double[]>(); //小角度量測_暫存資料
+        public static List<double[]> list_data_4 = new List<double[]>(); //小角度量測_暫存資料
+        public static List<double[]> list_data_5 = new List<double[]>(); //小角度量測_暫存資料
     }
 
     public struct AnalysisData2
@@ -508,6 +653,7 @@ namespace TrimGap
         public static double[] rawData;
         public static double[] rawData2;
         public static double[] rawData3;
+        public static double[] rawData4;
         public static double[] removezeroData;
         public static double[] removezeroData2;
         public static double[] removezeroData3;
@@ -529,6 +675,8 @@ namespace TrimGap
         public static double[] rawData;
         public static double[] rawData2;
         public static double[] rawData3;
+        public static double[] rawData4;
+        public static double[] rawData5;
         public static double[] removezeroData;
         public static double[] removezeroData2;
         public static double[] removezeroData3;
@@ -538,6 +686,7 @@ namespace TrimGap
         public static double[] tiltingdata_y;
         public static double[] tiltingdata_y2;
         public static double[] tiltingdata_y3;
+        public static double[] intensitydata;
         public static double[] resultdata;
         public static double htw_gap;
         public static double htw_cut;
@@ -620,12 +769,14 @@ namespace TrimGap
 
         // 權限
         public static permissionEnum UserAuthority;
+        public static bool bRecordCCD = false;
 
         public static int PTRetry;
 
         public static short[] SpectrumMaxValue;  //儲存spectrum最大值
         public static int[] SpectrumMaxValueBias;  //儲存spectrum最大值距離中間的偏差值。例如70-80內的最大值在72，則記錄+3，到時候對焦的位置要額外+3
         public static double Focus_Offset; //總對焦Z補正值
+        public static int AutoFocus_Retry_Count = 0;  //AutoFocus重試次數
 
         //
         public static RecipeFormat Recipe = new RecipeFormat();
@@ -658,12 +809,27 @@ namespace TrimGap
             public static string pauseEvent;
             public static byte PJState;
             public static string carrierID;
-            public static byte[] slot;
+            public static byte[] slot = new byte[25];
             public static byte PRType;
             public static bool bStart;
             public static byte recMethod;
             public static string recID;
             public static string recVarList;
+        }
+
+        public struct CarrierInfo
+        {
+            public static string objID;
+            public static byte capacity;
+            public static byte carrierIDStatus;
+            public static byte carrierAccessingStatus;
+            public static byte substrateCount;
+            public static string[] lotID = new string[25];
+            public static string[] substrateID = new string[25];
+            public static byte[] slotMap = new byte[25];
+            public static string locationID;
+            public static byte slotMapStatus;
+            public static string usage;
         }
         // [Recipe]
         /*public struct Recipe
@@ -711,6 +877,7 @@ namespace TrimGap
         public List<int> TTVrotatePosition;
         public List<Point> TTVshiftPosition;
         public int WaferEdgeEvaluate;
+        public int Analysis_method;
 
         public int BlueTapeThreshold;
         public int Step2_Range_step1x0; // 2階產品第一刀
@@ -727,6 +894,27 @@ namespace TrimGap
         public int RecordCCD_Angle_Start;
         public int RecordCCD_Angle_End;
         public int RecordCCD_Angle_Pitch;
+
+        //係數
+        public double H1;
+        public double H2;
+        public double W1;
+        public double W2;
+
+        public int RecordAfterMeasure;
+        public double LJ_Flat;
+        public int RD_LJ;
+
+        //數值正常範圍上下限
+        public int LimitMethod;  //0:off  1:on
+        public double H1_LowerLimit;
+        public double H2_LowerLimit;
+        public double W1_LowerLimit;
+        public double W2_LowerLimit;
+        public double H1_UpperLimit;
+        public double H2_UpperLimit;
+        public double W1_UpperLimit;
+        public double W2_UpperLimit;
 
     }
 

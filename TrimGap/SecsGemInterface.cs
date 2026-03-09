@@ -35,6 +35,8 @@ namespace TrimGap
         public static DIASecsGemController _gemControler;
         public static string err = string.Empty;
 
+        public int CarrierReCreate = 0;
+
         public bool bWaitSECS_ACCESSMODE_ASK
         {
             get
@@ -1027,32 +1029,65 @@ namespace TrimGap
             }
             else if (type == 1)
             {
-                long rtn = _gemControler.UpdateSV((ulong)id, val, out errLog);
-                /*if(rtn != 0)
+                long rtn;
+                switch (id)
                 {
-                    string[] str = errLog.Split('\'');
+                    case 2006:
+                        rtn = MainForm.UpdateLoadPortAccessMode("1", (byte)val);
+                        break;
+                    case 2007:
+                        rtn = MainForm.UpdateLoadPortAccessMode("2", (byte)val);
+                        break;
+                    case 2008:
+                        rtn = MainForm.UpdateLoadPortTransferState("1", (byte)val);
+                        break;
+                    case 2009:
+                        rtn = MainForm.UpdateLoadPortTransferState("2", (byte)val);
+                        break;
+                    case 2016:
+                        rtn = MainForm.UpdateLoadPortAssociationState("1", (byte)val);
+                        break;
+                    case 2017:
+                        rtn = MainForm.UpdateLoadPortAssociationState("2", (byte)val);
+                        break;
+                    case 2020:
+                        rtn = MainForm.UpdateLoadPortPortID("1", (byte)val);
+                        break;
+                    case 2021:
+                        rtn = MainForm.UpdateLoadPortPortID("2", (byte)val);
+                        break;
+                    default:
+                        rtn = _gemControler.UpdateSV((ulong)id, val, out errLog);
 
-                    if (str.Length > 0)
-                    {
-                        switch(str[2])
+                        /*if(rtn != 0)
                         {
-                            case "U1":
-                                byte val2 = (byte)val;
-                                rtn = _gemControler.UpdateSV((ulong)id, val2, out errLog);
-                                long rtn2 = rtn;
-                                break;
-                            case "U2":
-                                rtn = _gemControler.UpdateSV((ulong)id, (ushort)val, out errLog);
-                                break;
-                            case "U4":
-                                rtn = _gemControler.UpdateSV((ulong)id, (uint)val, out errLog);
-                                break;
-                            default:
-                                break;
-                        }
-                    }
+                            string[] str = errLog.Split('\'');
 
-                }*/
+                            if (str.Length > 0)
+                            {
+                                switch(str[2])
+                                {
+                                    case "U1":
+                                        byte val2 = (byte)val;
+                                        rtn = _gemControler.UpdateSV((ulong)id, val2, out errLog);
+                                        long rtn2 = rtn;
+                                        break;
+                                    case "U2":
+                                        rtn = _gemControler.UpdateSV((ulong)id, (ushort)val, out errLog);
+                                        break;
+                                    case "U4":
+                                        rtn = _gemControler.UpdateSV((ulong)id, (uint)val, out errLog);
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+
+                        }*/
+
+                        break;
+                }
+
                 return rtn;
             }
             else
@@ -1116,11 +1151,11 @@ namespace TrimGap
         }
 
         // ====================  GEM300  ==============================
-        public int LoadportMatchToRun(string lpno)
+        public int LoadportMatchToRun(string lpno, ref string[] lotID, ref string[] substrateID )
         {
             if (type == 1)
             {
-                return MainForm.LoadportMatchToRun(lpno);
+                return MainForm.LoadportMatchToRun(lpno, ref lotID, ref substrateID);
             }
             else
             {
@@ -1180,10 +1215,29 @@ namespace TrimGap
                 return 0;
         }
 
-        public int CreateCarrier(string foupid)
+        public int CreateCarrier(string foupid, string loc)
         {
             if (type == 1)
-                return MainForm.CreateCarrier(foupid);
+                return MainForm.CreateCarrier(foupid, loc);
+            else
+                return 0;
+        }
+
+        public int UpdateLoadPortAssociationState(string objID, byte state)
+        {
+            if (type == 1)
+                return MainForm.UpdateLoadPortAssociationState(objID, state);
+            else
+                return 0;
+        }
+
+        public int GetCarrierContentMap(string foupid, out string[] lot, out string[] substrate, out string err)
+        {
+            lot = null;
+            substrate = null;
+            err = "";
+            if (type == 1)
+                return MainForm.GetContentMap(foupid, out lot, out substrate, out err);
             else
                 return 0;
         }
@@ -1209,6 +1263,14 @@ namespace TrimGap
         {
             if (type == 1)
                 return MainForm.SetCarrierAttr_SlotMap(foupid, slot);
+            else
+                return 0;
+        }
+
+        public int SetCarrierAttr_ContentMap(string foupid, string[] lotID, string[] substrateID)
+        {
+            if (type == 1)
+                return MainForm.SetCarrierAttr_ContentMap(foupid, lotID, substrateID);
             else
                 return 0;
         }
@@ -1252,6 +1314,62 @@ namespace TrimGap
             else
                 return 0;
         }
-        
+
+        public int CreateSubstrate(string objID, string lotID, string locationID, string objSpec = "")
+        {
+            if (type == 1)
+                return MainForm.CreateSubstrate(objID, lotID, locationID);
+            else
+                return 0;
+        }
+
+        public int SetSubstrateStatus_Proc(string objID, DemoFormDiaGemLib.SubstProcState status)
+        {
+            if (type == 1)
+                return MainForm.SetSubstrateStatus_Proc(objID, status);
+            else
+                return 0;
+        }
+
+        public int SetSubstrateAttr_Location(string objID, string location)
+        {
+            if (type == 1)
+                return MainForm.SetSubstrateAttr_Location(objID, location);
+            else
+                return 0;
+        }
+
+        public int UpdateMeasurementData(string[] angle, double[] h1, double[] w1, double[] h2, double[] w2)
+        {
+            if (type == 1)
+                return MainForm.UpdateMeasurementData( angle, h1, w1, h2, w2 );
+            else
+                return 0;
+        }
+
+        public int UpdateMeasurementMax(double h1, double w1, double h2, double w2)
+        {
+            if (type == 1)
+                return MainForm.UpdateMeasurementMax(h1, w1, h2, w2);
+            else
+                return 0;
+        }
+
+        public int DeleteControlJobWithAssociatedProcessJob(string objID, out string err)
+        {
+            err = "";
+            if (type == 1)
+                return MainForm.DeleteControlJobWithAssociatedProcessJob(objID, out err);
+            else
+                return 0;
+        }
+        public int DeleteControlJob(string objID, out string err)
+        {
+            err = "";
+            if (type == 1)
+                return MainForm.DeleteControlJob(objID, out err);
+            else
+                return 0;
+        }
     }
 }

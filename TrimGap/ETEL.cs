@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using Modules;
+using ch.etel.edi.dmd.v40;
+using ch.etel.edi.dsa.v40;
 
 namespace TrimGap
 {
@@ -13,6 +15,7 @@ namespace TrimGap
         private MotionController etel;
         private static bool binitial;
         private const double deg1 = 1000;
+        public List<DsaDrive> listDsaDrive;
         /*
         public static string Get_AxisNo_Description(Enum value)
         {
@@ -101,6 +104,7 @@ namespace TrimGap
             {
                 etel = new ETEL();
                 etel.Initialize();
+                listDsaDrive = etel.listDsaDrive();
                 binitial = true;
             }
             catch (Exception e)

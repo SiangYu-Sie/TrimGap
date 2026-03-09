@@ -1,0 +1,3 @@
+//Name,DataType,Length,Comment
+PPID,ASCII,10,1
+LOADPORT_ID,ASCII,20,1

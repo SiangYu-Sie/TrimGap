@@ -164,6 +164,14 @@ namespace DemoFormDiaGemLib
         public void DeletePPID(string ppid)
         {
             _DicPPBody.Remove(ppid);
+            // 同步刪除磁碟上的 Recipe 檔案，避免 Initial() 重新讀取時又出現
+            try
+            {
+                string filePath = "D:\\FTGM1\\ParameterDirectory\\Recipe\\" + ppid + ".ini";
+                if (System.IO.File.Exists(filePath))
+                    System.IO.File.Delete(filePath);
+            }
+            catch { }
         }
 
         public void DeletePPID_All()

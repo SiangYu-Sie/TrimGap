@@ -1,0 +1,18 @@
+//PRCMD: command name,Comment
+// Command Parameter Name,DataType,Comment,Length
+PRCMD: STOP,STOP Comment
+
+PRCMD: START,START Comment
+ PPID,ASCII,1,10
+ LOADPORT_ID,ASCII,1,20
+
+PRCMD: CANCEL, CANCEL Comment
+
+PRCMD: RESUME, RESUME Comment
+
+PRCMD: PAUSE,PAUSE Comment
+ PPID,ASCII,1,10
+ LOADPORT_ID,ASCII,1,20
+
+PRCMD: ABORT, ABORT Comment
+

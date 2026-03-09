@@ -1,0 +1,7 @@
+State=1
+CountActual=0
+CountTotal=0
+StartTime=0001010100000000
+FullTime=0001010100000000
+IsFull=False
+[SpoolBufferMaxSize=10000]

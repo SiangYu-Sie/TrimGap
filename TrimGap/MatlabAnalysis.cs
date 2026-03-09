@@ -17,11 +17,11 @@ namespace TrimGap
 
         #region TrimGap
 
-        public void CalculateBlueTape(byte[] data, int w, int h, int line, bool plotflag, int threshold, bool Rotate, out double[] Resultdata)
+        public void CalculateBlueTape(byte[] data, int w, int h, int line, bool plotflag, int threshold, bool Rotate, int method, out double[] Resultdata)
         {
             MWArray result;
 
-            MWArray[] argIn = new MWArray[] { (MWNumericArray)data, w, h, line, (MWLogicalArray)plotflag, threshold, (MWLogicalArray)Rotate };
+            MWArray[] argIn = new MWArray[] { (MWNumericArray)data, w, h, line, (MWLogicalArray)plotflag, threshold, (MWLogicalArray)Rotate, method };
             MWArray[] argOut = new MWArray[3];
             pml.calculateBlueTapeW(4, ref argOut, argIn);
 
@@ -43,12 +43,12 @@ namespace TrimGap
 
         
 
-        public void tilting(bool plotflag, double[] rawdata, double x_interval, out double[] tiltingdata_x, out double[] tiltingdata_y)
+        public void tilting(bool plotflag, double[] rawdata, double x_interval, double Analysis_method, double LJ_Flat, out double[] tiltingdata_x, out double[] tiltingdata_y)
         {
             double[] InputData = rawdata;
             MWNumericArray array1 = (MWNumericArray)InputData;
 
-            MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, (MWNumericArray)InputData, (double)x_interval };
+            MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, (MWNumericArray)InputData, (double)x_interval, (double)Analysis_method, (double)LJ_Flat };
             MWArray[] argOut = new MWArray[2];
             pml.tilting(3, ref argOut, argIn);
             double[,] MatlabToCsharp = (double[,])argOut[0].ToArray(); // 格式轉換
@@ -157,7 +157,7 @@ namespace TrimGap
             tiltingdata_y2 = OutputData5;
             tiltingdata_y3 = OutputData6;
         }
-        public void tilting3_htw(bool plotflag, double[] rawdata, double[] rawdata2, double[] rawdata3, double x_interval, bool reverse, out double[] tiltingdata_x1, out double[] tiltingdata_x2, out double[] tiltingdata_x3, out double[] tiltingdata_y1, out double[] tiltingdata_y2, out double[] tiltingdata_y3, out double cut)
+        public void tilting3_htw(bool plotflag, double[] rawdata, double[] rawdata2, double[] rawdata3, double x_interval, bool reverse, double useleveling, out double[] tiltingdata_x1, out double[] tiltingdata_x2, out double[] tiltingdata_x3, out double[] tiltingdata_y1, out double[] tiltingdata_y2, out double[] tiltingdata_y3, out double cut)
         {
             double[] InputData = rawdata;
             double[] InputData2 = rawdata2;
@@ -167,7 +167,7 @@ namespace TrimGap
             MWNumericArray array2 = (MWNumericArray)InputData2;
             MWNumericArray array3 = (MWNumericArray)InputData3;
 
-            MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, (MWNumericArray)InputData, (MWNumericArray)InputData2, (MWNumericArray)InputData3, (double)x_interval, (MWLogicalArray)reverse };
+            MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, (MWNumericArray)InputData, (MWNumericArray)InputData2, (MWNumericArray)InputData3, (double)x_interval, (MWLogicalArray)reverse, (MWNumericArray)useleveling };
             MWArray[] argOut = new MWArray[6];
             pml.tilting3_htw(8, ref argOut, argIn);
             double[,] MatlabToCsharp = (double[,])argOut[0].ToArray(); // 格式轉換
@@ -233,10 +233,22 @@ namespace TrimGap
             double[,] MatlabToCsharp7 = (double[,])argOut[6].ToArray(); // 格式轉換
 
             double[] OutputData7 = new double[MatlabToCsharp7.Length];
+            for (int i = 0; i < MatlabToCsharp7.Length; i++)
+            {
+                //OutputData7[i] = MatlabToCsharp7[0, i];
+                OutputData7[i] = Math.Round(MatlabToCsharp7[0, i], 2, MidpointRounding.AwayFromZero);
+            }
+            if (MatlabToCsharp7.Length == 0)
+                OutputData7 = new double[1];
 
             double[,] MatlabToCsharp8 = (double[,])argOut[7].ToArray(); // 格式轉換
 
             double[] OutputData8 = new double[MatlabToCsharp8.Length];
+            for (int i = 0; i < MatlabToCsharp8.Length; i++)
+            {
+                //OutputData6[i] = MatlabToCsharp6[0, i];
+                OutputData8[i] = Math.Round(MatlabToCsharp8[0, i], 2, MidpointRounding.AwayFromZero);
+            }
 
             tiltingdata_x1 = OutputData1;
             tiltingdata_x2 = OutputData2;
@@ -255,7 +267,14 @@ namespace TrimGap
 
             MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, Step, (MWNumericArray)InputData, (MWNumericArray)InputData2, (double)x_interval, step1x0, step1x1, step2x0, step2x1, range1, range2 };
             MWArray[] argOut = new MWArray[13];
-            pml.calculateGap(13, ref argOut, argIn);
+            if(sram.Recipe.RD_LJ == 0)
+            {
+                pml.calculateGap(13, ref argOut, argIn);
+            }
+            else
+            {
+                pml.calculateGap1(13, ref argOut, argIn);
+            }
             double[,] MatlabToCsharp;
             double[] OutputData = new double[argOut.Length];
             for (int i = 0; i < argOut.Length; i++)
@@ -272,7 +291,7 @@ namespace TrimGap
             Resultdata = OutputData;
         }
 
-        public void CalculateGap3(bool plotflag, int Step, double[] tiltdata_x1, double[] tiltdata_x2, double[] tiltdata_x3, double[] tiltdata_y1, double[] tiltdata_y2, double[] tiltdata_y3, double x_interval, int step1x0, int step1x1, int step2x0, int step2x1, int range1, int range2, out double[] Resultdata)
+        public void CalculateGap3(bool plotflag, int Step, double[] tiltdata_x1, double[] tiltdata_x2, double[] tiltdata_x3, double[] tiltdata_y1, double[] tiltdata_y2, double[] tiltdata_y3, double x_interval, int step1x0, int step1x1, int step2x0, int step2x1, int range1, int range2, int nZone, double PT_TrimSearchMaxDifference, out double[] Resultdata)
         {
             double[] InputData = tiltdata_x1;
             double[] InputData2 = tiltdata_x2;
@@ -289,7 +308,7 @@ namespace TrimGap
             MWNumericArray array6 = (MWNumericArray)InputData6;
 
             //MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, 2, (MWNumericArray)InputData, (MWNumericArray)InputData2, (MWNumericArray)InputData3, (MWNumericArray)InputData4, (MWNumericArray)InputData5, (MWNumericArray)InputData6 , (double)x_interval, step1x0, step1x1, step2x0, step2x1, range1, range2 };
-            MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, 2, (MWNumericArray)InputData, (MWNumericArray)InputData2, (MWNumericArray)InputData3, (MWNumericArray)InputData4, (MWNumericArray)InputData5, (MWNumericArray)InputData6, 1, step1x0, step1x1, step2x0, 2100, range1, range2 };
+            MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, Step, (MWNumericArray)InputData, (MWNumericArray)InputData2, (MWNumericArray)InputData3, (MWNumericArray)InputData4, (MWNumericArray)InputData5, (MWNumericArray)InputData6, x_interval, step1x0, step1x1, step2x0, step2x1, range1, range2, nZone, PT_TrimSearchMaxDifference };
             MWArray[] argOut = new MWArray[13];
             pml.calculateGap3(13, ref argOut, argIn);
             //argOut = pml.calculateGap3(13, (MWLogicalArray)plotflag, Step, (MWNumericArray)tiltdata_x1, (MWNumericArray)tiltdata_x2, (MWNumericArray)tiltdata_x3, (MWNumericArray)tiltdata_y1, (MWNumericArray)tiltdata_y2, (MWNumericArray)tiltdata_y3, x_interval, step1x0, step1x1, step2x0, step2x1, range1, range2);
@@ -308,7 +327,7 @@ namespace TrimGap
             //}
             Resultdata = OutputData;
         }
-        public void CalculateGap3_htw(bool plotflag, int Step, double[] tiltdata_x1, double[] tiltdata_x2, double[] tiltdata_x3, double[] tiltdata_y1, double[] tiltdata_y2, double[] tiltdata_y3, double x_interval, int step1x0, int step1x1, int step2x0, int step2x1, int range1, int range2, out double[] Resultdata)
+        public void CalculateGap3_htw(bool plotflag, int Step, double[] tiltdata_x1, double[] tiltdata_x2, double[] tiltdata_x3, double[] tiltdata_y1, double[] tiltdata_y2, double[] tiltdata_y3, double x_interval, int step1x0, int step1x1, int step2x0, int step2x1, int range1, int range2, double W2EdgeThreshold, int H0FromTilt, double[] intensitydata, double histrange, double maxdiff, double grouppoint, double tishift, out double[] Resultdata)
         {
             double[] InputData = tiltdata_x1;
             double[] InputData2 = tiltdata_x2;
@@ -316,6 +335,7 @@ namespace TrimGap
             double[] InputData4 = tiltdata_y1;
             double[] InputData5 = tiltdata_y2;
             double[] InputData6 = tiltdata_y3;
+            double[] InputData7 = intensitydata;
 
             MWNumericArray array1 = (MWNumericArray)InputData;
             MWNumericArray array2 = (MWNumericArray)InputData2;
@@ -323,11 +343,12 @@ namespace TrimGap
             MWNumericArray array4 = (MWNumericArray)InputData4;
             MWNumericArray array5 = (MWNumericArray)InputData5;
             MWNumericArray array6 = (MWNumericArray)InputData6;
+            MWNumericArray array7 = (MWNumericArray)InputData7;
 
-            //MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, 2, (MWNumericArray)InputData, (MWNumericArray)InputData2, (MWNumericArray)InputData3, (MWNumericArray)InputData4, (MWNumericArray)InputData5, (MWNumericArray)InputData6 , (double)x_interval, step1x0, step1x1, step2x0, step2x1, range1, range2 };
-            MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, 2, (MWNumericArray)InputData, (MWNumericArray)InputData2, (MWNumericArray)InputData3, (MWNumericArray)InputData4, (MWNumericArray)InputData5, (MWNumericArray)InputData6, 1, step1x0, step1x1, step2x0, 2100, range1, range2 };
-            MWArray[] argOut = new MWArray[13];
-            pml.calculateGap3_htw(13, ref argOut, argIn);
+            MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, Step, (MWNumericArray)InputData, (MWNumericArray)InputData2, (MWNumericArray)InputData3, (MWNumericArray)InputData4, (MWNumericArray)InputData5, (MWNumericArray)InputData6 , (double)x_interval, step1x0, step1x1, step2x0, step2x1, range1, range2, W2EdgeThreshold, H0FromTilt, (MWNumericArray)InputData7, histrange, maxdiff, grouppoint, tishift };
+            //MWArray[] argIn = new MWArray[] { (MWLogicalArray)plotflag, 2, (MWNumericArray)InputData, (MWNumericArray)InputData2, (MWNumericArray)InputData3, (MWNumericArray)InputData4, (MWNumericArray)InputData5, (MWNumericArray)InputData6, 1, step1x0, step1x1, step2x0, 2100, range1, range2 };
+            MWArray[] argOut = new MWArray[15];
+            pml.calculateGap3_htw(15, ref argOut, argIn);
             //argOut = pml.calculateGap3(13, (MWLogicalArray)plotflag, Step, (MWNumericArray)tiltdata_x1, (MWNumericArray)tiltdata_x2, (MWNumericArray)tiltdata_x3, (MWNumericArray)tiltdata_y1, (MWNumericArray)tiltdata_y2, (MWNumericArray)tiltdata_y3, x_interval, step1x0, step1x1, step2x0, step2x1, range1, range2);
             double[,] MatlabToCsharp;
             double[] OutputData = new double[argOut.Length];
@@ -1615,7 +1636,7 @@ namespace TrimGap
             newdata3 = OutputData3;
         }
 
-        public void removeZero3_htw(double[] data, double[] data2, double[] data3, double baseline, out double[] newdata1, out double[] newdata2, out double[] newdata3, out double gapW) //把數據為0的直接拿掉 資料出來會比進去少
+        public void removeZero3_htw(double[] data, double[] data2, double[] data3, double baseline, bool reverse, out double[] newdata1, out double[] newdata2, out double[] newdata3, out double gapW) //把數據為0的直接拿掉 資料出來會比進去少
         {
             MWArray[] result;
 
@@ -1629,7 +1650,7 @@ namespace TrimGap
             MWNumericArray array3 = (MWNumericArray)InputData3;
             MWNumericArray array4 = (MWNumericArray)baseline;
 
-            MWArray[] argIn = new MWArray[] { (MWNumericArray)array1, (MWNumericArray)array2, (MWNumericArray)array3, (double)baseline };
+            MWArray[] argIn = new MWArray[] { (MWNumericArray)array1, (MWNumericArray)array2, (MWNumericArray)array3, (double)baseline , (MWLogicalArray) reverse};
             MWArray[] argOut = new MWArray[4];
 
             //result = pml.removeZero3_htw(4, array1, array2, array3, array4);

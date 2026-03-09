@@ -14,6 +14,13 @@
     <item name="Spooling" enable="1" />
     <item name="ControlHostInitiated" enable="1" />
     <item name="ObjectServiceStandard" enable="1" />
+    <item name="LimitsMonitoring" enable="1" />
+    <item name="DataVariableAndCollectionEventNamelistRequests" enable="1" />
+    <item name="EventReportInformation" enable="1" />
+    <item name="TraceInformation" enable="1" />
+    <item name="SpoolingInformation" enable="1" />
+    <item name="Stream12WaferMapping" enable="1" />
+    <item name="Stream21ItemTransfer" enable="1" />
   </Capability>
   <ProcessProgramManagement>
     <item support_S7F1="0" />
@@ -37,6 +44,8 @@
     <item name="TRID" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
     <item name="TOTSMP" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
     <item name="VID" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+    <item name="DVID" format="UINT_4" desc="UINT_1, UINT_2, UINT_4, UINT_8" />
+    <item name="ITEMLENGTH" format="UINT_4" desc="UINT_4, UINT_8" />
   </ItemFormatManagement>
   <UIForm>
     <item ShowMainForm="1" desc="0:Disable, 1:Enable" />

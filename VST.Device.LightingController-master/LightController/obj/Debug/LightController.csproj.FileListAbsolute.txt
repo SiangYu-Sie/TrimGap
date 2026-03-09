@@ -67,3 +67,42 @@ D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\VST.Device.L
 D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.CoreCompileInputs.cache
 D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\VST.Device.LightingController-master\LightController\obj\Debug\LightController.exe
 D:\SWAP - Software\軟體\程式更新\TrimGap_1_20240124\TrimGap_1\VST.Device.LightingController-master\LightController\obj\Debug\LightController.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_202406281430 (2)\TrimGap_1_20240628\VST.Device.LightingController-master\LightController\bin\Debug\LightController.exe.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_202406281430 (2)\TrimGap_1_20240628\VST.Device.LightingController-master\LightController\bin\Debug\LightController.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_202406281430 (2)\TrimGap_1_20240628\VST.Device.LightingController-master\LightController\bin\Debug\LightController.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_202406281430 (2)\TrimGap_1_20240628\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.AssemblyReference.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_202406281430 (2)\TrimGap_1_20240628\VST.Device.LightingController-master\LightController\obj\Debug\LightController.Form1.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_202406281430 (2)\TrimGap_1_20240628\VST.Device.LightingController-master\LightController\obj\Debug\LightController.Properties.Resources.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_202406281430 (2)\TrimGap_1_20240628\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.GenerateResource.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_202406281430 (2)\TrimGap_1_20240628\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_202406281430 (2)\TrimGap_1_20240628\VST.Device.LightingController-master\LightController\obj\Debug\LightController.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_202406281430 (2)\TrimGap_1_20240628\VST.Device.LightingController-master\LightController\obj\Debug\LightController.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\VST.Device.LightingController-master\LightController\bin\Debug\LightController.exe.config
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\VST.Device.LightingController-master\LightController\bin\Debug\LightController.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\VST.Device.LightingController-master\LightController\bin\Debug\LightController.pdb
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\VST.Device.LightingController-master\LightController\obj\Debug\LightController.Form1.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\VST.Device.LightingController-master\LightController\obj\Debug\LightController.Properties.Resources.resources
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.GenerateResource.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.CoreCompileInputs.cache
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\VST.Device.LightingController-master\LightController\obj\Debug\LightController.exe
+D:\專案\TrimGap\TrimGapUpdate\TrimGap_1_20250924\VST.Device.LightingController-master\LightController\obj\Debug\LightController.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260106\VST.Device.LightingController-master\LightController\bin\Debug\LightController.exe.config
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260106\VST.Device.LightingController-master\LightController\bin\Debug\LightController.exe
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260106\VST.Device.LightingController-master\LightController\bin\Debug\LightController.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260106\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.AssemblyReference.cache
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260106\VST.Device.LightingController-master\LightController\obj\Debug\LightController.Form1.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260106\VST.Device.LightingController-master\LightController\obj\Debug\LightController.Properties.Resources.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260106\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.GenerateResource.cache
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260106\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.CoreCompileInputs.cache
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260106\VST.Device.LightingController-master\LightController\obj\Debug\LightController.exe
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260106\VST.Device.LightingController-master\LightController\obj\Debug\LightController.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\VST.Device.LightingController-master\LightController\bin\Debug\LightController.exe.config
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\VST.Device.LightingController-master\LightController\bin\Debug\LightController.exe
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\VST.Device.LightingController-master\LightController\bin\Debug\LightController.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.AssemblyReference.cache
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\VST.Device.LightingController-master\LightController\obj\Debug\LightController.Form1.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\VST.Device.LightingController-master\LightController\obj\Debug\LightController.Properties.Resources.resources
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.GenerateResource.cache
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\VST.Device.LightingController-master\LightController\obj\Debug\LightController.csproj.CoreCompileInputs.cache
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\VST.Device.LightingController-master\LightController\obj\Debug\LightController.exe
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\VST.Device.LightingController-master\LightController\obj\Debug\LightController.pdb

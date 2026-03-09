@@ -1,8 +1,0 @@
-14:41:53 EventReportSend() Exception: 索引超出範圍。必須為非負數且小於集合的大小。
-參數名稱: index
-14:41:55 EventReportSend() Exception: 索引超出範圍。必須為非負數且小於集合的大小。
-參數名稱: index
-14:42:09 EventReportSend() Exception: 索引超出範圍。必須為非負數且小於集合的大小。
-參數名稱: index
-14:42:10 EventReportSend() Exception: 索引超出範圍。必須為非負數且小於集合的大小。
-參數名稱: index

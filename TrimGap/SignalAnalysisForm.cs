@@ -140,7 +140,7 @@ namespace TrimGap
 
             chartSignal.Series[0].Points.AddXY(0, 0);
             chartSignal.Series[1].Points.AddXY(0, 0);
-            //this.chartSignal.Series.Add(series3);//將線畫在圖上
+            //this.chartSignal.Series.Add(series3);//將線畫在圖上          
         }
 
         private void Init_chartSignalPt()
@@ -227,6 +227,8 @@ namespace TrimGap
             chartSignalPt.Series[0].Points.AddXY(0, 0);
             chartSignalPt.Series[1].Points.AddXY(0, 0);
             //this.chartSignal.Series.Add(series3);//將線畫在圖上
+
+            label_HTW_method.Text = "";
         }
 
         private void btnSignalAnalysis_Click(object sender, EventArgs e)
@@ -253,6 +255,13 @@ namespace TrimGap
                 {
                     openFileDialog1.Filter = "csv files (*.csv)|*.txt|All files (*.*)|*.*";
                 }*/
+
+                if (Wafertype == 0)
+                    tabControl1.SelectedIndex = 1;
+                else if (Wafertype == 3 || Wafertype == 6 || Wafertype == 4 || Wafertype == 7)
+                    tabControl1.SelectedIndex = 2;
+                else if (Wafertype == 1 || Wafertype == 2)
+                    tabControl1.SelectedIndex = 0;
 
                 try
                 {
@@ -306,7 +315,7 @@ namespace TrimGap
                             SignalPlotData.rawData = array2;
                             read.Close();
                         }
-                        else if (Wafertype == 3)
+                        else if (Wafertype == 3 || Wafertype == 6)
                         {
                             StreamReader read = new StreamReader(openFileDialog1.FileName);
 
@@ -319,11 +328,18 @@ namespace TrimGap
                             double[] array4 = new double[ReadArray1.Length - 1];
                             for (int i = 0; i < ReadArray1.Length - 1; i++)
                             {
-                                string[] tmpArray = Regex.Split(ReadArray1[i], ",", RegexOptions.IgnoreCase);
-                                array2[i] = Convert.ToSingle(tmpArray[0]);
-                                array3[i] = Convert.ToSingle(tmpArray[1]);
-                                array4[i] = Convert.ToSingle(tmpArray[2]);
-                                Console.WriteLine(i.ToString());
+                                try
+                                {
+                                    string[] tmpArray = Regex.Split(ReadArray1[i], ",", RegexOptions.IgnoreCase);
+                                    array2[i] = Convert.ToSingle(tmpArray[0]);
+                                    array3[i] = Convert.ToSingle(tmpArray[1]);
+                                    array4[i] = Convert.ToSingle(tmpArray[2]);
+                                    Console.WriteLine(i.ToString());
+                                }
+                                catch (Exception ee)
+                                {
+                                    Console.WriteLine(ee.Message);
+                                }
                             }
                             progressBar_SignalAnalysis.Value = 10;
                             SignalPlotData.rawData = array2;
@@ -331,21 +347,26 @@ namespace TrimGap
                             SignalPlotData.rawData3 = array4;
                             read.Close();
                         }
-                        else if (Wafertype == 4)
+                        else if (Wafertype == 4 || Wafertype == 7)
                         {
                             StreamReader read = new StreamReader(openFileDialog1.FileName);
                             StreamReader readb = new StreamReader(openFileDialog1.FileName.Replace("HTW_RAW","HTW_RAW_BASE"));
+                            StreamReader readi = new StreamReader(openFileDialog1.FileName.Replace("HTW_RAW_", "HTW_RAW_Intensity"));
                             string ReadAll;
-                            string[] ReadArray1, ReadArray2;
+                            string[] ReadArray1, ReadArray2, ReadArray3;
+                            int delLength = 900;
                             ReadAll = read.ReadToEnd(); // 一次讀全部
                             ReadArray1 = Regex.Split(ReadAll, "\r\n", RegexOptions.IgnoreCase);
-                            double[] array2 = new double[ReadArray1.Length - 1];
-                            double[] array3 = new double[ReadArray1.Length - 1];
-                            double[] array4 = new double[ReadArray1.Length - 1];
+                            double[] array2 = new double[ReadArray1.Length - 1 - delLength];
+                            double[] array3 = new double[ReadArray1.Length - 1 - delLength];
+                            double[] array4 = new double[ReadArray1.Length - 1 - delLength];
                             ReadAll = readb.ReadToEnd(); // 一次讀全部
                             ReadArray2 = Regex.Split(ReadAll, "\r\n", RegexOptions.IgnoreCase);
-                            double[] arraybase = new double[ReadArray2.Length - 1];
-                            for (int i = 0; i < ReadArray1.Length - 1; i++)
+                            double[] arraybase = new double[ReadArray2.Length - 1 - delLength];
+                            ReadAll = readi.ReadToEnd(); // 一次讀全部
+                            ReadArray3 = Regex.Split(ReadAll, "\r\n", RegexOptions.IgnoreCase);
+                            double[] array6 = new double[ReadArray3.Length - 1 - delLength];
+                            for (int i = 0; i < ReadArray1.Length - 1 - delLength; i++)
                             {
                                 string[] tmpArray = Regex.Split(ReadArray1[i], ",", RegexOptions.IgnoreCase);
                                 array2[i] = Convert.ToSingle(tmpArray[0]);
@@ -353,14 +374,20 @@ namespace TrimGap
                                 array4[i] = Convert.ToSingle(tmpArray[2]);
                                 Console.WriteLine(i.ToString());
                             }
-                            for (int i = 0; i < ReadArray2.Length - 1; i++)
+                            for (int i = 0; i < ReadArray2.Length - 1 - delLength; i++)
                             {
                                 arraybase[i] = Convert.ToSingle(ReadArray2[i]);
+                            }
+                            for (int i = 0; i < ReadArray3.Length - 1 - delLength; i++)
+                            {
+                                string[] tmpArray = Regex.Split(ReadArray3[i], ",", RegexOptions.IgnoreCase);
+                                array6[i] = Convert.ToSingle(tmpArray[1]);
                             }
                             progressBar_SignalAnalysis.Value = 10;
                             SignalPlotData.rawData = array2;
                             SignalPlotData.rawData2 = array3;
                             SignalPlotData.rawData3 = array4;
+                            SignalPlotData.rawData5 = array6;
                             SignalPlotData.rawData_base = arraybase;
                             read.Close();
                         }
@@ -386,6 +413,13 @@ namespace TrimGap
         private void bWSignalPlot_DoWork(object sender, DoWorkEventArgs e)
         {
             bWSignalPlot.WorkerReportsProgress = true;
+            double Analysis_Method = 0;
+
+            if (cbAnalysis_method.Checked)
+            {
+                Analysis_Method = 1;
+            }
+
             while (true)
             {
                 try
@@ -395,7 +429,7 @@ namespace TrimGap
                     {
                         if (Wafertype == 0)
                         {
-                            Common.TrimGapAnalysis.CalculateBlueTape(imgData, imgW, imgH, 1000, false, recipe.BlueTapeThreshold, true, out SignalPlotData.resultdata);
+                            Common.TrimGapAnalysis.CalculateBlueTape(imgData, imgW, imgH, 1000, false, recipe.BlueTapeThreshold, true, fram.Analysis.BlueTapeMethod, out SignalPlotData.resultdata);
                         }
                         else if (Wafertype == 1)
                         {
@@ -405,7 +439,7 @@ namespace TrimGap
                             }
                             SignalPlotData.removezeroData = Common.TrimGapAnalysis.removeZero2_threshold(SignalPlotData.rawData, fram.Analysis.LJ_StandardPlane);
                             Console.WriteLine("Analysis start:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
-                            Common.TrimGapAnalysis.tilting(plotflag, SignalPlotData.removezeroData, AnalysisData.Interval_X, out SignalPlotData.tiltingdata_x, out SignalPlotData.tiltingdata_y);
+                            Common.TrimGapAnalysis.tilting(plotflag, SignalPlotData.removezeroData, AnalysisData.Interval_X, (double)Analysis_Method, (double)recipe.LJ_Flat, out SignalPlotData.tiltingdata_x, out SignalPlotData.tiltingdata_y);
                             //ParamFile.SaveRawdata_Csv(SignalPlotData.tiltingdata_y, "tilting", DateTime.Now);
                             Common.TrimGapAnalysis.CalculateGap(plotflag, SignalPlotData.tiltingdata_x, SignalPlotData.tiltingdata_y, AnalysisData.Interval_X, Wafertype, recipe.Step1_Range_step1x0, recipe.Step1_Range_step1x1, 0, 0, recipe.Range1_Percent, recipe.Range2_Percent, out SignalPlotData.resultdata);
                             Console.WriteLine("Analysis Finish:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
@@ -418,29 +452,63 @@ namespace TrimGap
                             }
                             SignalPlotData.removezeroData = Common.TrimGapAnalysis.removeZero2_threshold(SignalPlotData.rawData, fram.Analysis.LJ_StandardPlane);
                             Console.WriteLine("Analysis start:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
-                            Common.TrimGapAnalysis.tilting(plotflag, SignalPlotData.removezeroData, AnalysisData.Interval_X, out SignalPlotData.tiltingdata_x, out SignalPlotData.tiltingdata_y);
+                            Common.TrimGapAnalysis.tilting(plotflag, SignalPlotData.removezeroData, AnalysisData.Interval_X, (double)Analysis_Method, (double)recipe.LJ_Flat, out SignalPlotData.tiltingdata_x, out SignalPlotData.tiltingdata_y);
                             //ParamFile.SaveRawdata_Csv(SignalPlotData.tiltingdata_y, "tilting", DateTime.Now);
                             Common.TrimGapAnalysis.CalculateGap(plotflag, SignalPlotData.tiltingdata_x, SignalPlotData.tiltingdata_y, AnalysisData.Interval_X, Wafertype, recipe.Step2_Range_step1x0, recipe.Step2_Range_step1x1, recipe.Step2_Range_step2x0, recipe.Step2_Range_step2x1, recipe.Range1_Percent, recipe.Range2_Percent, out SignalPlotData.resultdata);
                             Console.WriteLine("Analysis Finish:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
                         }
-                        else if (Wafertype == 3)
+                        else if (Wafertype == 3 || Wafertype == 6)
                         {
                             //int Range2_Percent_tmp = 2100;
                             int Wafertype_tmp = 2;
+                            if (Wafertype == 6) Wafertype_tmp = 1;
                             int Interval_X_tmp = 1;
-
-                            Common.TrimGapAnalysis.removeZero3(SignalPlotData.rawData, SignalPlotData.rawData2, SignalPlotData.rawData3, out SignalPlotData.removezeroData, out SignalPlotData.removezeroData2, out SignalPlotData.removezeroData3);
-                            Console.WriteLine("Analysis start:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
+                            SignalPlotData.htw_cut = 0;
+                            SignalPlotData.htw_gap = 0;
+                            //Common.TrimGapAnalysis.removeZero3(SignalPlotData.rawData, SignalPlotData.rawData2, SignalPlotData.rawData3, out SignalPlotData.removezeroData, out SignalPlotData.removezeroData2, out SignalPlotData.removezeroData3);
+                            Common.TrimGapAnalysis.removeZero3_htw(SignalPlotData.rawData, SignalPlotData.rawData2, SignalPlotData.rawData3, fram.Analysis.HTW_StandardPlane, true, out SignalPlotData.removezeroData, out SignalPlotData.removezeroData2, out SignalPlotData.removezeroData3, out SignalPlotData.htw_gap);
+                            Console.WriteLine("Analysis start:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());                          
                             //Common.TrimGapAnalysis.tilting(plotflag, SignalPlotData.removezeroData, AnalysisData.Interval_X, out SignalPlotData.tiltingdata_x, out SignalPlotData.tiltingdata_y);
-                            Common.TrimGapAnalysis.tilting3(plotflag, SignalPlotData.removezeroData, SignalPlotData.removezeroData2, SignalPlotData.removezeroData3, Interval_X_tmp, out SignalPlotData.tiltingdata_x, out SignalPlotData.tiltingdata_x2, out SignalPlotData.tiltingdata_x3, out SignalPlotData.tiltingdata_y, out SignalPlotData.tiltingdata_y2, out SignalPlotData.tiltingdata_y3);
+                            //Common.TrimGapAnalysis.tilting3(plotflag, SignalPlotData.removezeroData, SignalPlotData.removezeroData2, SignalPlotData.removezeroData3, Interval_X_tmp, out SignalPlotData.tiltingdata_x, out SignalPlotData.tiltingdata_x2, out SignalPlotData.tiltingdata_x3, out SignalPlotData.tiltingdata_y, out SignalPlotData.tiltingdata_y2, out SignalPlotData.tiltingdata_y3);
+                            Common.TrimGapAnalysis.tilting3_htw(false, SignalPlotData.removezeroData, SignalPlotData.removezeroData2, SignalPlotData.removezeroData3, Interval_X_tmp, true, fram.Analysis.Use_Leveling, out SignalPlotData.tiltingdata_x, out SignalPlotData.tiltingdata_x2, out SignalPlotData.tiltingdata_x3, out SignalPlotData.tiltingdata_y, out SignalPlotData.tiltingdata_y2, out SignalPlotData.tiltingdata_y3, out SignalPlotData.htw_cut);
                             //ParamFile.SaveRawdata_Csv(SignalPlotData.tiltingdata_y, "tilting", DateTime.Now);
                             //Common.TrimGapAnalysis.CalculateGap(plotflag, SignalPlotData.tiltingdata_x, SignalPlotData.tiltingdata_y, AnalysisData.Interval_X, Wafertype, fram.Analysis.Step2_Range_step1x0, fram.Analysis.Step2_Range_step1x1, fram.Analysis.Step2_Range_step2x0, fram.Analysis.Step2_Range_step2x1, fram.Analysis.Range1_Percent, fram.Analysis.Range2_Percent, out SignalPlotData.resultdata);
-                            Common.TrimGapAnalysis.CalculateGap3(plotflag, Wafertype_tmp, SignalPlotData.tiltingdata_x, SignalPlotData.tiltingdata_x2, SignalPlotData.tiltingdata_x3, SignalPlotData.tiltingdata_y, SignalPlotData.tiltingdata_y2, SignalPlotData.tiltingdata_y3, AnalysisData.Interval_X, recipe.Step2_Range_step1x0, recipe.Step2_Range_step1x1, recipe.Step2_Range_step2x0, recipe.Step2_Range_step2x1, recipe.Range1_Percent, recipe.Range2_Percent, out SignalPlotData.resultdata);
+                            int tmp1x0, tmp1x1, tmp2x0, tmp2x1;
+                            if (Wafertype == 6)
+                            {
+                                tmp1x0 = recipe.Step1_Range_step1x0 - (int)(SignalPlotData.htw_cut);
+                                tmp1x1 = recipe.Step1_Range_step1x1 - (int)(SignalPlotData.htw_cut);
+                                tmp2x0 = 0;
+                                tmp2x1 = 0;
+                            }
+                            else
+                            {
+                                tmp1x0 = recipe.Step2_Range_step1x0 - (int)(SignalPlotData.htw_cut);
+                                tmp1x1 = recipe.Step2_Range_step1x1 - (int)(SignalPlotData.htw_cut);
+                                tmp2x0 = recipe.Step2_Range_step2x0 - (int)(SignalPlotData.htw_cut);
+                                tmp2x1 = recipe.Step2_Range_step2x1 - (int)(SignalPlotData.htw_cut);
+                            }
+                            if (tmp1x0 < 1)
+                                tmp1x0 = 1;
+                            if (tmp1x1 < 1)
+                                tmp1x1 = 1;
+                            if (tmp2x0 < 1)
+                                tmp2x0 = 1;
+                            if (tmp2x1 < 1)
+                                tmp2x1 = 1;
+
+                            if (Wafertype == 6)
+                                Common.TrimGapAnalysis.CalculateGap3(plotflag, Wafertype_tmp, SignalPlotData.tiltingdata_x, SignalPlotData.tiltingdata_x2, SignalPlotData.tiltingdata_x3, SignalPlotData.tiltingdata_y, SignalPlotData.tiltingdata_y2, SignalPlotData.tiltingdata_y3, Interval_X_tmp, tmp1x0, tmp1x1, tmp2x0, tmp2x1, recipe.Range1_Percent, recipe.Range2_Percent, (int)fram.Analysis.nZone, 0, out SignalPlotData.resultdata);
+                            else
+                                Common.TrimGapAnalysis.CalculateGap3(plotflag, Wafertype_tmp, SignalPlotData.tiltingdata_x, SignalPlotData.tiltingdata_x2, SignalPlotData.tiltingdata_x3, SignalPlotData.tiltingdata_y, SignalPlotData.tiltingdata_y2, SignalPlotData.tiltingdata_y3, Interval_X_tmp, tmp1x0, tmp1x1, tmp2x0, tmp2x1, recipe.Range1_Percent, recipe.Range2_Percent, (int)fram.Analysis.nZone, 0, out SignalPlotData.resultdata);
+                            //Common.TrimGapAnalysis.CalculateGap3(plotflag, Wafertype_tmp, SignalPlotData.tiltingdata_x, SignalPlotData.tiltingdata_x2, SignalPlotData.tiltingdata_x3, SignalPlotData.tiltingdata_y, SignalPlotData.tiltingdata_y2, SignalPlotData.tiltingdata_y3, AnalysisData.Interval_X, recipe.Step2_Range_step1x0, recipe.Step2_Range_step1x1, recipe.Step2_Range_step2x0, recipe.Step2_Range_step2x1, recipe.Range1_Percent, recipe.Range2_Percent, out SignalPlotData.resultdata);
+                            //Common.TrimGapAnalysis.CalculateGap3_htw(false, Wafertype_tmp, SignalPlotData.tiltingdata_x, SignalPlotData.tiltingdata_x2, SignalPlotData.tiltingdata_x3, SignalPlotData.tiltingdata_y, SignalPlotData.tiltingdata_y2, SignalPlotData.tiltingdata_y3, Interval_X_tmp, recipe.Step2_Range_step1x0, recipe.Step2_Range_step1x1, recipe.Step2_Range_step2x0, recipe.Step2_Range_step2x1, recipe.Range1_Percent, recipe.Range2_Percent, out SignalPlotData.resultdata);
                             Console.WriteLine("Analysis Finish:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
                         }
-                        else if (Wafertype == 4)
+                        else if (Wafertype == 4 || Wafertype == 7)
                         {
                             int Wafertype_tmp = 2;
+                            if (Wafertype == 7) Wafertype_tmp = 1;
                             int Interval_X_tmp = 1;
 
                             SignalPlotData.htw_cut = 0;
@@ -455,9 +523,79 @@ namespace TrimGap
                             Array.Copy(SignalPlotData.rawData, SignalPlotData.htw_baselineIndex, SignalPlotData.removezeroData, 0, sizeHTW);
                             Array.Copy(SignalPlotData.rawData2, SignalPlotData.htw_baselineIndex, SignalPlotData.removezeroData2, 0, sizeHTW);
                             Array.Copy(SignalPlotData.rawData3, SignalPlotData.htw_baselineIndex, SignalPlotData.removezeroData3, 0, sizeHTW);
+                                                                                                                                                                                   //20250711 改上下翻
+                            Common.TrimGapAnalysis.tilting3_htw(false, SignalPlotData.removezeroData, SignalPlotData.removezeroData2, SignalPlotData.removezeroData3, Interval_X_tmp, true, fram.Analysis.Use_Leveling, out SignalPlotData.tiltingdata_x, out SignalPlotData.tiltingdata_x2, out SignalPlotData.tiltingdata_x3, out SignalPlotData.tiltingdata_y, out SignalPlotData.tiltingdata_y2, out SignalPlotData.tiltingdata_y3, out SignalPlotData.htw_cut);
+                            sizeHTW = SignalPlotData.rawData_base.Length - SignalPlotData.htw_baselineIndex - (int)SignalPlotData.htw_cut;
+                            SignalPlotData.intensitydata = new double[sizeHTW];
+                            Array.Copy(SignalPlotData.rawData5, SignalPlotData.htw_baselineIndex + (int)SignalPlotData.htw_cut, SignalPlotData.intensitydata, 0, sizeHTW);
+                            int tmp1x0, tmp1x1, tmp2x0, tmp2x1;
+                            if (Wafertype == 7)
+                            {
+                                tmp1x0 = recipe.Step1_Range_step1x0 - (int)SignalPlotData.htw_cut;
+                                tmp1x1 = recipe.Step1_Range_step1x1 - (int)SignalPlotData.htw_cut;
+                                tmp2x0 = 0;
+                                tmp2x1 = 0;
+                            }
+                            else
+                            {
+                                tmp1x0 = recipe.Step2_Range_step1x0 - (int)SignalPlotData.htw_cut;
+                                tmp1x1 = recipe.Step2_Range_step1x1 - (int)SignalPlotData.htw_cut;
+                                tmp2x0 = recipe.Step2_Range_step2x0 - (int)SignalPlotData.htw_cut;
+                                tmp2x1 = recipe.Step2_Range_step2x1 - (int)SignalPlotData.htw_cut;
+                            }
+                            if (tmp1x0 < 1)
+                                tmp1x0 = 1;
+                            if (tmp1x1 < 1)
+                                tmp1x1 = 1;
+                            if (tmp2x0 < 1)
+                                tmp2x0 = 1;
+                            if (tmp2x1 < 1)
+                                tmp2x1 = 1;
+                            if (tmp1x1 > SignalPlotData.removezeroData.Length - (int)SignalPlotData.htw_cut - 100)
+                                tmp1x1 = SignalPlotData.removezeroData.Length - (int)SignalPlotData.htw_cut - 100;
+                            if (fram.Analysis.Use_Intensity != 1) SignalPlotData.intensitydata = new double[1];
+                            Common.TrimGapAnalysis.CalculateGap3_htw(false, Wafertype_tmp, SignalPlotData.tiltingdata_x, SignalPlotData.tiltingdata_x2, SignalPlotData.tiltingdata_x3, SignalPlotData.tiltingdata_y, SignalPlotData.tiltingdata_y2, SignalPlotData.tiltingdata_y3, 
+                                Interval_X_tmp, tmp1x0, tmp1x1, tmp2x0, tmp2x1, recipe.Range1_Percent, recipe.Range2_Percent, fram.Analysis.HTW_W2EdgeThreshold, fram.Analysis.HTW_H0FromTilt, SignalPlotData.intensitydata, fram.Analysis.HTW_HistogramRange, 
+                                fram.Analysis.HTW_TrimSearchMaxDifference, fram.Analysis.HTW_GroupPoints, fram.Analysis.HTW_TrimToIntensityShift, out SignalPlotData.resultdata);
 
-                            Common.TrimGapAnalysis.tilting3_htw(false, SignalPlotData.removezeroData, SignalPlotData.removezeroData2, SignalPlotData.removezeroData3, Interval_X_tmp, false, out SignalPlotData.tiltingdata_x, out SignalPlotData.tiltingdata_x2, out SignalPlotData.tiltingdata_x3, out SignalPlotData.tiltingdata_y, out SignalPlotData.tiltingdata_y2, out SignalPlotData.tiltingdata_y3, out SignalPlotData.htw_cut);
-                            Common.TrimGapAnalysis.CalculateGap3_htw(false, Wafertype_tmp, SignalPlotData.tiltingdata_x, SignalPlotData.tiltingdata_x2, SignalPlotData.tiltingdata_x3, SignalPlotData.tiltingdata_y, SignalPlotData.tiltingdata_y2, SignalPlotData.tiltingdata_y3, Interval_X_tmp, sram.Recipe.Step2_Range_step1x0, sram.Recipe.Step2_Range_step1x1, sram.Recipe.Step2_Range_step2x0, sram.Recipe.Step2_Range_step2x1, sram.Recipe.Range1_Percent, sram.Recipe.Range2_Percent, out SignalPlotData.resultdata);
+                            //20250925 推測開了舊的資料，反轉資料算看看
+                            if(SignalPlotData.resultdata[1] == 0 && SignalPlotData.resultdata[3] == 0)
+                            {
+                                Common.TrimGapAnalysis.tilting3_htw(false, SignalPlotData.removezeroData, SignalPlotData.removezeroData2, SignalPlotData.removezeroData3, Interval_X_tmp, false, fram.Analysis.Use_Leveling, out SignalPlotData.tiltingdata_x, out SignalPlotData.tiltingdata_x2, out SignalPlotData.tiltingdata_x3, out SignalPlotData.tiltingdata_y, out SignalPlotData.tiltingdata_y2, out SignalPlotData.tiltingdata_y3, out SignalPlotData.htw_cut);
+                                sizeHTW = SignalPlotData.rawData_base.Length - SignalPlotData.htw_baselineIndex - (int)SignalPlotData.htw_cut;
+                                SignalPlotData.intensitydata = new double[sizeHTW];
+                                Array.Copy(SignalPlotData.rawData5, SignalPlotData.htw_baselineIndex + (int)SignalPlotData.htw_cut, SignalPlotData.intensitydata, 0, sizeHTW);
+                                if (Wafertype == 7)
+                                {
+                                    tmp1x0 = recipe.Step1_Range_step1x0 - (int)SignalPlotData.htw_cut;
+                                    tmp1x1 = recipe.Step1_Range_step1x1 - (int)SignalPlotData.htw_cut;
+                                    tmp2x0 = 0;
+                                    tmp2x1 = 0;
+                                }
+                                else
+                                {
+                                    tmp1x0 = recipe.Step2_Range_step1x0 - (int)SignalPlotData.htw_cut;
+                                    tmp1x1 = recipe.Step2_Range_step1x1 - (int)SignalPlotData.htw_cut;
+                                    tmp2x0 = recipe.Step2_Range_step2x0 - (int)SignalPlotData.htw_cut;
+                                    tmp2x1 = recipe.Step2_Range_step2x1 - (int)SignalPlotData.htw_cut;
+                                }
+                                if (tmp1x0 < 1)
+                                    tmp1x0 = 1;
+                                if (tmp1x1 < 1)
+                                    tmp1x1 = 1;
+                                if (tmp2x0 < 1)
+                                    tmp2x0 = 1;
+                                if (tmp2x1 < 1)
+                                    tmp2x1 = 1;
+                                if (tmp1x1 > SignalPlotData.removezeroData.Length - (int)SignalPlotData.htw_cut - 100)
+                                    tmp1x1 = SignalPlotData.removezeroData.Length - (int)SignalPlotData.htw_cut - 100;
+                                if (fram.Analysis.Use_Intensity != 1) SignalPlotData.intensitydata = new double[1];
+                                Common.TrimGapAnalysis.CalculateGap3_htw(false, Wafertype_tmp, SignalPlotData.tiltingdata_x, SignalPlotData.tiltingdata_x2, SignalPlotData.tiltingdata_x3, SignalPlotData.tiltingdata_y, SignalPlotData.tiltingdata_y2, SignalPlotData.tiltingdata_y3,
+                                    Interval_X_tmp, tmp1x0, tmp1x1, tmp2x0, tmp2x1, recipe.Range1_Percent, recipe.Range2_Percent, fram.Analysis.HTW_W2EdgeThreshold, fram.Analysis.HTW_H0FromTilt, SignalPlotData.intensitydata, fram.Analysis.HTW_HistogramRange,
+                                    fram.Analysis.HTW_TrimSearchMaxDifference, fram.Analysis.HTW_GroupPoints, fram.Analysis.HTW_TrimToIntensityShift, out SignalPlotData.resultdata);
+                            }
+
+
                             Console.WriteLine("Analysis Finish:" + DateTime.Now.ToString() + "." + DateTime.Now.Millisecond.ToString());
                         }
                       
@@ -474,7 +612,7 @@ namespace TrimGap
                     bWSignalPlot.ReportProgress(10);
                     errormsg = ee.Message;
                     Console.WriteLine(ee.Message);
-                    throw;
+                    //throw;
                 }
             }
         }
@@ -489,8 +627,24 @@ namespace TrimGap
             {
                 System.IO.FileInfo openName = new FileInfo(openFileDialog1.FileName);//取得完整檔名(含副檔名)
                 string Name = openName.Name.Substring(0, openName.Name.Length - 4);//取得檔名
-                ParamFile.ReadRcpini(Name, "Recipe", recipe);
+                ParamFile.ReadRcpini(openName.FullName, "Recipe", recipe);
+                lb_RecipeName.Text = Name;
+                
             }
+
+            Wafertype = recipe.Type;
+            cb_WaferType.SelectedIndex = recipe.Type;
+            cb_WaferType.Refresh();
+            cb_TrimWaferEdgeEvaluate.Checked = recipe.WaferEdgeEvaluate == 1 ? true : false;
+            cb_TrimWaferEdgeEvaluate.Refresh();
+            cbAnalysis_method.Checked = recipe.Analysis_method == 1 ? true : false;
+            cbAnalysis_method.Refresh();
+            if (Wafertype == 0)
+                tabControl1.SelectedIndex = 1;
+            else if(Wafertype == 3 || Wafertype == 6 || Wafertype == 4 || Wafertype == 7)
+                tabControl1.SelectedIndex = 2;
+            else if(Wafertype == 1 || Wafertype == 2)
+                tabControl1.SelectedIndex = 0;          
         }
 
         private void bWSignalPlot_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -501,8 +655,6 @@ namespace TrimGap
                 {
                     //
 
-                    #region showtextbox
-
                     double dif_H = 0;
                     double dif_W = 0;
                     double _w1 = 0;
@@ -512,6 +664,11 @@ namespace TrimGap
 
                     if (Wafertype == 0)
                     {
+                        if (Double.NaN.Equals(SignalPlotData.resultdata[0]))
+                        {
+                            SignalPlotData.resultdata[0] = 0;
+                        }
+
                         tb_result_0.Text = "0";
                         tb_result_1.Text = "0";
                         tb_result_2.Text = SignalPlotData.resultdata[0].ToString("f2");// + fram.Analysis.OffsetBlueTapeW;
@@ -532,11 +689,10 @@ namespace TrimGap
                     }
                     else
                     {
-                        #region Plot
-                        if (Wafertype != 3)
+                        if (Wafertype == 1 || Wafertype == 2) //20240603
                         {
                             double dif = -(SignalPlotData.removezeroData.Length - SignalPlotData.tiltingdata_x.Length) * 2.5;
-
+                            SignalPlotData.htw_cut = 0-dif;
                             chartSignal.ChartAreas[0].AxisX.Minimum = -500;
                             chartSignal.ChartAreas[0].AxisY.Minimum = -10;
 
@@ -628,46 +784,52 @@ namespace TrimGap
 
                             }
 
-                            #endregion Plot
-
                             if (SignalPlotData.resultdata != null)
                             {
                                 if (Wafertype == 1)
                                 {
-                                    tb_result_0.Text = SignalPlotData.resultdata[0].ToString("f1");// + fram.Analysis.Offset1StepH;
+                                    tb_result_0.Text = (SignalPlotData.resultdata[0] * recipe.H1).ToString("f2");// + fram.Analysis.Offset1StepH;
                                     _h1 = SignalPlotData.resultdata[0];
                                     tb_result_1.Text = "0";
                                     if (cb_TrimWaferEdgeEvaluate.Checked)
                                     {
-                                        tb_result_2.Text = (SignalPlotData.resultdata[1] - dif).ToString("f1");// + fram.Analysis.Offset1StepW;
-                                        _w1 = SignalPlotData.resultdata[1]-dif;
+                                        tb_result_2.Text = ((SignalPlotData.resultdata[1] - dif) * recipe.W1).ToString("f1");// + fram.Analysis.Offset1StepW;
+                                        _w1 = SignalPlotData.resultdata[1] - dif;
+
+                                        txt_Gap.Text = SignalPlotData.htw_cut.ToString("f1");
                                     }
                                     else
                                     {
-                                        tb_result_2.Text = SignalPlotData.resultdata[1].ToString("f1");// + fram.Analysis.Offset1StepW;
+                                        tb_result_2.Text = (SignalPlotData.resultdata[1] * recipe.W1).ToString("f1");// + fram.Analysis.Offset1StepW;
                                         _w1 = SignalPlotData.resultdata[1];
+
+                                        txt_Gap.Text = 0.00.ToString("f1");
                                     }
                                     tb_result_3.Text = "0";
                                 }
-                                else
+                                else if(Wafertype == 2)
                                 {
-                                    tb_result_0.Text = SignalPlotData.resultdata[0].ToString("f1");// + fram.Analysis.Offset2StepH1;
+                                    tb_result_0.Text = (SignalPlotData.resultdata[0] * recipe.H1).ToString("f2");// + fram.Analysis.Offset2StepH1;
                                     _h1 = SignalPlotData.resultdata[0];
-                                    tb_result_1.Text = (SignalPlotData.resultdata[2] + SignalPlotData.resultdata[0]).ToString("f1");// + fram.Analysis.Offset2StepH2;
+                                    tb_result_1.Text = ((SignalPlotData.resultdata[2] + SignalPlotData.resultdata[0]) * recipe.H2).ToString("f2");// + fram.Analysis.Offset2StepH2;
                                     _h2 = SignalPlotData.resultdata[2] + SignalPlotData.resultdata[0];
                                     if (cb_TrimWaferEdgeEvaluate.Checked)
                                     {
-                                        tb_result_2.Text = (SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3]-dif).ToString("f1");// + fram.Analysis.Offset2StepW1;
+                                        tb_result_2.Text = ((SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3]-dif) * recipe.W1).ToString("f1");// + fram.Analysis.Offset2StepW1;
                                         _w1 = SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3] - dif;
-                                        tb_result_3.Text = (SignalPlotData.resultdata[3] - dif).ToString("f1");// + fram.Analysis.Offset2StepW2;
+                                        tb_result_3.Text = ((SignalPlotData.resultdata[3] - dif) * recipe.W2).ToString("f1");// + fram.Analysis.Offset2StepW2;
                                         _w2 = SignalPlotData.resultdata[3] - dif;
+
+                                        txt_Gap.Text = SignalPlotData.htw_gap.ToString("f1");
                                     }
                                     else
                                     {
-                                        tb_result_2.Text = (SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3]).ToString("f1");// + fram.Analysis.Offset2StepW1;
+                                        tb_result_2.Text = ((SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3]) * recipe.W1).ToString("f1");// + fram.Analysis.Offset2StepW1;
                                         _w1 = SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3];
-                                        tb_result_3.Text = SignalPlotData.resultdata[3].ToString("f1");// + fram.Analysis.Offset2StepW2;
+                                        tb_result_3.Text = (SignalPlotData.resultdata[3] * recipe.W2).ToString("f1");// + fram.Analysis.Offset2StepW2;
                                         _w2 = SignalPlotData.resultdata[3];
+
+                                        txt_Gap.Text = 0.00.ToString("f1");
                                     }
                                 }
                             }
@@ -678,8 +840,9 @@ namespace TrimGap
                         }
                         else
                         {//Wafertype == 3
-                            double dif = -(SignalPlotData.removezeroData.Length - SignalPlotData.tiltingdata_x.Length) * 2.5;
-
+                            double dif = -(SignalPlotData.removezeroData.Length - SignalPlotData.tiltingdata_x.Length) * 1;
+                            if (Wafertype == 3 && Wafertype == 6)
+                                SignalPlotData.htw_cut = dif;
                             chartSignalPt.ChartAreas[0].AxisX.Minimum = 0;
                             chartSignalPt.ChartAreas[0].AxisY.Minimum = 0;
 
@@ -719,7 +882,7 @@ namespace TrimGap
 
 
                             chartSignalPt.Series[0].ChartType = SeriesChartType.Point;
-                            chartSignalPt.Series[0].Color = Color.Yellow;
+                            chartSignalPt.Series[0].Color = Color.Blue;
                             chartSignalPt.Series[1].ChartType = SeriesChartType.Point;
                             chartSignalPt.Series[1].Color = Color.Red;
                             chartSignalPt.Series[2].ChartType = SeriesChartType.Point;
@@ -742,25 +905,82 @@ namespace TrimGap
                             chartSignalPt.Series[3].Points.AddXY(SignalPlotData.tiltingdata_x[SignalPlotData.tiltingdata_x.Length - 1], SignalPlotData.resultdata[6]);
                             chartSignalPt.Series[4].Points.AddXY(0, SignalPlotData.resultdata[7]);    // Surface 2 H1
                             chartSignalPt.Series[4].Points.AddXY(SignalPlotData.tiltingdata_x[SignalPlotData.tiltingdata_x.Length - 1], SignalPlotData.resultdata[7]);
-                            chartSignalPt.Series[5].Points.AddXY(0, SignalPlotData.resultdata[8]);    // Surface 3
-                            chartSignalPt.Series[5].Points.AddXY(SignalPlotData.tiltingdata_x[SignalPlotData.tiltingdata_x.Length - 1], SignalPlotData.resultdata[8]);
+                            if (Wafertype == 3 || Wafertype == 4)
+                            {
+                                chartSignalPt.Series[5].Points.AddXY(0, SignalPlotData.resultdata[8]);    // Surface 3
+                                chartSignalPt.Series[5].Points.AddXY(SignalPlotData.tiltingdata_x[SignalPlotData.tiltingdata_x.Length - 1], SignalPlotData.resultdata[8]);
+                            }
                             chartSignalPt.Series[6].Points.AddXY(SignalPlotData.resultdata[9], 0);    // Slope 1
                             chartSignalPt.Series[6].Points.AddXY(SignalPlotData.resultdata[9], SignalPlotData.tiltingdata_y.Max());
                             chartSignalPt.Series[7].Points.AddXY(SignalPlotData.resultdata[10], 0);   // Slope 2
                             chartSignalPt.Series[7].Points.AddXY(SignalPlotData.resultdata[10], SignalPlotData.tiltingdata_y.Max());
-                            chartSignalPt.Series[8].Points.AddXY(SignalPlotData.resultdata[11], 0);   // Slope 3
-                            chartSignalPt.Series[8].Points.AddXY(SignalPlotData.resultdata[11], SignalPlotData.tiltingdata_y.Max());
+                            if (Wafertype == 3 || Wafertype == 4)
+                            {
+                                chartSignalPt.Series[8].Points.AddXY(SignalPlotData.resultdata[11], 0);   // Slope 3
+                                chartSignalPt.Series[8].Points.AddXY(SignalPlotData.resultdata[11], SignalPlotData.tiltingdata_y.Max());
+                            }
 
                             if (SignalPlotData.resultdata != null)
                             {
-                                tb_result_0.Text = SignalPlotData.resultdata[0].ToString("f1");// + fram.Analysis.Offset2StepH1;
-                                _h1 = SignalPlotData.resultdata[0];
-                                tb_result_1.Text = (SignalPlotData.resultdata[2] + SignalPlotData.resultdata[0]).ToString("f1");// + fram.Analysis.Offset2StepH2;
-                                _h2 = SignalPlotData.resultdata[2] + SignalPlotData.resultdata[0];
-                                tb_result_2.Text = (SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3]).ToString("f1");// + fram.Analysis.Offset2StepW1;
-                                _w1 = SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3];
-                                tb_result_3.Text = SignalPlotData.resultdata[3].ToString("f1");// + fram.Analysis.Offset2StepW2;
-                                _w2 = SignalPlotData.resultdata[3];
+                                if (Wafertype == 3)
+                                {
+                                    tb_result_0.Text = SignalPlotData.resultdata[0].ToString("f2");// + fram.Analysis.Offset2StepH1;
+                                    _h1 = SignalPlotData.resultdata[0];
+                                    tb_result_1.Text = (SignalPlotData.resultdata[2] + SignalPlotData.resultdata[0]).ToString("f2");// + fram.Analysis.Offset2StepH2;
+                                    _h2 = SignalPlotData.resultdata[2] + SignalPlotData.resultdata[0];
+                                    tb_result_2.Text = (SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3]).ToString("f1");// + fram.Analysis.Offset2StepW1;
+                                    _w1 = SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3];
+                                    tb_result_3.Text = SignalPlotData.resultdata[3].ToString("f1");// + fram.Analysis.Offset2StepW2;
+                                    _w2 = SignalPlotData.resultdata[3];
+                                    txt_Gap.Text = 0.00.ToString("f1");
+                                    txt_StartPoint.Text = (SignalPlotData.htw_gap+ SignalPlotData.htw_cut).ToString("f1");
+                                }
+                                else if (Wafertype == 6)
+                                {
+                                    tb_result_0.Text = SignalPlotData.resultdata[0].ToString("f2");// + fram.Analysis.Offset2StepH1;
+                                    _h1 = SignalPlotData.resultdata[0];
+                                    tb_result_1.Text = "0";
+
+                                    tb_result_2.Text = (SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3]).ToString("f1");// + fram.Analysis.Offset2StepW1;
+                                    _w1 = SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3];
+                                    tb_result_3.Text = "0";
+                                    txt_Gap.Text = 0.00.ToString("f1");
+                                    txt_StartPoint.Text = (SignalPlotData.htw_gap + SignalPlotData.htw_cut).ToString("f1");
+                                }
+                                else if (Wafertype == 4)
+                                {
+                                    tb_result_0.Text = SignalPlotData.resultdata[0].ToString("f2");// + fram.Analysis.Offset2StepH1;
+                                    _h1 = SignalPlotData.resultdata[0];
+                                    tb_result_1.Text = (SignalPlotData.resultdata[2] + SignalPlotData.resultdata[0]).ToString("f2");// + fram.Analysis.Offset2StepH2;
+                                    _h2 = SignalPlotData.resultdata[2] + SignalPlotData.resultdata[0];
+                                    tb_result_2.Text = (SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3] + SignalPlotData.htw_cut).ToString("f1");// + fram.Analysis.Offset2StepW1;                                                                                                                                                           //_w1 += SignalPlotData.htw_baselineIndex + SignalPlotData.htw_gap + SignalPlotData.htw_cut;
+                                    _w1 = SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3] + SignalPlotData.htw_cut;
+                                    tb_result_3.Text = (SignalPlotData.resultdata[3] + SignalPlotData.htw_cut).ToString("f1");// + fram.Analysis.Offset2StepW2;
+                                    _w2 = SignalPlotData.resultdata[3] + SignalPlotData.htw_cut;
+                                    txt_Gap.Text = SignalPlotData.htw_cut.ToString("f1");
+                                    txt_StartPoint.Text = SignalPlotData.htw_baselineIndex.ToString("f1");
+                                    if (SignalPlotData.resultdata[13] == 1)
+                                        label_HTW_method.Text = "Trim1平面最前緣位置";
+                                    else if (SignalPlotData.resultdata[13] == 2)
+                                        label_HTW_method.Text = "左側向右找最先遇到的高度變化位置";
+                                    else if (SignalPlotData.resultdata[13] == 3)
+                                        label_HTW_method.Text = "Intensity最低位置:" + tb_result_3.Text + ",Trim邊位置:" + (SignalPlotData.resultdata[14] + SignalPlotData.htw_cut).ToString("f1");
+                                    else
+                                        label_HTW_method.Text = "";
+                                }
+                                else if (Wafertype == 7)
+                                {
+                                    tb_result_0.Text = SignalPlotData.resultdata[0].ToString("f2");// + fram.Analysis.Offset2StepH1;
+                                    _h1 = SignalPlotData.resultdata[0];
+                                    tb_result_1.Text = "0";
+
+                                    tb_result_2.Text = (SignalPlotData.resultdata[1] + SignalPlotData.htw_cut).ToString("f1");// + fram.Analysis.Offset2StepW1;                                                                                                                                                           //_w1 += SignalPlotData.htw_baselineIndex + SignalPlotData.htw_gap + SignalPlotData.htw_cut;
+                                    _w1 = SignalPlotData.resultdata[1] + SignalPlotData.htw_cut;
+                                    tb_result_3.Text = "0";
+
+                                    txt_Gap.Text = SignalPlotData.htw_cut.ToString("f1");
+                                    txt_StartPoint.Text = SignalPlotData.htw_baselineIndex.ToString("f1");
+                                }
                             }
 
                             ParamFile.SaveRawdata_png(chartSignalPt, "Analysis", lb_analysisFileName.Text, DateTime.Now, dif_H.ToString(), dif_W.ToString(), _w1, _w2, _h1, _h2, 2);
@@ -768,29 +988,57 @@ namespace TrimGap
                         
                         }
 
-
                     }
 
-                    #endregion showtextbox
-
-                    
 
                     #region datagridview
 
-                    string[] tmp = new string[5];
-                    if (Wafertype == 1)
+                    string[] tmp = new string[6];
+
+                    if (cb_TrimWaferEdgeEvaluate.Checked || Wafertype == 4 || Wafertype == 7)
                     {
-                        tmp[0] = _h1.ToString("f1");//SignalPlotData.resultdata[0].ToString("f1");// + fram.Analysis.Offset1StepH;                                       //H1
+                        tmp[4] = SignalPlotData.htw_cut.ToString("f1");
+                    }
+                    else
+                    {
+                        tmp[4] = 0.00.ToString("f1");
+                    }
+
+                    if (Wafertype == 1 || Wafertype == 6 || Wafertype == 7)
+                    {
+                        tmp[0] = _h1.ToString("f2");//SignalPlotData.resultdata[0].ToString("f1");// + fram.Analysis.Offset1StepH;                                       //H1
                         tmp[1] = _w1.ToString("f1"); //SignalPlotData.resultdata[1].ToString("f1");// + fram.Analysis.Offset1StepW;     //W1
                         tmp[2] = "0";//(SignalPlotData.resultdata[2] + SignalPlotData.resultdata[0]).ToString("f1");       //H2
                         tmp[3] = "0";//SignalPlotData.resultdata[3].ToString("f1");                                       //W2
+
+                        if(Wafertype == 1)
+                        {
+                            tmp[0] = (_h1 * recipe.H1).ToString("f2");
+                            tmp[1] = (_w1 * recipe.W2).ToString("f1");
+                        }
+                        
                     }
                     else if (Wafertype == 2 || Wafertype == 3)
                     {
-                        tmp[0] = _h1.ToString("f1"); //SignalPlotData.resultdata[0].ToString("f1");// + fram.Analysis.Offset2StepH1;                                       //H1
+                        tmp[0] = _h1.ToString("f2"); //SignalPlotData.resultdata[0].ToString("f1");// + fram.Analysis.Offset2StepH1;                                       //H1
                         tmp[1] = _w1.ToString("f1"); //(SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3]).ToString("f1");// + fram.Analysis.Offset2StepW1;     //W1
-                        tmp[2] = _h2.ToString("f1"); //(SignalPlotData.resultdata[2] + SignalPlotData.resultdata[0]).ToString("f1");// + fram.Analysis.Offset2StepH2;       //H2
+                        tmp[2] = _h2.ToString("f2"); //(SignalPlotData.resultdata[2] + SignalPlotData.resultdata[0]).ToString("f1");// + fram.Analysis.Offset2StepH2;       //H2
                         tmp[3] = _w2.ToString("f1"); //SignalPlotData.resultdata[3].ToString("f1");// + fram.Analysis.Offset2StepW2;                                       //W2
+
+                        if(Wafertype == 2)
+                        {
+                            tmp[0] = (_h1 * recipe.H1).ToString("f2"); 
+                            tmp[1] = (_w1 * recipe.W1).ToString("f1"); 
+                            tmp[2] = (_h2 * recipe.H2).ToString("f2");
+                            tmp[3] = (_w2 * recipe.W2).ToString("f1");   
+                        }
+                    }
+                    else if (Wafertype == 4)
+                    {
+                        tmp[0] = _h1.ToString("f2"); //SignalPlotData.resultdata[0].ToString("f1");// + fram.Analysis.Offset2StepH1;                                       //H1
+                        tmp[1] = _w1.ToString("f1"); //(SignalPlotData.resultdata[1] + SignalPlotData.resultdata[3]).ToString("f1");// + fram.Analysis.Offset2StepW1;     //W1
+                        tmp[2] = _h2.ToString("f2"); //(SignalPlotData.resultdata[2] + SignalPlotData.resultdata[0]).ToString("f1");// + fram.Analysis.Offset2StepH2;       //H2
+                        tmp[3] = _w2.ToString("f1"); //SignalPlotData.resultdata[3].ToString("f1");// + fram.Analysis.Offset2StepW2; 
                     }
                     else
                     {
@@ -803,11 +1051,11 @@ namespace TrimGap
                     {
                         if (SignalPlotData.resultdata[12] == 0)
                         {
-                            tmp[4] = _filename;                                                          //Note
+                            tmp[5] = _filename;                                                          //Note
                         }
                         if (SignalPlotData.resultdata[12] == 1)
                         {
-                            tmp[4] = _filename + " Chipping";                                                          //Note
+                            tmp[5] = _filename + " Chipping";                                                          //Note
                         }
                         dataGridView1.Rows.Add(tmp);
                     }
@@ -825,7 +1073,7 @@ namespace TrimGap
             }
             else if (e.ProgressPercentage == 10)
             {
-                MessageBox.Show(errormsg);
+                //MessageBox.Show(errormsg);
                 //MessageBox.Show("分析錯誤，請重新選擇檔案及確認參數");
             }
         }
@@ -842,11 +1090,12 @@ namespace TrimGap
             {
                 tabControl1.SelectedIndex = 1;
             }
-            else if (Wafertype == 3)
+            else if (Wafertype == 3 || Wafertype == 6)
             {
                 tabControl1.SelectedIndex = 2;
             }
-            else {
+            else 
+            {
                 tabControl1.SelectedIndex = 0;
             }
         }

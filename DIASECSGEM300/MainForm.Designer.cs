@@ -251,6 +251,13 @@
             this.lblS2_1x1 = new System.Windows.Forms.Label();
             this.lblS2_1x0 = new System.Windows.Forms.Label();
             this.lblBTTH = new System.Windows.Forms.Label();
+            this.tbMisc = new System.Windows.Forms.TabPage();
+            this.lblReviseTime = new System.Windows.Forms.Label();
+            this.txtReviseTime = new System.Windows.Forms.TextBox();
+            this.lblRepeatTimes_now = new System.Windows.Forms.Label();
+            this.txtRepeatTimes_now = new System.Windows.Forms.TextBox();
+            this.txtCreateTime = new System.Windows.Forms.TextBox();
+            this.lblCreateTime = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
@@ -417,13 +424,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblInitResult = new System.Windows.Forms.Label();
             this.refreshTimer = new System.Windows.Forms.Timer(this.components);
-            this.tbMisc = new System.Windows.Forms.TabPage();
-            this.lblReviseTime = new System.Windows.Forms.Label();
-            this.txtReviseTime = new System.Windows.Forms.TextBox();
-            this.lblRepeatTimes_now = new System.Windows.Forms.Label();
-            this.txtRepeatTimes_now = new System.Windows.Forms.TextBox();
-            this.txtCreateTime = new System.Windows.Forms.TextBox();
-            this.lblCreateTime = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.tbcLog.SuspendLayout();
@@ -475,6 +475,7 @@
             this.tbPPSlotMap.SuspendLayout();
             this.tbAngle.SuspendLayout();
             this.tbPPCofficient.SuspendLayout();
+            this.tbMisc.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabClock.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -509,7 +510,6 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tbMisc.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -3154,6 +3154,87 @@
             this.lblBTTH.TabIndex = 39;
             this.lblBTTH.Text = "BTTH：";
             // 
+            // tbMisc
+            // 
+            this.tbMisc.Controls.Add(this.lblReviseTime);
+            this.tbMisc.Controls.Add(this.txtReviseTime);
+            this.tbMisc.Controls.Add(this.lblRepeatTimes_now);
+            this.tbMisc.Controls.Add(this.txtRepeatTimes_now);
+            this.tbMisc.Controls.Add(this.txtCreateTime);
+            this.tbMisc.Controls.Add(this.lblCreateTime);
+            this.tbMisc.Location = new System.Drawing.Point(4, 28);
+            this.tbMisc.Name = "tbMisc";
+            this.tbMisc.Size = new System.Drawing.Size(261, 159);
+            this.tbMisc.TabIndex = 4;
+            this.tbMisc.Text = "Misc";
+            this.tbMisc.UseVisualStyleBackColor = true;
+            // 
+            // lblReviseTime
+            // 
+            this.lblReviseTime.AutoSize = true;
+            this.lblReviseTime.Enabled = false;
+            this.lblReviseTime.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.lblReviseTime.Location = new System.Drawing.Point(2, 68);
+            this.lblReviseTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblReviseTime.Name = "lblReviseTime";
+            this.lblReviseTime.Size = new System.Drawing.Size(102, 19);
+            this.lblReviseTime.TabIndex = 31;
+            this.lblReviseTime.Text = "ReviseTime：";
+            // 
+            // txtReviseTime
+            // 
+            this.txtReviseTime.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.txtReviseTime.Location = new System.Drawing.Point(15, 93);
+            this.txtReviseTime.Margin = new System.Windows.Forms.Padding(2);
+            this.txtReviseTime.Name = "txtReviseTime";
+            this.txtReviseTime.ReadOnly = true;
+            this.txtReviseTime.Size = new System.Drawing.Size(234, 27);
+            this.txtReviseTime.TabIndex = 30;
+            // 
+            // lblRepeatTimes_now
+            // 
+            this.lblRepeatTimes_now.AutoSize = true;
+            this.lblRepeatTimes_now.Enabled = false;
+            this.lblRepeatTimes_now.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.lblRepeatTimes_now.Location = new System.Drawing.Point(4, 130);
+            this.lblRepeatTimes_now.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRepeatTimes_now.Name = "lblRepeatTimes_now";
+            this.lblRepeatTimes_now.Size = new System.Drawing.Size(151, 19);
+            this.lblRepeatTimes_now.TabIndex = 29;
+            this.lblRepeatTimes_now.Text = "RepeatTimes_now：";
+            // 
+            // txtRepeatTimes_now
+            // 
+            this.txtRepeatTimes_now.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.txtRepeatTimes_now.Location = new System.Drawing.Point(159, 127);
+            this.txtRepeatTimes_now.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRepeatTimes_now.Name = "txtRepeatTimes_now";
+            this.txtRepeatTimes_now.ReadOnly = true;
+            this.txtRepeatTimes_now.Size = new System.Drawing.Size(90, 27);
+            this.txtRepeatTimes_now.TabIndex = 28;
+            // 
+            // txtCreateTime
+            // 
+            this.txtCreateTime.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.txtCreateTime.Location = new System.Drawing.Point(15, 33);
+            this.txtCreateTime.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCreateTime.Name = "txtCreateTime";
+            this.txtCreateTime.ReadOnly = true;
+            this.txtCreateTime.Size = new System.Drawing.Size(234, 27);
+            this.txtCreateTime.TabIndex = 27;
+            // 
+            // lblCreateTime
+            // 
+            this.lblCreateTime.AutoSize = true;
+            this.lblCreateTime.Enabled = false;
+            this.lblCreateTime.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.lblCreateTime.Location = new System.Drawing.Point(2, 6);
+            this.lblCreateTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCreateTime.Name = "lblCreateTime";
+            this.lblCreateTime.Size = new System.Drawing.Size(103, 19);
+            this.lblCreateTime.TabIndex = 26;
+            this.lblCreateTime.Text = "CreateTime：";
+            // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage6);
@@ -4625,7 +4706,7 @@
             this.groupBox40.Controls.Add(this.label47);
             this.groupBox40.Controls.Add(this.txtS3F17_CARRIERACTION_Recv);
             this.groupBox40.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.groupBox40.Location = new System.Drawing.Point(3, 6);
+            this.groupBox40.Location = new System.Drawing.Point(3, 14);
             this.groupBox40.Name = "groupBox40";
             this.groupBox40.Size = new System.Drawing.Size(586, 202);
             this.groupBox40.TabIndex = 2;
@@ -5132,87 +5213,6 @@
             this.refreshTimer.Interval = 500;
             this.refreshTimer.Tick += new System.EventHandler(this.refreshTimer_Tick);
             // 
-            // tbMisc
-            // 
-            this.tbMisc.Controls.Add(this.lblReviseTime);
-            this.tbMisc.Controls.Add(this.txtReviseTime);
-            this.tbMisc.Controls.Add(this.lblRepeatTimes_now);
-            this.tbMisc.Controls.Add(this.txtRepeatTimes_now);
-            this.tbMisc.Controls.Add(this.txtCreateTime);
-            this.tbMisc.Controls.Add(this.lblCreateTime);
-            this.tbMisc.Location = new System.Drawing.Point(4, 28);
-            this.tbMisc.Name = "tbMisc";
-            this.tbMisc.Size = new System.Drawing.Size(261, 159);
-            this.tbMisc.TabIndex = 4;
-            this.tbMisc.Text = "Misc";
-            this.tbMisc.UseVisualStyleBackColor = true;
-            // 
-            // lblReviseTime
-            // 
-            this.lblReviseTime.AutoSize = true;
-            this.lblReviseTime.Enabled = false;
-            this.lblReviseTime.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.lblReviseTime.Location = new System.Drawing.Point(2, 68);
-            this.lblReviseTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblReviseTime.Name = "lblReviseTime";
-            this.lblReviseTime.Size = new System.Drawing.Size(102, 19);
-            this.lblReviseTime.TabIndex = 31;
-            this.lblReviseTime.Text = "ReviseTime：";
-            // 
-            // txtReviseTime
-            // 
-            this.txtReviseTime.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.txtReviseTime.Location = new System.Drawing.Point(15, 93);
-            this.txtReviseTime.Margin = new System.Windows.Forms.Padding(2);
-            this.txtReviseTime.Name = "txtReviseTime";
-            this.txtReviseTime.ReadOnly = true;
-            this.txtReviseTime.Size = new System.Drawing.Size(234, 27);
-            this.txtReviseTime.TabIndex = 30;
-            // 
-            // lblRepeatTimes_now
-            // 
-            this.lblRepeatTimes_now.AutoSize = true;
-            this.lblRepeatTimes_now.Enabled = false;
-            this.lblRepeatTimes_now.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.lblRepeatTimes_now.Location = new System.Drawing.Point(4, 130);
-            this.lblRepeatTimes_now.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblRepeatTimes_now.Name = "lblRepeatTimes_now";
-            this.lblRepeatTimes_now.Size = new System.Drawing.Size(151, 19);
-            this.lblRepeatTimes_now.TabIndex = 29;
-            this.lblRepeatTimes_now.Text = "RepeatTimes_now：";
-            // 
-            // txtRepeatTimes_now
-            // 
-            this.txtRepeatTimes_now.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.txtRepeatTimes_now.Location = new System.Drawing.Point(159, 127);
-            this.txtRepeatTimes_now.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRepeatTimes_now.Name = "txtRepeatTimes_now";
-            this.txtRepeatTimes_now.ReadOnly = true;
-            this.txtRepeatTimes_now.Size = new System.Drawing.Size(90, 27);
-            this.txtRepeatTimes_now.TabIndex = 28;
-            // 
-            // txtCreateTime
-            // 
-            this.txtCreateTime.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.txtCreateTime.Location = new System.Drawing.Point(15, 33);
-            this.txtCreateTime.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCreateTime.Name = "txtCreateTime";
-            this.txtCreateTime.ReadOnly = true;
-            this.txtCreateTime.Size = new System.Drawing.Size(234, 27);
-            this.txtCreateTime.TabIndex = 27;
-            // 
-            // lblCreateTime
-            // 
-            this.lblCreateTime.AutoSize = true;
-            this.lblCreateTime.Enabled = false;
-            this.lblCreateTime.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCreateTime.Location = new System.Drawing.Point(2, 6);
-            this.lblCreateTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCreateTime.Name = "lblCreateTime";
-            this.lblCreateTime.Size = new System.Drawing.Size(103, 19);
-            this.lblCreateTime.TabIndex = 26;
-            this.lblCreateTime.Text = "CreateTime：";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -5308,6 +5308,8 @@
             this.tbAngle.PerformLayout();
             this.tbPPCofficient.ResumeLayout(false);
             this.tbPPCofficient.PerformLayout();
+            this.tbMisc.ResumeLayout(false);
+            this.tbMisc.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.tabClock.ResumeLayout(false);
             this.groupBox17.ResumeLayout(false);
@@ -5355,8 +5357,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.tbMisc.ResumeLayout(false);
-            this.tbMisc.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

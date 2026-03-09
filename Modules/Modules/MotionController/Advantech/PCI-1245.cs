@@ -1,4 +1,5 @@
 ﻿using Advantech.Motion;
+using ch.etel.edi.dsa.v40;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -318,6 +319,15 @@ namespace Modules
         {
             throw new NotImplementedException();
         }
+        public override List<DsaDrive> listDsaDrive()
+        {
+            throw new NotImplementedException();
+        }
         #endregion
+
+        public override List<DsaDrive> GetDsaDrives()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

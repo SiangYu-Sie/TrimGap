@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -44,10 +45,8 @@ namespace DemoFormDiaGemLib
         private RCMD_CANCEL_L_C _rcmdCANCEL_L_C;
         private RCMD_CANCEL_L _rcmdCANCEL_L;
 
-
-
         private string _modelType = "TrimGap";
-        private string _softRev = "1.0.0.0";
+        private string _softRev = "1.1.0.0";
         private PPBodyType _ppBodyType = PPBodyType.Both;
         private int paramCount = 40;//Recipe Parameters Count
         private bool bDataCheckOK;
@@ -66,14 +65,31 @@ namespace DemoFormDiaGemLib
 
         public static List<string> PJ_list = new List<string>();
         public static List<string> CJ_list = new List<string>();
+        public ushort CJ_MaxSpace = 100;
+        public int CarrierCapacity = 25;
         public static List<string> Carrier_list = new List<string>();
         public static List<string> Substrate_list = new List<string>();
+        public static List<string> SubstrateLoc_list = new List<string>();
+        public static List<string> Loadport_list = new List<string>();
+
+        public bool bSubstrateLocationDisableEvent = false;
 
         public delegate byte SECSFunction_CallBack(List<string> data);
         SECSFunction_CallBack function_CallBack;
 
         public delegate byte RemoteCommand_CallBack(List<string> data); //S2F41
         RemoteCommand_CallBack remoteCommand_CallBack;
+
+        public static string dirfilepath = Application.StartupPath;
+        public static string LogFileDir = dirfilepath + "\\HSMS_Log\\";
+        public string LogFilePath;
+
+        public bool bReceiveCJSTART = false;
+        //public DateTime dt;
+
+        //===============20260303=========================
+        public static string tmp_pwc_step = string.Empty;
+        //===============20260303=========================
 
         public enum SecsData
         {
@@ -220,6 +236,11 @@ namespace DemoFormDiaGemLib
             _gemControler.ErrorSECSMessageReceived += _gemControler_ErrorSECSMessageReceived;
 
             InitialDIASecsGem();
+            DirectoryInfo dir = new DirectoryInfo(LogFileDir);
+            if (!dir.Exists)
+            {
+                dir.Create();
+            }
         }
 
         //System Inform----------------------------------------------------------------------------------------------------
@@ -363,6 +384,20 @@ namespace DemoFormDiaGemLib
                         break;
                     case eLogType.SML:
                         rtbSecsLog.AppendText(log + Environment.NewLine);
+                        LogFilePath = LogFileDir + "DiaGem_" + e.DateTime.ToString("yyyyMMdd") + ".txt";
+                        FileInfo info = new FileInfo(LogFilePath);
+                        FileStream fs;
+                        try
+                        {
+                            fs = new FileStream(LogFilePath, FileMode.Append);
+                            StreamWriter streamWriteLog = new StreamWriter(fs);
+                            streamWriteLog.WriteLine(log);
+                            streamWriteLog.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            string ee = ex.Message;
+                        }
                         break;
                 }
             });
@@ -374,8 +409,24 @@ namespace DemoFormDiaGemLib
             string log = string.Empty;
             string errLog = string.Empty;
 
-            //listAlarmID.Add(10001);
-            //listAlarmID.Add(10002);
+            // ⭐ 註冊所有 Alarm ID，讓 Host S5F7 查詢時能回報 Enabled Alarm List
+            // 對應 SECSGEM\EqpID.cs 中 TrimGap_EqpID 定義的 Alarm ID 範圍
+            int[][] alarmRanges = new int[][]
+            {
+                new int[] { 10001, 10018 },  // EQP errors
+                new int[] { 20001, 20008 },  // EFEM errors
+                new int[] { 30001, 30060 },  // LoadPort errors
+                new int[] { 40001, 40809 },  // Robot errors
+                new int[] { 50001, 50009 },  // Aligner errors
+                new int[] { 60001, 60019 },  // IO errors
+                new int[] { 70001, 70002 },  // BarcodeReader errors
+                new int[] { 80001, 80004 },  // OCRReader errors
+            };
+            foreach (var range in alarmRanges)
+            {
+                for (int id = range[0]; id <= range[1]; id++)
+                    listAlarmID.Add((ulong)id);
+            }
 
             int iniResult;
             //Eqp
@@ -433,6 +484,16 @@ namespace DemoFormDiaGemLib
             else
                 _gemControler.UpdateSV(15, (byte)3, out errLog);
 
+            // ⭐ 初始化所有 ASCII 類型的 SV，避免 S1F3 查詢時回傳 zero-length 導致 Host 報錯
+            _gemControler.UpdateSV(1, " ", out errLog);   // SYS_LICENSE_CODE
+            _gemControler.UpdateSV(3, DateTime.Now.ToString("yyyyMMddHHmmssff"), out errLog);  // SYS_CLOCK
+            _gemControler.UpdateSV(14, " ", out errLog);  // SYS_PP_EXEC_NAME
+            _gemControler.UpdateSV(19, "0000000000000000", out errLog);  // SYS_SPOOL_START_TIME
+            _gemControler.UpdateSV(20, "0000000000000000", out errLog);  // SYS_SPOOL_FULL_TIME
+            _gemControler.UpdateSV(24, "1.0", out errLog);  // SYS_SOFTWARE_REVISION
+            _gemControler.UpdateSV(25, "TrimGap_1", out errLog);  // GEM_EQP_SERIAL_NUM
+            _gemControler.UpdateSV(26, "TSMC", out errLog);  // GEM_E30_EQUIPMENT_SUPPLIER
+
             chkContinueUpdateSV.Checked = false;
 
             //SYS_LOG_LEVEL
@@ -449,6 +510,12 @@ namespace DemoFormDiaGemLib
                 }
             }
 
+            //CJ_MaxJobSpace
+            if (_gemControler.GetEC(272, out format, out obj, out errLog) == 0)
+            {
+                CJ_MaxSpace = (ushort)obj;
+            }
+
             //Update Object Info
             List<ObjectInstance> listObjectInstance = null;
             _gemControler.GetObject(out listObjectInstance, out err);
@@ -459,18 +526,79 @@ namespace DemoFormDiaGemLib
                 switch (objectInstance.ObjType)
                 {
                     case ObjectTypeKey.PROCESSJOB:
-                        PJ_list.Add(objectInstance.ObjID);
+                        _gemControler.DeleteObject(ObjectTypeKey.PROCESSJOB, objectInstance.ObjID, out err);
+                        //PJ_list.Add(objectInstance.ObjID);
                         break;
                     case ObjectTypeKey.CONTROLJOB:
-                        CJ_list.Add(objectInstance.ObjID);
+                        _gemControler.DeleteObject(ObjectTypeKey.CONTROLJOB, objectInstance.ObjID, out err);
+                        //CJ_list.Add(objectInstance.ObjID);
                         break;
                     case ObjectTypeKey.CARRIER:
-                        Carrier_list.Add(objectInstance.ObjID);
+                        _gemControler.DeleteObject(ObjectTypeKey.CARRIER, objectInstance.ObjID, out err);
+                        //Carrier_list.Add(objectInstance.ObjID);
+                        break;
+                    case ObjectTypeKey.LOADPORT:
+                        _gemControler.DeleteObject(ObjectTypeKey.LOADPORT, objectInstance.ObjID, out err);
+                        InitialLoadPort(objectInstance.ObjID);
+                        break;
+                    case ObjectTypeKey.SUBSTLOC:
+                        _gemControler.DeleteObject(ObjectTypeKey.SUBSTLOC, objectInstance.ObjID, out err);
+                        //SubstrateLoc_list.Add(objectInstance.ObjID);
+                        break;
+                    case ObjectTypeKey.SUBSTRATE:
+                        //Substrate_list.Add(objectInstance.ObjID);
+                        _gemControler.DeleteObject(ObjectTypeKey.SUBSTRATE, objectInstance.ObjID, out err);
                         break;
                     default:
                         break;
                 }
             }
+            //確保Loadport1、2建立
+            if (!Loadport_list.Contains("1"))
+            {
+                _gemControler.CreateObject(ObjectTypeKey.LOADPORT, "1", out err);
+                InitialLoadPort("1");
+            }
+            if (!Loadport_list.Contains("2"))
+            {
+                _gemControler.CreateObject(ObjectTypeKey.LOADPORT, "2", out err);
+                InitialLoadPort("2");
+            }
+            //確保本機擁有的SubstrateLoc建立
+            for (int i = 1; i <= CarrierCapacity; i++)
+            {
+                SubstrateLoc_list.Add("LOADPORT1." + i.ToString("00"));
+            }
+            for (int i = 1; i <= CarrierCapacity; i++)
+            {
+                SubstrateLoc_list.Add("LOADPORT2." + i.ToString("00"));
+            }
+            SubstrateLoc_list.Add("UPPERARM");
+            SubstrateLoc_list.Add("LOWERARM");
+            SubstrateLoc_list.Add("ALIGNER");
+            SubstrateLoc_list.Add("STAGE");
+            /*
+            if (!SubstrateLoc_list.Contains("UpperArm"))
+            {
+                int rtn = _gemControler.CreateObject(ObjectTypeKey.SUBSTLOC, "UpperArm", out err);
+                if(rtn == 0) SubstrateLoc_list.Add("UpperArm");
+            }
+            if (!SubstrateLoc_list.Contains("LowerArm"))
+            {
+                int rtn = _gemControler.CreateObject(ObjectTypeKey.SUBSTLOC, "LowerArm", out err);
+                if (rtn == 0) SubstrateLoc_list.Add("LowerArm");
+            }
+            if (!SubstrateLoc_list.Contains("Aligner"))
+            {
+                int rtn = _gemControler.CreateObject(ObjectTypeKey.SUBSTLOC, "Aligner", out err);
+                if (rtn == 0) SubstrateLoc_list.Add("Aligner");
+            }
+            if (!SubstrateLoc_list.Contains("Stage"))
+            {
+                int rtn = _gemControler.CreateObject(ObjectTypeKey.SUBSTLOC, "Stage", out err);
+                if (rtn == 0) SubstrateLoc_list.Add("Stage");
+            }*/
+            UpdateCJ();
             //GetObject
             /* ObjectInstance objectInstance = null;
              result = _gemControler.GetObject(txtCreateObjType.Text, txtCreateObjID.Text, out objectInstance, out err);
@@ -756,6 +884,7 @@ namespace DemoFormDiaGemLib
                         if (listAlarmID.Contains(alarmid))
                         {
                             listAlarmID.Remove(alarmid);
+
                         }
                     }
 
@@ -827,8 +956,11 @@ namespace DemoFormDiaGemLib
             string err = string.Empty;
             int result = 0;
 
-            uint svid = 3004;
+            uint svid = 201;
             ListWrapper lw = new ListWrapper();
+            lw.TryAdd(ItemFmt.A, "ABC", out err);
+            lw.TryAdd(ItemFmt.A, "DEF", out err);
+            /*
             lw.TryAdd(ItemFmt.A, "ABC", out err);
             lw.TryAdd(ItemFmt.B, new byte[] { 1, 2, 3 }, out err);
             lw.TryAdd(ItemFmt.Boolean, new bool[] { true, false }, out err);
@@ -848,6 +980,7 @@ namespace DemoFormDiaGemLib
             lw_2_1.TryAdd(ItemFmt.U2, new ushort[] { 12, 34 }, out err);
             lw_2.TryAdd(ItemFmt.U4, new uint[] { 567, 890 }, out err);
             lw.TryAdd(ItemFmt.U8, new ulong[] { 1234, 5678 }, out err);
+            */
             obj = lw;
 
             result = _gemControler.UpdateSV(svid, obj, out err);
@@ -4045,7 +4178,8 @@ namespace DemoFormDiaGemLib
             //}
 
             _ppManager.Initial();
-            _gemControler.ProcessProgramDirectory(_ppManager.PPIDList, e.SystemBytes, out err);
+            int a = _gemControler.ProcessProgramDirectory(_ppManager.PPIDList, e.SystemBytes, out err);
+            int b = a;
             //_gemControler.ProcessProgramDirectory(_ppManager.PPIDList, e.SystemBytes, out err);
         }
 
@@ -4634,10 +4768,12 @@ namespace DemoFormDiaGemLib
                 txtTerminalSystemBytes.Text = e.SystemBytes.ToString();
                 txtTerminalText.Text = string.Join("\r\n", e.Texts).ToString();
             });
-
-            //e.Ack = 1;
             //e.MultiblockNotAllowed = true;
-            //_gemControler.TerminalDisplayReply(e);
+            string err;
+            eTerminalDisplayType terminalDisplayType = txtTerminalDisplayType.Text == "Single" ? eTerminalDisplayType.Single : eTerminalDisplayType.Multiblock;
+            byte ack = 0;
+            bool multiblockNotAllowed = false;//rdoMultiblockNotAllowedTrue.Checked ? true : false;
+            _gemControler.TerminalDisplayReply(e.TerminalDisplayType, ack, e.SystemBytes, out err, multiblockNotAllowed, e.TerminalNumber);
         }
 
         private void btnTerminalACKC10_Click(object sender, EventArgs e)
@@ -4703,8 +4839,16 @@ namespace DemoFormDiaGemLib
         private void _gemControler_CreateObjectRequestCommand(object sender, CreateObjectRequestArgs e)
         {
             string err;
+            int result = 0;
+            byte bAck = 0;
+            uint uSystemBytes = e.SystemBytes;
+            List<ErrorReport> listErrorReports = new List<ErrorReport>();
+            eReceiveCreateMessageName createType = (eReceiveCreateMessageName)Enum.Parse(typeof(eReceiveCreateMessageName), e.ReceiveMessageName.ToString());
+            try
+            {
             foreach (ObjectInstance objectEntity in e.ListObjectEntities)
             {
+                if (result != 0) break;
                 this.Invoke((MethodInvoker)delegate ()
                 {
                     txtS14F9_OBJSPEC_Recv.Text = objectEntity.ObjSpec.ToString();
@@ -4716,24 +4860,18 @@ namespace DemoFormDiaGemLib
                 bCanReplyCreateObjectRequestCommand = true;
                 lastRecvListObjectInstance = e.ListObjectEntities;
 
-                eReceiveCreateMessageName createType = (eReceiveCreateMessageName)Enum.Parse(typeof(eReceiveCreateMessageName), e.ReceiveMessageName.ToString());
                 List<ObjectInstance> listObjectEntities = new List<ObjectInstance>();
-                List<ErrorReport> listErrorReports = new List<ErrorReport>();
-                byte bAck;
-                uint uSystemBytes = e.SystemBytes;
+
                 ObjectInstance createObjectEntity = new ObjectInstance();
                 createObjectEntity.ObjType = objectEntity.ObjType;
                 createObjectEntity.ObjID = objectEntity.ObjID;
                 createObjectEntity.ObjSpec = objectEntity.ObjSpec;
-                List<ObjectAttribute> listObjectAttributes = new List<ObjectAttribute>();
-                foreach (ObjectAttribute objAttr in e.ListObjectEntities[0].ListObjectAttributes)
-                {
-                    createObjectEntity.ListObjectAttributes.Add(objAttr);
-                }
+                createObjectEntity.ListObjectAttributes = new List<ObjectAttribute>();
 
                 switch (objectEntity.ObjType.ToUpper())
                 {
                     case ObjectTypeKey.PROCESSJOB:                 
+                        System.Diagnostics.Debug.WriteLine("Recv CreateObject: PROCESSJOB  ObjID=" + objectEntity.ObjID + "  createType=" + createType);
                         bAck = PJ_list.Contains(objectEntity.ObjID) ? byte.Parse("1") : byte.Parse("0");  //檢查pj是否重複
 
                         switch (createType)
@@ -4747,16 +4885,151 @@ namespace DemoFormDiaGemLib
                                     er.ErrorText = "object ID in use";
                                     listErrorReports.Add(er);
                                 }
-                                int result = _gemControler.CreateObjectRequestCommandReply(createType, listObjectEntities, bAck, listErrorReports, uSystemBytes, out err);
+                                else
+                                {
+                                    result = _gemControler.CreateObject(ObjectTypeKey.PROCESSJOB, objectEntity.ObjID, out err, objectEntity.ObjSpec);
+                                    bool p141 = true;
+                                    bool p142 = true;
+                                    bool p143 = true;
+                                    bool p144 = true;
+                                    bool p145 = true;
+                                    bool p146 = true;
+                                    bool p147 = true;
+                                    bool p148 = true;
+                                    bool p149 = true;
+                                    
+                                    foreach (ObjectAttribute objAttr in objectEntity.ListObjectAttributes)
+                                    {
+                                        if (objAttr.ATTRID == ObjectAttributeKey.OBJID)
+                                        {
+                                            objAttr.ATTRDATA = objectEntity.ObjID;
+                                            objAttr.VID = 141;
+                                            p141 = false;
+                                            createObjectEntity.ListObjectAttributes.Add(objAttr);
+                                        }
+                                        else if (objAttr.ATTRID == ObjectAttributeKey.ProcessJob.PAUSEEVENT)
+                                        {
+                                            objAttr.VID = 142;
+                                            p142 = false;
+                                            createObjectEntity.ListObjectAttributes.Add(objAttr);
+                                        }
+                                        else if (objAttr.ATTRID == ObjectAttributeKey.ProcessJob.PRJOBSTATE)
+                                        {
+                                            objAttr.VID = 143;
+                                            p143 = false;
+                                            objAttr.ATTRDATA = (byte)ProcessJobState.QUEUED;
+                                            createObjectEntity.ListObjectAttributes.Add(objAttr);
+                                        }
+                                        else if (objAttr.ATTRID == ObjectAttributeKey.ProcessJob.PRMTLNAMELIST)
+                                        {
+                                            objAttr.VID = 144;
+                                            p144 = false;
+                                            createObjectEntity.ListObjectAttributes.Add(objAttr);
+                                        }
+                                        else if (objAttr.ATTRID == ObjectAttributeKey.ProcessJob.PRMTLTYPE)
+                                        {
+                                            objAttr.VID = 145;
+                                            p145 = false;
+                                            objAttr.ATTRDATA = (byte)13;
+                                            createObjectEntity.ListObjectAttributes.Add(objAttr);
+                                        }
+                                        else if (objAttr.ATTRID == ObjectAttributeKey.ProcessJob.PRPROCESSSTART)
+                                        {
+                                            objAttr.VID = 146;
+                                            p146 = false;
+                                            createObjectEntity.ListObjectAttributes.Add(objAttr);
+                                        }
+                                        else if (objAttr.ATTRID == ObjectAttributeKey.ProcessJob.PRRECIPEMETHOD)
+                                        {
+                                            objAttr.VID = 147;
+                                            p147 = false;
+                                            createObjectEntity.ListObjectAttributes.Add(objAttr);
+                                        }
+                                        else if (objAttr.ATTRID == ObjectAttributeKey.ProcessJob.RECID)
+                                        {
+                                            objAttr.VID = 148;
+                                            p148 = false;
+                                            createObjectEntity.ListObjectAttributes.Add(objAttr);
+                                        }
+                                        else if (objAttr.ATTRID == ObjectAttributeKey.ProcessJob.RECVARIABLELIST)
+                                        {
+                                            objAttr.VID = 149;
+                                            p149 = false;
+                                            createObjectEntity.ListObjectAttributes.Add(objAttr);
+                                        }                                      
+                                    }
+                                    ObjectAttribute objectAttribute;
+                                    ListWrapper lw = new ListWrapper();
+                                    if (p141)
+                                    {
+                                        objectAttribute = new ObjectAttribute(141, ObjectAttributeKey.OBJID, objectEntity.ObjID);
+                                        createObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                                    }
+                                    if(p142)
+                                    {
+                                        objectAttribute = new ObjectAttribute(142, ObjectAttributeKey.ProcessJob.PAUSEEVENT, lw);
+                                        createObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                                    }
+                                    if(p143)
+                                    {
+                                        objectAttribute = new ObjectAttribute(143, ObjectAttributeKey.ProcessJob.PRJOBSTATE, (byte)ProcessJobState.QUEUED);
+                                        createObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                                    }
+                                    if(p144)
+                                    {
+                                        objectAttribute = new ObjectAttribute(144, ObjectAttributeKey.ProcessJob.PRMTLNAMELIST, lw);
+                                        createObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                                    }
+                                    if(p145)
+                                    {
+                                        objectAttribute = new ObjectAttribute(145, ObjectAttributeKey.ProcessJob.PRMTLTYPE, (byte)13);
+                                        createObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                                    }
+                                    if(p146)
+                                    {
+                                        objectAttribute = new ObjectAttribute(146, ObjectAttributeKey.ProcessJob.PRPROCESSSTART, true);
+                                        createObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                                    }
+                                    if(p147)
+                                    {
+                                        objectAttribute = new ObjectAttribute(147, ObjectAttributeKey.ProcessJob.PRRECIPEMETHOD, (byte)0);
+                                        createObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                                    }
+                                    if(p148)
+                                    {
+                                        objectAttribute = new ObjectAttribute(148, ObjectAttributeKey.ProcessJob.RECID, "");
+                                        createObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                                    }
+                                    if(p149)
+                                    {
+                                        objectAttribute = new ObjectAttribute(149, ObjectAttributeKey.ProcessJob.RECVARIABLELIST, lw);
+                                        createObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                                    }
 
-                                PJ_list.Add(objectEntity.ObjID);
-                                ChangeProcessJobState(objectEntity.ObjID, ProcessJobState.QUEUED);
+                                    result += _gemControler.UpdateObject(createObjectEntity, out err);
+                                    if(result == 0)
+                                    {
+                                        _gemControler.EventReportSend(41, out err);
+                                        PJ_list.Add(objectEntity.ObjID);
+                                    }                                        
+                                    else
+                                    {
+                                        bAck = 1;
+                                        ErrorReport er = new ErrorReport();
+                                        er.ErrorCode = 12;
+                                        er.ErrorText = "create object fail";
+                                        listErrorReports.Add(er);
+                                    }
+                                }                                
                                 break;
                             default:
                                 break;
                         }
                         break;
                     case ObjectTypeKey.CONTROLJOB:
+                        System.Diagnostics.Debug.WriteLine("Recv CreateObject: CONTROLJOB  ObjID=" + objectEntity.ObjID + "  createType=" + createType);
+                        System.Diagnostics.Debug.WriteLine("  Expected PROCESSINGCTRLSPEC key=[" + ObjectAttributeKey.ControlJob.PROCESSINGCTRLSPEC + "]");
+                        System.Diagnostics.Debug.WriteLine("  Total attributes count=" + objectEntity.ListObjectAttributes.Count);
                         bAck = CJ_list.Contains(objectEntity.ObjID) ? byte.Parse("1") : byte.Parse("0");  //檢查cj是否重複
                         switch (createType)
                         {
@@ -4770,15 +5043,113 @@ namespace DemoFormDiaGemLib
                                     er.ErrorText = "object ID in use";
                                     listErrorReports.Add(er);
                                 }
-                                int result = _gemControler.CreateObjectRequestCommandReply(createType, listObjectEntities, bAck, listErrorReports, uSystemBytes, out err);
-                                if (objectEntity.ObjType.ToUpper() == ObjectTypeKey.CONTROLJOB)
+                                else
                                 {
-                                    CJ_list.Add(objectEntity.ObjID);
-                                    ChangeControlJobState(objectEntity.ObjID, ControlJobState.QUEUED, 0);
-                                }
-                                if(CJ_list.Count == 1)
-                                {
-                                    ChangeControlJobState(objectEntity.ObjID, ControlJobState.SELECTED, 0);  //只有一個人就直接選了
+                                    List<string> CarrierInputSpec = new List<string>();
+                                    string dcp = "";
+                                    string[] PRJob = new string[1];
+                                    byte PROrder = 3;
+                                    bool bStart = true;
+                                    string pauseEvent = "";
+                                    ListWrapper lw = new ListWrapper();
+                                    ListWrapper lw_1 = new ListWrapper();
+                                    foreach (ObjectAttribute objAttr in objectEntity.ListObjectAttributes)
+                                    {
+                                        System.Diagnostics.Debug.WriteLine("  CJ Attr: ATTRID=[" + objAttr.ATTRID + "] VID=" + objAttr.VID + " DataType=" + (objAttr.ATTRDATA != null ? objAttr.ATTRDATA.GetType().Name : "null"));
+                                        if (string.Equals(objAttr.ATTRID, ObjectAttributeKey.OBJID, StringComparison.OrdinalIgnoreCase) && objectEntity.ObjID == "")
+                                        {
+                                            if((string)objAttr.ATTRDATA != "")
+                                            {
+                                                createObjectEntity.ObjID = (string)objAttr.ATTRDATA;
+                                                objectEntity.ObjID = createObjectEntity.ObjID;
+                                            }
+                                            else if(objectEntity.ObjSpec != "")
+                                            {
+                                                createObjectEntity.ObjID = objectEntity.ObjSpec;
+                                                objectEntity.ObjID = objectEntity.ObjSpec;
+                                            }
+                                        }
+                                        else if(string.Equals(objAttr.ATTRID, ObjectAttributeKey.ControlJob.CARRIERINPUTSPEC, StringComparison.OrdinalIgnoreCase))
+                                        {
+                                            lw = (ListWrapper)objAttr.ATTRDATA;
+                                            if (lw.Items.Count == 1 && lw.Items[0].ToString() == "Delta.DIAAuto.DIASECSGEM.ListWrapper")
+                                                CarrierInputSpec = new List<string>();
+                                            else
+                                            {
+                                                for (int i = 0; i < lw.Items.Count; i++)
+                                                {
+                                                    CarrierInputSpec.Add(lw.Items[i].ToString());
+                                                }
+                                            }
+                                        }
+                                        else if(string.Equals(objAttr.ATTRID, ObjectAttributeKey.ControlJob.DATACOLLECTIONPLAN, StringComparison.OrdinalIgnoreCase))
+                                        {
+                                            dcp = objAttr.ATTRDATA.ToString();
+                                        }
+                                        else if (string.Equals(objAttr.ATTRID, ObjectAttributeKey.ControlJob.PAUSEEVENT, StringComparison.OrdinalIgnoreCase))
+                                        {
+                                            lw = (ListWrapper)objAttr.ATTRDATA;
+                                            if (lw.Items.Count != 0)
+                                            {
+                                                for (int i = 0; i < lw.Items.Count; i++)
+                                                {
+                                                    string[] b = (string[])lw.Items[i].Value;
+                                                    for (int j = 0; j < b.Length; ++j)
+                                                    {
+                                                        if (i == 0 && j == 0)
+                                                        {
+                                                            pauseEvent += b[j];
+                                                        }
+                                                        else
+                                                        {
+                                                            pauseEvent += ',' + b[j];
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        else if (string.Equals(objAttr.ATTRID, ObjectAttributeKey.ControlJob.PROCESSINGCTRLSPEC, StringComparison.OrdinalIgnoreCase))
+                                        {
+                                            System.Diagnostics.Debug.WriteLine("  >> PROCESSINGCTRLSPEC matched!");
+                                            lw = (ListWrapper)objAttr.ATTRDATA;
+                                            System.Diagnostics.Debug.WriteLine("  >> lw.Items.Count=" + lw.Items.Count);
+                                            PRJob = new string[lw.Items.Count];
+                                            for (int i = 0; i < lw.Items.Count; i++)
+                                            {
+                                                lw_1 = (ListWrapper)lw.Items[i].Value;
+                                                PRJob[i] = lw_1.Items[0].ToString();
+                                                System.Diagnostics.Debug.WriteLine("  >> PRJob[" + i + "]=" + PRJob[i]);
+                                            }
+                                        }
+                                        else if (string.Equals(objAttr.ATTRID, ObjectAttributeKey.ControlJob.PROCESSORDERMGMT, StringComparison.OrdinalIgnoreCase))
+                                        {
+                                            byte[] b = (byte[])objAttr.ATTRDATA;
+                                            if (b.Length == 0)
+                                                PROrder = 3;
+                                            else
+                                                PROrder = b[0];
+                                        }
+                                        else if (string.Equals(objAttr.ATTRID, ObjectAttributeKey.ControlJob.STARTMETHOD, StringComparison.OrdinalIgnoreCase))
+                                        {
+                                            bool[] b = (bool[])objAttr.ATTRDATA;
+                                            if (b.Length == 0)
+                                                bStart = true;
+                                            else
+                                                bStart = b[0];
+                                        }
+                                    }
+                                    result = CreateControlJob(objectEntity.ObjID, CarrierInputSpec, dcp, PRJob, PROrder, bStart, pauseEvent, out err, objectEntity.ObjSpec);
+
+                                    //result = _gemControler.CreateObject(ObjectTypeKey.CONTROLJOB, objectEntity.ObjID, out err, objectEntity.ObjSpec);
+                                    //result += _gemControler.UpdateObject(createObjectEntity, out err);
+                                    if (result != 0)
+                                    {
+                                        bAck = 1;
+                                        ErrorReport er = new ErrorReport();
+                                        er.ErrorCode = 12;
+                                        er.ErrorText = "create object fail";
+                                        listErrorReports.Add(er);
+                                    }
                                 }
                                 break;
                             default:
@@ -4799,7 +5170,7 @@ namespace DemoFormDiaGemLib
                                     er.ErrorText = "object ID in use";
                                     listErrorReports.Add(er);
                                 }
-                                int result = _gemControler.CreateObjectRequestCommandReply(createType, listObjectEntities, bAck, listErrorReports, uSystemBytes, out err);
+                                //result = _gemControler.CreateObjectRequestCommandReply(createType, listObjectEntities, bAck, listErrorReports, uSystemBytes, out err);
                                 if (objectEntity.ObjType.ToUpper() == ObjectTypeKey.CARRIER)
                                 {
                                     Carrier_list.Add(objectEntity.ObjID);
@@ -4824,7 +5195,7 @@ namespace DemoFormDiaGemLib
                                     er.ErrorText = "object ID in use";
                                     listErrorReports.Add(er);
                                 }
-                                int result = _gemControler.CreateObjectRequestCommandReply(createType, listObjectEntities, bAck, listErrorReports, uSystemBytes, out err);
+                                //result = _gemControler.CreateObjectRequestCommandReply(createType, listObjectEntities, bAck, listErrorReports, uSystemBytes, out err);
                                 if (objectEntity.ObjType.ToUpper() == ObjectTypeKey.SUBSTRATE)
                                 {
                                     Substrate_list.Add(objectEntity.ObjID);
@@ -4846,6 +5217,23 @@ namespace DemoFormDiaGemLib
                         }
                         break;
                 }
+            }
+            result = _gemControler.CreateObjectRequestCommandReply(createType, e.ListObjectEntities, bAck, listErrorReports, uSystemBytes, out err);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("CreateObjectRequestCommand Exception: " + ex.Message + "\n" + ex.StackTrace);
+                try
+                {
+                    bAck = 1;
+                    listErrorReports.Clear();
+                    ErrorReport er = new ErrorReport();
+                    er.ErrorCode = 99;
+                    er.ErrorText = "Exception: " + ex.Message;
+                    listErrorReports.Add(er);
+                    _gemControler.CreateObjectRequestCommandReply(createType, e.ListObjectEntities, bAck, listErrorReports, uSystemBytes, out err);
+                }
+                catch { }
             }
         }
 
@@ -4908,6 +5296,7 @@ namespace DemoFormDiaGemLib
         private void btnUpdateObject_ProcessJob_Click(object sender, EventArgs e)
         {
             string err;
+            
             ObjectInstance updateObjectEntity = new ObjectInstance();
             updateObjectEntity.ObjType = ObjectTypeKey.PROCESSJOB;
             updateObjectEntity.ObjID = "PRJOBID01";
@@ -4917,7 +5306,7 @@ namespace DemoFormDiaGemLib
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             objectAttribute = new ObjectAttribute(143, ObjectAttributeKey.ProcessJob.PRJOBSTATE, (byte)1);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
-
+            
             _gemControler.UpdateObject(updateObjectEntity, out err);
         }
 
@@ -4931,34 +5320,95 @@ namespace DemoFormDiaGemLib
             bCanReplyDeleteObjectRequestCommand = true;
 
             byte bAck = 0;
-            List<ObjectAttribute> listObjectAttributes = new List<ObjectAttribute>();
+            string objID = "";
+            int rtn = 0;
+            List<ErrorReport> listErrorReports = new List<ErrorReport>();
+            ErrorReport objectErrors = new ErrorReport();
+
+            foreach (ObjectAttribute objectAttribute in e.ListObjectAttributes)
+            {
+                if(objectAttribute.ATTRID == "ObjID")
+                {
+                    objID = (string)objectAttribute.ATTRDATA;
+                }
+            }
+
             //Handle
             switch (e.ObjSpec)
             {
                 case ObjectTypeKey.PROCESSJOB:
+                    ProcessJobState pjs;
+                    rtn = GetProcessJobState(objID, out pjs);
+                    if (rtn == 0)
+                    {
+                        if (pjs == ProcessJobState.QUEUED)
+                        {
+                            rtn = ChangeProcessJobState(objID, ProcessJobState.PROCESS_COMPLETE);
+                            if (rtn != 0)
+                            {
+                                objectErrors.ErrorCode = (ulong)rtn;
+                                objectErrors.ErrorText = err;
+                                listErrorReports.Add(objectErrors);
+                                bAck = 1;
+                            }
+                        }
+                        else
+                        {
+                            objectErrors.ErrorCode = 9;
+                            objectErrors.ErrorText = "Target ProcessJob is busy.";
+                            listErrorReports.Add(objectErrors);
+                            bAck = 1;
+                        }
+                    }
+                    else
+                    {
+                        objectErrors.ErrorCode = 10;
+                        objectErrors.ErrorText = "Target ProcessJob is not found.";
+                        listErrorReports.Add(objectErrors);
+                        bAck = 1;
+                    }
                     break;
                 case ObjectTypeKey.CONTROLJOB:
-                    //ddd
+                    ControlJobState cjs;
+                    rtn = GetControlJobState(objID, out cjs, out err);
+                    if(rtn == 0)
+                    {
+                        if (cjs == ControlJobState.QUEUED)
+                        {
+                            rtn = DeleteControlJob(objID, out err);
+                            if(rtn != 0)
+                            {
+                                objectErrors.ErrorCode = (ulong)rtn;
+                                objectErrors.ErrorText = err;
+                                listErrorReports.Add(objectErrors);
+                                bAck = 1;
+                            }
+                        }
+                        else
+                        {
+                            objectErrors.ErrorCode = 9;
+                            objectErrors.ErrorText = "Target ControlJob is busy.";
+                            listErrorReports.Add(objectErrors);
+                            bAck = 1;
+                        }
+                    }
+                    else
+                    {
+                        objectErrors.ErrorCode = 10;
+                        objectErrors.ErrorText = "Target ControlJob is not found.";
+                        listErrorReports.Add(objectErrors);
+                        bAck = 1;
+                    }
+
                     break;
                 case ObjectTypeKey.CARRIER:
                     break;
             }
-            //e.ListObjectAttributes.
-            ObjectAttribute objectAttribute = new ObjectAttribute(ObjectAttributeKey.OBJID, "");
-            listObjectAttributes.Add(objectAttribute);
 
-            List<ErrorReport> listErrorReports = new List<ErrorReport>();
-            ErrorReport objectErrors = new ErrorReport();
-            objectErrors.ErrorCode = 3;
-            objectErrors.ErrorText = "TestError3";
-            listErrorReports.Add(objectErrors);
-            objectErrors = new ErrorReport();
-            objectErrors.ErrorCode = 5;
-            objectErrors.ErrorText = "TestError5";
-            listErrorReports.Add(objectErrors);
+
 
             //Reply
-            _gemControler.DeleteObjectRequestCommandReply(listObjectAttributes, bAck, listErrorReports, e.SystemBytes, out err);
+            _gemControler.DeleteObjectRequestCommandReply(e.ListObjectAttributes, bAck, listErrorReports, e.SystemBytes, out err);
 
             //Ex: 
             //OK, Call EventReportSend
@@ -5055,6 +5505,151 @@ namespace DemoFormDiaGemLib
             }
 
             txtS16F27_Systembytes.Text = e.SystemBytes.ToString();
+
+            string log = string.Empty;
+            string err = string.Empty;
+            uint systemBytes = e.SystemBytes;
+            bool ack = true;
+            string ctlJobId = e.CTLJOBID.Trim();
+            ControlJobCommand ctljobtmp = (ControlJobCommand)e.CTLJOBCMD;
+            string ctlJobCmd = ctljobtmp.ToString();
+            byte btACK = 0;
+            List<string> dataList = new List<string>();
+            string value = "";
+            ErrorReport error1 = new ErrorReport();
+            string errStr = "";
+            if (e.ReceiveCommandParameters != null)
+            {
+                if (e.ReceiveCommandParameters.Name.ToUpper() == "ACTION")
+                {
+                    value = ((byte[])e.ReceiveCommandParameters.Value)[0].ToString();
+                }
+            }
+
+            int rtn = GetControlJobState(ctlJobId, out ControlJobState state, out err);
+            if (rtn == 0)
+            {
+                dataList.Clear();
+                dataList.Add("CONTROLJOBCOMMAND");
+                dataList.Add(ctlJobCmd);
+                dataList.Add(ctlJobId);
+                dataList.Add(value);
+                dataList.Add(state.ToString());
+                btACK = function_CallBack(dataList);              
+                if (btACK != 0)
+                {                   
+                    error1.ErrorCode = btACK;
+                    
+                    if (btACK == 2)  
+                        errStr = "Target CJ is running.";
+                    else if(btACK == 3)
+                        errStr = "Target CJ is not running.";
+                    else if (btACK == 4)
+                        errStr = "Target CJ is not in pause state.";
+                    else if (btACK == 5)
+                        errStr = "One CJ is running.";
+                    else if (btACK == 6)
+                        errStr = "";
+                    error1.ErrorText = errStr;
+                    //errorReports.Add(error1);
+                }
+                else
+                {
+                    switch(ctlJobCmd)
+                    {
+                        case "CJSTART":
+                            if(state != ControlJobState.WAITING_FOR_START)
+                            {
+                                btACK = 11;
+                                error1.ErrorCode = btACK;
+                                error1.ErrorText = "CJ state must be WAITING_FOR_START.";
+                            }
+                            else
+                                bReceiveCJSTART = true;
+                            break;
+                        case "CJDESELECT":
+                            if (CJ_list.Count <= 1)
+                            {
+                                btACK = 12;
+                                error1.ErrorCode = btACK;
+                                error1.ErrorText = "no other CJ can be exchanged.";
+                            }
+                            else if(state != ControlJobState.SELECTED)
+                            {
+                                btACK = 13;
+                                error1.ErrorCode = btACK;
+                                error1.ErrorText = "Target CJ is not in selected state.";
+                            }
+                            else
+                            {
+                                string cj1;
+                                cj1 = CJ_list[0];
+                                CJ_list[0] = CJ_list[1];
+                                CJ_list[1] = cj1;
+                                ChangeControlJobState(cj1, ControlJobState.QUEUED, 0);
+                                ChangeControlJobState(CJ_list[0], ControlJobState.SELECTED, 0);
+                            }
+                            break;
+                        case "CJHOQ":
+                            if (CJ_list.Count <= 2)
+                            {
+                                btACK = 12;
+                                error1.ErrorCode = btACK;
+                                error1.ErrorText = "no other CJ can be exchanged.";
+                            }
+                            else if (state == ControlJobState.QUEUED)
+                            {
+                                for(int i = 0; i<CJ_list.Count; i++)
+                                {
+                                    if(CJ_list[i] == ctlJobId)
+                                    {
+                                        CJ_list.RemoveAt(i);
+                                        //ChangeControlJobState(CJ_list[1], ControlJobState.QUEUED, 0);//舊的頭CJ
+                                        CJ_list.Insert(1, ctlJobId);
+                                        //ChangeControlJobState(CJ_list[0], ControlJobState.SELECTED, 0);//新的頭CJ
+                                        break;
+                                    }
+                                }
+                            }
+                            break;
+                        case "CJCANCEL":
+                            if (state != ControlJobState.QUEUED)
+                            {
+                                btACK = 13;
+                                error1.ErrorCode = btACK;
+                                error1.ErrorText = "CJ state must be QUEUED.";
+                            }
+                            else
+                            {
+                                if(value == "1")
+                                    DeleteControlJobWithAssociatedProcessJob(ctlJobId, out err);
+                                else
+                                    DeleteControlJob(ctlJobId, out err);
+                            }                            
+                            break;
+                        case "CJSTOP":
+                        case "CJABORT":
+                            if (state == ControlJobState.QUEUED || state == ControlJobState.SELECTED || state == ControlJobState.WAITING_FOR_START)
+                            {
+                                if (value == "1")
+                                    DeleteControlJobWithAssociatedProcessJob(ctlJobId, out err);
+                                else
+                                    DeleteControlJob(ctlJobId, out err);
+                            }
+                            break;
+                    }
+                }
+
+                ack = btACK == 0 ? true : false;
+            }
+            else
+            {
+                ack = false;
+                error1.ErrorCode = 1;
+                errStr = "Can not get target CJ state.";
+                error1.ErrorText = errStr;
+            }
+            _gemControler.ControlJobCommandReply(ack, error1, systemBytes, out err);
         }
 
         private void btnControlJobCommandAck_Click(object sender, EventArgs e)
@@ -5103,29 +5698,70 @@ namespace DemoFormDiaGemLib
             List<string> dataList = new List<string>();
             ErrorReport errR = new ErrorReport();
             byte status_id, status_accessing, status_slotMap;
-            switch (e.CARRIERACTION)
+            switch (e.CARRIERACTION.ToUpper())
             {
                 case "PROCEEDWITHCARRIER":
-                    GetCarrierStatus(e.CARRIERID, out status_id, out status_accessing, out status_slotMap, out err);
-                    status_id = 1;
-                    status_slotMap = 1;
-                    string pwc_step = "0";
                     LoadPortID = e.PORTNO.ToString();
                     CarrierID = e.CARRIERID;
+                    string pwc_step = "0";
                     if (Carrier_list.Contains(e.CARRIERID))
                     {
-                        if (status_id == (byte)CarrierIDState.WAITING_FOR_HOST)   // PROCEEDWITHCARRIER #1
+                        GetCarrierStatus(e.CARRIERID, out status_id, out status_accessing, out status_slotMap, out err);
+                        byte cap;
+                        byte count;
+                        string[] lotid;
+                        string[] substrateid;
+                        byte[] slot;
+                        string loc;
+                        string usage;
+                        GetCarrierAttr(e.CARRIERID, out cap, out count, out lotid, out substrateid, out slot, out loc, out usage, out err);
+                        if ((loc == "LOADPORT1" && LoadPortID != "1") || (loc == "LOADPORT2" && LoadPortID != "2"))
                         {
-                            SetCarrierStatus_ID(e.CARRIERID, CarrierIDState.ID_VERIFICATION_OK);
-                            SlotMapData.Set(LoadPortID, CarrierID);
-                            pwc_step = "1";
+                            errR = new ErrorReport();
+                            btHCACK = 3;
+
+                            errR.ErrorCode = 47;
+                            errR.ErrorText = "invalid parameter. PortID does not match the location of CarrierID";
+                            listErrorReports.Add(errR);
+                            break;
                         }
-                        else if((status_id == (byte)CarrierIDState.ID_VERIFICATION_OK) && (status_slotMap == (byte)SlotMapState.WAITING_FOR_HOST))  // PROCEEDWITHCARRIER #2
+                        else
                         {
-                            SetCarrierStatus_SlotMap(e.CARRIERID, SlotMapState.SLOT_MAP_VERIFICATION_OK);
-                            MeasureStartData.Set(LoadPortID, CarrierID);
-                            pwc_step = "2";
-                        }
+                            if (status_id == (byte)CarrierIDState.WAITING_FOR_HOST)   // PROCEEDWITHCARRIER #1
+                            {
+                                SetCarrierStatus_ID(e.CARRIERID, CarrierIDState.ID_VERIFICATION_OK);
+                                SlotMapData.Set(LoadPortID, CarrierID);
+                                pwc_step = "1";
+                                tmp_pwc_step = "1";
+                            }
+                            else if ((status_id == (byte)CarrierIDState.ID_VERIFICATION_OK) && (status_slotMap == (byte)SlotMapState.WAITING_FOR_HOST))  // PROCEEDWITHCARRIER #2
+                            {                               
+                                MeasureStartData.Set(LoadPortID, CarrierID);
+                                List<string> lotID, SubstrateID;
+                                lotID = new List<string>();
+                                SubstrateID = new List<string>();
+                                foreach (CarrierActionRequestParameter par in e.ReceiveRequestParameters)
+                                {
+                                    if (par.Name == "CONTENTMAP")
+                                    {
+                                        //Delta.DIAAuto.DIASECSGEM.GEMDataModel.SECSItemEntity
+                                        ListWrapper lw = par.Value.SetListSECSItemEntityToListWrapper();
+                                        ListWrapper lw2;
+                                        for (int i = 0; i < lw.Items.Count; i++)
+                                        {
+                                            lw2 = (ListWrapper)lw.Items[i].Value;
+                                            lotID.Add(lw2.Items[0].Value.ToString());
+                                            SubstrateID.Add(lw2.Items[1].Value.ToString());
+                                        };
+                                        SetCarrierAttr_ContentMap(e.CARRIERID, lotID.ToArray(), SubstrateID.ToArray());
+                                    }
+                                }
+                                pwc_step = "2";
+                                tmp_pwc_step = "2";
+                                SetCarrierStatus_SlotMap(e.CARRIERID, SlotMapState.SLOT_MAP_VERIFICATION_OK);
+                                
+                            }
+                        }                     
                     }
                     else
                     {
@@ -5135,6 +5771,7 @@ namespace DemoFormDiaGemLib
                         errR.ErrorCode = 47;
                         errR.ErrorText = "invalid parameter. CarrierID is not found";
                         listErrorReports.Add(errR);
+                        break;
                     }
                     dataList.Clear();
                     dataList.Add("PROCEEDWITHCARRIER");
@@ -5154,25 +5791,7 @@ namespace DemoFormDiaGemLib
                         }
                         else   //可執行指令
                         {
-                            List<string> lotID, SubstrateID;
-                            lotID = new List<string>();
-                            SubstrateID = new List<string>();
-                            foreach (CarrierActionRequestParameter par in e.ReceiveRequestParameters)
-                            {
-                                if(par.Name == "CONTENTMAP")
-                                {
-                                    //Delta.DIAAuto.DIASECSGEM.GEMDataModel.SECSItemEntity
-                                    ListWrapper lw = par.Value.SetListSECSItemEntityToListWrapper();
-                                    ListWrapper lw2;
-                                    for (int i = 0; i < lw.Items.Count; i++)
-                                    {
-                                        lw2 = (ListWrapper)lw.Items[i].Value;
-                                        lotID.Add(lw2.Items[0].Value.ToString());
-                                        SubstrateID.Add(lw2.Items[1].Value.ToString());
-                                    };
-                                    SetCarrierAttr_ContentMap(e.CARRIERID, lotID.ToArray(), SubstrateID.ToArray());
-                                }
-                            }                                                   
+                                             
                         }
                     }
                     else
@@ -5213,17 +5832,95 @@ namespace DemoFormDiaGemLib
                     listErrorReports.Add(errR);
                     break;
                 case "CANCELCARRIER":
+                    LoadPortID = e.PORTNO.ToString();
+                    CarrierID = e.CARRIERID;
+                    ReleaseData.Set(LoadPortID, CarrierID);
+                    dataList.Clear();
+                    dataList.Add("CANCELCARRIER");
+                    dataList.Add(CarrierID);
+                    dataList.Add(LoadPortID);
+                    errR = new ErrorReport();
+                    if (Carrier_list.Contains(e.CARRIERID))
+                    {
+                        ack = function_CallBack(dataList);
+                        if (ack != 0)
+                        {
+                            btHCACK = ack;
+                            errR.ErrorCode = 23;
+                            errR.ErrorText = "failure when processing";
+                        }
+                    }
+                    else
+                    {
+                        btHCACK = 3;
+
+                        errR.ErrorCode = 47;
+                        errR.ErrorText = "invalid parameter";
+                    }
+                    listErrorReports.Add(errR);
                     break;
                 case "CARRIEROUT":
                     break;
                 case "CARRIERRECREATE":
+                    LoadPortID = e.PORTNO.ToString();
+                    CarrierID = e.CARRIERID;
+                    ReleaseData.Set(LoadPortID, CarrierID);
+                    dataList.Clear();
+                    dataList.Add("CARRIERRECREATE");
+                    dataList.Add(CarrierID);
+                    dataList.Add(LoadPortID);
+                    errR = new ErrorReport();
+                    if (LoadPortID == "1" || LoadPortID == "2")
+                    {
+                        ack = function_CallBack(dataList);
+                        if (ack != 0)
+                        {
+                            btHCACK = ack;
+                            errR.ErrorCode = 23;
+                            errR.ErrorText = "invalid state";
+                        }
+                    }
+                    else
+                    {
+                        btHCACK = 3;
+
+                        errR.ErrorCode = 47;
+                        errR.ErrorText = "invalid parameter";
+                    }
+                    listErrorReports.Add(errR);
                     break;
                 case "CANCELCARRIERATPORT":
+                    LoadPortID = e.PORTNO.ToString();
+                    CarrierID = "";
+                    ReleaseData.Set(LoadPortID, CarrierID);
+                    dataList.Clear();
+                    dataList.Add("CANCELCARRIERATPORT");  //應該可以用同樣的去查詢
+                    dataList.Add(CarrierID);
+                    dataList.Add(LoadPortID);
+                    errR = new ErrorReport();
+                    if (LoadPortID == "1" || LoadPortID == "2")
+                    {
+                        ack = function_CallBack(dataList);
+                        if (ack != 0)
+                        {
+                            btHCACK = ack;
+                            errR.ErrorCode = 23;
+                            errR.ErrorText = "failure when processing";
+                        }
+                    }
+                    else
+                    {
+                        btHCACK = 3;
+
+                        errR.ErrorCode = 47;
+                        errR.ErrorText = "invalid parameter";
+                    }
+                    listErrorReports.Add(errR);
                     break;
             }
 
             //Reply
-            _gemControler.CarrierActionRequestReply(btHCACK, listErrorReports, e.SystemBytes, out err);
+            int a = _gemControler.CarrierActionRequestReply(btHCACK, listErrorReports, e.SystemBytes, out err);
 
         }
 
@@ -5274,22 +5971,42 @@ namespace DemoFormDiaGemLib
             bool ack = true;
             string prJobId = e.PRJOBID;
             string prJobCmd = e.PRCMD;
+            byte btACK = 0;
+            List<string> dataList = new List<string>();
 
             foreach (ProcessJobCommandParameter commandParameter in e.ReceiveCommandParameters)
             {
                 string name = commandParameter.Name;
                 string value = commandParameter.Value.ToString();
             }
-
+            int rtn = GetProcessJobState(prJobId, out ProcessJobState state);
+            dataList.Clear();
+            dataList.Add("PROCESSJOBCOMMAND");
+            dataList.Add(prJobCmd);
+            dataList.Add(prJobId);
+            dataList.Add(state.ToString());
+            btACK = function_CallBack(dataList);
             List<ErrorReport> errorReports = new List<ErrorReport>();
-            ErrorReport error1 = new ErrorReport();
-            error1.ErrorCode = 100;
-            error1.ErrorText = "error 100";
-            errorReports.Add(error1);
-            ErrorReport error2 = new ErrorReport();
-            error2.ErrorCode = 200;
-            error2.ErrorText = "error 200";
-            errorReports.Add(error2);
+            if (btACK != 0)
+            {
+                ErrorReport error1 = new ErrorReport();
+                error1.ErrorCode = btACK;
+                string errStr = "";
+                if (btACK == 1)
+                    errStr = "Target PJ is running.";
+                else if (btACK == 2)
+                    errStr = "Target PJ is not in QUEUE list.";
+                else if (btACK == 3)
+                    errStr = "Target PJ is not running.";
+                else if (btACK == 4)
+                    errStr = "Target PJ is not in pause state.";
+                else if (btACK == 5)
+                    errStr = "One PJ is running.";
+                else if (btACK == 6)
+                    errStr = "";
+                error1.ErrorText = errStr;
+                errorReports.Add(error1);
+            }
 
             ack = errorReports.Count == 0 ? true : false;
 
@@ -5351,7 +6068,7 @@ namespace DemoFormDiaGemLib
             //Handle
             bDataCheckOK = false;
             List<string> dataList = new List<string>();
-            List<ErrorReport> errList = new List<ErrorReport>();
+            List<PTNErrorReport> errList = new List<PTNErrorReport>();
             byte ack = 0;
             byte btHCACK = 0;
 
@@ -5363,7 +6080,7 @@ namespace DemoFormDiaGemLib
                 dataList.Add("ACCESSMODE-CHANGE");
                 dataList.Add(AccessMode);
                 dataList.Add(LoadPortID);
-                ErrorReport errR = new ErrorReport();
+                PTNErrorReport errR = new PTNErrorReport();
                 if ((AccessMode == "0" || AccessMode == "1") && (LoadPortID == "1" || LoadPortID == "2"))
                 {
                     ack = function_CallBack(dataList);
@@ -5385,7 +6102,7 @@ namespace DemoFormDiaGemLib
             }
             
             //Reply
-            _gemControler.PortChangeAccessReply(e.ReceiveMessageName, btHCACK, errList, e.SystemBytes, out err);
+            _gemControler.PortChangeAccessReply(btHCACK, errList, e.SystemBytes, out err);
         }
 
         private void _gemControler_PortActionRequest(object sender, PortActionRequestArgs e)
@@ -5437,6 +6154,9 @@ namespace DemoFormDiaGemLib
         {
             int result = 0;
             int result2 = 0;
+            ListWrapper lw = new ListWrapper();
+            ListWrapper lw_1 = new ListWrapper();
+            ListWrapper lw_2 = new ListWrapper();
             //CreateObject
             result = _gemControler.CreateObject(ObjectTypeKey.PROCESSJOB, objID, out err, objSpec);
 
@@ -5448,12 +6168,29 @@ namespace DemoFormDiaGemLib
 
             ObjectAttribute objectAttribute = new ObjectAttribute(141, ObjectAttributeKey.OBJID, objID);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            lw = new ListWrapper();
+            lw_1 = new ListWrapper();
+            lw.TryAdd(ItemFmt.L, lw_1, out err);
+            objectAttribute = new ObjectAttribute(142, ObjectAttributeKey.ProcessJob.PAUSEEVENT, lw);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             objectAttribute = new ObjectAttribute(143, ObjectAttributeKey.ProcessJob.PRJOBSTATE, (byte)ProcessJobState.QUEUED);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
-            ListWrapper lw = new ListWrapper();
-            ListWrapper lw_1 = new ListWrapper();
-            lw.TryAdd(ItemFmt.L, lw_1, out err);
+            lw = new ListWrapper();
+            lw_1 = new ListWrapper();
             lw_1.TryAdd(ItemFmt.A, carrierID, out err);
+            lw.TryAdd(ItemFmt.L, lw_1, out err);
+            lw_2 = new ListWrapper();
+            for (int i = 0; i< CarrierCapacity; i++)
+            {
+                if(i<slot.Length && slot[i] == 1)
+                {
+                    byte[] tmp = new byte[1];
+                    tmp[0] = (byte)(i + 1);
+                    lw_2.TryAdd(ItemFmt.B, tmp, out err);
+                }                    
+            }
+            lw_1.TryAdd(ItemFmt.L, lw_2, out err);
+            /*
             List<byte> lsts = new List<byte>();
             for (byte i = 0; i < 25; i++)
             {
@@ -5461,15 +6198,23 @@ namespace DemoFormDiaGemLib
                     lsts.Add(i);
             }
             lw_1.TryAdd(ItemFmt.U1, lsts.ToArray(), out err);
+            */
             objectAttribute = new ObjectAttribute(144, ObjectAttributeKey.ProcessJob.PRMTLNAMELIST, lw);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             objectAttribute = new ObjectAttribute(145, ObjectAttributeKey.ProcessJob.PRMTLTYPE, (byte)13);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
-            objectAttribute = new ObjectAttribute(146, ObjectAttributeKey.ProcessJob.PRPROCESSSTART, bStart);
+            bool[] bstarttmp = { bStart };
+            objectAttribute = new ObjectAttribute(146, ObjectAttributeKey.ProcessJob.PRPROCESSSTART, bstarttmp);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
-            objectAttribute = new ObjectAttribute(147, ObjectAttributeKey.ProcessJob.PRRECIPEMETHOD, (byte)0);
+            byte[] recmethod = { 0 };
+            objectAttribute = new ObjectAttribute(147, ObjectAttributeKey.ProcessJob.PRRECIPEMETHOD, recmethod);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             objectAttribute = new ObjectAttribute(148, ObjectAttributeKey.ProcessJob.RECID, recID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            lw = new ListWrapper();
+            lw_1 = new ListWrapper();
+            lw.TryAdd(ItemFmt.L, lw_1, out err);
+            objectAttribute = new ObjectAttribute(149, ObjectAttributeKey.ProcessJob.RECVARIABLELIST, lw);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             result2 = _gemControler.UpdateObject(updateObjectEntity, out err);
             PJ_list.Add(objID);
@@ -5485,7 +6230,7 @@ namespace DemoFormDiaGemLib
             updateObjectEntity.ObjType = ObjectTypeKey.PROCESSJOB;
             updateObjectEntity.ObjID = objID;
             updateObjectEntity.ObjSpec = objSpec;
-            ListWrapper lw, lw_1;
+            ListWrapper lw, lw_1, lw_2;
             ObjectAttribute objectAttribute = new ObjectAttribute(141, ObjectAttributeKey.OBJID, objID);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             if (!(pauseEvent == string.Empty || pauseEvent == null))
@@ -5495,7 +6240,8 @@ namespace DemoFormDiaGemLib
                 for (int i = 0; i < s.Length; i++)
                     os[i] = Convert.ToUInt32(s[i]);
                 lw = new ListWrapper();
-                lw.TryAdd(ItemFmt.U4, os, out err);
+                for (int i = 0; i < s.Length; i++)
+                    lw.TryAdd(ItemFmt.U4, os[i], out err);
                 objectAttribute = new ObjectAttribute(142, ObjectAttributeKey.ProcessJob.PAUSEEVENT, lw);
                 updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             }
@@ -5508,19 +6254,32 @@ namespace DemoFormDiaGemLib
             {
                 lw = new ListWrapper();
                 lw_1 = new ListWrapper();
+                lw_2 = new ListWrapper();
                 lw.TryAdd(ItemFmt.L, lw_1, out err);
                 lw_1.TryAdd(ItemFmt.A, carrierID, out err);
-                lw_1.TryAdd(ItemFmt.U1, slot, out err);
+                lw_1.TryAdd(ItemFmt.L, lw_2, out err);
+                //lw_1.TryAdd(ItemFmt.U1, slot, out err);
+                for (int i = 0; i < CarrierCapacity; i++)
+                {
+                    if (i < slot.Length && slot[i] == 1)
+                    {
+                        byte[] tmp = new byte[1];
+                        tmp[0] = (byte)(i + 1);
+                        lw_2.TryAdd(ItemFmt.B, tmp, out err);
+                    }
+                }
                 objectAttribute = new ObjectAttribute(144, ObjectAttributeKey.ProcessJob.PRMTLNAMELIST, lw);
                 updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             }
             objectAttribute = new ObjectAttribute(145, ObjectAttributeKey.ProcessJob.PRMTLTYPE, PRType);  // 13 Carrier  14 substrate
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
-            objectAttribute = new ObjectAttribute(146, ObjectAttributeKey.ProcessJob.PRPROCESSSTART, bStart);
+            bool[] bstarttmp = { bStart };
+            objectAttribute = new ObjectAttribute(146, ObjectAttributeKey.ProcessJob.PRPROCESSSTART, bstarttmp);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             if (recMethod != null)
             {
-                objectAttribute = new ObjectAttribute(147, ObjectAttributeKey.ProcessJob.PRRECIPEMETHOD, recMethod);  //0 - recipe without variable tuning   1 - recipe with variable tuning
+                byte[] recmethodtmp = { recMethod };
+                objectAttribute = new ObjectAttribute(147, ObjectAttributeKey.ProcessJob.PRRECIPEMETHOD, recmethodtmp);  //0 - recipe without variable tuning   1 - recipe with variable tuning
                 updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             }
             objectAttribute = new ObjectAttribute(148, ObjectAttributeKey.ProcessJob.RECID, recID);
@@ -5568,7 +6327,7 @@ namespace DemoFormDiaGemLib
             pauseEvent = string.Empty;
             PJState = 0;
             carrierID = string.Empty;
-            slot = new byte[25];
+            slot = new byte[CarrierCapacity];
             PRType = 0x0D;
             bStart = false;
             recMethod = 0;
@@ -5581,9 +6340,11 @@ namespace DemoFormDiaGemLib
                 {
                     case ObjectAttributeKey.ProcessJob.PAUSEEVENT:
                         lw = (ListWrapper)o.ATTRDATA;
+                        //lw = (ListWrapper)lw_1.Items[0].Value;
                         pauseEvent = string.Empty;
                         for (int i = 0; i < lw.Items.Count; i++)
                         {
+                            if (lw.Items[i].Value == null) break;
                             uint[] b = (uint[])lw.Items[i].Value;
                             for (int j = 0; j < b.Length; ++j)
                             {
@@ -5605,32 +6366,50 @@ namespace DemoFormDiaGemLib
                         lw = (ListWrapper)o.ATTRDATA;
                         lw_1 = (ListWrapper)lw.Items[0].Value;
                         carrierID = lw_1.Items[0].ToString();
-                        byte[] slot2 = (byte[])lw_1.Items[1].Value;
-                        foreach (byte a in slot2)
+                        ListWrapper lw_2 = (ListWrapper)lw_1.Items[1].Value;
+                        byte tmpb = 0;
+                        Tuple<string, string> outs; 
+                        for (int i = 0; i < lw_2.Items.Count; i++)
                         {
-                            slot[a] = 1;
+                            byte[] tmp = (byte[])lw_2.Items[i].Value;
+                            tmpb = Convert.ToByte(tmp[0]);
+                            if ( tmpb >= 1 && tmpb <= CarrierCapacity)
+                                slot[tmpb-1] = 1;
                         }
+                        //byte[] slot2 = (byte[])lw_1.Items[1].Value;
+                        //foreach (byte a in slot2)
+                        //{
+                        //    slot[a] = 1;
+                        //}
                         break;
                     case ObjectAttributeKey.ProcessJob.PRMTLTYPE:
                         PRType = Convert.ToByte(o.ATTRDATA.ToString());
                         break;
                     case ObjectAttributeKey.ProcessJob.PRPROCESSSTART:
-                        bStart = Convert.ToBoolean(o.ATTRDATA.ToString());
+                        bool[] tmpbo = (bool[])o.ATTRDATA;
+                        bStart = tmpbo[0];
                         break;
                     case ObjectAttributeKey.ProcessJob.PRRECIPEMETHOD:
-                        recMethod = Convert.ToByte(o.ATTRDATA.ToString());
+                        byte[] tmpme = (byte[])o.ATTRDATA;
+                        recMethod = tmpme[0];
                         break;
                     case ObjectAttributeKey.ProcessJob.RECID:
                         recID = o.ATTRDATA.ToString();
                         break;
                     case ObjectAttributeKey.ProcessJob.RECVARIABLELIST:
-                        lw = (ListWrapper)o.ATTRDATA;
-                        recVarList = string.Empty;
-                        for (int i = 0; i < lw.Items.Count; i++)
+                        lw_1 = (ListWrapper)o.ATTRDATA;
+                        if(lw_1.Items.Count != 0)
                         {
-                            lw_1 = (ListWrapper)lw.Items[i].Value;
-                            recVarList += lw_1.Items[0].ToString() + ',' + lw_1.Items[1].ToString() + ';';
-                        };
+                            lw = (ListWrapper)lw_1.Items[0].Value;
+                            recVarList = string.Empty;
+                            for (int i = 0; i < lw.Items.Count; i++)
+                            {
+                                if (lw.Items[i].Value == null) break;
+                                lw_1 = (ListWrapper)lw.Items[i].Value;
+                                if (lw_1.Count < 2) break;
+                                recVarList += lw_1.Items[0].ToString() + ',' + lw_1.Items[1].ToString() + ';';
+                            };
+                        }
                         break;
                     default:
                         break;
@@ -5638,6 +6417,125 @@ namespace DemoFormDiaGemLib
             }
 
             return result;
+        }
+
+        public int GetProcessJobMaterial(string objID, out string carrierID, out byte[] slot, out string err)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            result = _gemControler.GetObject(ObjectTypeKey.PROCESSJOB, objID, out updateObjectEntity, out err);
+
+            ListWrapper lw, lw_1;
+            SecsIIValue val;
+            carrierID = string.Empty;
+            slot = new byte[CarrierCapacity];
+            if (result != 0) return result;
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                switch (o.ATTRID)
+                {
+                    case ObjectAttributeKey.ProcessJob.PRMTLNAMELIST:
+                        lw = (ListWrapper)o.ATTRDATA;
+                        lw_1 = (ListWrapper)lw.Items[0].Value;
+                        carrierID = lw_1.Items[0].ToString();
+                        ListWrapper lw_2 = (ListWrapper)lw_1.Items[1].Value;
+                        byte tmpb = 0;
+                        Tuple<string, string> outs;
+                        for (int i = 0; i < lw_2.Items.Count; i++)
+                        {
+                            byte[] tmp = (byte[])lw_2.Items[i].Value;
+                            tmpb = Convert.ToByte(tmp[0]);
+                            if (tmpb >= 1 && tmpb <= CarrierCapacity)
+                                slot[tmpb - 1] = 1;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return result;
+        }
+
+        public int GetProcessJobRecipeID(string objID, out string recID, out string err)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            result = _gemControler.GetObject(ObjectTypeKey.PROCESSJOB, objID, out updateObjectEntity, out err);
+
+            ListWrapper lw, lw_1;
+            SecsIIValue val;
+            recID = string.Empty;
+            if (result != 0) return result;
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                switch (o.ATTRID)
+                {
+                    case ObjectAttributeKey.ProcessJob.RECID:
+                        recID = o.ATTRDATA.ToString();
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return result;
+        }
+
+        public int GetProcessJobState(string objID, out ProcessJobState state)
+        {
+            int result = 0;
+            state = 0;
+            ObjectInstance updateObjectEntity = null;
+            result = _gemControler.GetObject(ObjectTypeKey.PROCESSJOB, objID, out updateObjectEntity, out err);
+            if (result == 0)
+            {
+                foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+                {
+                    if (o.ATTRID == ObjectAttributeKey.ProcessJob.PRJOBSTATE)
+                    {
+                        state = (ProcessJobState)(byte)o.ATTRDATA;
+                    }
+                }
+            }
+            return result;
+        }
+
+        public int GetProcessJobState(string[] objID, out byte[] pjState, out string err)
+        {
+            int result = 0;
+            int result2 = 0;
+            ObjectInstance updateObjectEntity = null;
+            List<byte> pjStateList = new List<byte>();
+            byte PJState;
+            err = string.Empty;
+            foreach (string sid in objID)
+            {
+                PJState = 0;
+                result = _gemControler.GetObject(ObjectTypeKey.PROCESSJOB, sid, out updateObjectEntity, out err);
+                if(result == 0)
+                {
+                    foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+                    {
+                        switch (o.ATTRID)
+                        {
+                            case ObjectAttributeKey.ProcessJob.PRJOBSTATE:
+                                PJState = Convert.ToByte(o.ATTRDATA.ToString());
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    PJState = 99;
+                    result2 = result;
+                }
+                pjStateList.Add(PJState);
+            }
+            pjState = pjStateList.ToArray();
+            return result2;
         }
 
         public int DeleteProcessJob(string objID, out string errstr)
@@ -5687,9 +6585,11 @@ namespace DemoFormDiaGemLib
             updateObjectEntity2.ObjType = updateObjectEntity.ObjType;
             updateObjectEntity2.ObjID = updateObjectEntity.ObjID;
             updateObjectEntity2.ObjSpec = updateObjectEntity.ObjSpec;
-            ObjectAttribute objectAttribute2 = new ObjectAttribute(143, ObjectAttributeKey.ProcessJob.PRJOBSTATE, (byte)state);
+            ObjectAttribute objectAttribute2 = new ObjectAttribute(141, ObjectAttributeKey.OBJID, updateObjectEntity2.ObjID);
             updateObjectEntity2.ListObjectAttributes.Add(objectAttribute2);
-            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+            objectAttribute2 = new ObjectAttribute(143, ObjectAttributeKey.ProcessJob.PRJOBSTATE, (byte)state);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute2);
+            result = _gemControler.UpdateObject(updateObjectEntity2, out err);
 
             if (result == 0)
             {
@@ -5737,6 +6637,12 @@ namespace DemoFormDiaGemLib
                             if (result == 0)  //Offline就刪不掉，list也就不刪了
                                 PJ_list.Remove(objID);
                         }
+                        else if (oldstate == ProcessJobState.QUEUED)
+                        {
+                            result = _gemControler.EventReportSend(58, out err);  //PJ_ProcessCompleteToComplete 刪除PJ
+                            if (result == 0)  //Offline就刪不掉，list也就不刪了
+                                PJ_list.Remove(objID);
+                        }
                         break;
                     case ProcessJobState.PAUSING:
                         if (oldstate == ProcessJobState.PROCESSING)
@@ -5766,12 +6672,24 @@ namespace DemoFormDiaGemLib
                             result = _gemControler.EventReportSend(56, out err); //PJ_AbortingToComplete 刪除PJ
                             if (result == 0)  //Offline就刪不掉，list也就不刪了
                                 PJ_list.Remove(objID);
-                        }                          
+                        }
+                        else if (oldstate == ProcessJobState.QUEUED)
+                        {
+                            result = _gemControler.EventReportSend(58, out err);  //PJ_ProcessCompleteToComplete 刪除PJ
+                            if (result == 0)  //Offline就刪不掉，list也就不刪了
+                                PJ_list.Remove(objID);
+                        }
                         break;
                     case ProcessJobState.STOPPED:
                         if (oldstate == ProcessJobState.STOPPING)
                         {
                             _gemControler.EventReportSend(57, out err); //PJ_StoppingToComplete 刪除PJ
+                            if (result == 0)  //Offline就刪不掉，list也就不刪了
+                                PJ_list.Remove(objID);
+                        }
+                        else if (oldstate == ProcessJobState.QUEUED)
+                        {
+                            result = _gemControler.EventReportSend(58, out err);  //PJ_ProcessCompleteToComplete 刪除PJ
                             if (result == 0)  //Offline就刪不掉，list也就不刪了
                                 PJ_list.Remove(objID);
                         }
@@ -5789,14 +6707,19 @@ namespace DemoFormDiaGemLib
             return result;
         }
 
-        public int CreateControlJob(string objID, string CarrierInputSpec, string dcp, string[] PRJob, byte PROrder, bool bStart, out string err, string objSpec = "")
+        public int CreateControlJob(string objID, List<string> CarrierInputSpec, string dcp, string[] PRJob, byte PROrder, bool bStart, string pauseEvent, out string err, string objSpec = "")
         {
+            System.Diagnostics.Debug.WriteLine(string.Format("CreateControlJob: objID={0}, PRJob=[{1}], bStart={2}", objID, string.Join(",", PRJob), bStart));
             int result = 0;
             int result2 = 0;
             //CreateObject
             result = _gemControler.CreateObject(ObjectTypeKey.CONTROLJOB, objID, out err, objSpec);
 
-            if (result != 0) return result;
+            if (result != 0)
+            {
+                System.Diagnostics.Debug.WriteLine("CreateControlJob: CreateObject failed, result=" + result + " err=" + err);
+                return result;
+            }
             ObjectInstance updateObjectEntity = new ObjectInstance();
             updateObjectEntity.ObjType = ObjectTypeKey.CONTROLJOB;
             updateObjectEntity.ObjID = objID;
@@ -5804,12 +6727,36 @@ namespace DemoFormDiaGemLib
 
             ObjectAttribute objectAttribute = new ObjectAttribute(241, ObjectAttributeKey.OBJID, objID);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
-            string[] s = CarrierInputSpec.Split(',');
+            //string[] s = CarrierInputSpec.Split(',');
             ListWrapper lw = new ListWrapper();
-            lw.TryAdd(ItemFmt.A, s, out err);
+            for(int i = 0; i< CarrierInputSpec.Count; i++)
+                lw.TryAdd(ItemFmt.A, CarrierInputSpec[i], out err);
             objectAttribute = new ObjectAttribute(242, ObjectAttributeKey.ControlJob.CARRIERINPUTSPEC, lw);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            lw = new ListWrapper();
+            objectAttribute = new ObjectAttribute(243, ObjectAttributeKey.ControlJob.CURRENTPRJOB, lw);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             objectAttribute = new ObjectAttribute(244, ObjectAttributeKey.ControlJob.DATACOLLECTIONPLAN, dcp);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            lw = new ListWrapper();
+            objectAttribute = new ObjectAttribute(245, ObjectAttributeKey.ControlJob.MTRLOUTBYSTATUS, lw);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(246, ObjectAttributeKey.ControlJob.MTRLOUTSPEC, lw);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            if (pauseEvent != String.Empty)
+            {
+                string[] sa = pauseEvent.Split(',');
+                uint[] os = new uint[sa.Length];
+                for (int i = 0; i < sa.Length; i++)
+                    os[i] = Convert.ToUInt32(sa[i]);
+                lw = new ListWrapper();
+                lw.TryAdd(ItemFmt.U4, os, out err);
+            }
+            else
+            {
+                lw = new ListWrapper();
+            }
+            objectAttribute = new ObjectAttribute(247, ObjectAttributeKey.ControlJob.PAUSEEVENT, lw);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             lw = new ListWrapper();
             ListWrapper lw_1 = new ListWrapper();
@@ -5822,7 +6769,7 @@ namespace DemoFormDiaGemLib
                 lw_1.TryAdd(ItemFmt.L, lw_0, out err);
                 lw.TryAdd(ItemFmt.L, lw_1, out err);
             }
-            objectAttribute = new ObjectAttribute(245, ObjectAttributeKey.ControlJob.PROCESSINGCTRLSPEC, lw);
+            objectAttribute = new ObjectAttribute(248, ObjectAttributeKey.ControlJob.PROCESSINGCTRLSPEC, lw);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             objectAttribute = new ObjectAttribute(249, ObjectAttributeKey.ControlJob.PROCESSORDERMGMT, PROrder);  //1:ARRIVAL 2:OPTIMIZE 3:LIST
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
@@ -5838,12 +6785,24 @@ namespace DemoFormDiaGemLib
                 lw_1 = new ListWrapper();
                 lw_1.TryAdd(ItemFmt.A, pj, out err);
                 updateObjectEntity2 = null;
-                _gemControler.GetObject(ObjectTypeKey.PROCESSJOB, pj, out updateObjectEntity2, out err);
+                result2 = _gemControler.GetObject(ObjectTypeKey.PROCESSJOB, pj, out updateObjectEntity2, out err);
+                if (result2 != 0)
+                {
+                    System.Diagnostics.Debug.WriteLine("CreateControlJob: PJ not found! pj=" + pj + " result2=" + result2 + " err=" + err);
+                    _gemControler.DeleteObject(ObjectTypeKey.CONTROLJOB, objID, out err, objSpec);
+                    return result2;
+                }
                 foreach (ObjectAttribute o in updateObjectEntity2.ListObjectAttributes)
                 {
                     if (o.ATTRID == ObjectAttributeKey.ProcessJob.PRJOBSTATE)
                     {
-                        PJState = Convert.ToByte(o.ATTRDATA.ToString());
+                        PJState = (byte)o.ATTRDATA;
+                        /*
+                        byte[] b = (byte[])o.ATTRDATA;
+                        if (b.Length == 0)
+                            PJState = 0;
+                        else
+                            PJState = b[0];*/
                     }
                 }
                 lw_1.TryAdd(ItemFmt.U1, PJState, out err);
@@ -5857,6 +6816,7 @@ namespace DemoFormDiaGemLib
                 _gemControler.EventReportSend(91, out err); //CJ_NoStateToQueued
             }
             CJ_list.Add(objID);
+            UpdateCJ();
             if (CJ_list.Count == 1)
             {
                 ChangeControlJobState(objID, ControlJobState.SELECTED, 0);  //只有一個人就直接選了
@@ -5866,7 +6826,7 @@ namespace DemoFormDiaGemLib
             return result;
         }
 
-        public int SetControlJobAttr(string objID, string carrierInput, string dataPlan, string pauseEvent, string[] pj, byte processOrder, bool bStart, byte recMethod, string recID, string recVarList, out string err, string objSpec = "")
+        public int SetControlJobAttr(string objID, string carrierInput, string dataPlan, string pauseEvent, string[] pj, byte processOrder, bool bStart, string recID, string recVarList, out string err, string objSpec = "")
         {
             int result = 0;
             ObjectInstance updateObjectEntity = new ObjectInstance();
@@ -5880,7 +6840,8 @@ namespace DemoFormDiaGemLib
             {
                 string[] s = carrierInput.Split(',');
                 lw = new ListWrapper();
-                lw.TryAdd(ItemFmt.A, s, out err);
+                for (int i = 0; i < s.Length; i++)
+                    lw.TryAdd(ItemFmt.A, s[i], out err);
                 objectAttribute = new ObjectAttribute(242, ObjectAttributeKey.ControlJob.CARRIERINPUTSPEC, lw);
                 updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             }
@@ -5921,11 +6882,8 @@ namespace DemoFormDiaGemLib
                 objectAttribute = new ObjectAttribute(249, ObjectAttributeKey.ControlJob.PROCESSORDERMGMT, processOrder);
                 updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             }
-            if (recMethod != null)
-            {
-                objectAttribute = new ObjectAttribute(250, ObjectAttributeKey.ControlJob.STARTMETHOD, bStart);  
-                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
-            }
+            objectAttribute = new ObjectAttribute(250, ObjectAttributeKey.ControlJob.STARTMETHOD, bStart);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             result = _gemControler.UpdateObject(updateObjectEntity, out err);
 
             //ObjectInstance updateObjectEntity2 = null;
@@ -5978,6 +6936,15 @@ namespace DemoFormDiaGemLib
                         lw = (ListWrapper)o.ATTRDATA;
                         for (int i = 0; i < lw.Items.Count; i++)
                         {
+                            if (i == 0)
+                            {
+                                carrierInputSpec += lw.Items[i].ToString();
+                            }
+                            else
+                            {
+                                carrierInputSpec += ',' + lw.Items[i].ToString();
+                            }
+                            /*
                             string[] b = (string[])lw.Items[i].Value;
                             for (int j = 0; j < b.Length; ++j)
                             {
@@ -5989,30 +6956,18 @@ namespace DemoFormDiaGemLib
                                 {
                                     carrierInputSpec += ',' + b[j];
                                 }
-                            }
-                        };
+                            }*/
+                        }
                         break;
                     case ObjectAttributeKey.ControlJob.CURRENTPRJOB:
                         lw = (ListWrapper)o.ATTRDATA;
-                        curPJ = lw.Items[0].ToString();
+                        if (lw.Count > 0)
+                            curPJ = lw.Items[0].ToString();
+                        else
+                            curPJ = string.Empty;
                         break;
                     case ObjectAttributeKey.ControlJob.DATACOLLECTIONPLAN:
-                        lw = (ListWrapper)o.ATTRDATA;
-                        for (int i = 0; i < lw.Items.Count; i++)
-                        {
-                            string[] b = (string[])lw.Items[i].Value;
-                            for (int j = 0; j < b.Length; ++j)
-                            {
-                                if (i == 0 && j == 0)
-                                {
-                                    dataCollection += b[j];
-                                }
-                                else
-                                {
-                                    dataCollection += ',' + b[j];
-                                }
-                            }
-                        };
+                        dataCollection = o.ATTRDATA.ToString();
                         break;
                     case ObjectAttributeKey.ControlJob.MTRLOUTBYSTATUS:
                         break;
@@ -6034,7 +6989,7 @@ namespace DemoFormDiaGemLib
                                     pauseEvent += ',' + b[j];
                                 }
                             }
-                        };
+                        }
                         break;
                     case ObjectAttributeKey.ControlJob.PROCESSINGCTRLSPEC:
                         lw = (ListWrapper)o.ATTRDATA;
@@ -6042,16 +6997,16 @@ namespace DemoFormDiaGemLib
                         {
                             lw_1 = (ListWrapper)lw.Items[i].Value;
                             procCtrlSpec += lw_1.Items[0].ToString() + ';';
-                        };
+                        }
                         break;
                     case ObjectAttributeKey.ControlJob.PROCESSORDERMGMT:
-                        procOrder = Convert.ToByte(o.ATTRDATA.ToString());
+                        procOrder = (byte)o.ATTRDATA;
                         break;
                     case ObjectAttributeKey.ControlJob.STARTMETHOD:
-                        bStart = Convert.ToBoolean(o.ATTRDATA.ToString());
+                        bStart = (bool)o.ATTRDATA;
                         break;
                     case ObjectAttributeKey.ControlJob.STATE:
-                        state = Convert.ToByte(o.ATTRDATA);
+                        state = (byte)o.ATTRDATA;
                         break;
 
                     default:
@@ -6062,26 +7017,65 @@ namespace DemoFormDiaGemLib
             return result;
         }
 
-        public int DeleteControlJob(string objID, out string errstr)
+        public int GetControlJobState(string objID, out ControlJobState state, out string err)
         {
-            string err = "";
-            int result;
-            /*
-            ObjectInstance updateObjectEntity = new ObjectInstance();
-            updateObjectEntity.ObjType = ObjectTypeKey.CONTROLJOB;
-            updateObjectEntity.ObjID = objID;
-            updateObjectEntity.ObjSpec = string.Empty;
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, objID, out updateObjectEntity, out err);
 
-            ObjectAttribute objectAttribute = new ObjectAttribute(241, ObjectAttributeKey.OBJID, objID);
-            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
-            objectAttribute = new ObjectAttribute(143, ObjectAttributeKey.ControlJob.STATE, (byte)ControlJobState.COMPLETED);
-            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            ListWrapper lw, lw_1;
+            SecsIIValue val;
 
-            result = _gemControler.UpdateObject(updateObjectEntity, out err);*/
-            result = ChangeControlJobState(objID, ControlJobState.COMPLETED, 0);
+            state = (byte)ControlJobState.QUEUED;
 
-            errstr = err;
+            if (result != 0) return result;
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                if (o.ATTRID == ObjectAttributeKey.ControlJob.STATE)
+                {
+                    state = (ControlJobState)(byte)o.ATTRDATA;
+                }
+            }
+
             return result;
+        }
+
+        public int GetControlJobState(string[] objID, out byte[] cjState, out string err)
+        {
+
+            int result = 0;
+            int result2 = 0;
+            ObjectInstance updateObjectEntity = null;
+            List<byte> cjStateList = new List<byte>();
+            byte CJState;
+            err = string.Empty;
+            foreach (string sid in objID)
+            {
+                CJState = 0;
+                result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, sid, out updateObjectEntity, out err);
+                if (result == 0)
+                {
+                    foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+                    {
+                        switch (o.ATTRID)
+                        {
+                            case ObjectAttributeKey.ControlJob.STATE:
+                                CJState = Convert.ToByte(o.ATTRDATA.ToString());
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    CJState = 99;
+                    result2 = result;
+                }
+                cjStateList.Add(CJState);
+            }
+            cjState = cjStateList.ToArray();
+            return result2;
         }
 
         public int ChangeControlJobState(string objID, ControlJobState state, int unnormal)    //unnormal 0:normal 1:stop 2:abort
@@ -6089,20 +7083,22 @@ namespace DemoFormDiaGemLib
             int result = 0;
             ObjectInstance updateObjectEntity = null;
             byte oldstate = (byte)ControlJobState.QUEUED;
-
             result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, objID, out updateObjectEntity, out err);
             foreach(ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
             {
                 if(o.ATTRID == ObjectAttributeKey.ControlJob.STATE)
-                    oldstate = Convert.ToByte(o.ATTRDATA);
+                {
+                    oldstate = (byte)o.ATTRDATA;
+                    o.ATTRDATA = (byte)state;
+                }                  
             }
-            ObjectInstance updateObjectEntity2 = new ObjectInstance();
-            updateObjectEntity2.ObjType = updateObjectEntity.ObjType;
-            updateObjectEntity2.ObjID = updateObjectEntity.ObjID;
-            updateObjectEntity2.ObjSpec = updateObjectEntity.ObjSpec;
-            ObjectAttribute objectAttribute2 = new ObjectAttribute(251, ObjectAttributeKey.ControlJob.STATE, state);
-            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute2);
-            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+             /*
+             ObjectAttribute objectAttribute2 = new ObjectAttribute(241, ObjectAttributeKey.OBJID, updateObjectEntity2.ObjID);
+             updateObjectEntity2.ListObjectAttributes.Add(objectAttribute2);
+
+             objectAttribute2 = new ObjectAttribute(251, ObjectAttributeKey.ControlJob.STATE, tmpst2);
+             updateObjectEntity2.ListObjectAttributes.Add(objectAttribute2);*/
+             result = _gemControler.UpdateObject(updateObjectEntity, out err);
 
             if(result == 0)
             {
@@ -6149,10 +7145,22 @@ namespace DemoFormDiaGemLib
                             if (result == 0)
                             {
                                 if (result == 0)  //Offline就刪不掉，list也就不刪了
+                                {
                                     CJ_list.Remove(objID);
+                                    UpdateCJ();
+                                }                                   
                                 if (CJ_list.Count >= 1)
                                 {
-                                    ChangeControlJobState(CJ_list[0], ControlJobState.SELECTED, 0);  //Select CJ
+                                    result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, CJ_list[0], out updateObjectEntity, out err);
+                                    foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+                                    {
+                                        if (o.ATTRID == ObjectAttributeKey.ControlJob.STATE)
+                                        {
+                                            o.ATTRDATA = (byte)ControlJobState.SELECTED;
+                                        }
+                                    }
+                                    result = _gemControler.UpdateObject(updateObjectEntity, out err);
+                                    //ChangeControlJobState(CJ_list[0], ControlJobState.SELECTED, 0);  //Select CJ
                                 }
                             }
                             break;
@@ -6163,14 +7171,30 @@ namespace DemoFormDiaGemLib
                             _gemControler.EventReportSend(101, out err);
                         else if (unnormal == 2)
                             _gemControler.EventReportSend(102, out err);
-                        result = _gemControler.EventReportSend(103, out err);   //CJ_CompletedToComplete  刪除CJ
+
+                        //Gem300Monitor.AddSend("ControlJobCompleted Event Sent ID=" + objID + " Unnormal=" + unnormal);
+                        Thread.Sleep(100);
+
+                        result = _gemControler.EventReportSend(103, out err);   //CJ_CompletedToComplete 刪除CJ
                         if (result == 0)
                         {
                             if (result == 0)  //Offline就刪不掉，list也就不刪了
+                            {
                                 CJ_list.Remove(objID);
+                                UpdateCJ();
+                            }
                             if (CJ_list.Count >= 1)
                             {
-                                ChangeControlJobState(CJ_list[0], ControlJobState.SELECTED, 0);  //Select CJ
+                                result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, CJ_list[0], out updateObjectEntity, out err);
+                                foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+                                {
+                                    if (o.ATTRID == ObjectAttributeKey.ControlJob.STATE)
+                                    {
+                                        o.ATTRDATA = (byte)ControlJobState.SELECTED;
+                                    }
+                                }
+                                result = _gemControler.UpdateObject(updateObjectEntity, out err);
+                                //ChangeControlJobState(CJ_list[0], ControlJobState.SELECTED, 0);  //Select CJ
                             }
                         }
                         break;
@@ -6179,7 +7203,35 @@ namespace DemoFormDiaGemLib
             return result;
         }
 
-        public int CreateCarrier(string objID, string objSpec = "")
+        public int DeleteControlJob(string objID, out string errstr)
+        {
+            string err = "";
+            int result;
+
+            result = ChangeControlJobState(objID, ControlJobState.COMPLETED, 0);
+
+            errstr = err;
+            return result;
+        }
+
+        public int DeleteControlJobWithAssociatedProcessJob(string objID, out string errstr)
+        {
+            string err = "";
+            int result;
+            result = GetControlJobAttr(objID, out string carrierInputSpec, out string curPJ, out string dataCollection, out string mtrloutStatus, out string mtrloutSpec, out string pauseEvent, out string procCtrlSpec, out byte procOrder, out bool bStart, out byte state, out err);
+            errstr = err;
+            if (result != 0) return result;
+            result = ChangeControlJobState(objID, ControlJobState.COMPLETED, 0);
+            if (result == 0)
+            {
+                string[] pja = procCtrlSpec.Split(';');
+                for (int i = pja.Count() - 1; i >= 0; i--)
+                    result += DeleteProcessJob(pja[i], out err);
+            }
+            return result;
+        }
+
+        public int CreateCarrier(string objID, string location, string objSpec = "")
         {
             int result = 0;
             int result2 = 0;
@@ -6197,11 +7249,15 @@ namespace DemoFormDiaGemLib
 
             ObjectAttribute objectAttribute = new ObjectAttribute(441, ObjectAttributeKey.OBJID, objID);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
-            objectAttribute = new ObjectAttribute(442, "CAPACITY", (byte)25);
+            objectAttribute = new ObjectAttribute(442, "CAPACITY", (byte)CarrierCapacity);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             objectAttribute = new ObjectAttribute(443, "CARRIERIDSTATUS", (byte)CarrierIDState.ID_NOT_READ);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             objectAttribute = new ObjectAttribute(444, "CARRIERACCESSINGSTATUS", (byte)CarrierAccessingState.NOT_ACCESSED);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(445, "SUBSTRATECOUNT", (byte)0);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(448, "LOCATIONID", location);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             objectAttribute = new ObjectAttribute(449, "SLOTMAPSTATUS", (byte)SlotMapState.SLOT_MAP_NOT_READ);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
@@ -6210,10 +7266,21 @@ namespace DemoFormDiaGemLib
             _gemControler.EventReportSend(182, out err); //CMS_NoStateToIDNotRead
             _gemControler.EventReportSend(192, out err); //CMS_NoStateToSlotMapNotRead
             _gemControler.EventReportSend(197, out err); //CMS_NoStateToNotAccessed
+            //Substrate Location            
+            int rtn;
+            string subloc;
+            for(int i = 0; i< CarrierCapacity; i++)
+            {
+                //subloc = objID + "." + (i + 1).ToString("00");
+                //rtn = _gemControler.CreateObject(ObjectTypeKey.SUBSTLOC, subloc, out err);
+                //if (rtn == 0) SubstrateLoc_list.Add(subloc);
+                subloc = location + "." + (i + 1).ToString("00");
+                SubstrateLocUnoccupy(subloc, true);
+            }
             return result;
         }
 
-        public int SetCarrierAttr_Location(string objID, string location, byte capacity = 25)
+        public int SetCarrierAttr_Location(string objID, string location, byte capacity = 25) //CarrierCapacity
         {
             int result = 0;
             ObjectInstance updateObjectEntity = new ObjectInstance();
@@ -6237,16 +7304,16 @@ namespace DemoFormDiaGemLib
             ObjectInstance updateObjectEntity = null;
             CarrierIDState oldstate = CarrierIDState.ID_NOT_READ;
             byte portid = 0;
-            result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, objID, out updateObjectEntity, out err);
+            result = _gemControler.GetObject(ObjectTypeKey.CARRIER, objID, out updateObjectEntity, out err);
             foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
             {
                 if (o.ATTRID == "CARRIERIDSTATUS")
                     oldstate = (CarrierIDState)Convert.ToByte(o.ATTRDATA);
                 if (o.ATTRID == "LOCATIONID")
                 {
-                    if (o.ATTRDATA.ToString() == "LoadPort1")
+                    if (o.ATTRDATA.ToString() == "LOADPORT1")
                         portid = 1;
-                    else if (o.ATTRDATA.ToString() == "LoadPort2")
+                    else if (o.ATTRDATA.ToString() == "LOADPORT2")
                         portid = 2;
                 }
             }
@@ -6301,7 +7368,7 @@ namespace DemoFormDiaGemLib
             ObjectInstance updateObjectEntity = null;
             CarrierAccessingState oldstate = CarrierAccessingState.NOT_ACCESSED;
 
-            result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, objID, out updateObjectEntity, out err);
+            result = _gemControler.GetObject(ObjectTypeKey.CARRIER, objID, out updateObjectEntity, out err);
             foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
             {
                 if (o.ATTRID == "CARRIERACCESSINGSTATUS")
@@ -6346,7 +7413,9 @@ namespace DemoFormDiaGemLib
             byte portid = 0;
             byte acc = 0;
             string locationid = "";
-            result = _gemControler.GetObject(ObjectTypeKey.CONTROLJOB, objID, out updateObjectEntity, out err);
+            object slotmapData = null;
+            object substrateCount = null;
+            result = _gemControler.GetObject(ObjectTypeKey.CARRIER, objID, out updateObjectEntity, out err);
             foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
             {
                 if (o.ATTRID == "SLOTMAPSTATUS")
@@ -6354,28 +7423,46 @@ namespace DemoFormDiaGemLib
                 if (o.ATTRID == "LOCATIONID")
                 {
                     locationid = o.ATTRDATA.ToString();
-                    if (locationid == "LoadPort1")
+                    if (locationid == "LOADPORT1")
                         portid = 1;
-                    else if (locationid == "LoadPort2")
+                    else if (locationid == "LOADPORT2")
                         portid = 2;
                 }
                 if (o.ATTRID == "CARRIERACCESSINGSTATUS")
                     acc = Convert.ToByte(o.ATTRDATA);
+                if (o.ATTRID == "SLOTMAP")
+                    slotmapData = o.ATTRDATA;
+                if (o.ATTRID == "SUBSTRATECOUNT")
+                    substrateCount = o.ATTRDATA;
             }
             if (portid != 0)
                 UpdateSV(2001, portid, out err);
+
+            // Update user-defined EqpDV 2003 manually (not protected by DIAGEM)
+            UpdateSV(2003, (byte)status, out err);
+
             ObjectInstance updateObjectEntity2 = new ObjectInstance();
             updateObjectEntity2.ObjType = ObjectTypeKey.CARRIER;
             updateObjectEntity2.ObjID = objID;
 
             ObjectAttribute objectAttribute = new ObjectAttribute(441, ObjectAttributeKey.OBJID, objID);
             updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
-            objectAttribute = new ObjectAttribute(444, "CARRIERACCESSINGSTATUS", (byte)status);
+            objectAttribute = new ObjectAttribute(444, "CARRIERACCESSINGSTATUS", acc);
             updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
             objectAttribute = new ObjectAttribute(448, "LOCATIONID", locationid);
-            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
             objectAttribute = new ObjectAttribute(449, "SLOTMAPSTATUS", (byte)status);
             updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            //if (slotmapData != null)
+            //{
+            //    objectAttribute = new ObjectAttribute(447, "SLOTMAP", slotmapData);
+            //    updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            //}
+            //if (substrateCount != null)
+            //{
+            //    objectAttribute = new ObjectAttribute(445, "SUBSTRATECOUNT", substrateCount);
+            //    updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            //}
 
             result = _gemControler.UpdateObject(updateObjectEntity2, out err);
             if (result == 0)
@@ -6405,15 +7492,17 @@ namespace DemoFormDiaGemLib
         public int SetCarrierAttr_SlotMap(string objID, int[] slotmap)
         {
             int result = 0;
-            byte[] slot = new byte[25];
+            byte[] slot = new byte[CarrierCapacity];
             byte count = 0;
-            if (slotmap.Length != 25)
+            ListWrapper lw = new ListWrapper();
+            
+            if (slotmap.Length != CarrierCapacity)
             {
                 return 1;
             }
             else
             {
-                for(int i = 0; i<25; i++)
+                for(int i = 0; i< CarrierCapacity; i++)
                 {
                     if (slotmap[i] == 0)  //  empty
                         slot[i] = 1;
@@ -6426,8 +7515,14 @@ namespace DemoFormDiaGemLib
                         slot[i] = 5;
                     else
                         slot[i] = 2;   //error
+
+                    lw.TryAdd(ItemFmt.U1, slot[i], out err);
                 }
             }
+
+            // Update user-defined EqpDV 2010 manually (not protected by DIAGEM)
+            _gemControler.UpdateSV(2010, lw, out err);
+
             ObjectInstance updateObjectEntity = new ObjectInstance();
             updateObjectEntity.ObjType = ObjectTypeKey.CARRIER;
             updateObjectEntity.ObjID = objID;
@@ -6436,9 +7531,8 @@ namespace DemoFormDiaGemLib
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
             objectAttribute = new ObjectAttribute(445, "SUBSTRATECOUNT", count);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
-            ListWrapper lw = new ListWrapper();
-            lw.TryAdd(ItemFmt.U1, slot, out err);
-            objectAttribute = new ObjectAttribute(447, "SLOTMAP", count);
+
+            objectAttribute = new ObjectAttribute(447, "SLOTMAP", lw);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
 
             result = _gemControler.UpdateObject(updateObjectEntity, out err);
@@ -6449,37 +7543,82 @@ namespace DemoFormDiaGemLib
         {
             int result = 0;
             ObjectInstance updateObjectEntity = new ObjectInstance();
+            result = _gemControler.GetObject(ObjectTypeKey.CARRIER, objID, out updateObjectEntity, out err);
+            ListWrapper lw = new ListWrapper();
+            byte[] slotmap = new byte[CarrierCapacity];
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                switch (o.ATTRID)
+                {
+                    case "SLOTMAP":
+                        try
+                        {
+                            lw = (ListWrapper)o.ATTRDATA;
+                            //slotmap = lw.Items[0].Value;
+                            for (int i = 0; i < lw.Items.Count; i++)
+                            {
+                                slotmap[i] = Convert.ToByte(lw.Items[i].Value);
+                            };
+                        }
+                        catch
+                        {
+                            slotmap = new byte[CarrierCapacity];
+                        }
+                        break;
+                }
+            }
+            updateObjectEntity = new ObjectInstance();
             updateObjectEntity.ObjType = ObjectTypeKey.CARRIER;
             updateObjectEntity.ObjID = objID;
             ObjectAttribute objectAttribute = new ObjectAttribute(441, ObjectAttributeKey.OBJID, objID);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
-            ListWrapper lw = new ListWrapper();
+            lw = new ListWrapper();
             ListWrapper lw_1;
-            if (lotID.Length != 25 || substrateID.Length != 25)
+            string loc = "";
+            if (lotID.Length != CarrierCapacity || substrateID.Length != CarrierCapacity)
             {
                 return 1;
             }
             else
             {
-                for(int i = 0; i< 25; i++)
+                List<string> dataList = new List<string>();
+                dataList.Clear();
+                dataList.Add("CREATESUBSTRATE");
+                dataList.Add(CarrierID);
+                dataList.Add(LoadPortID);
+                for (int i = 0; i< CarrierCapacity; i++)
                 {
                     lw_1 = new ListWrapper();
                     lw_1.TryAdd(ItemFmt.A, lotID[i], out err);
                     lw_1.TryAdd(ItemFmt.A, substrateID[i], out err);
                     lw.TryAdd(ItemFmt.L, lw_1, out err);
+
+                    loc = objID + "." + (i+1).ToString("00");
+                    if (slotmap[i] == 3)
+                    {
+                        CreateSubstrate(substrateID[i], lotID[i], loc);
+                        dataList.Add(substrateID[i]);
+                    }
+                    else
+                    {
+                        dataList.Add("");
+                    }
                 }
+                byte ack = function_CallBack(dataList);
             }
             
             objectAttribute = new ObjectAttribute(446, "CONTENTMAP", lw);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
 
             result = _gemControler.UpdateObject(updateObjectEntity, out err);
+
             return result;
         }
 
         public int SetCarrierStatus_Usage(string objID, string usage)
         {
             int result = 0;
+
             ObjectInstance updateObjectEntity = new ObjectInstance();
             updateObjectEntity.ObjType = ObjectTypeKey.CARRIER;
             updateObjectEntity.ObjID = objID;
@@ -6503,9 +7642,9 @@ namespace DemoFormDiaGemLib
             SecsIIValue val;
             cap = 25;
             count = 0;
-            lotid = new string[25];
-            substrateid = new string[25];
-            slotmap = new byte[25];
+            lotid = new string[CarrierCapacity];
+            substrateid = new string[CarrierCapacity];
+            slotmap = new byte[CarrierCapacity];
             loc = string.Empty;
             usage = string.Empty;
             if (result != 0) return result;
@@ -6529,11 +7668,18 @@ namespace DemoFormDiaGemLib
                         };
                         break;
                     case "SLOTMAP":
-                        lw = (ListWrapper)o.ATTRDATA;
-                        for (int i = 0; i < lw.Items.Count; i++)
+                        try
                         {
-                            slotmap[i] = Convert.ToByte(lw.Items[i].Value);
-                        };
+                            lw = (ListWrapper)o.ATTRDATA;
+                            for (int i = 0; i < lw.Items.Count; i++)
+                            {
+                                slotmap[i] = Convert.ToByte(lw.Items[i].Value);
+                            };
+                        }
+                        catch
+                        {
+                            slotmap = new byte[CarrierCapacity];
+                        }
                         break;
                     case "LOCATIONID":
                         loc = o.ATTRDATA.ToString();
@@ -6548,28 +7694,67 @@ namespace DemoFormDiaGemLib
             return result;
         }
 
-        public int GetCarrierStatus(string objID, out byte id, out byte accessing, out byte slotmap, out string err)
+        public int GetContentMap(string objID, out string[] lotid, out string[] substrateid, out string err)
         {
             int result = 0;
             ObjectInstance updateObjectEntity = null;
             result = _gemControler.GetObject(ObjectTypeKey.CARRIER, objID, out updateObjectEntity, out err);
 
+            ListWrapper lw, lw_1;
+            SecsIIValue val;
+            lotid = new string[CarrierCapacity];
+            substrateid = new string[CarrierCapacity];
+            if (result != 0) return result;
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                switch (o.ATTRID)
+                {
+                    case "CONTENTMAP":
+                        lw = (ListWrapper)o.ATTRDATA;
+                        for (int i = 0; i < lw.Items.Count; i++)
+                        {
+                            lw_1 = (ListWrapper)lw.Items[i].Value;
+                            lotid[i] = (lw_1.Items[0].Value).ToString();
+                            substrateid[i] = (lw_1.Items[1].Value).ToString();
+                        };
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return result;
+        }
+
+        public int GetCarrierStatus(string objID, out byte id, out byte accessing, out byte slotmap, out string err)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            err = "";
+            result = _gemControler.GetObject(ObjectTypeKey.CARRIER, objID, out updateObjectEntity, out err);
+
             id = 0;
             accessing = 0;
             slotmap = 0;
-
+            if (result == 2) return 2;
+            Tuple<string, string> tp;
             foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
             {
                 switch (o.ATTRID)
                 {
                     case "CARRIERIDSTATUS":
-                        id = Convert.ToByte(o.ATTRDATA.ToString());
+                        tp = GetDataDesc(ItemFmt.U1, o.ATTRDATA);
+                        if (tp.Item2 != "")
+                            id = Convert.ToByte(tp.Item2);
                         break;
                     case "CARRIERACCESSINGSTATUS":
-                        accessing = Convert.ToByte(o.ATTRDATA.ToString());
+                        tp = GetDataDesc(ItemFmt.U1, o.ATTRDATA);
+                        if(tp.Item2 != "")
+                            accessing = Convert.ToByte(tp.Item2);
                         break;
                     case "SLOTMAPSTATUS":
-                        accessing = Convert.ToByte(o.ATTRDATA.ToString());
+                        tp = GetDataDesc(ItemFmt.U1, o.ATTRDATA);
+                        if (tp.Item2 != "")
+                            slotmap = Convert.ToByte(tp.Item2);
                         break;
                     default:
                         break;
@@ -6582,11 +7767,25 @@ namespace DemoFormDiaGemLib
         {
             string err;
             int result;
+            errstr = "";
             ObjectInstance updateObjectEntity = new ObjectInstance();
             updateObjectEntity.ObjType = ObjectTypeKey.CARRIER;
             updateObjectEntity.ObjID = objID;
             updateObjectEntity.ObjSpec = string.Empty;
-
+            result = _gemControler.GetObject(ObjectTypeKey.CARRIER, objID, out updateObjectEntity, out err);
+            if (result == 2) return result;
+            string location = "";
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                if (o.ATTRID == ObjectAttributeKey.Carrier.LOCATIONID)
+                {
+                    location = o.ATTRDATA.ToString();
+                }
+            }
+            updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.CARRIER;
+            updateObjectEntity.ObjID = objID;
+            updateObjectEntity.ObjSpec = string.Empty;
             ObjectAttribute objectAttribute = new ObjectAttribute(441, ObjectAttributeKey.OBJID, objID);
             updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
 
@@ -6602,6 +7801,18 @@ namespace DemoFormDiaGemLib
             {
                 errstr = err;
                 return result;
+            }
+            //Substrate Location
+            
+            int rtn;
+            string subloc;
+            for (int i = 0; i < CarrierCapacity; i++)
+            {
+                //subloc = objID + "." + (i + 1).ToString("00");
+                //rtn = _gemControler.DeleteObject(ObjectTypeKey.SUBSTLOC, subloc, out err);
+                //if (rtn == 0) SubstrateLoc_list.Remove(subloc);
+                subloc = location + "." + (i + 1).ToString("00");
+                SubstrateLocUnoccupy(subloc, true);
             }
             errstr = err;
             return result;
@@ -6651,6 +7862,12 @@ namespace DemoFormDiaGemLib
             Substrate_list.Add(objID);
             _gemControler.EventReportSend(141, out err); //STS_Transport_NoStateToAtSource
             _gemControler.EventReportSend(150, out err); //STS_Processing_NoStateToNeedsProcessing
+
+            if (result == 0 && !bSubstrateLocationDisableEvent)
+            {
+                SubstrateLocOccupy(locationID, objID);
+            }
+
             return result;
         }
 
@@ -6661,7 +7878,7 @@ namespace DemoFormDiaGemLib
             lwout = new ListWrapper();
             ObjectInstance updateObjectEntity = null;
             result = _gemControler.GetObject(ObjectTypeKey.SUBSTRATE, objID, out updateObjectEntity, out err);
-            string clock;
+            string clock, oldlocation = "";
             GetSV(3, out clock, out err);
             foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
             {
@@ -6682,8 +7899,11 @@ namespace DemoFormDiaGemLib
                             s1[1] = lw_1.Items[1].ToString();
                             s1[2] = clock;
                             lw_1 = new ListWrapper();
-                            lw_1.TryAdd(ItemFmt.A, s1, out err);
+                            lw_1.TryAdd(ItemFmt.A, s1[0], out err);
+                            lw_1.TryAdd(ItemFmt.A, s1[1], out err);
+                            lw_1.TryAdd(ItemFmt.A, s1[2], out err);
                             lwout.TryAdd(ItemFmt.L, lw_1, out err);
+                            oldlocation = s1[0];
                         }
                     }
                     string[] s2 = new string[3];
@@ -6691,7 +7911,9 @@ namespace DemoFormDiaGemLib
                     s2[1] = clock;
                     s2[2] = "";
                     lw_1 = new ListWrapper();
-                    lw_1.TryAdd(ItemFmt.A, s2, out err);
+                    lw_1.TryAdd(ItemFmt.A, s2[0], out err);
+                    lw_1.TryAdd(ItemFmt.A, s2[1], out err);
+                    lw_1.TryAdd(ItemFmt.A, s2[2], out err);
                     lwout.TryAdd(ItemFmt.L, lw_1, out err);
                 }
             }
@@ -6708,6 +7930,13 @@ namespace DemoFormDiaGemLib
             updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
 
             result = _gemControler.UpdateObject(updateObjectEntity2, out err);
+
+            if(result == 0 && !bSubstrateLocationDisableEvent)
+            {
+                SubstrateLocUnoccupy(oldlocation);
+                SubstrateLocOccupy(location, objID);
+            }
+
             return result;
         }
 
@@ -6717,6 +7946,11 @@ namespace DemoFormDiaGemLib
             ObjectInstance updateObjectEntity = null;
             SubstProcState oldstate = SubstProcState.NEEDS_PROCESSING;
             result = _gemControler.GetObject(ObjectTypeKey.SUBSTRATE, objID, out updateObjectEntity, out err);
+            if (result != 0 || updateObjectEntity == null)
+            {
+                return result; // Substrate 不存在，提前返回
+            }
+
             foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
             {
                 if (o.ATTRID == ObjectAttributeKey.Substrate.SUBSTPROCSTATE)
@@ -6822,6 +8056,7 @@ namespace DemoFormDiaGemLib
             Substrate_list.Add(objID);
             _gemControler.EventReportSend(141, out err); //STS_Transport_NoStateToAtSource
             _gemControler.EventReportSend(150, out err); //STS_Processing_NoStateToNeedsProcessing
+            SubstrateLocOccupy(sourceloc);
             return result2;
         }
 
@@ -6885,7 +8120,336 @@ namespace DemoFormDiaGemLib
             return result;
         }
 
-        public int LoadportMatchToRun(string selectedCJ) //return 0 就是沒有match到
+        public int InitialLoadPort(string objID, string objSpec = "")
+        {
+            if(!(objID == "1" || objID == "2")) return -1;
+
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.LOADPORT;
+            updateObjectEntity.ObjSpec = string.Empty;
+            ObjectAttribute objectAttribute;
+            ListWrapper lw;
+            if (objID == "1")
+            {
+                updateObjectEntity.ObjID = objID;
+                objectAttribute = new ObjectAttribute(100085, ObjectAttributeKey.OBJID, (byte)1);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                objectAttribute = new ObjectAttribute(2020, "PORTID", (byte)1);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                lw = new ListWrapper();
+                lw.TryAdd(ItemFmt.U1, (byte)1, out err);
+                lw.TryAdd(ItemFmt.U1, (byte)0, out err);
+                objectAttribute = new ObjectAttribute(100082, "PORTSTATEINFO", lw);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                objectAttribute = new ObjectAttribute(2016, "PORTASSOCIATIONSTATE", (byte)1);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                objectAttribute = new ObjectAttribute(2008, "PORTTRANSFERSTATE", (byte)0);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                objectAttribute = new ObjectAttribute(2006, "ACCESSMODE", (byte)0);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            }
+            else
+            {
+                updateObjectEntity.ObjID = objID;
+                objectAttribute = new ObjectAttribute(100091, ObjectAttributeKey.OBJID, (byte)2);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                objectAttribute = new ObjectAttribute(2021, "PortID", (byte)2);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                lw = new ListWrapper();
+                lw.TryAdd(ItemFmt.U1, (byte)1, out err);
+                lw.TryAdd(ItemFmt.U1, (byte)0, out err);
+                objectAttribute = new ObjectAttribute(100088, "PORTSTATEINFO", lw);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                objectAttribute = new ObjectAttribute(2017, "PORTASSOCIATIONSTATE", (byte)1);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                objectAttribute = new ObjectAttribute(2009, "PORTTRANSFERSTATE", (byte)0);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+                objectAttribute = new ObjectAttribute(2007, "ACCESSMODE", (byte)0);
+                updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            }
+            int result = _gemControler.UpdateObject(updateObjectEntity, out err);
+            //AccessMode = 0;
+            //PortTransferState = 0;
+            //PortAssociationState = 1;
+            return result;
+        }
+
+        public int GetLoadPortAttr(string objID, out LoadPort data, out string err)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = null;
+            result = _gemControler.GetObject(ObjectTypeKey.LOADPORT, objID, out updateObjectEntity, out err);
+            data = new LoadPort();
+            ListWrapper lw, lw_1;
+            if (result != 0) return result;
+
+            foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+            {
+                switch (o.ATTRID)
+                {
+                    case ObjectAttributeKey.OBJID:
+                        data.objID = o.ATTRDATA.ToString();
+                        break;
+                    case ObjectAttributeKey.LoadPort.PORTID:
+                        data.PortID = Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    case ObjectAttributeKey.LoadPort.PORTASSOCIATIONSTATE:
+                        data.PortAssociationState = Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    case ObjectAttributeKey.LoadPort.PORTTRANSFERSTATE:
+                        data.PortTransferState = (PortTransferState)Convert.ToByte(o.ATTRDATA.ToString()); ;
+                        break;
+                    case ObjectAttributeKey.LoadPort.ACCESSMODE:
+                        data.AccessMode = Convert.ToByte(o.ATTRDATA.ToString());
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return result;
+        }
+
+        public int GetLoadPortAssociationState(int loadport_num)
+        {
+            int rtn = -1;
+            LoadPort data = new LoadPort();
+            if (loadport_num == 1)
+            {
+                GetLoadPortAttr("1", out data, out err);
+                rtn = data.PortAssociationState;
+            }
+            else if (loadport_num == 2)
+            {
+                GetLoadPortAttr("2", out data, out err);
+                rtn = data.PortAssociationState;
+            }
+            return rtn;
+        }
+
+        public PortTransferState GetLoadPortTransferState(int loadport_num)
+        {
+            PortTransferState rtn = PortTransferState.OUT_OF_SERVICE;
+            LoadPort data = new LoadPort();
+            if (loadport_num == 1)
+            {
+                GetLoadPortAttr("1", out data, out err);
+                rtn = data.PortTransferState;
+            }
+            else if (loadport_num == 2)
+            {
+                GetLoadPortAttr("2", out data, out err);
+                rtn = data.PortTransferState;
+            }
+            return rtn;
+        }
+
+        public int LoadPortAccessMode(int loadport_num)
+        {
+            int rtn = -1;
+            LoadPort data = new LoadPort();
+            if (loadport_num == 1)
+            {
+                GetLoadPortAttr("1", out data, out err);
+                rtn = data.AccessMode;
+            }
+            else if (loadport_num == 2)
+            {
+                GetLoadPortAttr("2", out data, out err);
+                rtn = data.AccessMode;
+            }
+            return rtn;
+        }
+
+        public int UpdateLoadPortAssociationState(string objID, byte portAssociationState, string objSpec = "")
+        {
+            if (!(objID == "1" || objID == "2")) return -1;
+            int result;
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            ObjectInstance updateObjectEntity2 = new ObjectInstance();
+            updateObjectEntity2.ObjID = objID;
+            updateObjectEntity2.ObjType = ObjectTypeKey.LOADPORT;
+            updateObjectEntity2.ObjSpec = string.Empty;
+            ObjectAttribute objectAttribute;
+            ListWrapper lw;
+            byte portTransferState = 0;
+            if (objID == "1")
+            {
+                result = _gemControler.GetObject(ObjectTypeKey.LOADPORT, objID, out updateObjectEntity, out err);
+                foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+                {
+                    if (o.ATTRID == "PORTTRANSFERSTATE")
+                        portTransferState = (byte)o.ATTRDATA;
+                }
+                lw = new ListWrapper();
+                lw.TryAdd(ItemFmt.U1, portAssociationState, out err);
+                lw.TryAdd(ItemFmt.U1, portTransferState, out err);
+                objectAttribute = new ObjectAttribute(100082, "PORTSTATEINFO", lw);
+                updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+                objectAttribute = new ObjectAttribute(2016, "PORTASSOCIATIONSTATE", portAssociationState);
+                updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            }
+            else
+            {
+                result = _gemControler.GetObject(ObjectTypeKey.LOADPORT, objID, out updateObjectEntity, out err);
+                foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+                {
+                    if (o.ATTRID == "PORTTRANSFERSTATE")
+                        portTransferState = (byte)o.ATTRDATA;
+                }
+                lw = new ListWrapper();
+                lw.TryAdd(ItemFmt.U1, portAssociationState, out err);
+                lw.TryAdd(ItemFmt.U1, portTransferState, out err);
+                objectAttribute = new ObjectAttribute(100088, "PORTSTATEINFO", lw);
+                updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+                objectAttribute = new ObjectAttribute(2017, "PORTASSOCIATIONSTATE", portAssociationState);
+                updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            }
+            result = _gemControler.UpdateObject(updateObjectEntity2, out err);
+            return result;
+        }
+
+        public int UpdateLoadPortTransferState(string objID, byte portTransferState, string objSpec = "")
+        {
+            if (!(objID == "1" || objID == "2")) return -1;
+            int result;
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            ObjectInstance updateObjectEntity2 = new ObjectInstance();
+            updateObjectEntity2.ObjID = objID;
+            updateObjectEntity2.ObjType = ObjectTypeKey.LOADPORT;
+            updateObjectEntity2.ObjSpec = string.Empty;
+            ObjectAttribute objectAttribute;
+            ListWrapper lw;
+            byte portAssociationState = 0;
+            if (objID == "1")
+            {
+                result = _gemControler.GetObject(ObjectTypeKey.LOADPORT, objID, out updateObjectEntity, out err);
+                foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+                {
+                    if (o.ATTRID == "PORTASSOCIATIONSTATE")
+                        portAssociationState = (byte)o.ATTRDATA;
+                }
+                lw = new ListWrapper();
+                lw.TryAdd(ItemFmt.U1, portAssociationState, out err);
+                lw.TryAdd(ItemFmt.U1, portTransferState, out err);
+                objectAttribute = new ObjectAttribute(100082, "PORTSTATEINFO", lw);
+                updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+                objectAttribute = new ObjectAttribute(2008, "PORTTRANSFERSTATE", portTransferState);
+                updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            }
+            else
+            {
+                result = _gemControler.GetObject(ObjectTypeKey.LOADPORT, objID, out updateObjectEntity, out err);
+                foreach (ObjectAttribute o in updateObjectEntity.ListObjectAttributes)
+                {
+                    if (o.ATTRID == "PORTASSOCIATIONSTATE")
+                        portAssociationState = (byte)o.ATTRDATA;
+                }
+                lw = new ListWrapper();
+                lw.TryAdd(ItemFmt.U1, portAssociationState, out err);
+                lw.TryAdd(ItemFmt.U1, portTransferState, out err);
+                objectAttribute = new ObjectAttribute(100088, "PORTSTATEINFO", lw);
+                updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+                objectAttribute = new ObjectAttribute(2009, "PORTTRANSFERSTATE", portTransferState);
+                updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            }
+            result = _gemControler.UpdateObject(updateObjectEntity2, out err);
+            return result;
+        }
+
+        public int UpdateLoadPortAccessMode(string objID, byte accessMode, string objSpec = "")
+        {
+            if (!(objID == "1" || objID == "2")) return -1;
+            int result;
+            ObjectInstance updateObjectEntity2 = new ObjectInstance();
+            updateObjectEntity2.ObjID = objID;
+            updateObjectEntity2.ObjType = ObjectTypeKey.LOADPORT;
+            updateObjectEntity2.ObjSpec = string.Empty;
+            ObjectAttribute objectAttribute;
+            if (objID == "1")
+            {
+                objectAttribute = new ObjectAttribute(2006, "ACCESSMODE", accessMode);
+                updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            }
+            else
+            {
+                objectAttribute = new ObjectAttribute(2007, "ACCESSMODE", accessMode);
+                updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            }
+            result = _gemControler.UpdateObject(updateObjectEntity2, out err);
+            return result;
+        }
+
+        public int UpdateLoadPortPortID(string objID, byte portID, string objSpec = "")
+        {
+            if (!(objID == "1" || objID == "2")) return -1;
+            //objectAttribute = new ObjectAttribute(2020, "PORTID", (byte)1);
+            //objectAttribute = new ObjectAttribute(2020, "PORTID", (byte)1);
+            //updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            int result;
+            ObjectInstance updateObjectEntity2 = new ObjectInstance();
+            updateObjectEntity2.ObjID = objID;
+            updateObjectEntity2.ObjType = ObjectTypeKey.LOADPORT;
+            updateObjectEntity2.ObjSpec = string.Empty;
+            ObjectAttribute objectAttribute;
+            if (objID == "1")
+            {
+                objectAttribute = new ObjectAttribute(2020, "PORTID", portID);
+                updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            }
+            else
+            {
+                objectAttribute = new ObjectAttribute(2021, "PORTID", portID);
+                updateObjectEntity2.ListObjectAttributes.Add(objectAttribute);
+            }
+            result = _gemControler.UpdateObject(updateObjectEntity2, out err);
+            return result;
+        }
+
+        public int SubstrateLocOccupy(string objID, string substrateID = "")
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.SUBSTLOC;
+            updateObjectEntity.ObjID = objID;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(361, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(362, "SUBSTID", substrateID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(363, "SUBSTLOCSTATE", (byte)SubstrateLocationState.OCCUPIED);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            
+            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+            if(result == 0 && !bSubstrateLocationDisableEvent)
+            {
+                _gemControler.EventReportSend(161, out err);
+            }
+            return result;
+        }
+
+        public int SubstrateLocUnoccupy(string objID, bool bInit = false)
+        {
+            int result = 0;
+            ObjectInstance updateObjectEntity = new ObjectInstance();
+            updateObjectEntity.ObjType = ObjectTypeKey.SUBSTLOC;
+            updateObjectEntity.ObjID = objID;
+
+            ObjectAttribute objectAttribute = new ObjectAttribute(361, ObjectAttributeKey.OBJID, objID);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(362, "SUBSTID", "");
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+            objectAttribute = new ObjectAttribute(363, "SUBSTLOCSTATE", (byte)SubstrateLocationState.UNOCCUPIED);
+            updateObjectEntity.ListObjectAttributes.Add(objectAttribute);
+
+            result = _gemControler.UpdateObject(updateObjectEntity, out err);
+            if (result == 0 && !bSubstrateLocationDisableEvent && !bInit)
+            {
+                _gemControler.EventReportSend(162, out err);
+            }
+            return result;
+        }
+
+        public int LoadportMatchToRun(string selectedCJ, ref string[] lotIDrtn, ref string[] substrateIDrtn) //return 0 就是沒有match到
         {
             int rtn = 0;
             string carrierInputSpec;
@@ -6899,9 +8463,21 @@ namespace DemoFormDiaGemLib
             bool bStart;
             byte state;
             GetControlJobAttr(selectedCJ, out carrierInputSpec, out curPJ, out dataCollection, out mtrloutStatus, out mtrloutSpec, out pauseEvent, out procCtrlSpec, out procOrder, out bStart, out state, out string err);
-            string[] cain = carrierInputSpec.Split(',');
-            if ((ControlJobState)state != ControlJobState.SELECTED)
+            string[] cain = new string[1]; // = carrierInputSpec.Split(',');
+            cain[0] = "";
+            string[] pjin = procCtrlSpec.Split(';');
+            foreach(string pj in pjin)
+            {
+                GetProcessJobMaterial(pj, out string carrierID, out byte[] slot, out err);
+                if (cain[0] == "")
+                    cain[0] = carrierID;
+                else if (!cain.Contains(carrierID))
+                    cain.Append(carrierID);
+            }
+            if (((ControlJobState)state != ControlJobState.SELECTED) && ((ControlJobState)state != ControlJobState.WAITING_FOR_START))
+            {
                 return rtn;
+            }
             foreach(string s in cain)
             {
                 foreach (string carrier in Carrier_list)
@@ -6922,10 +8498,37 @@ namespace DemoFormDiaGemLib
                                 string loc;
                                 string usage;
                                 GetCarrierAttr(carrier, out cap, out count, out lotid, out substrateid, out slot, out loc, out usage, out err);
-                                if (loc == "LoadPort1")
+                                if (loc == "LOADPORT1")
                                     rtn = 1;
-                                else if (loc == "LoadPort2")
+                                else if (loc == "LOADPORT2")
                                     rtn = 2;
+
+                                if(!bStart) //wait for start
+                                {
+                                    if ((ControlJobState)state == ControlJobState.SELECTED)
+                                    {
+                                        ChangeControlJobState(selectedCJ, ControlJobState.WAITING_FOR_START, 0);
+                                        rtn = 0;
+                                        bReceiveCJSTART = false;//等待收到CJSTART
+                                    }
+                                    else if ((ControlJobState)state == ControlJobState.WAITING_FOR_START)
+                                    {
+                                        if (!bReceiveCJSTART) //沒收到CJSTART
+                                            rtn = 0;
+                                        else
+                                            bReceiveCJSTART = false;
+                                    }
+                                    else
+                                        rtn = 0;    //沒符合條件不給run
+                                }
+                                if(rtn != 0)
+                                {
+                                    for (int i = 0; i < cap; i++)
+                                    {
+                                        lotIDrtn[i] = lotid[i];
+                                        substrateIDrtn[i] = substrateid[i];
+                                    }
+                                }
                             }
                         }
                     }
@@ -8334,6 +9937,114 @@ namespace DemoFormDiaGemLib
                 }
             }
         }
+        
+        public int UpdateMeasurementData( string[] angle, double[] h1, double[] w1, double[] h2, double[] w2)
+        {
+            uint id = 4100;
+            string[] par_id = { "Angle", "H1", "W1", "H2", "W2" };
+            string[] par_unit = { "Deg", "um", "um", "um", "um" };
+            ListWrapper lw = new ListWrapper();
+            ListWrapper lw1 = new ListWrapper();
+            ListWrapper lw2 = new ListWrapper();
+            ListWrapper lw3 = new ListWrapper();
+            if (angle == null) return 0; 
+            int anglecount = angle.Length; 
+            for(int i = 0; i < anglecount; i++)
+            {
+                lw1 = new ListWrapper();
+                lw1.TryAdd(ItemFmt.A, angle[i], out err);  //點位
+                lw2 = new ListWrapper();                   //資料
+                if (h1 != null && h1.Length >= anglecount)
+                {
+                    //lw3 = new ListWrapper();
+                    lw2.TryAdd(ItemFmt.A, par_id[1], out err);
+                    lw2.TryAdd(ItemFmt.A, h1[i].ToString("0.00"), out err);
+                    lw2.TryAdd(ItemFmt.A, par_unit[1], out err);
+                    //lw2.TryAdd(ItemFmt.L, lw3, out err);
+                }
+                if (w1 != null && w1.Length >= anglecount)
+                {
+                    //lw3 = new ListWrapper();
+                    lw2.TryAdd(ItemFmt.A, par_id[2], out err);
+                    lw2.TryAdd(ItemFmt.A, w1[i].ToString("0.00"), out err);
+                    lw2.TryAdd(ItemFmt.A, par_unit[2], out err);
+                    //lw2.TryAdd(ItemFmt.L, lw3, out err);
+                }
+                if (h2 != null && h2.Length >= anglecount)
+                {
+                    //lw3 = new ListWrapper();
+                    lw2.TryAdd(ItemFmt.A, par_id[3], out err);
+                    lw2.TryAdd(ItemFmt.A, h2[i].ToString("0.00"), out err);
+                    lw2.TryAdd(ItemFmt.A, par_unit[3], out err);
+                    //lw2.TryAdd(ItemFmt.L, lw3, out err);
+                }
+                if (w2 != null && w2.Length >= anglecount)
+                {
+                    //lw3 = new ListWrapper();
+                    lw2.TryAdd(ItemFmt.A, par_id[4], out err);
+                    lw2.TryAdd(ItemFmt.A, w2[i].ToString("0.00"), out err);
+                    lw2.TryAdd(ItemFmt.A, par_unit[4], out err);
+                    //lw2.TryAdd(ItemFmt.L, lw3, out err);
+                }
+                lw1.TryAdd(ItemFmt.L, lw2, out err);
+                lw.TryAdd(ItemFmt.L, lw1, out err);
+            }        
+            int rtn = _gemControler.UpdateSV(id, lw, out err);
+            return rtn;
+        }
+
+        public int UpdateMeasurementMax(double h1, double w1, double h2, double w2)
+        {
+            uint id = 4200;
+            string[] par_id = { "H1_Max", "W1_Max", "H2_Max", "W2_Max" };
+            string[] par_unit = { "um", "um", "um", "um" };
+            //ListWrapper lw = new ListWrapper();
+            ListWrapper lw1 = new ListWrapper();
+            lw1.TryAdd(ItemFmt.A, par_id[0], out err);
+            lw1.TryAdd(ItemFmt.A, h1.ToString("0.00"), out err);
+            lw1.TryAdd(ItemFmt.A, par_unit[0], out err);
+            //lw.TryAdd(ItemFmt.L, lw1, out err);
+
+            //lw1 = new ListWrapper();
+            lw1.TryAdd(ItemFmt.A, par_id[1], out err);
+            lw1.TryAdd(ItemFmt.A, w1.ToString("0.00"), out err);
+            lw1.TryAdd(ItemFmt.A, par_unit[1], out err);
+            //lw.TryAdd(ItemFmt.L, lw1, out err);
+
+            //lw1 = new ListWrapper();
+            lw1.TryAdd(ItemFmt.A, par_id[2], out err);
+            lw1.TryAdd(ItemFmt.A, h2.ToString("0.00"), out err);
+            lw1.TryAdd(ItemFmt.A, par_unit[2], out err);
+            //lw.TryAdd(ItemFmt.L, lw1, out err);
+
+            //lw1 = new ListWrapper();
+            lw1.TryAdd(ItemFmt.A, par_id[3], out err);
+            lw1.TryAdd(ItemFmt.A, w2.ToString("0.00"), out err);
+            lw1.TryAdd(ItemFmt.A, par_unit[3], out err);
+            //lw.TryAdd(ItemFmt.L, lw1, out err);
+            int rtn = _gemControler.UpdateSV(id, lw1, out err);
+            return rtn;
+        }
+
+        public void UpdateCJ()
+        {
+            object obj = null;
+            int result = 0;
+            uint svid = 201;
+            ListWrapper lw = new ListWrapper();
+            for(int i = 0; i < CJ_list.Count; i++)
+            {
+                lw.TryAdd(ItemFmt.A, CJ_list[i], out err);
+            }           
+            obj = lw;
+            result = _gemControler.UpdateSV(svid, obj, out err);
+            ushort CJ_AvailableSpace = 0;
+            if(CJ_MaxSpace >= Convert.ToUInt16(CJ_list.Count))
+            {
+                CJ_AvailableSpace = (ushort)(CJ_MaxSpace - Convert.ToUInt16(CJ_list.Count));
+            }
+            result += _gemControler.UpdateSV(svid+1, CJ_AvailableSpace, out err);          
+        }
     }
 
     public enum ProcessState
@@ -8379,7 +10090,7 @@ namespace DemoFormDiaGemLib
         ABORTED = 11,
         UNQUEUED = 12,
     }
-
+    
     public enum CarrierAccessingState
     {
         NOT_ACCESSED = 0,
@@ -8388,6 +10099,14 @@ namespace DemoFormDiaGemLib
         CARRIER_STOPPED = 3,
     }
 
+    public enum CarrierAssociatedState
+    {
+        NOT_ACCESSED = 0,
+        IN_ACCESS = 1,
+        CARRIER_COMPLETE = 2,
+        CARRIER_STOPPED = 3,
+    }
+    
     public enum CarrierIDState
     {
         ID_NOT_READ = 0,
@@ -8395,7 +10114,7 @@ namespace DemoFormDiaGemLib
         ID_VERIFICATION_OK = 2,
         ID_VERIFICATION_FAILED = 3,
     }
-
+    
     public enum SlotMapState
     {
         SLOT_MAP_NOT_READ = 0,
@@ -8424,6 +10143,57 @@ namespace DemoFormDiaGemLib
         SKIPPED = 7,
     }
 
+    public enum SubstrateLocationState
+    {
+        UNOCCUPIED = 0,
+        OCCUPIED = 1,
+    }
+
+    public enum SlotMapReason
+    {
+        ERIFICATION_NEEDED = 0,
+        VERIFICATION_BY_EQUIPMENT_UNSUCCESSFUL = 1,
+        READ_FAIL = 2,
+        IMPROPER_SUBSTRATE_POSITION = 3,
+    }
+
+    public enum PortTransferState
+    {
+        OUT_OF_SERVICE = 0,
+        TRANSFER_BLOCKED = 1,
+        READY_TO_LOAD = 2,
+        READY_TO_UNLOAD = 3,
+    }
+
+    public enum LoportSV
+    {
+        CMS_OBJID1_1 = 100070,
+        CMS_PORTID1_1 = 100069,
+        CMS_PORTASSOCIATIONSTATE1_1 = 100068,
+        CMS_PORTSTATEINFO1_1 = 100067,
+        CMS_PORTTRANSFERSTATE1_1 = 100066,
+        CMS_ACCESSMODE1_1 = 100065,
+        CMS_OBJID2_2 = 100076,
+        CMS_PORTID2_2 = 100075,
+        CMS_PORTASSOCIATIONSTATE2_2 = 100074,
+        CMS_PORTSTATEINFO2_2 = 100073,
+        CMS_PORTTRANSFERSTATE2_2 = 100072,
+        CMS_ACCESSMODE2_2 = 100071,
+
+    }
+
+    public enum ControlJobCommand
+    {
+        CJSTART = 1,
+        CJPAUSE = 2,
+        CJRESUME = 3,
+        CJCANCEL = 4,
+        CJDESELECT = 5,
+        CJSTOP = 6,
+        CJABORT = 7,
+        CJHOQ = 8,
+    }
+
     public class Substrate
     {
         public string objID;
@@ -8450,6 +10220,24 @@ namespace DemoFormDiaGemLib
             substSource = "";
             substState = SubstrateTransState.AT_SOURCE;
             substType = 0; //0 = WAFER 1 = FLAT PANEL 2 = COMPACT DISK 3 = MASK OR RETICLE
+        }
+    }
+
+    public class LoadPort
+    {
+        public string objID;
+        public byte PortID;
+        public byte AccessMode;  //MANUAL, AUTO
+        public PortTransferState PortTransferState;  // OUT OF SERVICE, TRANSFER BLOCKED, READY TO LOAD, READY TO UNLOAD
+        public byte PortAssociationState;  //ASSOCIATED, NOT ASSOCIATED
+
+        public LoadPort()
+        {
+            objID = "";
+            PortID = 1;
+            AccessMode = 0;
+            PortTransferState = PortTransferState.OUT_OF_SERVICE;
+            PortAssociationState = 1;
         }
     }
 }
