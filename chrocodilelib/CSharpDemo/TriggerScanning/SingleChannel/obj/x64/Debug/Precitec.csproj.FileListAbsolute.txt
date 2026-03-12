@@ -323,6 +323,6 @@ D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\chrocodilelib\CSharpDem
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\PT.SingleChannel.resources
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.GenerateResource.cache
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CoreCompileInputs.cache
-D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.Up2Date
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.dll
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\CSharpSingleChannelScanning.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\chrocodilelib\CSharpDemo\TriggerScanning\SingleChannel\obj\x64\Debug\Precitec.csproj.CopyComplete

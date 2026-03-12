@@ -39,7 +39,7 @@ namespace TrimGap
             }
             else
             {
-                InitSimulateCarrierRemoveButtons();
+                // 按鈕已移至 Form2.Designer.cs (panel6)
             }
 
             Control[] _ctl;
@@ -2867,34 +2867,6 @@ namespace TrimGap
         {
             SimulateForm simulateForm = new SimulateForm();
             simulateForm.Show();
-        }
-
-        private void InitSimulateCarrierRemoveButtons()
-        {
-            GroupBox gbCarrierRemove = new GroupBox();
-            gbCarrierRemove.Text = "Please remove carrier from loadport";
-            gbCarrierRemove.Location = new Point(614, 437);
-            gbCarrierRemove.Size = new Size(350, 80);
-            gbCarrierRemove.Font = new Font("微軟正黑體", 9F, FontStyle.Regular);
-
-            Button btnCarrierRemovedEvent = new Button();
-            btnCarrierRemovedEvent.Text = "25) Carrier Removed Event";
-            btnCarrierRemovedEvent.Location = new Point(10, 22);
-            btnCarrierRemovedEvent.Size = new Size(325, 23);
-            btnCarrierRemovedEvent.UseVisualStyleBackColor = true;
-            btnCarrierRemovedEvent.Click += btnCarrierRemovedEvent_Click;
-
-            Button btnReadyToLoadEvent = new Button();
-            btnReadyToLoadEvent.Text = "26) Ready To Load Event";
-            btnReadyToLoadEvent.Location = new Point(10, 50);
-            btnReadyToLoadEvent.Size = new Size(325, 23);
-            btnReadyToLoadEvent.UseVisualStyleBackColor = true;
-            btnReadyToLoadEvent.Click += btnReadyToLoadEvent_Click;
-
-            gbCarrierRemove.Controls.Add(btnCarrierRemovedEvent);
-            gbCarrierRemove.Controls.Add(btnReadyToLoadEvent);
-            panel3.Controls.Add(gbCarrierRemove);
-            gbCarrierRemove.BringToFront();
         }
 
         private void btnCarrierRemovedEvent_Click(object sender, EventArgs e)

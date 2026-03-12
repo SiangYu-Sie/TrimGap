@@ -61,8 +61,8 @@
 148,STS_Transport_AtDestinationToAtSource,(E90-SubstEvent) The Substrate transits from AT DESTINATION state to AT SOURCE(Send by AP),148
 149,STS_AnySubstateSubStateToExtinction,(E90-SubstEvent) The Substrate transits from Any SUBSTRATE substate state to Extinction\Delete Substrate Object(Send by AP),149
 150,STS_Processing_NoStateToNeedsProcessing,(E90-SubstEvent) The Substrate Object is instantiated and enters NEEDS PROCESSING state\Create Substrate Object(Send by AP),150
-151,STS_Processing_ProcessingToInProcess,(E90-SubstEvent) The Substrate transits from NEEDS PROCESSING state to IN PROCESS state(Send by AP),151
-152,STS_Processing_InProcessToProcessingComplete,(E90-SubstEvent) The Substrate transits from IN PROCESS state to PROCESSING COMPLETE state(Send by AP),152
+151,WaferProcessStart_InProcess,(E90-SubstEvent) The Substrate transits from NEEDS PROCESSING state to IN PROCESS state(Send by AP),151
+152,WaferProcessEnd_Processed,(E90-SubstEvent) The Substrate transits from IN PROCESS state to PROCESSING COMPLETE state(Send by AP),152
 153,STS_Processing_InProcessToNeedsProcessing,(E90-SubstEvent) The Substrate transits from IN PROCESS state to NEEDS PROCESSING state(Send by AP),153
 161,STS_SubstLoc_UnOccupiedToOccupied,(E90-SubstLocEvent) The Substrate Location transits from UNOCCUPIED state to OCCUPIED state(Send by AP),161
 162,STS_SubstLoc_OccupiedToUnOccupied,(E90-SubstLocEvent) The Substrate Location transits from OCCUPIED state to UNOCCUPIED state(Send by AP),162

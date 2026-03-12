@@ -535,6 +535,6 @@ D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\DIASECSGEM300\obj\Debug
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\DIASECSGEM300\obj\Debug\DemoFormDiaGemLib_Equipment.Properties.Resources.resources
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\DIASECSGEM300\obj\Debug\SampleFormDiaGemLib_Equipment.csproj.GenerateResource.cache
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\DIASECSGEM300\obj\Debug\SampleFormDiaGemLib_Equipment.csproj.CoreCompileInputs.cache
-D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\DIASECSGEM300\obj\Debug\SampleFo.8B2AB104.Up2Date
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\DIASECSGEM300\obj\Debug\DiaGemLib_Equipment.dll
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\DIASECSGEM300\obj\Debug\DiaGemLib_Equipment.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\DIASECSGEM300\obj\Debug\SampleFo.8B2AB104.Up2Date

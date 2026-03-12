@@ -73,6 +73,7 @@ namespace TrimGap
             this.btnStart = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button19 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -197,6 +198,8 @@ namespace TrimGap
             this.pb_LP1_CarrierID = new System.Windows.Forms.PictureBox();
             this.pb_LP1_CarrierAccessing = new System.Windows.Forms.PictureBox();
             this.btnSimulatePlacement1 = new System.Windows.Forms.Button();
+            this.btnCarrierRemovedEvent = new System.Windows.Forms.Button();
+            this.btnReadyToLoadEvent = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.lbFoupStatus = new System.Windows.Forms.Label();
             this.lb_FoupID1 = new System.Windows.Forms.Label();
@@ -276,7 +279,6 @@ namespace TrimGap
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.tslbStatus = new System.Windows.Forms.ToolStripLabel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button19 = new System.Windows.Forms.Button();
             this.p.SuspendLayout();
             this.tabPage_TrimData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartSensor)).BeginInit();
@@ -731,6 +733,17 @@ namespace TrimGap
             this.panel2.Size = new System.Drawing.Size(42, 432);
             this.panel2.TabIndex = 104;
             // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(3, 224);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(33, 73);
+            this.button19.TabIndex = 123;
+            this.button19.Text = "button19";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Visible = false;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
             // button18
             // 
             this.button18.Location = new System.Drawing.Point(3, 145);
@@ -739,6 +752,7 @@ namespace TrimGap
             this.button18.TabIndex = 122;
             this.button18.Text = "button18";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Visible = false;
             this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // button16
@@ -1431,6 +1445,7 @@ namespace TrimGap
             // 
             // panel25
             // 
+            this.panel25.Controls.Add(this.btnReadyToLoadEvent);
             this.panel25.Controls.Add(this.panel27);
             this.panel25.Controls.Add(this.btnSimulatePlacement2);
             this.panel25.Controls.Add(this.richTextBox2);
@@ -1875,6 +1890,7 @@ namespace TrimGap
             // 
             this.panel6.Controls.Add(this.panel26);
             this.panel6.Controls.Add(this.btnSimulatePlacement1);
+            this.panel6.Controls.Add(this.btnCarrierRemovedEvent);
             this.panel6.Controls.Add(this.richTextBox1);
             this.panel6.Controls.Add(this.lbFoupStatus);
             this.panel6.Controls.Add(this.lb_FoupID1);
@@ -1962,6 +1978,26 @@ namespace TrimGap
             this.btnSimulatePlacement1.Text = "P";
             this.btnSimulatePlacement1.UseVisualStyleBackColor = true;
             this.btnSimulatePlacement1.Click += new System.EventHandler(this.btnSimulatePlacement1_Click);
+            // 
+            // btnCarrierRemovedEvent
+            // 
+            this.btnCarrierRemovedEvent.Location = new System.Drawing.Point(15, 397);
+            this.btnCarrierRemovedEvent.Name = "btnCarrierRemovedEvent";
+            this.btnCarrierRemovedEvent.Size = new System.Drawing.Size(140, 22);
+            this.btnCarrierRemovedEvent.TabIndex = 107;
+            this.btnCarrierRemovedEvent.Text = "25) Carrier Removed";
+            this.btnCarrierRemovedEvent.UseVisualStyleBackColor = true;
+            this.btnCarrierRemovedEvent.Click += new System.EventHandler(this.btnCarrierRemovedEvent_Click);
+            // 
+            // btnReadyToLoadEvent
+            // 
+            this.btnReadyToLoadEvent.Location = new System.Drawing.Point(10, 397);
+            this.btnReadyToLoadEvent.Name = "btnReadyToLoadEvent";
+            this.btnReadyToLoadEvent.Size = new System.Drawing.Size(134, 22);
+            this.btnReadyToLoadEvent.TabIndex = 108;
+            this.btnReadyToLoadEvent.Text = "26) Ready To Load";
+            this.btnReadyToLoadEvent.UseVisualStyleBackColor = true;
+            this.btnReadyToLoadEvent.Click += new System.EventHandler(this.btnReadyToLoadEvent_Click);
             // 
             // richTextBox1
             // 
@@ -2765,16 +2801,6 @@ namespace TrimGap
             this.panel5.TabIndex = 110;
             this.panel5.Visible = false;
             // 
-            // button19
-            // 
-            this.button19.Location = new System.Drawing.Point(3, 224);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(33, 73);
-            this.button19.TabIndex = 123;
-            this.button19.Text = "button19";
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -3146,6 +3172,8 @@ namespace TrimGap
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button btnSimulatePlacement1;
         private System.Windows.Forms.Button btnSimulatePlacement2;
+        private System.Windows.Forms.Button btnCarrierRemovedEvent;
+        private System.Windows.Forms.Button btnReadyToLoadEvent;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.Panel panel26;

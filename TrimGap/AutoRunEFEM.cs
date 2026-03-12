@@ -962,7 +962,7 @@ namespace TrimGap
                 ClampAndReadID(ref Common.EFEM.LoadPort1);
 
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)1, out err);
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, "", out err);
+                // Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, "", out err); // ⭐ 移除此行，避免清除已讀取的 ID 導致 Host S1F3 查詢 zero-length 報錯
             }
             else if (fram.SECSPara.Loadport1_PortTransferState == PortTransferState.TransferBlocked.GetHashCode())
             {
@@ -1035,7 +1035,7 @@ namespace TrimGap
                 ClampAndReadID(ref Common.EFEM.LoadPort2);
 
                 Common.SecsgemForm.UpdateSV(TrimGap_EqpID.PortID, (byte)2, out err);
-                Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, "", out err);
+                // Common.SecsgemForm.UpdateSV(TrimGap_EqpID.CarrierID, "", out err); // ⭐ 移除此行，避免清除已讀取的 ID 導致 Host S1F3 查詢 zero-length 報錯
             }
             else if (fram.SECSPara.Loadport2_PortTransferState == PortTransferState.TransferBlocked.GetHashCode())
             {
@@ -2433,11 +2433,26 @@ namespace TrimGap
                                     Common.SecsgemForm.UpdateSV(4182, loadPort.FoupID, out err);
                                     Common.SecsgemForm.UpdateSV(4183, sram.PJInfo.recID, out err);
 
+									// ⭐ Job Processing Events: RecipeStepEnd → RecipeEnd → ChamberEnd (在 CEID 152 之前送出)
+									Common.SecsgemForm.UpdateSV(TrimGap_EqpID.ChamberID, "Stage1", out err);
+									Common.SecsgemForm.UpdateSV(TrimGap_EqpID.StageID, "Stage1", out err);
+                                    
+                                    
+                                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.RecipeStep, (byte)1, out err);
+                                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ProcessRecipeStepEnd, out err);
+                                    Gem300Monitor.AddSend("ProcessRecipeStepEnd (CEID5790) LP=" + loadPort.pn + " Slot=" + savedSlot);
+
                                     if (!string.IsNullOrEmpty(substID))
                                         Common.SecsgemForm.SetSubstrateStatus_Proc(substID, SubstProcState.PROCESSED);
                                     else
                                         Common.SecsgemForm.EventReportSend(152, out err);
                                     Gem300Monitor.AddSend("WaferProcessEnd (CEID152) LP=" + loadPort.pn + " Slot=" + savedSlot);
+
+                                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ChamberEnd, out err);
+                                    Gem300Monitor.AddSend("ChamberEnd (CEID5200) LP=" + loadPort.pn + " Slot=" + savedSlot);
+
+                                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ProcessRecipeEnd, out err);
+                                    Gem300Monitor.AddSend("ProcessRecipeEnd (CEID5800) LP=" + loadPort.pn + " Slot=" + savedSlot);
                                 }
 
                                 InsertLog.SavetoDB(65, "Pn：" + loadPort.pn + ", Slot：" + Common.EFEM.Robot.Slot_Arm_upper);
@@ -2716,6 +2731,20 @@ namespace TrimGap
                                     Common.SecsgemForm.UpdateSV(4182, loadPort.FoupID, out err);           // ActivePRJobCarrierID
                                     Common.SecsgemForm.UpdateSV(4183, sram.PJInfo.recID, out err);         // ActiveRecipeID
 
+                                    // ⭐ ChamberID/StageID 必須在 CEID 151 之前設定，否則 Report 會取到空值
+                                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.ChamberID, "Stage1", out err);
+                                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.StageID, "Stage1", out err);
+                                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.RecipeStep, (byte)1, out err);  
+
+                                    // ⭐ Job Processing Events: ChamberStart → RecipeStart → RecipeStepStart
+                                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ProcessRecipeStart, out err);
+                                    Gem300Monitor.AddSend("ProcessRecipeStart (CEID5799) LP=" + loadPort.pn + " Slot=" + Common.EFEM.Stage1.Slot);
+                                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ProcessRecipeStepStart, out err);
+                                    Gem300Monitor.AddSend("ProcessRecipeStepStart (CEID5789) LP=" + loadPort.pn + " Slot=" + Common.EFEM.Stage1.Slot);
+                                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ChamberStart, out err);
+                                    Gem300Monitor.AddSend("ChamberStart (CEID5199) LP=" + loadPort.pn + " Slot=" + Common.EFEM.Stage1.Slot);
+
+                                    // ⭐ SetSubstrateStatus_Proc 內部已自動觸發 CEID 151，不可重複呼叫 EventReportSend(151)
                                     if (!string.IsNullOrEmpty(substID))
                                         Common.SecsgemForm.SetSubstrateStatus_Proc(substID, SubstProcState.IN_PROCESS);
                                     else
@@ -2830,6 +2859,21 @@ namespace TrimGap
                                     Common.SecsgemForm.UpdateSV(4182, loadPort.FoupID, out err);           // ActivePRJobCarrierID
                                     Common.SecsgemForm.UpdateSV(4183, sram.PJInfo.recID, out err);         // ActiveRecipeID
 
+                                    // ⭐ ChamberID/StageID 必須在 CEID 151 之前設定，否則 Report 會取到空值
+                                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.ChamberID, "Stage1", out err);
+                                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.StageID, "Stage1", out err);
+                                    Common.SecsgemForm.UpdateSV(TrimGap_EqpID.RecipeStep, (byte)1, out err);
+
+
+                                    // ⭐ Job Processing Events: ChamberStart → RecipeStart → RecipeStepStart
+                                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ProcessRecipeStart, out err);
+                                    Gem300Monitor.AddSend("ProcessRecipeStart (CEID5799) LP=" + loadPort.pn + " Slot=" + Common.EFEM.Stage1.Slot);
+                                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ProcessRecipeStepStart, out err);
+                                    Gem300Monitor.AddSend("ProcessRecipeStepStart (CEID5789) LP=" + loadPort.pn + " Slot=" + Common.EFEM.Stage1.Slot);
+                                    Common.SecsgemForm.EventReportSend(TrimGap_EqpID.ChamberStart, out err);
+                                    Gem300Monitor.AddSend("ChamberStart (CEID5199) LP=" + loadPort.pn + " Slot=" + Common.EFEM.Stage1.Slot);
+
+                                    // ⭐ SetSubstrateStatus_Proc 內部已自動觸發 CEID 151，不可重複呼叫 EventReportSend(151)
                                     if (!string.IsNullOrEmpty(substID))
                                         Common.SecsgemForm.SetSubstrateStatus_Proc(substID, SubstProcState.IN_PROCESS);
                                     else

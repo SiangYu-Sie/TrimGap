@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -845,6 +845,128 @@ namespace TrimGap
                     }
                 }
                 MainForm.Hide();
+
+                // ⭐ 初始化所有 ASCII 類型的 SV，避免 S1F3 查詢時回傳 zero-length 導致 Host 報錯
+                // _gemControler_InitialCompleted 可能在 DriverStart 之前觸發，UpdateSV 可能失敗，
+                // 因此在此處（Driver 已連線、Comm 已啟用後）重新確保所有 ASCII SV 有值
+                _gemControler.UpdateSV(1, " ", out err);                                          // SYS_LICENSE_CODE
+                _gemControler.UpdateSV(3, DateTime.Now.ToString("yyyyMMddHHmmssff"), out err);    // SYS_CLOCK
+                _gemControler.UpdateSV(9, "TrimGap", out err);                                    // SYS_MDLN
+                _gemControler.UpdateSV(10, sram.SofewareVersion, out err);                        // SYS_SOFTREV
+                _gemControler.UpdateSV(14, " ", out err);                                         // SYS_PP_EXEC_NAME
+                _gemControler.UpdateSV(19, "0000000000000000", out err);                          // SYS_SPOOL_START_TIME
+                _gemControler.UpdateSV(20, "0000000000000000", out err);                          // SYS_SPOOL_FULL_TIME
+                _gemControler.UpdateSV(24, "1.0", out err);                                       // SYS_SOFTWARE_REVISION
+                _gemControler.UpdateSV(25, "TrimGap_1", out err);                                 // GEM_EQP_SERIAL_NUM
+                _gemControler.UpdateSV(26, "TSMC", out err);                                      // GEM_E30_EQUIPMENT_SUPPLIER
+
+                // ⭐ 20260312 新增: 初始化所有 EqpDV.csv 中的 ASCII VIDs，避免 S1F3 查詢 zero-length 報錯
+                _gemControler.UpdateSV(TrimGap_EqpID.RecipeID, " ", out err);
+                _gemControler.UpdateSV(TrimGap_EqpID.CarrierID, " ", out err);
+                _gemControler.UpdateSV(TrimGap_EqpID.Loadport1_RecipeID, " ", out err);
+                _gemControler.UpdateSV(TrimGap_EqpID.Loadport2_RecipeID, " ", out err);
+                _gemControler.UpdateSV(TrimGap_EqpID.LotID, " ", out err);
+                _gemControler.UpdateSV(TrimGap_EqpID.SubstrateID, " ", out err);
+                _gemControler.UpdateSV(TrimGap_EqpID.MeasurementMax, " ", out err);
+
+                for (int i = 0; i < 25; i++)
+                {
+                    _gemControler.UpdateSV((ulong)(TrimGap_EqpID.Slot1_Info + i), " ", out err);
+                    _gemControler.UpdateSV((ulong)(TrimGap_EqpID.Slot1_Max + i), " ", out err);
+                }
+                for (int i = 0; i < 8; i++)
+                {
+                    _gemControler.UpdateSV((ulong)(TrimGap_EqpID.Angle1_Info + i), " ", out err);
+                }
+
+                // ⭐ 初始化其他 "Set by AP" 的數值型與 List SV避免未初始化長度為 0
+                _gemControler.UpdateSV(4, (byte)0, out err);                                      // SYS_SECS_COMM_MODE (0:HSMS)
+                _gemControler.UpdateSV(7, (byte)1, out err);                                      // SYS_PREVIOUS_PROCESS_STATE
+                _gemControler.UpdateSV(8, (byte)1, out err);                                      // SYS_PROCESS_STATE
+                _gemControler.UpdateSV(15, (byte)2, out err);                                     // SYS_PP_FORMAT (2:Formatted)
+                _gemControler.UpdateSV(16, (byte)1, out err);                                     // SYS_SPOOL_STATE
+                _gemControler.UpdateSV(17, (byte)0, out err);                                     // SYS_SPOOL_LOAD_SUBSTATE
+                _gemControler.UpdateSV(18, (byte)0, out err);                                     // SYS_SPOOL_UNLOAD_SUBSTATE
+
+                // ⭐ 初始化 SystemSV.csv 中物件綁定 (Object-Bound) 的 ASCII SV
+                // CARRIERLOC / SUBSTLOC / EPTTRACKER 物件在 config 中預設存在，
+                // 但其 ASCII 欄位啟動時為空字串 (zero-length)，導致 S1F3 查詢失敗
+                // 使用 SystemID 對應 SystemSV.csv 的第 7 欄
+                // -- CARRIERLOC "QWE" --
+                _gemControler.UpdateSV(312, " ", out err);   // CMS_CARRIERID1_QWE
+                _gemControler.UpdateSV(313, " ", out err);   // CMS_OBJID1_QWE
+                // -- SUBSTLOC "QWE" (啟動時會被刪除，但 SV 可能仍存在) --
+                _gemControler.UpdateSV(314, " ", out err);   // STS_SUBSTID1_QWE
+                _gemControler.UpdateSV(316, " ", out err);   // STS_OBJID1_QWE
+                // -- CARRIERLOC "QWET" --
+                _gemControler.UpdateSV(317, " ", out err);   // CMS_CARRIERID2_QWET
+                _gemControler.UpdateSV(318, " ", out err);   // CMS_OBJID2_QWET
+                // -- EPTTRACKER "QWEASD" --
+                _gemControler.UpdateSV(323, " ", out err);   // EPT_TRANSITIONTIMESTAMP1_QWEASD
+                _gemControler.UpdateSV(324, " ", out err);   // EPT_OBJID1_QWEASD
+                _gemControler.UpdateSV(326, " ", out err);   // EPT_EPTELEMENTNAME1_QWEASD
+                _gemControler.UpdateSV(329, " ", out err);   // EPT_PREVIOUSTASKNAME1_QWEASD
+                _gemControler.UpdateSV(330, " ", out err);   // EPT_BLOCKEDREASONTEXT1_QWEASD
+                _gemControler.UpdateSV(334, " ", out err);   // EPT_TASKNAME1_QWEASD
+                // -- SUBSTLOC "1" (啟動時會被刪除，但 SV 可能仍存在) --
+                _gemControler.UpdateSV(563, " ", out err);   // STS_SUBSTID2_1
+                _gemControler.UpdateSV(565, " ", out err);   // STS_OBJID2_1
+
+                // ⭐ 20260312 新增: 初始化 Host S1F3 SVID Set 2 所查詢的全部 VIDs
+                // -- LoadPort 額外屬性 (2026-2029) --
+                _gemControler.UpdateSV(2026, (byte)0, out err);   // LP1 ReservationState
+                _gemControler.UpdateSV(2027, (byte)0, out err);   // LP2 ReservationState
+                _gemControler.UpdateSV(2028, " ", out err);      // LP1 CarrierID
+                _gemControler.UpdateSV(2029, " ", out err);      // LP2 CarrierID
+                // -- Unknown SVs (100092-100094) --
+                _gemControler.UpdateSV(100092, " ", out err);
+                _gemControler.UpdateSV(100093, " ", out err);
+                _gemControler.UpdateSV(100094, " ", out err);
+                // -- SUBSTRATE attributes (100262-100265) --
+                _gemControler.UpdateSV(100262, " ", out err);    // STS_LOTID
+                _gemControler.UpdateSV(100263, (byte)0, out err); // STS_MATERIALSTATUS
+                _gemControler.UpdateSV(100264, " ", out err);    // STS_SUBSTDESTINATION
+                // STS_SUBSTHISTORY (LIST)
+                {
+                    ListWrapper lwHist = new ListWrapper();
+                    lwHist.TryAdd(ItemFmt.A, " ", out err);
+                    _gemControler.UpdateSV(100265, lwHist, out err);
+                }
+                // -- CARRIER instance SVs (100100-100107) --
+                _gemControler.UpdateSV(100100, (byte)0, out err);  // CMS_CARRIERIDSTATUS (UINT_1)
+                _gemControler.UpdateSV(100101, (byte)0, out err);  // CMS_CARRIERACCESSINGSTATUS (UINT_1)
+                _gemControler.UpdateSV(100102, (byte)0, out err);  // CMS_SUBSTRATECOUNT (UINT_1)
+                // CMS_CONTENTMAP (LIST)
+                {
+                    ListWrapper lwCM = new ListWrapper();
+                    lwCM.TryAdd(ItemFmt.A, " ", out err);
+                    _gemControler.UpdateSV(100103, lwCM, out err);
+                }
+                // CMS_SLOTMAP (LIST)
+                {
+                    ListWrapper lwSM = new ListWrapper();
+                    lwSM.TryAdd(ItemFmt.A, " ", out err);
+                    _gemControler.UpdateSV(100104, lwSM, out err);
+                }
+                _gemControler.UpdateSV(100105, " ", out err);     // CMS_LOCATIONID (ASCII)
+                _gemControler.UpdateSV(100106, (byte)0, out err);  // CMS_SLOTMAPSTATUS (UINT_1)
+                _gemControler.UpdateSV(100107, " ", out err);     // CMS_USAGE (ASCII)
+                // -- SUBSTRATE instance SVs (100108-100117) --
+                _gemControler.UpdateSV(100108, " ", out err);     // STS_SUBSTLOCID (ASCII)
+                _gemControler.UpdateSV(100109, (byte)0, out err);  // STS_SUBSTPROCSTATE (UINT_1)
+                _gemControler.UpdateSV(100110, " ", out err);     // STS_SUBSTSOURCE (ASCII)
+                _gemControler.UpdateSV(100111, (byte)0, out err);  // STS_SUBSTSTATE (UINT_1)
+                _gemControler.UpdateSV(100112, (byte)0, out err);  // STS_SUBSTTYPE (UINT_1)
+                _gemControler.UpdateSV(100113, (byte)0, out err);  // STS_SUBSTUSAGE (UINT_1)
+                _gemControler.UpdateSV(100114, " ", out err);     // STS_SUBSTACQUIREDID (ASCII)
+                _gemControler.UpdateSV(100115, " ", out err);     // STS_SUBSTBATCHLOCID (ASCII)
+                _gemControler.UpdateSV(100116, " ", out err);     // STS_SUBSTSUBSTIDSTATUS (ASCII)
+                _gemControler.UpdateSV(100117, " ", out err);     // STS_SUBSTSUBSTPOSINBATCH (ASCII)
+                // -- Remaining SVs (100118-100150) --
+                for (int i = 100118; i <= 100150; i++)
+                {
+                    _gemControler.UpdateSV((ulong)i, " ", out err);
+                }
 
                 // init secs後 先update EC 更新機台參數
 

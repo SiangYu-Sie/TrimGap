@@ -13783,6 +13783,6 @@ D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\TrimGap\obj\x64\Debug\T
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\TrimGap\obj\x64\Debug\TrimGap.UserPermission.resources
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\TrimGap\obj\x64\Debug\TrimGap.csproj.GenerateResource.cache
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\TrimGap\obj\x64\Debug\TrimGap.csproj.CoreCompileInputs.cache
-D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\TrimGap\obj\x64\Debug\TrimGap.csproj.Up2Date
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\TrimGap\obj\x64\Debug\TrimGap.exe
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\TrimGap\obj\x64\Debug\TrimGap.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\TrimGap\obj\x64\Debug\TrimGap.csproj.Up2Date

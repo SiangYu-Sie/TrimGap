@@ -128,6 +128,27 @@ public static class TrimGap_EqpID
     public const int PJProcessedWaferCount = 4160;    // DV: PJProcessedWaferCount_CompletedNormally
     //============20260305新增============//
 
+    //============Recipe/Chamber/RecipeStep Events============//
+    public const int RecipeStart = 153;                // Recipe Start Event
+    public const int RecipeEnd = 154;                  // Recipe End Event
+    public const int RecipeStepStart = 155;            // Recipe Step Start Event
+    public const int RecipeStepEnd = 156;              // Recipe Step End Event
+    public const int ChamberStart = 5199;              // Chamber Start Event (Process Chamber In)
+    public const int ChamberEnd = 5200;                // Chamber End Event (Process Chamber Out)
+    public const int ChamberID = 4186;                 // DV: ChamberID (e.g. "Stage1")
+    public const int RecipeStepNumber = 4188;          // DV: Recipe Step Number
+    //============Recipe/Chamber/RecipeStep Events============//
+    
+    //============Job Processing Events============//
+    public const int ProcessRecipeStepStart = 5789;   // Process Recipe Step Start Event
+    public const int ProcessRecipeStepEnd = 5790;     // Process Recipe Step End Event
+    public const int ProcessRecipeStart = 5799;       // Process Recipe Start Event
+    public const int ProcessRecipeEnd = 5800;         // Process Recipe End Event
+    // Job Processing DVIDs
+    public const int StageID = 4187;                  // DV: StageID
+    public const int RecipeStep = 4188;               // DV: RecipeStepNumber
+    //============Job Processing Events============//
+
     // EC ID
     public const int ChunkRotateDistance = 7001;
 

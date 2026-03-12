@@ -8,7 +8,6 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -493,6 +492,81 @@ namespace DemoFormDiaGemLib
             _gemControler.UpdateSV(24, "1.0", out errLog);  // SYS_SOFTWARE_REVISION
             _gemControler.UpdateSV(25, "TrimGap_1", out errLog);  // GEM_EQP_SERIAL_NUM
             _gemControler.UpdateSV(26, "TSMC", out errLog);  // GEM_E30_EQUIPMENT_SUPPLIER
+
+            // ⭐ 20260312 新增: 初始化 Eqp VIDs，避免 S1F3 查詢時回傳 zero-length 導致 Host 報錯
+            _gemControler.UpdateSV(1999, " ", out errLog);   // RecipeID
+            _gemControler.UpdateSV(2000, " ", out errLog);   // CarrierID
+            _gemControler.UpdateSV(2014, " ", out errLog);   // Loadport1_RecipeID
+            _gemControler.UpdateSV(2015, " ", out errLog);   // Loadport2_RecipeID
+            _gemControler.UpdateSV(2022, " ", out errLog);   // LotID
+            _gemControler.UpdateSV(2023, " ", out errLog);   // SubstrateID
+            _gemControler.UpdateSV(4200, " ", out errLog);   // MeasurementMax
+
+            for (int i = 0; i < 25; i++)
+            {
+                _gemControler.UpdateSV((ulong)(4001 + i), " ", out errLog);   // Slot1_Info + i
+                _gemControler.UpdateSV((ulong)(4026 + i), " ", out errLog);   // Slot1_Max + i
+            }
+            for (int i = 0; i < 8; i++)
+            {
+                _gemControler.UpdateSV((ulong)(4101 + i), " ", out errLog);   // Angle1_Info + i
+            }
+
+            // ⭐ 20260312 新增: 初始化 Host S1F3 SVID Set 2 所查詢的全部 VIDs
+            // -- LoadPort 額外屬性 (2026-2029) --
+            _gemControler.UpdateSV(2026, (byte)0, out errLog);   // LP1 ReservationState
+            _gemControler.UpdateSV(2027, (byte)0, out errLog);   // LP2 ReservationState
+            _gemControler.UpdateSV(2028, " ", out errLog);      // LP1 CarrierID
+            _gemControler.UpdateSV(2029, " ", out errLog);      // LP2 CarrierID
+            // -- Unknown SVs (100092-100094) --
+            _gemControler.UpdateSV(100092, " ", out errLog);
+            _gemControler.UpdateSV(100093, " ", out errLog);
+            _gemControler.UpdateSV(100094, " ", out errLog);
+            // -- SUBSTRATE attributes (100262-100265) --
+            _gemControler.UpdateSV(100262, " ", out errLog);    // STS_LOTID
+            _gemControler.UpdateSV(100263, (byte)0, out errLog); // STS_MATERIALSTATUS
+            _gemControler.UpdateSV(100264, " ", out errLog);    // STS_SUBSTDESTINATION
+            // STS_SUBSTHISTORY (LIST)
+            {
+                ListWrapper lwHist = new ListWrapper();
+                lwHist.TryAdd(ItemFmt.A, " ", out errLog);
+                _gemControler.UpdateSV(100265, lwHist, out errLog);
+            }
+            // -- CARRIER instance SVs (100100-100107) --
+            _gemControler.UpdateSV(100100, (byte)0, out errLog);  // CMS_CARRIERIDSTATUS (UINT_1)
+            _gemControler.UpdateSV(100101, (byte)0, out errLog);  // CMS_CARRIERACCESSINGSTATUS (UINT_1)
+            _gemControler.UpdateSV(100102, (byte)0, out errLog);  // CMS_SUBSTRATECOUNT (UINT_1)
+            // CMS_CONTENTMAP (LIST)
+            {
+                ListWrapper lwCM = new ListWrapper();
+                lwCM.TryAdd(ItemFmt.A, " ", out errLog);
+                _gemControler.UpdateSV(100103, lwCM, out errLog);
+            }
+            // CMS_SLOTMAP (LIST)
+            {
+                ListWrapper lwSM = new ListWrapper();
+                lwSM.TryAdd(ItemFmt.A, " ", out errLog);
+                _gemControler.UpdateSV(100104, lwSM, out errLog);
+            }
+            _gemControler.UpdateSV(100105, " ", out errLog);     // CMS_LOCATIONID (ASCII)
+            _gemControler.UpdateSV(100106, (byte)0, out errLog);  // CMS_SLOTMAPSTATUS (UINT_1)
+            _gemControler.UpdateSV(100107, " ", out errLog);     // CMS_USAGE (ASCII)
+            // -- SUBSTRATE instance SVs (100108-100117) --
+            _gemControler.UpdateSV(100108, " ", out errLog);     // STS_SUBSTLOCID (ASCII)
+            _gemControler.UpdateSV(100109, (byte)0, out errLog);  // STS_SUBSTPROCSTATE (UINT_1)
+            _gemControler.UpdateSV(100110, " ", out errLog);     // STS_SUBSTSOURCE (ASCII)
+            _gemControler.UpdateSV(100111, (byte)0, out errLog);  // STS_SUBSTSTATE (UINT_1)
+            _gemControler.UpdateSV(100112, (byte)0, out errLog);  // STS_SUBSTTYPE (UINT_1)
+            _gemControler.UpdateSV(100113, (byte)0, out errLog);  // STS_SUBSTUSAGE (UINT_1)
+            _gemControler.UpdateSV(100114, " ", out errLog);     // STS_SUBSTACQUIREDID (ASCII)
+            _gemControler.UpdateSV(100115, " ", out errLog);     // STS_SUBSTBATCHLOCID (ASCII)
+            _gemControler.UpdateSV(100116, " ", out errLog);     // STS_SUBSTSUBSTIDSTATUS (ASCII)
+            _gemControler.UpdateSV(100117, " ", out errLog);     // STS_SUBSTSUBSTPOSINBATCH (ASCII)
+            // -- Remaining SVs (100118-100150) --
+            for (int i = 100118; i <= 100150; i++)
+            {
+                _gemControler.UpdateSV((ulong)i, " ", out errLog);
+            }
 
             chkContinueUpdateSV.Checked = false;
 

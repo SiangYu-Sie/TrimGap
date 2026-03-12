@@ -1,0 +1,39 @@
+﻿//Name,ID,DataType,Length,Unit,Remark,SystemID,BindObjType,BindObjTypeSeq,BindObjID
+SYS_LICENSE_CODE,1,ASCII,,,License code(Formal; Evaluation; NoLicense),1,,0,
+SYS_LICENSE_STATUS,2,UINT_1,,,License status(0:Unauthorized; 1:Authorized; 2:Evaluation; 3:Evaluation Expiring; 4:Trial; 5:Trial End),2,,0,
+SYS_CLOCK,3,ASCII,,,System Clock,3,,0,
+SYS_SECS_COMM_MODE,4,UINT_1,,,SECS Communication Mode(0:HSMS Mode; 1:SECSI Mode) (Set by AP),4,,0,
+SYS_PREVIOUS_CONTROL_STATE,5,UINT_1,,,1:EquipmentOffLine; 2:AttemptOnLine; 3:HostOffLine; 4:OnlineLocal; 5:OnlineRemote,5,,0,
+SYS_CONTROL_STATE,6,UINT_1,,,1:EquipmentOffLine; 2:AttemptOnLine; 3:HostOffLine; 4:OnlineLocal; 5:OnlineRemote,6,,0,
+SYS_PREVIOUS_PROCESS_STATE,7,UINT_1,,,Previous process state(Set by AP),7,,0,
+SYS_PROCESS_STATE,8,UINT_1,,,Process state(Set by AP),8,,0,
+SYS_MDLN,9,ASCII,,,Equipment Model Type (Set by AP),9,,0,
+SYS_SOFTREV,10,ASCII,,,Equipment Software Revision (Set by AP),10,,0,
+SYS_ALARM_ENABLED,11,LIST,,,Current Enable Alarms,11,,0,
+SYS_ALARM_SET,12,LIST,,,Current Set Alarms,12,,0,
+SYS_EVENT_ENABLED,13,LIST,,,Current Enable Events,13,,0,
+SYS_PP_EXEC_NAME,14,ASCII,,,Currently selected process program(Set by AP),14,,0,
+SYS_PP_FORMAT,15,UINT_1,,,1:Unformatted process programs; 2:Formatted process programs; 3:Both unformatted and formatted process programs (Set by AP),15,,0,
+SYS_SPOOL_STATE,16,UINT_1,,,1:Inactive; 2:Active,16,,0,
+SYS_SPOOL_LOAD_SUBSTATE,17,UINT_1,,,0:Not Full; 1:Full,17,,0,
+SYS_SPOOL_UNLOAD_SUBSTATE,18,UINT_1,,,0:No Spool Out; 1:transmit; 2:Purge,18,,0,
+SYS_SPOOL_START_TIME,19,ASCII,16,,Spooling Start Time,19,,0,
+SYS_SPOOL_FULL_TIME,20,ASCII,16,,Spooling Each Full Time,20,,0,
+SYS_SPOOL_COUNT_ACTUAL,21,UINT_4,,,Spooling Current Actual Message Count,21,,0,
+SYS_SPOOL_COUNT_TOTAL,22,UINT_4,,,Spooling accumulation message count. Spooling change Inactive set zero,22,,0,
+SYS_MAX_SPOOL_SIZE,23,UINT_4,,,Spooling Max Message Count,23,,0,
+SYS_SOFTWARE_REVISION,24,ASCII,,,DIAGEM Software Revision,24,,0,
+PJ_PRJOBSPACE,101,UINT_2,,,(E40-PM) Used to indicate the number of jobs that can currently be created for the processing resource.,101,,0,
+CJ_QUEUEDCJOBS,201,LIST,,,(E94-CJM) This is an ordered list of control jobs currently in the Queue. The first job in the list is the job at the head of the Queue.,201,,0,
+CJ_QUEUEAVAILABLESPACE,202,UINT_2,,,(E94-CJM) Indicates number of jobs which the Queue can accept. This value cannot be negative. When it is zero it indicates that the queue is full,202,,0,
+CMS_ACCESSMODE1_1,2006,UINT_1,,,(E87-CMS) [LOADPORT-1] Access Mode,566,LOADPORT,1,1
+CMS_PORTTRANSFERSTATE1_1,2008,UINT_1,,,(E87-CMS) [LOADPORT-1] Port Transfer State,567,LOADPORT,1,1
+CMS_PORTSTATEINFO1_1,100082,LIST,,,(E87-CMS) [LOADPORT-1] Port State Info,568,LOADPORT,1,1
+CMS_PORTASSOCIATIONSTATE1_1,2016,UINT_1,,,(E87-CMS) [LOADPORT-1] Port Association State,569,LOADPORT,1,1
+CMS_PORTID1_1,2020,UINT_1,,,(E87-CMS) [LOADPORT-1] Port ID,570,LOADPORT,1,1
+CMS_OBJID1_1,100085,UINT_1,,,(E87-CMS) [LOADPORT-1] Port ID (Identifier ID),571,LOADPORT,1,1
+CMS_PORTSTATEINFO2_2,100088,LIST,,,(E87-CMS) [LOADPORT-2] Port State Info,591,LOADPORT,2,2
+CMS_OBJID2_2,100091,UINT_1,,,(E87-CMS) [LOADPORT-2] Port ID (Identifier ID),594,LOADPORT,2,2
+GEM_EQP_SERIAL_NUM,100092,ASCII,,,Text string describing the product serial number assigned by the manufacturer (Set by AP),25,,0,
+GEM_E30_EQUIPMENT_SUPPLIER,100093,ASCII,,,Supplier identification (Set by AP),26,,0,
+GEM_E30_SUPPORTED_PPOPTIONS,100094,LIST,,,Identify the process program management options supported by the equipment (Set by AP),27,,0,

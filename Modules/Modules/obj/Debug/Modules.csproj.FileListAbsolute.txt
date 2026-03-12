@@ -9844,6 +9844,6 @@ D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Modules\Modules\obj\Deb
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Modules\Modules\obj\Debug\Modules.csproj.CoreCompileInputs.cache
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Modules\Modules\obj\Debug\Modules.csproj.Fody.CopyLocal.cache
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Modules\Modules\obj\Debug\Modules.csproj.Fody.RuntimeCopyLocal.cache
-D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Modules\Modules\obj\Debug\Modules.csproj.Up2Date
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Modules\Modules\obj\Debug\Modules.dll
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Modules\Modules\obj\Debug\Modules.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Modules\Modules\obj\Debug\Modules.csproj.Up2Date

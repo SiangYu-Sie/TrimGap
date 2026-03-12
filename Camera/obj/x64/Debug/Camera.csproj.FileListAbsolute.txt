@@ -152,6 +152,6 @@ D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Camera\bin\Debug\Spinna
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Camera\bin\Debug\Basler.Pylon.xml
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Camera\obj\x64\Debug\Camera.csproj.AssemblyReference.cache
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Camera\obj\x64\Debug\Camera.csproj.CoreCompileInputs.cache
-D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Camera\obj\x64\Debug\Camera.csproj.Up2Date
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Camera\obj\x64\Debug\Camera.dll
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Camera\obj\x64\Debug\Camera.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\Camera\obj\x64\Debug\Camera.csproj.Up2Date

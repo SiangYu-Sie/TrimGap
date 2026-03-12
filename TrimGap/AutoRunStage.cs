@@ -4252,6 +4252,11 @@ namespace TrimGap
                     break;
 
                 case AutoStep.GotoWaitGetHomePos:
+                    if (fram.m_SecsgemType == 1)
+                    {
+                        Common.SecsgemForm.EventReportSend(TrimGap_EqpID.MeasureEnd, out err);
+                    }
+
                     if (MachineType == 0) // AP6 直接解真空
                     {
                         if (fram.EFEMSts.Skip == 0 || fram.m_simulateRun != 0)

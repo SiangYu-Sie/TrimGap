@@ -1,0 +1,27 @@
+# Visual Studio
+.vs/
+[Bb]in/
+[Ob]j/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.suo
+*.ide
+*.bak
+*.txt
+*.log
+*.bin
+*.pjb
+.vscode/
+
+# Build
+debug/
+release/
+x64/
+x86/
+
+# SECS/GEM logs (specific to this project)
+TrimGap/bin/x64/Debug/HSMS_Log/
+TrimGap/bin/x64/Debug/Config/Profile/Object/
+TrimGap/bin/x64/Debug/ProcessJob/

@@ -1312,6 +1312,6 @@ D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SECSGEM\obj\Debug\SECSG
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SECSGEM\obj\Debug\SECSGEM.SecsgemForm.resources
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SECSGEM\obj\Debug\SECSGEM.csproj.GenerateResource.cache
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SECSGEM\obj\Debug\SECSGEM.csproj.CoreCompileInputs.cache
-D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SECSGEM\obj\Debug\SECSGEM.csproj.Up2Date
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SECSGEM\obj\Debug\SECSGEM.dll
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SECSGEM\obj\Debug\SECSGEM.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SECSGEM\obj\Debug\SECSGEM.csproj.Up2Date

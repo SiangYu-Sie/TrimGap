@@ -526,6 +526,6 @@ D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SF3\SF3\obj\Debug\SF3.P
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SF3\SF3\obj\Debug\SF3_Form.Recipes.resources
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SF3\SF3\obj\Debug\SF3.csproj.GenerateResource.cache
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SF3\SF3\obj\Debug\SF3.csproj.CoreCompileInputs.cache
-D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SF3\SF3\obj\Debug\SF3.csproj.Up2Date
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SF3\SF3\obj\Debug\SF3.dll
 D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SF3\SF3\obj\Debug\SF3.pdb
+D:\謝翔宇\台積電-竹南AP6\SWAP\TrimGap_1_20260212\SF3\SF3\obj\Debug\SF3.csproj.Up2Date
