@@ -233,6 +233,7 @@ namespace DemoFormDiaGemLib
             _gemControler.SECSMessageReplyT3 += _gemControler_SECSMessageReplyT3;
             _gemControler.UnknownSECSMessageReceived += _gemControler_UnknownSECSMessageReceived;
             _gemControler.ErrorSECSMessageReceived += _gemControler_ErrorSECSMessageReceived;
+            _gemControler.GetAttrRequestReply += _gemControler_GetAttrRequestReply;
 
             InitialDIASecsGem();
             DirectoryInfo dir = new DirectoryInfo(LogFileDir);
@@ -348,6 +349,76 @@ namespace DemoFormDiaGemLib
             object tag = e.Message.Tag;
             string msg = $"Error SECS Message S{stream}F{function}, Systembytes({systembytes}), Received.";
             WriteLog(LogLevel.Error, msg);
+        }
+
+        // S14F1 GetAttr Reply (S14F2) handler----------------------------------------------------------------------------------------------------
+        private void _gemControler_GetAttrRequestReply(object sender, GetAttrDataArgs e)
+        {
+            // e.ObjAck : 0=ok, non-zero=error
+            // e.ListObjectInfos : 每個物件的 ID 與屬性列表
+            // e.ListErrorReports : 錯誤明細 (ObjAck != 0 時)
+            // e.SystemBytes : 對應的 S14F1 SystemBytes
+
+            string log;
+
+            if (e.ObjAck != 0)
+            {
+                string errDetails = string.Empty;
+                if (e.ListErrorReports != null)
+                {
+                    foreach (var errRpt in e.ListErrorReports)
+                        errDetails += $" [{errRpt}]";
+                }
+                log = $"GetAttrRequestReply FAILED: ObjAck={e.ObjAck}, SystemBytes={e.SystemBytes},{errDetails}";
+                WriteLog(LogLevel.Warn, log);
+                return;
+            }
+
+            if (e.ListObjectInfos == null || e.ListObjectInfos.Count == 0)
+            {
+                log = $"GetAttrRequestReply: ObjAck=0 but ListObjectInfos is empty. SystemBytes={e.SystemBytes}";
+                WriteLog(LogLevel.Warn, log);
+                return;
+            }
+
+            foreach (ObjectInfo objInfo in e.ListObjectInfos)
+            {
+                string objID = objInfo.ObjID;
+                log = $"GetAttrRequestReply ObjID={objID}";
+
+                if (objInfo.ListObjectAttributes != null)
+                {
+                    foreach (ObjectAttribute attr in objInfo.ListObjectAttributes)
+                    {
+                        log += $", {attr.ATTRID}={attr.ATTRDATA}";
+                    }
+                }
+
+                WriteLog(LogLevel.Info, log);
+
+                // ---- 依照回傳屬性更新對應 SV ----
+                // 範例：若為 Substrate 物件，取 MapData 屬性後更新 STS_SUBSTHISTORY (100265)
+                if (objInfo.ListObjectAttributes != null)
+                {
+                    foreach (ObjectAttribute attr in objInfo.ListObjectAttributes)
+                    {
+                        string attrID = attr.ATTRID?.Trim();
+                        object attrData = attr.ATTRDATA;
+
+                        switch (attrID)
+                        {
+                            case "MapData":
+                                // TODO: 處理 MapData XML 字串
+                                break;
+                            case "SubstrateType":
+                                // TODO: 依需求更新相關 SV
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+            }
         }
 
         //Log Info----------------------------------------------------------------------------------------------------

@@ -338,6 +338,7 @@ namespace TrimGap
         public static int HTW_Autofocus_DetectIndex;
         public static int HTW_Autofocus_2ndPos_Shift;  //第一次找不到焦點時，要偏移多少距離再量一次
         public static int HTW_Autofocus_Index_Last_Used = 0;   //上次成功對焦位置
+        public static double Fixed_value;  //20260313 新Sensor AutoFocus Z軸固定補正值
 
         // 量測開始延遲時間
         //   192//1//10//16 用// 拆字串

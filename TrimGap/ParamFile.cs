@@ -377,6 +377,9 @@ namespace TrimGap
                 iniVal(m, p, s, ref fram.Analysis.PT_2_Z_Offset, "fram.Analysis.PT_2_Z_Offset", 0.00);
                 iniVal(m, p, s, ref fram.Analysis.PT_2_X, "fram.Analysis.PT_2_X", 0.00);
 
+                //20260313
+                iniVal(m, p, s, ref fram.Fixed_value, "fram.Fixed_value", 0.00);
+
                 //20250724
                 iniVal(m, p, s, ref fram.Analysis.BlueTapeMethod, "fram.Analysis.BlueTapeMethod", 1); 
             }

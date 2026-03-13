@@ -1982,159 +1982,194 @@ namespace TrimGap
                     }
                     break;
                 case HTWStep.HTWAutoFocus:
-                    fram.HTW_Autofocus_DetectIndex = 80;//175 -> 180 -> 190  ->120 -> 80(改到左邊去，大約高度降了70um)
-                    fram.HTW_Autofocus_Index = 0;
-                    fram.HTW_Autofocus_2ndPos_Shift = 200;  //第一次找不到焦點時，要偏移多少距離再量一次
-
-                    sram.Focus_Offset = 0;
-                    short[] spectrumData;
-                    short[] spectrumDataOld = new short[1];
-                    sram.SpectrumMaxValue = new short[fram.Position.HTW_P1_FocusRange];
-                    sram.SpectrumMaxValueBias = new int[fram.Position.HTW_P1_FocusRange];
-                    short max_allpos = 0;
-                    Dictionary<int, short> max3 = new Dictionary<int, short>();
-                    bool RightToLeft = false;
-                    double LeftSum = 0;
-                    double RightSum = 0;
-                    List<double> list_Left = new List<double>();
-                    List<double> list_Right = new List<double>();
-
-                    //20251222
-                    List<short[]> list_spectrumData = new List<short[]>();
-
-                    for (int i = 0; i < fram.Position.HTW_P1_FocusRange; i++)
+                    int is_HTW = 0;
+                    if(is_HTW == 1)
                     {
-                        Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P1_Z + i * 10);//下往上
-                        SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3), 8000);
-                        spectrumData = Common.PTForm.GetSpectrum(2); //Get FT
+                        fram.HTW_Autofocus_DetectIndex = 80;//175 -> 180 -> 190  ->120 -> 80(改到左邊去，大約高度降了70um)
+                        fram.HTW_Autofocus_Index = 0;
+                        fram.HTW_Autofocus_2ndPos_Shift = 200;  //第一次找不到焦點時，要偏移多少距離再量一次
+
+                        sram.Focus_Offset = 0;
+                        short[] spectrumData;
+                        short[] spectrumDataOld = new short[1];
+                        sram.SpectrumMaxValue = new short[fram.Position.HTW_P1_FocusRange];
+                        sram.SpectrumMaxValueBias = new int[fram.Position.HTW_P1_FocusRange];
+                        short max_allpos = 0;
+                        Dictionary<int, short> max3 = new Dictionary<int, short>();
+                        bool RightToLeft = false;
+                        double LeftSum = 0;
+                        double RightSum = 0;
+                        List<double> list_Left = new List<double>();
+                        List<double> list_Right = new List<double>();
+
                         //20251222
-                        list_spectrumData.Add(spectrumData);
+                        List<short[]> list_spectrumData = new List<short[]>();
 
-                        LeftSum = 0;
-                        RightSum = 0;
-                        if (spectrumData.Length >= fram.HTW_Autofocus_DetectIndex + 20)
+                        for (int i = 0; i < fram.Position.HTW_P1_FocusRange; i++)
                         {
-                            short max = 0;
-                            int pos = fram.HTW_Autofocus_DetectIndex - 5;
-                            for (int j = fram.HTW_Autofocus_DetectIndex - 5; j <= fram.HTW_Autofocus_DetectIndex + 5; j++)
-                            {
-                                list_Left = new List<double>();
-                                list_Right = new List<double>();
+                            Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P1_Z + i * 10);//下往上
+                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3), 8000);
+                            spectrumData = Common.PTForm.GetSpectrum(2); //Get FT
+                            //20251222
+                            list_spectrumData.Add(spectrumData);
 
-                                if (spectrumData[j] > max)
+                            LeftSum = 0;
+                            RightSum = 0;
+                            if (spectrumData.Length >= fram.HTW_Autofocus_DetectIndex + 20)
+                            {
+                                short max = 0;
+                                int pos = fram.HTW_Autofocus_DetectIndex - 5;
+                                for (int j = fram.HTW_Autofocus_DetectIndex - 5; j <= fram.HTW_Autofocus_DetectIndex + 5; j++)
                                 {
-                                    max = spectrumData[j];
-                                    pos = j;
-                                }
-                                //if (i != 0)  //不是第一筆資料，可以比對舊資料
-                                //{
-                                //    LeftSum += Math.Abs((double)(spectrumDataOld[j - 10] - spectrumData[j]));
-                                //    RightSum += Math.Abs((double)(spectrumDataOld[j + 10] - spectrumData[j]));
-                                //}
-                                if (i != 0)
-                                {
-                                    for (int k = 1; k <= 10; k++)
+                                    list_Left = new List<double>();
+                                    list_Right = new List<double>();
+
+                                    if (spectrumData[j] > max)
                                     {
-                                        list_Left.Add((double)(spectrumDataOld[j - k]));
-                                        list_Right.Add((double)(spectrumDataOld[j + k]));
+                                        max = spectrumData[j];
+                                        pos = j;
+                                    }
+                                    //if (i != 0)  //不是第一筆資料，可以比對舊資料
+                                    //{
+                                    //    LeftSum += Math.Abs((double)(spectrumDataOld[j - 10] - spectrumData[j]));
+                                    //    RightSum += Math.Abs((double)(spectrumDataOld[j + 10] - spectrumData[j]));
+                                    //}
+                                    if (i != 0)
+                                    {
+                                        for (int k = 1; k <= 10; k++)
+                                        {
+                                            list_Left.Add((double)(spectrumDataOld[j - k]));
+                                            list_Right.Add((double)(spectrumDataOld[j + k]));
+                                        }
                                     }
                                 }
-                            }
-                            sram.SpectrumMaxValueBias[i] = pos - fram.HTW_Autofocus_DetectIndex;
-                            sram.SpectrumMaxValue[i] = max;
+                                sram.SpectrumMaxValueBias[i] = pos - fram.HTW_Autofocus_DetectIndex;
+                                sram.SpectrumMaxValue[i] = max;
 
-                            //20250828
-                            //LeftSum = Math.Abs((double)(spectrumDataOld[pos - 10] - spectrumData[pos]));
-                            //RightSum = Math.Abs((double)(spectrumDataOld[pos + 10] - spectrumData[pos]));
-                            LeftSum = list_Left.Max();
-                            RightSum = list_Right.Max();
+                                //20250828
+                                //LeftSum = Math.Abs((double)(spectrumDataOld[pos - 10] - spectrumData[pos]));
+                                //RightSum = Math.Abs((double)(spectrumDataOld[pos + 10] - spectrumData[pos]));
+                                LeftSum = list_Left.Max();
+                                RightSum = list_Right.Max();
 
-                            if ((max > max_allpos) && (LeftSum < RightSum))  //有最大值要更新 && 右邊過來
-                            {
-                                //一組方式(原方法)
-                                max_allpos = max;
-                                fram.HTW_Autofocus_Index = i;
-
-                                //三組方式20240722
-                                /*
-                                max3.Add(i, max);  
-                                if(max3.Count>3)   //新的值做為第四組加進來一起排序
+                                if ((max > max_allpos) && (LeftSum < RightSum))  //有最大值要更新 && 右邊過來
                                 {
-                                    max3 = max3.OrderBy(o => o.Value).ToDictionary(o => o.Key, o => o.Value);  //Value小到大排序
-                                    max3.Remove(max3.Keys.ElementAt(0));  //刪除第一個(最小的)
-                                    max_allpos = max3.Values.ElementAt(0);  //剩3個裡面最小的當作max_allpos，之後有比他大的值就放進來重排
-                                    fram.HTW_Autofocus_Index = max3.Keys.Min();   //剩3個裡面 最靠左的那個頻譜peak
-                                    if (max3[fram.HTW_Autofocus_Index] < max3.Values.Max() * 0.7)   //最靠左的那個頻譜peak 強度不能太低(至少要有最強peak的7成吧)
-                                        fram.HTW_Autofocus_Index = max3.Keys.ElementAt(2);          //太弱了就不要用，改回最強的peak
+                                    //一組方式(原方法)
+                                    max_allpos = max;
+                                    fram.HTW_Autofocus_Index = i;
+
+                                    //三組方式20240722
+                                    /*
+                                    max3.Add(i, max);  
+                                    if(max3.Count>3)   //新的值做為第四組加進來一起排序
+                                    {
+                                        max3 = max3.OrderBy(o => o.Value).ToDictionary(o => o.Key, o => o.Value);  //Value小到大排序
+                                        max3.Remove(max3.Keys.ElementAt(0));  //刪除第一個(最小的)
+                                        max_allpos = max3.Values.ElementAt(0);  //剩3個裡面最小的當作max_allpos，之後有比他大的值就放進來重排
+                                        fram.HTW_Autofocus_Index = max3.Keys.Min();   //剩3個裡面 最靠左的那個頻譜peak
+                                        if (max3[fram.HTW_Autofocus_Index] < max3.Values.Max() * 0.7)   //最靠左的那個頻譜peak 強度不能太低(至少要有最強peak的7成吧)
+                                            fram.HTW_Autofocus_Index = max3.Keys.ElementAt(2);          //太弱了就不要用，改回最強的peak
+                                    }
+                                    else
+                                    {
+                                        max3 = max3.OrderBy(o => o.Value).ToDictionary(o => o.Key, o => o.Value);  //Value小到大排序
+                                        fram.HTW_Autofocus_Index = max3.Keys.ElementAt(max3.Count-1);   //最大的，max_allpos維持0以便繼續收滿4組資料
+                                    }*/
                                 }
-                                else
-                                {
-                                    max3 = max3.OrderBy(o => o.Value).ToDictionary(o => o.Key, o => o.Value);  //Value小到大排序
-                                    fram.HTW_Autofocus_Index = max3.Keys.ElementAt(max3.Count-1);   //最大的，max_allpos維持0以便繼續收滿4組資料
-                                }*/
+                                spectrumDataOld = new short[spectrumData.Length];
+                                spectrumData.CopyTo(spectrumDataOld, 0);
                             }
-                            spectrumDataOld = new short[spectrumData.Length];
-                            spectrumData.CopyTo(spectrumDataOld, 0);
+                            else
+                                sram.SpectrumMaxValue[i] = 0;
+                        }
+                        //對不到焦第二次機會
+                        if(max_allpos <= 3000)
+                        {
+                            if (sram.AutoFocus_Retry_Count == 0)  //第一次retry 往正方向走
+                            {
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_AutoFocus_X + fram.HTW_Autofocus_2ndPos_Shift);  //改AutoFocus位置
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P1_Z);
+
+                                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_X), 10000);
+                                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3), 4000);
+
+                                sram.AutoFocus_Retry_Count = 1;
+                                break;
+                            }
+                            else if(sram.AutoFocus_Retry_Count == 1)  //第二次retry 往負方向走
+                            {
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_AutoFocus_X - fram.HTW_Autofocus_2ndPos_Shift);  //改AutoFocus位置
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P1_Z);
+
+                                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_X), 10000);
+                                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3), 4000);
+
+                                sram.AutoFocus_Retry_Count = 2;
+                                break;
+                            }
+                            else
+                            {
+                                sram.AutoFocus_Retry_Count = 3;
+                                if (fram.HTW_Autofocus_Index_Last_Used != 0)  //三次Focus都失敗，用上一次成功的對焦位置替代
+                                    fram.HTW_Autofocus_Index = fram.HTW_Autofocus_Index_Last_Used;
+                            }
                         }
                         else
-                            sram.SpectrumMaxValue[i] = 0;
-                    }
-                    //對不到焦第二次機會
-                    if(max_allpos <= 3000)
-                    {
-                        if (sram.AutoFocus_Retry_Count == 0)  //第一次retry 往正方向走
                         {
-                            Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_AutoFocus_X + fram.HTW_Autofocus_2ndPos_Shift);  //改AutoFocus位置
-                            Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P1_Z);
-
-                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_X), 10000);
-                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3), 4000);
-
-                            sram.AutoFocus_Retry_Count = 1;
-                            break;
+                            fram.HTW_Autofocus_Index_Last_Used = fram.HTW_Autofocus_Index;  //保存成功的Focus位置
                         }
-                        else if(sram.AutoFocus_Retry_Count == 1)  //第二次retry 往負方向走
-                        {
-                            Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_AutoFocus_X - fram.HTW_Autofocus_2ndPos_Shift);  //改AutoFocus位置
-                            Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P1_Z);
 
-                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_X), 10000);
-                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3), 4000);
+                        sram.Focus_Offset = 1 * fram.HTW_Autofocus_Index * 10 + sram.SpectrumMaxValueBias[fram.HTW_Autofocus_Index];
 
-                            sram.AutoFocus_Retry_Count = 2;
-                            break;
-                        }
+                        Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X);//走到起點
+                        Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P1_Z + sram.Focus_Offset);
+                        string focusretry = "中";
+                        if(sram.AutoFocus_Retry_Count == 1)
+                            focusretry = "右";
+                        else if(sram.AutoFocus_Retry_Count == 2)
+                            focusretry = "左";
                         else
-                        {
-                            sram.AutoFocus_Retry_Count = 3;
-                            if (fram.HTW_Autofocus_Index_Last_Used != 0)  //三次Focus都失敗，用上一次成功的對焦位置替代
-                                fram.HTW_Autofocus_Index = fram.HTW_Autofocus_Index_Last_Used;
-                        }
+                            focusretry = "上";
+                        ReportData.HTW_Focus_Z = (fram.Position.HTW_P1_Z + sram.Focus_Offset).ToString() + "(" + fram.HTW_Autofocus_Index + "," + max_allpos + "," + focusretry + ")";
+                        sram.PTRetry = 0;
+                        sram.AutoFocus_Retry_Count = 0;
+
+                        //20251222
+                        ParamFile.SaveRawdata_AutoFocus(list_spectrumData, FoupID, "AutoFocus" + sram.PitchAngleTotal, sram.saveDataTime);
+
+                        AutoHTWStep = HTWStep.Measurement;
                     }
                     else
                     {
-                        fram.HTW_Autofocus_Index_Last_Used = fram.HTW_Autofocus_Index;  //保存成功的Focus位置
+                        //==================== 20260312 換SENSOR做AUTOFOCUS ====================
+
+                        
+
+                        Common.PTForm.StartTrigger2(1, 48020, -30, -10);
+                        Common.PTForm.getData(out AnalysisData.rawData);
+                        double value = AnalysisData.rawData[0];
+
+                        
+
+                        if(value > 0)  //有訊號了，代表有對到焦了
+                        {
+                            sram.Focus_Offset = 0;
+                            Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X);//走到起點
+                            Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, value + fram.Fixed_value);
+                            AutoHTWStep = HTWStep.Measurement;
+                        }
+                        else
+                        {
+                            Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X + fram.HTW_Autofocus_2ndPos_Shift);//改AutoFocus位置
+                            Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P1_Z);
+                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_X), 10000);
+                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3), 4000);
+
+                            AutoHTWStep = HTWStep.HTWAutoFocus;  //再試一次對焦
+                        }
+
                     }
-
-                    sram.Focus_Offset = 1 * fram.HTW_Autofocus_Index * 10 + sram.SpectrumMaxValueBias[fram.HTW_Autofocus_Index];
-
-                    Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X);//走到起點
-                    Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P1_Z + sram.Focus_Offset);
-                    string focusretry = "中";
-                    if(sram.AutoFocus_Retry_Count == 1)
-                        focusretry = "右";
-                    else if(sram.AutoFocus_Retry_Count == 2)
-                        focusretry = "左";
-                    else
-                        focusretry = "上";
-                    ReportData.HTW_Focus_Z = (fram.Position.HTW_P1_Z + sram.Focus_Offset).ToString() + "(" + fram.HTW_Autofocus_Index + "," + max_allpos + "," + focusretry + ")";
-                    sram.PTRetry = 0;
-                    sram.AutoFocus_Retry_Count = 0;
-
-                    //20251222
-                    ParamFile.SaveRawdata_AutoFocus(list_spectrumData, FoupID, "AutoFocus" + sram.PitchAngleTotal, sram.saveDataTime);
-
-                    AutoHTWStep = HTWStep.Measurement;
+                    
                     break;
                 case HTWStep.Measurement:
                     if (Common.motion.MotionDone(Mo.AxisNo.DD) && Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3) && Common.motion.MotionDone(Mo.AxisNo.AP6II_X))

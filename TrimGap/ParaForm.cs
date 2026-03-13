@@ -127,6 +127,9 @@ namespace TrimGap
             tb_PT_2_X.Text = fram.Analysis.PT_2_X.ToString();
             tb_PT_2_Z_Offset.Text = fram.Analysis.PT_2_Z_Offset.ToString();
 
+            //20260313 Fixed_value
+            tb_Fixed_value.Text = fram.Fixed_value.ToString();
+
 
         }
 
@@ -1289,6 +1292,21 @@ namespace TrimGap
                         InsertLog.SavetoDB(7, "PT_2_X " + fram.Analysis.PT_2_X + "->" + tb_PT_2_X_copy.Text);
                         tb_PT_2_X.Text = tb_PT_2_X_copy.Text;
                         fram.Analysis.PT_2_X = Convert.ToDouble(tb_PT_2_X_copy.Text);
+                    }
+                }
+
+                if (tb_Fixed_value_copy.Text != "")
+                {
+                    if (!Regex.IsMatch(tb_Fixed_value_copy.Text, pattern))
+                    {
+                        MessageBox.Show("Fixed_value" + "資料輸入錯誤");
+                        return;
+                    }
+                    else
+                    {
+                        InsertLog.SavetoDB(7, "Fixed_value " + fram.Fixed_value + "->" + tb_Fixed_value_copy.Text);
+                        tb_Fixed_value.Text = tb_Fixed_value_copy.Text;
+                        fram.Fixed_value = Convert.ToDouble(tb_Fixed_value_copy.Text);
                     }
                 }
 

@@ -195,6 +195,9 @@
             this.tb_PT_2_X_copy = new System.Windows.Forms.TextBox();
             this.tb_PT_2_X = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
+            this.tb_Fixed_value_copy = new System.Windows.Forms.TextBox();
+            this.tb_Fixed_value = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1282,6 +1285,9 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.tb_Fixed_value_copy);
+            this.groupBox5.Controls.Add(this.label52);
+            this.groupBox5.Controls.Add(this.tb_Fixed_value);
             this.groupBox5.Controls.Add(this.tb_PT_2_X_copy);
             this.groupBox5.Controls.Add(this.tb_PT_2_Z_Offset_copy);
             this.groupBox5.Controls.Add(this.tb_PT_2_X);
@@ -1293,7 +1299,7 @@
             this.groupBox5.Controls.Add(this.tb_PT_2);
             this.groupBox5.Location = new System.Drawing.Point(514, 169);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(395, 159);
+            this.groupBox5.Size = new System.Drawing.Size(395, 199);
             this.groupBox5.TabIndex = 17;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "PT_2";
@@ -1895,6 +1901,34 @@
             this.label51.TabIndex = 117;
             this.label51.Text = "PT_2_X";
             // 
+            // tb_Fixed_value_copy
+            // 
+            this.tb_Fixed_value_copy.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_Fixed_value_copy.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Fixed_value_copy.Location = new System.Drawing.Point(276, 148);
+            this.tb_Fixed_value_copy.Name = "tb_Fixed_value_copy";
+            this.tb_Fixed_value_copy.Size = new System.Drawing.Size(100, 33);
+            this.tb_Fixed_value_copy.TabIndex = 120;
+            // 
+            // tb_Fixed_value
+            // 
+            this.tb_Fixed_value.Font = new System.Drawing.Font("新細明體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tb_Fixed_value.Location = new System.Drawing.Point(161, 148);
+            this.tb_Fixed_value.Name = "tb_Fixed_value";
+            this.tb_Fixed_value.ReadOnly = true;
+            this.tb_Fixed_value.Size = new System.Drawing.Size(100, 33);
+            this.tb_Fixed_value.TabIndex = 121;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label52.Location = new System.Drawing.Point(6, 157);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(100, 24);
+            this.label52.TabIndex = 122;
+            this.label52.Text = "Fixed_value";
+            // 
             // ParaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2092,5 +2126,8 @@
         private System.Windows.Forms.TextBox tb_PT_2_X_copy;
         private System.Windows.Forms.TextBox tb_PT_2_X;
         private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.TextBox tb_Fixed_value_copy;
+        private System.Windows.Forms.TextBox tb_Fixed_value;
+        private System.Windows.Forms.Label label52;
     }
 }
