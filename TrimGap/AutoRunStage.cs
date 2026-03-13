@@ -56,6 +56,8 @@ namespace TrimGap
 
         public static bool isDarkReference = false;
 
+        int is_HTW = 0; //選擇哪種SENSOR去做AutoFocus，0是HTW原本的對焦方式，1是confocal的對焦方式
+
 
         //public bool AnalysisFlag
         //{
@@ -1982,7 +1984,7 @@ namespace TrimGap
                     }
                     break;
                 case HTWStep.HTWAutoFocus:
-                    int is_HTW = 0;
+                    
                     if(is_HTW == 1)
                     {
                         fram.HTW_Autofocus_DetectIndex = 80;//175 -> 180 -> 190  ->120 -> 80(改到左邊去，大約高度降了70um)
@@ -2143,9 +2145,9 @@ namespace TrimGap
                     {
                         //==================== 20260312 換SENSOR做AUTOFOCUS ====================
 
-                        
-
-                        Common.PTForm.StartTrigger2(1, 48020, -30, -10);
+                        Common.PTForm.SetTriggerMode(0);  //改成量測模式
+                        Common.PTForm.StartTrigger2(1, 48020, 48020, 0);  //先觸發一次讓sensor有訊號了再來讀值，避免一開始讀到的值是亂的
+                        SpinWait.SpinUntil(() => false, 1000);
                         Common.PTForm.getData(out AnalysisData.rawData);
                         double value = AnalysisData.rawData[0];
 
@@ -2154,19 +2156,34 @@ namespace TrimGap
                         if(value > 0)  //有訊號了，代表有對到焦了
                         {
                             sram.Focus_Offset = 0;
+                            sram.AutoFocus_Retry_Count = 0;
+                            ReportData.HTW_Focus_Z = value.ToString() + "(NewSensor," + fram.Fixed_value + ")";
                             Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X);//走到起點
                             Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, value + fram.Fixed_value);
                             AutoHTWStep = HTWStep.Measurement;
                         }
                         else
                         {
-                            Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X + fram.HTW_Autofocus_2ndPos_Shift);//改AutoFocus位置
-                            Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P1_Z);
-                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_X), 10000);
-                            SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3), 4000);
-
-                            AutoHTWStep = HTWStep.HTWAutoFocus;  //再試一次對焦
+                            if (sram.AutoFocus_Retry_Count < 3)  //最多重試3次
+                            {
+                                sram.AutoFocus_Retry_Count++;
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_X, fram.Position.HTW_P1_X + fram.HTW_Autofocus_2ndPos_Shift);//改AutoFocus位置
+                                Common.motion.PosMove(Mo.AxisNo.AP6II_Z3, fram.Position.HTW_P1_Z);
+                                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_X), 10000);
+                                SpinWait.SpinUntil(() => Common.motion.MotionDone(Mo.AxisNo.AP6II_Z3), 4000);
+                                AutoHTWStep = HTWStep.HTWAutoFocus;  //再試一次對焦
+                            }
+                            else
+                            {
+                                //3次仍無訊號 → 停機報警
+                                sram.AutoFocus_Retry_Count = 0;
+                                InsertLog.SavetoDB(TrimGap_EqpID.EQP_HTW_Z_TimeoutError, "NewSensor AutoFocus Failed after 3 retries");
+                                Common.SecsgemForm.AlarmReportSend(TrimGap_EqpID.EQP_HTW_Z_TimeoutError, true, out err);
+                                Flag.AutoidleFlag = false;
+                            }
                         }
+
+                        Common.PTForm.SetTriggerMode(2);  //恢復觸發模式
 
                     }
                     
