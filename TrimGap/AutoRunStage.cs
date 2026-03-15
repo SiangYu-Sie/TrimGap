@@ -56,7 +56,7 @@ namespace TrimGap
 
         public static bool isDarkReference = false;
 
-        int is_HTW = 0; //選擇哪種SENSOR去做AutoFocus，0是HTW原本的對焦方式，1是confocal的對焦方式
+        private static int is_HTW = 0; //選擇哪種SENSOR去做AutoFocus，0是HTW原本的對焦方式，1是confocal的對焦方式
 
 
         //public bool AnalysisFlag
