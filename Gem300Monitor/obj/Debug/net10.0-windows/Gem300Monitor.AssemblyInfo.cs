@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Gem300Monitor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+153cebc728418115b2e619065da204e775e2c4b2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fabda255735276df7340d76a8d682b5a08d280b5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Gem300Monitor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Gem300Monitor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
